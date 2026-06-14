@@ -1,0 +1,100 @@
+{
+  "weekId": "2026-06-11",
+  "range": "June 11 - 17, 2026",
+  "headline": "4X Community Series, $500K cargo challenge, free World Cup jersey",
+  "quickTake": [
+    "Best grind: Community Mission Series at 4X — finishing all 7 adds a GTA$500,000 bonus",
+    "Easy objective: sell GTA$500,000 of Special Cargo for a GTA$500,000 bonus",
+    "Collectibles week: Treasure Chests pay 4X, Hidden Caches 3X",
+    "Free claim: Los Santos Soccer Jersey — just log in (World Cup 2026)"
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "items": [
+        { "id": "community-4x", "label": "4X GTA$ and RP on the Community Mission Series", "tag": "gold" },
+        { "id": "community-bonus", "label": "GTA$500,000 bonus for completing all 7 featured Community Missions this week", "tag": "gold" },
+        { "id": "chests-4x", "label": "4X GTA$ and RP on Treasure Chests" },
+        { "id": "caches-3x", "label": "3X GTA$ and RP on Hidden Caches" },
+        { "id": "fib-2x", "label": "2X pay on the FIB Priority File: The Black Box File" }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "items": [
+        { "id": "cargo-challenge", "label": "Sell GTA$500,000 worth of Special Cargo to receive a GTA$500,000 bonus", "tag": "gold" }
+      ]
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free rewards & prize vehicles",
+      "items": [
+        { "id": "jersey-free", "label": "Log in this week to get the free Los Santos Soccer Jersey (World Cup 2026)", "tag": "limited" },
+        { "id": "podium-vigero", "label": "Casino Podium Vehicle: Declasse Vigero ZX Convertible" },
+        { "id": "prize-cheetah", "label": "LS Car Meet Prize Ride: Grotti Cheetah Classic" },
+        { "id": "prize-challenge", "label": "Prize Ride Challenge: win an LS Car Meet Series race" },
+        { "id": "discord-crewneck", "label": "Visit the Rockstar Games Discord for the Burgundy Rockstar Varsity Crewneck", "tag": "limited" }
+      ]
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts",
+      "items": [
+        { "id": "d-exec-office", "label": "40% off: Executive Offices and Office upgrades" },
+        { "id": "d-dominator-asp", "label": "30% off: Vapid Dominator ASP" },
+        { "id": "d-vstr", "label": "30% off: Albany V-STR" },
+        { "id": "d-outlaw", "label": "30% off: Nagasaki Outlaw" },
+        { "id": "d-infernus", "label": "30% off: Pegassi Infernus Classic" },
+        { "id": "d-nebula", "label": "30% off: Vulcar Nebula Turbo" },
+        { "id": "d-lectro", "label": "30% off: Principe Lectro" },
+        { "id": "d-longfin", "label": "30% off: Shitzu Longfin" },
+        { "id": "d-dinghy", "label": "30% off: Nagasaki Weaponized Dinghy" },
+        { "id": "d-marquis", "label": "30% off: Dinka Marquis" },
+        { "id": "d-speeder", "label": "30% off: Pegassi Speeder" },
+        { "id": "d-jetmax", "label": "30% off: Shitzu Jetmax" }
+      ]
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "items": [
+        { "id": "gv-service-carbine", "label": "30% off Service Carbine" },
+        { "id": "gv-military-rifle", "label": "40% off Military Rifle for GTA+ members" }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "items": [
+        { "id": "o-fib", "label": "FIB Priority File: The Black Box File" },
+        { "id": "o-salvage-1", "label": "Salvage Yard: The Gangbanger Robbery - Grotti Turismo Classic" },
+        { "id": "o-salvage-2", "label": "Salvage Yard: The Podium Robbery - Benefactor Schlagen GT" },
+        { "id": "o-salvage-3", "label": "Salvage Yard: The McTony Robbery - Vapid Ellie" },
+        { "id": "o-premium-race", "label": "Premium Race: At the Races" },
+        { "id": "o-time-trial", "label": "Time Trial: LSIA II" },
+        { "id": "o-hsw-trial", "label": "HSW Time Trial: Ron Alternates to Elysian Island" }
+      ]
+    }
+  ],
+  "beginnerPath": [
+    { "id": "bp-1", "label": "Run the Community Mission Series at 4X — easy access from the Jobs menu, and all 7 missions pay an extra GTA$500,000." },
+    { "id": "bp-2", "label": "Log in this week to claim the free Los Santos Soccer Jersey." },
+    { "id": "bp-3", "label": "Diving for Treasure Chests? They pay 4X this week — free money with zero setup." },
+    { "id": "bp-4", "label": "Executive Offices are 40% off (from about GTA$600K) — a solid first step into CEO work if you can afford it." },
+    { "id": "bp-5", "label": "Skip the discounted sports cars until you own your first money-making property." }
+  ],
+  "locations": [
+    { "id": "loc-community", "activity": "Community Mission Series (4X)", "name": "Start from the pause menu", "area": "Anywhere", "note": "Pause Menu → Online → Jobs → Community Series. Complete all 7 for the GTA$500,000 bonus." },
+    { "id": "loc-cargo", "activity": "Special Cargo challenge", "name": "Your Special Cargo Warehouse", "area": "Your owned warehouse", "note": "Sell GTA$500,000 of crates via your Executive Office computer. Requires a CEO Office + warehouse." },
+    { "id": "loc-exec-office", "activity": "Executive Offices (40% off)", "name": "Dynasty 8 Executive (in-game site)", "area": "Cheapest: Maze Bank West", "note": "Buy via the in-game browser. Unlocks CEO work and Special Cargo." },
+    { "id": "loc-casino", "activity": "Podium Vehicle: Vigero ZX Convertible", "name": "The Diamond Casino & Resort", "area": "East Vinewood", "note": "Spin the Lucky Wheel once per day." },
+    { "id": "loc-carmeet", "activity": "Prize Ride: Cheetah Classic", "name": "LS Car Meet", "area": "Cypress Flats", "note": "Win an LS Car Meet Series race to claim it." },
+    { "id": "loc-chests", "activity": "Treasure Chests (4X)", "name": "Underwater spawns", "area": "Around the map and Cayo Perico", "note": "Two chests spawn daily. Bring scuba gear or a Toreador." },
+    { "id": "loc-gunvan", "activity": "Gun Van deals", "name": "Gun Van (rotating spot)", "area": "Changes daily", "note": "Van icon appears on the map once you are close or check daily." },
+    { "id": "loc-timetrial", "activity": "Time Trial", "name": "LSIA II", "area": "Los Santos International Airport", "note": "Purple stopwatch icon on the map." },
+    { "id": "loc-hsw", "activity": "HSW Time Trial", "name": "Ron Alternates to Elysian Island", "area": "Starts at the Ron Alternates Wind Farm", "note": "Requires an HSW-upgraded vehicle (PS5 / Series X|S / PC Enhanced)." },
+    { "id": "loc-premium", "activity": "Premium Race", "name": "At the Races", "area": "Enter via the yellow corona or Quick Job menu", "note": "Premium entry fee, top 3 win big." }
+  ]
+}

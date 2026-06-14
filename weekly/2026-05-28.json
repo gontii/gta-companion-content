@@ -1,0 +1,102 @@
+{
+  "weekId": "2026-05-28",
+  "range": "May 28 - June 3, 2026",
+  "headline": "5X Lamar, 4X Money Laundering, free Higgins Helitours",
+  "quickTake": [
+    "Best casual grind: Lamar Contact Missions at 5X",
+    "Best business grind: Money Laundering Missions at 4X",
+    "Best simple objective: 3 Hands On Car Wash Legal Missions for GTA$100,000",
+    "Best free claim: Higgins Helitours, if eligible"
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "items": [
+        { "id": "lamar-5x", "label": "5X GTA$ and RP on Lamar Contact Missions", "tag": "gold" },
+        { "id": "laundering-4x", "label": "4X GTA$ and RP on Money Fronts Money Laundering Missions", "tag": "gold" },
+        { "id": "faber-2x", "label": "2X GTA$ and RP on Mr. Faber Work" },
+        { "id": "transform-2x", "label": "2X GTA$ and RP on Random Transform Races" },
+        { "id": "combat-2x", "label": "2X GTA$ and RP on Community Combat Series" },
+        { "id": "carwash-2x", "label": "2X Laundered Income at Hands On Car Wash" }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "items": [
+        { "id": "carwash-challenge", "label": "Complete 3 Hands On Car Wash Legal Missions to receive GTA$100,000", "tag": "gold" }
+      ]
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free / prize vehicles",
+      "items": [
+        { "id": "higgins-free", "label": "Claim Higgins Helitours for free if you own Hands On Car Wash", "tag": "limited" },
+        { "id": "podium-komoda", "label": "Casino Podium Vehicle: Lampadati Komoda" },
+        { "id": "prize-nero", "label": "LS Car Meet Prize Ride: Truffade Nero" },
+        { "id": "prize-challenge", "label": "Prize Ride Challenge: place Top 2 in the LS Car Meet Series for 2 days in a row" }
+      ]
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts",
+      "items": [
+        { "id": "d-higgins", "label": "Free: Higgins Helitours", "tag": "limited" },
+        { "id": "d-carwash", "label": "40% off: Hands On Car Wash" },
+        { "id": "d-dispensary", "label": "40% off: Smoke on the Water Dispensary" },
+        { "id": "d-terrorbyte", "label": "30% off: Benefactor Terrorbyte" },
+        { "id": "d-cavalcade", "label": "30% off: Albany Cavalcade XL" },
+        { "id": "d-tailgater", "label": "30% off: Obey Tailgater S" },
+        { "id": "d-previon", "label": "30% off: Karin Previon" },
+        { "id": "d-penumbra", "label": "30% off: Maibatsu Penumbra FF" },
+        { "id": "d-ruiner", "label": "30% off: Imponte Ruiner ZZ-8" },
+        { "id": "d-brioso", "label": "30% off: Grotti Brioso 300" },
+        { "id": "d-howard", "label": "30% off: Buckingham Howard NX-25" },
+        { "id": "d-vestra", "label": "30% off: Buckingham Vestra" },
+        { "id": "d-seasparrow", "label": "30% off: Sea Sparrow" },
+        { "id": "d-velum", "label": "30% off: Jobuilt Velum 5-Seater" }
+      ]
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "items": [
+        { "id": "gv-heavy-rifle", "label": "50% off Heavy Rifle" },
+        { "id": "gv-military-rifle", "label": "40% off Military Rifle for GTA+ members" }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "items": [
+        { "id": "o-fib", "label": "FIB Priority File: The Fine Art File" },
+        { "id": "o-salvage-1", "label": "Salvage Yard: The Duggan Robbery - Toundra Panthere" },
+        { "id": "o-salvage-2", "label": "Salvage Yard: The Cargo Ship Robbery - Albany V-STR" },
+        { "id": "o-salvage-3", "label": "Salvage Yard: The Podium Robbery - Willard Eudora" },
+        { "id": "o-premium-race", "label": "Premium Race: Route 68" },
+        { "id": "o-time-trial", "label": "Time Trial: Vinewood Hills" },
+        { "id": "o-hsw-trial", "label": "HSW Time Trial: Sandy Shores to La Puerta" }
+      ]
+    }
+  ],
+  "beginnerPath": [
+    { "id": "bp-1", "label": "Run Lamar Contact Missions first. 5X is the easiest low-setup money this week." },
+    { "id": "bp-2", "label": "If you own or can afford Hands On Car Wash, complete 3 Legal Missions for the GTA$100,000 challenge." },
+    { "id": "bp-3", "label": "Do not waste early money on random discounted vehicles." },
+    { "id": "bp-4", "label": "Save toward practical money tools: Kosatka, Agency, Acid Lab, Nightclub, or businesses that unlock better weekly bonuses." },
+    { "id": "bp-5", "label": "If you already own Hands On Car Wash, claim Higgins Helitours while it is free." }
+  ],
+  "locations": [
+    { "id": "loc-lamar", "activity": "Lamar Contact Missions (5X)", "name": "Start from your phone", "area": "Anywhere in Los Santos", "note": "Call Lamar or use the Jobs menu. No property required." },
+    { "id": "loc-carwash", "activity": "Hands On Car Wash challenge", "name": "Hands On Car Wash", "area": "Strawberry, South Los Santos", "note": "Start Legal Missions from the property. 3 missions = GTA$100,000." },
+    { "id": "loc-laundering", "activity": "Money Laundering Missions (4X)", "name": "Your Money Fronts business", "area": "Your owned property", "note": "Requires the Money Fronts setup." },
+    { "id": "loc-higgins", "activity": "Free claim: Higgins Helitours", "name": "Maze Bank Foreclosures (in-game site)", "area": "Helipad near Vespucci / LSIA", "note": "Free this week if you own Hands On Car Wash. Claim via the in-game browser." },
+    { "id": "loc-casino", "activity": "Podium Vehicle: Lampadati Komoda", "name": "The Diamond Casino & Resort", "area": "East Vinewood", "note": "Spin the Lucky Wheel once per day." },
+    { "id": "loc-carmeet", "activity": "Prize Ride: Truffade Nero", "name": "LS Car Meet", "area": "Cypress Flats", "note": "Place Top 2 in the LS Car Meet Series for 2 days in a row." },
+    { "id": "loc-gunvan", "activity": "Gun Van deals", "name": "Gun Van (rotating spot)", "area": "Changes daily", "note": "Marked with a van icon on the map once you get close or check daily." },
+    { "id": "loc-timetrial", "activity": "Time Trial", "name": "Vinewood Hills", "area": "Vinewood Hills", "note": "Purple stopwatch icon on the map." },
+    { "id": "loc-hsw", "activity": "HSW Time Trial", "name": "Sandy Shores to La Puerta", "area": "Starts in Sandy Shores", "note": "Requires an HSW-upgraded vehicle." },
+    { "id": "loc-premium", "activity": "Premium Race", "name": "Route 68", "area": "Grand Senora Desert", "note": "Enter via the yellow race corona or Quick Job menu." }
+  ]
+}
