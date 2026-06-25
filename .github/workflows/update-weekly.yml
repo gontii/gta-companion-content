@@ -1,0 +1,74 @@
+name: Update weekly GTA Online content
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: "Public source URL for the current Rockstar weekly update"
+        required: true
+        type: string
+  schedule:
+    - cron: "30 10 * * 4"
+    - cron: "30 12 * * 4"
+    - cron: "30 14 * * 4"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-weekly
+  cancel-in-progress: false
+
+jobs:
+  update-weekly:
+    runs-on: ubuntu-latest
+    env:
+      GTA_WEEKLY_SOURCE_URL: ${{ inputs.source_url || vars.GTA_WEEKLY_SOURCE_URL }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_KV_NAMESPACE_ID: ${{ secrets.CLOUDFLARE_KV_NAMESPACE_ID }}
+      BETA_SMOKE_CODE: ${{ secrets.BETA_SMOKE_CODE }}
+      SMOKE_TEST_EMAIL: ${{ secrets.SMOKE_TEST_EMAIL }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run fixture tests
+        run: npm test
+
+      - name: Generate weekly JSON
+        run: npm run generate:weekly
+
+      - name: Detect generated weekId
+        id: weekly
+        run: |
+          WEEK_ID="$(node -e "console.log(JSON.parse(require('fs').readFileSync('weekly/latest.json', 'utf8')).weekId)")"
+          echo "week_id=$WEEK_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Validate generated weekly JSON
+        run: npm run validate:weekly -- weekly/latest.json "weekly/${{ steps.weekly.outputs.week_id }}.json"
+
+      - name: Commit updated content
+        run: |
+          if git diff --quiet -- weekly; then
+            echo "No weekly content changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add weekly/*.json
+          git commit -m "Update weekly GTA Online content for ${{ steps.weekly.outputs.week_id }}"
+          git push
+
+      - name: Publish latest.json to Cloudflare KV
+        run: npx wrangler kv key put weekly:latest --path weekly/latest.json --namespace-id "$CLOUDFLARE_KV_NAMESPACE_ID"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: Smoke test live gated weekly API
+        run: npm run smoke:weekly
+        env:
+          EXPECTED_WEEK_ID: ${{ steps.weekly.outputs.week_id }}
