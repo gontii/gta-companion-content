@@ -353,10 +353,37 @@ export function buildWeeklyContent(html, options = {}) {
   return content;
 }
 
+function withoutGeneratedAt(content) {
+  const clone = structuredClone(content);
+  delete clone.generatedAt;
+  return clone;
+}
+
+async function readExistingWeeklyContent(weeklyDir, weekId) {
+  const candidates = [path.join(weeklyDir, `${weekId}.json`), path.join(weeklyDir, 'latest.json')];
+  for (const candidate of candidates) {
+    try {
+      const content = JSON.parse(await readFile(candidate, 'utf8'));
+      if (content.weekId === weekId) return content;
+    } catch {
+      // Missing or invalid existing files should not block generating fresh content.
+    }
+  }
+  return null;
+}
+
 export async function generateWeeklyFiles({ html, outputDir = '.', now = new Date(), sourceUrl = null } = {}) {
   const content = buildWeeklyContent(html, { now, sourceUrl });
   const weeklyDir = path.join(outputDir, 'weekly');
   await mkdir(weeklyDir, { recursive: true });
+
+  const existingContent = await readExistingWeeklyContent(weeklyDir, content.weekId);
+  if (
+    existingContent?.generatedAt &&
+    JSON.stringify(withoutGeneratedAt(existingContent)) === JSON.stringify(withoutGeneratedAt(content))
+  ) {
+    content.generatedAt = existingContent.generatedAt;
+  }
 
   const serialized = `${JSON.stringify(content, null, 2)}\n`;
   await writeFile(path.join(weeklyDir, `${content.weekId}.json`), serialized);

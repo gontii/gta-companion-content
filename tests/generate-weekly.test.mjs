@@ -52,6 +52,33 @@ test('writes weekly/<weekId>.json and weekly/latest.json', async () => {
   }
 });
 
+test('keeps generated weekly files unchanged when only generatedAt would change', async () => {
+  const html = await readFile(new URL('./fixtures/rockstar-weekly.html', import.meta.url), 'utf8');
+  const dir = await mkdtemp(path.join(tmpdir(), 'gta-weekly-stable-'));
+
+  try {
+    await generateWeeklyFiles({
+      html,
+      outputDir: dir,
+      now: new Date('2026-06-23T12:00:00Z'),
+      sourceUrl: 'fixture://rockstar-weekly',
+    });
+    const first = await readFile(path.join(dir, 'weekly/latest.json'), 'utf8');
+
+    await generateWeeklyFiles({
+      html,
+      outputDir: dir,
+      now: new Date('2026-06-24T12:00:00Z'),
+      sourceUrl: 'fixture://rockstar-weekly',
+    });
+    const second = await readFile(path.join(dir, 'weekly/latest.json'), 'utf8');
+
+    assert.equal(second, first);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
 test('fails closed when the source does not match the current week', () => {
   const oldHtml = '<article><h1>Old week</h1><meta name="article:published_time" content="2026-06-11T10:00:00Z"></article>';
 
