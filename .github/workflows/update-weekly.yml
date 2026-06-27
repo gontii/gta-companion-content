@@ -5,7 +5,7 @@ on:
     inputs:
       source_url:
         description: "Public source URL for the current Rockstar weekly update"
-        required: true
+        required: false
         type: string
   schedule:
     - cron: "30 10 * * 4"
@@ -64,7 +64,7 @@ jobs:
           git push
 
       - name: Publish latest.json to Cloudflare KV
-        run: npx wrangler kv key put weekly:latest --path weekly/latest.json --namespace-id "$CLOUDFLARE_KV_NAMESPACE_ID"
+        run: npx wrangler kv key put weekly:latest --path weekly/latest.json --namespace-id "$CLOUDFLARE_KV_NAMESPACE_ID" --remote
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
