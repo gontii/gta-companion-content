@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REQUIRED_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts', 'gun-van', 'other'];
+const DEFAULT_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
 
 const SECTION_RULES = [
   { id: 'bonuses', title: 'Best bonuses', patterns: [/bonus/i, /gta\$/i, /\b[2-9]x\b/i, /rp/i] },
@@ -63,6 +64,128 @@ function stripTags(value) {
   return cleanText(String(value || '').replace(/<[^>]+>/g, ' '));
 }
 
+function blockBetween(html, startPattern, endPattern) {
+  const start = html.search(startPattern);
+  if (start < 0) return '';
+  const rest = html.slice(start);
+  const end = rest.slice(1).search(endPattern);
+  return end < 0 ? rest : rest.slice(0, end + 1);
+}
+
+function extractListItemsFrom(block) {
+  return [...block.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)]
+    .map((item) => stripTags(item[1]))
+    .filter(Boolean);
+}
+
+function extractParagraphItemsFrom(block) {
+  return [...block.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((item) => stripTags(item[1]))
+    .filter((item) => item && !/^https?:\/\//i.test(item));
+}
+
+function extractFieldEntry(html, className) {
+  const start = html.search(new RegExp(`<li[^>]+class=["'][^"']*field-entry ${className}\\b`, 'i'));
+  if (start < 0) return '';
+  const rest = html.slice(start);
+  const next = rest.slice(1).search(/<li[^>]+class=["'][^"']*field-entry /i);
+  return next < 0 ? rest : rest.slice(0, next + 1);
+}
+
+function extractCards(block) {
+  return [...block.matchAll(/<li[^>]+class=["'][^"']*gta-bonuses[\s\S]*?<\/li>/gi)]
+    .map((match) => {
+      const card = match[0];
+      const title =
+        card.match(/<h3[^>]+class=["'][^"']*contentheading[^"']*["'][\s\S]*?<a[^>]+title=["']([^"']+)["']/i)?.[1] ||
+        card.match(/<a[^>]+title=["']([^"']+)["']/i)?.[1];
+      if (!title) return null;
+
+      return {
+        title: cleanText(title),
+        type: stripTags(card.match(/<div[^>]+class=["']item-type["'][^>]*>\s*<span[^>]*>([\s\S]*?)<\/span>/i)?.[1] || ''),
+        discount: cleanText(card.match(/<span[^>]+class=["'][^"']*badge new[^"']*["'][^>]*>([^<]+)<\/span>/i)?.[1] || ''),
+        cashMultiplier: cleanText(card.match(/<div[^>]+class=["'][^"']*bonus-multiplier cash[^"']*["'][^>]*>([^<]+)<\/div>/i)?.[1] || ''),
+        rpMultiplier: cleanText(card.match(/<div[^>]+class=["'][^"']*bonus-multiplier rp[^"']*["'][^>]*>([^<]+)<\/div>/i)?.[1] || ''),
+      };
+    })
+    .filter(Boolean);
+}
+
+function extractGtabaseSections(html) {
+  if (!/field-entry gta5-bonuses/i.test(html)) return null;
+
+  const fineArtItems = extractListItemsFrom(blockBetween(html, /<h2[^>]*>\s*Fine Art Collector Program\s*<\/h2>/i, /<h2[^>]*>\s*Weekly Challenge\s*<\/h2>/i));
+  const challengeItems = extractParagraphItemsFrom(blockBetween(html, /<h2[^>]*>\s*Weekly Challenge\s*<\/h2>/i, /<h2[^>]*>\s*This Week/i));
+
+  const bonusItems = extractCards(extractFieldEntry(html, 'gta5-bonuses')).map((card) => {
+    const cash = card.cashMultiplier ? card.cashMultiplier.toUpperCase() : '';
+    const rp = card.rpMultiplier ? card.rpMultiplier.toUpperCase() : '';
+    const multiplier = cash && rp ? `${cash} GTA$ and RP` : cash ? `${cash} GTA$` : rp ? `${rp} RP` : 'Bonus';
+    return `${multiplier} on ${card.title}`;
+  });
+  bonusItems.push(...extractListItemsFrom(blockBetween(html, /<h3[^>]*>\s*GTA\$\s*&amp;\s*RP also on\s*<\/h3>/i, /<h3[^>]*>\s*Salvage Yard Robberies\s*<\/h3>/i)));
+
+  const discountItems = extractCards(extractFieldEntry(html, 'gta5-discounts')).map((card) => {
+    const discount = card.discount.replace(/^-/, '');
+    return discount ? `${discount} off ${card.title}` : card.title;
+  });
+
+  const showroomCards = extractCards(extractFieldEntry(html, 'showrooms-test-rides'));
+  const freeVehicleItems = [
+    ...fineArtItems,
+    ...showroomCards
+      .filter((card) => /podium|prize/i.test(card.type))
+      .map((card) => `${card.type}: ${card.title}`),
+  ];
+  const showroomItems = showroomCards
+    .filter((card) => !/podium|prize/i.test(card.type))
+    .map((card) => `${card.type}: ${card.title}`);
+
+  const otherItems = [
+    ...showroomItems,
+    ...extractListItemsFrom(blockBetween(html, /<h3[^>]*>\s*Salvage Yard Robberies\s*<\/h3>/i, /<h3[^>]*>\s*Premium Race/i)),
+    ...extractListItemsFrom(blockBetween(html, /<h3[^>]*>\s*Premium Race\s*&amp;\s*Trials\s*<\/h3>/i, /<h3[^>]*>\s*GUN VAN/i)),
+  ];
+  const gunVanItems = extractListItemsFrom(blockBetween(html, /<h3[^>]*>\s*GUN VAN Primary Discounts\s*<\/h3>/i, /<\/div>\s*<section/i));
+
+  return [
+    { heading: 'Bonuses', items: bonusItems },
+    { heading: 'Weekly Challenge', items: challengeItems },
+    { heading: 'Free rewards and prize vehicles', items: freeVehicleItems },
+    { heading: 'Discounts', items: discountItems },
+    { heading: 'Gun Van', items: gunVanItems },
+    { heading: 'Other weekly items', items: otherItems },
+  ].filter((section) => section.items.length > 0);
+}
+
+function absoluteUrl(href, baseUrl) {
+  try {
+    return new URL(href, baseUrl).toString();
+  } catch {
+    return null;
+  }
+}
+
+export function findWeeklySourceUrl(indexHtml, { baseUrl = DEFAULT_SOURCE_INDEX_URL } = {}) {
+  const links = [...String(indexHtml || '').matchAll(/<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)];
+  const seen = new Set();
+
+  for (const link of links) {
+    const href = cleanText(link[1]);
+    const label = stripTags(link[2]);
+    const combined = `${href} ${label}`;
+    if (!/gta-online-weekly-update/i.test(combined)) continue;
+
+    const url = absoluteUrl(href, baseUrl);
+    if (!url || seen.has(url)) continue;
+    seen.add(url);
+    return url;
+  }
+
+  return null;
+}
+
 function extractPublishedWeekId(html) {
   const metaMatch =
     html.match(/<meta[^>]+(?:property|name)=["'](?:article:published_time|datePublished|publishedTime)["'][^>]+content=["']([^"']+)["'][^>]*>/i) ||
@@ -82,6 +205,9 @@ function extractHeadline(html) {
 }
 
 function extractSectionItems(html) {
+  const gtabaseSections = extractGtabaseSections(html);
+  if (gtabaseSections) return gtabaseSections;
+
   const matches = [...html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>([\s\S]*?)(?=<h2[^>]*>|<\/article>|<\/body>|$)/gi)];
   const sections = [];
 
@@ -246,13 +372,25 @@ async function readSource(sourceUrl) {
   return response.text();
 }
 
+async function resolveSource(sourceUrl) {
+  if (sourceUrl) return { sourceUrl, html: await readSource(sourceUrl) };
+
+  const indexHtml = await readSource(DEFAULT_SOURCE_INDEX_URL);
+  const weeklySourceUrl = findWeeklySourceUrl(indexHtml);
+  if (!weeklySourceUrl) {
+    throw new Error(`Could not find a GTA Online weekly update link on ${DEFAULT_SOURCE_INDEX_URL}`);
+  }
+
+  return { sourceUrl: weeklySourceUrl, html: await readSource(weeklySourceUrl) };
+}
+
 async function main() {
   const sourceArgIndex = process.argv.indexOf('--source-url');
   const sourceUrl =
     sourceArgIndex >= 0 ? process.argv[sourceArgIndex + 1] : process.env.GTA_WEEKLY_SOURCE_URL;
   const outputDir = process.env.GTA_WEEKLY_OUTPUT_DIR || process.cwd();
-  const html = await readSource(sourceUrl);
-  const result = await generateWeeklyFiles({ html, outputDir, sourceUrl });
+  const resolved = await resolveSource(sourceUrl);
+  const result = await generateWeeklyFiles({ html: resolved.html, outputDir, sourceUrl: resolved.sourceUrl });
   console.log(`Generated weekly content for ${result.weekId}`);
 }
 
