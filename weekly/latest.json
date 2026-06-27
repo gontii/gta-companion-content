@@ -1,96 +1,276 @@
 {
   "weekId": "2026-06-25",
   "range": "June 25 - July 1, 2026",
-  "headline": "Fine Art Collector Program continues, 2X Acid/Fooligan/Special Vehicle/Community, 4X FIB Priority File",
+  "headline": "GTA Online Weekly Update (June 25 - July 1): Fine Art Collector Program Continues, Bonuses & Discounts",
   "quickTake": [
-    "Log in for GTA$500,000 and claim a free Benefactor Turreted Limo from Warstock Cache & Carry",
-    "Complete any Heist for GTA$1,000,000 and the NOOSE Outfit",
-    "2X GTA$ and RP on Acid Product Missions, Fooligan Jobs, Special Vehicle Races, Community Series Jobs, and The Fine Art File",
-    "4X GTA$ on FIB Priority File and 2X GTA$ on FIB Files"
+    "2X GTA$ and RP on Acid Product Missions",
+    "2X GTA$ and RP on Fooligan Jobs",
+    "2X GTA$ and RP on Special Vehicle Races",
+    "2X GTA$ and RP on Community Series Jobs"
   ],
   "sections": [
     {
       "id": "bonuses",
       "title": "Best bonuses",
       "items": [
-        { "id": "fib-priority-file-4x", "label": "4X GTA$ on FIB Priority File", "tag": "gold" },
-        { "id": "fine-art-file-2x", "label": "2X GTA$ and RP on The Fine Art File", "tag": "gold" },
-        { "id": "acid-product-2x", "label": "2X GTA$ and RP on Acid Product Missions", "tag": "gold" },
-        { "id": "fooligan-jobs-2x", "label": "2X GTA$ and RP on Fooligan Jobs", "tag": "gold" },
-        { "id": "special-vehicle-races-2x", "label": "2X GTA$ and RP on Special Vehicle Races" },
-        { "id": "community-series-2x", "label": "2X GTA$ and RP on Community Series Jobs" },
-        { "id": "fib-files-2x", "label": "2X GTA$ on FIB Files" }
+        {
+          "id": "2x-gta-and-rp-on-acid-product-missions",
+          "label": "2X GTA$ and RP on Acid Product Missions",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-and-rp-on-fooligan-jobs",
+          "label": "2X GTA$ and RP on Fooligan Jobs",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-and-rp-on-special-vehicle-races",
+          "label": "2X GTA$ and RP on Special Vehicle Races",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-and-rp-on-community-series-jobs",
+          "label": "2X GTA$ and RP on Community Series Jobs",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-and-rp-on-the-fine-art-file",
+          "label": "2X GTA$ and RP on The Fine Art File",
+          "tag": "gold"
+        },
+        {
+          "id": "4x-gta-on-fib-priority-file",
+          "label": "4X GTA$ on FIB Priority File",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-on-fib-files",
+          "label": "2X GTA$ on FIB Files",
+          "tag": "gold"
+        }
       ]
     },
     {
       "id": "challenge",
       "title": "Weekly challenge",
       "items": [
-        { "id": "complete-3-fib-files", "label": "Complete 3 FIB Files to receive GTA$100,000", "tag": "gold" }
+        {
+          "id": "complete-3-fib-files-to-receive-gta100-000",
+          "label": "Complete 3 FIB Files to receive GTA$100,000"
+        }
       ]
     },
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
       "items": [
-        { "id": "turreted-limo-free", "label": "Log in to claim a free Benefactor Turreted Limo from Warstock Cache & Carry", "tag": "limited" },
-        { "id": "login-cash-500k", "label": "Log in to receive GTA$500,000 within 72 hours", "tag": "limited" },
-        { "id": "heist-noose-outfit", "label": "Complete any Heist to receive GTA$1,000,000 and the NOOSE Outfit", "tag": "gold" },
-        { "id": "podium-coquette-d10", "label": "Diamond Casino Podium Vehicle: Coquette D10" },
-        { "id": "prize-ride-i-wagen", "label": "LS Car Meet Prize Ride: I-Wagen" }
+        {
+          "id": "log-in-to-receive-gta500-000-within-72-hours-plu",
+          "label": "Log in to receive GTA$500,000 within 72 hours, plus claim a free Turreted Limo (Sedan) from Warstock Cache & Carry",
+          "tag": "gold"
+        },
+        {
+          "id": "complete-any-heist-to-receive-gta1-000-000-withi",
+          "label": "Complete any Heist to receive GTA$1,000,000 within 72 hours, plus the NOOSE Outfit",
+          "tag": "gold"
+        },
+        {
+          "id": "mansion-owners-log-in-june-18-july-13-to-receive",
+          "label": "Mansion owners: Log in June 18-July 13 to receive a curated collection of special gifts when The Kortz Center Heist releases",
+          "tag": "limited"
+        },
+        {
+          "id": "podium-vehicle-coquette-d10",
+          "label": "Podium Vehicle: Coquette D10"
+        },
+        {
+          "id": "ls-car-meet-prize-ride-i-wagen",
+          "label": "LS Car Meet Prize Ride: I-Wagen"
+        }
       ]
     },
     {
       "id": "discounts",
       "title": "Discounts & Offers",
       "items": [
-        { "id": "brickade-6x6-40", "label": "40% off Brickade 6x6 (Acid Lab)", "tag": "limited" },
-        { "id": "darnell-bros-40", "label": "40% off Darnell Bros Garment Factory", "tag": "limited" },
-        { "id": "euros-x32-30", "label": "30% off Euros X32" },
-        { "id": "remus-30", "label": "30% off Remus" },
-        { "id": "hotring-sabre-30", "label": "30% off Hotring Sabre" },
-        { "id": "specter-30", "label": "30% off Specter" },
-        { "id": "jester-classic-30", "label": "30% off Jester Classic" },
-        { "id": "dump-30", "label": "30% off Dump" },
-        { "id": "everon-30", "label": "30% off Everon" },
-        { "id": "zorrusso-30", "label": "30% off Zorrusso" },
-        { "id": "comet-s2-cabrio-30", "label": "30% off Comet S2 Cabrio" },
-        { "id": "flash-gt-30", "label": "30% off Flash GT" }
+        {
+          "id": "40-off-brickade-6x6-acid-lab",
+          "label": "40% off Brickade 6x6 (Acid Lab)"
+        },
+        {
+          "id": "40-off-darnell-bros-garment-factory",
+          "label": "40% off Darnell Bros Garment Factory"
+        },
+        {
+          "id": "30-off-euros-x32",
+          "label": "30% off Euros X32"
+        },
+        {
+          "id": "30-off-remus",
+          "label": "30% off Remus"
+        },
+        {
+          "id": "30-off-hotring-sabre",
+          "label": "30% off Hotring Sabre"
+        },
+        {
+          "id": "30-off-specter",
+          "label": "30% off Specter"
+        },
+        {
+          "id": "30-off-jester-classic",
+          "label": "30% off Jester Classic"
+        },
+        {
+          "id": "30-off-dump",
+          "label": "30% off Dump"
+        },
+        {
+          "id": "30-off-everon",
+          "label": "30% off Everon"
+        },
+        {
+          "id": "30-off-zorrusso",
+          "label": "30% off Zorrusso"
+        },
+        {
+          "id": "30-off-comet-s2-cabrio",
+          "label": "30% off Comet S2 Cabrio"
+        },
+        {
+          "id": "30-off-flash-gt",
+          "label": "30% off Flash GT"
+        }
       ]
     },
     {
       "id": "gun-van",
       "title": "Gun Van",
       "items": [
-        { "id": "gv-baseball-bat-free", "label": "Free Baseball Bat", "tag": "limited" },
-        { "id": "gv-battle-rifle-50", "label": "50% off Battle Rifle", "tag": "limited" }
+        {
+          "id": "free-baseball-bat",
+          "label": "FREE : Baseball Bat",
+          "tag": "limited"
+        },
+        {
+          "id": "50-off-battle-rifle",
+          "label": "50% Off : Battle Rifle"
+        },
+        {
+          "id": "30-off-gta-stun-gun",
+          "label": "30% Off GTA+ : Stun Gun"
+        }
       ]
     },
     {
       "id": "other",
       "title": "Other weekly items",
       "items": [
-        { "id": "salvage-gangbanger-tigon", "label": "Salvage Yard: The Gangbanger Robbery - Tigon (Top Tier)" },
-        { "id": "salvage-podium-coquette-blackfin", "label": "Salvage Yard: The Podium Robbery - Coquette BlackFin (Standard Tier)" },
-        { "id": "salvage-mctony-clique", "label": "Salvage Yard: The McTony Robbery - Clique (Low Tier)" },
-        { "id": "premium-race-senora-freeway", "label": "Premium Race: Senora Freeway" },
-        { "id": "time-trial-elysian-island-ii", "label": "Time Trial: Elysian Island II" },
-        { "id": "hsw-time-trial-pacific-bluffs", "label": "HSW Time Trial: Pacific Bluffs to Mount Gordo" },
-        { "id": "hsw-premium-test-monstrociti", "label": "HSW Premium Test Ride: MonstroCiti" }
+        {
+          "id": "premium-deluxe-motorsport-tornado-rat-rod",
+          "label": "Premium Deluxe Motorsport: Tornado Rat Rod"
+        },
+        {
+          "id": "premium-deluxe-motorsport-esskey",
+          "label": "Premium Deluxe Motorsport: Esskey"
+        },
+        {
+          "id": "premium-deluxe-motorsport-blade",
+          "label": "Premium Deluxe Motorsport: Blade"
+        },
+        {
+          "id": "premium-deluxe-motorsport-dynasty",
+          "label": "Premium Deluxe Motorsport: Dynasty"
+        },
+        {
+          "id": "luxury-autos-walton-l35-stock",
+          "label": "Luxury Autos: Walton L35 (Stock)"
+        },
+        {
+          "id": "luxury-autos-everon-rs",
+          "label": "Luxury Autos: Everon RS"
+        },
+        {
+          "id": "test-ride-xls",
+          "label": "Test Ride: XLS"
+        },
+        {
+          "id": "test-ride-tulip",
+          "label": "Test Ride: Tulip"
+        },
+        {
+          "id": "test-ride-jester",
+          "label": "Test Ride: Jester"
+        },
+        {
+          "id": "premium-test-ride-monstrociti",
+          "label": "Premium Test Ride: MonstroCiti"
+        },
+        {
+          "id": "the-gangbanger-robbery-tigon-top-tier",
+          "label": "The Gangbanger Robbery : Tigon (Top Tier)"
+        },
+        {
+          "id": "the-podium-robbery-coquette-blackfin-standard-ti",
+          "label": "The Podium Robbery : Coquette BlackFin (Standard Tier)"
+        },
+        {
+          "id": "the-mctony-robbery-clique-low-tier",
+          "label": "The McTony Robbery : Clique (Low Tier)"
+        },
+        {
+          "id": "premium-race-senora-freeway",
+          "label": "Premium Race : Senora Freeway",
+          "tag": "limited"
+        },
+        {
+          "id": "time-tria-l-elysian-island-ii",
+          "label": "Time Tria l: Elysian Island II"
+        },
+        {
+          "id": "hsw-time-trial-pacific-bluffs-to-mount-gordo",
+          "label": "HSW Time Trial : Pacific Bluffs to Mount Gordo"
+        }
       ]
     }
   ],
   "beginnerPath": [
-    { "id": "bp-1", "label": "Log in first: this week gives you GTA$500,000 and a free Turreted Limo." },
-    { "id": "bp-2", "label": "If you own an Acid Lab, prioritize Acid Product Missions for 2X GTA$ and RP." },
-    { "id": "bp-3", "label": "If you have access to FIB Files, complete 3 for the GTA$100,000 weekly challenge and run Priority File for 4X GTA$." },
-    { "id": "bp-4", "label": "Join a Heist if you can: any Heist completion unlocks GTA$1,000,000 and the NOOSE Outfit." }
+    {
+      "id": "bp-1",
+      "label": "Start with 2X GTA$ and RP on Acid Product Missions."
+    },
+    {
+      "id": "bp-2",
+      "label": "2X GTA$ and RP on Fooligan Jobs"
+    },
+    {
+      "id": "bp-3",
+      "label": "2X GTA$ and RP on Special Vehicle Races"
+    }
   ],
   "locations": [
-    { "id": "loc-acid-lab", "activity": "Acid Product Missions (2X)", "name": "Acid Lab", "area": "Owned Acid Lab / Freakshop", "note": "Use this if your Acid Lab setup is already unlocked." },
-    { "id": "loc-fib-files", "activity": "FIB Files and FIB Priority File", "name": "Darnell Bros Garment Factory", "area": "Owned Garment Factory", "note": "Complete 3 FIB Files for the weekly challenge; Priority File pays 4X GTA$." },
-    { "id": "loc-limo", "activity": "Free Turreted Limo", "name": "Warstock Cache & Carry", "area": "In-game phone internet", "note": "Claim it for free this week after logging in." }
+    {
+      "id": "loc-bonuses",
+      "activity": "2X GTA$ and RP on Acid Product Missions",
+      "name": "Best bonuses",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    },
+    {
+      "id": "loc-challenge",
+      "activity": "Complete 3 FIB Files to receive GTA$100,000",
+      "name": "Weekly challenge",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    },
+    {
+      "id": "loc-free-vehicles",
+      "activity": "Log in to receive GTA$500,000 within 72 hours, plus claim a free Turreted Limo (Sedan) from Warstock Cache & Carry",
+      "name": "Free rewards & prize vehicles",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    }
   ],
   "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-june-25-july-1-fine-art-collector-program-continues-bonuses-discounts",
-  "generatedAt": "2026-06-26T16:55:00.000Z"
+  "generatedAt": "2026-06-27T15:33:58.229Z"
 }
