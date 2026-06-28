@@ -25,7 +25,7 @@
       "id": "challenge",
       "title": "Weekly challenge",
       "items": [
-        { "id": "carwash-challenge", "label": "Complete 3 Hands On Car Wash Legal Missions to receive GTA$100,000", "tag": "gold" }
+        { "id": "carwash-challenge", "label": "Complete 3 Hands On Car Wash Legal Missions to receive GTA$100,000", "tag": "gold", "targetCount": 3 }
       ]
     },
     {

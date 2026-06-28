@@ -56,7 +56,8 @@
       "items": [
         {
           "id": "complete-3-fib-files-to-receive-gta100-000",
-          "label": "Complete 3 FIB Files to receive GTA$100,000"
+          "label": "Complete 3 FIB Files to receive GTA$100,000",
+          "targetCount": 3
         }
       ]
     },

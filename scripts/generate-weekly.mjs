@@ -240,6 +240,12 @@ function tagFor(label) {
   return undefined;
 }
 
+function targetCountFor(label) {
+  const countMatch = label.match(/\b(?:complete|finishing|finish|all)\s+(?:all\s+)?([2-9])\b/i);
+  if (!countMatch) return undefined;
+  return Number(countMatch[1]);
+}
+
 function itemFromLabel(sectionId, label, usedIds) {
   const base = slug(label) || `${sectionId}-item`;
   let id = base;
@@ -253,6 +259,8 @@ function itemFromLabel(sectionId, label, usedIds) {
   const item = { id, label };
   const tag = tagFor(label);
   if (tag) item.tag = tag;
+  const targetCount = targetCountFor(label);
+  if (targetCount) item.targetCount = targetCount;
   return item;
 }
 
@@ -319,6 +327,12 @@ export function validateContent(content) {
     for (const item of section.items) {
       requireString(item.id, 'item.id');
       requireString(item.label, 'item.label');
+      if (
+        item.targetCount !== undefined &&
+        (!Number.isInteger(item.targetCount) || item.targetCount <= 1)
+      ) {
+        throw new Error(`item.targetCount must be an integer greater than 1: ${item.id}`);
+      }
       if (ids.has(item.id)) throw new Error(`duplicate item id: ${item.id}`);
       ids.add(item.id);
     }

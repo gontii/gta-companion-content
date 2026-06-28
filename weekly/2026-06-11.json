@@ -14,7 +14,7 @@
       "title": "Best bonuses",
       "items": [
         { "id": "community-4x", "label": "4X GTA$ and RP on the Community Mission Series", "tag": "gold" },
-        { "id": "community-bonus", "label": "GTA$500,000 bonus for completing all 7 featured Community Missions this week", "tag": "gold" },
+        { "id": "community-bonus", "label": "GTA$500,000 bonus for completing all 7 featured Community Missions this week", "tag": "gold", "targetCount": 7 },
         { "id": "chests-4x", "label": "4X GTA$ and RP on Treasure Chests" },
         { "id": "caches-3x", "label": "3X GTA$ and RP on Hidden Caches" },
         { "id": "fib-2x", "label": "2X pay on the FIB Priority File: The Black Box File" }
