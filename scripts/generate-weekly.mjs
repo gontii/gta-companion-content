@@ -3,8 +3,50 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const REQUIRED_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts', 'gun-van', 'other'];
-const DEFAULT_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
+const WEEKLY_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts', 'gun-van', 'other'];
+const GTABASE_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
+const ROCKSTAR_GRAPHQL_URL = 'https://graph.rockstargames.com?origin=https://www.rockstargames.com';
+const ROCKSTAR_GTA_ONLINE_TAG_ID = 702;
+const DEFAULT_MAX_SOURCE_AGE_DAYS = 8;
+
+const ROCKSTAR_NEWSWIRE_LIST_QUERY = `
+query NewswireList($locale: String!, $page: Int!, $limit: Int, $tagId: Int, $metaUrl: String!, $cache: Boolean = true) {
+  posts(page: $page, tagId: $tagId, locale: $locale, limit: $limit) {
+    results {
+      id: id_hash
+      url
+      title
+      name_slug
+      created
+      created_formatted
+      primary_tags { id name }
+      secondary_tags { id name }
+    }
+  }
+}
+`;
+
+const ROCKSTAR_NEWSWIRE_POST_QUERY = `
+query NewswirePost($id_hash: String!, $locale: String!, $cache: Boolean = true) {
+  post(id_hash: $id_hash, locale: $locale) {
+    id: id_hash
+    title
+    subtitle
+    content
+    created
+    created_formatted
+    posts_jsx { markup variables_us_defaulted }
+    tina {
+      id
+      payload
+      variables { keys }
+      status
+    }
+    primary_tags { id name }
+    secondary_tags { id name }
+  }
+}
+`;
 
 const SECTION_RULES = [
   { id: 'bonuses', title: 'Best bonuses', patterns: [/bonus/i, /gta\$/i, /\b[2-9]x\b/i, /rp/i] },
@@ -115,7 +157,11 @@ function extractCards(block) {
 function extractGtabaseSections(html) {
   if (!/field-entry gta5-bonuses/i.test(html)) return null;
 
-  const fineArtItems = extractListItemsFrom(blockBetween(html, /<h2[^>]*>\s*Fine Art Collector Program\s*<\/h2>/i, /<h2[^>]*>\s*Weekly Challenge\s*<\/h2>/i));
+  const fineArtItems = extractListItemsFrom(blockBetween(
+    html,
+    /<h2[^>]*>\s*Fine Art Collector Program\s*<\/h2>/i,
+    /<h2[^>]*>\s*(?:Weekly Challenge|This Week)/i,
+  ));
   const challengeItems = extractParagraphItemsFrom(blockBetween(html, /<h2[^>]*>\s*Weekly Challenge\s*<\/h2>/i, /<h2[^>]*>\s*This Week/i));
 
   const bonusItems = extractCards(extractFieldEntry(html, 'gta5-bonuses')).map((card) => {
@@ -167,7 +213,7 @@ function absoluteUrl(href, baseUrl) {
   }
 }
 
-export function findWeeklySourceUrl(indexHtml, { baseUrl = DEFAULT_SOURCE_INDEX_URL } = {}) {
+export function findWeeklySourceUrl(indexHtml, { baseUrl = GTABASE_SOURCE_INDEX_URL } = {}) {
   const links = [...String(indexHtml || '').matchAll(/<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)];
   const seen = new Set();
 
@@ -193,7 +239,14 @@ function extractPublishedWeekId(html) {
   if (!metaMatch) return null;
   const timestamp = Date.parse(cleanText(metaMatch[1]));
   if (!Number.isFinite(timestamp)) return null;
-  return thursdayWeekId(new Date(timestamp));
+  return new Date(timestamp).toISOString().slice(0, 10);
+}
+
+function sourceAgeDays(publishedDateId, now) {
+  const published = Date.parse(`${publishedDateId}T00:00:00Z`);
+  const current = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  if (!Number.isFinite(published)) return Infinity;
+  return (current - published) / 86_400_000;
 }
 
 function extractHeadline(html) {
@@ -276,14 +329,7 @@ function normalizeSections(rawSections) {
     }
   }
 
-  for (const sectionId of REQUIRED_SECTION_IDS) {
-    const bucket = buckets.get(sectionId);
-    if (bucket.items.length === 0) {
-      throw new Error(`Weekly source did not provide required section: ${sectionId}`);
-    }
-  }
-
-  return REQUIRED_SECTION_IDS.map((id) => buckets.get(id));
+  return WEEKLY_SECTION_IDS.map((id) => buckets.get(id));
 }
 
 function beginnerPathFrom(sections) {
@@ -296,7 +342,7 @@ function beginnerPathFrom(sections) {
 }
 
 function locationsFrom(sections) {
-  return sections.slice(0, 3).map((section) => ({
+  return sections.filter((section) => section.items.length > 0).slice(0, 3).map((section) => ({
     id: `loc-${section.id}`,
     activity: section.items[0].label,
     name: section.title,
@@ -317,13 +363,17 @@ export function validateContent(content) {
   if (!Array.isArray(content.quickTake) || content.quickTake.length < 3) {
     throw new Error('quickTake must contain at least 3 items');
   }
-  if (!Array.isArray(content.sections) || content.sections.length !== 6) {
-    throw new Error('sections must contain exactly 6 sections');
+  if (!Array.isArray(content.sections) || content.sections.length !== WEEKLY_SECTION_IDS.length) {
+    throw new Error(`sections must contain exactly ${WEEKLY_SECTION_IDS.length} sections`);
+  }
+  const sectionIds = content.sections.map((section) => section.id);
+  if (sectionIds.join(',') !== WEEKLY_SECTION_IDS.join(',')) {
+    throw new Error(`sections must use ids in order: ${WEEKLY_SECTION_IDS.join(', ')}`);
   }
   for (const section of content.sections) {
     requireString(section.id, 'section.id');
     requireString(section.title, 'section.title');
-    if (!Array.isArray(section.items) || section.items.length === 0) throw new Error(`section ${section.id} has no items`);
+    if (!Array.isArray(section.items)) throw new Error(`section ${section.id} has invalid items`);
     for (const item of section.items) {
       requireString(item.id, 'item.id');
       requireString(item.label, 'item.label');
@@ -344,10 +394,17 @@ export function validateContent(content) {
 
 export function buildWeeklyContent(html, options = {}) {
   const now = options.now || new Date();
-  const expectedWeekId = options.weekId || thursdayWeekId(now);
   const publishedWeekId = extractPublishedWeekId(html);
-  if (!publishedWeekId || publishedWeekId !== expectedWeekId) {
-    throw new Error(`Source is not the current weekly update. Expected ${expectedWeekId}, got ${publishedWeekId || 'unknown'}`);
+  if (!publishedWeekId) {
+    throw new Error('Source does not expose a parseable published date');
+  }
+  const expectedWeekId = options.weekId || publishedWeekId;
+  if (options.weekId && publishedWeekId !== expectedWeekId) {
+    throw new Error(`Source is not the requested weekly update. Expected ${expectedWeekId}, got ${publishedWeekId}`);
+  }
+  const maxSourceAgeDays = options.maxSourceAgeDays ?? DEFAULT_MAX_SOURCE_AGE_DAYS;
+  if (!options.weekId && sourceAgeDays(publishedWeekId, now) > maxSourceAgeDays) {
+    throw new Error(`Source is not recent enough. Expected within ${maxSourceAgeDays} days, got ${publishedWeekId}`);
   }
 
   const sections = normalizeSections(extractSectionItems(html));
@@ -405,6 +462,19 @@ export async function generateWeeklyFiles({ html, outputDir = '.', now = new Dat
   return { weekId: content.weekId, content };
 }
 
+export async function generateFirstValidWeeklyFiles(sources, options = {}) {
+  const failures = [];
+  for (const source of sources) {
+    try {
+      const result = await generateWeeklyFiles({ ...options, ...source });
+      return { ...result, sourceUrl: source.sourceUrl };
+    } catch (error) {
+      failures.push(`${source.sourceUrl || 'unknown source'}: ${error.message}`);
+    }
+  }
+  throw new Error(`No valid weekly source found. ${failures.join(' | ')}`);
+}
+
 async function readSource(sourceUrl) {
   if (!sourceUrl) throw new Error('Set GTA_WEEKLY_SOURCE_URL or pass --source-url');
   if (sourceUrl.startsWith('file://')) return readFile(fileURLToPath(sourceUrl), 'utf8');
@@ -413,16 +483,129 @@ async function readSource(sourceUrl) {
   return response.text();
 }
 
-async function resolveSource(sourceUrl) {
-  if (sourceUrl) return { sourceUrl, html: await readSource(sourceUrl) };
+async function fetchRockstarGraphql(query, variables, fetchImpl = fetch) {
+  const url = new URL(ROCKSTAR_GRAPHQL_URL);
+  url.searchParams.set('operationName', query.includes('NewswirePost') ? 'NewswirePost' : 'NewswireList');
+  url.searchParams.set('variables', JSON.stringify(variables));
+  url.searchParams.set('query', query);
+  const response = await fetchImpl(url, { headers: { 'user-agent': 'gta-companion-content-bot/1.0' } });
+  if (!response.ok) throw new Error(`Could not fetch Rockstar Newswire GraphQL: HTTP ${response.status}`);
+  const body = await response.json();
+  if (body.errors) throw new Error(`Rockstar Newswire GraphQL returned errors: ${JSON.stringify(body.errors)}`);
+  return body.data;
+}
 
-  const indexHtml = await readSource(DEFAULT_SOURCE_INDEX_URL);
-  const weeklySourceUrl = findWeeklySourceUrl(indexHtml);
-  if (!weeklySourceUrl) {
-    throw new Error(`Could not find a GTA Online weekly update link on ${DEFAULT_SOURCE_INDEX_URL}`);
+function postTags(post) {
+  return [...(post?.primary_tags || []), ...(post?.secondary_tags || [])];
+}
+
+export function findRockstarNewswirePost(posts) {
+  return (posts || []).find((post) =>
+    postTags(post).some((tag) => Number(tag.id) === ROCKSTAR_GTA_ONLINE_TAG_ID || tag.name === 'GTA Online'),
+  ) || null;
+}
+
+function parseRockstarCreated(value) {
+  const match = String(value || '').match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4}),\s*(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!match) return null;
+  let [, month, day, year, hour, minute, meridiem] = match;
+  year = Number(year) < 100 ? `20${year}` : year;
+  hour = Number(hour);
+  if (/pm/i.test(meridiem) && hour !== 12) hour += 12;
+  if (/am/i.test(meridiem) && hour === 12) hour = 0;
+  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T${String(hour).padStart(2, '0')}:${minute}:00Z`;
+}
+
+function escapeHtml(value) {
+  return cleanText(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function rockstarValueToHtml(value) {
+  if (!value || typeof value !== 'object') return [];
+  const parts = [];
+  for (const key of ['title', 'headline', 'heading']) {
+    if (typeof value[key] === 'string' && value[key].trim()) parts.push(`<h2>${escapeHtml(value[key])}</h2>`);
   }
+  for (const key of ['content', 'text', 'description']) {
+    if (typeof value[key] === 'string' && value[key].trim()) parts.push(value[key]);
+  }
+  return parts;
+}
 
-  return { sourceUrl: weeklySourceUrl, html: await readSource(weeklySourceUrl) };
+export function rockstarPostToHtml(post, sourceUrl) {
+  const created = parseRockstarCreated(post?.created) || `${new Date().toISOString().slice(0, 10)}T00:00:00Z`;
+  const keys = post?.tina?.payload?.variables?.keys || post?.tina?.variables?.keys || {};
+  const meta = post?.tina?.payload?.meta || {};
+  const bodyParts = [
+    meta.blurb ? `<p>${escapeHtml(meta.blurb)}</p>` : '',
+    post?.subtitle ? `<p>${escapeHtml(post.subtitle)}</p>` : '',
+    post?.content || '',
+    post?.posts_jsx?.markup || '',
+    ...Object.values(keys).flatMap(rockstarValueToHtml),
+  ].filter(Boolean);
+
+  return `<!doctype html>
+<html>
+  <head>
+    <title>${escapeHtml(post?.title || 'Rockstar Newswire')}</title>
+    <meta name="article:published_time" content="${created}">
+  </head>
+  <body>
+    <article data-source-url="${escapeHtml(sourceUrl || '')}">
+      <h1>${escapeHtml(post?.title || 'Rockstar Newswire')}</h1>
+      ${bodyParts.join('\n')}
+    </article>
+  </body>
+</html>`;
+}
+
+async function resolveRockstarNewswireSource(fetchImpl = fetch) {
+  const listData = await fetchRockstarGraphql(
+    ROCKSTAR_NEWSWIRE_LIST_QUERY,
+    { locale: 'en-US', page: 1, limit: 10, tagId: ROCKSTAR_GTA_ONLINE_TAG_ID, metaUrl: '/newswire', cache: true },
+    fetchImpl,
+  );
+  const postSummary = findRockstarNewswirePost(listData?.posts?.results);
+  if (!postSummary) throw new Error('Could not find a GTA Online post in Rockstar Newswire');
+  const postData = await fetchRockstarGraphql(
+    ROCKSTAR_NEWSWIRE_POST_QUERY,
+    { id_hash: postSummary.id, locale: 'en-US', cache: true },
+    fetchImpl,
+  );
+  const post = postData?.post;
+  if (!post) throw new Error(`Could not fetch Rockstar Newswire post ${postSummary.id}`);
+  const sourceUrl = `https://www.rockstargames.com${postSummary.url}`;
+  return { sourceUrl, html: rockstarPostToHtml(post, sourceUrl) };
+}
+
+async function resolveGtabaseSource() {
+  try {
+    const indexHtml = await readSource(GTABASE_SOURCE_INDEX_URL);
+    const weeklySourceUrl = findWeeklySourceUrl(indexHtml);
+    if (!weeklySourceUrl) {
+      throw new Error(`Could not find a GTA Online weekly update link on ${GTABASE_SOURCE_INDEX_URL}`);
+    }
+    return { sourceUrl: weeklySourceUrl, html: await readSource(weeklySourceUrl) };
+  } catch (error) {
+    throw new Error(`GTABase source failed: ${error.message}`);
+  }
+}
+
+async function resolveSourceCandidates(sourceUrl) {
+  if (sourceUrl) return [{ sourceUrl, html: await readSource(sourceUrl) }];
+
+  const candidates = [];
+  try {
+    candidates.push(await resolveRockstarNewswireSource());
+  } catch (error) {
+    console.warn(`Rockstar Newswire source discovery failed: ${error.message}`);
+  }
+  candidates.push(await resolveGtabaseSource());
+  return candidates;
 }
 
 async function main() {
@@ -430,9 +613,9 @@ async function main() {
   const sourceUrl =
     sourceArgIndex >= 0 ? process.argv[sourceArgIndex + 1] : process.env.GTA_WEEKLY_SOURCE_URL;
   const outputDir = process.env.GTA_WEEKLY_OUTPUT_DIR || process.cwd();
-  const resolved = await resolveSource(sourceUrl);
-  const result = await generateWeeklyFiles({ html: resolved.html, outputDir, sourceUrl: resolved.sourceUrl });
-  console.log(`Generated weekly content for ${result.weekId}`);
+  const sources = await resolveSourceCandidates(sourceUrl);
+  const result = await generateFirstValidWeeklyFiles(sources, { outputDir });
+  console.log(`Generated weekly content for ${result.weekId} from ${result.sourceUrl}`);
 }
 
 if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {

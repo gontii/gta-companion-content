@@ -46,6 +46,11 @@ The workflow:
 
 ## Manual Thursday update
 
+Primary source order:
+
+1. Rockstar Games Newswire / official GTA Online post.
+2. GTABase weekly update as fallback, verification, or completion when Rockstar has not published a parseable current weekly post yet.
+
 1. Copy the previous week's file, e.g. `weekly/2026-05-28.json` → `weekly/2026-06-04.json`.
 2. Update the fields with this week's data (same research as the newsletter):
    - `weekId` — the Thursday date, `YYYY-MM-DD`

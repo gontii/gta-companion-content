@@ -6,8 +6,11 @@ import test from 'node:test';
 
 import {
   buildWeeklyContent,
+  findRockstarNewswirePost,
   findWeeklySourceUrl,
+  generateFirstValidWeeklyFiles,
   generateWeeklyFiles,
+  rockstarPostToHtml,
   thursdayWeekId,
 } from '../scripts/generate-weekly.mjs';
 
@@ -31,6 +34,21 @@ test('builds valid weekly content from the Rockstar fixture', async () => {
   assert.ok(content.quickTake.length >= 3);
 });
 
+test('uses a mid-week source publication date as the weekly id', async () => {
+  const html = await readFile(new URL('./fixtures/rockstar-weekly.html', import.meta.url), 'utf8');
+  const midWeekHtml = html.replace(
+    'content="2026-06-18T10:00:00Z"',
+    'content="2026-07-01T10:00:00Z"',
+  );
+  const content = buildWeeklyContent(midWeekHtml, {
+    now: new Date('2026-07-02T12:00:00Z'),
+    sourceUrl: 'fixture://rockstar-mid-week',
+  });
+
+  assert.equal(content.weekId, '2026-07-01');
+  assert.equal(content.range, 'July 1 - 7, 2026');
+});
+
 test('writes weekly/<weekId>.json and weekly/latest.json', async () => {
   const html = await readFile(new URL('./fixtures/rockstar-weekly.html', import.meta.url), 'utf8');
   const dir = await mkdtemp(path.join(tmpdir(), 'gta-weekly-'));
@@ -47,6 +65,34 @@ test('writes weekly/<weekId>.json and weekly/latest.json', async () => {
     const latest = JSON.parse(await readFile(path.join(dir, 'weekly/latest.json'), 'utf8'));
     assert.equal(result.weekId, '2026-06-18');
     assert.deepEqual(latest, weekly);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('uses the first valid source candidate when the primary source is stale', async () => {
+  const html = await readFile(new URL('./fixtures/rockstar-weekly.html', import.meta.url), 'utf8');
+  const staleHtml = html.replace(
+    'content="2026-06-18T10:00:00Z"',
+    'content="2026-06-01T10:00:00Z"',
+  );
+  const currentHtml = html.replace(
+    'content="2026-06-18T10:00:00Z"',
+    'content="2026-07-01T10:00:00Z"',
+  );
+  const dir = await mkdtemp(path.join(tmpdir(), 'gta-weekly-candidates-'));
+
+  try {
+    const result = await generateFirstValidWeeklyFiles(
+      [
+        { sourceUrl: 'fixture://rockstar-stale', html: staleHtml },
+        { sourceUrl: 'fixture://gtabase-current', html: currentHtml },
+      ],
+      { outputDir: dir, now: new Date('2026-07-02T12:00:00Z') },
+    );
+
+    assert.equal(result.weekId, '2026-07-01');
+    assert.equal(result.sourceUrl, 'fixture://gtabase-current');
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
@@ -84,8 +130,53 @@ test('fails closed when the source does not match the current week', () => {
 
   assert.throws(
     () => buildWeeklyContent(oldHtml, { now: new Date('2026-06-23T12:00:00Z') }),
-    /not the current weekly update/i,
+    /not recent enough/i,
   );
+});
+
+test('finds the latest GTA Online post from the Rockstar Newswire list', () => {
+  const posts = [
+    {
+      id: 'vi',
+      url: '/newswire/article/vi/pre-order-grand-theft-auto-vi',
+      title: 'Pre-Order Grand Theft Auto VI',
+      primary_tags: [{ id: 666, name: 'Grand Theft Auto VI' }],
+    },
+    {
+      id: 'gtao',
+      url: '/newswire/article/gtao/earn-special-rewards-in-gta-online',
+      title: 'Earn Special Rewards in GTA Online',
+      primary_tags: [{ id: 702, name: 'GTA Online' }],
+    },
+  ];
+
+  assert.deepEqual(findRockstarNewswirePost(posts), posts[1]);
+});
+
+test('turns Rockstar Tina payload content into parseable article HTML', () => {
+  const html = rockstarPostToHtml(
+    {
+      title: 'Official GTA Online Update',
+      created: '7/1/26, 10:00 AM',
+      tina: {
+        payload: {
+          meta: { blurb: 'Official blurb.' },
+          variables: {
+            keys: {
+              one: { title: 'Best bonuses' },
+              two: { content: '<p><strong>2X GTA$</strong> on Casino Work.</p>' },
+            },
+          },
+        },
+      },
+    },
+    'https://www.rockstargames.com/newswire/article/test',
+  );
+
+  assert.match(html, /article:published_time/);
+  assert.match(html, /Official GTA Online Update/);
+  assert.match(html, /Best bonuses/);
+  assert.match(html, /2X GTA\$/);
 });
 
 test('finds the latest GTA Online weekly update URL from the GTABase index', () => {
@@ -173,4 +264,63 @@ test('builds valid weekly content from GTABase field-entry markup', () => {
   assert.equal(content.sections.length, 6);
   assert.ok(content.sections.find((section) => section.id === 'bonuses').items.some((item) => item.label.includes('Acid')));
   assert.ok(content.sections.find((section) => section.id === 'discounts').items.some((item) => item.label.includes('40% off')));
+});
+
+test('allows a current weekly source to omit a weekly challenge section', () => {
+  const html = `
+    <html>
+      <head><meta property="article:published_time" content="2026-07-01T08:39:29+00:00"></head>
+      <body>
+        <h1>GTA Online Weekly Update (July 1 - 13): Independence Day Bonuses</h1>
+        <h2>Independence Day Rewards</h2>
+        <ul>
+          <li>Log in to receive the Lady Liberty Bucket Hat</li>
+          <li>Complete any Business Battle to receive GTA$200,000</li>
+        </ul>
+        <h2>This Week's Bonuses &amp; Discounts</h2>
+        <ul class="fields-container">
+          <li class="field-entry gta5-bonuses full-width">
+            <h3>GTA$ &amp; RP Bonuses</h3>
+            <ul>
+              <li class="gta-bonuses item-scale">
+                <h3 class="contentheading noindex"><a title="Independence Day Land Races">Independence Day Land Races</a></h3>
+                <div class="bonus-multiplier rp">3x</div>
+                <div class="bonus-multiplier cash">3x</div>
+              </li>
+            </ul>
+          </li>
+          <li class="field-entry gta5-discounts full-width">
+            <h3>In-Game Discounts</h3>
+            <ul>
+              <li class="gta-bonuses item-scale">
+                <h3 class="contentheading noindex"><a title="Firework Launcher">Firework Launcher</a></h3>
+                <span class="badge new">-50%</span>
+              </li>
+            </ul>
+          </li>
+          <li class="field-entry showrooms-test-rides full-width">
+            <h3>Showrooms &amp; Test Rides</h3>
+            <ul>
+              <li class="gta-bonuses item-scale">
+                <div class="item-type"><span class="podium-vehicle">Podium Vehicle</span></div>
+                <h3 class="contentheading noindex"><a title="Vapid Dominator GTX">Vapid Dominator GTX</a></h3>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Salvage Yard Robberies</h3>
+        <ul><li><strong>The Duggan Robbery</strong>: Coquette BlackFin</li></ul>
+        <h3>Premium Race &amp; Trials</h3>
+        <ul><li><strong>Premium Race</strong>: Down the Drain</li></ul>
+        <h3>GUN VAN Primary Discounts</h3>
+        <ul><li><strong>FREE</strong>: Firework Launcher</li></ul>
+      </body>
+    </html>
+  `;
+
+  const content = buildWeeklyContent(html, { now: new Date('2026-07-02T12:00:00Z') });
+  assert.equal(content.weekId, '2026-07-01');
+  assert.deepEqual(content.sections.find((section) => section.id === 'challenge').items, []);
+  assert.ok(content.quickTake.length >= 3);
+  assert.ok(content.locations.length >= 3);
 });
