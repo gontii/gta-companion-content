@@ -1,109 +1,306 @@
 {
-  "weekId": "2026-07-09",
-  "range": "July 9 - 13, 2026",
-  "headline": "Independence Day Finale (July 9-13): Free Lago Zancudo Bunker, 3X Stunt Races, Ocelot Jugular Podium",
+  "weekId": "2026-07-02",
+  "range": "July 2 - 8, 2026",
+  "headline": "Enjoy Star-Spangled GTA Online Bonuses This Independence Day",
   "quickTake": [
-    "3X GTA$ and RP on the Stunt Race Series",
-    "Claim the free Lago Zancudo Bunker this week",
-    "Complete any Heist Finale for a GTA$1,000,000 bonus within 72 hours",
-    "Podium Vehicle: Ocelot Jugular"
+    "Mammoth Avenger (Plane) – 70% off",
+    "B-11 Strikeforce (Plane) – 70% off",
+    "RO-86 Alkonost (Plane) – 70% off",
+    "RM-10 Bombushka (Plane) – 70% off"
   ],
   "sections": [
     {
       "id": "bonuses",
       "title": "Best bonuses",
-      "items": [
-        { "id": "3x-gta-and-rp-on-stunt-race-series", "label": "3X GTA$ and RP on the Stunt Race Series", "tag": "gold" },
-        { "id": "2x-gta-rp-and-research-progress-on-bunker-research", "label": "2X GTA$, RP and Research Progress on Bunker Research Missions (Agent 14), plus 2X Research Speed" },
-        { "id": "2x-gta-and-rp-on-bunker-sell-missions", "label": "2X GTA$ and RP on Bunker Sell Missions" },
-        { "id": "2x-gta-and-rp-on-ammu-nation-contract-missions", "label": "2X GTA$ and RP on Ammu-Nation Contract Missions" },
-        { "id": "2x-gta-and-rp-on-running-back-remix", "label": "2X GTA$ and RP on Running Back (Remix)" },
-        { "id": "2x-gta-and-rp-on-community-series-jobs", "label": "2X GTA$ and RP on Community Series Jobs" }
-      ]
+      "items": []
     },
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "items": [
-        { "id": "complete-any-heist-finale-for-gta-1000000", "label": "Complete any Heist Finale for a GTA$1,000,000 bonus within 72 hours, plus a free NOOSE Outfit", "tag": "gold" },
-        { "id": "fine-art-collector-program-gta-500000", "label": "Earn GTA$500,000 in the Fine Art Collector Program within 72 hours and claim a free Benefactor Turreted Limo", "tag": "gold" },
-        { "id": "win-2-races-for-jumpsuit-and-gta-100000", "label": "Win 2 Races to get the Blue Jock Cranley Jumpsuit and GTA$100,000" }
-      ]
+      "items": []
     },
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "items": [
-        { "id": "free-lago-zancudo-bunker", "label": "Claim the free Lago Zancudo Bunker this week", "tag": "limited" },
-        { "id": "free-lady-liberty-bucket-hat-on-login", "label": "Log in this week for the free Lady Liberty Bucket Hat", "tag": "limited" },
-        { "id": "podium-vehicle-ocelot-jugular", "label": "Casino Podium Vehicle: Ocelot Jugular" },
-        { "id": "prize-ride-lampadati-viseris", "label": "LS Car Meet Prize Ride: Lampadati Viseris" },
-        { "id": "prize-ride-challenge-ls-car-meet-2-days", "label": "Prize Ride Challenge: win the LS Car Meet Series two days in a row" }
-      ]
+      "items": []
     },
     {
       "id": "discounts",
       "title": "Discounts & Offers",
       "items": [
-        { "id": "mobile-operations-center-70-off", "label": "Mobile Operations Center – 70% off" },
-        { "id": "benefactor-terrorbyte-70-off", "label": "Benefactor Terrorbyte – 70% off" },
-        { "id": "b-11-strikeforce-70-off", "label": "B-11 Strikeforce – 70% off" },
-        { "id": "buckingham-luxor-70-off", "label": "Buckingham Luxor – 70% off" },
-        { "id": "mammoth-avenger-70-off", "label": "Mammoth Avenger – 70% off" },
-        { "id": "rm-10-bombushka-70-off", "label": "RM-10 Bombushka – 70% off" },
-        { "id": "ro-86-alkonost-70-off", "label": "RO-86 Alkonost – 70% off" },
-        { "id": "agencies-60-off", "label": "Agencies – 60% off" },
-        { "id": "hangars-60-off", "label": "Hangars – 60% off" },
-        { "id": "declasse-scramjet-60-off", "label": "Declasse Scramjet – 60% off" },
-        { "id": "imponte-deluxo-60-off", "label": "Imponte Deluxo – 60% off" },
-        { "id": "pegassi-toreador-50-off", "label": "Pegassi Toreador – 50% off" },
-        { "id": "oppressor-mk-ii-50-off", "label": "Oppressor Mk II – 50% off" },
-        { "id": "tm-02-khanjali-50-off", "label": "TM-02 Khanjali – 50% off" },
-        { "id": "ruiner-2000-50-off", "label": "Ruiner 2000 – 50% off" },
-        { "id": "hvy-barrage-50-off", "label": "HVY Barrage – 50% off" },
-        { "id": "bunkers-and-bunker-upgrades-40-off", "label": "Bunkers and Bunker Upgrades – 40% off" }
+        {
+          "id": "mammoth-avenger-plane-70-off",
+          "label": "Mammoth Avenger (Plane) – 70% off"
+        },
+        {
+          "id": "b-11-strikeforce-plane-70-off",
+          "label": "B-11 Strikeforce (Plane) – 70% off"
+        },
+        {
+          "id": "ro-86-alkonost-plane-70-off",
+          "label": "RO-86 Alkonost (Plane) – 70% off"
+        },
+        {
+          "id": "rm-10-bombushka-plane-70-off",
+          "label": "RM-10 Bombushka (Plane) – 70% off"
+        },
+        {
+          "id": "buckingham-luxor-plane-70-off",
+          "label": "Buckingham Luxor (Plane) – 70% off"
+        },
+        {
+          "id": "mammoth-f-160-raiju-plane-50-off",
+          "label": "Mammoth F-160 Raiju (Plane) – 50% off"
+        },
+        {
+          "id": "jobuilt-p-996-lazer-plane-50-off",
+          "label": "JoBuilt P-996 LAZER (Plane) – 50% off"
+        },
+        {
+          "id": "eberhard-titan-250-d-plane-50-off",
+          "label": "Eberhard Titan 250 D (Plane) – 50% off"
+        },
+        {
+          "id": "mammoth-hydra-plane-50-off",
+          "label": "Mammoth Hydra (Plane) – 50% off"
+        },
+        {
+          "id": "buckingham-pyro-plane-50-off",
+          "label": "Buckingham Pyro (Plane) – 50% off"
+        },
+        {
+          "id": "v-65-molotok-plane-50-off",
+          "label": "V-65 Molotok (Plane) – 50% off"
+        },
+        {
+          "id": "lago-zancudo-bunker-free",
+          "label": "Lago Zancudo Bunker – Free",
+          "tag": "limited"
+        },
+        {
+          "id": "agencies-60-off",
+          "label": "Agencies – 60% off"
+        },
+        {
+          "id": "agency-upgrades-and-modifications-60-off",
+          "label": "Agency Upgrades and Modifications – 60% off"
+        },
+        {
+          "id": "hangars-60-off",
+          "label": "Hangars – 60% off"
+        },
+        {
+          "id": "hangar-upgrades-and-modifications-60-off",
+          "label": "Hangar Upgrades and Modifications – 60% off"
+        },
+        {
+          "id": "mobile-operations-center-70-off",
+          "label": "Mobile Operations Center – 70% off"
+        },
+        {
+          "id": "benefactor-terrorbyte-70-off",
+          "label": "Benefactor Terrorbyte – 70% off"
+        },
+        {
+          "id": "bunkers-40-off",
+          "label": "Bunkers – 40% off"
+        },
+        {
+          "id": "bunker-upgrades-and-modifications-40-off",
+          "label": "Bunker Upgrades and Modifications – 40% off"
+        },
+        {
+          "id": "declasse-scramjet-super-60-off",
+          "label": "Declasse Scramjet (Super) – 60% off"
+        },
+        {
+          "id": "imponte-deluxo-sports-classic-60-off",
+          "label": "Imponte Deluxo (Sports Classic) – 60% off"
+        },
+        {
+          "id": "pegassi-toreador-sports-classic-50-off",
+          "label": "Pegassi Toreador (Sports Classic) – 50% off"
+        },
+        {
+          "id": "pegassi-weaponized-ignus-super-50-off",
+          "label": "Pegassi Weaponized Ignus (Super) – 50% off"
+        },
+        {
+          "id": "pegassi-oppressor-motorcycle-50-off",
+          "label": "Pegassi Oppressor (Motorcycle) – 50% off"
+        },
+        {
+          "id": "tm-02-khanjali-military-50-off",
+          "label": "TM-02 Khanjali (Military) – 50% off"
+        },
+        {
+          "id": "coil-rocket-voltic-super-50-off",
+          "label": "Coil Rocket Voltic (Super) – 50% off"
+        },
+        {
+          "id": "benefactor-krieger-super-50-off",
+          "label": "Benefactor Krieger (Super) – 50% off"
+        },
+        {
+          "id": "imponte-ruiner-2000-muscle-50-off",
+          "label": "Imponte Ruiner 2000 (Muscle) – 50% off"
+        },
+        {
+          "id": "hvy-barrage-military-50-off",
+          "label": "HVY Barrage (Military) – 50% off"
+        },
+        {
+          "id": "vom-feuer-anti-aircraft-trailer-military-50-off",
+          "label": "Vom Feuer Anti-Aircraft Trailer (Military) – 50% off"
+        },
+        {
+          "id": "bravado-half-track-military-50-off",
+          "label": "Bravado Half-Track (Military) – 50% off"
+        },
+        {
+          "id": "declasse-weaponized-tampa-muscle-50-off",
+          "label": "Declasse Weaponized Tampa (Muscle) – 50% off"
+        },
+        {
+          "id": "vapid-liberator-off-road-40-off",
+          "label": "Vapid Liberator (Off-Road) – 40% off"
+        },
+        {
+          "id": "western-sovereign-motorcycle-40-off",
+          "label": "Western Sovereign (Motorcycle) – 40% off"
+        },
+        {
+          "id": "bermacht-sentinel-gts-sports-50-off",
+          "label": "Übermacht Sentinel GTS (Sports) – 50% off"
+        },
+        {
+          "id": "vapid-fmj-mk-v-super-50-off",
+          "label": "Vapid FMJ MK V (Super) – 50% off"
+        },
+        {
+          "id": "bravado-banshee-gts-sports-50-off",
+          "label": "Bravado Banshee GTS (Sports) – 50% off"
+        },
+        {
+          "id": "bermacht-niobe-sports-50-off",
+          "label": "Übermacht Niobe (Sports) – 50% off"
+        },
+        {
+          "id": "pegassi-torero-xo-super-50-off",
+          "label": "Pegassi Torero XO (Super) – 50% off"
+        },
+        {
+          "id": "bravado-buffalo-stx-muscle-50-off",
+          "label": "Bravado Buffalo STX (Muscle) – 50% off"
+        },
+        {
+          "id": "pegassi-ignus-super-50-off",
+          "label": "Pegassi Ignus (Super) – 50% off"
+        },
+        {
+          "id": "nagasaki-shinobi-motorcycle-50-off",
+          "label": "Nagasaki Shinobi (Motorcycle) – 50% off"
+        },
+        {
+          "id": "declasse-vigero-zx-muscle-50-off",
+          "label": "Declasse Vigero ZX (Muscle) – 50% off"
+        },
+        {
+          "id": "penaud-la-coureuse-sports-50-off",
+          "label": "Penaud La Coureuse (Sports) – 50% off"
+        },
+        {
+          "id": "bravado-buffalo-evx-muscle-50-off",
+          "label": "Bravado Buffalo EVX (Muscle) – 50% off"
+        },
+        {
+          "id": "western-police-bike-emergency-50-off",
+          "label": "Western Police Bike (Emergency) – 50% off"
+        },
+        {
+          "id": "karin-calico-gtf-sports-50-off",
+          "label": "Karin Calico GTF (Sports) – 50% off"
+        },
+        {
+          "id": "dinka-lscm-jester-rr-sports-50-off",
+          "label": "Dinka LSCM Jester RR (Sports) – 50% off"
+        },
+        {
+          "id": "pfister-growler-sports-50-off",
+          "label": "Pfister Growler (Sports) – 50% off"
+        },
+        {
+          "id": "gallivanter-baller-st-d-suv-50-off",
+          "label": "Gallivanter Baller ST-D (SUV) – 50% off"
+        },
+        {
+          "id": "grotti-lscm-cheetah-classic-sports-classic-50-of",
+          "label": "Grotti LSCM Cheetah Classic (Sports Classic) – 50% off"
+        },
+        {
+          "id": "obey-10f-sports-50-off",
+          "label": "Obey 10F (Sports) – 50% off"
+        },
+        {
+          "id": "pegassi-tezeract-super-60-off",
+          "label": "Pegassi Tezeract (Super) – 60% off"
+        },
+        {
+          "id": "verfl-d-zeno-super-60-off",
+          "label": "Överflöd Zeno (Super) – 60% off"
+        },
+        {
+          "id": "progen-emerus-super-60-off",
+          "label": "Progen Emerus (Super) – 60% off"
+        },
+        {
+          "id": "grotti-furia-super-60-off",
+          "label": "Grotti Furia (Super) – 60% off"
+        },
+        {
+          "id": "grotti-x80-proto-super-60-off",
+          "label": "Grotti X80 Proto (Super) – 60% off"
+        },
+        {
+          "id": "grotti-stinger-tt-sports-60-off",
+          "label": "Grotti Stinger TT (Sports) – 60% off"
+        }
       ]
     },
     {
       "id": "gun-van",
       "title": "Gun Van",
-      "items": [
-        { "id": "free-firework-launcher-ammo-and-musket", "label": "Free Firework Launcher, Firework Ammo and Musket", "tag": "limited" },
-        { "id": "heavy-rifle-40-off", "label": "40% off Heavy Rifle" },
-        { "id": "railgun-30-off-gta-plus", "label": "30% off Railgun for GTA+ members" }
-      ]
+      "items": []
     },
     {
       "id": "other",
       "title": "Other weekly items",
-      "items": [
-        { "id": "salvage-gangbanger-robbery-turismo-omaggio", "label": "Salvage Yard: The Gangbanger Robbery - Grotti Turismo Omaggio" },
-        { "id": "salvage-podium-robbery-cypher", "label": "Salvage Yard: The Podium Robbery - Übermacht Cypher" },
-        { "id": "salvage-duggan-robbery-eudora", "label": "Salvage Yard: The Duggan Robbery - Willard Eudora" },
-        { "id": "premium-race-muscle-in", "label": "Premium Race: Muscle In" },
-        { "id": "time-trial-lake-vinewood-estate", "label": "Time Trial: Lake Vinewood Estate" },
-        { "id": "hsw-time-trial-north-chumash-to-palomino-highlands", "label": "HSW Time Trial: North Chumash to Palomino Highlands" },
-        { "id": "ls-car-meet-test-track-and-premium-test-ride", "label": "LS Car Meet Test Track: Grotti LSCM Cheetah Classic, Obey 10F, Penaud La Coureuse; Premium Test Ride: Principe Deveste Eight" }
-      ]
+      "items": []
     }
   ],
   "beginnerPath": [
-    { "id": "bp-1", "label": "Claim the free Lago Zancudo Bunker before July 13 — zero-cost entry into a passive-income business." },
-    { "id": "bp-2", "label": "Log in for the free Lady Liberty Bucket Hat, and grab the free Firework Launcher and Musket from the Gun Van." },
-    { "id": "bp-3", "label": "Stunt Races pay 3X GTA$ and RP this week — an easy grind if you need quick cash." },
-    { "id": "bp-4", "label": "Win 2 Races for a GTA$100,000 bonus and a free jumpsuit — low effort, solid payout." },
-    { "id": "bp-5", "label": "Skip the discounted MOC, Terrorbyte and aircraft until you have your first money-making property running." }
+    {
+      "id": "bp-1",
+      "label": "Start with Mammoth Avenger (Plane) – 70% off."
+    },
+    {
+      "id": "bp-2",
+      "label": "B-11 Strikeforce (Plane) – 70% off"
+    },
+    {
+      "id": "bp-3",
+      "label": "RO-86 Alkonost (Plane) – 70% off"
+    }
   ],
   "locations": [
-    { "id": "loc-bunker", "activity": "Free Lago Zancudo Bunker", "name": "Maze Bank Foreclosures (in-game website)", "area": "Lago Zancudo", "note": "Claim via the in-game browser before the week ends." },
-    { "id": "loc-stuntrace", "activity": "Stunt Race Series (3X)", "name": "Quick Job menu", "area": "Anywhere", "note": "Pause Menu → Online → Jobs → Quick Job → Race → Stunt." },
-    { "id": "loc-casino", "activity": "Podium Vehicle: Ocelot Jugular", "name": "The Diamond Casino & Resort", "area": "East Vinewood", "note": "Spin the Lucky Wheel once per day." },
-    { "id": "loc-carmeet", "activity": "Prize Ride: Lampadati Viseris", "name": "LS Car Meet", "area": "Cypress Flats", "note": "Win the LS Car Meet Series two days in a row to claim it." },
-    { "id": "loc-gunvan", "activity": "Gun Van deals", "name": "Gun Van (rotating spot)", "area": "Changes daily", "note": "Van icon appears on the map once you are close, or check daily." },
-    { "id": "loc-timetrial", "activity": "Time Trial", "name": "Lake Vinewood Estate", "area": "Vinewood Hills", "note": "Purple stopwatch icon on the map." },
-    { "id": "loc-hsw", "activity": "HSW Time Trial", "name": "North Chumash to Palomino Highlands", "area": "North Chumash / Palomino Highlands", "note": "Requires an HSW-upgraded vehicle (PS5 / Series X|S / PC Enhanced)." },
-    { "id": "loc-premium", "activity": "Premium Race", "name": "Muscle In", "area": "Enter via the yellow corona or Quick Job menu", "note": "Premium entry fee, top 3 win big." }
+    {
+      "id": "loc-discounts",
+      "activity": "Mammoth Avenger (Plane) – 70% off",
+      "name": "Discounts & Offers",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    }
   ],
-  "sourceUrl": "https://www.gtabase.com/gta-online/weekly-update-bonuses-discounts",
-  "generatedAt": "2026-07-09T11:22:13.000Z"
+  "sourceUrl": "https://www.rockstargames.com/newswire/article/759k49k7k83293/enjoy-star-spangled-gta-online-bonuses-this-independence-day",
+  "generatedAt": "2026-07-02T14:39:37.856Z"
 }
