@@ -376,15 +376,38 @@ test('falls back to the 7-day range when the source states no range', () => {
 });
 
 test('rejects a recently-published article that describes an old period', () => {
-  // Publish date is current (passes the age gate) but the stated period is a
-  // week old — the drift guard must still fail closed.
+  // Publish date is current (passes the age gate) but the stated period already
+  // ended before the current GTA week — the overlap guard must fail closed.
   assert.throws(
     () =>
       buildWeeklyContent(
         weeklyHtml('2026-07-09T10:00:00Z', 'GTA Online Weekly Update (July 1 - 7): Last Week'),
         { now: new Date('2026-07-09T12:00:00Z') },
       ),
-    /too far from the current GTA week/i,
+    /does not overlap the current GTA week/i,
+  );
+});
+
+test('accepts a mid-week event that starts after the Thursday reset', () => {
+  // The July 9 week runs Thu Jul 9 .. Wed Jul 15. A Kortz Center Heist event
+  // starting Tue Jul 14 must be picked up by a daily run, not rejected.
+  const content = buildWeeklyContent(
+    weeklyHtml('2026-07-14T10:00:00Z', 'GTA Online Update (July 14 - 16): The Kortz Center Heist'),
+    { now: new Date('2026-07-14T15:00:00Z') },
+  );
+  assert.equal(content.weekId, '2026-07-14');
+  assert.equal(content.range, 'July 14 - 16, 2026');
+});
+
+test('rejects a premature preview of a future GTA week', () => {
+  // A next-week preview seen mid-current-week must not switch content early.
+  assert.throws(
+    () =>
+      buildWeeklyContent(
+        weeklyHtml('2026-07-14T10:00:00Z', 'GTA Online Weekly Update (July 16 - 22): Next Week Preview'),
+        { now: new Date('2026-07-14T15:00:00Z') },
+      ),
+    /does not overlap the current GTA week/i,
   );
 });
 

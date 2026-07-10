@@ -8,9 +8,11 @@ on:
         required: false
         type: string
   schedule:
-    - cron: "30 10 * * 4"
-    - cron: "30 12 * * 4"
-    - cron: "30 14 * * 4"
+    # Run once daily at 14:30 UTC. Thursday catches the new weekly (after
+    # Rockstar's usual publish window); the other days catch mid-week event
+    # changes and hotfixes. Stale/premature sources are rejected by the
+    # generator's period-overlap guard, so a daily re-run is always safe.
+    - cron: "30 14 * * *"
 
 permissions:
   contents: write

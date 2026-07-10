@@ -8,9 +8,9 @@ const GTABASE_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/new
 const ROCKSTAR_GRAPHQL_URL = 'https://graph.rockstargames.com?origin=https://www.rockstargames.com';
 const ROCKSTAR_GTA_ONLINE_TAG_ID = 702;
 const DEFAULT_MAX_SOURCE_AGE_DAYS = 7;
-// How far the parsed event start may drift from the current GTA Thursday before
-// the source is treated as stale (a full week off is always rejected).
-const MAX_WEEK_DRIFT_DAYS = 4;
+const DAY_MS = 86_400_000;
+// A GTA week runs Thursday..Wednesday (7 days from the reset).
+const WEEK_LENGTH_DAYS = 6;
 
 const ROCKSTAR_NEWSWIRE_LIST_QUERY = `
 query NewswireList($locale: String!, $page: Int!, $limit: Int, $tagId: Int, $metaUrl: String!, $cache: Boolean = true) {
@@ -112,7 +112,7 @@ function spanDays(startId, endId) {
   const start = Date.parse(`${startId}T00:00:00Z`);
   const end = Date.parse(`${endId}T00:00:00Z`);
   if (!Number.isFinite(start) || !Number.isFinite(end)) return Infinity;
-  return (end - start) / 86_400_000;
+  return (end - start) / DAY_MS;
 }
 
 // Turns a single DATE_RANGE_REGEX match into { startId, endId, rangeText },
@@ -510,14 +510,20 @@ export function buildWeeklyContent(html, options = {}) {
   if (!options.weekId && sourceAgeDays(publishedWeekId, now) > maxSourceAgeDays) {
     throw new Error(`Source is not recent enough. Expected within ${maxSourceAgeDays} days, got ${publishedWeekId}`);
   }
-  // The described period must line up with the current GTA week. This rejects a
-  // stale article whose publish date sneaks under the age gate but whose event
-  // period is a week or more old.
+  // The described period must overlap the current GTA week (Thursday..Wednesday).
+  // This rejects stale articles whose period already ended and premature previews
+  // of a future week, while still accepting mid-week events that begin after the
+  // Thursday reset — important now that the job runs every day, not just Thursday.
   if (!options.weekId) {
     const currentWeekId = thursdayWeekId(now);
-    const drift = Math.abs(spanDays(currentWeekId, expectedWeekId));
-    if (drift > MAX_WEEK_DRIFT_DAYS) {
-      throw new Error(`Source period ${expectedWeekId} is too far from the current GTA week ${currentWeekId}`);
+    const weekStartMs = Date.parse(`${currentWeekId}T00:00:00Z`);
+    const weekEndMs = weekStartMs + WEEK_LENGTH_DAYS * DAY_MS;
+    const periodStartMs = Date.parse(`${parsedRange?.startId || expectedWeekId}T00:00:00Z`);
+    const periodEndMs = parsedRange
+      ? Date.parse(`${parsedRange.endId}T00:00:00Z`)
+      : periodStartMs + WEEK_LENGTH_DAYS * DAY_MS;
+    if (periodStartMs > weekEndMs || periodEndMs < weekStartMs) {
+      throw new Error(`Source period ${expectedWeekId} does not overlap the current GTA week ${currentWeekId}`);
     }
   }
 
