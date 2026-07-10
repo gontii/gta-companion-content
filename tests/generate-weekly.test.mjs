@@ -324,3 +324,93 @@ test('allows a current weekly source to omit a weekly challenge section', () => 
   assert.ok(content.quickTake.length >= 3);
   assert.ok(content.locations.length >= 3);
 });
+
+// Minimal but schema-valid weekly article (h2/ul markup) with a chosen publish
+// date and headline, for exercising date-range parsing.
+function weeklyHtml(publish, headline) {
+  return `<html>
+    <head><meta name="article:published_time" content="${publish}"></head>
+    <body>
+      <h1>${headline}</h1>
+      <h2>Best bonuses</h2>
+      <ul><li>3X GTA$ and RP on the Stunt Race Series</li><li>2X GTA$ and RP on Bunker Sell Missions</li></ul>
+      <h2>Weekly Challenge</h2>
+      <ul><li>Complete any Heist Finale for a GTA$1,000,000 bonus</li></ul>
+      <h2>Free rewards and prize vehicles</h2>
+      <ul><li>Claim the free Lago Zancudo Bunker</li><li>Log in for the Lady Liberty Bucket Hat</li></ul>
+      <h2>Discounts</h2>
+      <ul><li>Mobile Operations Center 70% off</li></ul>
+      <h2>Gun Van</h2>
+      <ul><li>Free Firework Launcher</li></ul>
+      <h2>Other weekly items</h2>
+      <ul><li>Premium Race: Muscle In</li></ul>
+    </body>
+  </html>`;
+}
+
+test('reads a non-standard (sub-week) date range straight from the source', () => {
+  const content = buildWeeklyContent(
+    weeklyHtml('2026-07-09T10:00:00Z', 'GTA Online Weekly Update (July 9 - 13): Independence Day Finale'),
+    { now: new Date('2026-07-09T12:00:00Z') },
+  );
+  assert.equal(content.weekId, '2026-07-09');
+  assert.equal(content.range, 'July 9 - 13, 2026');
+});
+
+test('parses a cross-month date range', () => {
+  const content = buildWeeklyContent(
+    weeklyHtml('2026-07-30T10:00:00Z', 'GTA Online Weekly Update (July 30 - August 5): Summer Bonuses'),
+    { now: new Date('2026-07-30T12:00:00Z') },
+  );
+  assert.equal(content.weekId, '2026-07-30');
+  assert.equal(content.range, 'July 30 - August 5, 2026');
+});
+
+test('falls back to the 7-day range when the source states no range', () => {
+  const content = buildWeeklyContent(
+    weeklyHtml('2026-07-09T10:00:00Z', 'GTA Online Weekly Update: Independence Day Finale'),
+    { now: new Date('2026-07-09T12:00:00Z') },
+  );
+  assert.equal(content.weekId, '2026-07-09');
+  assert.equal(content.range, 'July 9 - 15, 2026');
+});
+
+test('rejects a recently-published article that describes an old period', () => {
+  // Publish date is current (passes the age gate) but the stated period is a
+  // week old — the drift guard must still fail closed.
+  assert.throws(
+    () =>
+      buildWeeklyContent(
+        weeklyHtml('2026-07-09T10:00:00Z', 'GTA Online Weekly Update (July 1 - 7): Last Week'),
+        { now: new Date('2026-07-09T12:00:00Z') },
+      ),
+    /too far from the current GTA week/i,
+  );
+});
+
+test('refuses to overwrite a newer published week with an older one', async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), 'gta-weekly-regress-'));
+  try {
+    await generateWeeklyFiles({
+      html: weeklyHtml('2026-07-09T10:00:00Z', 'GTA Online Weekly Update (July 9 - 13): Finale'),
+      outputDir: dir,
+      now: new Date('2026-07-09T12:00:00Z'),
+      sourceUrl: 'fixture://july-9',
+    });
+
+    await assert.rejects(
+      generateWeeklyFiles({
+        html: weeklyHtml('2026-07-02T10:00:00Z', 'GTA Online Weekly Update (July 2 - 8): Independence Day'),
+        outputDir: dir,
+        now: new Date('2026-07-02T12:00:00Z'),
+        sourceUrl: 'fixture://july-2',
+      }),
+      /Refusing to overwrite newer published week/i,
+    );
+
+    const latest = JSON.parse(await readFile(path.join(dir, 'weekly/latest.json'), 'utf8'));
+    assert.equal(latest.weekId, '2026-07-09');
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});

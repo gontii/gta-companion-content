@@ -7,7 +7,10 @@ const WEEKLY_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts'
 const GTABASE_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
 const ROCKSTAR_GRAPHQL_URL = 'https://graph.rockstargames.com?origin=https://www.rockstargames.com';
 const ROCKSTAR_GTA_ONLINE_TAG_ID = 702;
-const DEFAULT_MAX_SOURCE_AGE_DAYS = 8;
+const DEFAULT_MAX_SOURCE_AGE_DAYS = 7;
+// How far the parsed event start may drift from the current GTA Thursday before
+// the source is treated as stale (a full week off is always rejected).
+const MAX_WEEK_DRIFT_DAYS = 4;
 
 const ROCKSTAR_NEWSWIRE_LIST_QUERY = `
 query NewswireList($locale: String!, $page: Int!, $limit: Int, $tagId: Int, $metaUrl: String!, $cache: Boolean = true) {
@@ -61,10 +64,7 @@ function monthName(date) {
   return new Intl.DateTimeFormat('en-US', { month: 'long', timeZone: 'UTC' }).format(date);
 }
 
-function formatRange(weekId) {
-  const start = new Date(`${weekId}T00:00:00Z`);
-  const end = new Date(start);
-  end.setUTCDate(start.getUTCDate() + 6);
+function formatRangeFromDates(start, end) {
   const startMonth = monthName(start);
   const endMonth = monthName(end);
   const startDay = start.getUTCDate();
@@ -73,6 +73,107 @@ function formatRange(weekId) {
   return startMonth === endMonth
     ? `${startMonth} ${startDay} - ${endDay}, ${year}`
     : `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${year}`;
+}
+
+// Fallback used only when the source exposes no explicit date range: assume the
+// standard 7-day GTA week starting on weekId.
+function formatRange(weekId) {
+  const start = new Date(`${weekId}T00:00:00Z`);
+  const end = new Date(start);
+  end.setUTCDate(start.getUTCDate() + 6);
+  return formatRangeFromDates(start, end);
+}
+
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+// Maps every full and 3-letter month spelling to its 0-based index.
+const MONTH_INDEX = new Map(
+  MONTH_NAMES.flatMap((name, index) => [
+    [name.toLowerCase(), index],
+    [name.slice(0, 3).toLowerCase(), index],
+  ]),
+);
+const MONTH_PATTERN =
+  '(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)';
+// e.g. "July 9 - 13, 2026", "July 9-13", "July 9 to 13", "July 30 - August 5".
+const DATE_RANGE_REGEX = new RegExp(
+  `${MONTH_PATTERN}\\s+(\\d{1,2})(?:st|nd|rd|th)?\\s*(?:-|–|—|to|through|thru)\\s*(?:${MONTH_PATTERN}\\s+)?(\\d{1,2})(?:st|nd|rd|th)?(?:,?\\s*(\\d{4}))?`,
+  'gi',
+);
+const MAX_WEEK_SPAN_DAYS = 14;
+
+function dayId(year, monthIndex, day) {
+  return `${year}-${String(monthIndex + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+function spanDays(startId, endId) {
+  const start = Date.parse(`${startId}T00:00:00Z`);
+  const end = Date.parse(`${endId}T00:00:00Z`);
+  if (!Number.isFinite(start) || !Number.isFinite(end)) return Infinity;
+  return (end - start) / 86_400_000;
+}
+
+// Turns a single DATE_RANGE_REGEX match into { startId, endId, rangeText },
+// inferring a missing year (and Dec->Jan rollover) from the source publish date.
+// Returns null when the match is implausible as a GTA week.
+function rangeFromMatch(match, publishedWeekId) {
+  const startMonth = MONTH_INDEX.get(String(match[1]).slice(0, 3).toLowerCase());
+  const startDay = Number(match[2]);
+  const endMonth = match[3] != null ? MONTH_INDEX.get(String(match[3]).slice(0, 3).toLowerCase()) : startMonth;
+  const endDay = Number(match[4]);
+  const parsedYear = match[5] != null ? Number(match[5]) : null;
+  if (startMonth == null || endMonth == null) return null;
+
+  const publishedYear = Number(String(publishedWeekId || '').slice(0, 4)) || new Date().getUTCFullYear();
+  const publishedMonth = Number(String(publishedWeekId || '').slice(5, 7)) - 1;
+  let startYear = parsedYear ?? publishedYear;
+  // Article published in January about an event that began the prior December.
+  if (parsedYear == null && publishedMonth === 0 && startMonth === 11) startYear -= 1;
+  const endYear = endMonth < startMonth ? startYear + 1 : startYear;
+
+  const startId = dayId(startYear, startMonth, startDay);
+  const endId = dayId(endYear, endMonth, endDay);
+  const span = spanDays(startId, endId);
+  if (!(span >= 0 && span <= MAX_WEEK_SPAN_DAYS)) return null;
+
+  const rangeText = formatRangeFromDates(
+    new Date(`${startId}T00:00:00Z`),
+    new Date(`${endId}T00:00:00Z`),
+  );
+  return { startId, endId, rangeText };
+}
+
+// Reads the real event period straight from the article text. Prefers the
+// headline, then scans the body; when several ranges appear it picks the one
+// whose start is closest to the current GTA week. Returns null if none found.
+function extractDateRange(html, { publishedWeekId, now = new Date() } = {}) {
+  let headlineText = '';
+  try {
+    headlineText = extractHeadline(html);
+  } catch {
+    headlineText = '';
+  }
+  const bodyText = stripTags(html);
+
+  const candidates = [];
+  for (const text of [headlineText, bodyText]) {
+    if (!text) continue;
+    for (const match of text.matchAll(DATE_RANGE_REGEX)) {
+      const parsed = rangeFromMatch(match, publishedWeekId);
+      if (parsed) candidates.push(parsed);
+    }
+  }
+  if (candidates.length === 0) return null;
+
+  const anchor = Date.parse(`${thursdayWeekId(now)}T00:00:00Z`);
+  candidates.sort(
+    (a, b) =>
+      Math.abs(Date.parse(`${a.startId}T00:00:00Z`) - anchor) -
+      Math.abs(Date.parse(`${b.startId}T00:00:00Z`) - anchor),
+  );
+  return candidates[0];
 }
 
 export function thursdayWeekId(now = new Date()) {
@@ -398,7 +499,10 @@ export function buildWeeklyContent(html, options = {}) {
   if (!publishedWeekId) {
     throw new Error('Source does not expose a parseable published date');
   }
-  const expectedWeekId = options.weekId || publishedWeekId;
+  // The event's stated start date is a more reliable weekId than the article's
+  // publish date; fall back to the publish date when no range is stated.
+  const parsedRange = extractDateRange(html, { publishedWeekId, now });
+  const expectedWeekId = options.weekId || parsedRange?.startId || publishedWeekId;
   if (options.weekId && publishedWeekId !== expectedWeekId) {
     throw new Error(`Source is not the requested weekly update. Expected ${expectedWeekId}, got ${publishedWeekId}`);
   }
@@ -406,11 +510,25 @@ export function buildWeeklyContent(html, options = {}) {
   if (!options.weekId && sourceAgeDays(publishedWeekId, now) > maxSourceAgeDays) {
     throw new Error(`Source is not recent enough. Expected within ${maxSourceAgeDays} days, got ${publishedWeekId}`);
   }
+  // The described period must line up with the current GTA week. This rejects a
+  // stale article whose publish date sneaks under the age gate but whose event
+  // period is a week or more old.
+  if (!options.weekId) {
+    const currentWeekId = thursdayWeekId(now);
+    const drift = Math.abs(spanDays(currentWeekId, expectedWeekId));
+    if (drift > MAX_WEEK_DRIFT_DAYS) {
+      throw new Error(`Source period ${expectedWeekId} is too far from the current GTA week ${currentWeekId}`);
+    }
+  }
 
   const sections = normalizeSections(extractSectionItems(html));
+  // Prefer the exact range parsed from the source; fall back to the 7-day
+  // assumption only when the source stated no range for this weekId.
+  const range =
+    parsedRange && parsedRange.startId === expectedWeekId ? parsedRange.rangeText : formatRange(expectedWeekId);
   const content = {
     weekId: expectedWeekId,
-    range: formatRange(expectedWeekId),
+    range,
     headline: extractHeadline(html),
     quickTake: sections.flatMap((section) => section.items.map((item) => item.label)).slice(0, 4),
     sections,
@@ -443,10 +561,28 @@ async function readExistingWeeklyContent(weeklyDir, weekId) {
   return null;
 }
 
+async function readLatestWeekly(weeklyDir) {
+  try {
+    return JSON.parse(await readFile(path.join(weeklyDir, 'latest.json'), 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
 export async function generateWeeklyFiles({ html, outputDir = '.', now = new Date(), sourceUrl = null } = {}) {
   const content = buildWeeklyContent(html, { now, sourceUrl });
   const weeklyDir = path.join(outputDir, 'weekly');
   await mkdir(weeklyDir, { recursive: true });
+
+  // Never let a regenerated (possibly stale) source downgrade what is already
+  // published: refuse to overwrite latest.json with an older weekId. weekIds are
+  // ISO dates, so a string comparison is a chronological one.
+  const currentLatest = await readLatestWeekly(weeklyDir);
+  if (currentLatest?.weekId && currentLatest.weekId > content.weekId) {
+    throw new Error(
+      `Refusing to overwrite newer published week ${currentLatest.weekId} with older ${content.weekId}`,
+    );
+  }
 
   const existingContent = await readExistingWeeklyContent(weeklyDir, content.weekId);
   if (
