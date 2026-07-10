@@ -7,10 +7,13 @@ const WEEKLY_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts'
 const GTABASE_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
 const ROCKSTAR_GRAPHQL_URL = 'https://graph.rockstargames.com?origin=https://www.rockstargames.com';
 const ROCKSTAR_GTA_ONLINE_TAG_ID = 702;
-const DEFAULT_MAX_SOURCE_AGE_DAYS = 7;
 const DAY_MS = 86_400_000;
 // A GTA week runs Thursday..Wednesday (7 days from the reset).
 const WEEK_LENGTH_DAYS = 6;
+// Reject sources whose publish date is older than this. Guards against the
+// fallback scraper picking up a long-stale article whose low-quality parse would
+// otherwise overwrite good content; complements the period-overlap check below.
+const DEFAULT_MAX_SOURCE_AGE_DAYS = 7;
 
 const ROCKSTAR_NEWSWIRE_LIST_QUERY = `
 query NewswireList($locale: String!, $page: Int!, $limit: Int, $tagId: Int, $metaUrl: String!, $cache: Boolean = true) {
@@ -347,7 +350,7 @@ function sourceAgeDays(publishedDateId, now) {
   const published = Date.parse(`${publishedDateId}T00:00:00Z`);
   const current = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
   if (!Number.isFinite(published)) return Infinity;
-  return (current - published) / 86_400_000;
+  return (current - published) / DAY_MS;
 }
 
 function extractHeadline(html) {
