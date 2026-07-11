@@ -496,6 +496,34 @@ export function validateContent(content) {
   }
 }
 
+function shiftDayId(id, days) {
+  const ms = Date.parse(`${id}T00:00:00Z`);
+  if (!Number.isFinite(ms)) return id;
+  return new Date(ms + days * DAY_MS).toISOString().slice(0, 10);
+}
+
+// True when [periodStartId, periodEndId] intersects the current GTA week
+// (the Thursday reset through the following Wednesday).
+function periodOverlapsCurrentWeek(periodStartId, periodEndId, now = new Date()) {
+  const weekStartMs = Date.parse(`${thursdayWeekId(now)}T00:00:00Z`);
+  const weekEndMs = weekStartMs + WEEK_LENGTH_DAYS * DAY_MS;
+  const startMs = Date.parse(`${periodStartId}T00:00:00Z`);
+  const endMs = Date.parse(`${periodEndId}T00:00:00Z`);
+  if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) return false;
+  return !(startMs > weekEndMs || endMs < weekStartMs);
+}
+
+// Whether already-published weekly content still covers the current GTA week, so
+// a run that finds no fresh source can keep it instead of failing. The end date
+// is recovered from the stored range text, falling back to a 7-day window.
+export function weeklyIsCurrent(content, now = new Date()) {
+  if (!content || typeof content.weekId !== 'string') return false;
+  const parsed = extractDateRange(content.range || '', { publishedWeekId: content.weekId, now });
+  const startId = parsed?.startId || content.weekId;
+  const endId = parsed?.endId || shiftDayId(content.weekId, WEEK_LENGTH_DAYS);
+  return periodOverlapsCurrentWeek(startId, endId, now);
+}
+
 export function buildWeeklyContent(html, options = {}) {
   const now = options.now || new Date();
   const publishedWeekId = extractPublishedWeekId(html);
@@ -518,15 +546,10 @@ export function buildWeeklyContent(html, options = {}) {
   // of a future week, while still accepting mid-week events that begin after the
   // Thursday reset — important now that the job runs every day, not just Thursday.
   if (!options.weekId) {
-    const currentWeekId = thursdayWeekId(now);
-    const weekStartMs = Date.parse(`${currentWeekId}T00:00:00Z`);
-    const weekEndMs = weekStartMs + WEEK_LENGTH_DAYS * DAY_MS;
-    const periodStartMs = Date.parse(`${parsedRange?.startId || expectedWeekId}T00:00:00Z`);
-    const periodEndMs = parsedRange
-      ? Date.parse(`${parsedRange.endId}T00:00:00Z`)
-      : periodStartMs + WEEK_LENGTH_DAYS * DAY_MS;
-    if (periodStartMs > weekEndMs || periodEndMs < weekStartMs) {
-      throw new Error(`Source period ${expectedWeekId} does not overlap the current GTA week ${currentWeekId}`);
+    const periodStart = parsedRange?.startId || expectedWeekId;
+    const periodEnd = parsedRange?.endId || shiftDayId(expectedWeekId, WEEK_LENGTH_DAYS);
+    if (!periodOverlapsCurrentWeek(periodStart, periodEnd, now)) {
+      throw new Error(`Source period ${expectedWeekId} does not overlap the current GTA week ${thursdayWeekId(now)}`);
     }
   }
 
@@ -758,9 +781,25 @@ async function main() {
   const sourceUrl =
     sourceArgIndex >= 0 ? process.argv[sourceArgIndex + 1] : process.env.GTA_WEEKLY_SOURCE_URL;
   const outputDir = process.env.GTA_WEEKLY_OUTPUT_DIR || process.cwd();
+  const now = new Date();
   const sources = await resolveSourceCandidates(sourceUrl);
-  const result = await generateFirstValidWeeklyFiles(sources, { outputDir });
-  console.log(`Generated weekly content for ${result.weekId} from ${result.sourceUrl}`);
+  try {
+    const result = await generateFirstValidWeeklyFiles(sources, { outputDir, now });
+    console.log(`Generated weekly content for ${result.weekId} from ${result.sourceUrl}`);
+  } catch (error) {
+    // No fresh source this run. If the already-published content still covers the
+    // current GTA week, that is not a failure — keep it and exit cleanly so the
+    // daily job stays green when there is simply nothing new to publish. A real
+    // failure (nothing current on disk either) still surfaces as a non-zero exit.
+    const existing = await readLatestWeekly(path.join(outputDir, 'weekly'));
+    if (weeklyIsCurrent(existing, now)) {
+      console.log(
+        `No fresh source found; keeping current weekly ${existing.weekId} (still within this GTA week).`,
+      );
+      return;
+    }
+    throw error;
+  }
 }
 
 if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {

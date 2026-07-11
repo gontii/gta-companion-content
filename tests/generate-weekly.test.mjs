@@ -12,6 +12,7 @@ import {
   generateWeeklyFiles,
   rockstarPostToHtml,
   thursdayWeekId,
+  weeklyIsCurrent,
 } from '../scripts/generate-weekly.mjs';
 
 test('thursdayWeekId returns the current GTA Online Thursday', () => {
@@ -409,6 +410,19 @@ test('rejects a premature preview of a future GTA week', () => {
       ),
     /does not overlap the current GTA week/i,
   );
+});
+
+test('weeklyIsCurrent reflects whether stored content covers the current week', () => {
+  const july9 = { weekId: '2026-07-09', range: 'July 9 - 13, 2026' };
+  // Within the July 9 GTA week (Thu Jul 9 .. Wed Jul 15).
+  assert.equal(weeklyIsCurrent(july9, new Date('2026-07-12T12:00:00Z')), true);
+  // A later week has begun; the stored content is stale.
+  assert.equal(weeklyIsCurrent(july9, new Date('2026-07-20T12:00:00Z')), false);
+  // Cross-month range recovered from the stored text.
+  const crossMonth = { weekId: '2026-07-30', range: 'July 30 - August 5, 2026' };
+  assert.equal(weeklyIsCurrent(crossMonth, new Date('2026-08-03T12:00:00Z')), true);
+  // Missing/garbage content is never "current".
+  assert.equal(weeklyIsCurrent(null, new Date('2026-07-12T12:00:00Z')), false);
 });
 
 test('refuses to overwrite a newer published week with an older one', async () => {
