@@ -10,6 +10,7 @@ import {
   findWeeklySourceUrl,
   generateFirstValidWeeklyFiles,
   generateWeeklyFiles,
+  findRockstarIntelWeekly,
   rockstarPostToHtml,
   thursdayWeekId,
   weeklyIsCurrent,
@@ -410,6 +411,49 @@ test('rejects a premature preview of a future GTA week', () => {
       ),
     /does not overlap the current GTA week/i,
   );
+});
+
+test('builds valid weekly content from a RockstarINTEL event-week article', async () => {
+  const html = await readFile(new URL('./fixtures/rockstarintel-weekly.html', import.meta.url), 'utf8');
+  const content = buildWeeklyContent(html, {
+    now: new Date('2026-07-11T12:00:00Z'),
+    sourceUrl: 'fixture://rockstarintel-weekly',
+  });
+
+  // Date range comes from the "(July 9th-13th)" headline, not the publish date.
+  assert.equal(content.weekId, '2026-07-09');
+  assert.equal(content.range, 'July 9 - 13, 2026');
+  assert.equal(content.sections.length, 6);
+
+  const byId = Object.fromEntries(content.sections.map((s) => [s.id, s.items.map((i) => i.label)]));
+  // Bonuses / discounts / gun van parsed cleanly.
+  assert.ok(byId.bonuses.some((l) => l.includes('Stunt Race Series')));
+  assert.ok(byId.discounts.includes('Mobile Operations Center - 70% off'));
+  assert.ok(byId.discounts.includes('Lago Zancudo Bunker - Free'));
+  assert.ok(byId['gun-van'].includes('Heavy Rifle (40%, GTA+ 40%)'));
+  // Fine Art Collector Program + Weekly Challenge both feed the challenge section.
+  assert.ok(byId.challenge.some((l) => l.includes('GTA$1,000,000')));
+  assert.ok(byId.challenge.some((l) => l.includes('Complete three Bunker Research Missions')));
+  // Single-value <p> sections are kept as one trimmed sentence.
+  assert.ok(byId['free-vehicles'].some((l) => l.includes('Lady Liberty Bucket Hat')));
+  assert.ok(byId.other.some((l) => l === "This week's Premium Race is Muscle In"));
+  // Site chrome (GTA+ Benefits social links) is dropped everywhere.
+  const allLabels = content.sections.flatMap((s) => s.items.map((i) => i.label)).join(' | ');
+  assert.ok(!/Bluesky|RockstarINTEL/i.test(allLabels));
+  // Curly quotes are decoded.
+  assert.ok(!/&#\d+;/.test(allLabels));
+});
+
+test('findRockstarIntelWeekly picks the newest GTA Online post and skips Red Dead', () => {
+  const feed = `<rss><channel>
+    <item><title>Red Dead Online Event Month: Bounty Hunter Bonuses</title><link>https://rockstarintel.com/red-dead-online-event-month/</link></item>
+    <item><title>GTA Online Event Week: New Update Preparation (July 9th-13th)</title><link>https://rockstarintel.com/gta-online-event-week-new-update-preparation-july-9th-13th/</link></item>
+    <item><title>GTA Online Event Week: Independence Day Special (July 2nd-8th)</title><link>https://rockstarintel.com/gta-online-event-week-independence-day-special-july-2nd-8th/</link></item>
+  </channel></rss>`;
+  const weekly = findRockstarIntelWeekly(feed);
+  assert.equal(weekly.sourceUrl, 'https://rockstarintel.com/gta-online-event-week-new-update-preparation-july-9th-13th/');
+  assert.ok(/July 9th-13th/.test(weekly.title));
+  assert.equal(findRockstarIntelWeekly('<rss><channel></channel></rss>'), null);
 });
 
 test('weeklyIsCurrent reflects whether stored content covers the current week', () => {

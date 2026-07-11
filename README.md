@@ -3,7 +3,7 @@
 Weekly content for the **Companion for GTA Online** app.
 
 Production reads `weekly/latest.json` from Cloudflare KV key `weekly:latest`.
-This repo is the source of truth: Thursday automation updates JSON here, publishes
+This repo is the source of truth: a daily automation updates JSON here, publishes
 the same JSON to KV, and then smoke-tests the live gated API. No Pages redeploy
 or `PREMIUM_WEEKLY_JSON` secret rotation should be needed for normal updates.
 
@@ -16,9 +16,12 @@ or `PREMIUM_WEEKLY_JSON` secret rotation should be needed for normal updates.
    (If you use a different account/repo name, change `CONTENT_BASE_URL` in
    `src/content/config.ts` in the app repo.)
 
-## Automated Thursday update
+## Automated daily update
 
-GitHub Actions workflow: `.github/workflows/update-weekly.yml`.
+GitHub Actions workflow: `.github/workflows/update-weekly.yml`. Runs once daily
+(14:30 UTC) so mid-week event changes and hotfixes are caught, not just the
+Thursday reset. Runs with nothing new to publish exit green (the current content
+is kept); only a genuine failure with no current content on disk goes red.
 
 Required repository variable:
 
@@ -39,7 +42,7 @@ The workflow:
 
 1. Runs fixture tests for the parser.
 2. Generates `weekly/<weekId>.json` and `weekly/latest.json`.
-3. Fails closed if the source is not the current Thursday week or validation fails.
+3. Fails closed if the source period does not overlap the current GTA week or validation fails.
 4. Commits changed weekly files.
 5. Publishes `weekly/latest.json` to Cloudflare KV key `weekly:latest`.
 6. Smoke-tests `https://companion-for-gta-online.pages.dev/api/weekly`.
@@ -49,7 +52,9 @@ The workflow:
 Primary source order:
 
 1. Rockstar Games Newswire / official GTA Online post.
-2. GTABase weekly update as fallback, verification, or completion when Rockstar has not published a parseable current weekly post yet.
+2. RockstarINTEL event-week post (discovered via the `/category/event-week/` RSS feed) as fallback when Rockstar has not published a parseable current weekly post yet. Its `<h3>` sections map cleanly to our categories, including discount percentages.
+
+(The GTABase parser remains available for a manually supplied `GTA_WEEKLY_SOURCE_URL`, but is no longer in the automatic source chain.)
 
 1. Copy the previous week's file, e.g. `weekly/2026-05-28.json` → `weekly/2026-06-04.json`.
 2. Update the fields with this week's data (same research as the newsletter):

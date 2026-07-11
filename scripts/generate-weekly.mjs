@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const WEEKLY_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts', 'gun-van', 'other'];
 const GTABASE_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
+const ROCKSTAR_INTEL_FEED_URL = 'https://rockstarintel.com/category/event-week/feed/';
 const ROCKSTAR_GRAPHQL_URL = 'https://graph.rockstargames.com?origin=https://www.rockstargames.com';
 const ROCKSTAR_GTA_ONLINE_TAG_ID = 702;
 const DAY_MS = 86_400_000;
@@ -189,10 +190,12 @@ export function thursdayWeekId(now = new Date()) {
 
 function cleanText(value) {
   return String(value || '')
-    .replace(/&nbsp;/g, ' ')
+    .replace(/&nbsp;|&#160;/g, ' ')
     .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
+    .replace(/&quot;|&#8220;|&#8221;|[“”]/g, '"')
+    .replace(/&#39;|&#8217;|&#8216;|&#039;|[‘’]/g, "'")
+    .replace(/&#8211;|&#8212;|[–—]/g, '-')
+    .replace(/&#8230;|…/g, '...')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -361,7 +364,94 @@ function extractHeadline(html) {
   throw new Error('Could not find a weekly headline in the source');
 }
 
+// RockstarINTEL <h3> section heading -> our canonical section heading (which
+// normalizeSections then maps to a section id). First match wins.
+const ROCKSTAR_INTEL_SECTION_MAP = [
+  [/^bonuses$/i, 'Bonuses'],
+  [/weekly challenge/i, 'Weekly Challenge'],
+  [/collector program|fine art collector/i, 'Weekly Challenge'],
+  [/^discounts$/i, 'Discounts'],
+  [/gun van/i, 'Gun Van'],
+  [/^rewards$/i, 'Free rewards and prize vehicles'],
+  [/podium vehicle/i, 'Free rewards and prize vehicles'],
+  [/prize ride/i, 'Free rewards and prize vehicles'],
+  [/premium test ride|test track vehicles/i, 'Free rewards and prize vehicles'],
+  [/salvage yard/i, 'Other weekly items'],
+  [/premium race/i, 'Other weekly items'],
+  [/time trial/i, 'Other weekly items'],
+  [/premium deluxe motorsport|luxury autos/i, 'Other weekly items'],
+  [/fib priority file/i, 'Other weekly items'],
+];
+// Headings that are site chrome / narrative rather than weekly items.
+const ROCKSTAR_INTEL_DROP = [/gta\+ benefits/i, /upcoming gameplay/i, /how to|follow us|newsletter/i];
+// Item text that is social/nav bleed rather than a weekly item.
+const ROCKSTAR_INTEL_NOISE = /^(RockstarINTEL|Grand Theft Auto News|Red Dead News|Follow|Bluesky|Instagram|Threads|Twitter|Facebook)\b/i;
+
+function mapRockstarIntelHeading(heading) {
+  if (ROCKSTAR_INTEL_DROP.some((re) => re.test(heading))) return null;
+  const match = ROCKSTAR_INTEL_SECTION_MAP.find(([re]) => re.test(heading));
+  return match ? match[1] : null;
+}
+
+// A single-value <p> section — keep only the first sentence to avoid verbosity.
+function firstSentence(text) {
+  return cleanText(String(text || '').split(/(?<=\.)\s/)[0])
+    .replace(/\s+([.,;:])/g, '$1')
+    .replace(/\s*\.\s*$/, '')
+    .trim();
+}
+
+function rockstarIntelItems(riHeading, body) {
+  // Discounts group vehicles under <h5>PCT off</h5><ul>…</ul> — keep the percent.
+  if (/^discounts$/i.test(riHeading)) {
+    const out = [];
+    for (const group of body.split(/(?=<h5[^>]*>)/i)) {
+      const headMatch = group.match(/<h5[^>]*>([\s\S]*?)<\/h5>/i);
+      if (!headMatch) continue;
+      const pct = stripTags(headMatch[1]).replace(/\s+off$/i, '').trim();
+      const label = /free/i.test(pct) ? 'Free' : `${pct} off`;
+      for (const li of group.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)) {
+        const name = stripTags(li[1]);
+        if (name) out.push(`${name} - ${label}`);
+      }
+    }
+    return out;
+  }
+  const listItems = [...body.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)]
+    .map((m) => stripTags(m[1]))
+    .filter((x) => x && !ROCKSTAR_INTEL_NOISE.test(x));
+  if (listItems.length) return listItems;
+  const paragraph = body.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+  if (paragraph) {
+    const sentence = firstSentence(stripTags(paragraph[1]));
+    if (sentence) return [sentence];
+  }
+  return [];
+}
+
+// Parse a RockstarINTEL event-week article into raw sections. Returns null when
+// the page is not a RockstarINTEL page, so the caller can try other extractors.
+function extractRockstarIntelSections(html) {
+  if (!/rockstarintel/i.test(html)) return null;
+  const article = (html.match(/<article[\s\S]*?<\/article>/i) || [html])[0];
+  const sections = [];
+  for (const part of article.split(/(?=<h3[^>]*>)/i)) {
+    const headMatch = part.match(/<h3[^>]*>([\s\S]*?)<\/h3>/i);
+    if (!headMatch) continue;
+    const riHeading = stripTags(headMatch[1]);
+    const heading = mapRockstarIntelHeading(riHeading);
+    if (!heading) continue;
+    const body = part.slice(part.indexOf('</h3>') + 5);
+    const items = rockstarIntelItems(riHeading, body);
+    if (items.length) sections.push({ heading, items });
+  }
+  return sections.length ? sections : null;
+}
+
 function extractSectionItems(html) {
+  const rockstarIntelSections = extractRockstarIntelSections(html);
+  if (rockstarIntelSections) return rockstarIntelSections;
+
   const gtabaseSections = extractGtabaseSections(html);
   if (gtabaseSections) return gtabaseSections;
 
@@ -750,29 +840,45 @@ async function resolveRockstarNewswireSource(fetchImpl = fetch) {
   return { sourceUrl, html: rockstarPostToHtml(post, sourceUrl) };
 }
 
-async function resolveGtabaseSource() {
+// Newest GTA Online event-week entry from the RockstarINTEL WordPress RSS feed
+// (entries are newest-first; Red Dead and other posts are skipped).
+export function findRockstarIntelWeekly(feedXml) {
+  for (const [, item] of String(feedXml || '').matchAll(/<item>([\s\S]*?)<\/item>/gi)) {
+    const title = cleanText((item.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '');
+    if (!/gta online/i.test(title)) continue;
+    const link = cleanText((item.match(/<link>([\s\S]*?)<\/link>/i) || [])[1] || '');
+    if (link) return { title, sourceUrl: link };
+  }
+  return null;
+}
+
+async function resolveRockstarIntelSource() {
   try {
-    const indexHtml = await readSource(GTABASE_SOURCE_INDEX_URL);
-    const weeklySourceUrl = findWeeklySourceUrl(indexHtml);
-    if (!weeklySourceUrl) {
-      throw new Error(`Could not find a GTA Online weekly update link on ${GTABASE_SOURCE_INDEX_URL}`);
+    const feedXml = await readSource(ROCKSTAR_INTEL_FEED_URL);
+    const weekly = findRockstarIntelWeekly(feedXml);
+    if (!weekly) {
+      throw new Error(`Could not find a GTA Online event week in ${ROCKSTAR_INTEL_FEED_URL}`);
     }
-    return { sourceUrl: weeklySourceUrl, html: await readSource(weeklySourceUrl) };
+    return { sourceUrl: weekly.sourceUrl, html: await readSource(weekly.sourceUrl) };
   } catch (error) {
-    throw new Error(`GTABase source failed: ${error.message}`);
+    throw new Error(`RockstarINTEL source failed: ${error.message}`);
   }
 }
 
 async function resolveSourceCandidates(sourceUrl) {
   if (sourceUrl) return [{ sourceUrl, html: await readSource(sourceUrl) }];
 
+  // Primary: Rockstar's official Newswire. Fallback: RockstarINTEL's event-week
+  // posts, which are well-structured and easy to parse. Each is attempted
+  // independently so one failing does not drop the other.
   const candidates = [];
-  try {
-    candidates.push(await resolveRockstarNewswireSource());
-  } catch (error) {
-    console.warn(`Rockstar Newswire source discovery failed: ${error.message}`);
+  for (const resolve of [resolveRockstarNewswireSource, resolveRockstarIntelSource]) {
+    try {
+      candidates.push(await resolve());
+    } catch (error) {
+      console.warn(error.message);
+    }
   }
-  candidates.push(await resolveGtabaseSource());
   return candidates;
 }
 
