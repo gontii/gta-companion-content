@@ -545,6 +545,56 @@ function locationsFrom(sections) {
   }));
 }
 
+// Merges the hand-curated DLC overlay (dlc-overlay.json in the repo root) into
+// generated weekly content, so DLC guidance survives the daily regeneration.
+// Overlay items and locations may carry an `until: "YYYY-MM-DD"` field; expired
+// entries are dropped (the field itself never reaches published JSON). Delete
+// the overlay file to retire the section entirely.
+export function applyDlcOverlay(content, overlay, now = new Date()) {
+  if (!overlay || typeof overlay !== 'object') return content;
+  const merged = structuredClone(content);
+  const isLive = (entry) => !entry.until || Date.parse(`${entry.until}T23:59:59Z`) >= now.getTime();
+  const stripUntil = ({ until, ...entry }) => entry;
+
+  const items = Array.isArray(overlay.section?.items)
+    ? overlay.section.items.filter(isLive).map(stripUntil)
+    : [];
+  if (items.length > 0) {
+    // Scraped ids are label slugs, so one can collide with a curated dlc-* id.
+    // Rename the scraped item (mirrors the -2 dedupe in itemFromLabel).
+    const taken = new Set(items.map((item) => item.id));
+    for (const section of merged.sections) {
+      for (const item of section.items) taken.add(item.id);
+    }
+    const overlayIds = new Set(items.map((item) => item.id));
+    for (const section of merged.sections) {
+      for (const item of section.items) {
+        if (!overlayIds.has(item.id)) continue;
+        let index = 2;
+        let id = `${item.id}-${index}`;
+        while (taken.has(id)) {
+          index += 1;
+          id = `${item.id}-${index}`;
+        }
+        taken.add(id);
+        item.id = id;
+      }
+    }
+    merged.sections = [{ id: overlay.section.id, title: overlay.section.title, items }, ...merged.sections];
+  }
+
+  if (Array.isArray(overlay.quickTake) && overlay.quickTake.length > 0) {
+    merged.quickTake = [...overlay.quickTake, ...merged.quickTake];
+  }
+  const locations = Array.isArray(overlay.locations)
+    ? overlay.locations.filter(isLive).map(stripUntil)
+    : [];
+  if (locations.length > 0) {
+    merged.locations = [...locations, ...(merged.locations || [])];
+  }
+  return merged;
+}
+
 export function validateContent(content) {
   const ids = new Set();
   const requireString = (value, field) => {
@@ -557,12 +607,14 @@ export function validateContent(content) {
   if (!Array.isArray(content.quickTake) || content.quickTake.length < 3) {
     throw new Error('quickTake must contain at least 3 items');
   }
-  if (!Array.isArray(content.sections) || content.sections.length !== WEEKLY_SECTION_IDS.length) {
-    throw new Error(`sections must contain exactly ${WEEKLY_SECTION_IDS.length} sections`);
+  if (!Array.isArray(content.sections)) {
+    throw new Error('sections must be an array');
   }
   const sectionIds = content.sections.map((section) => section.id);
-  if (sectionIds.join(',') !== WEEKLY_SECTION_IDS.join(',')) {
-    throw new Error(`sections must use ids in order: ${WEEKLY_SECTION_IDS.join(', ')}`);
+  // A curated `dlc` section (from dlc-overlay.json) may lead; the standard six follow in order.
+  const expectedIds = sectionIds[0] === 'dlc' ? ['dlc', ...WEEKLY_SECTION_IDS] : WEEKLY_SECTION_IDS;
+  if (sectionIds.join(',') !== expectedIds.join(',')) {
+    throw new Error(`sections must use ids in order: ${WEEKLY_SECTION_IDS.join(', ')}, optionally preceded by dlc`);
   }
   for (const section of content.sections) {
     requireString(section.id, 'section.id');
@@ -660,8 +712,11 @@ export function buildWeeklyContent(html, options = {}) {
     generatedAt: now.toISOString(),
   };
 
-  validateContent(content);
-  return content;
+  // Overlay merges after beginnerPath/quickTake are derived, so curated DLC
+  // items (mansion prices etc.) never leak into the beginner tips.
+  const merged = applyDlcOverlay(content, options.overlay ?? null, now);
+  validateContent(merged);
+  return merged;
 }
 
 function withoutGeneratedAt(content) {
@@ -691,8 +746,19 @@ async function readLatestWeekly(weeklyDir) {
   }
 }
 
+// The overlay lives in the repo root (not weekly/) so default validate-weekly
+// runs and the workflow's `git add weekly/*.json` never touch it.
+async function readDlcOverlay(outputDir) {
+  try {
+    return JSON.parse(await readFile(path.join(outputDir, 'dlc-overlay.json'), 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
 export async function generateWeeklyFiles({ html, outputDir = '.', now = new Date(), sourceUrl = null } = {}) {
-  const content = buildWeeklyContent(html, { now, sourceUrl });
+  const overlay = await readDlcOverlay(outputDir);
+  const content = buildWeeklyContent(html, { now, sourceUrl, overlay });
   const weeklyDir = path.join(outputDir, 'weekly');
   await mkdir(weeklyDir, { recursive: true });
 
