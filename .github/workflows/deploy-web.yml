@@ -1,0 +1,60 @@
+name: Deploy web app to Cloudflare Pages
+
+# Builds the gtacompanion Expo web export and deploys it to the
+# companion-for-gta-online Pages project. Lives in this repo because the
+# Cloudflare secrets (already used for the KV publish) are configured here.
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_ref:
+        description: "gontii/gtacompanion ref to deploy"
+        required: false
+        default: "claude/app-development-xdlk24"
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-web
+  cancel-in-progress: false
+
+jobs:
+  deploy-web:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - name: Check out the app repo
+        uses: actions/checkout@v7
+        with:
+          repository: gontii/gtacompanion
+          ref: ${{ inputs.app_ref }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build web export
+        run: npm run export:web
+
+      # Deploying to any other branch name would create a preview deployment
+      # instead of updating production, so read the real production branch.
+      - name: Resolve Pages production branch
+        id: pages
+        run: |
+          PROD_BRANCH="$(curl -sf -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/companion-for-gta-online" \
+            | jq -re '.result.production_branch')" || {
+              echo "Could not read the Pages project's production branch — the API token may lack Cloudflare Pages permissions." >&2
+              exit 1
+            }
+          echo "branch=$PROD_BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy to Cloudflare Pages (production)
+        run: npx wrangler pages deploy --branch "${{ steps.pages.outputs.branch }}" --commit-dirty=true
