@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 
 import {
+  applyDlcOverlay,
   buildWeeklyContent,
   findRockstarNewswirePost,
   findWeeklySourceUrl,
@@ -13,6 +14,7 @@ import {
   findRockstarIntelWeekly,
   rockstarPostToHtml,
   thursdayWeekId,
+  validateContent,
   weeklyIsCurrent,
 } from '../scripts/generate-weekly.mjs';
 
@@ -467,6 +469,137 @@ test('weeklyIsCurrent reflects whether stored content covers the current week', 
   assert.equal(weeklyIsCurrent(crossMonth, new Date('2026-08-03T12:00:00Z')), true);
   // Missing/garbage content is never "current".
   assert.equal(weeklyIsCurrent(null, new Date('2026-07-12T12:00:00Z')), false);
+});
+
+// Minimal schema-valid content and a sample curated overlay, for exercising
+// the DLC overlay merge without going through a source parse.
+function minimalContent() {
+  return {
+    weekId: '2026-07-14',
+    range: 'July 14 - 15, 2026',
+    headline: 'Test week',
+    quickTake: ['one', 'two', 'three'],
+    sections: [
+      { id: 'bonuses', title: 'Best bonuses', items: [{ id: 'bonus-1', label: '2X GTA$ on something' }] },
+      { id: 'challenge', title: 'Weekly challenge', items: [] },
+      { id: 'free-vehicles', title: 'Free rewards & prize vehicles', items: [] },
+      { id: 'discounts', title: 'Discounts & Offers', items: [] },
+      { id: 'gun-van', title: 'Gun Van', items: [] },
+      { id: 'other', title: 'Other weekly items', items: [] },
+    ],
+    beginnerPath: [
+      { id: 'bp-1', label: 'one' },
+      { id: 'bp-2', label: 'two' },
+      { id: 'bp-3', label: 'three' },
+    ],
+    locations: [],
+  };
+}
+
+function sampleOverlay() {
+  return {
+    section: {
+      id: 'dlc',
+      title: 'New DLC: The Kortz Center Heist',
+      items: [
+        { id: 'dlc-claim-veleno-gt', label: 'Claim the free Veleno GT', tag: 'limited', until: '2026-07-21' },
+        { id: 'dlc-buy-mansion', label: 'Buy a Mansion via Dynasty 8', tag: 'gold' },
+      ],
+    },
+    quickTake: ['NEW DLC: The Kortz Center Heist is live'],
+    locations: [
+      { id: 'dlc-loc-kortz-center', activity: 'New DLC', name: 'Kortz Center', area: 'Pacific Bluffs' },
+      { id: 'dlc-loc-car-club', activity: 'New DLC', name: 'Vinewood Car Club', area: 'Downtown Vinewood', until: '2026-07-21' },
+    ],
+  };
+}
+
+test('buildWeeklyContent merges the DLC overlay after deriving beginner tips', () => {
+  const content = buildWeeklyContent(
+    weeklyHtml('2026-07-14T10:00:00Z', 'GTA Online Update (July 14 - 16): The Kortz Center Heist'),
+    { now: new Date('2026-07-14T15:00:00Z'), overlay: sampleOverlay() },
+  );
+
+  assert.equal(content.sections.length, 7);
+  assert.equal(content.sections[0].id, 'dlc');
+  assert.equal(content.sections[0].items.length, 2);
+  assert.equal(content.quickTake[0], 'NEW DLC: The Kortz Center Heist is live');
+  assert.equal(content.locations[0].id, 'dlc-loc-kortz-center');
+  // Curated purchases must not leak into the beginner path.
+  assert.ok(content.beginnerPath.every((item) => !item.id.startsWith('dlc-')));
+  assert.ok(content.beginnerPath.every((item) => !/Mansion|Veleno/.test(item.label)));
+});
+
+test('validateContent allows an optional leading dlc section only', () => {
+  const withDlc = minimalContent();
+  withDlc.sections.unshift({ id: 'dlc', title: 'New DLC', items: [{ id: 'dlc-1', label: 'Do the heist' }] });
+  validateContent(withDlc);
+
+  const misplaced = minimalContent();
+  misplaced.sections.splice(2, 0, { id: 'dlc', title: 'New DLC', items: [] });
+  assert.throws(() => validateContent(misplaced), /sections must use ids in order/i);
+
+  const unknownLead = minimalContent();
+  unknownLead.sections.unshift({ id: 'promo', title: 'Promo', items: [] });
+  assert.throws(() => validateContent(unknownLead), /sections must use ids in order/i);
+});
+
+test('applyDlcOverlay renames scraped ids that collide with curated ids', () => {
+  const content = minimalContent();
+  content.sections[0].items.push({ id: 'dlc-buy-mansion', label: 'Scraped lookalike' });
+
+  const merged = applyDlcOverlay(content, sampleOverlay(), new Date('2026-07-14T15:00:00Z'));
+
+  const curated = merged.sections[0].items.find((item) => item.label === 'Buy a Mansion via Dynasty 8');
+  const scraped = merged.sections[1].items.find((item) => item.label === 'Scraped lookalike');
+  assert.equal(curated.id, 'dlc-buy-mansion');
+  assert.equal(scraped.id, 'dlc-buy-mansion-2');
+  validateContent(merged);
+});
+
+test('applyDlcOverlay drops expired entries and strips the until field', () => {
+  const beforeExpiry = applyDlcOverlay(minimalContent(), sampleOverlay(), new Date('2026-07-14T15:00:00Z'));
+  assert.equal(beforeExpiry.sections[0].items.length, 2);
+  assert.ok(beforeExpiry.sections[0].items.every((item) => !('until' in item)));
+  assert.ok(beforeExpiry.locations.every((location) => !('until' in location)));
+
+  const afterExpiry = applyDlcOverlay(minimalContent(), sampleOverlay(), new Date('2026-07-22T12:00:00Z'));
+  assert.ok(!afterExpiry.sections[0].items.some((item) => item.id === 'dlc-claim-veleno-gt'));
+  assert.ok(!afterExpiry.locations.some((location) => location.id === 'dlc-loc-car-club'));
+
+  // When every curated item has expired, the dlc section is not added at all.
+  const allExpired = {
+    section: {
+      id: 'dlc',
+      title: 'New DLC',
+      items: [{ id: 'dlc-gone', label: 'Expired', until: '2026-07-01' }],
+    },
+  };
+  const merged = applyDlcOverlay(minimalContent(), allExpired, new Date('2026-07-22T12:00:00Z'));
+  assert.equal(merged.sections.length, 6);
+  assert.equal(merged.sections[0].id, 'bonuses');
+});
+
+test('generateWeeklyFiles merges dlc-overlay.json from the output dir', async () => {
+  const dir = await mkdtemp(path.join(tmpdir(), 'gta-weekly-overlay-'));
+  try {
+    await writeFile(path.join(dir, 'dlc-overlay.json'), JSON.stringify(sampleOverlay()));
+
+    const result = await generateWeeklyFiles({
+      html: weeklyHtml('2026-07-14T10:00:00Z', 'GTA Online Update (July 14 - 16): The Kortz Center Heist'),
+      outputDir: dir,
+      now: new Date('2026-07-14T15:00:00Z'),
+      sourceUrl: 'fixture://kortz-launch',
+    });
+
+    const latest = JSON.parse(await readFile(path.join(dir, 'weekly/latest.json'), 'utf8'));
+    assert.equal(result.weekId, '2026-07-14');
+    assert.equal(latest.sections[0].id, 'dlc');
+    assert.ok(latest.locations.some((location) => location.id === 'dlc-loc-kortz-center'));
+    assert.ok(latest.sections[0].items.every((item) => !('until' in item)));
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
 });
 
 test('refuses to overwrite a newer published week with an older one', async () => {

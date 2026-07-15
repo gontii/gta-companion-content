@@ -47,6 +47,32 @@ The workflow:
 5. Publishes `weekly/latest.json` to Cloudflare KV key `weekly:latest`.
 6. Smoke-tests `https://companion-for-gta-online.pages.dev/api/weekly`.
 
+## DLC overlay (`dlc-overlay.json`)
+
+Hand-curated DLC guidance that must survive the daily regeneration lives in
+`dlc-overlay.json` at the repo root (NOT in `weekly/` — the workflow only
+commits `weekly/*.json`, and default `validate:weekly` runs would reject it).
+The generator merges it into every generated week:
+
+- `section` — prepended as the first section (id must be `dlc`; the app renders
+  it at the top of This Week). All item ids must use the `dlc-` prefix; a
+  scraped item whose slug collides gets renamed with a `-2` suffix automatically.
+- `quickTake` — lines prepended to the generated quick take.
+- `locations` — entries prepended to the generated locations.
+- Items and locations may carry `"until": "YYYY-MM-DD"` — expired entries are
+  dropped at generation time and the `until` field itself never reaches the
+  published JSON, so limited-time advice retires itself.
+
+Caveats:
+
+- Overlay edits reach `latest.json`/KV only on the next **successful**
+  generation. To force-apply the same day, mirror the edit into
+  `weekly/latest.json` by hand (or dispatch the workflow with a valid
+  `source_url`).
+- Hand-edits to `weekly/latest.json` are clobbered by the next successful
+  generation — the overlay is the durable channel for DLC content.
+- Delete `dlc-overlay.json` to retire the DLC section entirely.
+
 ## Manual Thursday update
 
 Primary source order:
@@ -62,7 +88,8 @@ Primary source order:
    - `range` — human-readable, e.g. `"June 4 - June 10, 2026"`
    - `headline` — one line, the 2–3 biggest things
    - `quickTake` — 3–4 one-liners
-   - `sections` — ids: `bonuses`, `challenge`, `free-vehicles`, `discounts`, `gun-van`, `other`.
+   - `sections` — ids: `bonuses`, `challenge`, `free-vehicles`, `discounts`, `gun-van`, `other`
+     (optionally preceded by a `dlc` section — see "DLC overlay" above).
      Every item needs a unique `id` (kebab-case) and a `label`.
      Optional `"tag": "gold"` (top pick) or `"tag": "limited"` (expiring).
    - `beginnerPath` — 3–5 beginner tips for this week

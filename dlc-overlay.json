@@ -1,0 +1,73 @@
+{
+  "section": {
+    "id": "dlc",
+    "title": "New DLC: The Kortz Center Heist",
+    "items": [
+      {
+        "id": "dlc-claim-prelaunch-rewards",
+        "label": "Check your deliveries: pre-launch rewards (GTA$500K + Turreted Limo for logging in, GTA$1M + NOOSE Outfit for any heist, extra gifts for mansion owners) arrive within 72 hours of July 13",
+        "tag": "limited",
+        "until": "2026-07-17"
+      },
+      {
+        "id": "dlc-claim-veleno-gt",
+        "label": "GTA+ members: claim the free Grotti Veleno GT (GTA$3,000,000 value) at the Vinewood Car Club before July 21",
+        "tag": "limited",
+        "until": "2026-07-21"
+      },
+      {
+        "id": "dlc-buy-mansion",
+        "label": "Hosting the heist? Buy a Mansion via Dynasty 8 — Tongva Estate, Vinewood Residence or Richman Villa, from GTA$11.5M",
+        "tag": "gold"
+      },
+      {
+        "id": "dlc-buy-art-studio",
+        "label": "Add the Art Studio expansion (GTA$4.7M — as low as GTA$2.7M with the Elitist and GTA+ discounts) to unlock the heist planning board",
+        "tag": "gold"
+      },
+      {
+        "id": "dlc-run-kortz-heist",
+        "label": "Run The Kortz Center Heist (solo or up to 4 players) — three new paintings rotate every week, so it repeats as a money-maker",
+        "tag": "gold"
+      },
+      {
+        "id": "dlc-join-friends-heist",
+        "label": "No mansion? Join a friend's Kortz Center Heist crew — only the host needs the property"
+      }
+    ]
+  },
+  "quickTake": [
+    "NEW DLC: The Kortz Center Heist is live — plan the art heist from a Mansion Art Studio"
+  ],
+  "locations": [
+    {
+      "id": "dlc-loc-kortz-center",
+      "activity": "New DLC: The Kortz Center Heist",
+      "name": "Kortz Center",
+      "area": "Pacific Bluffs",
+      "note": "The heist target. Your first setup is a recon trip here once the planning board unlocks."
+    },
+    {
+      "id": "dlc-loc-dynasty8",
+      "activity": "New DLC: The Kortz Center Heist",
+      "name": "Dynasty 8 website (in-game phone)",
+      "area": "Los Santos",
+      "note": "Buy a Mansion (from GTA$11.5M) — required to host the heist — then add the Art Studio expansion (GTA$4.7M, cheaper with Elitist/GTA+ discounts)."
+    },
+    {
+      "id": "dlc-loc-art-studio",
+      "activity": "New DLC: The Kortz Center Heist",
+      "name": "Art Studio (mansion basement)",
+      "area": "Your Mansion",
+      "note": "First visit triggers the intro cutscene with Mr. Faber and Raf, then the heist planning board unlocks."
+    },
+    {
+      "id": "dlc-loc-car-club",
+      "activity": "New DLC: The Kortz Center Heist",
+      "name": "Vinewood Car Club",
+      "area": "Downtown Vinewood",
+      "note": "GTA+ members claim the free Grotti Veleno GT here through July 21.",
+      "until": "2026-07-21"
+    }
+  ]
+}
