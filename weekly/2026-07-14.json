@@ -4,10 +4,10 @@
   "headline": "GTA Online Event Week: The Kortz Center Heist Update Released (14th-22nd)",
   "quickTake": [
     "NEW DLC: The Kortz Center Heist is live — plan the art heist from a Mansion Art Studio",
-    "The GTA Online Weekly Challenge for this week is \"Complete The Kortz Center Heist\"",
-    "This week at the Casino in GTA Online, take your daily spin with the lucky wheel for your chance to win the Dinka Jester RR, which costs $1,970,000 from Legendary Motorsport",
-    "This week in GTA Online, place top 4in a LS Car Meet Race unlock the Obey Omnis e-GT as the Prize Ride vehicle",
-    "This week's GTA Online Premium Test Ride Vehicle is the Weeny Issi Rally for PS5, Xbox Series X/S and PC Enhanced players"
+    "4x GTA$ & RP on CEO Bodyguard Wages",
+    "3x GTA$ & RP on Community Series",
+    "3x GTA$ & RP on Sumo (Remix)",
+    "2x GTA$ & RP on HSW Time Trial (4x for GTA+)"
   ],
   "sections": [
     {
@@ -48,7 +48,28 @@
     {
       "id": "bonuses",
       "title": "Best bonuses",
-      "items": []
+      "items": [
+        {
+          "id": "4x-gta-rp-on-ceo-bodyguard-wages",
+          "label": "4x GTA$ & RP on CEO Bodyguard Wages",
+          "tag": "gold"
+        },
+        {
+          "id": "3x-gta-rp-on-community-series",
+          "label": "3x GTA$ & RP on Community Series",
+          "tag": "gold"
+        },
+        {
+          "id": "3x-gta-rp-on-sumo-remix",
+          "label": "3x GTA$ & RP on Sumo (Remix)",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-rp-on-hsw-time-trial-4x-for-gta",
+          "label": "2x GTA$ & RP on HSW Time Trial (4x for GTA+)",
+          "tag": "gold"
+        }
+      ]
     },
     {
       "id": "challenge",
@@ -192,15 +213,15 @@
   "beginnerPath": [
     {
       "id": "bp-1",
-      "label": "Start with The GTA Online Weekly Challenge for this week is \"Complete The Kortz Center Heist\"."
+      "label": "Start with 4x GTA$ & RP on CEO Bodyguard Wages."
     },
     {
       "id": "bp-2",
-      "label": "This week at the Casino in GTA Online, take your daily spin with the lucky wheel for your chance to win the Dinka Jester RR, which costs $1,970,000 from Legendary Motorsport"
+      "label": "3x GTA$ & RP on Community Series"
     },
     {
       "id": "bp-3",
-      "label": "This week in GTA Online, place top 4in a LS Car Meet Race unlock the Obey Omnis e-GT as the Prize Ride vehicle"
+      "label": "3x GTA$ & RP on Sumo (Remix)"
     }
   ],
   "locations": [
@@ -233,6 +254,13 @@
       "note": "GTA+ members claim the free Grotti Veleno GT here through July 21."
     },
     {
+      "id": "loc-bonuses",
+      "activity": "4x GTA$ & RP on CEO Bodyguard Wages",
+      "name": "Best bonuses",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    },
+    {
       "id": "loc-challenge",
       "activity": "The GTA Online Weekly Challenge for this week is \"Complete The Kortz Center Heist\"",
       "name": "Weekly challenge",
@@ -245,15 +273,8 @@
       "name": "Free rewards & prize vehicles",
       "area": "Los Santos",
       "note": "Check the in-game map, phone, or pause menu for the current entry point."
-    },
-    {
-      "id": "loc-gun-van",
-      "activity": "Tactical SMG (10%, GTA+ 20%)",
-      "name": "Gun Van",
-      "area": "Los Santos",
-      "note": "Check the in-game map, phone, or pause menu for the current entry point."
     }
   ],
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-kortz-center-heist-update-released-14th-22nd/",
-  "generatedAt": "2026-07-15T15:59:43.077Z"
+  "generatedAt": "2026-07-16T15:54:12.369Z"
 }
