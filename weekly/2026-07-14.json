@@ -15,11 +15,6 @@
       "title": "New DLC: The Kortz Center Heist",
       "items": [
         {
-          "id": "dlc-claim-prelaunch-rewards",
-          "label": "Check your deliveries: pre-launch rewards (GTA$500K + Turreted Limo for logging in, GTA$1M + NOOSE Outfit for any heist, extra gifts for mansion owners) arrive within 72 hours of July 13",
-          "tag": "limited"
-        },
-        {
           "id": "dlc-claim-veleno-gt",
           "label": "GTA+ members: claim the free Grotti Veleno GT (GTA$3,000,000 value) at the Vinewood Car Club before July 21",
           "tag": "limited"
@@ -276,5 +271,5 @@
     }
   ],
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-kortz-center-heist-update-released-14th-22nd/",
-  "generatedAt": "2026-07-16T15:54:12.369Z"
+  "generatedAt": "2026-07-18T15:28:56.417Z"
 }
