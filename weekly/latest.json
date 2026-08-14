@@ -1,13 +1,13 @@
 {
   "weekId": "2026-08-13",
-  "range": "August 13 - 20, 2026",
-  "headline": "GTA Online Event Week: Brand War (August 13th-20th)",
+  "range": "August 13 - 26, 2026",
+  "headline": "Declare Your Allegiance and Determine Who Owns Los Santos in the Brand Wars Event",
   "quickTake": [
     "NEW DLC: The Kortz Center Heist is live — plan the art heist from a Mansion Art Studio",
-    "4x GTA$ & RP on Hotring Circuit Series",
-    "4x GTA$ & RP on Freemode Challenges",
-    "4x GTA$ & RP on Freemode Events",
-    "3x GTA$ & RP on Paper Route"
+    "Hands On Car Wash - 40% off",
+    "Declasse Hotring Sabre (Sports) - Free",
+    "Bravado Hotring Hellfire (Sports) - 40% off",
+    "Karin Hotring Everon (Sports) - 40% off"
   ],
   "sections": [
     {
@@ -40,94 +40,134 @@
       "title": "Best bonuses",
       "items": [
         {
-          "id": "4x-gta-rp-on-hotring-circuit-series",
-          "label": "4x GTA$ & RP on Hotring Circuit Series",
-          "tag": "gold"
+          "id": "hands-on-car-wash-40-off",
+          "label": "Hands On Car Wash - 40% off"
         },
         {
-          "id": "4x-gta-rp-on-freemode-challenges",
-          "label": "4x GTA$ & RP on Freemode Challenges",
-          "tag": "gold"
+          "id": "declasse-hotring-sabre-sports-free",
+          "label": "Declasse Hotring Sabre (Sports) - Free",
+          "tag": "limited"
         },
         {
-          "id": "4x-gta-rp-on-freemode-events",
-          "label": "4x GTA$ & RP on Freemode Events",
-          "tag": "gold"
+          "id": "bravado-hotring-hellfire-sports-40-off",
+          "label": "Bravado Hotring Hellfire (Sports) - 40% off"
         },
         {
-          "id": "3x-gta-rp-on-paper-route",
-          "label": "3x GTA$ & RP on Paper Route",
-          "tag": "gold"
+          "id": "karin-hotring-everon-sports-40-off",
+          "label": "Karin Hotring Everon (Sports) - 40% off"
         },
         {
-          "id": "3x-gta-rp-on-firefighter",
-          "label": "3x GTA$ & RP on Firefighter",
-          "tag": "gold"
+          "id": "verfl-d-autarch-super-30-off",
+          "label": "Överflöd Autarch (Super) - 30% off"
         },
         {
-          "id": "3x-gta-rp-on-forklift-operator",
-          "label": "3x GTA$ & RP on Forklift Operator",
-          "tag": "gold"
+          "id": "pegassi-osiris-super-30-off",
+          "label": "Pegassi Osiris (Super) - 30% off"
         },
         {
-          "id": "3x-gta-rp-on-community-series",
-          "label": "3x GTA$ & RP on Community Series",
-          "tag": "gold"
+          "id": "nagasaki-weaponized-dinghy-boat-30-off",
+          "label": "Nagasaki Weaponized Dinghy (Boat) - 30% off"
+        },
+        {
+          "id": "mammoth-patriot-mil-spec-off-road-30-off",
+          "label": "Mammoth Patriot Mil-Spec (Off-Road) - 30% off"
+        },
+        {
+          "id": "obey-tailgater-s-sedan-30-off",
+          "label": "Obey Tailgater S (Sedan) - 30% off"
+        },
+        {
+          "id": "progen-gp1-super-30-off",
+          "label": "Progen GP1 (Super) - 30% off"
+        },
+        {
+          "id": "vapid-clique-wagon-muscle-30-off",
+          "label": "Vapid Clique Wagon (Muscle) - 30% off"
+        },
+        {
+          "id": "benefactor-stirling-gt-sports-classic-30-off",
+          "label": "Benefactor Stirling GT (Sports Classic) - 30% off"
+        },
+        {
+          "id": "shitzu-keitora-utility-30-off",
+          "label": "Shitzu Keitora (Utility) - 30% off"
+        },
+        {
+          "id": "bail-office-properties-upgrades-and-modification",
+          "label": "Bail Office Properties, Upgrades and Modifications - 40% off"
+        },
+        {
+          "id": "declasse-hotring-sabre-sports-free-2",
+          "label": "Declasse Hotring Sabre (Sports) - Free",
+          "tag": "limited"
+        },
+        {
+          "id": "bravado-hotring-hellfire-sports-40-off-2",
+          "label": "Bravado Hotring Hellfire (Sports) - 40% off"
+        },
+        {
+          "id": "karin-hotring-everon-sports-40-off-2",
+          "label": "Karin Hotring Everon (Sports) - 40% off"
+        },
+        {
+          "id": "declasse-scramjet-super-40",
+          "label": "Declasse Scramjet (Super) - 40%"
+        },
+        {
+          "id": "emperor-etr1-super-30-off",
+          "label": "Emperor ETR1 (Super) - 30% off"
+        },
+        {
+          "id": "western-reever-motorcycle-30-off",
+          "label": "Western Reever (Motorcycle) - 30% off"
+        },
+        {
+          "id": "pfister-comet-s2-sports-30-off",
+          "label": "Pfister Comet S2 (Sports) - 30% off"
+        },
+        {
+          "id": "canis-terminus-off-road-30-off",
+          "label": "Canis Terminus (Off-Road) - 30% off"
+        },
+        {
+          "id": "dinka-rt3000-sports-30-off",
+          "label": "Dinka RT3000 (Sports) - 30% off"
+        },
+        {
+          "id": "willard-eudora-muscle-30-off",
+          "label": "Willard Eudora (Muscle) - 30% off"
+        },
+        {
+          "id": "dinka-veto-modern-sports-30-off",
+          "label": "Dinka Veto Modern (Sports) - 30% off"
+        },
+        {
+          "id": "vapid-desert-raid-off-road-30-off",
+          "label": "Vapid Desert Raid (Off-Road) - 30% off"
+        },
+        {
+          "id": "mtl-wastelander-service-30-off",
+          "label": "MTL Wastelander (Service) - 30% off"
+        },
+        {
+          "id": "bermacht-sentinel-classic-sports-30-off",
+          "label": "Übermacht Sentinel Classic (Sports) - 30% off"
+        },
+        {
+          "id": "vapid-trophy-truck-off-road-30-off",
+          "label": "Vapid Trophy Truck (Off-Road) - 30% off"
         }
       ]
     },
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "items": [
-        {
-          "id": "the-gta-online-weekly-challenge-for-this-week-is",
-          "label": "The GTA Online Weekly Challenge for this week is \"Complete three Business Battles\""
-        }
-      ]
+      "items": []
     },
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "items": [
-        {
-          "id": "claim-sprunk-and-ecola-bodysuits-for-free-at-all",
-          "label": "Claim Sprunk and eCola Bodysuits for free at all Clothing Stores",
-          "tag": "limited"
-        },
-        {
-          "id": "claim-a-free-declasse-hotring-sabre-sports-from-",
-          "label": "Claim a free Declasse Hotring Sabre (Sports) from Southern San Andreas Super Autos",
-          "tag": "limited"
-        },
-        {
-          "id": "log-in-to-claim-the-sprunk-x-ecola-livery-for-th",
-          "label": "Log in to claim the Sprunk x eCola livery for the Declasse Hotring Sabre (Sports)",
-          "tag": "limited"
-        },
-        {
-          "id": "log-in-to-claim-sprunk-and-ecola-vanity-plates-a",
-          "label": "Log in to claim Sprunk and eCola vanity plates at Vehicle Workshops",
-          "tag": "limited"
-        },
-        {
-          "id": "this-week-at-the-casino-in-gta-online-take-your-",
-          "label": "This week at the Casino in GTA Online, take your daily spin with the lucky wheel for your chance to win the Pfister Astron, which cost $1,580,000 from Legendary Motorsport"
-        },
-        {
-          "id": "this-week-in-gta-online-place-top-4-ls-car-meet-",
-          "label": "This week in GTA Online, place top 4 LS Car Meet Race for 3 days in a row unlock the Enus Deity as the Prize Ride vehicle",
-          "tag": "limited"
-        },
-        {
-          "id": "this-week-s-gta-online-premium-test-ride-vehicle",
-          "label": "This week's GTA Online Premium Test Ride Vehicle is the Karin S95 for PS5, Xbox Series X/S and PC Enhanced players"
-        },
-        {
-          "id": "this-week-s-gta-online-test-track-vehicles-are-t",
-          "label": "This week's GTA Online Test Track Vehicles are the Vapid Clique Wagon, Överflöd Autarch & Pegassi Osiris"
-        }
-      ]
+      "items": []
     },
     {
       "id": "discounts",
@@ -137,125 +177,26 @@
     {
       "id": "gun-van",
       "title": "Gun Van",
-      "items": [
-        {
-          "id": "unholy-hellbringer-free",
-          "label": "Unholy Hellbringer (FREE)",
-          "tag": "limited"
-        },
-        {
-          "id": "battle-rifle-50-gta-50",
-          "label": "Battle Rifle (50%, GTA+ 50%)"
-        },
-        {
-          "id": "precision-rifle-10-gta-40",
-          "label": "Precision Rifle (10%, GTA+ 40%)"
-        },
-        {
-          "id": "the-shocker-10-gta-20",
-          "label": "The Shocker (10%, GTA+ 20%)"
-        },
-        {
-          "id": "up-n-atomizer-10-gta-20",
-          "label": "Up-n-Atomizer (10%, GTA+ 20%)"
-        },
-        {
-          "id": "railgun-10-gta-20",
-          "label": "Railgun (10%, GTA+ 20%)"
-        },
-        {
-          "id": "widowmaker-10-gta-20",
-          "label": "Widowmaker (10%, GTA+ 20%)"
-        },
-        {
-          "id": "tear-gas-10-gta-20",
-          "label": "Tear Gas (10%, GTA+ 20%)"
-        },
-        {
-          "id": "molotovs-10-gta-20",
-          "label": "Molotovs (10%, GTA+ 20%)"
-        },
-        {
-          "id": "sticky-bombs-10-gta-20",
-          "label": "Sticky Bombs (10%, GTA+ 20%)"
-        },
-        {
-          "id": "super-light-armor-10-gta-20",
-          "label": "Super Light Armor (10%, GTA+ 20%)"
-        },
-        {
-          "id": "light-armor-10-gta-20",
-          "label": "Light Armor (10%, GTA+ 20%)"
-        },
-        {
-          "id": "standard-armor-10-gta-20",
-          "label": "Standard Armor (10%, GTA+ 20%)"
-        },
-        {
-          "id": "heavy-armor-10-gta-20",
-          "label": "Heavy Armor (10%, GTA+ 20%)"
-        },
-        {
-          "id": "super-heavy-armor-10-gta-20",
-          "label": "Super Heavy Armor (10%, GTA+ 20%)"
-        }
-      ]
+      "items": []
     },
     {
       "id": "other",
       "title": "Other weekly items",
-      "items": [
-        {
-          "id": "the-fib-priority-file-in-gta-online-this-week-is",
-          "label": "The FIB Priority File in GTA Online this week is The Black Box File"
-        },
-        {
-          "id": "the-podium-robbery-truffade-z-type",
-          "label": "The Podium Robbery: Truffade Z-Type"
-        },
-        {
-          "id": "the-duggan-robbery-bermacht-sentinel-classic",
-          "label": "The Duggan Robbery: Übermacht Sentinel Classic"
-        },
-        {
-          "id": "the-gangbanger-robbery-vapid-caracara-4-215-4",
-          "label": "The Gangbanger Robbery: Vapid Caracara 4&#215;4"
-        },
-        {
-          "id": "the-gta-online-luxury-autos-car-dealership-locat",
-          "label": "The GTA Online Luxury Autos Car Dealership located in Rockford Hills has two cars on show for purchase"
-        },
-        {
-          "id": "simeon-s-auto-shop-has-five-cars-available-to-pu",
-          "label": "Simeon's Auto Shop has five cars available to purchase and test drive in GTA Online"
-        },
-        {
-          "id": "this-week-s-premium-race-is-a-sign-of-things-to-",
-          "label": "This week's Premium Race is A Sign of Things to Come"
-        },
-        {
-          "id": "this-week-s-hsw-time-trial-is-terminal",
-          "label": "This week's HSW Time Trial is Terminal"
-        },
-        {
-          "id": "this-week-s-time-trial-is-end-to-end",
-          "label": "This week's Time Trial is End to End"
-        }
-      ]
+      "items": []
     }
   ],
   "beginnerPath": [
     {
       "id": "bp-1",
-      "label": "Start with 4x GTA$ & RP on Hotring Circuit Series."
+      "label": "Start with Hands On Car Wash - 40% off."
     },
     {
       "id": "bp-2",
-      "label": "4x GTA$ & RP on Freemode Challenges"
+      "label": "Declasse Hotring Sabre (Sports) - Free"
     },
     {
       "id": "bp-3",
-      "label": "4x GTA$ & RP on Freemode Events"
+      "label": "Bravado Hotring Hellfire (Sports) - 40% off"
     }
   ],
   "locations": [
@@ -282,26 +223,12 @@
     },
     {
       "id": "loc-bonuses",
-      "activity": "4x GTA$ & RP on Hotring Circuit Series",
+      "activity": "Hands On Car Wash - 40% off",
       "name": "Best bonuses",
-      "area": "Los Santos",
-      "note": "Check the in-game map, phone, or pause menu for the current entry point."
-    },
-    {
-      "id": "loc-challenge",
-      "activity": "The GTA Online Weekly Challenge for this week is \"Complete three Business Battles\"",
-      "name": "Weekly challenge",
-      "area": "Los Santos",
-      "note": "Check the in-game map, phone, or pause menu for the current entry point."
-    },
-    {
-      "id": "loc-free-vehicles",
-      "activity": "Claim Sprunk and eCola Bodysuits for free at all Clothing Stores",
-      "name": "Free rewards & prize vehicles",
       "area": "Los Santos",
       "note": "Check the in-game map, phone, or pause menu for the current entry point."
     }
   ],
-  "sourceUrl": "https://rockstarintel.com/gta-online-event-week-brand-war-august-13th-20th/",
-  "generatedAt": "2026-08-13T15:29:41.538Z"
+  "sourceUrl": "https://www.rockstargames.com/newswire/article/9k2kok31k3a8k9/declare-your-allegiance-and-determine-who-owns-los-santos-in-the-brand",
+  "generatedAt": "2026-08-14T15:14:02.779Z"
 }
