@@ -361,6 +361,34 @@ test('reads a non-standard (sub-week) date range straight from the source', () =
   assert.equal(content.range, 'July 9 - 13, 2026');
 });
 
+test('does not treat a Thursday-published weekend bonus as the whole event week', () => {
+  const content = buildWeeklyContent(
+    weeklyHtml(
+      '2026-08-27T10:00:00Z',
+      'GTA Online Weekly Update: Special Weekend Bonus August 28 - 30',
+    ),
+    { now: new Date('2026-08-28T12:00:00Z') },
+  );
+  assert.equal(content.weekId, '2026-08-27');
+  assert.equal(content.range, 'August 27 - September 2, 2026');
+});
+
+test('rejects a sparse source that leaves most standard sections empty', () => {
+  const html = `<html>
+    <head><meta name="article:published_time" content="2026-08-27T10:00:00Z"></head>
+    <body>
+      <h1>GTA Online Weekly Update</h1>
+      <h2>Best bonuses</h2>
+      <ul><li>3X GTA$ on Races</li><li>2X RP on Races</li><li>30% off a vehicle</li></ul>
+    </body>
+  </html>`;
+
+  assert.throws(
+    () => buildWeeklyContent(html, { now: new Date('2026-08-28T12:00:00Z') }),
+    /expected at least 4 populated standard sections/i,
+  );
+});
+
 test('parses a cross-month date range', () => {
   const content = buildWeeklyContent(
     weeklyHtml('2026-07-30T10:00:00Z', 'GTA Online Weekly Update (July 30 - August 5): Summer Bonuses'),

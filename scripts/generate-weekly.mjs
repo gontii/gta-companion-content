@@ -674,7 +674,22 @@ export function buildWeeklyContent(html, options = {}) {
   }
   // The event's stated start date is a more reliable weekId than the article's
   // publish date; fall back to the publish date when no range is stated.
-  const parsedRange = extractDateRange(html, { publishedWeekId, now });
+  let parsedRange = extractDateRange(html, { publishedWeekId, now });
+  // A Thursday Newswire can advertise a short Friday-Sunday bonus inside the
+  // full event week. Do not let that nested weekend range replace the Thursday
+  // reset through Wednesday as the canonical weekly period.
+  if (
+    parsedRange &&
+    publishedWeekId === thursdayWeekId(now) &&
+    parsedRange.startId > publishedWeekId &&
+    spanDays(parsedRange.startId, parsedRange.endId) < WEEK_LENGTH_DAYS
+  ) {
+    parsedRange = {
+      startId: publishedWeekId,
+      endId: shiftDayId(publishedWeekId, WEEK_LENGTH_DAYS),
+      rangeText: formatRange(publishedWeekId),
+    };
+  }
   const expectedWeekId = options.weekId || parsedRange?.startId || publishedWeekId;
   if (options.weekId && publishedWeekId !== expectedWeekId) {
     throw new Error(`Source is not the requested weekly update. Expected ${expectedWeekId}, got ${publishedWeekId}`);
@@ -696,6 +711,12 @@ export function buildWeeklyContent(html, options = {}) {
   }
 
   const sections = normalizeSections(extractSectionItems(html));
+  const populatedSectionCount = sections.filter((section) => section.items.length > 0).length;
+  if (populatedSectionCount < 4) {
+    throw new Error(
+      `Weekly source is incomplete: expected at least 4 populated standard sections, got ${populatedSectionCount}`,
+    );
+  }
   // Prefer the exact range parsed from the source; fall back to the 7-day
   // assumption only when the source stated no range for this weekId.
   const range =
@@ -931,14 +952,27 @@ async function resolveRockstarIntelSource() {
   }
 }
 
+async function resolveGtabaseSource() {
+  try {
+    const indexHtml = await readSource(GTABASE_SOURCE_INDEX_URL);
+    const sourceUrl = findWeeklySourceUrl(indexHtml);
+    if (!sourceUrl) {
+      throw new Error(`Could not find a GTA Online weekly update in ${GTABASE_SOURCE_INDEX_URL}`);
+    }
+    return { sourceUrl, html: await readSource(sourceUrl) };
+  } catch (error) {
+    throw new Error(`GTABase source failed: ${error.message}`);
+  }
+}
+
 async function resolveSourceCandidates(sourceUrl) {
   if (sourceUrl) return [{ sourceUrl, html: await readSource(sourceUrl) }];
 
-  // Primary: Rockstar's official Newswire. Fallback: RockstarINTEL's event-week
-  // posts, which are well-structured and easy to parse. Each is attempted
-  // independently so one failing does not drop the other.
+  // Primary: Rockstar's official Newswire. Fallbacks: structured weekly pages
+  // from RockstarINTEL and GTABase. The completeness gate rejects a source that
+  // exposes only a weekend promotion or a single sparse section.
   const candidates = [];
-  for (const resolve of [resolveRockstarNewswireSource, resolveRockstarIntelSource]) {
+  for (const resolve of [resolveRockstarNewswireSource, resolveRockstarIntelSource, resolveGtabaseSource]) {
     try {
       candidates.push(await resolve());
     } catch (error) {
