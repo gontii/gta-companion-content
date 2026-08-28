@@ -746,6 +746,15 @@ function withoutGeneratedAt(content) {
   return clone;
 }
 
+function weeklyItemCount(content) {
+  return Array.isArray(content?.sections)
+    ? content.sections.reduce(
+        (total, section) => total + (Array.isArray(section?.items) ? section.items.length : 0),
+        0,
+      )
+    : 0;
+}
+
 async function readExistingWeeklyContent(weeklyDir, weekId) {
   const candidates = [path.join(weeklyDir, `${weekId}.json`), path.join(weeklyDir, 'latest.json')];
   for (const candidate of candidates) {
@@ -791,6 +800,16 @@ export async function generateWeeklyFiles({ html, outputDir = '.', now = new Dat
     throw new Error(
       `Refusing to overwrite newer published week ${currentLatest.weekId} with older ${content.weekId}`,
     );
+  }
+  if (
+    currentLatest?.weekId === content.weekId &&
+    weeklyItemCount(currentLatest) > weeklyItemCount(content)
+  ) {
+    console.log(
+      `Keeping richer existing weekly ${content.weekId}: ` +
+        `${weeklyItemCount(currentLatest)} items versus ${weeklyItemCount(content)} generated items.`,
+    );
+    return { weekId: currentLatest.weekId, content: currentLatest, preservedExisting: true };
   }
 
   const existingContent = await readExistingWeeklyContent(weeklyDir, content.weekId);

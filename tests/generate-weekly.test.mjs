@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
@@ -124,6 +124,38 @@ test('keeps generated weekly files unchanged when only generatedAt would change'
     const second = await readFile(path.join(dir, 'weekly/latest.json'), 'utf8');
 
     assert.equal(second, first);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('keeps richer existing content when the same week generates fewer items', async () => {
+  const html = await readFile(new URL('./fixtures/rockstar-weekly.html', import.meta.url), 'utf8');
+  const dir = await mkdtemp(path.join(tmpdir(), 'gta-weekly-richer-existing-'));
+
+  try {
+    const existing = buildWeeklyContent(html, {
+      now: new Date('2026-06-23T12:00:00Z'),
+      sourceUrl: 'fixture://rockstar-weekly',
+    });
+    existing.sections.find((section) => section.id === 'other').items.push({
+      id: 'manual-extra-item',
+      label: 'Manually verified extra weekly item',
+    });
+    await mkdir(path.join(dir, 'weekly'), { recursive: true });
+    await writeFile(path.join(dir, 'weekly', 'latest.json'), `${JSON.stringify(existing, null, 2)}\n`);
+    await writeFile(path.join(dir, 'weekly', '2026-06-18.json'), `${JSON.stringify(existing, null, 2)}\n`);
+
+    const result = await generateWeeklyFiles({
+      html,
+      outputDir: dir,
+      now: new Date('2026-06-24T12:00:00Z'),
+      sourceUrl: 'fixture://rockstar-weekly',
+    });
+    const latest = JSON.parse(await readFile(path.join(dir, 'weekly', 'latest.json'), 'utf8'));
+
+    assert.equal(result.preservedExisting, true);
+    assert.ok(latest.sections.find((section) => section.id === 'other').items.some((item) => item.id === 'manual-extra-item'));
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
