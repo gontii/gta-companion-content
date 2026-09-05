@@ -20,7 +20,7 @@
         },
         {
           "id": "dlc-buy-art-studio",
-          "label": "Add the Art Studio expansion (GTA$4.7M — as low as GTA$2.7M with the Elitist and GTA+ discounts) to unlock the heist planning board",
+          "label": "Add the Art Studio expansion (GTA$4.7M) to unlock the heist planning board",
           "tag": "gold"
         },
         {
@@ -241,7 +241,7 @@
       "activity": "New DLC: The Kortz Center Heist",
       "name": "Dynasty 8 website (in-game phone)",
       "area": "Los Santos",
-      "note": "Buy a Mansion (from GTA$11.5M) — required to host the heist — then add the Art Studio expansion (GTA$4.7M, cheaper with Elitist/GTA+ discounts)."
+      "note": "Buy a Mansion (from GTA$11.5M) — required to host the heist — then add the Art Studio expansion (GTA$4.7M)."
     },
     {
       "id": "dlc-loc-art-studio",
