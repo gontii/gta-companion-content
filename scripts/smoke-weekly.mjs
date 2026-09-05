@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { applySeasonalContent, isRetiredDlcAnnouncement, isSeasonalEvent } from './seasonal-content.mjs';
+
 const baseUrl = process.env.SMOKE_BASE_URL || 'https://companion-for-gta-online.pages.dev';
 const code = process.env.BETA_SMOKE_CODE;
 const email = process.env.SMOKE_TEST_EMAIL || 'smoke@gta-companion.local';
@@ -42,6 +44,22 @@ async function main() {
     throw new Error(`/api/weekly weekId ${weeklyBody.weekId}, expected ${expectedWeekId}`);
   }
 
+  if (weeklyBody.quickTake?.some(isRetiredDlcAnnouncement)) {
+    throw new Error('Retired DLC announcement is still published');
+  }
+  const expected = applySeasonalContent(weeklyBody);
+  if (expected.seasonalEvent) {
+    if (!isSeasonalEvent(weeklyBody.seasonalEvent) ||
+        JSON.stringify(weeklyBody.seasonalEvent) !== JSON.stringify(expected.seasonalEvent)) {
+      throw new Error('Seasonal event is missing or differs from curated content');
+    }
+    const challenge = value => value.sections.find(s => s.id === 'challenge')?.items;
+    if (JSON.stringify(challenge(weeklyBody)) !== JSON.stringify(challenge(expected))) {
+      throw new Error('Weekly challenge does not include the curated seasonal reward');
+    }
+  } else if (weeklyBody.seasonalEvent?.id === 'business-rivalries-2026-09') {
+    throw new Error('Expired seasonal event is still published');
+  }
   console.log(`Smoke test passed for weekId ${expectedWeekId}`);
 }
 

@@ -36,9 +36,7 @@
       }
     ]
   },
-  "quickTake": [
-    "NEW DLC: The Kortz Center Heist is live — plan the art heist from a Mansion Art Studio"
-  ],
+  "quickTake": [],
   "locations": [
     {
       "id": "dlc-loc-kortz-center",

@@ -1,0 +1,49 @@
+{
+  "id": "business-rivalries-2026-09",
+  "title": "September Business Rivalries",
+  "startsOn": "2026-09-03",
+  "endsOn": "2026-09-30",
+  "summary": "10× Weekly Challenge rewards — GTA$1M per week, up to GTA$4M",
+  "description": "The 10× bonus applies to the Weekly Challenge prize, not all business sales. Complete each weekly challenge to earn an extra GTA$1,000,000.",
+  "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+  "weeks": [
+    {
+      "startsOn": "2026-09-03",
+      "endsOn": "2026-09-09",
+      "challenge": "Sell GTA$1,000,000 worth of Special Cargo",
+      "reward": "GTA$1,000,000",
+      "outfit": "Yeti x LS Customs Tracksuit"
+    },
+    {
+      "startsOn": "2026-09-10",
+      "endsOn": "2026-09-16",
+      "challenge": "Earn GTA$1,000,000 selling products",
+      "reward": "GTA$1,000,000",
+      "outfit": "Junk Tracksuit"
+    },
+    {
+      "startsOn": "2026-09-17",
+      "endsOn": "2026-09-23",
+      "challenge": "Complete 3 Bunker Research Missions from Agent 14",
+      "reward": "GTA$1,000,000",
+      "outfit": "Camo Ammu-Nation Sweatsuit",
+      "targetCount": 3
+    },
+    {
+      "startsOn": "2026-09-24",
+      "endsOn": "2026-09-30",
+      "challenge": "Sell GTA$1,000,000 across all businesses",
+      "reward": "GTA$1,000,000",
+      "outfit": "Retro Fruit Tracksuit"
+    }
+  ],
+  "vehicleReward": {
+    "name": "Free Penaud La Coureuse",
+    "qualifyFrom": "2026-09-03",
+    "qualifyUntil": "2026-09-23",
+    "claimFrom": "2026-09-24",
+    "claimUntil": "2026-09-30",
+    "description": "Complete at least one Weekly Challenge between September 3–23, then return September 24–30 to claim the car at Legendary Motorsport.",
+    "upgrade": "Complimentary HSW upgrade on PS5, Xbox Series X|S and PC (Enhanced)."
+  }
+}

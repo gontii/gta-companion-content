@@ -2,6 +2,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applySeasonalContent, isSeasonalEvent } from './seasonal-content.mjs';
 
 const WEEKLY_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts', 'gun-van', 'other'];
 const GTABASE_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
@@ -596,6 +597,9 @@ export function applyDlcOverlay(content, overlay, now = new Date()) {
 }
 
 export function validateContent(content) {
+  if (content.seasonalEvent !== undefined && !isSeasonalEvent(content.seasonalEvent)) {
+    throw new Error('seasonalEvent is invalid');
+  }
   const ids = new Set();
   const requireString = (value, field) => {
     if (typeof value !== 'string' || value.trim().length === 0) throw new Error(`${field} is required`);
@@ -788,7 +792,7 @@ async function readDlcOverlay(outputDir) {
 
 export async function generateWeeklyFiles({ html, outputDir = '.', now = new Date(), sourceUrl = null } = {}) {
   const overlay = await readDlcOverlay(outputDir);
-  const content = buildWeeklyContent(html, { now, sourceUrl, overlay });
+  let content = buildWeeklyContent(html, { now, sourceUrl, overlay });
   const weeklyDir = path.join(outputDir, 'weekly');
   await mkdir(weeklyDir, { recursive: true });
 
@@ -809,18 +813,24 @@ export async function generateWeeklyFiles({ html, outputDir = '.', now = new Dat
       `Keeping richer existing weekly ${content.weekId}: ` +
         `${weeklyItemCount(currentLatest)} items versus ${weeklyItemCount(content)} generated items.`,
     );
-    return { weekId: currentLatest.weekId, content: currentLatest, preservedExisting: true };
+    content = currentLatest;
   }
 
+  const preservedExisting = content === currentLatest;
+  const result = await writeCuratedWeekly(content, outputDir, now);
+  return { ...result, preservedExisting };
+}
+
+export async function writeCuratedWeekly(input, outputDir = '.', now = new Date()) {
+  const weeklyDir = path.join(outputDir, 'weekly');
+  const content = applySeasonalContent(input, now);
+  validateContent(content);
   const existingContent = await readExistingWeeklyContent(weeklyDir, content.weekId);
-  if (
-    existingContent?.generatedAt &&
+  content.generatedAt = existingContent?.generatedAt &&
     JSON.stringify(withoutGeneratedAt(existingContent)) === JSON.stringify(withoutGeneratedAt(content))
-  ) {
-    content.generatedAt = existingContent.generatedAt;
-  }
-
+    ? existingContent.generatedAt : now.toISOString();
   const serialized = `${JSON.stringify(content, null, 2)}\n`;
+  await mkdir(weeklyDir, { recursive: true });
   await writeFile(path.join(weeklyDir, `${content.weekId}.json`), serialized);
   await writeFile(path.join(weeklyDir, 'latest.json'), serialized);
   return { weekId: content.weekId, content };
@@ -1018,6 +1028,7 @@ async function main() {
     // failure (nothing current on disk either) still surfaces as a non-zero exit.
     const existing = await readLatestWeekly(path.join(outputDir, 'weekly'));
     if (weeklyIsCurrent(existing, now)) {
+      await writeCuratedWeekly(existing, outputDir, now);
       console.log(
         `No fresh source found; keeping current weekly ${existing.weekId} (still within this GTA week).`,
       );
