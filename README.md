@@ -21,7 +21,7 @@ or `PREMIUM_WEEKLY_JSON` secret rotation should be needed for normal updates.
 GitHub Actions workflow: `.github/workflows/update-weekly.yml`. Runs once daily
 (14:30 UTC) so mid-week event changes and hotfixes are caught, not just the
 Thursday reset. Runs with nothing new to publish exit green (the current content
-is kept); only a genuine failure with no current content on disk goes red.
+is kept); semantic content failures stop publication even if a current file exists.
 
 Required repository variable:
 
@@ -54,8 +54,7 @@ Hand-curated DLC guidance that must survive the daily regeneration lives in
 commits `weekly/*.json`, and default `validate:weekly` runs would reject it).
 The generator merges it into every generated week:
 
-- `section` — prepended as the first section (id must be `dlc`; the app renders
-  it at the top of This Week). All item ids must use the `dlc-` prefix; a
+- `section` — prepended as the first section (id must be `dlc`; This Week filters it out because DLC has its own tab). All item ids must use the `dlc-` prefix; a
   scraped item whose slug collides gets renamed with a `-2` suffix automatically.
 - `quickTake` — lines prepended to the generated quick take.
 - `locations` — entries prepended to the generated locations.
@@ -80,7 +79,7 @@ Primary source order:
 1. Rockstar Games Newswire / official GTA Online post.
 2. RockstarINTEL event-week post (discovered via the `/category/event-week/` RSS feed) as fallback when Rockstar has not published a parseable current weekly post yet. Its `<h3>` sections map cleanly to our categories, including discount percentages.
 
-(The GTABase parser remains available for a manually supplied `GTA_WEEKLY_SOURCE_URL`, but is no longer in the automatic source chain.)
+3. GTABase weekly article as the third automatic source candidate.
 
 1. Copy the previous week's file, e.g. `weekly/2026-05-28.json` → `weekly/2026-06-04.json`.
 2. Update the fields with this week's data (same research as the newsletter):
@@ -105,3 +104,16 @@ Primary source order:
 - English only, gamer-to-gamer tone, no fluff.
 - No Rockstar/Take-Two assets of any kind — text only.
 - Checkbox `id`s must be unique within a week (progress is stored per id).
+
+## Kontrola kompletności i miesięczne GTA+
+
+- Parser RockstarINTEL normalizuje końcową interpunkcję nagłówków, obsługuje grupy zniżek h4–h6 i sprawdza, czy zachował każdą pozycję listy wraz z procentem. Nierozpoznana sekcja ofert lub niepełny odczyt zatrzymuje publikację, jeżeli pozostałe źródła również nie dają poprawnych danych.
+- Pełne zdania zachowują nazwy aut w salonach, warunki nagród oraz informacje FIB. Rotujące cele i premie Kortz Center Heist należą do danych tygodniowych, a przygotowanie DLC pozostaje w osobnej karcie.
+- `events/gta-plus.json` to **osobny, redakcyjnie zweryfikowany zestaw miesięczny**: okres, oficjalny adres Rockstar, data weryfikacji i pozycje. Generator nie traktuje samego odsyłacza „GTA+ Benefits” jako treści.
+- Zestaw jest dołączany jako opcjonalna ostatnia sekcja `gta-plus`; istniejąca aplikacja obsługuje ją bez nowego wydania. Każda pozycja ma etykietę `GTA+ only` i termin. Zwykłe oferty pozostają w swoich sekcjach.
+- Przy nowym okresie trzeba dodać zweryfikowany zestaw z Newswire do `events/gta-plus.json`. **Od 10 września 2026 publikacja zatrzyma się, dopóki nie zostanie dodany nowy okres.** Automat nie wymyśla ofert ani nie przedłuża wygasłych korzyści. Zachowuj poprzednie okresy jako historię.
+- `events/weekly-quality.json` zawiera warunki kompletności konkretnego tygodnia. Dla 3–9 września wymaga wszystkich 18 ofert oraz pominiętych nagród i nazw; dla kolejnego tygodnia aktualizuj warunki na podstawie źródeł. Podstawowa kontrola niepustych sześciu sekcji działa także bez takiego wpisu.
+- `validate:weekly` sprawdza semantykę `latest.json`, a pliki archiwalne według schematu. Smoke test porównuje **cały JSON zwrócony przez chronione API** z opublikowanym plikiem, obok dotychczasowych kontroli dostępu i wydarzenia sezonowego.
+- Ochrona bogatszej zawartości nie może zatrzymać naprawy sekcji, która wcześniej była pusta. Powtórne generowanie zachowuje identyfikatory postępu oraz datę `generatedAt`, jeżeli treść się nie zmieniła.
+
+Weryfikacja przed publikacją: `npm test`, `npm run generate:weekly`, `npm run validate:weekly -- weekly/latest.json`. Publikacja: standardowy `Update weekly GTA Online content` w GitHub Actions; wynik musi zawierać poprawny smoke test.

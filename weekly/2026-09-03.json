@@ -3,10 +3,10 @@
   "range": "September 3 - 9, 2026",
   "headline": "GTA Online Event Week: Huge Business Rivalries Event Begins (September 3rd-9th)",
   "quickTake": [
+    "Claim the FREE Arcadius Executive Office via Dynasty 8 Executive by September 9 — no GTA+ required.",
     "4x GTA$ & RP on Special Vehicle Work",
     "3x GTA$ & RP on Community Mission Series",
-    "2x GTA$ & RP on Madrazo Hits",
-    "2x GTA$ & RP on Diamond Adversary Series"
+    "2x GTA$ & RP on Madrazo Hits"
   ],
   "sections": [
     {
@@ -86,12 +86,16 @@
       "title": "Free rewards & prize vehicles",
       "items": [
         {
+          "id": "delivering-business-battle-crates-give-you-guara",
+          "label": "Delivering Business Battle crates give you guaranteed clothing rewards: This includes the Six Figure Tee, Ride or Die Tee, Red and White Ammu-Nation Cap or Bourgeoix Tee"
+        },
+        {
           "id": "this-week-at-the-casino-in-gta-online-take-your-",
-          "label": "This week at the Casino in GTA Online, take your daily spin with the lucky wheel for your chance to win the Declasse Impaler SZ, which cost $1,280,000 from Southern San Andreas Super Autos"
+          "label": "This week at the Casino in GTA Online, take your daily spin with the lucky wheel for your chance to win the Declasse Impaler SZ, which cost $1,280,000 from Southern San Andreas Super Autos. GTA+ members now get 2 spins per 24 hours"
         },
         {
           "id": "this-week-in-gta-online-place-top-2-in-a-ls-car-",
-          "label": "This week in GTA Online, place top 2 in a LS Car Meet Race to unlock the Karin Woodlander as the Prize Ride vehicle",
+          "label": "This week in GTA Online, place top 2 in a LS Car Meet Race to unlock the Karin Woodlander as the Prize Ride vehicle. It costs $1,611,000 from Southern San Andreas Super Autos",
           "tag": "limited"
         },
         {
@@ -107,7 +111,81 @@
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "items": []
+      "items": [
+        {
+          "id": "arcadius-business-center-executive-office-free",
+          "label": "Arcadius Business Center Executive Office — FREE for all players (no GTA+ required). Claim via Dynasty 8 Executive by September 9; upgrades are separate.",
+          "tag": "limited"
+        },
+        {
+          "id": "coil-cyclone-ii-70-off",
+          "label": "Coil Cyclone II - 70% off (PS5, Xbox Series X|S and PC Enhanced)"
+        },
+        {
+          "id": "buckingham-maverick-30-off",
+          "label": "Buckingham Maverick - 30% off"
+        },
+        {
+          "id": "coil-cyclone-30-off",
+          "label": "Coil Cyclone - 30% off"
+        },
+        {
+          "id": "declasse-yosemite-1500-30-off",
+          "label": "Declasse Yosemite 1500 - 30% off"
+        },
+        {
+          "id": "dewbauchee-specter-30-off",
+          "label": "Dewbauchee Specter - 30% off"
+        },
+        {
+          "id": "dewbauchee-vagner-30-off",
+          "label": "Dewbauchee Vagner - 30% off"
+        },
+        {
+          "id": "grotti-cheetah-30-off",
+          "label": "Grotti Cheetah - 30% off"
+        },
+        {
+          "id": "hvy-insurgent-pick-up-30-off",
+          "label": "HVY Insurgent Pick-Up - 30% off"
+        },
+        {
+          "id": "karin-190z-30-off",
+          "label": "Karin 190z - 30% off"
+        },
+        {
+          "id": "lampadati-novak-30-off",
+          "label": "Lampadati Novak - 30% off"
+        },
+        {
+          "id": "mammoth-squaddie-30-off",
+          "label": "Mammoth Squaddie - 30% off"
+        },
+        {
+          "id": "ocelot-jugular-30-off",
+          "label": "Ocelot Jugular - 30% off"
+        },
+        {
+          "id": "verfl-d-entity-xf-30-off",
+          "label": "Överflöd Entity XF - 30% off"
+        },
+        {
+          "id": "bermacht-rhinehart-30-off",
+          "label": "Übermacht Rhinehart - 30% off"
+        },
+        {
+          "id": "vapid-dominator-gtx-30-off",
+          "label": "Vapid Dominator GTX - 30% off"
+        },
+        {
+          "id": "vapid-ellie-30-off",
+          "label": "Vapid Ellie - 30% off"
+        },
+        {
+          "id": "western-company-seabreeze-30-off",
+          "label": "Western Company Seabreeze - 30% off"
+        }
+      ]
     },
     {
       "id": "gun-van",
@@ -176,8 +254,16 @@
       "title": "Other weekly items",
       "items": [
         {
+          "id": "kortz-center-heist-primary-targets-consumato-sta",
+          "label": "Kortz Center Heist primary targets: Consumato, Stacks Study V, Trust"
+        },
+        {
+          "id": "the-kortz-center-heist-will-receive-new-primary-",
+          "label": "The Kortz Center Heist will receive new Primary Targets, its first-completion bonus will reset and completing it without dying will award an extra GTA$400,000"
+        },
+        {
           "id": "the-fib-priority-file-in-gta-online-this-week-is",
-          "label": "The FIB Priority File in GTA Online this week is The Project Breakaway File"
+          "label": "The FIB Priority File in GTA Online this week is The Project Breakaway File. Priority Files pays double"
         },
         {
           "id": "the-duggan-robbery-pfister-astron",
@@ -193,11 +279,11 @@
         },
         {
           "id": "the-gta-online-luxury-autos-car-dealership-locat",
-          "label": "The GTA Online Luxury Autos Car Dealership located in Rockford Hills has two cars on show for purchase"
+          "label": "The GTA Online Luxury Autos Car Dealership located in Rockford Hills has two cars on show for purchase. The cars this week are the Benefactor LRC GT & Pfister X-treme"
         },
         {
           "id": "simeon-s-auto-shop-has-five-cars-available-to-pu",
-          "label": "Simeon's Auto Shop has five cars available to purchase and test drive in GTA Online"
+          "label": "Simeon's Auto Shop has five cars available to purchase and test drive in GTA Online. They are the Coil Cyclone, Dewbauchee Vagner, Grotti Cheetah, Karin 190z & Överflöd Entity XF"
         },
         {
           "id": "this-week-s-premium-race-is-downtown-underground",
@@ -210,6 +296,57 @@
         {
           "id": "this-week-s-time-trial-is-up-chiliad",
           "label": "This week's Time Trial is Up Chiliad"
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "title": "GTA+ only — through 2026-09-09",
+      "items": [
+        {
+          "id": "gta-plus-2026-08-garment-discount",
+          "label": "GTA+ only: 60% off Darnell Bros Garment Factory via Maze Bank Foreclosures — through 2026-09-09",
+          "tag": "limited"
+        },
+        {
+          "id": "gta-plus-2026-08-warden",
+          "label": "GTA+ only: Claim the FREE Gallivanter Warden at The Vinewood Car Club — through 2026-09-09",
+          "tag": "limited"
+        },
+        {
+          "id": "gta-plus-2026-08-garment-income",
+          "label": "GTA+ only: 2X GTA$ on Garment Factory passive income — through 2026-09-09",
+          "tag": "gold"
+        },
+        {
+          "id": "gta-plus-2026-08-fib-files",
+          "label": "GTA+ only: 2X GTA$ & RP on all FIB Files — through 2026-09-09",
+          "tag": "gold"
+        },
+        {
+          "id": "gta-plus-2026-08-drift-races",
+          "label": "GTA+ only: 3X GTA$, RP & LS Car Meet Rep on Drift Races — through 2026-09-09",
+          "tag": "gold"
+        },
+        {
+          "id": "gta-plus-2026-08-drift-tuning",
+          "label": "GTA+ only: 50% off all Drift Tuning upgrades — through 2026-09-09",
+          "tag": "limited"
+        },
+        {
+          "id": "gta-plus-2026-08-bureau-tech",
+          "label": "GTA+ only: 50% off Terrorbyte Bureau Tech: Master Control Terminal, Missile Lock-On Jammer, Silent Running and Collectible Scanner — through 2026-09-09",
+          "tag": "limited"
+        },
+        {
+          "id": "gta-plus-2026-08-paint",
+          "label": "GTA+ only: FREE Light Purple Pearl Chameleon body and wheel paints at Vehicle Workshops — through 2026-09-09",
+          "tag": "limited"
+        },
+        {
+          "id": "gta-plus-2026-08-clothing",
+          "label": "GTA+ only: Receive the Pink SN x PRB Bomber Zipped, PRB Tee and PRB Shorts in your wardrobe — through 2026-09-09",
+          "tag": "limited"
         }
       ]
     }
@@ -259,21 +396,21 @@
     },
     {
       "id": "loc-challenge",
-      "activity": "The GTA Online Weekly Challenge for this week is \"Earn GTA$1,000,000 from selling Special Cargo\"",
+      "activity": "The GTA Online Weekly Challenge for this week is \"Earn GTA$1,000,000 from selling Special Cargo\". You'll earn GTA$1,000,000 (yes, 1m) and the Yeti x LS Customs Tracksuit for doing so",
       "name": "Weekly challenge",
       "area": "Los Santos",
       "note": "Check the in-game map, phone, or pause menu for the current entry point."
     },
     {
       "id": "loc-free-vehicles",
-      "activity": "This week at the Casino in GTA Online, take your daily spin with the lucky wheel for your chance to win the Declasse Impaler SZ, which cost $1,280,000 from Southern San Andreas Super Autos",
+      "activity": "Delivering Business Battle crates give you guaranteed clothing rewards: This includes the Six Figure Tee, Ride or Die Tee, Red and White Ammu-Nation Cap or Bourgeoix Tee",
       "name": "Free rewards & prize vehicles",
       "area": "Los Santos",
       "note": "Check the in-game map, phone, or pause menu for the current entry point."
     }
   ],
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-huge-business-rivalries-event-begins-september-3rd-9th/",
-  "generatedAt": "2026-09-05T13:54:45.984Z",
+  "generatedAt": "2026-09-06T14:09:54.073Z",
   "seasonalEvent": {
     "id": "business-rivalries-2026-09",
     "title": "September Business Rivalries",

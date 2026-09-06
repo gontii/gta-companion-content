@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { readFile } from 'node:fs/promises';
+import { assertPublishedContent, requireMemberPeriod } from './publication-quality.mjs';
 import { applySeasonalContent, isRetiredDlcAnnouncement, isSeasonalEvent } from './seasonal-content.mjs';
 
 const baseUrl = process.env.SMOKE_BASE_URL || 'https://companion-for-gta-online.pages.dev';
@@ -17,6 +19,8 @@ async function expectJson(response, label) {
 }
 
 async function main() {
+  requireMemberPeriod();
+  const artifact = JSON.parse(await readFile(new URL('../weekly/latest.json', import.meta.url), 'utf8'));
   if (!code) throw new Error('BETA_SMOKE_CODE is required');
   if (!expectedWeekId) throw new Error('EXPECTED_WEEK_ID is required');
 
@@ -35,7 +39,7 @@ async function main() {
     throw new Error(`redeem returned ${redeem.status}, expected token`);
   }
 
-  const weekly = await fetch(`${baseUrl}/api/weekly`, {
+  const weekly = await fetch(`${baseUrl}/api/weekly?publication=${encodeURIComponent(artifact.generatedAt)}`, {
     headers: { authorization: `Bearer ${redeemBody.token}` },
   });
   const weeklyBody = await expectJson(weekly, 'weekly');
@@ -60,6 +64,7 @@ async function main() {
   } else if (weeklyBody.seasonalEvent?.id === 'business-rivalries-2026-09') {
     throw new Error('Expired seasonal event is still published');
   }
+  assertPublishedContent(weeklyBody, artifact);
   console.log(`Smoke test passed for weekId ${expectedWeekId}`);
 }
 

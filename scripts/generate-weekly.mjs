@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applySeasonalContent, isSeasonalEvent } from './seasonal-content.mjs';
+import { applyMemberBenefits, validatePublication, requireMemberPeriod, PublicationQualityError } from './publication-quality.mjs';
 
 const WEEKLY_SECTION_IDS = ['bonuses', 'challenge', 'free-vehicles', 'discounts', 'gun-van', 'other'];
 const GTABASE_SOURCE_INDEX_URL = 'https://www.gtabase.com/grand-theft-auto-v/news/';
@@ -374,6 +375,8 @@ const ROCKSTAR_INTEL_SECTION_MAP = [
   [/^discounts$/i, 'Discounts'],
   [/gun van/i, 'Gun Van'],
   [/^rewards$/i, 'Free rewards and prize vehicles'],
+  [/business rivalries.*rewards/i, 'Free rewards and prize vehicles'],
+  [/kortz center heist primary targets/i, 'Other weekly items'],
   [/podium vehicle/i, 'Free rewards and prize vehicles'],
   [/prize ride/i, 'Free rewards and prize vehicles'],
   [/premium test ride|test track vehicles/i, 'Free rewards and prize vehicles'],
@@ -383,10 +386,15 @@ const ROCKSTAR_INTEL_SECTION_MAP = [
   [/premium deluxe motorsport|luxury autos/i, 'Other weekly items'],
   [/fib priority file/i, 'Other weekly items'],
 ];
+// The weekly GTA+ section is only a link. Verified monthly benefits are merged separately.
 // Headings that are site chrome / narrative rather than weekly items.
 const ROCKSTAR_INTEL_DROP = [/gta\+ benefits/i, /upcoming gameplay/i, /how to|follow us|newsletter/i];
 // Item text that is social/nav bleed rather than a weekly item.
 const ROCKSTAR_INTEL_NOISE = /^(RockstarINTEL|Grand Theft Auto News|Red Dead News|Follow|Bluesky|Instagram|Threads|Twitter|Facebook)\b/i;
+
+function normalizeHeading(heading) {
+  return cleanText(heading).replace(/[\s:：–—-]+$/u, '').trim();
+}
 
 function mapRockstarIntelHeading(heading) {
   if (ROCKSTAR_INTEL_DROP.some((re) => re.test(heading))) return null;
@@ -403,20 +411,40 @@ function firstSentence(text) {
 }
 
 function rockstarIntelItems(riHeading, body) {
-  // Discounts group vehicles under <h5>PCT off</h5><ul>…</ul> — keep the percent.
+  // Normalize headings once, then retain every advertised discount and its rate.
   if (/^discounts$/i.test(riHeading)) {
     const out = [];
-    for (const group of body.split(/(?=<h5[^>]*>)/i)) {
-      const headMatch = group.match(/<h5[^>]*>([\s\S]*?)<\/h5>/i);
+    for (const group of body.split(/(?=<h[4-6][^>]*>)/i)) {
+      const headMatch = group.match(/<h[4-6][^>]*>([\s\S]*?)<\/h[4-6]>/i);
       if (!headMatch) continue;
-      const pct = stripTags(headMatch[1]).replace(/\s+off$/i, '').trim();
-      const label = /free/i.test(pct) ? 'Free' : `${pct} off`;
+      const pct = normalizeHeading(stripTags(headMatch[1])).replace(/\s+off$/i, '').trim();
+      if (!/^(?:free|100%|[1-9]\d?%)$/i.test(pct)) {
+        if (/<li\b/i.test(group)) throw new PublicationQualityError(`Unrecognized discount rate: ${pct}`);
+        continue;
+      }
+      const label = /free|100%/i.test(pct) ? 'Free' : `${pct} off`;
       for (const li of group.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)) {
         const name = stripTags(li[1]);
         if (name) out.push(`${name} - ${label}`);
       }
     }
+    const expected = [...body.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)]
+      .filter(m => stripTags(m[1])).length;
+    if (!out.length || out.length !== expected) {
+      throw new PublicationQualityError(`Incomplete discounts: parsed ${out.length} of ${expected} advertised offers`);
+    }
     return out;
+  }
+  const paragraphs = [...body.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map(m => cleanText(stripTags(m[1])).replace(/\s+([.,;:])/g, '$1').replace(/\.\s*$/, ''))
+    .filter(Boolean);
+  if (/business rivalries.*rewards/i.test(riHeading)) {
+    // Qualification and claim dates for La Coureuse live in the seasonal card.
+    return paragraphs.filter(p => /business battle/i.test(p));
+  }
+  if (/kortz center heist primary targets/i.test(riHeading)) {
+    const targets = [...body.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map(m => stripTags(m[1]));
+    return [...(targets.length ? [`Kortz Center Heist primary targets: ${targets.join(', ')}`] : []), ...paragraphs];
   }
   const listItems = [...body.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)]
     .map((m) => stripTags(m[1]))
@@ -424,7 +452,9 @@ function rockstarIntelItems(riHeading, body) {
   if (listItems.length) return listItems;
   const paragraph = body.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
   if (paragraph) {
-    const sentence = firstSentence(stripTags(paragraph[1]));
+    const sentence = /premium race|time trial/i.test(riHeading)
+      ? firstSentence(stripTags(paragraph[1]))
+      : paragraphs.join('. ');
     if (sentence) return [sentence];
   }
   return [];
@@ -439,12 +469,18 @@ function extractRockstarIntelSections(html) {
   for (const part of article.split(/(?=<h3[^>]*>)/i)) {
     const headMatch = part.match(/<h3[^>]*>([\s\S]*?)<\/h3>/i);
     if (!headMatch) continue;
-    const riHeading = stripTags(headMatch[1]);
+    const riHeading = normalizeHeading(stripTags(headMatch[1]));
     const heading = mapRockstarIntelHeading(riHeading);
-    if (!heading) continue;
+    if (!heading) {
+      if (!ROCKSTAR_INTEL_DROP.some(re => re.test(riHeading)) && /discount|reward|bonus|primary target|showroom/i.test(riHeading)) {
+        throw new PublicationQualityError(`Unmapped weekly section: ${riHeading}`);
+      }
+      continue;
+    }
     const body = part.slice(part.indexOf('</h3>') + 5);
     const items = rockstarIntelItems(riHeading, body);
-    if (items.length) sections.push({ heading, items });
+    if (!items.length) throw new PublicationQualityError(`Recognized weekly section is empty: ${riHeading}`);
+    sections.push({ heading, items });
   }
   return sections.length ? sections : null;
 }
@@ -616,9 +652,10 @@ export function validateContent(content) {
   }
   const sectionIds = content.sections.map((section) => section.id);
   // A curated `dlc` section (from dlc-overlay.json) may lead; the standard six follow in order.
-  const expectedIds = sectionIds[0] === 'dlc' ? ['dlc', ...WEEKLY_SECTION_IDS] : WEEKLY_SECTION_IDS;
+  const expectedIds = [...(sectionIds[0] === 'dlc' ? ['dlc'] : []), ...WEEKLY_SECTION_IDS,
+    ...(sectionIds.at(-1) === 'gta-plus' ? ['gta-plus'] : [])];
   if (sectionIds.join(',') !== expectedIds.join(',')) {
-    throw new Error(`sections must use ids in order: ${WEEKLY_SECTION_IDS.join(', ')}, optionally preceded by dlc`);
+    throw new Error(`sections must use ids in order: ${WEEKLY_SECTION_IDS.join(', ')}, optionally preceded by dlc and followed by gta-plus`);
   }
   for (const section of content.sections) {
     requireString(section.id, 'section.id');
@@ -752,7 +789,7 @@ function withoutGeneratedAt(content) {
 
 function weeklyItemCount(content) {
   return Array.isArray(content?.sections)
-    ? content.sections.reduce(
+    ? content.sections.filter(section => WEEKLY_SECTION_IDS.includes(section.id)).reduce(
         (total, section) => total + (Array.isArray(section?.items) ? section.items.length : 0),
         0,
       )
@@ -807,7 +844,9 @@ export async function generateWeeklyFiles({ html, outputDir = '.', now = new Dat
   }
   if (
     currentLatest?.weekId === content.weekId &&
-    weeklyItemCount(currentLatest) > weeklyItemCount(content)
+    weeklyItemCount(currentLatest) > weeklyItemCount(content) &&
+    content.sections.filter(s => WEEKLY_SECTION_IDS.includes(s.id)).every(s =>
+      (currentLatest.sections.find(old => old.id === s.id)?.items.length || 0) >= s.items.length)
   ) {
     console.log(
       `Keeping richer existing weekly ${content.weekId}: ` +
@@ -823,8 +862,9 @@ export async function generateWeeklyFiles({ html, outputDir = '.', now = new Dat
 
 export async function writeCuratedWeekly(input, outputDir = '.', now = new Date()) {
   const weeklyDir = path.join(outputDir, 'weekly');
-  const content = applySeasonalContent(input, now);
+  const content = applyMemberBenefits(applySeasonalContent(input, now), now);
   validateContent(content);
+  validatePublication(content, now);
   const existingContent = await readExistingWeeklyContent(weeklyDir, content.weekId);
   content.generatedAt = existingContent?.generatedAt &&
     JSON.stringify(withoutGeneratedAt(existingContent)) === JSON.stringify(withoutGeneratedAt(content))
@@ -838,15 +878,18 @@ export async function writeCuratedWeekly(input, outputDir = '.', now = new Date(
 
 export async function generateFirstValidWeeklyFiles(sources, options = {}) {
   const failures = [];
+  let qualityFailure = false;
   for (const source of sources) {
     try {
       const result = await generateWeeklyFiles({ ...options, ...source });
       return { ...result, sourceUrl: source.sourceUrl };
     } catch (error) {
+      qualityFailure ||= error instanceof PublicationQualityError;
       failures.push(`${source.sourceUrl || 'unknown source'}: ${error.message}`);
     }
   }
-  throw new Error(`No valid weekly source found. ${failures.join(' | ')}`);
+  const ErrorType = qualityFailure ? PublicationQualityError : Error;
+  throw new ErrorType(`No valid weekly source found. ${failures.join(' | ')}`);
 }
 
 async function readSource(sourceUrl) {
@@ -1017,11 +1060,13 @@ async function main() {
     sourceArgIndex >= 0 ? process.argv[sourceArgIndex + 1] : process.env.GTA_WEEKLY_SOURCE_URL;
   const outputDir = process.env.GTA_WEEKLY_OUTPUT_DIR || process.cwd();
   const now = new Date();
+  requireMemberPeriod(now);
   const sources = await resolveSourceCandidates(sourceUrl);
   try {
     const result = await generateFirstValidWeeklyFiles(sources, { outputDir, now });
     console.log(`Generated weekly content for ${result.weekId} from ${result.sourceUrl}`);
   } catch (error) {
+    if (error instanceof PublicationQualityError) throw error;
     // No fresh source this run. If the already-published content still covers the
     // current GTA week, that is not a failure — keep it and exit cleanly so the
     // daily job stays green when there is simply nothing new to publish. A real
@@ -1038,7 +1083,7 @@ async function main() {
   }
 }
 
-if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   main().catch((error) => {
     console.error(error.message);
     process.exit(1);

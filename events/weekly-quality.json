@@ -1,0 +1,124 @@
+{
+  "2026-09-03": [
+    {
+      "section": "discounts",
+      "pattern": "Arcadius.*FREE.*no GTA\\+ required",
+      "description": "free Arcadius office and public eligibility"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Coil Cyclone II.*70%.*Enhanced",
+      "description": "Cyclone II discount and platform restriction"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Buckingham Maverick - 30% off",
+      "description": "Buckingham Maverick 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Coil Cyclone - 30% off",
+      "description": "Coil Cyclone 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Declasse Yosemite 1500 - 30% off",
+      "description": "Declasse Yosemite 1500 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Dewbauchee Specter - 30% off",
+      "description": "Dewbauchee Specter 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Dewbauchee Vagner - 30% off",
+      "description": "Dewbauchee Vagner 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Grotti Cheetah - 30% off",
+      "description": "Grotti Cheetah 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "HVY Insurgent Pick-Up - 30% off",
+      "description": "HVY Insurgent Pick-Up 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Karin 190z - 30% off",
+      "description": "Karin 190z 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Lampadati Novak - 30% off",
+      "description": "Lampadati Novak 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Mammoth Squaddie - 30% off",
+      "description": "Mammoth Squaddie 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Ocelot Jugular - 30% off",
+      "description": "Ocelot Jugular 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Överflöd Entity XF - 30% off",
+      "description": "Överflöd Entity XF 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Übermacht Rhinehart - 30% off",
+      "description": "Übermacht Rhinehart 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Vapid Dominator GTX - 30% off",
+      "description": "Vapid Dominator GTX 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Vapid Ellie - 30% off",
+      "description": "Vapid Ellie 30% discount"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Western Company Seabreeze - 30% off",
+      "description": "Western Company Seabreeze 30% discount"
+    },
+    {
+      "section": "free-vehicles",
+      "pattern": "Business Battle.*Six Figure Tee.*Ride or Die Tee.*Ammu-Nation.*Bourgeoix",
+      "description": "Business Battle clothing rewards"
+    },
+    {
+      "section": "other",
+      "pattern": "Kortz Center Heist primary targets: Consumato, Stacks Study V, Trust",
+      "description": "three current Kortz targets"
+    },
+    {
+      "section": "other",
+      "pattern": "without dying.*400,000",
+      "description": "Kortz no-death reward"
+    },
+    {
+      "section": "other",
+      "pattern": "first-completion bonus.*reset",
+      "description": "Kortz first-completion reset"
+    },
+    {
+      "section": "other",
+      "pattern": "Benefactor LRC GT.*Pfister X-treme",
+      "description": "Luxury Autos stock"
+    },
+    {
+      "section": "other",
+      "pattern": "Coil Cyclone.*Dewbauchee Vagner.*Grotti Cheetah.*Karin 190z.*Överflöd Entity XF",
+      "description": "Simeon stock"
+    }
+  ]
+}

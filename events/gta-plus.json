@@ -1,0 +1,55 @@
+[
+  {
+    "startsOn": "2026-08-13",
+    "endsOn": "2026-09-09",
+    "sourceUrl": "https://www.rockstargames.com/newswire/article/39a9kkko53o31k/gta-members-can-claim-the-new-gallivanter-warden-suv-for-free-one-week",
+    "verifiedOn": "2026-09-06",
+    "items": [
+      {
+        "id": "gta-plus-2026-08-garment-discount",
+        "label": "60% off Darnell Bros Garment Factory via Maze Bank Foreclosures",
+        "tag": "limited"
+      },
+      {
+        "id": "gta-plus-2026-08-warden",
+        "label": "Claim the FREE Gallivanter Warden at The Vinewood Car Club",
+        "tag": "limited"
+      },
+      {
+        "id": "gta-plus-2026-08-garment-income",
+        "label": "2X GTA$ on Garment Factory passive income",
+        "tag": "gold"
+      },
+      {
+        "id": "gta-plus-2026-08-fib-files",
+        "label": "2X GTA$ & RP on all FIB Files",
+        "tag": "gold"
+      },
+      {
+        "id": "gta-plus-2026-08-drift-races",
+        "label": "3X GTA$, RP & LS Car Meet Rep on Drift Races",
+        "tag": "gold"
+      },
+      {
+        "id": "gta-plus-2026-08-drift-tuning",
+        "label": "50% off all Drift Tuning upgrades",
+        "tag": "limited"
+      },
+      {
+        "id": "gta-plus-2026-08-bureau-tech",
+        "label": "50% off Terrorbyte Bureau Tech: Master Control Terminal, Missile Lock-On Jammer, Silent Running and Collectible Scanner",
+        "tag": "limited"
+      },
+      {
+        "id": "gta-plus-2026-08-paint",
+        "label": "FREE Light Purple Pearl Chameleon body and wheel paints at Vehicle Workshops",
+        "tag": "limited"
+      },
+      {
+        "id": "gta-plus-2026-08-clothing",
+        "label": "Receive the Pink SN x PRB Bomber Zipped, PRB Tee and PRB Shorts in your wardrobe",
+        "tag": "limited"
+      }
+    ]
+  }
+]

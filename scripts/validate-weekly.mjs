@@ -2,11 +2,16 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 
+import { requireMemberPeriod, validatePublication } from './publication-quality.mjs';
 import { validateContent } from './generate-weekly.mjs';
 
 async function validateFile(file) {
   const content = JSON.parse(await readFile(file, 'utf8'));
   validateContent(content);
+  if (path.basename(file) === 'latest.json') {
+    requireMemberPeriod();
+    validatePublication(content);
+  }
   return content.weekId;
 }
 
