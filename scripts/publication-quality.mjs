@@ -3,6 +3,12 @@ import { readFileSync } from 'node:fs';
 export const memberPeriods = JSON.parse(readFileSync(new URL('../events/gta-plus.json', import.meta.url), 'utf8'));
 export const weeklyRequirements = JSON.parse(readFileSync(new URL('../events/weekly-quality.json', import.meta.url), 'utf8'));
 export class PublicationQualityError extends Error {}
+export const pendingMemberBenefits = JSON.parse(readFileSync(new URL('../events/gta-plus-pending.json', import.meta.url), 'utf8'));
+const editorial = JSON.parse(readFileSync(new URL('../events/weekly-editorial.json', import.meta.url), 'utf8'));
+// A one-day editorial exception authorized by the owner, not an invented GTA+ expiry.
+const pendingIsCurrent = now => pendingMemberBenefits.checkedOn === dayId(now) &&
+  now.getTime() <= Date.parse(pendingMemberBenefits.publicationAllowedUntil);
+
 
 const dayId = now => now.toISOString().slice(0, 10);
 const overlapsWeek = (content, period) => {
@@ -35,9 +41,9 @@ export function validateMemberPeriods(periods) {
 }
 validateMemberPeriods(memberPeriods);
 
-/** A new membership period must be verified; never silently publish without it. */
+/** Require verified benefits or the explicitly dated, visibly provisional exception. */
 export function requireMemberPeriod(now = new Date()) {
-  if (!activePeriod(now)) throw new PublicationQualityError(`No verified GTA+ benefits for ${dayId(now)}. Update events/gta-plus.json from Rockstar before publishing.`);
+  if (!activePeriod(now) && !pendingIsCurrent(now)) throw new PublicationQualityError(`No verified GTA+ benefits for ${dayId(now)}. Update events/gta-plus.json from Rockstar before publishing.`);
 }
 
 export function applyMemberBenefits(content, now = new Date()) {
@@ -50,6 +56,28 @@ export function applyMemberBenefits(content, now = new Date()) {
       title: `GTA+ only — through ${period.endsOn}`,
       items: period.items.map(item => ({ ...item, label: `GTA+ only: ${item.label} — through ${period.endsOn}` })),
     });
+  }
+  if (!period && pendingIsCurrent(now) && result.weekId === pendingMemberBenefits.weekId) {
+    result.sections.push({
+      id: 'gta-plus',
+      title: 'GTA+ — September 10 reports; confirmation pending',
+      items: [
+        { id: 'gta-plus-2026-09-status', label: 'GTA+ only: Checked September 10. Full monthly benefits and their end date are not yet confirmed. Check in-game offers before spending.', tag: 'limited' },
+        ...pendingMemberBenefits.items.map(({ id, label, tag, evidence }) => ({
+          id, tag, label: `GTA+ only — ${evidence === 'zgłoszone przez graczy' ? 'player report, unconfirmed' : 'reported by fan sites'}: ${label}`,
+        })),
+      ],
+    });
+  }
+  const edits = editorial[result.weekId];
+  if (edits) {
+    for (const key of ['headline', 'quickTake', 'beginnerPath']) if (edits[key]) result[key] = structuredClone(edits[key]);
+    for (const section of result.sections) {
+      section.items = section.items.map(item => edits.itemLabels?.[item.id] ? { ...item, label: edits.itemLabels[item.id] } : item);
+      for (const item of edits.extraItems?.[section.id] || []) {
+        if (!section.items.some(existing => existing.id === item.id)) section.items.unshift(structuredClone(item));
+      }
+    }
   }
   // Explain claiming and eligibility without changing the scraped item's saved-progress id.
   if (result.weekId === '2026-09-03') {
@@ -79,11 +107,10 @@ export function validatePublication(content, now = new Date()) {
       throw new PublicationQualityError(`Publication missing ${requirement.description}`);
     }
   }
-  const period = activePeriod(now);
   const expected = applyMemberBenefits(content, now).sections.find(s => s.id === 'gta-plus');
-  if (period && overlapsWeek(content, period)) {
+  if (expected) {
     if (JSON.stringify(section('gta-plus')) !== JSON.stringify(expected)) {
-      throw new PublicationQualityError('Publication missing or incorrect dated GTA+ benefits');
+      throw new PublicationQualityError('Publication missing or incorrect dated GTA+ benefits or pending-verification notice');
     }
   } else if (section('gta-plus')) {
     throw new PublicationQualityError('Publication contains expired or unrelated GTA+ benefits');

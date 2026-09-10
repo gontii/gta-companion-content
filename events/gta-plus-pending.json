@@ -1,0 +1,60 @@
+{
+  "weekId": "2026-09-10",
+  "checkedOn": "2026-09-10",
+  "publicationAllowedUntil": "2026-09-10T21:59:59.999Z",
+  "status": "oczekuje na potwierdzenie",
+  "sourceUrls": [
+    "https://www.reddit.com/r/gtaonline/comments/1wcdooc/vinewood_car_club_vehicles_of_the_month_and_free/",
+    "https://rockstaractu.com/gta-online-nouveaute-promos-et-bonus-de-la-semaine-du-10-septembre/"
+  ],
+  "items": [
+    {
+      "id": "gta-plus-2026-09-horus",
+      "label": "Claim the free Pegassi Horus at The Vinewood Car Club; early access this week.",
+      "evidence": "potwierdzone w źródłach fanowskich",
+      "tag": "limited"
+    },
+    {
+      "id": "gta-plus-2026-09-cluckin",
+      "label": "2X GTA$ & RP on the Cluckin’ Bell Farm Raid.",
+      "evidence": "zgłoszone przez graczy",
+      "tag": "limited"
+    },
+    {
+      "id": "gta-plus-2026-09-production",
+      "label": "2X production speed for the Cocaine Lockup and Nightclub South American Imports.",
+      "evidence": "zgłoszone przez graczy",
+      "tag": "limited"
+    },
+    {
+      "id": "gta-plus-2026-09-mc",
+      "label": "60% off MC businesses and upgrades.",
+      "evidence": "zgłoszone przez graczy",
+      "tag": "limited"
+    },
+    {
+      "id": "gta-plus-2026-09-bikes",
+      "label": "50% off Nagasaki Chimera, Stryder, BF400 and Shinobi. Check the in-game price before buying.",
+      "evidence": "zgłoszone przez graczy",
+      "tag": "limited"
+    },
+    {
+      "id": "gta-plus-2026-09-shotaro",
+      "label": "Nagasaki Shotaro is reported discounted; sources disagree on the final Vinewood Car Club discount. Check the in-game price.",
+      "evidence": "zgłoszone przez graczy",
+      "tag": "limited"
+    },
+    {
+      "id": "gta-plus-2026-09-clothes",
+      "label": "Bigness Patchwork Revere Collar and Bigness Patchwork Jeans.",
+      "evidence": "zgłoszone przez graczy",
+      "tag": "limited"
+    },
+    {
+      "id": "gta-plus-2026-09-paint",
+      "label": "Cyan/Red Flip Chameleon Paint.",
+      "evidence": "zgłoszone przez graczy",
+      "tag": "limited"
+    }
+  ]
+}

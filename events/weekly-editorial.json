@@ -1,0 +1,47 @@
+{
+  "2026-09-10": {
+    "headline": "Free Grapeseed Clubhouse, GTA$1M challenge and Biker bonuses",
+    "quickTake": [
+      "Claim the FREE Grapeseed Clubhouse via Maze Bank Foreclosures by September 16 — no GTA+ required.",
+      "Sell GTA$1M worth of products for an extra GTA$1M and the Junk Tracksuit.",
+      "2X GTA$ on Street Dealer Sales and Bike Service Missions; Bike Service pays 6X for GTA+ members.",
+      "Karin S95 is 70% off on PS5, Xbox Series X|S and PC Enhanced."
+    ],
+    "beginnerPath": [
+      {
+        "id": "bp-1",
+        "label": "Claim the free Grapeseed Clubhouse through Maze Bank Foreclosures by September 16. The Custom Bike Shop is a separate purchase."
+      },
+      {
+        "id": "bp-2",
+        "label": "Play Community Mission Series for 3X GTA$ & RP on PS5, Xbox Series X|S or PC Enhanced; use the Community Series marker in Legion Square."
+      },
+      {
+        "id": "bp-3",
+        "label": "Use the Clubhouse meeting-room contracts for 2X GTA$ & RP. Bike Service Missions require the Custom Bike Shop."
+      },
+      {
+        "id": "bp-4",
+        "label": "If you already own a producing business, sell GTA$1M worth of products to earn the GTA$1M Weekly Challenge prize and Junk Tracksuit. Keep track in the Interaction Menu."
+      }
+    ],
+    "itemLabels": {
+      "2x-gta-on-bike-service-missions": "2X GTA$ on Bike Service Missions; 6X GTA$ for GTA+ members, September 10–16. Requires a Clubhouse Custom Bike Shop.",
+      "grapeseed-clubhouse-free": "Grapeseed Clubhouse — FREE for all players (no GTA+ required). Claim via Maze Bank Foreclosures by September 16; upgrades are separate.",
+      "karin-s95-70-off": "Karin S95 — 70% off at Southern San Andreas Super Autos (PS5, Xbox Series X|S and PC Enhanced)",
+      "pipe-wrench-10-gta-3-20": "Pipe Wrench — available in the Gun Van; member discount awaiting confirmation.",
+      "this-week-in-gta-online-place-top-4-in-a-ls-car-": "Place Top 4 in an LS Car Meet Series race once to win the Pfister Neon.",
+      "this-week-at-the-casino-in-gta-online-take-your-": "Spin the Diamond Casino Lucky Wheel for a chance to win the RUNE Zhaba. GTA+ members get two spins per 24 hours.",
+      "3x-gta-rp-on-community-mission-series": "3X GTA$ & RP on Community Mission Series (PS5, Xbox Series X|S and PC Enhanced)."
+    },
+    "extraItems": {
+      "other": [
+        {
+          "id": "pegassi-horus-early-access-2026-09-10",
+          "label": "Pegassi Horus — early access for GTA+ members this week; general sale starts September 17 at Legendary Motorsport for GTA$2,810,000.",
+          "tag": "limited"
+        }
+      ]
+    }
+  }
+}

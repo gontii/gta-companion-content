@@ -117,3 +117,9 @@ Primary source order:
 - Ochrona bogatszej zawartości nie może zatrzymać naprawy sekcji, która wcześniej była pusta. Powtórne generowanie zachowuje identyfikatory postępu oraz datę `generatedAt`, jeżeli treść się nie zmieniła.
 
 Weryfikacja przed publikacją: `npm test`, `npm run generate:weekly`, `npm run validate:weekly -- weekly/latest.json`. Publikacja: standardowy `Update weekly GTA Online content` w GitHub Actions; wynik musi zawierać poprawny smoke test.
+
+## Publikacja 10 września przed pełnym potwierdzeniem GTA+
+
+Przemek jawnie polecił opublikować nowy tydzień i dzisiaj sprawdzać źródła co godzinę. `events/gta-plus-pending.json` zawiera osobne doniesienia fanowskie z pochodzeniem i datą sprawdzenia, bez wymyślonego końca okresu. Jednorazowy wyjątek pozwala generować tylko 10 września, do 23:59:59 Europe/Warsaw; sekcja i każda niepotwierdzona pozycja wyraźnie informują o niepewności. Nie przedłuża to okresu z sierpnia. `events/weekly-editorial.json` zachowuje doprecyzowania platform, warunków, nagłówka i porad podczas kolejnych generowań.
+
+Po znalezieniu pełnej oferty dodać rzeczywisty okres do `events/gta-plus.json`, zweryfikować rabaty (zwłaszcza Shotaro i Pipe Wrench), zaktualizować testy granic okresów na izolowanych danych i opublikować standardowym workflow. Zweryfikowany aktywny okres ma pierwszeństwo przed doniesieniami. Nie traktować terminu jednorazowej zgody publikacyjnej jako terminu korzyści GTA+.

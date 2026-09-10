@@ -120,5 +120,102 @@
       "pattern": "Coil Cyclone.*Dewbauchee Vagner.*Grotti Cheetah.*Karin 190z.*Överflöd Entity XF",
       "description": "Simeon stock"
     }
+  ],
+  "2026-09-10": [
+    {
+      "section": "discounts",
+      "pattern": "Grapeseed\\ Clubhouse.*FREE",
+      "description": "grapeseed-clubhouse-free"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Karin\\ S95.*70%",
+      "description": "karin-s95-70-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Buckingham\\ Nimbus.*30%",
+      "description": "buckingham-nimbus-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Dinka\\ Vindicator.*30%",
+      "description": "dinka-vindicator-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Gallivanter\\ Baller\\ ST.*30%",
+      "description": "gallivanter-baller-st-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Grotti\\ Cheetah\\ Classic.*30%",
+      "description": "grotti-cheetah-classic-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Karin\\ Vivanite.*30%",
+      "description": "karin-vivanite-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Maibatsu\\ Penumbra\\ FF.*30%",
+      "description": "maibatsu-penumbra-ff-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Mammoth\\ Patriot\\ Stretch.*30%",
+      "description": "mammoth-patriot-stretch-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Nagasaki\\ Shinobi.*30%",
+      "description": "nagasaki-shinobi-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Pegassi\\ Vortex.*30%",
+      "description": "pegassi-vortex-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Pfister\\ Growler.*30%",
+      "description": "pfister-growler-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Shitzu\\ Defiler.*30%",
+      "description": "shitzu-defiler-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Vapid\\ Aleutian.*30%",
+      "description": "vapid-aleutian-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Vulcar\\ Warrener\\ HKR.*30%",
+      "description": "vulcar-warrener-hkr-30-off"
+    },
+    {
+      "section": "discounts",
+      "pattern": "Western\\ Rampant\\ Rocket.*30%",
+      "description": "western-rampant-rocket-30-off"
+    },
+    {
+      "section": "challenge",
+      "pattern": "1,000,000.*Junk Tracksuit",
+      "description": "wyzwanie i nagroda Junk Tracksuit"
+    },
+    {
+      "section": "other",
+      "pattern": "Pegassi Horus",
+      "description": "nowy Pegassi Horus"
+    },
+    {
+      "section": "bonuses",
+      "pattern": "6X.*GTA\\+",
+      "description": "osobny bonus Bike Service GTA+"
+    }
   ]
 }

@@ -57,7 +57,7 @@ test('membership merge is idempotent, distinct from free public office and dated
 
 test('membership expires at its own boundary and does not leak to unrelated weeks', () => {
   const content = curated();
-  for (const day of ['2026-08-12', '2026-09-10']) {
+  for (const day of ['2026-08-12', '2026-09-11']) {
     const date = new Date(`${day}T00:00:00Z`);
     assert.equal(section(applyMemberBenefits(content, date), 'gta-plus'), undefined);
     assert.throws(() => requireMemberPeriod(date), /No verified GTA\+ benefits/);
@@ -120,4 +120,22 @@ test('membership item counts cannot freeze same-week source corrections', async 
     assert.equal(result.preservedExisting, false);
     assert.match(section(result.content, 'bonuses').items[0].label, /updated entry point/);
   } finally { await rm(dir, {recursive:true, force:true}); }
+});
+
+
+test('authorized pending membership is explicit, idempotent and limited to the current week and day', () => {
+  const date = new Date('2026-09-10T12:00:00Z');
+  requireMemberPeriod(date);
+  const input = { ...curated(), weekId: '2026-09-10' };
+  const content = applyMemberBenefits(input, date);
+  const pending = section(content, 'gta-plus');
+  assert.match(pending.title, /confirmation pending/);
+  assert.ok(pending.items.every(i => i.label.startsWith('GTA+ only')));
+  assert.match(pending.items[0].label, /end date are not yet confirmed/);
+  assert.match(pending.items.find(i => i.id.endsWith('-cluckin')).label, /unconfirmed/);
+  assert.ok(!JSON.stringify(pending).includes('2026-09-09'));
+  assert.deepEqual(applyMemberBenefits(content, date), content);
+  assert.equal(section(applyMemberBenefits(curated(), date), 'gta-plus'), undefined);
+  assert.equal(section(applyMemberBenefits(input, new Date('2026-09-10T22:00:00Z')), 'gta-plus'), undefined);
+  assert.throws(() => requireMemberPeriod(new Date('2026-09-10T22:00:00Z')), /No verified/);
 });
