@@ -2,18 +2,32 @@
 
 Start by learning to survive, host a mission chain that needs no property, and build one manageable income source. You do not need a supercar collection to have a useful evening in Los Santos.
 
-This guide is for solo beginners on PC Enhanced, PS5, and Xbox Series X|S. No GTA+ membership or Shark Cards are required. You still need access to the game and any online multiplayer subscription required by your console platform.
+This guide is for solo beginners on PC Enhanced, PS5, and Xbox Series X|S with an **active paid GTA+ membership**. Buying GTA+ is the first requirement of this particular starting route, not a requirement to play GTA Online. Shark Cards are not part of the route. You also need access to the game and any online multiplayer subscription required by your console platform.
 
 ## Your short starting route
 
-1. Check your edition, create your character, and finish the introduction the game gives you.
+1. Check your edition and activate GTA+ for the account and platform you will use. Create your character and finish the introduction the game gives you.
 2. If Career Builder appears, choose a business and keep a practical cash reserve. If it does not, continue with your existing character.
-3. Enter an Invite Only Session. Learn the map, phone, cover, snacks, and armor before buying anything ambitious.
+3. Enter an Invite Only Session. Check the GTA+ cash actually credited, claim the eligible member vehicle, and learn the map, phone, cover, snacks, and armor.
 4. Start First Dose to meet Dax. Try Vincent's Cluckin' Bell Farm Raid when you are comfortable fighting from cover.
 5. Finish First Dose as host, collect the lab equipment, and fund the Acid Lab installation. Fit Dax's separate Fooligan Jobs into later sessions.
 6. Upgrade that lab before collecting more businesses. Then choose Agency missions or Cayo Perico according to what you actually enjoy.
 
 Treat these as milestones across several evenings. Reaching a mission checkpoint, learning a difficult encounter, or unlocking a useful contact is progress even when you have not yet bought a business.
+
+## Before you begin: activate GTA+ and use it
+
+Purchase GTA+ for your playing account and platform through [Rockstar's membership page](https://www.rockstargames.com/gta-plus). Check the displayed local price and recurring billing terms before confirming. We use membership for a starting cash contribution, an eligible vehicle to claim, and convenient business management; it does not complete missions or unlock every business for you.
+
+**Start with money that has arrived.** The monthly GTA$500,000 deposit follows subscription billing, not the start of a new benefits event. Check Maze Bank before counting it toward a purchase. Do not add another GTA$500,000 simply because the benefits calendar changes. [Rockstar's deposit timing](https://support.rockstargames.com/articles/wbpFvoosXZRVdb4sXoGU1/gta-monthly-gtausd500-000-bonus-in-grand-theft-auto-online).
+
+Reserve that cash toward the Acid Lab rather than immediately spending it on cosmetics. Once received, GTA$500,000 covers half of the GTA$1,000,000 installation-and-upgrade budget explained below; mission progress, the other half, and operating expenses still have to be covered. Career Builder cash is separate, and its maximum carry-over is not guaranteed if you spend more during setup.
+
+**Claim before shopping.** Open The Vinewood Club App on your in-game phone or visit the Car Club to inspect the current member vehicle. Verify that the claim price is GTA$0 and select storage when prompted. Use the eligible reward as transport before buying a similar car. The vehicle changes with the offer period; a test-drive loan is not the same as claiming ownership. [Membership benefits](https://support.rockstargames.com/articles/21l14aEXmnyjFrnsqQ6eXG/gta-membership-benefits).
+
+**Use the phone tools as your businesses grow.** The Vinewood Club App provides vehicle requests, ammo purchases, collection of accumulated safe earnings, and supported staff-management actions. These save trips; they do not create income from businesses you do not own or turn unsold product into a safe balance. [The Vinewood Club features](https://www.rockstargames.com/gta-plus/benefits).
+
+**Dated offer: 10 September–7 October 2026.** Rockstar lists 2X GTA$ for the first Cluckin' Bell finale completed each week during this period. Schedule a first hosted completion in a week when you can finish the chain; repeated finales that week do not all get this offer. The September announcement also offers the Pegassi Horus as the claimable member vehicle and 60% off Biker Business properties, upgrades, and modifications. A discounted business still needs capital and attention, so it does not automatically outrank the Acid Lab route. After 7 October, treat this paragraph as an expired example and check the new offers; do not carry its multiplier into your budget. [Rockstar's September GTA+ announcement](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su).
 
 ## 1. Choose the right edition and learn the controls
 
@@ -52,9 +66,9 @@ Open the map and use its legend to find a destination, then set a waypoint using
 
 Buy snacks at a convenience store and body armor at Ammu-Nation. Use what your rank allows. In the Interaction Menu, look under **Health and Ammo** to replenish health or equip carried armor. While holding the weapon wheel, follow the displayed snack and armor shortcuts when available. Old guides may call the menu Inventory. [Menu reference](https://www.gtabase.com/articles/grand-theft-auto-v/gta-5-interaction-menu-gta-online-inventory-all-options).
 
-Use a pistol and an available automatic weapon you can handle; replenish their ammunition. A Career Builder loadout may already cover this. Avoid buying several similar guns before you know which one you use.
+Use a pistol and an available automatic weapon you can handle; replenish their ammunition. A Career Builder loadout may already cover this; check the Vinewood Club App for convenient ammunition purchases. Avoid buying several similar guns before you know which one you use.
 
-For transport, use the vehicle supplied by your introduction or Career Builder. Check tracker and insurance status before treating a vehicle as your permanent car. A borrowed street car can handle an early trip; it is not automatically an insured personal vehicle.
+For transport, use your claimed GTA+ vehicle or the vehicle supplied by your introduction or Career Builder. Check tracker and insurance status before treating a vehicle as your permanent car. A borrowed street car can handle an early trip; it is not automatically an insured personal vehicle.
 
 Before a firefight, park somewhere sensible, locate cover, and reload. Fight one angle at a time. If you keep dying, restock and choose a lower offered difficulty rather than buying an expensive vehicle in frustration. The first goal is a repeatable completion, not a fast completion.
 
@@ -75,7 +89,7 @@ The train and hacking-device preparation can feel unfamiliar; read the objective
 | Entry | GTA$0 setup fee; no property required |
 | Joining another host | Separate participant reward; not the host amount |
 
-The numerical host amounts are corroborated by [GTABase's updated payout table](https://www.gtabase.com/gta-online/jobs/heists/) and [GTA Boss's August guide](https://www.gtaboss.gg/gta-5-online/guides/how-to-complete-the-cluckin-bell-farm-raid-in-gta-online). These exclude setup earnings, separate first-ever Awards, and temporary promotions. Do not budget an unclaimed Award as cash already received.
+The numerical host amounts are corroborated by [GTABase's updated payout table](https://www.gtabase.com/gta-online/jobs/heists/) and [GTA Boss's August guide](https://www.gtaboss.gg/gta-5-online/guides/how-to-complete-the-cluckin-bell-farm-raid-in-gta-online). These are the baseline amounts before the dated GTA+ offer above; they exclude setup earnings, separate first-ever Awards, and temporary promotions. Do not budget an unclaimed Award as cash already received.
 
 A host cooldown follows completion. Use the wait for another activity instead of repeatedly trying to restart. Do not expect a beginner's full chain to fit a speedrunner's video length.
 
@@ -124,10 +138,11 @@ A Career Builder nightclub can therefore be useful before a large warehouse netw
 
 ## 7. A checklist for your next sessions
 
+- Check your GTA+ offers and their end dates; claim eligible rewards before buying alternatives.
 - Refill the consumables you used and confirm your next destination.
 - Complete one mission or preparation step before browsing shopping websites.
 - Request a Dax job if available and record successful completions toward ten.
-- Check supplies and stock in the business you are actually using.
+- Check supplies and stock in the business you are actually using; collect available safe earnings through the Vinewood Club App.
 - Leave enough time for a sale; starting one tired and rushed is avoidable risk.
 - Note your cash, owned equipment, and next unlock before logging off.
 
@@ -139,7 +154,7 @@ Yes: the recommended mission chains and Acid Lab route support solo play. Not ev
 
 ### Do I need GTA+?
 
-No. This route excludes member-only rewards and real-money currency purchases. GTA+ is separate from your platform's requirements for online multiplayer.
+Yes, an active paid GTA+ membership is a requirement of this guide's route. GTA Online itself does not require it. We use its credited cash, claimable vehicle, and convenience tools, while keeping dated bonuses separate from baseline earnings. Membership is separate from your platform's online multiplayer subscription; no Shark Card purchase is required.
 
 ### What if I never received Career Builder?
 
@@ -157,4 +172,4 @@ Use them when they fit what you own and enjoy. Check dates, eligible platforms, 
 
 By GTA Companion. Sources checked on **14 September 2026**. This is a source-based guide, not a claim of controller testing on all three platforms. Rockstar Support establishes eligibility and update rules; linked independent guides supply operational details and numerical prices where Rockstar does not list them.
 
-The review included Title Update 1.73, the Kortz Center launch, and Rockstar’s September Newswire releases. [Business Rivalries](https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri) and [September GTA+ benefits](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su) are temporary offers, excluded from this route’s budget. First review: separated Career Builder starts, mission unlocks, and revised weekly payout conditions.
+The review included Title Update 1.73, the Kortz Center launch, and Rockstar’s September Newswire releases. [Business Rivalries](https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri) and [September GTA+ benefits](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su) are temporary offers. The dated GTA+ section above includes selected September benefits; the baseline payout table remains separate. Revision: GTA+ is now required for this route, with billing-linked cash, reward claims, and Vinewood Club actions integrated into the starting checklist.
