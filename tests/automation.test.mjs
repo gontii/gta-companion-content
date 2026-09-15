@@ -241,13 +241,15 @@ test('search finds a TGG weekly video pushed out of RSS and rejects matching tit
   t.mock.method(globalThis, 'fetch', async input => {
     const url = new URL(input);
     if (url.hostname === 'www.youtube.com') return new Response('<feed/>');
+    if (url.pathname === '/v1/metadata') return Response.json({ platform: 'youtube', type: 'video', id: 'bbbbbbbbbbb',
+      title: 'GTA Online weekly update', createdAt: '2026-09-16T10:00:00Z', additionalData: { channelId: TGG_CHANNEL } });
     searches++;
     assert.equal(url.pathname, '/v1/youtube/search');
     assert.equal(url.searchParams.has('limit'), false);
     assert.equal(url.searchParams.get('sortBy'), 'relevance');
     return Response.json({ results: [
       { type: 'video', id: 'aaaaaaaaaaa', title: 'GTA Online weekly update', uploadDate: '2026-09-16T11:00:00Z', channel: { id: 'fake' } },
-      { type: 'video', id: 'bbbbbbbbbbb', title: 'GTA Online weekly update', uploadDate: '2026-09-16T10:00:00Z', channel: { id: TGG_CHANNEL } },
+      { type: 'video', id: 'bbbbbbbbbbb', title: 'GTA Online weekly update', uploadDate: '1 day ago', channel: { id: TGG_CHANNEL } },
     ] });
   });
   const service = new SourceService(storage, { SUPADATA_API_KEY: 'test-only' }, Date.parse('2026-09-17'));
@@ -255,4 +257,23 @@ test('search finds a TGG weekly video pushed out of RSS and rejects matching tit
   assert.equal((await service.discoverTgg()).videoId, 'bbbbbbbbbbb');
   assert.equal(searches, 1);
   assert.equal((await storage.get('tgg-discovery-check')).tggVideos, 1);
+});
+
+
+test('search cannot accept a relative date when metadata identifies another channel or an expired upload', async t => {
+  for (const incorrect of [{ channelId: 'different-channel', createdAt: '2026-09-16T10:00:00Z' },
+    { channelId: TGG_CHANNEL, createdAt: '2026-08-01T10:00:00Z' }]) {
+    const storage = new Storage();
+    const mock = t.mock.method(globalThis, 'fetch', async input => {
+      const url = new URL(input);
+      if (url.hostname === 'www.youtube.com') return new Response('<feed></feed>');
+      if (url.pathname === '/v1/youtube/search') return Response.json({ results: [
+        { type: 'video', id: 'bbbbbbbbbbb', title: 'GTA Online weekly update', uploadDate: '1 day ago', channel: { id: TGG_CHANNEL } },
+      ] });
+      return Response.json({ platform: 'youtube', type: 'video', id: 'bbbbbbbbbbb', title: 'GTA Online weekly update',
+        createdAt: incorrect.createdAt, additionalData: { channelId: incorrect.channelId } });
+    });
+    await assert.rejects(() => new SourceService(storage, { SUPADATA_API_KEY: 'test' }, Date.parse('2026-09-17T08:50:00Z')).discoverTgg(), /tgg_relevant_video_missing/);
+    mock.mock.restore();
+  }
 });

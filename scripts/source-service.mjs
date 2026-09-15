@@ -19,10 +19,13 @@ export function selectTggVideo(xml, now) {
   return selectTggCandidate(videos.slice(0, 15), now);
 }
 
-export function selectTggCandidate(videos, now) {
-  const selected = videos.filter(v => v.channelId === TGG_CHANNEL && /^[\w-]{11}$/.test(v.videoId) &&
+function isTggTopic(v) {
+  return v.channelId === TGG_CHANNEL && /^[\w-]{11}$/.test(v.videoId) &&
     /gta online/i.test(v.title) && /weekly|event week|update|bonuses|this week/i.test(v.title) &&
-    !/gta\s*(?:6|vi)\b|rumou?r|speculat|money guide|beginners? guide|livestream/i.test(v.title) &&
+    !/gta\s*(?:6|vi)\b|rumou?r|speculat|money guide|beginners? guide|livestream/i.test(v.title);
+}
+export function selectTggCandidate(videos, now) {
+  const selected = videos.filter(v => isTggTopic(v) &&
     Number.isFinite(Date.parse(v.publishedOn)) && Date.parse(v.publishedOn) <= now && now - Date.parse(v.publishedOn) <= 8 * DAY)
     .sort((a, b) => Date.parse(b.publishedOn) - Date.parse(a.publishedOn))[0];
   return selected ? { videoId: selected.videoId, title: selected.title, publishedOn: selected.publishedOn,
@@ -144,7 +147,7 @@ export class SourceService {
       } else await response.body?.cancel();
     } catch { /* RSS can fail or contain only newer Shorts and streams. */ }
     if (!this.env.SUPADATA_API_KEY) throw new Error('supadata_key_missing');
-    const cached = await this.storage.get('tgg-discovery-v2');
+    const cached = await this.storage.get('tgg-discovery-v3');
     if (cached && this.now < cached.expiresAt) {
       if (cached.candidate && this.now - Date.parse(cached.candidate.publishedOn) <= 8 * DAY) return cached.candidate;
       throw new Error('tgg_relevant_video_missing');
@@ -160,8 +163,28 @@ export class SourceService {
     const videos = data.results.filter(v => v.type === 'video').map(v => ({
       videoId: v.id, title: v.title, publishedOn: v.uploadDate, channelId: v.channel?.id,
     }));
-    const candidate = selectTggCandidate(videos, this.now);
-    await this.storage.put('tgg-discovery-v2', { candidate, checkedAt: this.now, expiresAt: this.now + 6 * 3600000 });
+    // Search often supplies relative dates (e.g. "5 days ago"). Never use those as event or publication dates.
+    // Resolve at most two relevant results; metadata is reused for 30 days.
+    const verified = [];
+    for (const video of videos.filter(isTggTopic).slice(0, 2)) {
+      const key = `video-metadata:${video.videoId}`;
+      let metadata = await this.storage.get(key);
+      if (!metadata || this.now - metadata.cachedAt >= 30 * DAY) {
+        await this.reserveSupadataCredit();
+        const endpoint = new URL('https://api.supadata.ai/v1/metadata');
+        endpoint.search = new URLSearchParams({ url: `https://www.youtube.com/watch?v=${video.videoId}` }).toString();
+        const response = await safeFetch(endpoint, { headers: { 'x-api-key': this.env.SUPADATA_API_KEY } });
+        if (!response.ok) throw new Error(`supadata_metadata_http_${response.status}`);
+        const value = JSON.parse(await readBounded(response, 100000));
+        if (value.platform !== 'youtube' || value.type !== 'video' || value.id !== video.videoId) throw new Error('tgg_metadata_invalid');
+        metadata = { videoId: value.id, title: value.title, publishedOn: value.createdAt,
+          channelId: value.additionalData?.channelId, cachedAt: this.now };
+        await this.storage.put(key, metadata);
+      }
+      verified.push(metadata);
+    }
+    const candidate = selectTggCandidate(verified, this.now);
+    await this.storage.put('tgg-discovery-v3', { candidate, checkedAt: this.now, expiresAt: this.now + 6 * 3600000 });
     // Bounded public video metadata makes a missing candidate diagnosable without captions or credentials.
     await this.storage.put('tgg-discovery-check', { checkedAt: new Date(this.now).toISOString(),
       results: data.results.length, videos: videos.length, tggVideos: videos.filter(v => v.channelId === TGG_CHANNEL).length,
@@ -189,7 +212,7 @@ export class SourceService {
     return this.extract({ text, chunks, publishedOn: video.publishedOn, period: null, source: video, current: true });
   }
   async prune() {
-    for (const prefix of ['transcript:', 'extracted:']) {
+    for (const prefix of ['transcript:', 'extracted:', 'video-metadata:']) {
       const entries = await this.storage.list({ prefix, limit: 500 });
       for (const [key, value] of entries) if (this.now - value.cachedAt >= 30 * DAY) await this.storage.delete(key);
     }
