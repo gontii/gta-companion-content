@@ -22,6 +22,7 @@ export class PublicationEngine {
       extraction,
       tggProbe: await this.store.get('tgg-probe'),
       transcriptCheck: await this.store.get('transcript-check'),
+      tggDiscovery: await this.store.get('tgg-discovery-check'),
       apiAccessCheck: await this.store.get('api-access-check'),
       heartbeatAt: new Date((await this.store.get('heartbeat')) || 0).toISOString(),
       needsSmokeToken: !await this.store.get('smoke-token-set-at') || Date.now() - await this.store.get('smoke-token-set-at') > DAY };

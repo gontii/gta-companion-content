@@ -144,7 +144,7 @@ export class SourceService {
       } else await response.body?.cancel();
     } catch { /* RSS can fail or contain only newer Shorts and streams. */ }
     if (!this.env.SUPADATA_API_KEY) throw new Error('supadata_key_missing');
-    const cached = await this.storage.get('tgg-discovery');
+    const cached = await this.storage.get('tgg-discovery-v2');
     if (cached && this.now < cached.expiresAt) {
       if (cached.candidate && this.now - Date.parse(cached.candidate.publishedOn) <= 8 * DAY) return cached.candidate;
       throw new Error('tgg_relevant_video_missing');
@@ -152,15 +152,22 @@ export class SourceService {
     await this.reserveSupadataCredit();
     const url = new URL('https://api.supadata.ai/v1/youtube/search');
     // No limit or page token: exactly one page/credit, never automatic pagination.
-    url.search = new URLSearchParams({ query: 'TGG GTA Online weekly update', type: 'video', sortBy: 'date', uploadDate: 'week' }).toString();
+    url.search = new URLSearchParams({ query: 'TGG GTA Online weekly update', type: 'video', sortBy: 'relevance', uploadDate: 'week' }).toString();
     const response = await safeFetch(url, { headers: { 'x-api-key': this.env.SUPADATA_API_KEY } });
     if (!response.ok) throw new Error(`supadata_search_http_${response.status}`);
     const data = JSON.parse(await readBounded(response, 160000));
     if (!Array.isArray(data.results)) throw new Error('tgg_search_invalid');
-    const candidate = selectTggCandidate(data.results.filter(v => v.type === 'video').map(v => ({
+    const videos = data.results.filter(v => v.type === 'video').map(v => ({
       videoId: v.id, title: v.title, publishedOn: v.uploadDate, channelId: v.channel?.id,
-    })), this.now);
-    await this.storage.put('tgg-discovery', { candidate, checkedAt: this.now, expiresAt: this.now + 6 * 3600000 });
+    }));
+    const candidate = selectTggCandidate(videos, this.now);
+    await this.storage.put('tgg-discovery-v2', { candidate, checkedAt: this.now, expiresAt: this.now + 6 * 3600000 });
+    // Bounded public video metadata makes a missing candidate diagnosable without captions or credentials.
+    await this.storage.put('tgg-discovery-check', { checkedAt: new Date(this.now).toISOString(),
+      results: data.results.length, videos: videos.length, tggVideos: videos.filter(v => v.channelId === TGG_CHANNEL).length,
+      candidates: videos.slice(0, 12).map(v => ({ videoId: String(v.videoId || '').slice(0, 20),
+        title: String(v.title || '').slice(0, 160), publishedOn: String(v.publishedOn || '').slice(0, 40),
+        channelId: String(v.channelId || '').slice(0, 30) })) });
     if (!candidate) throw new Error('tgg_relevant_video_missing');
     return candidate;
   }

@@ -244,6 +244,7 @@ test('search finds a TGG weekly video pushed out of RSS and rejects matching tit
     searches++;
     assert.equal(url.pathname, '/v1/youtube/search');
     assert.equal(url.searchParams.has('limit'), false);
+    assert.equal(url.searchParams.get('sortBy'), 'relevance');
     return Response.json({ results: [
       { type: 'video', id: 'aaaaaaaaaaa', title: 'GTA Online weekly update', uploadDate: '2026-09-16T11:00:00Z', channel: { id: 'fake' } },
       { type: 'video', id: 'bbbbbbbbbbb', title: 'GTA Online weekly update', uploadDate: '2026-09-16T10:00:00Z', channel: { id: TGG_CHANNEL } },
@@ -253,4 +254,5 @@ test('search finds a TGG weekly video pushed out of RSS and rejects matching tit
   assert.equal((await service.discoverTgg()).videoId, 'bbbbbbbbbbb');
   assert.equal((await service.discoverTgg()).videoId, 'bbbbbbbbbbb');
   assert.equal(searches, 1);
+  assert.equal((await storage.get('tgg-discovery-check')).tggVideos, 1);
 });
