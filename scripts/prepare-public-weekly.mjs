@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { validatePublicWeekly, PUBLIC_WEEKLY_KEY } from '../schemas/public-weekly.mjs';
-import {validateContent} from './weekly-core.mjs';
+import {validateContent,extractDateRange} from './weekly-core.mjs';
 import {validateSnapshot} from './facts.mjs';
 const hash = value => createHash('sha256').update(value).digest('hex');
 export function preparePublicWeekly(publicText, {appText, review, now = Date.now()} = {}) {
@@ -13,6 +13,9 @@ export function preparePublicWeekly(publicText, {appText, review, now = Date.now
     const app = JSON.parse(appText);
     if (app.schemaVersion === 2) validateSnapshot(app, {published:true}); else validateContent(app);
     if (app.weekId !== doc.weekId) throw new Error('Różne tygodnie strony i aplikacji');
+    const iso = /^(\d{4}-\d{2}-\d{2})\s+[–-]\s+(\d{4}-\d{2}-\d{2})$/.exec(app.range || '');
+    const period = iso ? {startId:iso[1],endId:iso[2]} : extractDateRange(app.range || '', {publishedWeekId:app.weekId,now:new Date(app.weekId)});
+    if (period?.startId !== doc.startsOn || period?.endId !== doc.endsOn) throw new Error('Różne okresy strony i aplikacji');
     if (review.publicSha256 !== hash(publicText) || review.appSha256 !== hash(appText)) throw new Error('Zmiana dokumentu po odbiorze');
     if (review.status !== 'zatwierdzone' || !Number.isFinite(Date.parse(review.reviewedAt)) ||
       Date.parse(review.reviewedAt) < Date.parse(doc.confirmedAt) || Date.parse(review.reviewedAt) > now) throw new Error('Niepoprawny odbiór redakcyjny');

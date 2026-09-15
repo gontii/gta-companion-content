@@ -60,4 +60,8 @@ test('public KV preparation never writes app key; active release requires paired
   assert.throws(()=>preparePublicWeekly(publicText+' ',{appText,review,now}));
   assert.throws(()=>preparePublicWeekly(publicText,{appText:JSON.stringify({weekId:'2026-09-10'}),review,now}));
   assert.equal(preparePublicWeekly(publicText,{appText,review,now})[0].key,'weekly:public');
+  const wrongRange=JSON.stringify({...JSON.parse(appText),range:'September 17 - 30, 2026'});
+  assert.throws(()=>preparePublicWeekly(publicText,{appText:wrongRange,review:{...review,appSha256:sha(wrongRange)},now}),/okresy/);
+  const isoRange=JSON.stringify({...JSON.parse(appText),range:'2026-09-17 – 2026-09-23'});
+  assert.equal(preparePublicWeekly(publicText,{appText:isoRange,review:{...review,appSha256:sha(isoRange)},now})[0].key,'weekly:public');
 });
