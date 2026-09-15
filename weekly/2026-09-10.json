@@ -4,7 +4,7 @@
   "headline": "Free Grapeseed Clubhouse, GTA$1M challenge and Biker bonuses",
   "quickTake": [
     "Claim the FREE Grapeseed Clubhouse via Maze Bank Foreclosures by September 16 — no GTA+ required.",
-    "Sell GTA$1M worth of products for an extra GTA$1M and the Junk Tracksuit.",
+    "Sell GTA$1M of MC Business or Acid Lab product for an extra GTA$1M and the Junk Tracksuit by September 16.",
     "2X GTA$ on Street Dealer Sales and Bike Service Missions; Bike Service pays 6X for GTA+ members.",
     "Karin S95 is 70% off on PS5, Xbox Series X|S and PC Enhanced."
   ],
@@ -71,7 +71,7 @@
       "items": [
         {
           "id": "business-rivalries-2026-09-10",
-          "label": "Earn GTA$1,000,000 selling products to receive an extra GTA$1,000,000 and the Junk Tracksuit.",
+          "label": "Earn GTA$1,000,000 selling MC Business or Acid Lab product to receive an extra GTA$1,000,000 and the Junk Tracksuit, September 10–16.",
           "tag": "gold"
         }
       ]
@@ -293,52 +293,57 @@
     },
     {
       "id": "gta-plus",
-      "title": "GTA+ — September 10 reports; confirmation pending",
+      "title": "GTA+ — September 10 to October 7, 2026",
       "items": [
         {
           "id": "gta-plus-2026-09-status",
-          "label": "GTA+ only: Checked September 10. Full monthly benefits and their end date are not yet confirmed. Check in-game offers before spending.",
+          "label": "GTA+ only: September benefits confirmed against Rockstar on September 15; valid September 10–October 7 unless a shorter period is stated.",
           "tag": "limited"
         },
         {
           "id": "gta-plus-2026-09-horus",
           "tag": "limited",
-          "label": "GTA+ only — reported by fan sites: Claim the free Pegassi Horus at The Vinewood Car Club; early access this week."
+          "label": "GTA+ only: claim the Pegassi Horus for free at The Vinewood Car Club with the Velvet Iris livery, through October 7. Early access ends September 16; general sale begins September 17."
         },
         {
           "id": "gta-plus-2026-09-cluckin",
           "tag": "limited",
-          "label": "GTA+ only — player report, unconfirmed: 2X GTA$ & RP on the Cluckin’ Bell Farm Raid."
+          "label": "GTA+ only: 2X GTA$ on your first weekly completion of the Cluckin’ Bell Farm Raid finale, Scene of the Crime, September 10–October 7. No extra RP multiplier is announced."
         },
         {
           "id": "gta-plus-2026-09-production",
           "tag": "limited",
-          "label": "GTA+ only — player report, unconfirmed: 2X production speed for the Cocaine Lockup and Nightclub South American Imports."
+          "label": "GTA+ only: 2X Cocaine Lockup production speed, September 10–October 7. This offer does not announce a Nightclub production bonus."
         },
         {
           "id": "gta-plus-2026-09-mc",
           "tag": "limited",
-          "label": "GTA+ only — player report, unconfirmed: 60% off MC businesses and upgrades."
+          "label": "GTA+ only: 60% off Biker Business Properties, Upgrades and Modifications through October 7."
         },
         {
           "id": "gta-plus-2026-09-bikes",
           "tag": "limited",
-          "label": "GTA+ only — player report, unconfirmed: 50% off Nagasaki Chimera, Stryder, BF400 and Shinobi. Check the in-game price before buying."
+          "label": "GTA+ only: 50% off Nagasaki Shinobi, Shotaro, Stryder, Chimera and BF400 through October 7."
         },
         {
           "id": "gta-plus-2026-09-shotaro",
           "tag": "limited",
-          "label": "GTA+ only — player report, unconfirmed: Nagasaki Shotaro is reported discounted; sources disagree on the final Vinewood Car Club discount. Check the in-game price."
+          "label": "GTA+ only: Nagasaki Shotaro is included in the confirmed 50% Nagasaki motorcycle sale through October 7."
         },
         {
           "id": "gta-plus-2026-09-clothes",
           "tag": "limited",
-          "label": "GTA+ only — player report, unconfirmed: Bigness Patchwork Revere Collar and Bigness Patchwork Jeans."
+          "label": "GTA+ only: Bigness Patchwork Revere Collar shirt and Patchwork Jeans are added to your wardrobe during September 10–October 7."
         },
         {
           "id": "gta-plus-2026-09-paint",
           "tag": "limited",
-          "label": "GTA+ only — player report, unconfirmed: Cyan/Red Flip Chameleon Paint."
+          "label": "GTA+ only: free Cyan/Red Flip Chameleon Paint and matching Wheel Paint at vehicle workshops and mod bays through October 7."
+        },
+        {
+          "id": "gta-plus-2026-09-bike-service",
+          "label": "GTA+ only: Bike Service Missions pay 3X GTA$ and RP through October 7; the GTA$ reward is increased to 6X during September 10–16. Clubhouse Custom Bike Shop required.",
+          "tag": "limited"
         }
       ]
     }
@@ -358,7 +363,7 @@
     },
     {
       "id": "bp-4",
-      "label": "If you already own a producing business, sell GTA$1M worth of products to earn the GTA$1M Weekly Challenge prize and Junk Tracksuit. Keep track in the Interaction Menu."
+      "label": "If you own an MC Business or Acid Lab, sell GTA$1M worth of its product for the GTA$1M Weekly Challenge prize and Junk Tracksuit by September 16. Track the challenge in the Interaction Menu."
     }
   ],
   "locations": [
@@ -392,7 +397,7 @@
     },
     {
       "id": "loc-challenge",
-      "activity": "The GTA Online Weekly Challenge for this week is \"Earn GTA$1,000,000 selling all kinds of product\". You'll earn GTA$1,000,000 (yes, 1m) and the Junk Tracksuit for doing so",
+      "activity": "Weekly Challenge: earn GTA$1,000,000 selling MC Business or Acid Lab product, September 10–16; reward: GTA$1,000,000 and Junk Tracksuit.",
       "name": "Weekly challenge",
       "area": "Los Santos",
       "note": "Check the in-game map, phone, or pause menu for the current entry point."
@@ -406,7 +411,7 @@
     }
   ],
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-in-business-rivalries-event-september-10th-16th/",
-  "generatedAt": "2026-09-10T10:33:04.720Z",
+  "generatedAt": "2026-09-15T18:52:46.718Z",
   "seasonalEvent": {
     "id": "business-rivalries-2026-09",
     "title": "September Business Rivalries",
@@ -426,7 +431,7 @@
       {
         "startsOn": "2026-09-10",
         "endsOn": "2026-09-16",
-        "challenge": "Earn GTA$1,000,000 selling products",
+        "challenge": "Earn GTA$1,000,000 selling MC Business or Acid Lab product",
         "reward": "GTA$1,000,000",
         "outfit": "Junk Tracksuit"
       },

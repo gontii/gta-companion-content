@@ -102,3 +102,25 @@ export function publicState(doc, now = Date.now()) {
   if (today > doc.endsOn) return 'ended';
   return doc.status === 'active' && today >= doc.startsOn ? 'active' : 'preview';
 }
+
+// Jeden adres może pokazać bieżące wydanie i zapowiedź. Brak archiwum w runtime.
+export function validatePublicPage(value, now = Date.now()) {
+  if (Object.hasOwn(value || {}, 'issue')) { validatePublicWeekly(value, now); return value; }
+  object(value, ['schemaVersion', 'editions']);
+  requireValue(value.schemaVersion === 1 && Array.isArray(value.editions) && value.editions.length >= 1 && value.editions.length <= 2, 'Wymagane jedno lub dwa wydania');
+  requireValue(new TextEncoder().encode(JSON.stringify(value)).length <= MAX_PUBLIC_BYTES, 'Dokument strony za duży');
+  value.editions.forEach(doc => validatePublicWeekly(doc, now));
+  if (value.editions.length === 2) {
+    const [current, next] = value.editions;
+    requireValue(current.endsOn < next.startsOn && date(next.startsOn) - date(current.endsOn) === 86400000, 'Wydania muszą następować bezpośrednio po sobie');
+    requireValue(next.status === 'preview', 'Drugie wydanie musi być zapowiedzią');
+  }
+  return value;
+}
+export function visiblePublicEditions(value, now = Date.now()) {
+  validatePublicPage(value, now);
+  const editions = value.editions || [value];
+  const visible = editions.filter(doc => publicState(doc, now) !== 'ended');
+  // Gdy wszystko wygasło, zostaje ostatnie wydanie z jawnym komunikatem.
+  return visible.length ? visible : [editions[editions.length - 1]];
+}

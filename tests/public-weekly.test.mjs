@@ -65,3 +65,24 @@ test('public KV preparation never writes app key; active release requires paired
   const isoRange=JSON.stringify({...JSON.parse(appText),range:'2026-09-17 – 2026-09-23'});
   assert.equal(preparePublicWeekly(publicText,{appText:isoRange,review:{...review,appSha256:sha(isoRange)},now})[0].key,'weekly:public');
 });
+
+test('rolling page validates both editions, removes old offers and never auto-confirms', async()=>{
+  const {validatePublicPage,visiblePublicEditions}=await import('../schemas/public-weekly.mjs');
+  const current=JSON.parse(readFileSync(new URL('../weekly/public/2637.json',import.meta.url)));
+  const page={schemaVersion:1,editions:[current,fixture()]};
+  assert.equal(validatePublicPage(page,now).editions.length,2);
+  assert.deepEqual(visiblePublicEditions(page,Date.parse('2026-09-16T22:00:00Z')).map(d=>d.issue),['2637','2638']);
+  assert.deepEqual(visiblePublicEditions(page,now).map(d=>d.issue),['2638']);
+  assert.equal(publicState(visiblePublicEditions(page,now)[0],now),'preview');
+  assert.equal(publicState(visiblePublicEditions(page,Date.parse('2026-09-24'))[0],Date.parse('2026-09-24')),'ended');
+  assert.throws(()=>validatePublicPage({...page,accessToken:'private'},now));
+  assert.throws(()=>validatePublicPage({...page,editions:[current,current]},now));
+  const changed=structuredClone(page);changed.editions[1].accessToken='private';assert.throws(()=>validatePublicPage(changed,now));
+});
+test('empty weekly skeleton computes ISO dates without inheriting offers or pretending verification',async()=>{
+  const {newPublicWeekly}=await import('../scripts/new-public-weekly.mjs');
+  const d=newPublicWeekly('2026-12-31');assert.equal(d.issue,'2653');assert.equal(d.endsOn,'2027-01-06');
+  assert.equal(d.verifiedAt,null);assert.equal(d.confirmedAt,null);assert.deepEqual(d.sources,[]);
+  assert.ok(d.sections.flatMap(s=>s.items).every(i=>i.status==='pending'&&i.offer===null));
+  assert.throws(()=>validatePublicWeekly(d,now));
+});

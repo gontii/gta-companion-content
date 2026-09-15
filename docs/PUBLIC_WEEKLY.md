@@ -55,3 +55,21 @@ Odczytano oficjalne artykuły Rockstar przez istniejący odczyt Newswire GraphQL
 - GTA+: 3X GTA$/RP Bike Service do 07.10. Nie przenosić 6X z 10–16.09. Cluckin’ Bell: 2X GTA$ wyłącznie pierwszy finał tygodnia; Cocaine Lockup 2X produkcji, bez domniemania bonusu Nightclub.
 
 Data verifiedAt odzwierciedla ten odczyt, nie czas generowania HTML. Bieżący weekly/latest.json nadal dotyczy 10.09; pełna zgodność przyszłego aktywnego wydania z aplikacją pozostaje bramką finalizacji 17.09.
+
+## Bieżący tydzień oraz zapowiedź pod jednym adresem
+
+Szablon krok po kroku: [templates/PUBLIC_WEEKLY.md](../templates/PUBLIC_WEEKLY.md). Pusty szkic tworzy `node scripts/new-public-weekly.mjs YYYY-MM-DD`; nie przenosi ofert i wymaga prawdziwych źródeł oraz czasu weryfikacji.
+
+Od 15.09 strona może otrzymać jeden dokument lub obiekt `{schemaVersion: 1, editions: [bieżąceWydanie, zapowiedź]}`. Maksymalnie dwa wydania muszą następować bezpośrednio po sobie; drugie ma stan `preview`. Walidowane są oba. Po wygaśnięciu pierwsze znika z widoku, a kolejne zachowuje stan redakcyjny. Gdy oba wygasną, widoczne jest ostatnie z komunikatem o zakończeniu. Nie powstaje publiczne archiwum.
+
+Przykład przygotowania pary, po odbiorze aktywnego 2637 z aplikacją:
+
+```sh
+node scripts/prepare-public-weekly.mjs weekly/public/2637.json \
+  --app weekly/2026-09-10.json --review /tmp/2637-odbior.json \
+  --next weekly/public/2638.json --output /tmp/2637-2638-public-kv.json
+```
+
+Gdy 2638 zostanie potwierdzone, przygotuj je jako pierwsze/jedyne wydanie; 2637 pozostaje tylko w Git. Nie zmieniaj numeru przy korekcie.
+
+W 2637 zweryfikowano bieżące rotacje w RockstarINTEL oraz fakty w oficjalnych artykułach Rockstar. Błąd źródła w rabacie członkowskim Pipe Wrench pozostaje jawnie niepotwierdzony. Oficjalny warunek wyzwania to sprzedaż MC Business lub Acid Lab; poprawiono ten warunek oraz GTA+ także w `weekly/2026-09-10.json` i `weekly/latest.json`, zachowując identyfikatory. Pierwszy finał Cluckin’ Bell tygodnia ma 2X GTA$, Cocaine Lockup ma 2X produkcji; źródło nie ogłasza dodatkowego mnożnika RP finału ani produkcji Nightclub. Obie wersje są odbierane przed zapisem KV.
