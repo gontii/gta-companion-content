@@ -23,6 +23,8 @@ concurrency:
 
 jobs:
   update-weekly:
+    # Cutover is explicit; observe mode does not disable the existing publisher.
+    if: vars.CONTENT_WRITER != 'cloudflare'
     runs-on: ubuntu-latest
     env:
       GTA_WEEKLY_SOURCE_URL: ${{ inputs.source_url || vars.GTA_WEEKLY_SOURCE_URL }}

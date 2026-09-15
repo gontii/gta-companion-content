@@ -2,8 +2,10 @@
 import { readFile } from 'node:fs/promises';
 import { assertPublishedContent, requireMemberPeriod } from './publication-quality.mjs';
 import { applySeasonalContent, isRetiredDlcAnnouncement, isSeasonalEvent } from './seasonal-content.mjs';
+import { validateSnapshot, hash } from './facts.mjs';
+import { projectContent } from './temporal.mjs';
 
-const baseUrl = process.env.SMOKE_BASE_URL || 'https://companion-for-gta-online.pages.dev';
+const baseUrl = process.env.SMOKE_BASE_URL || 'https://gtacompanion.net';
 const code = process.env.BETA_SMOKE_CODE;
 const email = process.env.SMOKE_TEST_EMAIL || 'smoke@gta-companion.local';
 const expectedWeekId = process.env.EXPECTED_WEEK_ID;
@@ -19,8 +21,9 @@ async function expectJson(response, label) {
 }
 
 async function main() {
-  requireMemberPeriod();
   const artifact = JSON.parse(await readFile(new URL('../weekly/latest.json', import.meta.url), 'utf8'));
+  if (artifact.schemaVersion === 2) validateSnapshot(artifact, { published: true });
+  else requireMemberPeriod();
   if (!code) throw new Error('BETA_SMOKE_CODE is required');
   if (!expectedWeekId) throw new Error('EXPECTED_WEEK_ID is required');
 
@@ -46,6 +49,12 @@ async function main() {
   if (!weekly.ok) throw new Error(`/api/weekly returned ${weekly.status}`);
   if (weeklyBody.weekId !== expectedWeekId) {
     throw new Error(`/api/weekly weekId ${weeklyBody.weekId}, expected ${expectedWeekId}`);
+  }
+
+  if (artifact.schemaVersion === 2) {
+    if (await hash(weeklyBody) !== await hash(projectContent(artifact))) throw new Error('Live API differs from the complete projected artifact');
+    console.log(`Smoke test passed for revision ${artifact.revision}`);
+    return;
   }
 
   if (weeklyBody.quickTake?.some(isRetiredDlcAnnouncement)) {

@@ -1,8 +1,5 @@
-import { readFileSync } from 'node:fs';
-
-export const septemberEvent = JSON.parse(readFileSync(
-  new URL('../events/business-rivalries-2026-09.json', import.meta.url), 'utf8',
-));
+import septemberEvent from '../events/business-rivalries-2026-09.json' with { type: 'json' };
+export { septemberEvent };
 
 export const isRetiredDlcAnnouncement = (line) =>
   /^NEW DLC:\s*The Kortz Center Heist is live\b/i.test(line.trim());

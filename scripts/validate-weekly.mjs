@@ -4,9 +4,11 @@ import path from 'node:path';
 
 import { requireMemberPeriod, validatePublication } from './publication-quality.mjs';
 import { validateContent } from './generate-weekly.mjs';
+import { validateSnapshot } from './facts.mjs';
 
 async function validateFile(file) {
   const content = JSON.parse(await readFile(file, 'utf8'));
+  if (content.schemaVersion === 2) { validateSnapshot(content, { published: true }); return content.weekId; }
   validateContent(content);
   if (path.basename(file) === 'latest.json') {
     requireMemberPeriod();

@@ -1,0 +1,39 @@
+name: Historia i kontrola automatu Cloudflare
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      request_check:
+        description: 'Zleć sprawdzenie temu samemu automatowi Cloudflare'
+        type: boolean
+        default: false
+      probe_tgg:
+        description: 'Sprawdź transkrypcję TGG w trybie obserwacji, bez publikowania'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: content-history
+  cancel-in-progress: false
+jobs:
+  relay:
+    if: vars.CONTENT_UPDATER_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: node scripts/github-relay.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CONTENT_UPDATER_URL: ${{ vars.CONTENT_UPDATER_URL }}
+          CONTENT_AUTOMATION_TOKEN: ${{ secrets.CONTENT_AUTOMATION_TOKEN }}
+          BETA_SMOKE_CODE: ${{ secrets.BETA_SMOKE_CODE }}
+          SMOKE_TEST_EMAIL: ${{ secrets.SMOKE_TEST_EMAIL }}
+          REQUEST_CONTENT_CHECK: ${{ inputs.request_check && 'true' || 'false' }}
+          PROBE_TGG: ${{ inputs.probe_tgg && 'true' || 'false' }}

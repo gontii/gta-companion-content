@@ -1,10 +1,12 @@
-import { readFileSync } from 'node:fs';
 
-export const memberPeriods = JSON.parse(readFileSync(new URL('../events/gta-plus.json', import.meta.url), 'utf8'));
-export const weeklyRequirements = JSON.parse(readFileSync(new URL('../events/weekly-quality.json', import.meta.url), 'utf8'));
+import memberPeriods from '../events/gta-plus.json' with { type: 'json' };
+export { memberPeriods };
+import weeklyRequirements from '../events/weekly-quality.json' with { type: 'json' };
+export { weeklyRequirements };
 export class PublicationQualityError extends Error {}
-export const pendingMemberBenefits = JSON.parse(readFileSync(new URL('../events/gta-plus-pending.json', import.meta.url), 'utf8'));
-const editorial = JSON.parse(readFileSync(new URL('../events/weekly-editorial.json', import.meta.url), 'utf8'));
+import pendingMemberBenefits from '../events/gta-plus-pending.json' with { type: 'json' };
+export { pendingMemberBenefits };
+import editorial from '../events/weekly-editorial.json' with { type: 'json' };
 // A one-day editorial exception authorized by the owner, not an invented GTA+ expiry.
 const pendingIsCurrent = now => pendingMemberBenefits.checkedOn === dayId(now) &&
   now.getTime() <= Date.parse(pendingMemberBenefits.publicationAllowedUntil);
