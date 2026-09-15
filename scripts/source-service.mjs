@@ -1,5 +1,5 @@
 import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText } from './weekly-core.mjs';
-import { articleDocument, hash, validateFacts } from './facts.mjs';
+import { articleDocument, hash, validateFacts, FACT_VALIDATION_VERSION } from './facts.mjs';
 import { safeFetch, readBounded } from './http.mjs';
 import { DAY, localParts, windowFromDays } from './temporal.mjs';
 
@@ -33,7 +33,7 @@ export class SourceService {
     await this.storage.put(key, used + amount);
   }
   async extract(doc) {
-    const key = `extracted:${await hash([PROMPT_VERSION, doc.source.url, doc.text])}`;
+    const key = `extracted:${await hash([PROMPT_VERSION, FACT_VALIDATION_VERSION, doc.source.url, doc.text])}`;
     const cached = await this.storage.get(key);
     if (cached) return { ...doc, ...cached };
     if (!this.env.AI) throw new Error('ai_binding_missing');

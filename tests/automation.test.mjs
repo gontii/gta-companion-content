@@ -176,3 +176,19 @@ test('a reward cannot lose its qualifying requirement during extraction', () => 
   const doc = { text: `${f.evidence}. ${f.dateEvidence}`, source: f.sources[0] };
   assert.equal(validateFacts({ facts: [f] }, doc).facts.length, 0);
 });
+
+test('source agreement retains multiple periods and an expired official period cannot block the next one', async () => {
+  const weekend = { ...fact, startsOn: '2026-09-18', endsOn: '2026-09-20', offer: '3X GTA$ & RP' };
+  const agreed = agreeSources([{ source: { kind: 'rockstar' }, facts: [fact, weekend] }], false);
+  assert.equal(agreed.length, 2);
+  const old = { ...fact, startsOn: '2026-09-17', endsOn: '2026-09-17' };
+  const next = { ...weekend, confidence: 'corroborated' };
+  const c = await mergeFacts(null, [old], atLocal('2026-09-17', 700));
+  const updated = await mergeFacts(c, [old, next], atLocal('2026-09-18', 700));
+  assert.match(projectContent(updated, atLocal('2026-09-18', 700)).sections[0].items[0].label, /3X/);
+  let regular = await mergeFacts(null, [fact], atLocal('2026-09-17', 700));
+  regular = await mergeFacts(regular, [fact, next], atLocal('2026-09-18', 700));
+  assert.match(projectContent(regular, atLocal('2026-09-18', 700)).sections[0].items[0].label, /3X/);
+  regular = await mergeFacts(regular, [fact, next], atLocal('2026-09-21', 700));
+  assert.match(projectContent(regular, atLocal('2026-09-21', 700)).sections[0].items[0].label, /2X/);
+});

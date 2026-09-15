@@ -51,8 +51,10 @@ Zatrzymanie: wdrożyć `PUBLICATION_MODE=observe`. Nie włączać równocześnie
 
 ## Odbiór 15.09.2026
 
-Sprawdzono 64 testy treści oraz dodatkowe 2 regresje: żądanie podczas odczytu źródła i zachowanie warunku nagrody. Produkcyjna paczka aplikacji: 113/113 testów, TypeScript, eksport i 13 zasobów; po wdrożeniu 26/26 kontroli HTTP oraz HTTP 200 statystyk S1. Odrębnie bieżący kod aplikacji: 158/158 testów i eksporty JavaScript Android/iOS; nie zastępuje to testu urządzenia ani publikacji sklepowej.
+Sprawdzono 67/67 testów treści, w tym żądanie podczas odczytu źródła, zachowanie warunku nagrody oraz oddzielne okresy tej samej oferty i powrót zwykłego bonusu po weekendzie. Produkcyjna paczka aplikacji: 113/113 testów, TypeScript, eksport i 13 zasobów; po wdrożeniu 26/26 kontroli HTTP oraz HTTP 200 statystyk S1. Odrębnie bieżący kod aplikacji: 158/158 testów i eksporty JavaScript Android/iOS; nie zastępuje to testu urządzenia ani publikacji sklepowej.
 
 Rzeczywiste odczyty Cloudflare potwierdziły właściwy tygodniowy artykuł Rockstara, RockstarINTEL i GTABase. Odczyt GTA+ jest osobny; niepełny wynik pozostaje oczekujący. Alarmy nadzorcy wystąpiły samoczynnie w odstępach 15 minut. Test wygaśnięcia w przeglądarce wykonano z danymi syntetycznymi wyłącznie lokalnie, także po zatrzymaniu serwera.
 
 Supadata nie jest jeszcze skonfigurowana: panel wymaga logowania przez właściciela. Po zapisaniu klucza Workera należy uruchomić `gh workflow run content-relay.yml -f probe_tgg=true --repo gontii/gta-companion-content`. Ta próba działa wyłącznie w obserwacji, pobiera transkrypcję z Cloudflare i zapisuje wynik `tggProbe`; nie omija warunku wyboru źródła w normalnej publikacji. Weryfikacja faktów i znaczników czasu oraz pozytywny wynik pozostają obowiązkowe przed przełączeniem.
+
+Przekaźnik GitHub: przebieg `34997722369` zakończony sukcesem. Odnowiony token dał HTTP 200 z `private, max-age=60` na chronionym API; status przechowuje `apiAccessCheck`, bez tokenu. Testy ekstrakcji wykorzystały dzienny limit automatu: `ai_free_budget_exhausted` został obsłużony bez podnoszenia limitu. Odczyt źródeł po końcowej poprawce walidatora pozostaje do potwierdzenia po odnowieniu limitu UTC. Wersja walidacji 7 archiwizuje eksperymentalny stan obserwacji i odtwarza kandydata z danych produkcyjnych oraz ponownie sprawdzonych faktów. Publikacja nie była włączana.

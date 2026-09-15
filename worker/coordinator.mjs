@@ -1,5 +1,5 @@
 import { SourceService } from '../scripts/source-service.mjs';
-import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot } from '../scripts/facts.mjs';
+import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
 import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, atLocal, MINUTE, DAY } from '../scripts/temporal.mjs';
 import { thursdayWeekId } from '../scripts/weekly-core.mjs';
 import { safeFetch, readBounded } from '../scripts/http.mjs';
@@ -81,6 +81,16 @@ export class PublicationEngine {
         } catch (error) { await this.store.put('tgg-probe', { checkedAt: new Date(now).toISOString(), error: error.message.slice(0, 180) }); }
       }
       let master = await this.store.get('master');
+      if (this.env.PUBLICATION_MODE === 'observe' && state.validationVersion !== FACT_VALIDATION_VERSION) {
+        // Experimental candidates never carry weaker validation into the first publication.
+        if (master) await this.store.put(`archived-observation:${state.validationVersion || 0}`, master);
+        master = null;
+        await this.store.delete('master');
+        for (const key of (await this.store.list({ prefix: 'fact:', limit: 1000 })).keys()) await this.store.delete(key);
+        await this.store.delete('facts');
+        state.nextCheck = null;
+        state.validationVersion = FACT_VALIDATION_VERSION;
+      }
       if (!master) {
         const legacy = await this.env.CONTENT_KV.get('weekly:latest', 'json');
         if (legacy) master = upgradeLegacy(legacy);

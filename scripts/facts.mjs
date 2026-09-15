@@ -5,6 +5,7 @@ export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
+export const FACT_VALIDATION_VERSION = 7;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
@@ -78,6 +79,7 @@ export function validateFacts(raw, doc) {
       if (f.section === 'gta-plus' && f.eligibility !== 'gta-plus') throw new Error('member_scope');
       if (f.eligibility === 'gta-plus' && !/gta\+|gta plus|member/i.test(f.evidence)) throw new Error('member_evidence');
       if (f.platform === 'enhanced' && !/enhanced|ps5|series x|playstation 5/i.test(f.evidence)) throw new Error('platform_evidence');
+      if (f.platform === 'legacy' && !/legacy|ps4|playstation 4|xbox one/i.test(f.evidence)) throw new Error('platform_evidence');
       if (doc.source.kind === 'tgg') {
         const chunk = doc.chunks.find(c => c.offset === f.offsetMs);
         const nearby = doc.chunks.filter(c => c.offset >= f.offsetMs && c.offset <= f.offsetMs + 90_000).map(c => c.text).join(' ');
@@ -118,15 +120,16 @@ export function agreeSources(documents, allowTgg) {
   const official = documents.filter(d => d.source.kind === 'rockstar').flatMap(d => d.facts);
   const intel = documents.filter(d => d.source.kind === 'intel').flatMap(d => d.facts);
   const base = documents.filter(d => d.source.kind === 'gtabase').flatMap(d => d.facts);
-  const approved = new Map(official.map(f => [factKey(f), { ...f, confidence: 'official' }]));
+  const periodKey = f => `${factKey(f)}:${f.startsOn}`;
+  const approved = new Map(official.map(f => [periodKey(f), { ...f, confidence: 'official' }]));
   for (const f of intel) {
-    if (approved.has(factKey(f))) continue;
+    if (approved.has(periodKey(f))) continue;
     const match = base.find(b => factSignature(b) === factSignature(f));
-    if (match) approved.set(factKey(f), { ...f, sources: [...f.sources, ...match.sources], confidence: 'corroborated' });
+    if (match) approved.set(periodKey(f), { ...f, sources: [...f.sources, ...match.sources], confidence: 'corroborated' });
   }
   if (allowTgg && !documents.some(d => d.source.kind !== 'tgg' && d.source.scope !== 'membership' && d.current)) {
     for (const f of documents.filter(d => d.source.kind === 'tgg').flatMap(d => d.facts)) {
-      if (!approved.has(factKey(f))) approved.set(factKey(f), { ...f, confidence: 'transcript' });
+      if (!approved.has(periodKey(f))) approved.set(periodKey(f), { ...f, confidence: 'transcript' });
     }
   }
   return [...approved.values()];
@@ -186,8 +189,9 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     if (!section) continue;
     const key = factKey(f);
     const existing = section.items.find(i => i.factKey === key) || section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
-    if (existing?.confidence === 'official' && f.confidence !== 'official') continue;
     const timing = factWindow(f);
+    if (existing?.confidence === 'official' && f.confidence !== 'official' && Date.parse(existing.expiresAt) > now &&
+        Date.parse(existing.startsAt) >= Date.parse(timing.startsAt)) continue;
     // Keep a manual correction, its id and its original validity period.
     if (existing?.editorial && Date.parse(existing.expiresAt) > now) continue;
     const id = existing?.id || `auto-${(await hash(key)).slice(0, 18)}`;
