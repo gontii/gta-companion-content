@@ -1,0 +1,24 @@
+name: Testy automatu treści
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/**', 'worker/**', 'tests/**', 'events/**', 'package.json', '.github/workflows/content-tests.yml']
+  pull_request:
+    paths: ['scripts/**', 'worker/**', 'tests/**', 'events/**', 'package.json', '.github/workflows/content-tests.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: content-tests-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      # Tests use Node's built-in runner; no platform credentials or Worker deployment.
+      - run: npm test
