@@ -69,6 +69,7 @@ test('public KV preparation never writes app key; active release requires paired
 test('rolling page validates both editions, removes old offers and never auto-confirms', async()=>{
   const {validatePublicPage,visiblePublicEditions}=await import('../schemas/public-weekly.mjs');
   const current=JSON.parse(readFileSync(new URL('../weekly/public/2637.json',import.meta.url)));
+  assert.doesNotMatch(JSON.stringify(current),/ends before this edition|has ended before this edition/);
   const page={schemaVersion:1,editions:[current,fixture()]};
   assert.equal(validatePublicPage(page,now).editions.length,2);
   assert.deepEqual(visiblePublicEditions(page,Date.parse('2026-09-16T22:00:00Z')).map(d=>d.issue),['2637','2638']);
