@@ -21,6 +21,7 @@ export class PublicationEngine {
     return { mode: this.env.PUBLICATION_MODE, ...state, outboxCount: outbox.size, progress: await this.store.get('progress'),
       extraction,
       tggProbe: await this.store.get('tgg-probe'),
+      transcriptCheck: await this.store.get('transcript-check'),
       apiAccessCheck: await this.store.get('api-access-check'),
       heartbeatAt: new Date((await this.store.get('heartbeat')) || 0).toISOString(),
       needsSmokeToken: !await this.store.get('smoke-token-set-at') || Date.now() - await this.store.get('smoke-token-set-at') > DAY };
@@ -47,6 +48,7 @@ export class PublicationEngine {
   async requestTggProbe() {
     if (this.env.PUBLICATION_MODE !== 'observe') throw new Error('probe_requires_observe');
     await this.store.put('tgg-probe-requested', true);
+    await this.store.put('tgg-probe-next-at', Date.now());
     await this.store.setAlarm(Date.now() + 1000);
   }
   async wake() {
@@ -72,13 +74,27 @@ export class PublicationEngine {
     await this.store.put('state', state);
     let nextAt = now + 15 * MINUTE;
     try {
-      if (this.env.PUBLICATION_MODE === 'observe' && await this.store.get('tgg-probe-requested')) {
+      if (this.env.PUBLICATION_MODE === 'observe' && await this.store.get('tgg-probe-requested') &&
+          ((await this.store.get('tgg-probe-next-at')) || 0) <= now) {
         await this.store.delete('tgg-probe-requested');
+        await this.store.delete('tgg-probe-next-at');
         try {
           const probe = await new SourceService(this.store, this.env, now).tgg();
           await this.store.put('tgg-probe', { checkedAt: new Date(now).toISOString(), source: probe.source,
             facts: probe.facts.map(f => ({ entity: f.entity, offer: f.offer, startsOn: f.startsOn, endsOn: f.endsOn, offsetMs: f.offsetMs })), rejected: probe.rejected });
-        } catch (error) { await this.store.put('tgg-probe', { checkedAt: new Date(now).toISOString(), error: error.message.slice(0, 180) }); }
+        } catch (error) {
+          let retryAt = null;
+          if (error.message === 'ai_free_budget_exhausted') retryAt = Math.floor(now / DAY) * DAY + DAY + 2 * MINUTE;
+          else if (['transcript_job_pending', 'transcript_retry_not_due'].includes(error.message)) {
+            retryAt = Math.max(now + MINUTE, (await this.store.get('transcript-check'))?.retryAt || now + 15 * MINUTE);
+          }
+          if (retryAt) {
+            await this.store.put('tgg-probe-next-at', retryAt);
+            await this.store.put('tgg-probe-requested', true);
+          }
+          await this.store.put('tgg-probe', { checkedAt: new Date(now).toISOString(), error: error.message.slice(0, 180),
+            retryAt: retryAt ? new Date(retryAt).toISOString() : null });
+        }
       }
       let master = await this.store.get('master');
       if (this.env.PUBLICATION_MODE === 'observe' && state.validationVersion !== FACT_VALIDATION_VERSION) {
@@ -197,7 +213,10 @@ export class PublicationEngine {
       if (state.verifyAfter && state.verifiedRevision !== state.publishedRevision) nextAt = Math.min(nextAt, Math.max(now + MINUTE, state.verifyAfter));
       if (state.lastError) nextAt = Math.min(nextAt, now + 15 * MINUTE);
       // A request received during source IO must survive the final alarm write.
-      if (await this.store.get('check-requested') || await this.store.get('tgg-probe-requested')) nextAt = Math.min(nextAt, Date.now() + 1000);
+      if (await this.store.get('check-requested')) nextAt = Math.min(nextAt, Date.now() + 1000);
+      if (this.env.PUBLICATION_MODE === 'observe' && await this.store.get('tgg-probe-requested')) {
+        nextAt = Math.min(nextAt, Math.max(Date.now() + 1000, (await this.store.get('tgg-probe-next-at')) || 0));
+      }
       state.nextRunAt = new Date(nextAt).toISOString();
       state.nextReason = state.lastError ? `Ponowienie: ${state.lastError}` : state.nextCheck.reason;
       state.heartbeatAt = new Date((await this.store.get('heartbeat')) || now).toISOString();

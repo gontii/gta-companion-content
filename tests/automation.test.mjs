@@ -192,3 +192,45 @@ test('source agreement retains multiple periods and an expired official period c
   regular = await mergeFacts(regular, [fact, next], atLocal('2026-09-21', 700));
   assert.match(projectContent(regular, atLocal('2026-09-21', 700)).sections[0].items[0].label, /2X/);
 });
+
+test('transcript quota does not reset at a calendar month boundary', async () => {
+  const storage = new Storage();
+  const before = Date.parse('2026-09-30T18:00:00Z');
+  const service = new SourceService(storage, {}, before);
+  for (let i = 0; i < 95; i++) await service.reserveTranscriptCredit();
+  await assert.rejects(() => new SourceService(storage, {}, before + 86400000).reserveTranscriptCredit(), /budget_exhausted/);
+  await new SourceService(storage, {}, before + 32 * 86400000 + 1).reserveTranscriptCredit();
+});
+
+test('downloaded caption evidence survives an exhausted AI allowance', async t => {
+  const storage = new Storage();
+  t.mock.method(globalThis, 'fetch', async () => new Response(`<feed><entry><yt:videoId>abcdefghijk</yt:videoId><yt:channelId>${TGG_CHANNEL}</yt:channelId><title>GTA Online weekly update</title><published>2026-09-16T10:00:00Z</published></entry></feed>`));
+  t.mock.method(SourceService.prototype, 'transcript', async () => [{ text: 'The weekly update starts September 17.', offset: 12000 }]);
+  t.mock.method(SourceService.prototype, 'extract', async () => { throw new Error('ai_free_budget_exhausted'); });
+  await assert.rejects(() => new SourceService(storage, {}, Date.parse('2026-09-17')).tgg(), /budget_exhausted/);
+  const check = await storage.get('transcript-check');
+  assert.equal(check.status, 'downloaded');
+  assert.equal(check.firstOffsetMs, 12000);
+  assert.match(check.digest, /^[a-f0-9]{64}$/);
+});
+
+test('TGG probe waits for the UTC allowance reset and then resumes itself', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-15T18:00:00Z') });
+  const storage = new Storage(); let calls = 0;
+  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
+  t.mock.method(SourceService.prototype, 'tgg', async () => {
+    if (++calls === 1) throw new Error('ai_free_budget_exhausted');
+    return { source: { kind: 'tgg' }, facts: [], rejected: [] };
+  });
+  const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'observe', CONTENT_KV: { get: async () => legacy } });
+  await engine.requestTggProbe();
+  await engine.alarm();
+  assert.equal((await engine.status()).tggProbe.retryAt, '2026-09-16T00:02:00.000Z');
+  await engine.alarm();
+  assert.equal(calls, 1);
+  t.mock.timers.tick(Date.parse('2026-09-16T00:02:00Z') - Date.now());
+  await engine.alarm();
+  assert.equal(calls, 2);
+  assert.equal(await storage.get('tgg-probe-requested'), undefined);
+  assert.equal((await engine.status()).tggProbe.error, undefined);
+});

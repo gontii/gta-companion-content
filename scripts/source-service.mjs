@@ -32,6 +32,18 @@ export class SourceService {
     // Persist before any billable request; a crash consumes the reservation.
     await this.storage.put(key, used + amount);
   }
+  async reserveTranscriptCredit() {
+    // The provider's monthly cycle starts on the signup date, not the first of a month.
+    // A rolling 32-day window safely spans any billing month without guessing reset time.
+    const entries = await this.storage.list({ prefix: 'supadata-use:', limit: 200 });
+    let used = 0;
+    for (const [key, at] of entries) {
+      if (at > this.now - 32 * DAY) used++;
+      else await this.storage.delete(key);
+    }
+    if (used >= 95) throw new Error('supadata_free_budget_exhausted');
+    await this.storage.put(`supadata-use:${this.now}:${crypto.randomUUID()}`, this.now);
+  }
   async extract(doc) {
     const key = `extracted:${await hash([PROMPT_VERSION, FACT_VALIDATION_VERSION, doc.source.url, doc.text])}`;
     const cached = await this.storage.get(key);
@@ -95,8 +107,7 @@ export class SourceService {
     if (attempt.jobId && this.now - attempt.jobStartedAt < DAY) {
       response = await safeFetch(`https://api.supadata.ai/v1/transcript/${encodeURIComponent(attempt.jobId)}`, { headers });
     } else {
-      const key = `supadata:${new Date(this.now).toISOString().slice(0, 7)}`;
-      await this.reserve(key, 95, 1); // five-credit margin; no recharge or generated audio mode
+      await this.reserveTranscriptCredit(); // five-credit margin; no recharge or generated audio mode
       attempt.count++;
       attempt.nextAt = this.now + (this.now - attempt.firstAt < DAY && attempt.count < 4 ? 6 * 3600_000 : DAY);
       delete attempt.jobId;
@@ -124,8 +135,19 @@ export class SourceService {
     if (!response.ok) throw new Error(`tgg_feed_http_${response.status}`);
     const video = selectTggVideo(await readBounded(response, 160000), this.now);
     if (!video) throw new Error('tgg_relevant_video_missing');
-    const chunks = await this.transcript(video);
+    let chunks;
+    try { chunks = await this.transcript(video); }
+    catch (error) {
+      const attempt = await this.storage.get(`transcript-attempt:${video.videoId}`);
+      await this.storage.put('transcript-check', { source: video, checkedAt: new Date(this.now).toISOString(),
+        status: 'pending', error: error.message.slice(0, 180), retryAt: attempt?.nextAt || null });
+      throw error;
+    }
     const text = chunks.map(c => c.text).join(' ');
+    await this.storage.put('transcript-check', { source: video, checkedAt: new Date(this.now).toISOString(),
+      status: 'downloaded', chunks: chunks.length, characters: text.length, digest: await hash(chunks),
+      firstOffsetMs: chunks[0].offset, lastOffsetMs: chunks.at(-1).offset,
+      sample: chunks.slice(0, 3).map(c => ({ offset: c.offset, text: c.text.slice(0, 180) })) });
     return this.extract({ text, chunks, publishedOn: video.publishedOn, period: null, source: video, current: true });
   }
   async prune() {
