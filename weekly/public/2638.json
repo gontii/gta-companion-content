@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "issue": "2638",
+  "weekId": "2026-09-17",
+  "startsOn": "2026-09-17",
+  "endsOn": "2026-09-23",
+  "status": "preview",
+  "verifiedAt": "2026-09-15T18:05:31.320Z",
+  "confirmedAt": null,
+  "platforms": [
+    "PC Enhanced",
+    "PS5",
+    "Xbox Series X|S"
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "items": [
+        {
+          "id": "bunker-research-double",
+          "name": "Bunker Research Missions",
+          "status": "confirmed",
+          "offer": "2X GTA$, RP and Research Progress.",
+          "requirements": "Bunker required; missions are requested from Agent 14.",
+          "startsOn": "2026-09-17",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "ammu-nation-double",
+          "name": "Ammu-Nation Contracts",
+          "status": "confirmed",
+          "offer": "Double rewards.",
+          "requirements": "Bunker required; surplus weapon deliveries start from its Duneloader.",
+          "startsOn": "2026-09-17",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "safeguard-double",
+          "name": "Safeguard Deliveries",
+          "status": "confirmed",
+          "offer": "2X GTA$ and RP.",
+          "requirements": "Deliver security cargo from Bobcat Security or Gruppe Sechs depots.",
+          "startsOn": "2026-09-17",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "community-missions-triple",
+          "name": "Community Mission Series",
+          "status": "confirmed",
+          "offer": "3X GTA$ and RP.",
+          "requirements": "Featured Community Missions on the platforms listed above; the September 17 selection is awaiting confirmation.",
+          "startsOn": "2026-09-03",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "items": [
+        {
+          "id": "grapeseed-bunker-free",
+          "name": "Grapeseed Bunker",
+          "status": "confirmed",
+          "offer": "Property available for GTA$0.",
+          "requirements": "Claim through Maze Bank Foreclosures during the offer period.",
+          "startsOn": "2026-09-17",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "business-rivalries-2026-09-17",
+          "name": "Weekly Challenge",
+          "status": "confirmed",
+          "offer": "GTA$1,000,000 plus the Camo Ammu-Nation Sweatsuit.",
+          "requirements": "Complete three Bunker Research Missions during September 17–23.",
+          "startsOn": "2026-09-17",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "dolla-dolla-livery",
+          "name": "Dolla Dolla livery",
+          "status": "confirmed",
+          "offer": "Login reward for the Avenger, Ardent, Oppressor and Oppressor Mk II.",
+          "requirements": "Play GTA Online during September 17–23 to unlock the livery; the vehicles are separate.",
+          "startsOn": "2026-09-17",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "discounts",
+      "items": [
+        {
+          "id": "astron-custom-70",
+          "name": "Pfister Astron Custom",
+          "status": "confirmed",
+          "offer": "70% off.",
+          "requirements": "Available from Legendary Motorsport on PC Enhanced, PS5 and Xbox Series X|S.",
+          "startsOn": "2026-09-17",
+          "endsOn": "2026-09-23",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "other-discounts",
+          "name": "Remaining weekly discounts",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "items": [
+        {
+          "id": "business-rivalries-month",
+          "name": "Business Rivalries",
+          "status": "confirmed",
+          "offer": "Weekly Challenge prizes are GTA$1,000,000 each, up to GTA$4,000,000 across four weeks.",
+          "requirements": "Each week has its own challenge. The 10X increase is for the challenge prize, not business sale payouts.",
+          "startsOn": "2026-09-03",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "la-coureuse-qualification",
+          "name": "Penaud La Coureuse qualification",
+          "status": "confirmed",
+          "offer": "Free La Coureuse and a complimentary HSW upgrade after qualifying.",
+          "requirements": "Complete at least one Weekly Challenge between September 3 and September 23.",
+          "startsOn": "2026-09-03",
+          "endsOn": "2026-09-23",
+          "claim": {
+            "startsOn": "2026-09-24",
+            "endsOn": "2026-09-30",
+            "details": "Return during this claim window; the car is claimed at Legendary Motorsport. HSW upgrade applies on PC Enhanced, PS5 and Xbox Series X|S."
+          },
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        },
+        {
+          "id": "business-battle-clothing",
+          "name": "Business Battle clothing",
+          "status": "confirmed",
+          "offer": "Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap and Bourgeoix Tee are available rewards.",
+          "requirements": "Deliver Business Battle crates during the September event.",
+          "startsOn": "2026-09-03",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "business-rivalries"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "items": [
+        {
+          "id": "gta-plus-2026-09-horus",
+          "name": "Pegassi Horus",
+          "status": "confirmed",
+          "offer": "Free member vehicle with the Velvet Iris livery.",
+          "requirements": "Active GTA+; claim at The Vinewood Car Club. The early-access week ends before this edition.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        },
+        {
+          "id": "gta-plus-2026-09-cluckin",
+          "name": "Cluckin’ Bell Farm Raid",
+          "status": "confirmed",
+          "offer": "2X GTA$ on the first finale completed each week.",
+          "requirements": "Active GTA+; applies to Scene of the Crime once per week, not every replay or a blanket RP bonus.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        },
+        {
+          "id": "gta-plus-2026-09-bike-service",
+          "name": "Bike Service",
+          "status": "confirmed",
+          "offer": "3X GTA$ and RP.",
+          "requirements": "Active GTA+ and a Clubhouse Custom Bike Shop. The September 10–16 increase has ended before this edition.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        },
+        {
+          "id": "gta-plus-2026-09-production",
+          "name": "Cocaine production",
+          "status": "confirmed",
+          "offer": "2X production speed in the Cocaine Lockup.",
+          "requirements": "Active GTA+ and the Biker Business; the announcement does not establish a Nightclub production bonus.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        },
+        {
+          "id": "gta-plus-2026-09-mc",
+          "name": "Biker Businesses",
+          "status": "confirmed",
+          "offer": "60% off properties, upgrades and modifications.",
+          "requirements": "Active GTA+; eligible Biker Business purchases.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        },
+        {
+          "id": "gta-plus-2026-09-bikes",
+          "name": "Nagasaki motorcycles",
+          "status": "confirmed",
+          "offer": "50% off Shinobi, Shotaro, Stryder, Chimera and BF400.",
+          "requirements": "Active GTA+; listed motorcycle models.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        },
+        {
+          "id": "gta-plus-2026-09-paint",
+          "name": "Cyan/Red Flip paints",
+          "status": "confirmed",
+          "offer": "Free Chameleon body and wheel paints.",
+          "requirements": "Active GTA+; available at vehicle workshops and mod bays.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        },
+        {
+          "id": "gta-plus-2026-09-clothes",
+          "name": "Bigness Patchwork clothing",
+          "status": "confirmed",
+          "offer": "Revere Collar shirt and Jeans added to the wardrobe.",
+          "requirements": "Active GTA+ during the monthly benefit period.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rotations",
+      "items": [
+        {
+          "id": "podium-vehicle",
+          "name": "Casino podium vehicle",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "prize-ride",
+          "name": "LS Car Meet Prize Ride and challenge",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "test-rides",
+          "name": "Test rides and HSW test vehicle",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "gun-van",
+          "name": "Gun Van stock and discounts",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "showrooms",
+          "name": "Premium Deluxe Motorsport and Luxury Autos",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "salvage-yard",
+          "name": "Salvage Yard Robberies and claimable vehicles",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "weekly-activities",
+          "name": "Featured modes, Community Mission selection and time trials",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "kortz-art",
+          "name": "Kortz Center artwork rotation",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "horus-general-sale",
+          "name": "Pegassi Horus general-sale availability and price",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "business-rivalries",
+      "title": "Rockstar: September Business Rivalries schedule",
+      "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+      "verifiedAt": "2026-09-15T18:05:31.320Z"
+    },
+    {
+      "id": "september-gta-plus",
+      "title": "Rockstar: September GTA+ announcement",
+      "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
+      "verifiedAt": "2026-09-15T18:05:31.320Z"
+    },
+    {
+      "id": "gta-plus-benefits",
+      "title": "Rockstar: GTA+ benefits and claim deadline",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5o3k7",
+      "verifiedAt": "2026-09-15T18:05:31.320Z"
+    }
+  ]
+}
