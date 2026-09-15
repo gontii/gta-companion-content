@@ -197,9 +197,9 @@ test('transcript quota does not reset at a calendar month boundary', async () =>
   const storage = new Storage();
   const before = Date.parse('2026-09-30T18:00:00Z');
   const service = new SourceService(storage, {}, before);
-  for (let i = 0; i < 95; i++) await service.reserveTranscriptCredit();
-  await assert.rejects(() => new SourceService(storage, {}, before + 86400000).reserveTranscriptCredit(), /budget_exhausted/);
-  await new SourceService(storage, {}, before + 32 * 86400000 + 1).reserveTranscriptCredit();
+  for (let i = 0; i < 95; i++) await service.reserveSupadataCredit();
+  await assert.rejects(() => new SourceService(storage, {}, before + 86400000).reserveSupadataCredit(), /budget_exhausted/);
+  await new SourceService(storage, {}, before + 32 * 86400000 + 1).reserveSupadataCredit();
 });
 
 test('downloaded caption evidence survives an exhausted AI allowance', async t => {
@@ -233,4 +233,24 @@ test('TGG probe waits for the UTC allowance reset and then resumes itself', asyn
   assert.equal(calls, 2);
   assert.equal(await storage.get('tgg-probe-requested'), undefined);
   assert.equal((await engine.status()).tggProbe.error, undefined);
+});
+
+
+test('search finds a TGG weekly video pushed out of RSS and rejects matching titles from other channels', async t => {
+  const storage = new Storage(); let searches = 0;
+  t.mock.method(globalThis, 'fetch', async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('<feed/>');
+    searches++;
+    assert.equal(url.pathname, '/v1/youtube/search');
+    assert.equal(url.searchParams.has('limit'), false);
+    return Response.json({ results: [
+      { type: 'video', id: 'aaaaaaaaaaa', title: 'GTA Online weekly update', uploadDate: '2026-09-16T11:00:00Z', channel: { id: 'fake' } },
+      { type: 'video', id: 'bbbbbbbbbbb', title: 'GTA Online weekly update', uploadDate: '2026-09-16T10:00:00Z', channel: { id: TGG_CHANNEL } },
+    ] });
+  });
+  const service = new SourceService(storage, { SUPADATA_API_KEY: 'test-only' }, Date.parse('2026-09-17'));
+  assert.equal((await service.discoverTgg()).videoId, 'bbbbbbbbbbb');
+  assert.equal((await service.discoverTgg()).videoId, 'bbbbbbbbbbb');
+  assert.equal(searches, 1);
 });

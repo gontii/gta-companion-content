@@ -14,14 +14,19 @@ export function selectTggVideo(xml, now) {
     const pick = tag => cleanText(entry.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`))?.[1] || '');
     const id = pick('yt:videoId'), title = pick('title'), publishedOn = pick('published');
     const channel = pick('yt:channelId');
-    if (channel !== TGG_CHANNEL || !/^[\w-]{11}$/.test(id) || !/gta online/i.test(title) ||
-        !/weekly|event week|update|bonuses|this week/i.test(title) ||
-        /gta\s*(?:6|vi)\b|rumou?r|speculat|money guide|beginners? guide|livestream/i.test(title)) continue;
-    const age = now - Date.parse(publishedOn);
-    if (!Number.isFinite(age) || age < 0 || age > 8 * DAY) continue;
-    videos.push({ videoId: id, title, publishedOn, url: `https://www.youtube.com/watch?v=${id}`, kind: 'tgg' });
+    videos.push({ videoId: id, title, publishedOn, channelId: channel });
   }
-  return videos.slice(0, 15).sort((a, b) => b.publishedOn.localeCompare(a.publishedOn))[0] || null;
+  return selectTggCandidate(videos.slice(0, 15), now);
+}
+
+export function selectTggCandidate(videos, now) {
+  const selected = videos.filter(v => v.channelId === TGG_CHANNEL && /^[\w-]{11}$/.test(v.videoId) &&
+    /gta online/i.test(v.title) && /weekly|event week|update|bonuses|this week/i.test(v.title) &&
+    !/gta\s*(?:6|vi)\b|rumou?r|speculat|money guide|beginners? guide|livestream/i.test(v.title) &&
+    Number.isFinite(Date.parse(v.publishedOn)) && Date.parse(v.publishedOn) <= now && now - Date.parse(v.publishedOn) <= 8 * DAY)
+    .sort((a, b) => Date.parse(b.publishedOn) - Date.parse(a.publishedOn))[0];
+  return selected ? { videoId: selected.videoId, title: selected.title, publishedOn: selected.publishedOn,
+    url: `https://www.youtube.com/watch?v=${selected.videoId}`, kind: 'tgg' } : null;
 }
 
 export class SourceService {
@@ -32,7 +37,7 @@ export class SourceService {
     // Persist before any billable request; a crash consumes the reservation.
     await this.storage.put(key, used + amount);
   }
-  async reserveTranscriptCredit() {
+  async reserveSupadataCredit() {
     // The provider's monthly cycle starts on the signup date, not the first of a month.
     // A rolling 32-day window safely spans any billing month without guessing reset time.
     const entries = await this.storage.list({ prefix: 'supadata-use:', limit: 200 });
@@ -107,7 +112,7 @@ export class SourceService {
     if (attempt.jobId && this.now - attempt.jobStartedAt < DAY) {
       response = await safeFetch(`https://api.supadata.ai/v1/transcript/${encodeURIComponent(attempt.jobId)}`, { headers });
     } else {
-      await this.reserveTranscriptCredit(); // five-credit margin; no recharge or generated audio mode
+      await this.reserveSupadataCredit(); // five-credit margin; no recharge or generated audio mode
       attempt.count++;
       attempt.nextAt = this.now + (this.now - attempt.firstAt < DAY && attempt.count < 4 ? 6 * 3600_000 : DAY);
       delete attempt.jobId;
@@ -130,11 +135,37 @@ export class SourceService {
     await this.storage.put(attemptKey, { ...attempt, jobId: null, nextAt: this.now + 30 * DAY });
     return chunks;
   }
+  async discoverTgg() {
+    try {
+      const response = await safeFetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${TGG_CHANNEL}`);
+      if (response.ok) {
+        const video = selectTggVideo(await readBounded(response, 160000), this.now);
+        if (video) return video;
+      } else await response.body?.cancel();
+    } catch { /* RSS can fail or contain only newer Shorts and streams. */ }
+    if (!this.env.SUPADATA_API_KEY) throw new Error('supadata_key_missing');
+    const cached = await this.storage.get('tgg-discovery');
+    if (cached && this.now < cached.expiresAt) {
+      if (cached.candidate && this.now - Date.parse(cached.candidate.publishedOn) <= 8 * DAY) return cached.candidate;
+      throw new Error('tgg_relevant_video_missing');
+    }
+    await this.reserveSupadataCredit();
+    const url = new URL('https://api.supadata.ai/v1/youtube/search');
+    // No limit or page token: exactly one page/credit, never automatic pagination.
+    url.search = new URLSearchParams({ query: 'TGG GTA Online weekly update', type: 'video', sortBy: 'date', uploadDate: 'week' }).toString();
+    const response = await safeFetch(url, { headers: { 'x-api-key': this.env.SUPADATA_API_KEY } });
+    if (!response.ok) throw new Error(`supadata_search_http_${response.status}`);
+    const data = JSON.parse(await readBounded(response, 160000));
+    if (!Array.isArray(data.results)) throw new Error('tgg_search_invalid');
+    const candidate = selectTggCandidate(data.results.filter(v => v.type === 'video').map(v => ({
+      videoId: v.id, title: v.title, publishedOn: v.uploadDate, channelId: v.channel?.id,
+    })), this.now);
+    await this.storage.put('tgg-discovery', { candidate, checkedAt: this.now, expiresAt: this.now + 6 * 3600000 });
+    if (!candidate) throw new Error('tgg_relevant_video_missing');
+    return candidate;
+  }
   async tgg() {
-    const response = await safeFetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${TGG_CHANNEL}`);
-    if (!response.ok) throw new Error(`tgg_feed_http_${response.status}`);
-    const video = selectTggVideo(await readBounded(response, 160000), this.now);
-    if (!video) throw new Error('tgg_relevant_video_missing');
+    const video = await this.discoverTgg();
     let chunks;
     try { chunks = await this.transcript(video); }
     catch (error) {
