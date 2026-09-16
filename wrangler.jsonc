@@ -10,5 +10,5 @@
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ContentCoordinator"] }],
   "kv_namespaces": [{ "binding": "CONTENT_KV", "id": "1265f18b80334dfe94517680b3eb6942" }],
   "ai": { "binding": "AI" },
-  "vars": { "PUBLICATION_MODE": "observe" }
+  "vars": { "PUBLICATION_MODE": "publish" }
 }
