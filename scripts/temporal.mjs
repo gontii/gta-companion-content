@@ -95,6 +95,10 @@ export function nextCheck(now, events = [], pending = false) {
     const weekday = new Date(`${date}T12:00:00Z`).getUTCDay();
     const eventDay = events.some(e => localParts(e.at).date === date);
     const intensive = [2, 3, 4].includes(weekday) || eventDay || pending;
+    if (weekday === 3) {
+      const at = atLocal(date, 19 * 60);
+      if (at > now) candidates.push({ at, kind: 'check', reason: 'Środowa kontrola o 19:00', confidence: 'confirmed', sourceUrl: null });
+    }
     const slots = intensive ? Array.from({ length: 14 }, (_, i) => 530 + i * 15) : [650, 890, 1130];
     if (pending && intensive) slots.push(...Array.from({ length: 10 }, (_, i) => 785 + i * 60));
     for (const minute of slots) {

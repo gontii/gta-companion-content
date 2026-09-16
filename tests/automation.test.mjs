@@ -28,6 +28,17 @@ test('Warsaw schedule handles summer/winter, Tue/Wed/Thu, Sunday expiry and no U
   assert.equal(localParts(nextCheck(atLocal('2026-09-18', 650)).at).minutes, 890);
   assert.equal(localParts(nextCheck(atLocal('2026-09-17', 1325), [], true).at).minutes, 530);
 });
+test('Wednesday evening check runs at 19:00 Warsaw in summer and winter, even without pending news', () => {
+  for (const [date, utc] of [['2026-09-16', '2026-09-16T17:00:00.000Z'], ['2026-12-16', '2026-12-16T18:00:00.000Z']]) {
+    for (const pending of [false, true]) {
+      const check = nextCheck(atLocal(date, 18 * 60 + 59), [], pending);
+      assert.equal(new Date(check.at).toISOString(), utc);
+      assert.equal(check.reason, 'Środowa kontrola o 19:00');
+      assert.ok(nextCheck(check.at, [], pending).at > check.at);
+    }
+    assert.equal(nextCheck(atLocal(date, 12 * 60 + 6)).at, atLocal(date, 19 * 60));
+  }
+});
 test('known reset gets preparation ten minutes before and activation on the boundary', () => {
   const at = atLocal('2026-09-17', 600);
   const events = [{ key: 'reset', kind: 'start', at, reason: 'Reset', confidence: 'confirmed' }];
