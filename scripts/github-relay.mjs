@@ -91,6 +91,8 @@ if (status.mode === 'publish') await syncIssues(incidents);
 console.log(JSON.stringify({ mode: status.mode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
   lastAttemptAt: status.lastAttemptAt, lastCompletedAt: status.lastCompletedAt,
   lastPublishedAt: status.lastPublishedAt, lastVerifiedAt: status.lastVerifiedAt,
+  timingPolicyVersion: status.timingPolicyVersion, nextBoundaryAt: status.candidate?.nextBoundaryAt,
+  ...(process.env.INSPECT_CANDIDATE === 'true' ? { nextEvents: status.events?.slice(0, 8) } : {}),
   lastSourceCheckAt: status.lastSourceCheckAt, lastError: status.lastError, nextReason: status.nextReason,
   sources: status.sources, sourceFailures: status.sourceFailures,
   aiBudget: status.aiBudget, extraction: status.extraction,

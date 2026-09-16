@@ -1,4 +1,4 @@
-import { validDay, windowFromDays, addDays, localParts } from './temporal.mjs';
+import { validDay, windowFromDays, addDays, localParts, normalizeWeeklyTiming, isWeeklyPeriod } from './temporal.mjs';
 import { thursdayWeekId, extractDateRange, extractPublishedWeekId, cleanText, stripTags, buildWeeklyContent } from './weekly-core.mjs';
 import editorialPeriods from '../events/editorial-periods.json' with { type: 'json' };
 
@@ -12,7 +12,7 @@ export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').ma
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
 export const factSignature = f => JSON.stringify([factKey(f), normal(f.offer), f.startsOn, f.endsOn, f.timing || null]);
 export function factWindow(f) {
-  return { ...windowFromDays(f.startsOn, f.endsOn), ...(f.timing || {}) };
+  return { ...windowFromDays(f.startsOn, f.endsOn, f.windowPolicy !== 'independent' && f.section !== 'gta-plus' && !f.sources?.some(s => s.scope === 'membership') && isWeeklyPeriod(f.startsOn, f.endsOn)), ...(f.timing || {}) };
 }
 export async function hash(value) {
   const bytes = new TextEncoder().encode(typeof value === 'string' ? value : JSON.stringify(value));
@@ -140,7 +140,7 @@ export function agreeSources(documents, allowTgg) {
 
 export function upgradeLegacy(input) {
   const c = structuredClone(input);
-  if (input.schemaVersion === 2) return applyEditorialPeriods(c);
+  if (input.schemaVersion === 2) return normalizeWeeklyTiming(applyEditorialPeriods(c));
   const parsed = extractDateRange(c.range, { publishedWeekId: c.weekId, now: new Date(c.weekId) });
   const period = windowFromDays(c.weekId, parsed?.endId || addDays(c.weekId, 6));
   Object.assign(c, period, { schemaVersion: 2, completeness: 'partial', sources: c.sourceUrl ? [{ url: c.sourceUrl, kind: 'editorial' }] : [] });
@@ -150,15 +150,15 @@ export function upgradeLegacy(input) {
   c.quickTakeEntries = c.quickTake.map((label, i) => ({ id: `quick-${i}`, label, ...period, editorial: true, confidence: 'editorial' }));
   c.beginnerPath = c.beginnerPath.map(i => ({ ...i, ...period, editorial: true, confidence: 'editorial' }));
   c.locations = (c.locations || []).map(i => ({ ...i, ...period }));
-  return applyEditorialPeriods(c);
+  return normalizeWeeklyTiming(applyEditorialPeriods(c));
 }
 
 function applyEditorialPeriods(c) {
   // Reviewed membership offers have their own dates, independent of the weekly reset.
   // Exact ids prevent a newly inferred offer from inheriting a reviewed period.
   for (const record of editorialPeriods) for (const section of c.sections) for (const item of section.items) {
-    if (section.id === 'gta-plus' && item.editorial && record.itemIds.includes(item.id)) {
-      Object.assign(item, windowFromDays(record.startsOn, record.endsOn), {
+    if (section.id === 'gta-plus' && item.timingConfidence !== 'confirmed' && item.editorial && record.itemIds.includes(item.id)) {
+      Object.assign(item, windowFromDays(record.startsOn, record.endsOn, false), {
         sourceUrl: record.sourceUrl, sources: [{ kind: 'rockstar', scope: 'membership', url: record.sourceUrl }],
       });
     }
@@ -170,7 +170,7 @@ export function seasonalFacts(event) {
   if (!event) return [];
   const sources = [{ kind: 'rockstar', url: event.sourceUrl }];
   const make = (entity, offer, startsOn, endsOn, section) => ({ entity, offer, startsOn, endsOn, section,
-    eligibility: 'all', platform: 'all', confidence: 'official', sources });
+    eligibility: 'all', platform: 'all', confidence: 'official', sources, ...(section === 'other' ? { windowPolicy: 'independent' } : {}) });
   return [
     ...event.weeks.map(w => ({ ...make(event.title, `${w.challenge} to receive an extra ${w.reward} and the ${w.outfit}.`, w.startsOn, w.endsOn, 'challenge'), itemId: `business-rivalries-${w.startsOn}`, ...(w.targetCount ? { targetCount: w.targetCount } : {}) })),
     make(event.vehicleReward.name, `Qualify by completing at least one Weekly Challenge; claim ${event.vehicleReward.claimFrom}–${event.vehicleReward.claimUntil}.`, event.vehicleReward.qualifyFrom, event.vehicleReward.qualifyUntil, 'other'),
@@ -215,7 +215,7 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     if (existing?.editorial && Date.parse(existing.expiresAt) > now) continue;
     const id = existing?.id || f.itemId || `auto-${(await hash(key)).slice(0, 18)}`;
     const label = `${f.entity} — ${f.offer}${f.eligibility === 'gta-plus' ? ' (GTA+ only)' : ''}${f.platform === 'enhanced' ? ' (PS5, Xbox Series X|S, PC Enhanced)' : f.platform === 'legacy' ? ' (Legacy)' : ''}`;
-    const item = { id, label, factKey: key, ...timing, confidence: f.confidence, sources: f.sources,
+    const item = { id, label, factKey: key, ...timing, ...(f.windowPolicy ? { windowPolicy: f.windowPolicy } : {}), confidence: f.confidence, sources: f.sources,
       sourceUrl: f.sources[0].url, evidence: f.evidence, dateEvidence: f.dateEvidence,
       ...(f.targetCount ? { targetCount: f.targetCount } : {}),
       ...(f.offsetMs !== undefined ? { videoId: f.sources[0].videoId, offsetMs: f.offsetMs } : {}) };

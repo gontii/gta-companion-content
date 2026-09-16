@@ -1,7 +1,7 @@
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
 import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
-import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, atLocal, MINUTE, DAY } from '../scripts/temporal.mjs';
+import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, atLocal, MINUTE, DAY, TIMING_POLICY_VERSION } from '../scripts/temporal.mjs';
 import { thursdayWeekId } from '../scripts/weekly-core.mjs';
 import { safeFetch, readBounded } from '../scripts/http.mjs';
 
@@ -58,7 +58,8 @@ export class PublicationEngine {
   }
   async wake() {
     const alarm = await this.store.getAlarm();
-    if (!alarm || alarm < Date.now() - 2 * MINUTE) await this.store.setAlarm(Date.now() + 1000);
+    const state = await this.store.get('state');
+    if (state?.timingPolicyVersion !== TIMING_POLICY_VERSION || !alarm || alarm < Date.now() - 2 * MINUTE) await this.store.setAlarm(Date.now() + 1000);
     await this.store.put('heartbeat', Date.now());
   }
   async alarm() {
@@ -124,6 +125,32 @@ export class PublicationEngine {
       }
       let facts = [...(await this.store.list({ prefix: 'fact:', limit: 1000 })).values()];
       if (!facts.length) facts = await this.store.get('facts') || [];
+      if (master && state.timingPolicyVersion !== TIMING_POLICY_VERSION) {
+        // Preserve the pre-migration evidence and history. Rebuild only affected deadlines.
+        const archive = await this.store.get(`archived-timing:${TIMING_POLICY_VERSION}`);
+        const oldEvents = collectEvents(archive?.master || master, [], now);
+        const repaired = upgradeLegacy(master);
+        const newKeys = new Set(collectEvents(repaired, [], now).map(e => e.key));
+        const obsolete = new Set(oldEvents.filter(e => !newKeys.has(e.key)).map(e => e.key));
+        for (const f of facts) {
+          const timing = factWindow(f);
+          const midnight = windowFromDays(f.startsOn, f.endsOn, false);
+          if (timing.expiresAt !== midnight.expiresAt && !f.timing) {
+            obsolete.add(`${f.startsOn}:expiresAt:${Date.parse(midnight.expiresAt)}`);
+          }
+        }
+        for (const week of master.seasonalEvent?.weeks || []) {
+          const old = windowFromDays(week.startsOn, week.endsOn, false);
+          const updated = windowFromDays(week.startsOn, week.endsOn);
+          if (old.expiresAt !== updated.expiresAt) obsolete.add(`${master.seasonalEvent.id}/${week.startsOn}:expiresAt:${Date.parse(old.expiresAt)}`);
+        }
+        if (!archive) await this.store.put(`archived-timing:${TIMING_POLICY_VERSION}`, { master, events: state.events || [] });
+        master = repaired;
+        state.events = (state.events || []).filter(e => !obsolete.has(e.key));
+        state.timingPolicyVersion = TIMING_POLICY_VERSION;
+        await this.store.put('master', master);
+        await this.store.put('state', state);
+      }
       const requested = await this.store.get('check-requested');
       if (requested) await this.store.delete('check-requested');
       if (requested || !state.nextCheck || state.nextCheck.at <= now) {
@@ -134,7 +161,7 @@ export class PublicationEngine {
           catch (error) { result.failures.push({ kind: 'tgg', reason: error.message.slice(0, 180) }); }
         }
         const approved = agreeSources(result.documents, !result.hasCurrentArticle);
-        const all = new Map(facts.filter(f => Date.parse(f.endsOn) + DAY > now).map(f => [factKey(f) + ':' + f.startsOn, f]));
+        const all = new Map(facts.filter(f => Date.parse(factWindow(f).expiresAt) > now).map(f => [factKey(f) + ':' + f.startsOn, f]));
         for (const f of approved) {
           const key = factKey(f) + ':' + f.startsOn;
           if (all.get(key)?.confidence === 'official' && f.confidence !== 'official') continue;
@@ -144,7 +171,7 @@ export class PublicationEngine {
         // Separate SQLite-backed rows avoid the 128 KiB per-value limit during long events.
         for (const f of facts) await this.store.put(`fact:${await hash([factKey(f), f.startsOn])}`, f);
         const rows = await this.store.list({ prefix: 'fact:', limit: 1000 });
-        for (const [key, f] of rows) if (Date.parse(f.endsOn) + DAY <= now) await this.store.delete(key);
+        for (const [key, f] of rows) if (Date.parse(factWindow(f).expiresAt) <= now) await this.store.delete(key);
         await this.store.delete('facts');
         state.lastSourceCheckAt = new Date(now).toISOString();
         state.sources = result.documents.map(d => ({ ...d.source, current: d.current, period: d.period, facts: d.facts.length, rejected: d.rejected.length }));

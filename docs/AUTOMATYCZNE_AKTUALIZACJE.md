@@ -12,9 +12,9 @@ Sekret `AUTOMATION_TOKEN` w Workerze odpowiada sekretowi `CONTENT_AUTOMATION_TOK
 
 ## Daty i publikacja
 
-`temporal.mjs` jest kontraktem współdzielonym z aplikacją przez `node scripts/sync-temporal.mjs /katalog/aplikacji`. Wszystkie czasy wynikowe są UTC, reguły dnia używają `Europe/Warsaw`, z obsługą czasu letniego i zimowego. Przy dacie bez godziny start jest ostrożnie szacowany na 11:00, a koniec na północ po ostatnim dniu. Oba szacunki są oznaczone; nie stanowią potwierdzonej godziny resetu. Dokładne godziny przyjmujemy wyłącznie z udokumentowaną strefą i dowodem w źródle.
+`temporal.mjs` jest kontraktem współdzielonym z aplikacją przez `node scripts/sync-temporal.mjs /katalog/aplikacji`. Wszystkie czasy wynikowe są UTC, reguły dnia używają `Europe/Warsaw`, z obsługą czasu letniego i zimowego. Przy dacie bez godziny start jest szacowany na 11:00. Zwykły okres tygodniowy czwartek–środa wygasa o 11:00 w następny czwartek, a nie o północy. GTA+, krótsze wydarzenia i oddzielne okresy kwalifikacji/odbioru zachowują własne daty; dotychczasowe szacunki ich godzin nie są potwierdzonym resetem. Oba szacunki są oznaczone; nie stanowią potwierdzonej godziny resetu. Dokładne godziny przyjmujemy wyłącznie z udokumentowaną strefą i dowodem w źródle.
 
-Wtorek, środa, czwartek i dni zmian: co 15 minut od 08:50 do 12:05. Oczekiwanie na dane lub oficjalną korektę: dalej co godzinę do 22:05 i od kolejnego poranka. W każdą środę dodatkowo o 19:00 czasu polskiego, niezależnie od oczekiwania na nowe dane; od 16.09.2026, również tego dnia. Pozostałe dni: 10:50, 14:50, 18:50. Znane rozpoczęcie ma przygotowanie 10 minut wcześniej i osobny alarm aktywacji. Wygaśnięcie nie wymaga nowego artykułu. Każde przetwarzanie, także błędne i bez zmian, zapisuje kolejny termin i powód.
+Czwartek: od 08:00 do 12:00 co 30 minut, włącznie, oraz przygotowanie o 10:50. Wtorek, środa i pozostałe dni zmian: co 15 minut od 08:50 do 12:05. Oczekiwanie na dane lub oficjalną korektę: dalej co godzinę do 22:05 i od kolejnego poranka. W każdą środę dodatkowo o 19:00 czasu polskiego, niezależnie od oczekiwania na nowe dane; od 16.09.2026. Jednorazowo 16.09 kontrole o 17:00, 18:00, 19:00 i 20:00 zastępują zwykłe odpytywanie w przedziale 17:00–20:59. Pozostałe dni: 10:50, 14:50, 18:50. Znane rozpoczęcie ma przygotowanie 10 minut wcześniej i osobny alarm aktywacji. Wygaśnięcie nie wymaga nowego artykułu. Każde przetwarzanie, także błędne i bez zmian, zapisuje kolejny termin i powód.
 
 Fakty przyszłe pozostają w prywatnej kolejce do swojego terminu. Koniec weekendu, okres GTA+, etap wydarzenia i okna zdobycia/odbioru nagrody mają osobne terminy. Znane, wcześniej potwierdzone etapy wydarzenia mogą zmienić listę wyzwania bez nowego artykułu. Poprzednie przyszłe terminy nie znikają przy niepełnym odczycie źródeł.
 
@@ -88,3 +88,12 @@ Status `aiBudget` pokazuje składniki lokalnego budżetu. Opcja `inspect_candida
 - Najbliższe rzeczywiste wygaśnięcie zapisane na 16.09 o 22:00 UTC; przygotowanie następnego etapu 17.09 o 08:50 UTC, aktywacja o 09:00 UTC. Nie deklarować obserwacji tych przyszłych zdarzeń przed ich wystąpieniem.
 
 Odbiór kolejnego terminu: [35077525463](https://github.com/gontii/gta-companion-content/actions/runs/35077525463) potwierdził samoczynny przebieg 16.09 o 11:05:00–11:05:04 czasu polskiego, brak błędu, brak nowej rewizji i wywołania AI, pustą kolejkę historii oraz zapis następnego terminu 11:20. Końcowe CI [35077478935](https://github.com/gontii/gta-companion-content/actions/runs/35077478935), commit `1303120`: 91/91. Test migracji korzysta z niezmiennego przykładu, niezależnie od aktualizowanej historii produkcyjnej.
+
+
+### Korekta resetu i harmonogramu 16.09.2026
+
+Reguła tygodniowa 11:00 jest szacunkiem przyjętym przez Przemka; godzina potwierdzona źródłem ma pierwszeństwo. `normalizeWeeklyTiming` naprawia stare dane schemaVersion 2 także w pamięci aplikacji, bez zmiany identyfikatorów postępu. Opcjonalne `windowPolicy=independent` chroni oddzielne okresy wydarzenia przed dziedziczeniem resetu tygodnia.
+
+Worker zapisuje prywatne `archived-timing:1`, zastępuje nieaktualne alarmy północne, zachowuje pozostałe terminy i przelicza harmonogram. Nadzorca zauważa brak `timingPolicyVersion=1` i uruchamia migrację mimo zapisanego późniejszego alarmu. Fakty są zachowywane do `factWindow.expiresAt`, zamiast być usuwane po północy UTC. Migracja korzysta z istniejących danych i nie wymaga wywołania modelu ani Supadata. Historia poprzednich rewizji pozostaje bez zmian.
+
+Kontrola lokalna: 97/97 testów, w tym migracja zapisanych alarmów, naprawa pamięci aplikacji, 10:59/11:00, retencja faktów o 08:00, niezależne okresy, lato/zima i jednorazowe godziny 16.09. Odbiór wdrożenia zostanie dopisany po publikacji.

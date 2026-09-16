@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { atLocal, nextCheck, localParts, windowFromDays, collectEvents, projectContent } from '../scripts/temporal.mjs';
-import { agreeSources, mergeFacts, validateFacts, upgradeLegacy, validateSnapshot } from '../scripts/facts.mjs';
+import { atLocal, nextCheck, localParts, windowFromDays, collectEvents, projectContent, normalizeWeeklyTiming } from '../scripts/temporal.mjs';
+import { agreeSources, mergeFacts, validateFacts, upgradeLegacy, validateSnapshot, factWindow } from '../scripts/facts.mjs';
 import { selectTggVideo, TGG_CHANNEL, SourceService } from '../scripts/source-service.mjs';
 import { PublicationEngine } from '../worker/coordinator.mjs';
 
@@ -16,7 +16,7 @@ const fact = {
 test('Warsaw schedule handles summer/winter, Tue/Wed/Thu, Sunday expiry and no UTC drift', () => {
   assert.equal(new Date(atLocal('2026-09-17', 650)).toISOString(), '2026-09-17T08:50:00.000Z');
   assert.equal(new Date(atLocal('2026-12-17', 650)).toISOString(), '2026-12-17T09:50:00.000Z');
-  for (const date of ['2026-09-15', '2026-09-16', '2026-09-17']) {
+  for (const date of ['2026-09-15', '2026-09-16']) {
     const first = nextCheck(atLocal(date, 529));
     assert.equal(localParts(first.at).minutes, 530);
     assert.equal(nextCheck(first.at).at - first.at, 15 * 60000);
@@ -29,7 +29,7 @@ test('Warsaw schedule handles summer/winter, Tue/Wed/Thu, Sunday expiry and no U
   assert.equal(localParts(nextCheck(atLocal('2026-09-17', 1325), [], true).at).minutes, 530);
 });
 test('Wednesday evening check runs at 19:00 Warsaw in summer and winter, even without pending news', () => {
-  for (const [date, utc] of [['2026-09-16', '2026-09-16T17:00:00.000Z'], ['2026-12-16', '2026-12-16T18:00:00.000Z']]) {
+  for (const [date, utc] of [['2026-09-23', '2026-09-23T17:00:00.000Z'], ['2026-12-16', '2026-12-16T18:00:00.000Z']]) {
     for (const pending of [false, true]) {
       const check = nextCheck(atLocal(date, 18 * 60 + 59), [], pending);
       assert.equal(new Date(check.at).toISOString(), utc);
@@ -339,4 +339,91 @@ test('search cannot accept a relative date when metadata identifies another chan
     await assert.rejects(() => new SourceService(storage, { SUPADATA_API_KEY: 'test' }, Date.parse('2026-09-17T08:50:00Z')).discoverTgg(), /tgg_relevant_video_missing/);
     mock.mock.restore();
   }
+});
+
+
+test('Thursday checks are half-hourly 08–12 plus preparation at 10:50, across DST', () => {
+  for (const date of ['2026-09-17', '2026-12-17']) for (const pending of [false, true]) {
+    const slots = []; let cursor = atLocal(date, 479);
+    while (true) {
+      const next = nextCheck(cursor, [], pending);
+      if (next.at > atLocal(date, 720)) break;
+      slots.push(localParts(next.at).minutes); cursor = next.at;
+    }
+    assert.deepEqual(slots, [480, 510, 540, 570, 600, 630, 650, 660, 690, 720]);
+    assert.notEqual(localParts(nextCheck(cursor, [], pending).at).minutes, 725);
+  }
+});
+test('September 16 has exactly four evening checks without duplicate pending polling', () => {
+  for (const pending of [false, true]) {
+    const slots = []; let cursor = atLocal('2026-09-16', 1019);
+    while (true) {
+      const next = nextCheck(cursor, [], pending);
+      if (next.at > atLocal('2026-09-16', 1259)) break;
+      slots.push(localParts(next.at).minutes); cursor = next.at;
+    }
+    assert.deepEqual(slots, [1020, 1080, 1140, 1200]);
+  }
+  assert.equal(nextCheck(atLocal('2026-09-23', 1019)).at, atLocal('2026-09-23', 1140));
+});
+function midnightSnapshot() {
+  const c = upgradeLegacy(legacy);
+  const visit = v => {
+    if (!v || typeof v !== 'object') return;
+    if (v.expiresAt === '2026-09-17T09:00:00.000Z') v.expiresAt = '2026-09-16T22:00:00.000Z';
+    Object.values(v).forEach(visit);
+  };
+  visit(c); return c;
+}
+test('old schema-v2 weekly cache survives midnight and expires at 11 without changing ids', () => {
+  const old = midnightSnapshot(), id = old.sections[0].items[0].id;
+  const repaired = normalizeWeeklyTiming(old);
+  assert.equal(old.expiresAt, '2026-09-16T22:00:00.000Z');
+  assert.equal(repaired.expiresAt, '2026-09-17T09:00:00.000Z');
+  assert.deepEqual(normalizeWeeklyTiming(repaired), repaired);
+  for (const time of ['2026-09-16T22:00:00Z', '2026-09-17T08:59:59Z']) {
+    assert.ok(projectContent(old, Date.parse(time)).sections[0].items.some(i => i.id === id));
+  }
+  assert.ok(!projectContent(old, Date.parse('2026-09-17T09:00:00Z')).sections[0].items.some(i => i.id === id));
+  const exact = structuredClone(old);
+  exact.sections[0].items[0].timingConfidence = 'confirmed';
+  exact.sections[0].items[0].precision = 'time';
+  assert.equal(normalizeWeeklyTiming(exact).sections[0].items[0].expiresAt, old.sections[0].items[0].expiresAt);
+  assert.equal(factWindow({ ...fact, sources: [{ scope: 'membership' }] }).expiresAt, '2026-09-23T22:00:00.000Z');
+  assert.equal(factWindow({ ...fact, windowPolicy: 'independent' }).expiresAt, '2026-09-23T22:00:00.000Z');
+});
+test('migration replaces stored midnight alarms, keeps unrelated events, rearms today, and avoids source IO', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-16T12:00:00Z') });
+  const storage = new Storage(), old = midnightSnapshot();
+  const events = collectEvents(old, [], Date.now());
+  const seasonalKey = `${old.seasonalEvent.id}/2026-09-10:expiresAt:${Date.parse(old.expiresAt)}`;
+  events.push({ key: seasonalKey, at: Date.parse(old.expiresAt), kind: 'expire', confidence: 'estimated' });
+  events.push({ key: 'separate-event', at: atLocal('2026-09-18', 1) });
+  await storage.put('master', old);
+  await storage.put('state', { events, sources: [{ kind: 'rockstar', scope: 'weekly', current: true, facts: 1 }], nextCheck: { at: atLocal('2026-09-16', 1140) } });
+  await storage.setAlarm(atLocal('2026-09-16', 1140));
+  t.mock.method(SourceService.prototype, 'websites', async () => { throw new Error('unexpected source call'); });
+  let published;
+  const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'publish', CONTENT_KV: { put: async (_, json) => { published = JSON.parse(json); } } });
+  await engine.wake();
+  assert.equal(await storage.getAlarm(), Date.now() + 1000);
+  await engine.alarm();
+  const state = await storage.get('state');
+  assert.equal(state.lastError, null);
+  assert.equal(state.nextCheck.at, atLocal('2026-09-16', 1020));
+  assert.ok(!state.events.some(e => e.at === Date.parse(old.expiresAt)));
+  assert.ok(state.events.some(e => e.key === 'separate-event'));
+  assert.equal(published.expiresAt, '2026-09-17T09:00:00.000Z');
+  assert.ok(await storage.get('archived-timing:1'));
+});
+test('source refresh at 08:00 retains weekly facts until 11:00 instead of pruning at UTC midnight', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-24T06:00:00Z') });
+  const storage = new Storage();
+  await storage.put('fact:keep', fact);
+  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
+  const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'publish', CONTENT_KV: { get: async () => null, put: async () => {} } });
+  await engine.alarm();
+  assert.ok(await storage.get('fact:keep'));
+  assert.ok((await engine.status()).candidate.sections[0].items.some(i => i.label.includes('Contact Missions')));
+  assert.equal((await engine.status()).lastError, null);
 });
