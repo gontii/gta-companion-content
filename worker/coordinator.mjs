@@ -1,3 +1,4 @@
+import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
 import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
 import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, atLocal, MINUTE, DAY } from '../scripts/temporal.mjs';
@@ -13,13 +14,15 @@ export class PublicationEngine {
   constructor(ctx, env) { this.ctx = ctx; this.env = env; this.store = ctx.storage; this.running = null; }
   async status() {
     const state = await this.store.get('state') || {};
+    const master = await this.store.get('master');
     const outbox = await this.store.list({ prefix: 'outbox:', limit: 100 });
     const extraction = [...(await this.store.list({ prefix: 'extracted:', limit: 12 })).values()].map(v => ({
       cachedAt: v.cachedAt, accepted: v.facts.length, rejected: v.rejected.slice(0, 5),
       sample: v.facts.slice(0, 2).map(f => ({ entity: f.entity, offer: f.offer, startsOn: f.startsOn, endsOn: f.endsOn, sourceUrl: f.sources[0].url })),
     }));
     return { mode: this.env.PUBLICATION_MODE, ...state, outboxCount: outbox.size, progress: await this.store.get('progress'),
-      extraction,
+      extraction, aiBudget: await new AiBudget(this.store).state(),
+      candidate: master ? publicSnapshot(projectContent(master, Date.now())) : null,
       tggProbe: await this.store.get('tgg-probe'),
       transcriptCheck: await this.store.get('transcript-check'),
       tggDiscovery: await this.store.get('tgg-discovery-check'),
@@ -85,10 +88,11 @@ export class PublicationEngine {
             facts: probe.facts.map(f => ({ entity: f.entity, offer: f.offer, startsOn: f.startsOn, endsOn: f.endsOn, offsetMs: f.offsetMs })), rejected: probe.rejected });
         } catch (error) {
           let retryAt = null;
-          if (error.message === 'ai_free_budget_exhausted') retryAt = Math.floor(now / DAY) * DAY + DAY + 2 * MINUTE;
+          if (['ai_local_budget_reserved', 'ai_free_budget_exhausted'].includes(error.message)) retryAt = Math.floor(now / DAY) * DAY + DAY + 2 * MINUTE;
           else if (['transcript_job_pending', 'transcript_retry_not_due'].includes(error.message)) {
             retryAt = Math.max(now + MINUTE, (await this.store.get('transcript-check'))?.retryAt || now + 15 * MINUTE);
           }
+          if (!retryAt && Number.isFinite(error.retryAt)) retryAt = Math.max(now + MINUTE, error.retryAt);
           if (retryAt) {
             await this.store.put('tgg-probe-next-at', retryAt);
             await this.store.put('tgg-probe-requested', true);
@@ -198,7 +202,7 @@ export class PublicationEngine {
       state.expectedAt = new Date(expectedAt).toISOString();
       state.incidents = [];
       if (missing && now >= expectedAt + 15 * MINUTE) state.incidents.push({ key: `missing-${currentWeek}`, reason: 'Brak potwierdzonej aktualizacji po oczekiwanym terminie', since: state.expectedAt });
-      for (const failure of state.sourceFailures || []) if (/budget_exhausted|key_missing|binding_missing/.test(failure.reason)) {
+      for (const failure of state.sourceFailures || []) if (/budget_exhausted|local_budget_reserved|key_missing|binding_missing/.test(failure.reason)) {
         state.incidents.push({ key: failure.reason, reason: failure.reason, since: state.lastSourceCheckAt });
       }
       if (state.lastPublishedAt && state.verifiedRevision !== state.publishedRevision && now - Date.parse(state.lastPublishedAt) > 15 * MINUTE) state.incidents.push({ key: 'publication-unverified', reason: 'API nie potwierdziło pełnej publikacji', since: state.lastPublishedAt });

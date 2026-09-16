@@ -12,6 +12,10 @@ on:
         description: 'Sprawdź transkrypcję TGG w trybie obserwacji, bez publikowania'
         type: boolean
         default: false
+      inspect_candidate:
+        description: 'Pokaż kandydat do publikacji bez cytatów i prywatnych materiałów źródłowych'
+        type: boolean
+        default: false
 permissions:
   contents: write
   issues: write
@@ -37,3 +41,4 @@ jobs:
           SMOKE_TEST_EMAIL: ${{ secrets.SMOKE_TEST_EMAIL }}
           REQUEST_CONTENT_CHECK: ${{ inputs.request_check && 'true' || 'false' }}
           PROBE_TGG: ${{ inputs.probe_tgg && 'true' || 'false' }}
+          INSPECT_CANDIDATE: ${{ inputs.inspect_candidate && 'true' || 'false' }}

@@ -1,6 +1,7 @@
 import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText } from './weekly-core.mjs';
 import { articleDocument, hash, validateFacts, FACT_VALIDATION_VERSION } from './facts.mjs';
 import { safeFetch, readBounded } from './http.mjs';
+import { AiBudget } from './ai-budget.mjs';
 import { DAY, localParts, windowFromDays } from './temporal.mjs';
 
 export const TGG_CHANNEL = 'UC72PuhDwKtZ5MikpGNhPAtA';
@@ -56,26 +57,43 @@ export class SourceService {
     const key = `extracted:${await hash([PROMPT_VERSION, FACT_VALIDATION_VERSION, doc.source.url, doc.text])}`;
     const cached = await this.storage.get(key);
     if (cached) return { ...doc, ...cached };
-    if (!this.env.AI) throw new Error('ai_binding_missing');
-    // <= 16K chars + prompt + 6K output fits 24K context conservatively.
-    // Reservation 2000 neurons exceeds worst input/output token bound for this model.
-    const budgetKey = `ai:${new Date(this.now).toISOString().slice(0, 10)}`;
-    await this.reserve(budgetKey, 8000, 2000);
-    await this.storage.put('progress', { stage: 'extract', source: doc.source.kind, at: new Date().toISOString() });
-    const sourceText = doc.source.kind === 'tgg' ? doc.chunks.map(c => `[${c.offset}] ${c.text}`).join('\n') : doc.text;
-    const result = await this.env.AI.run(AI_MODEL, {
-      messages: [{ role: 'system', content: PROMPT }, { role: 'user', content: JSON.stringify({
+    const rawKey = `ai-result:${await hash([AI_MODEL, PROMPT_VERSION, doc.source.url, doc.publishedOn, doc.period, doc.text])}`;
+    let saved = await this.storage.get(rawKey);
+    if (!saved) {
+      if (!this.env.AI) throw new Error('ai_binding_missing');
+      const attemptKey = `ai-attempt:${rawKey}`;
+      const attempt = await this.storage.get(attemptKey);
+      if (attempt?.nextAt > this.now) throw Object.assign(new Error('ai_source_retry_not_due'), { retryAt: attempt.nextAt });
+      const sourceText = doc.source.kind === 'tgg' ? doc.chunks.map(c => `[${c.offset}] ${c.text}`).join('\n') : doc.text;
+      const messages = [{ role: 'system', content: PROMPT }, { role: 'user', content: JSON.stringify({
         publishedOn: doc.publishedOn, period: doc.period, text: sourceText.slice(0, 16000),
-      }) }], max_tokens: 6000, temperature: 0, response_format: { type: 'json_object' },
-    }, { signal: AbortSignal.timeout(120000) });
-    const usage = result.usage;
-    if (Number.isInteger(usage?.prompt_tokens) && usage.prompt_tokens >= 0 && Number.isInteger(usage?.completion_tokens) && usage.completion_tokens >= 0) {
-      // Official model rates, with 10% margin + 50 neurons. Uncertain requests keep full reservation.
-      const actual = Math.ceil((usage.prompt_tokens * 26668 + usage.completion_tokens * 204805) / 1_000_000 * 1.1 + 50);
-      const reserved = await this.storage.get(budgetKey);
-      await this.storage.put(budgetKey, reserved - 2000 + actual);
+      }) }];
+      const budget = new AiBudget(this.storage, this.now);
+      const reservation = await budget.reserve(messages, 6000);
+      await this.storage.put('progress', { stage: 'extract', source: doc.source.kind, at: new Date().toISOString() });
+      let result;
+      try {
+        result = await this.env.AI.run(AI_MODEL, {
+          messages, max_tokens: 6000, temperature: 0, response_format: { type: 'json_object' },
+        }, { signal: AbortSignal.timeout(120000) });
+        // Reconcile even when JSON parsing or fact validation subsequently rejects the response.
+        await budget.settle(reservation, result);
+        const raw = typeof result.response === 'string' ? JSON.parse(result.response) : result.response;
+        if (!raw || !Array.isArray(raw.facts) || raw.facts.length > 90) throw new Error('facts_schema_invalid');
+        saved = { raw, cachedAt: this.now };
+        await this.storage.put(rawKey, saved);
+        await this.storage.delete(attemptKey);
+      } catch (error) {
+        await budget.settle(reservation, result, error);
+        const count = (attempt?.count || 0) + 1;
+        // Repeated source checks must not repeat a billable failure every 15 minutes.
+        error.retryAt = this.now + (count < 2 ? 15 * 60000 : 6 * 3600000);
+        await this.storage.put(attemptKey, { count, cachedAt: this.now, nextAt: error.retryAt,
+          reason: error.message.slice(0, 180) });
+        throw error;
+      }
     }
-    const raw = typeof result.response === 'string' ? JSON.parse(result.response) : result.response;
+    const raw = saved.raw;
     const extracted = validateFacts(raw, doc);
     await this.storage.put(key, { ...extracted, cachedAt: this.now });
     return { ...doc, ...extracted };
@@ -212,7 +230,7 @@ export class SourceService {
     return this.extract({ text, chunks, publishedOn: video.publishedOn, period: null, source: video, current: true });
   }
   async prune() {
-    for (const prefix of ['transcript:', 'extracted:', 'video-metadata:']) {
+    for (const prefix of ['transcript:', 'extracted:', 'video-metadata:', 'ai-result:', 'ai-attempt:']) {
       const entries = await this.storage.list({ prefix, limit: 500 });
       for (const [key, value] of entries) if (this.now - value.cachedAt >= 30 * DAY) await this.storage.delete(key);
     }
