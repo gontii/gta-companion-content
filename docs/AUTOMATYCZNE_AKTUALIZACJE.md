@@ -1,6 +1,6 @@
 # Automatyczne aktualizacje treści
 
-Stan na 16.09.2026: automatyczne publikowanie włączone. Worker `97ed2081` działa w trybie `publish`; GitHub `CONTENT_WRITER=cloudflare` blokuje poprzedniego autora KV. Pierwszą rewizję, pełną zgodność chronionego API i zapis historii potwierdzono. Poniższe wpisy z 15.09 opisują wcześniejsze etapy odbioru.
+Stan na 16.09.2026: automatyczne publikowanie włączone. Worker działa w trybie `publish` (aktualne identyfikatory w ostatnim odbiorze poniżej); GitHub `CONTENT_WRITER=cloudflare` blokuje poprzedniego autora KV. Pierwszą rewizję, pełną zgodność chronionego API i zapis historii potwierdzono. Poniższe wpisy z 15.09 opisują wcześniejsze etapy odbioru.
 
 ## Podział odpowiedzialności
 
@@ -85,7 +85,7 @@ Status `aiBudget` pokazuje składniki lokalnego budżetu. Opcja `inspect_candida
 - `events/editorial-periods.json` zawiera dokładne identyfikatory wcześniej zweryfikowanych pozycji GTA+ z okresem 10.09–07.10. Zachowują daty przy zmianie tygodnia. Nowe niezweryfikowane pozycje nie dziedziczą tego okresu.
 - Lokalnie 90/90 testów wydzielonej paczki; CI bieżącego repo 91/91, w tym równoległe testy publicznych artykułów. Symulacja na rzeczywistym kandydacie potwierdziła wygaśnięcie ofert tygodniowych, aktywację etapów 17/24.09 i wygaśnięcie GTA+ 07.10. To kontrola z przesuniętym zegarem, nie obserwacja przyszłej granicy produkcyjnej.
 - Licznik na 16.09 o 09:00 UTC: 909 neuronów wyliczonych z tokenów, 190 marginesu, 714 zachowanego licznika sprzed migracji, 0 rezerwacji w toku, 2 nowe wywołania. Kolejne walidacje i kontrole użyły zapisanych odpowiedzi. Nie zmieniono limitów ani planów usług.
-- Najbliższe rzeczywiste wygaśnięcie zapisane na 16.09 o 22:00 UTC; przygotowanie następnego etapu 17.09 o 08:50 UTC, aktywacja o 09:00 UTC. Nie deklarować obserwacji tych przyszłych zdarzeń przed ich wystąpieniem.
+- Pierwotny termin, skorygowany 16.09 w odbiorze poniżej: wygaśnięcie było zapisane na 16.09 o 22:00 UTC; przygotowanie następnego etapu 17.09 o 08:50 UTC, aktywacja o 09:00 UTC. Nie deklarować obserwacji tych przyszłych zdarzeń przed ich wystąpieniem.
 
 Odbiór kolejnego terminu: [35077525463](https://github.com/gontii/gta-companion-content/actions/runs/35077525463) potwierdził samoczynny przebieg 16.09 o 11:05:00–11:05:04 czasu polskiego, brak błędu, brak nowej rewizji i wywołania AI, pustą kolejkę historii oraz zapis następnego terminu 11:20. Końcowe CI [35077478935](https://github.com/gontii/gta-companion-content/actions/runs/35077478935), commit `1303120`: 91/91. Test migracji korzysta z niezmiennego przykładu, niezależnie od aktualizowanej historii produkcyjnej.
 
@@ -96,4 +96,9 @@ Reguła tygodniowa 11:00 jest szacunkiem przyjętym przez Przemka; godzina potwi
 
 Worker zapisuje prywatne `archived-timing:1`, zastępuje nieaktualne alarmy północne, zachowuje pozostałe terminy i przelicza harmonogram. Nadzorca zauważa brak `timingPolicyVersion=1` i uruchamia migrację mimo zapisanego późniejszego alarmu. Fakty są zachowywane do `factWindow.expiresAt`, zamiast być usuwane po północy UTC. Migracja korzysta z istniejących danych i nie wymaga wywołania modelu ani Supadata. Historia poprzednich rewizji pozostaje bez zmian.
 
-Kontrola lokalna: 97/97 testów, w tym migracja zapisanych alarmów, naprawa pamięci aplikacji, 10:59/11:00, retencja faktów o 08:00, niezależne okresy, lato/zima i jednorazowe godziny 16.09. Odbiór wdrożenia zostanie dopisany po publikacji.
+Kontrola lokalna: 97/97 testów, w tym migracja zapisanych alarmów, naprawa pamięci aplikacji, 10:59/11:00, retencja faktów o 08:00, niezależne okresy, lato/zima i jednorazowe godziny 16.09. Odbiór produkcyjny poniżej.
+
+
+Odbiór końcowy 16.09: Worker `e614b3da-c847-484d-9312-44f3b0859ca0`, kod `9231971` + `962759b`; zgodna aplikacja Pages `fa5b43af-ac55-4493-9c53-0adff93b64e1`, kod `8fec99b`. Rewizja `502dba083cfab7d2affb58494dc7afe0676402d8fe24b638e31775cc5cd5bc48` opublikowana o 10:52:27 UTC, pełne API zgodne o 10:53:42 UTC; historia `4a3a484`. [Odczyt końcowy 35087784087](https://github.com/gontii/gta-companion-content/actions/runs/35087784087) potwierdza brak błędu i incydentów, pustą kolejkę, `timingPolicyVersion=1`, następny start 16.09 o 15:00 UTC (17:00 w Polsce), pierwszą granicę treści 17.09 o 09:00 UTC (11:00).
+
+Odbiór wykrył osierocone alarmy ofert usuniętych we wcześniejszych rewizjach. Przebieg odtwarza teraz terminy należące do bieżącego tygodnia z aktualnej treści i zapisanych faktów; zachowuje inne przyszłe zdarzenia. Poprawka ma test regresji; 97/97 lokalnie i [CI 35087653017](https://github.com/gontii/gta-companion-content/actions/runs/35087653017). Po jej wdrożeniu rewizja pozostała ta sama i nie pojawiło się dodatkowe wywołanie AI (nadal 2 dzisiaj). Granice 00:00/10:59/11:00 sprawdzono także na rzeczywistym opublikowanym JSON: 57 ofert zachowanych do resetu, GTA+ zachowuje osobny okres. Rzeczywisty przyszły reset pozostaje do obserwacji przez harmonogram.
