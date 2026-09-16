@@ -89,6 +89,9 @@ const incidents = status.incidents || [];
 if (!status.heartbeatAt || Date.now() - Date.parse(status.heartbeatAt) > 45 * 60000) incidents.push({ key: 'cloudflare-silent', reason: 'Brak sygnału harmonogramu Cloudflare przez ponad 45 minut', since: status.heartbeatAt });
 if (status.mode === 'publish') await syncIssues(incidents);
 console.log(JSON.stringify({ mode: status.mode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
+  lastAttemptAt: status.lastAttemptAt, lastCompletedAt: status.lastCompletedAt,
+  lastPublishedAt: status.lastPublishedAt, lastVerifiedAt: status.lastVerifiedAt,
+  lastSourceCheckAt: status.lastSourceCheckAt, lastError: status.lastError, nextReason: status.nextReason,
   sources: status.sources, sourceFailures: status.sourceFailures,
   aiBudget: status.aiBudget, extraction: status.extraction,
   ...(process.env.INSPECT_CANDIDATE === 'true' ? { candidate: status.candidate, approvedFacts: status.approvedFacts } : {}),
