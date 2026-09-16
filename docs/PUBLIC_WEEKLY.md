@@ -1,75 +1,62 @@
 # Publiczny Weekly Update
 
-Stan: przygotowane; publikacja jest oddzielnym krokiem.
+## Dokumenty i adresy
 
-## Źródło i granica treści
+- Treść wydania: `weekly/public/YYWW.json`. Numer pochodzi z roku i tygodnia ISO daty rozpoczęcia; `weekId` pozostaje datą. Korekta nie zmienia numeru.
+- Główna strona: `/gta-online/weekly-update`, z aktualnie wybranym wydaniem lub zapowiedzią.
+- Osobny artykuł: `/gta-online/weekly-update/YYWW`. Zachowuje własny canonical i daty; po zakończeniu okresu wyświetla komunikat o wygaśnięciu.
+- Indeks opublikowanych osobnych wydań: `weekly/public/index.json`. Wpis zawiera wyłącznie `issue`, `startsOn`, `endsOn`. Nie dodawaj nieopublikowanego wydania.
+- Publiczne archiwum zostało zaakceptowane przez Przemka 16.09.2026; zastępuje wcześniejszą zasadę braku archiwum. W pierwszej publikacji główna strona pokazuje zapowiedź 2638, a osobny artykuł 2637 opisuje 10–16.09.
 
-Kanoniczny dokument: weekly/public/YYWW.json. YYWW pochodzi z roku i tygodnia ISO daty startsOn; weekId pozostaje datą. Wydanie 2638 obejmuje 17–23.09.2026. Korekta zmienia verifiedAt, a nie numer wydania.
+Publicznie pokazujemy wszystkie potwierdzone fakty, warunki, daty i źródła. Rekomendacje, checklisty i postęp pozostają w aplikacji. Nie kopiuj aplikacyjnego `weekly/latest.json` do publicznego dokumentu.
 
-Publiczne są wszystkie potwierdzone fakty, warunki, daty i źródła. Rekomendowana kolejność, checklisty i postęp pozostają w aplikacji. Nie kopiować aplikacyjnego weekly/latest.json do dokumentu publicznego. Archiwum redakcyjne zostaje w Git, strona ma jeden stały adres. Nie włączać automatyzacji w ramach tego procesu.
+Szablon krok po kroku: [templates/PUBLIC_WEEKLY.md](../templates/PUBLIC_WEEKLY.md). Kontrakt: `schemas/public-weekly.mjs`; aplikacja używa przypiętej kopii z kontrolą SHA-256.
 
-schemas/public-weekly.mjs jest kontraktem odczytu i walidacji. Aplikacja używa jego przypiętej kopii z kontrolą SHA-256. Zmiana kontraktu wymaga aktualizacji kopii i pliku blokady w aplikacji.
+## Klucze KV i walidacja
 
-## Walidacja i przygotowanie KV
+`weekly:public` zawiera pojedynczy dokument albo wersję 2: `{schemaVersion: 2, current: dokument, archive: indeks}`. Każdy osobny artykuł ma klucz `weekly:public:YYWW`. Zmiana głównego wydania nie usuwa wcześniejszych kluczy. HTML i sitemap korzystają wyłącznie z walidowanych danych publicznych; nie ma publicznego API JSON. `weekly:latest` nadal należy do chronionej aplikacji.
 
-    npm test
-    node scripts/prepare-public-weekly.mjs weekly/public/2638.json
-    node scripts/prepare-public-weekly.mjs weekly/public/2638.json --output /tmp/2638-public-kv.json
+```sh
+npm test
+node scripts/prepare-public-weekly.mjs weekly/public/2638.json \
+  --archive-index weekly/public/index.json --output /tmp/2638-public-kv.json
+```
 
-Ostatnia komenda tworzy nowy plik zbiorczego zapisu dla jednego klucza weekly:public. Nie wysyła niczego do Cloudflare i odmawia nadpisania istniejącego pliku wyjściowego. Dokument aplikacji i klucz weekly:latest pozostają odrębne.
+To przygotowanie lokalne, bez wysyłki i bez nadpisywania istniejącego pliku wyjściowego. Stary format dwóch wydań pod jednym adresem pozostaje odczytywalny dla zgodności, lecz nie służy do nowych publikacji.
 
-## Finalizacja aktywnego wydania
+## Odbiór aktywnego wydania
 
-1. Po aktualizacji gry zweryfikować fakty i rotacje w źródłach. Każda nieogłoszona pozycja pozostaje pending, bez pól udających ofertę.
-2. Zaktualizować publiczny dokument oraz przyszłe wydanie aplikacji. Nie zamieniać bieżącej aplikacji na zapowiedź przed czasem.
-3. Obejrzeć oba pełne dokumenty razem. Sprawdzić kwoty, mnożniki, warunki, platformy, nagrody, czas trwania, okna odbioru i GTA+. Odbiór znaczenia jest redakcyjny; skróty plików same nie dowodzą zgodności faktów.
-4. Publiczny dokument dostaje status active, confirmedAt po rozpoczęciu okresu oraz verifiedAt nie wcześniejszy niż potwierdzenie.
-5. Po odbiorze zapisać poza publicznym HTML plik kontroli, np. w katalogu tymczasowym:
-   - status: zatwierdzone
-   - publicSha256: SHA-256 dokładnych bajtów dokumentu publicznego
-   - appSha256: SHA-256 dokładnych bajtów dokumentu aplikacji
-   - reviewedAt: rzeczywisty czas odbioru w ISO UTC
-   - checkedFactIds: identyfikatory wszystkich potwierdzonych pozycji publicznych, które porównano z aplikacją.
-
-    node scripts/prepare-public-weekly.mjs weekly/public/2638.json --app weekly/2026-09-17.json --review /tmp/2638-odbior.json --output /tmp/2638-public-kv-final.json
-
-Skrypt waliduje dokument aplikacji, zgodność weekId, kompletność odbioru i integralność obu plików. Każda zmiana pliku po odbiorze wymaga nowego odbioru. Nie nadpisuje aplikacji.
-
-## Publikacja po odbiorze i zgodzie
-
-Przed publikacją sprawdzić bieżącą produkcję Pages, powiązanie CONTENT_KV i równoległe zmiany. Zatwierdzić paczkę aplikacji zawierającą nową trasę oraz właściwy dokument publiczny. Wydanie aplikacji zatwierdzać razem, publikując je jego istniejącym procesem. KV nie oferuje transakcji między tymi kluczami; po obu zapisach sprawdzić wspólne fakty strony i chronionego API.
-
-Dopiero po zgodzie na konkretną publikację:
-
-    npx wrangler kv bulk put /tmp/2638-public-kv-final.json --namespace-id <sprawdzone-ID-CONTENT_KV> --remote
-
-Dla zatwierdzonej zapowiedzi użyć artefaktu zapowiedzi zamiast wersji finalnej. Brak lub błąd weekly:public skutkuje czytelnym HTTP 503, bez podstawiania poprzednich bonusów. Nie tworzyć publicznego API ani archiwalnych tras. Przed uruchomieniem sprzedaży wydzielenie płatnej zawartości z tego publicznego repo wymaga osobnego zadania.
-
-## Weryfikacja źródeł 2638 — 15.09.2026
-
-Odczytano oficjalne artykuły Rockstar przez istniejący odczyt Newswire GraphQL. Nagłówek oferty na stronie GTA+ potwierdza koniec 07.10.2026. Zapisano 19 potwierdzonych pozycji i 10 oczekujących pól.
-
-- Gunrunning 17–23.09: darmowy Grapeseed Bunker, wyzwanie trzech misji, 2X Research/GTA$/RP, Ammu-Nation i Safeguard, Dolla Dolla, Astron Custom -70%.
-- Community Mission Series: 3X do 23.09, bez kopiowania poprzedniej misji.
-- La Coureuse: kwalifikacja do 23.09, odbiór 24–30.09; HSW wyraźnie dla Enhanced.
-- GTA+: 3X GTA$/RP Bike Service do 07.10. Nie przenosić 6X z 10–16.09. Cluckin’ Bell: 2X GTA$ wyłącznie pierwszy finał tygodnia; Cocaine Lockup 2X produkcji, bez domniemania bonusu Nightclub.
-
-Data verifiedAt odzwierciedla ten odczyt, nie czas generowania HTML. Bieżący weekly/latest.json nadal dotyczy 10.09; pełna zgodność przyszłego aktywnego wydania z aplikacją pozostaje bramką finalizacji 17.09.
-
-## Bieżący tydzień oraz zapowiedź pod jednym adresem
-
-Szablon krok po kroku: [templates/PUBLIC_WEEKLY.md](../templates/PUBLIC_WEEKLY.md). Pusty szkic tworzy `node scripts/new-public-weekly.mjs YYYY-MM-DD`; nie przenosi ofert i wymaga prawdziwych źródeł oraz czasu weryfikacji.
-
-Od 15.09 strona może otrzymać jeden dokument lub obiekt `{schemaVersion: 1, editions: [bieżąceWydanie, zapowiedź]}`. Maksymalnie dwa wydania muszą następować bezpośrednio po sobie; drugie ma stan `preview`. Walidowane są oba. Po wygaśnięciu pierwsze znika z widoku, a kolejne zachowuje stan redakcyjny. Gdy oba wygasną, widoczne jest ostatnie z komunikatem o zakończeniu. Nie powstaje publiczne archiwum.
-
-Przykład przygotowania pary, po odbiorze aktywnego 2637 z aplikacją:
+1. Po aktualizacji gry odczytaj źródła i sprawdź rotacje. Niepotwierdzone pozycje zostaw `pending`.
+2. Zaktualizuj dokument publiczny i aplikacji. Porównaj kwoty, mnożniki, warunki, platformy, nagrody, daty i okna odbioru. Dla GTA+ sprawdź osobny okres oraz krótsze wyjątki.
+3. Ustaw `status: active`, rzeczywisty `confirmedAt` po rozpoczęciu okresu oraz `verifiedAt` nie wcześniejszy niż potwierdzenie.
+4. Zapisz plik odbioru poza publicznym HTML: `status: zatwierdzone`, `publicSha256`, `appSha256`, `reviewedAt` w UTC oraz `checkedFactIds` wszystkich potwierdzonych pozycji. Skróty dotyczą dokładnych bajtów plików. Odbiór znaczenia jest redakcyjny; skróty go nie zastępują.
 
 ```sh
 node scripts/prepare-public-weekly.mjs weekly/public/2637.json \
   --app weekly/2026-09-10.json --review /tmp/2637-odbior.json \
-  --next weekly/public/2638.json --output /tmp/2637-2638-public-kv.json
+  --target archive --output /tmp/2637-archive-kv.json
 ```
 
-Gdy 2638 zostanie potwierdzone, przygotuj je jako pierwsze/jedyne wydanie; 2637 pozostaje tylko w Git. Nie zmieniaj numeru przy korekcie.
+Skrypt sprawdza dokument aplikacji, zgodność `weekId`, pełnego okresu i integralności odbioru. Zmieniony dokument wymaga ponownego odbioru. Domyślny cel to `current`; `--target archive` zapisuje wyłącznie klucz danego wydania.
 
-W 2637 zweryfikowano bieżące rotacje w RockstarINTEL oraz fakty w oficjalnych artykułach Rockstar. Błąd źródła w rabacie członkowskim Pipe Wrench pozostaje jawnie niepotwierdzony. Oficjalny warunek wyzwania to sprzedaż MC Business lub Acid Lab; poprawiono ten warunek oraz GTA+ także w `weekly/2026-09-10.json` i `weekly/latest.json`, zachowując identyfikatory. Pierwszy finał Cluckin’ Bell tygodnia ma 2X GTA$, Cocaine Lockup ma 2X produkcji; źródło nie ogłasza dodatkowego mnożnika RP finału ani produkcji Nightclub. Obie wersje są odbierane przed zapisem KV.
+## Kolejny tydzień i publikacja
+
+1. Utwórz pusty szkic: `node scripts/new-public-weekly.mjs 2026-09-24`. Nie kopiuje ofert, a pusty szkic celowo nie przechodzi walidacji publikacyjnej.
+2. Uzupełnij fakty według szablonu. Przed zmianą głównego wydania przygotuj dotychczasowe jako osobny artykuł, z wymaganym odbiorem aktywnych danych.
+3. Dopisz jego numer i daty do `weekly/public/index.json`, zachowując starsze wpisy. Przygotuj nowe główne wydanie z tym indeksem. Istniejących archiwalnych kluczy nie trzeba ponownie zapisywać; korektę publikuj tylko do właściwego klucza.
+4. Sprawdź podgląd oraz aktualną produkcję i powiązanie `CONTENT_KV`. Po zatwierdzeniu publikacji zapisz przygotowane klucze przez Wrangler. KV nie zapewnia transakcji między nimi, dlatego najpierw publikuj artykuł, potem odsyłający do niego indeks.
+
+```sh
+npx wrangler kv bulk put /tmp/2637-archive-kv.json --namespace-id <sprawdzone-ID-CONTENT_KV> --remote
+npx wrangler kv bulk put /tmp/2638-public-kv.json --namespace-id <sprawdzone-ID-CONTENT_KV> --remote
+```
+
+Zwykła zmiana treści i indeksu wymaga tylko KV. Sitemap jest generowana z indeksu, bez osobnego deployu dla każdego tygodnia. Zmiana układu, kontraktu lub routingu wymaga testów i deployu aplikacji.
+
+Po publikacji sprawdź oba artykuły, canonical, sitemap, 301 wariantów, 404 nieopublikowanego wydania i 401 chronionego API. Osobno porównaj wspólne fakty aplikacji. Brak/błąd głównej treści daje 503 bez podstawiania poprzednich bonusów; nieopublikowany osobny artykuł daje 404. Automat pozostaje odrębnym procesem — ta instrukcja nie zmienia jego harmonogramu.
+
+## Źródła pierwszych wydań
+
+15.09 odczytano oficjalny harmonogram Business Rivalries i miesięczny artykuł GTA+ Rockstar przez istniejący odczyt Newswire. Rotacje 2637 sprawdzono w RockstarINTEL. W 2638 pozostaje 19 potwierdzonych pozycji oraz 10 oczekujących; w 2637 zapisano 35 pozycji. Rabat członkowski Pipe Wrench pozostaje niepotwierdzony z powodu błędu źródła.
+
+Wyzwanie 2637 wymaga sprzedaży MC Business lub Acid Lab; GTA+ daje 2X GTA$ za pierwszy finał Cluckin’ Bell tygodnia i 2X produkcji Cocaine Lockup. Poprawiono wspólne dane aplikacji, zachowując identyfikatory. 6X Bike Service wygasa 16.09; miesięczne 3X GTA$/RP ma koniec 07.10. Nie przenoś wcześniejszego zwiększenia na 2638. Przed sprzedażą wydzielenie płatnej zawartości z publicznego repo pozostaje osobnym zadaniem.

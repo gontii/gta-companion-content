@@ -49,20 +49,21 @@ Przygotowanie odbioru i komendy KV: [instrukcja techniczna](../docs/PUBLIC_WEEKL
 1. `npm test` i przygotowanie artefaktu przez `scripts/prepare-public-weekly.mjs`.
 2. Podgląd: komputer, telefon, daty, tabele, źródła, jeden odnośnik do bety. Instrukcja podglądu jest w aplikacji w `docs/PUBLIC_WEEKLY.md`.
 3. Odbiór faktów. Przy aktywnym wydaniu obowiązuje odbiór pary dokumentów strony/aplikacji związany ich SHA-256.
-4. Po zatwierdzeniu publikacji zapisz tylko `weekly:public` w sprawdzonym `CONTENT_KV`. Kod strony wdrażaj tylko, gdy uległ zmianie. Zmiana JSON nie wymaga deployu Pages.
+4. Po zatwierdzeniu publikacji zapisz właściwy klucz `weekly:public:YYWW` dla osobnego artykułu oraz `weekly:public` dla głównej strony i indeksu w sprawdzonym `CONTENT_KV`. Kod strony wdrażaj tylko, gdy uległ zmianie. Zmiana JSON nie wymaga deployu Pages.
 5. Sprawdź produkcję: właściwy numer/datę/stan, 200 strony, 301 wariantów, 401 chronionego API, poprawność wspólnych faktów. Zapisz wynik w panelu projektu.
 
-Jedna strona może zawierać bieżący tydzień i zapowiedź bezpośrednio następnego. Po zakończeniu starsze wydanie znika z widoku; historia pozostaje w Git. Gdy nie ma nowszego wydania, strona wyraźnie informuje o zakończeniu ostatniego.
+Główna strona pokazuje wybrane wydanie lub zapowiedź. Każdy opublikowany tydzień zachowuje osobny artykuł `/gta-online/weekly-update/YYWW`. Przed zmianą głównego wydania opublikuj poprzednie do `weekly:public:YYWW` i dopisz je do `weekly/public/index.json`; zachowaj starsze wpisy. Archiwalne oferty po terminie mają komunikat o zakończeniu, a sitemap aktualizuje się z indeksu.
 
 ## 5. Gdzie poprawiać szablon
 
 | Zmiana | Plik |
 |---|---|
 | Fakty/korekta konkretnego wydania | `weekly/public/YYWW.json` |
+| Lista opublikowanych artykułów | `weekly/public/index.json` |
 | Ta instrukcja | `templates/PUBLIC_WEEKLY.md` |
 | Pusty szkielet nowych wydań | `scripts/new-public-weekly.mjs` |
 | Wymagane pola i walidacja | `schemas/public-weekly.mjs` oraz przypięta kopia w aplikacji |
 | Układ, angielskie komunikaty i metadane | aplikacja: `functions/_shared/public-weekly.js` |
 | Kolory, odstępy, tabele | aplikacja: `public/guide.css` |
 
-Korekta nie zmienia numeru wydania. Nowy tydzień ma nowy plik. Nie dodawaj archiwalnych publicznych adresów ani harmonogramu automatycznej publikacji w tym procesie.
+Korekta nie zmienia numeru wydania. Nowy tydzień ma nowy plik. Publiczne archiwum jest zaakceptowane od 16.09.2026. Nie włączaj harmonogramu automatycznej publikacji w tym procesie.

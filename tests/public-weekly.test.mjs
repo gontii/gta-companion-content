@@ -87,3 +87,13 @@ test('empty weekly skeleton computes ISO dates without inheriting offers or pret
   assert.ok(d.sections.flatMap(s=>s.items).every(i=>i.status==='pending'&&i.offer===null));
   assert.throws(()=>validatePublicWeekly(d,now));
 });
+test('public archive index is strict and issue keys stay separate from application data',()=>{
+  const d=fixture(),index=[{issue:'2637',startsOn:'2026-09-10',endsOn:'2026-09-16'}];
+  const bulk=preparePublicWeekly(raw,{archiveIndex:index,now});
+  assert.equal(bulk[0].key,'weekly:public');assert.deepEqual(JSON.parse(bulk[0].value).archive,index);
+  assert.throws(()=>preparePublicWeekly(raw,{archiveIndex:[{...index[0],accessToken:'private'}],now}));
+  assert.throws(()=>preparePublicWeekly(raw,{archiveIndex:[index[0],index[0]],now}));
+  const archive=preparePublicWeekly(raw,{target:'archive',now});assert.equal(archive[0].key,'weekly:public:2638');
+  d.status='active';d.confirmedAt='2026-09-17T10:00:00.000Z';d.verifiedAt=d.confirmedAt;
+  assert.throws(()=>preparePublicWeekly(JSON.stringify(d),{target:'archive',now}),/odbioru/);
+});

@@ -6,7 +6,7 @@ import { validatePublicWeekly, validatePublicPage, PUBLIC_WEEKLY_KEY } from '../
 import {validateContent,extractDateRange} from './weekly-core.mjs';
 import {validateSnapshot} from './facts.mjs';
 const hash = value => createHash('sha256').update(value).digest('hex');
-export function preparePublicWeekly(publicText, {appText, review, nextText, now = Date.now()} = {}) {
+export function preparePublicWeekly(publicText, {appText, review, nextText, archiveIndex, target = 'current', now = Date.now()} = {}) {
   const doc = validatePublicWeekly(JSON.parse(publicText), now);
   if (doc.status === 'active') {
     if (!appText || !review) throw new Error('Aktywne wydanie wymaga dokumentu aplikacji i odbioru wspólnych faktów');
@@ -22,23 +22,29 @@ export function preparePublicWeekly(publicText, {appText, review, nextText, now 
     const expected = doc.sections.flatMap(s=>s.items).filter(i=>i.status==='confirmed').map(i=>i.id).sort();
     if (JSON.stringify([...(review.checkedFactIds || [])].sort()) !== JSON.stringify(expected)) throw new Error('Niepełny odbiór wspólnych faktów');
   }
-  const page = nextText ? {schemaVersion:1, editions:[doc, JSON.parse(nextText)]} : doc;
+  if (!['current','archive'].includes(target)) throw new Error('Niepoprawny cel publikacji');
+  if (target === 'archive') {
+    if (nextText || archiveIndex) throw new Error('Archiwum zawiera wyłącznie jedno odebrane wydanie');
+    return [{key:PUBLIC_WEEKLY_KEY+':'+doc.issue,value:JSON.stringify(doc)}];
+  }
+  if (archiveIndex && nextText) throw new Error('Wybierz indeks archiwum albo zgodność z dawną stroną dwóch wydań');
+  const page = archiveIndex ? {schemaVersion:2,current:doc,archive:archiveIndex} : nextText ? {schemaVersion:1, editions:[doc, JSON.parse(nextText)]} : doc;
   validatePublicPage(page, now);
   return [{key:PUBLIC_WEEKLY_KEY,value:JSON.stringify(page)}];
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const [file,...args]=process.argv.slice(2);
-  if (!file) throw new Error('Podaj weekly/public/YYWW.json [--output plik] [--app plik --review plik]');
+  if (!file) throw new Error('Podaj weekly/public/YYWW.json [--output plik] [--app plik --review plik] [--archive-index plik | --target archive]');
   const options={};
   for (let i=0;i<args.length;i+=2) {
-    if (!['--output','--app','--review','--next'].includes(args[i]) || !args[i+1]) throw new Error('Niepoprawne argumenty');
+    if (!['--output','--app','--review','--next','--archive-index','--target'].includes(args[i]) || !args[i+1]) throw new Error('Niepoprawne argumenty');
     options[args[i].slice(2)]=args[i+1];
   }
   const publicText=readFileSync(file,'utf8');
-  const bulk=preparePublicWeekly(publicText,{appText:options.app&&readFileSync(options.app,'utf8'),review:options.review&&JSON.parse(readFileSync(options.review,'utf8')),nextText:options.next&&readFileSync(options.next,'utf8')});
+  const bulk=preparePublicWeekly(publicText,{appText:options.app&&readFileSync(options.app,'utf8'),review:options.review&&JSON.parse(readFileSync(options.review,'utf8')),nextText:options.next&&readFileSync(options.next,'utf8'),archiveIndex:options['archive-index']&&JSON.parse(readFileSync(options['archive-index'],'utf8')),target:options.target});
   if (options.output) {
-    if ([file,options.app,options.review,options.next].filter(Boolean).some(p=>resolve(p)===resolve(options.output))) throw new Error('Nie nadpisuj źródeł');
+    if ([file,options.app,options.review,options.next,options['archive-index']].filter(Boolean).some(p=>resolve(p)===resolve(options.output))) throw new Error('Nie nadpisuj źródeł');
     writeFileSync(options.output,JSON.stringify(bulk,null,2)+'\n',{flag:'wx'});
   }
-  console.log('Zwalidowane '+JSON.parse(publicText).issue+'; SHA-256 '+hash(publicText)+'; klucz '+PUBLIC_WEEKLY_KEY+'. Bez publikacji.');
+  console.log('Zwalidowane '+JSON.parse(publicText).issue+'; SHA-256 '+hash(publicText)+'; klucz '+bulk[0].key+'. Bez publikacji.');
 }

@@ -103,9 +103,23 @@ export function publicState(doc, now = Date.now()) {
   return doc.status === 'active' && today >= doc.startsOn ? 'active' : 'preview';
 }
 
-// Jeden adres może pokazać bieżące wydanie i zapowiedź. Brak archiwum w runtime.
+// Bieżący dokument z indeksem osobnych wydań; starszy format pary pozostaje odczytywalny.
 export function validatePublicPage(value, now = Date.now()) {
   if (Object.hasOwn(value || {}, 'issue')) { validatePublicWeekly(value, now); return value; }
+  if (value?.schemaVersion === 2) {
+    object(value, ['schemaVersion', 'current', 'archive']);
+    validatePublicWeekly(value.current, now);
+    requireValue(Array.isArray(value.archive) && value.archive.length <= 200, 'Niepoprawny indeks wydań');
+    const issues = new Set([value.current.issue]);
+    for (const entry of value.archive) {
+      object(entry, ['issue', 'startsOn', 'endsOn']);
+      requireValue(entry.issue === issueNumber(entry.startsOn) && date(entry.endsOn) >= date(entry.startsOn) &&
+        entry.endsOn < value.current.startsOn && !issues.has(entry.issue), 'Niepoprawne wydanie archiwalne');
+      issues.add(entry.issue);
+    }
+    requireValue(new TextEncoder().encode(JSON.stringify(value)).length <= MAX_PUBLIC_BYTES, 'Dokument strony za duży');
+    return value;
+  }
   object(value, ['schemaVersion', 'editions']);
   requireValue(value.schemaVersion === 1 && Array.isArray(value.editions) && value.editions.length >= 1 && value.editions.length <= 2, 'Wymagane jedno lub dwa wydania');
   requireValue(new TextEncoder().encode(JSON.stringify(value)).length <= MAX_PUBLIC_BYTES, 'Dokument strony za duży');
@@ -119,6 +133,7 @@ export function validatePublicPage(value, now = Date.now()) {
 }
 export function visiblePublicEditions(value, now = Date.now()) {
   validatePublicPage(value, now);
+  if (value.schemaVersion === 2) return [value.current];
   const editions = value.editions || [value];
   const visible = editions.filter(doc => publicState(doc, now) !== 'ended');
   // Gdy wszystko wygasło, zostaje ostatnie wydanie z jawnym komunikatem.
