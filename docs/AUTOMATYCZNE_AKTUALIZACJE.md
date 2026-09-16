@@ -1,6 +1,6 @@
 # Automatyczne aktualizacje treści
 
-Stan na 15.09.2026: Worker wdrożony w trybie `observe`, zgodna aplikacja opublikowana (Pages `d76dcdb0`). Przełączenie na publikowanie wymaga zakończenia prób źródeł, Supadata i zgodnej aplikacji. Sama obecność crona nie oznacza świeżej publikacji.
+Stan na 16.09.2026: automatyczne publikowanie włączone. Worker `97ed2081` działa w trybie `publish`; GitHub `CONTENT_WRITER=cloudflare` blokuje poprzedniego autora KV. Pierwszą rewizję, pełną zgodność chronionego API i zapis historii potwierdzono. Poniższe wpisy z 15.09 opisują wcześniejsze etapy odbioru.
 
 ## Podział odpowiedzialności
 
@@ -74,3 +74,15 @@ Wcześniejszy komunikat o wyczerpaniu limitu usługi był nieprecyzyjny. Panel S
 Zaplanowana próba 16.09 o 00:02 UTC użyła pobranych wcześniej napisów TGG. Film `V08qE5jkLW4` nie określa obu dat obowiązywania ofert, a automatyczne napisy zawierają błędy nazw i liczb. Porównanie z transkrypcją potwierdziło, że zero zaakceptowanych ofert jest właściwym wynikiem dla tego materiału; data publikacji filmu nie zastępuje dat wydarzenia. Nie powtarzamy pobierania ani analizy tego samego materiału tylko po to, żeby wymusić publikację.
 
 Status `aiBudget` pokazuje składniki lokalnego budżetu. Opcja `inspect_candidate` przekaźnika umożliwia porównanie kandydata z bieżącymi źródłami; pokazuje treść aplikacji bez prywatnych cytatów i transkrypcji.
+
+### Uruchomienie publikowania 16.09.2026
+
+- Kod licznika `e108d83`; walidacja zakresu GTA+ i dat `44aba0b`; własne terminy zweryfikowanych korzyści `cc26f0d`; konfiguracja publikacji `4ea9549`.
+- Worker `97ed2081-d190-4e0c-bb47-ed74a8ee950c`, `publish`. Przed przełączeniem ustawiono `CONTENT_WRITER=cloudflare` i potwierdzono brak trwającego starego publikowania. Zgodna aplikacja jest zachowana również w aktualnym Pages `c2f603e4`.
+- Rewizja `69719fc91f3939cc5f8b709d16d3dc1977a6394d82c048731086fd2367b53961`: publikacja 08:58:49 UTC; pełna zgodność API i odmowa bez tokenu potwierdzone przez automat o 09:00:04 UTC. [Odbiór 35077052665](https://github.com/gontii/gta-companion-content/actions/runs/35077052665).
+- Historia `e8394a4` zapisana na `main`. Pierwsze potwierdzenie odbioru przerwało `ECONNRESET`; kolejny przebieg bezpiecznie odebrał oba wpisy kolejki, bez drugiej rewizji i bez kolejnej analizy źródeł.
+- Końcowy walidator odrzucił bonus miesięczny błędnie opisany przez model jako dostępny dla wszystkich. Źródło GTA+ narzuca zakres członkostwa; okres główny artykułu nie zastępuje dat w dowodzie. Znane wyzwanie sezonowe ma pierwszeństwo i zachowuje identyfikator postępu.
+- `events/editorial-periods.json` zawiera dokładne identyfikatory wcześniej zweryfikowanych pozycji GTA+ z okresem 10.09–07.10. Zachowują daty przy zmianie tygodnia. Nowe niezweryfikowane pozycje nie dziedziczą tego okresu.
+- Lokalnie 90/90 testów wydzielonej paczki; CI bieżącego repo 91/91, w tym równoległe testy publicznych artykułów. Symulacja na rzeczywistym kandydacie potwierdziła wygaśnięcie ofert tygodniowych, aktywację etapów 17/24.09 i wygaśnięcie GTA+ 07.10. To kontrola z przesuniętym zegarem, nie obserwacja przyszłej granicy produkcyjnej.
+- Licznik na 16.09 o 09:00 UTC: 909 neuronów wyliczonych z tokenów, 190 marginesu, 714 zachowanego licznika sprzed migracji, 0 rezerwacji w toku, 2 nowe wywołania. Kolejne walidacje i kontrole użyły zapisanych odpowiedzi. Nie zmieniono limitów ani planów usług.
+- Najbliższe rzeczywiste wygaśnięcie zapisane na 16.09 o 22:00 UTC; przygotowanie następnego etapu 17.09 o 08:50 UTC, aktywacja o 09:00 UTC. Nie deklarować obserwacji tych przyszłych zdarzeń przed ich wystąpieniem.

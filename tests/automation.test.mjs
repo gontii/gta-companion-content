@@ -6,7 +6,8 @@ import { agreeSources, mergeFacts, validateFacts, upgradeLegacy, validateSnapsho
 import { selectTggVideo, TGG_CHANNEL, SourceService } from '../scripts/source-service.mjs';
 import { PublicationEngine } from '../worker/coordinator.mjs';
 
-const legacy = JSON.parse(await readFile(new URL('../weekly/2026-09-10.json', import.meta.url)));
+// Production history is updated by the relay; migration tests need an immutable legacy fixture.
+const legacy = JSON.parse(await readFile(new URL('./fixtures/weekly-legacy.json', import.meta.url)));
 const fact = {
   section: 'bonuses', entity: 'Contact Missions', offer: '2X GTA$ & RP', eligibility: 'all', platform: 'all',
   startsOn: '2026-09-17', endsOn: '2026-09-23', evidence: 'Contact Missions pay 2X GTA$ & RP', dateEvidence: 'September 17–23',

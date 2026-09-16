@@ -1,0 +1,464 @@
+{
+  "weekId": "2026-09-10",
+  "range": "September 10 - 16, 2026",
+  "headline": "Free Grapeseed Clubhouse, GTA$1M challenge and Biker bonuses",
+  "quickTake": [
+    "Claim the FREE Grapeseed Clubhouse via Maze Bank Foreclosures by September 16 — no GTA+ required.",
+    "Sell GTA$1M of MC Business or Acid Lab product for an extra GTA$1M and the Junk Tracksuit by September 16.",
+    "2X GTA$ on Street Dealer Sales and Bike Service Missions; Bike Service pays 6X for GTA+ members.",
+    "Karin S95 is 70% off on PS5, Xbox Series X|S and PC Enhanced."
+  ],
+  "sections": [
+    {
+      "id": "dlc",
+      "title": "New DLC: The Kortz Center Heist",
+      "items": [
+        {
+          "id": "dlc-buy-mansion",
+          "label": "Hosting the heist? Buy a Mansion via Dynasty 8 — Tongva Estate, Vinewood Residence or Richman Villa, from GTA$11.5M",
+          "tag": "gold"
+        },
+        {
+          "id": "dlc-buy-art-studio",
+          "label": "Add the Art Studio expansion (GTA$4.7M) to unlock the heist planning board",
+          "tag": "gold"
+        },
+        {
+          "id": "dlc-run-kortz-heist",
+          "label": "Run The Kortz Center Heist (solo or up to 4 players) — three new paintings rotate every week, so it repeats as a money-maker",
+          "tag": "gold"
+        },
+        {
+          "id": "dlc-join-friends-heist",
+          "label": "No mansion? Join a friend's Kortz Center Heist crew — only the host needs the property"
+        }
+      ]
+    },
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "items": [
+        {
+          "id": "3x-gta-rp-on-community-mission-series",
+          "label": "3X GTA$ & RP on Community Mission Series (PS5, Xbox Series X|S and PC Enhanced).",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-rp-on-biker-clubhouse-contracts-mc-work-a",
+          "label": "2x GTA$ & RP on Biker Clubhouse Contracts, MC Work and MC Challenges",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-rp-on-featured-series-hasta-la-vista-and-",
+          "label": "2x GTA$ & RP on Featured Series: Hasta La Vista and Every Bullet Counts",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-on-street-dealer-sales",
+          "label": "2x GTA$ on Street Dealer Sales",
+          "tag": "gold"
+        },
+        {
+          "id": "2x-gta-on-bike-service-missions",
+          "label": "2X GTA$ on Bike Service Missions; 6X GTA$ for GTA+ members, September 10–16. Requires a Clubhouse Custom Bike Shop.",
+          "tag": "gold"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "items": [
+        {
+          "id": "business-rivalries-2026-09-10",
+          "label": "Earn GTA$1,000,000 selling MC Business or Acid Lab product to receive an extra GTA$1,000,000 and the Junk Tracksuit, September 10–16.",
+          "tag": "gold"
+        }
+      ]
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free rewards & prize vehicles",
+      "items": [
+        {
+          "id": "delivering-business-battle-crates-give-you-guara",
+          "label": "Delivering Business Battle crates give you guaranteed clothing rewards: This includes the Six Figure Tee, Ride or Die Tee, Red and White Ammu-Nation Cap or Bourgeoix Tee"
+        },
+        {
+          "id": "this-week-at-the-casino-in-gta-online-take-your-",
+          "label": "Spin the Diamond Casino Lucky Wheel for a chance to win the RUNE Zhaba. GTA+ members get two spins per 24 hours."
+        },
+        {
+          "id": "this-week-in-gta-online-place-top-4-in-a-ls-car-",
+          "label": "Place Top 4 in an LS Car Meet Series race once to win the Pfister Neon.",
+          "tag": "limited"
+        },
+        {
+          "id": "this-week-s-gta-online-premium-test-ride-vehicle",
+          "label": "This week's GTA Online Premium Test Ride Vehicle is the Coil Cyclone II for PS5, Xbox Series X/S and PC Enhanced players"
+        },
+        {
+          "id": "this-week-s-gta-online-test-track-vehicles-are-t",
+          "label": "This week's GTA Online Test Track Vehicles are the Grotti Cheetah Classic, Pfister Growler & Vulcar Warrener HKR"
+        }
+      ]
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts & Offers",
+      "items": [
+        {
+          "id": "grapeseed-clubhouse-free",
+          "label": "Grapeseed Clubhouse — FREE for all players (no GTA+ required). Claim via Maze Bank Foreclosures by September 16; upgrades are separate.",
+          "tag": "limited"
+        },
+        {
+          "id": "karin-s95-70-off",
+          "label": "Karin S95 — 70% off at Southern San Andreas Super Autos (PS5, Xbox Series X|S and PC Enhanced)"
+        },
+        {
+          "id": "buckingham-nimbus-30-off",
+          "label": "Buckingham Nimbus - 30% off"
+        },
+        {
+          "id": "dinka-vindicator-30-off",
+          "label": "Dinka Vindicator - 30% off"
+        },
+        {
+          "id": "gallivanter-baller-st-30-off",
+          "label": "Gallivanter Baller ST - 30% off"
+        },
+        {
+          "id": "grotti-cheetah-classic-30-off",
+          "label": "Grotti Cheetah Classic - 30% off"
+        },
+        {
+          "id": "karin-vivanite-30-off",
+          "label": "Karin Vivanite - 30% off"
+        },
+        {
+          "id": "maibatsu-penumbra-ff-30-off",
+          "label": "Maibatsu Penumbra FF - 30% off"
+        },
+        {
+          "id": "mammoth-patriot-stretch-30-off",
+          "label": "Mammoth Patriot Stretch - 30% off"
+        },
+        {
+          "id": "nagasaki-shinobi-30-off",
+          "label": "Nagasaki Shinobi - 30% off"
+        },
+        {
+          "id": "pegassi-vortex-30-off",
+          "label": "Pegassi Vortex - 30% off"
+        },
+        {
+          "id": "pfister-growler-30-off",
+          "label": "Pfister Growler - 30% off"
+        },
+        {
+          "id": "shitzu-defiler-30-off",
+          "label": "Shitzu Defiler - 30% off"
+        },
+        {
+          "id": "vapid-aleutian-30-off",
+          "label": "Vapid Aleutian - 30% off"
+        },
+        {
+          "id": "vulcar-warrener-hkr-30-off",
+          "label": "Vulcar Warrener HKR - 30% off"
+        },
+        {
+          "id": "western-rampant-rocket-30-off",
+          "label": "Western Rampant Rocket - 30% off"
+        }
+      ]
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "items": [
+        {
+          "id": "compact-emp-launcher-10-gta-20",
+          "label": "Compact EMP Launcher (10%, GTA+ 20%)"
+        },
+        {
+          "id": "double-barrel-shotgun-10-gta-20",
+          "label": "Double Barrel Shotgun (10%, GTA+ 20%)"
+        },
+        {
+          "id": "assault-smg-10-gta-20",
+          "label": "Assault SMG (10%, GTA+ 20%)"
+        },
+        {
+          "id": "pipe-wrench-10-gta-3-20",
+          "label": "Pipe Wrench — available in the Gun Van; member discount awaiting confirmation."
+        },
+        {
+          "id": "railgun-10-gta-40",
+          "label": "Railgun (10%, GTA+ 40%)"
+        },
+        {
+          "id": "tactical-smg-40-gta-40",
+          "label": "Tactical SMG (40%, GTA+ 40%)"
+        },
+        {
+          "id": "pipe-bombs-10-gta-20",
+          "label": "Pipe Bombs (10%, GTA+ 20%)"
+        },
+        {
+          "id": "proximity-mines-10-gta-20",
+          "label": "Proximity Mines (10%, GTA+ 20%)"
+        },
+        {
+          "id": "sticky-bombs-10-gta-20",
+          "label": "Sticky Bombs (10%, GTA+ 20%)"
+        },
+        {
+          "id": "super-light-armor-10-gta-20",
+          "label": "Super Light Armor (10%, GTA+ 20%)"
+        },
+        {
+          "id": "light-armor-10-gta-20",
+          "label": "Light Armor (10%, GTA+ 20%)"
+        },
+        {
+          "id": "standard-armor-10-gta-20",
+          "label": "Standard Armor (10%, GTA+ 20%)"
+        },
+        {
+          "id": "heavy-armor-10-gta-20",
+          "label": "Heavy Armor (10%, GTA+ 20%)"
+        },
+        {
+          "id": "super-heavy-armor-10-gta-20",
+          "label": "Super Heavy Armor (10%, GTA+ 20%)"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "items": [
+        {
+          "id": "pegassi-horus-early-access-2026-09-10",
+          "label": "Pegassi Horus — early access for GTA+ members this week; general sale starts September 17 at Legendary Motorsport for GTA$2,810,000.",
+          "tag": "limited"
+        },
+        {
+          "id": "kortz-center-heist-primary-targets-i-hear-voices",
+          "label": "Kortz Center Heist primary targets: I Hear Voices, I, Fruit, Until Death"
+        },
+        {
+          "id": "the-kortz-center-heist-will-receive-new-primary-",
+          "label": "The Kortz Center Heist will receive new Primary Targets, its first-completion bonus will reset and completing it without dying will award an extra GTA$400,000"
+        },
+        {
+          "id": "the-fib-priority-file-in-gta-online-this-week-is",
+          "label": "The FIB Priority File in GTA Online this week is The Black Box File. Priority Files pays double"
+        },
+        {
+          "id": "the-mctony-robbery-enus-jubilee-top-tier",
+          "label": "The McTony Robbery: Enus Jubilee (Top Tier)"
+        },
+        {
+          "id": "the-cargo-ship-robbery-benefactor-stirling-gt-st",
+          "label": "The Cargo Ship Robbery: Benefactor Stirling GT (Standard Tier)"
+        },
+        {
+          "id": "the-gangbanger-robbery-dinka-blista-kanjo-low-ti",
+          "label": "The Gangbanger Robbery: Dinka Blista Kanjo (Low Tier)"
+        },
+        {
+          "id": "the-gta-online-luxury-autos-car-dealership-locat",
+          "label": "The GTA Online Luxury Autos Car Dealership located in Rockford Hills has two cars on show for purchase. The cars this week are the Grotti GT750 & Vapid FMJ MK V"
+        },
+        {
+          "id": "simeon-s-auto-shop-has-five-cars-available-to-pu",
+          "label": "Simeon's Auto Shop has five cars available to purchase and test drive in GTA Online. They are the Dinka Vindicator, Nagasaki Shinobi, Pegassi Vortex, Shitzu Defiler & Western Rampant Rocket"
+        },
+        {
+          "id": "this-week-s-premium-race-is-eight-figure-bonus",
+          "label": "This week's Premium Race is Eight Figure Bonus"
+        },
+        {
+          "id": "this-week-s-hsw-time-trial-is-del-perro-beach",
+          "label": "This week's HSW Time Trial is Del Perro Beach"
+        },
+        {
+          "id": "this-week-s-time-trial-is-sawmill",
+          "label": "This week's Time Trial is Sawmill"
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "title": "GTA+ — September 10 to October 7, 2026",
+      "items": [
+        {
+          "id": "gta-plus-2026-09-status",
+          "label": "GTA+ only: September benefits confirmed against Rockstar on September 15; valid September 10–October 7 unless a shorter period is stated.",
+          "tag": "limited"
+        },
+        {
+          "id": "gta-plus-2026-09-horus",
+          "tag": "limited",
+          "label": "GTA+ only: claim the Pegassi Horus for free at The Vinewood Car Club with the Velvet Iris livery, through October 7. Early access ends September 16; general sale begins September 17."
+        },
+        {
+          "id": "gta-plus-2026-09-cluckin",
+          "tag": "limited",
+          "label": "GTA+ only: 2X GTA$ on your first weekly completion of the Cluckin’ Bell Farm Raid finale, Scene of the Crime, September 10–October 7. No extra RP multiplier is announced."
+        },
+        {
+          "id": "gta-plus-2026-09-production",
+          "tag": "limited",
+          "label": "GTA+ only: 2X Cocaine Lockup production speed, September 10–October 7. This offer does not announce a Nightclub production bonus."
+        },
+        {
+          "id": "gta-plus-2026-09-mc",
+          "tag": "limited",
+          "label": "GTA+ only: 60% off Biker Business Properties, Upgrades and Modifications through October 7."
+        },
+        {
+          "id": "gta-plus-2026-09-bikes",
+          "tag": "limited",
+          "label": "GTA+ only: 50% off Nagasaki Shinobi, Shotaro, Stryder, Chimera and BF400 through October 7."
+        },
+        {
+          "id": "gta-plus-2026-09-shotaro",
+          "tag": "limited",
+          "label": "GTA+ only: Nagasaki Shotaro is included in the confirmed 50% Nagasaki motorcycle sale through October 7."
+        },
+        {
+          "id": "gta-plus-2026-09-clothes",
+          "tag": "limited",
+          "label": "GTA+ only: Bigness Patchwork Revere Collar shirt and Patchwork Jeans are added to your wardrobe during September 10–October 7."
+        },
+        {
+          "id": "gta-plus-2026-09-paint",
+          "tag": "limited",
+          "label": "GTA+ only: free Cyan/Red Flip Chameleon Paint and matching Wheel Paint at vehicle workshops and mod bays through October 7."
+        },
+        {
+          "id": "gta-plus-2026-09-bike-service",
+          "label": "GTA+ only: Bike Service Missions pay 3X GTA$ and RP through October 7; the GTA$ reward is increased to 6X during September 10–16. Clubhouse Custom Bike Shop required.",
+          "tag": "limited"
+        }
+      ]
+    }
+  ],
+  "beginnerPath": [
+    {
+      "id": "bp-1",
+      "label": "Claim the free Grapeseed Clubhouse through Maze Bank Foreclosures by September 16. The Custom Bike Shop is a separate purchase."
+    },
+    {
+      "id": "bp-2",
+      "label": "Play Community Mission Series for 3X GTA$ & RP on PS5, Xbox Series X|S or PC Enhanced; use the Community Series marker in Legion Square."
+    },
+    {
+      "id": "bp-3",
+      "label": "Use the Clubhouse meeting-room contracts for 2X GTA$ & RP. Bike Service Missions require the Custom Bike Shop."
+    },
+    {
+      "id": "bp-4",
+      "label": "If you own an MC Business or Acid Lab, sell GTA$1M worth of its product for the GTA$1M Weekly Challenge prize and Junk Tracksuit by September 16. Track the challenge in the Interaction Menu."
+    }
+  ],
+  "locations": [
+    {
+      "id": "dlc-loc-kortz-center",
+      "activity": "New DLC: The Kortz Center Heist",
+      "name": "Kortz Center",
+      "area": "Pacific Bluffs",
+      "note": "The heist target. Your first setup is a recon trip here once the planning board unlocks."
+    },
+    {
+      "id": "dlc-loc-dynasty8",
+      "activity": "New DLC: The Kortz Center Heist",
+      "name": "Dynasty 8 website (in-game phone)",
+      "area": "Los Santos",
+      "note": "Buy a Mansion (from GTA$11.5M) — required to host the heist — then add the Art Studio expansion (GTA$4.7M)."
+    },
+    {
+      "id": "dlc-loc-art-studio",
+      "activity": "New DLC: The Kortz Center Heist",
+      "name": "Art Studio (mansion basement)",
+      "area": "Your Mansion",
+      "note": "First visit triggers the intro cutscene with Mr. Faber and Raf, then the heist planning board unlocks."
+    },
+    {
+      "id": "loc-bonuses",
+      "activity": "3x GTA$ & RP on Community Mission Series",
+      "name": "Best bonuses",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    },
+    {
+      "id": "loc-challenge",
+      "activity": "Weekly Challenge: earn GTA$1,000,000 selling MC Business or Acid Lab product, September 10–16; reward: GTA$1,000,000 and Junk Tracksuit.",
+      "name": "Weekly challenge",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    },
+    {
+      "id": "loc-free-vehicles",
+      "activity": "Delivering Business Battle crates give you guaranteed clothing rewards: This includes the Six Figure Tee, Ride or Die Tee, Red and White Ammu-Nation Cap or Bourgeoix Tee",
+      "name": "Free rewards & prize vehicles",
+      "area": "Los Santos",
+      "note": "Check the in-game map, phone, or pause menu for the current entry point."
+    }
+  ],
+  "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-in-business-rivalries-event-september-10th-16th/",
+  "generatedAt": "2026-09-15T18:52:46.718Z",
+  "seasonalEvent": {
+    "id": "business-rivalries-2026-09",
+    "title": "September Business Rivalries",
+    "startsOn": "2026-09-03",
+    "endsOn": "2026-09-30",
+    "summary": "10× Weekly Challenge rewards — GTA$1M per week, up to GTA$4M",
+    "description": "The 10× bonus applies to the Weekly Challenge prize, not all business sales. Complete each weekly challenge to earn an extra GTA$1,000,000.",
+    "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+    "weeks": [
+      {
+        "startsOn": "2026-09-03",
+        "endsOn": "2026-09-09",
+        "challenge": "Sell GTA$1,000,000 worth of Special Cargo",
+        "reward": "GTA$1,000,000",
+        "outfit": "Yeti x LS Customs Tracksuit"
+      },
+      {
+        "startsOn": "2026-09-10",
+        "endsOn": "2026-09-16",
+        "challenge": "Earn GTA$1,000,000 selling MC Business or Acid Lab product",
+        "reward": "GTA$1,000,000",
+        "outfit": "Junk Tracksuit"
+      },
+      {
+        "startsOn": "2026-09-17",
+        "endsOn": "2026-09-23",
+        "challenge": "Complete 3 Bunker Research Missions from Agent 14",
+        "reward": "GTA$1,000,000",
+        "outfit": "Camo Ammu-Nation Sweatsuit",
+        "targetCount": 3
+      },
+      {
+        "startsOn": "2026-09-24",
+        "endsOn": "2026-09-30",
+        "challenge": "Sell GTA$1,000,000 across all businesses",
+        "reward": "GTA$1,000,000",
+        "outfit": "Retro Fruit Tracksuit"
+      }
+    ],
+    "vehicleReward": {
+      "name": "Free Penaud La Coureuse",
+      "qualifyFrom": "2026-09-03",
+      "qualifyUntil": "2026-09-23",
+      "claimFrom": "2026-09-24",
+      "claimUntil": "2026-09-30",
+      "description": "Complete at least one Weekly Challenge between September 3–23, then return September 24–30 to claim the car at Legendary Motorsport.",
+      "upgrade": "Complimentary HSW upgrade on PS5, Xbox Series X|S and PC (Enhanced)."
+    }
+  }
+}
