@@ -23,6 +23,7 @@ export class PublicationEngine {
     return { mode: this.env.PUBLICATION_MODE, ...state, outboxCount: outbox.size, progress: await this.store.get('progress'),
       extraction, aiBudget: await new AiBudget(this.store).state(),
       candidate: master ? publicSnapshot(projectContent(master, Date.now())) : null,
+      approvedFacts: [...(await this.store.list({ prefix: 'fact:', limit: 1000 })).values()].map(({ evidence, dateEvidence, ...fact }) => fact),
       tggProbe: await this.store.get('tgg-probe'),
       transcriptCheck: await this.store.get('transcript-check'),
       tggDiscovery: await this.store.get('tgg-discovery-check'),
@@ -112,9 +113,14 @@ export class PublicationEngine {
         state.nextCheck = null;
         state.validationVersion = FACT_VALIDATION_VERSION;
       }
-      if (!master) {
+      if (!master || (this.env.PUBLICATION_MODE === 'observe' && !await this.store.get('publication'))) {
         const legacy = await this.env.CONTENT_KV.get('weekly:latest', 'json');
-        if (legacy) master = upgradeLegacy(legacy);
+        if (legacy) {
+          const seedHash = await hash(legacy);
+          // Preserve editorial corrections published while the new writer is still under review.
+          if (!master || state.seedHash !== seedHash) master = upgradeLegacy(legacy);
+          state.seedHash = seedHash;
+        }
       }
       let facts = [...(await this.store.list({ prefix: 'fact:', limit: 1000 })).values()];
       if (!facts.length) facts = await this.store.get('facts') || [];

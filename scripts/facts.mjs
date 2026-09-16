@@ -5,7 +5,7 @@ export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
-export const FACT_VALIDATION_VERSION = 7;
+export const FACT_VALIDATION_VERSION = 8;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
@@ -68,14 +68,16 @@ export function validateFacts(raw, doc) {
       if (/\bRP\b/i.test(f.offer) && !/\bRP\b/i.test(f.evidence)) throw new Error('unsupported_reward_unit');
       if (/GTA\$/i.test(f.offer) && !/GTA\$/i.test(f.evidence)) throw new Error('unsupported_reward_unit');
       if (f.eligibility === 'all' && /GTA\+|GTA plus|members only/i.test(f.evidence) && !/all players|non.member|no GTA\+|no membership/i.test(f.evidence)) throw new Error('ambiguous_membership');
+      if (doc.source.scope === 'membership' && f.eligibility !== 'gta-plus' &&
+          !/all players|non.member|no GTA\+|no membership/i.test(f.evidence)) throw new Error('membership_source_scope');
       if (f.platform === 'all' && /enhanced|PS5|Series X|PlayStation 5/i.test(f.evidence) && !/all platforms/i.test(f.evidence)) throw new Error('ambiguous_platform');
       if (/weekend/i.test(f.evidence) && Date.parse(f.endsOn) - Date.parse(f.startsOn) > 3 * 86400000) throw new Error('weekend_dates');
 
       if (!validDay(f.startsOn) || !validDay(f.endsOn) || f.endsOn < f.startsOn ||
           Date.parse(f.endsOn) - Date.parse(f.startsOn) > 62 * 86_400_000) throw new Error('invalid_dates');
       if (Number.isFinite(Date.parse(doc.publishedOn)) && (Date.parse(f.startsOn) < Date.parse(doc.publishedOn) - 35 * 86_400_000 || Date.parse(f.startsOn) > Date.parse(doc.publishedOn) + 62 * 86_400_000)) throw new Error('date_outside_source_context');
-      const inPeriod = doc.period && f.startsOn === doc.period.startId && f.endsOn === doc.period.endId;
-      if (!inPeriod && (!dateIsSupported(f.startsOn, f.dateEvidence) || !dateIsSupported(f.endsOn, f.dateEvidence))) throw new Error('unsupported_dates');
+      // A guessed current week cannot override a quote about a different event period.
+      if (!dateIsSupported(f.startsOn, f.dateEvidence) || !dateIsSupported(f.endsOn, f.dateEvidence)) throw new Error('unsupported_dates');
       if (f.section === 'gta-plus' && f.eligibility !== 'gta-plus') throw new Error('member_scope');
       if (f.eligibility === 'gta-plus' && !/gta\+|gta plus|member/i.test(f.evidence)) throw new Error('member_evidence');
       if (f.platform === 'enhanced' && !/enhanced|ps5|series x|playstation 5/i.test(f.evidence)) throw new Error('platform_evidence');
@@ -156,7 +158,7 @@ export function seasonalFacts(event) {
   const make = (entity, offer, startsOn, endsOn, section) => ({ entity, offer, startsOn, endsOn, section,
     eligibility: 'all', platform: 'all', confidence: 'official', sources });
   return [
-    ...event.weeks.map(w => ({ ...make(event.title, `${w.challenge} to receive an extra ${w.reward} and the ${w.outfit}.`, w.startsOn, w.endsOn, 'challenge'), ...(w.targetCount ? { targetCount: w.targetCount } : {}) })),
+    ...event.weeks.map(w => ({ ...make(event.title, `${w.challenge} to receive an extra ${w.reward} and the ${w.outfit}.`, w.startsOn, w.endsOn, 'challenge'), itemId: `business-rivalries-${w.startsOn}`, ...(w.targetCount ? { targetCount: w.targetCount } : {}) })),
     make(event.vehicleReward.name, `Qualify by completing at least one Weekly Challenge; claim ${event.vehicleReward.claimFrom}–${event.vehicleReward.claimUntil}.`, event.vehicleReward.qualifyFrom, event.vehicleReward.qualifyUntil, 'other'),
     make(event.vehicleReward.name, `Claim at Legendary Motorsport if you completed a Weekly Challenge during ${event.vehicleReward.qualifyFrom}–${event.vehicleReward.qualifyUntil}.`, event.vehicleReward.claimFrom, event.vehicleReward.claimUntil, 'other'),
   ];
@@ -164,7 +166,10 @@ export function seasonalFacts(event) {
 
 export async function mergeFacts(previous, facts, now = Date.now()) {
   const current = previous ? upgradeLegacy(previous) : null;
-  facts = [...facts, ...seasonalFacts(current?.seasonalEvent)];
+  const known = seasonalFacts(current?.seasonalEvent);
+  // The reviewed seasonal schedule already defines the one weekly challenge.
+  facts = [...facts.filter(f => !(f.section === 'challenge' && known.some(k => k.section === 'challenge' &&
+    k.startsOn === f.startsOn && k.endsOn === f.endsOn))), ...known];
   const ready = facts.filter(f => Date.parse(factWindow(f).startsAt) <= now && Date.parse(factWindow(f).expiresAt) > now)
     .sort((a, b) => Date.parse(factWindow(a).startsAt) - Date.parse(factWindow(b).startsAt));
   const latestWeek = [current?.weekId, ...ready.map(f => thursdayWeekId(new Date(f.startsOn)))].filter(Boolean).sort().at(-1);
@@ -188,13 +193,13 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     const section = c.sections.find(s => s.id === f.section);
     if (!section) continue;
     const key = factKey(f);
-    const existing = section.items.find(i => i.factKey === key) || section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
+    const existing = section.items.find(i => f.itemId && i.id === f.itemId) || section.items.find(i => i.factKey === key) || section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
     const timing = factWindow(f);
     if (existing?.confidence === 'official' && f.confidence !== 'official' && Date.parse(existing.expiresAt) > now &&
         Date.parse(existing.startsAt) >= Date.parse(timing.startsAt)) continue;
     // Keep a manual correction, its id and its original validity period.
     if (existing?.editorial && Date.parse(existing.expiresAt) > now) continue;
-    const id = existing?.id || `auto-${(await hash(key)).slice(0, 18)}`;
+    const id = existing?.id || f.itemId || `auto-${(await hash(key)).slice(0, 18)}`;
     const label = `${f.entity} — ${f.offer}${f.eligibility === 'gta-plus' ? ' (GTA+ only)' : ''}${f.platform === 'enhanced' ? ' (PS5, Xbox Series X|S, PC Enhanced)' : f.platform === 'legacy' ? ' (Legacy)' : ''}`;
     const item = { id, label, factKey: key, ...timing, confidence: f.confidence, sources: f.sources,
       sourceUrl: f.sources[0].url, evidence: f.evidence, dateEvidence: f.dateEvidence,

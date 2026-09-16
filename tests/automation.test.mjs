@@ -87,6 +87,31 @@ test('fact validation rejects fabricated numbers, ungrounded dates and wrong tim
   assert.equal(validateFacts({ facts: [{ ...fact, endsOn: '2026-10-23' }] }, doc).facts.length, 0);
   assert.equal(validateFacts({ facts: [{ ...fact, offsetMs: 7000 }] }, { ...doc, source: { kind: 'tgg' }, chunks: [{ text: doc.text, offset: 0 }] }).facts.length, 0);
 });
+test('membership article cannot silently turn a member offer into an all-player bonus', () => {
+  const doc = { text: `${fact.evidence}. ${fact.dateEvidence}`, source: { ...fact.sources[0], scope: 'membership' } };
+  const result = validateFacts({ facts: [fact] }, doc);
+  assert.equal(result.facts.length, 0);
+  assert.equal(result.rejected[0].reason, 'membership_source_scope');
+});
+test('current article period cannot override a different quoted event period', () => {
+  const f = { ...fact, dateEvidence: 'September 10–16' };
+  const doc = { text: `${fact.evidence}. ${f.dateEvidence}`, source: fact.sources[0],
+    period: { startId: fact.startsOn, endId: fact.endsOn } };
+  assert.equal(validateFacts({ facts: [f] }, doc).rejected[0].reason, 'unsupported_dates');
+});
+test('known weekly challenge keeps its checklist id and does not duplicate extracted or seasonal facts', async () => {
+  const extracted = { ...fact, section: 'challenge', entity: 'MC Business or Acid Lab product',
+    startsOn: '2026-09-10', endsOn: '2026-09-16' };
+  let c = await mergeFacts(legacy, [extracted], atLocal('2026-09-16', 700));
+  let items = projectContent(c, atLocal('2026-09-16', 700)).sections.find(s => s.id === 'challenge').items;
+  assert.equal(items.length, 1);
+  assert.equal(items[0].id, 'business-rivalries-2026-09-10');
+  c = await mergeFacts(c, [extracted], atLocal('2026-09-17', 660));
+  items = projectContent(c, atLocal('2026-09-17', 660)).sections.find(s => s.id === 'challenge').items;
+  assert.equal(items.length, 1);
+  assert.equal(items[0].id, 'business-rivalries-2026-09-17');
+  assert.equal(items[0].targetCount, 3);
+});
 test('TGG selection ignores GTA6 videos and wrong channels', () => {
   const entry = (id, title, channel = TGG_CHANNEL) => `<entry><yt:videoId>${id}</yt:videoId><yt:channelId>${channel}</yt:channelId><title>${title}</title><published>2026-09-16T10:00:00Z</published></entry>`;
   const xml = entry('aaaaaaaaaaa', 'GTA 6 update') + entry('bbbbbbbbbbb', 'GTA Online weekly update', 'fake') + entry('ccccccccccc', 'GTA Online weekly update');
@@ -102,6 +127,19 @@ class Storage {
   async getAlarm() { return this.alarm; }
   async setAlarm(at) { this.alarm = at; }
 }
+test('observation refreshes editorial corrections from live content before writer cutover', async t => {
+  t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-16T08:50:00Z') });
+  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
+  const storage = new Storage(); let live = structuredClone(legacy);
+  const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'observe', CONTENT_KV: { get: async () => live } });
+  await engine.alarm();
+  live.sections[0].items[0].label = 'Reviewed editorial correction';
+  await engine.requestCheck(); await engine.alarm();
+  const status = await engine.status();
+  assert.equal(status.candidate.sections[0].items[0].label, 'Reviewed editorial correction');
+  assert.equal(status.candidate.sections[0].items[0].editorial, undefined);
+  assert.equal((await engine.outbox()).entries.length, 0);
+});
 test('budget reservation persists before IO, cached transcript does not consume credits', async () => {
   const storage = new Storage();
   const svc = new SourceService(storage, {}, Date.parse('2026-09-17'));

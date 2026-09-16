@@ -91,7 +91,7 @@ if (status.mode === 'publish') await syncIssues(incidents);
 console.log(JSON.stringify({ mode: status.mode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
   sources: status.sources, sourceFailures: status.sourceFailures,
   aiBudget: status.aiBudget, extraction: status.extraction,
-  ...(process.env.INSPECT_CANDIDATE === 'true' ? { candidate: status.candidate } : {}),
+  ...(process.env.INSPECT_CANDIDATE === 'true' ? { candidate: status.candidate, approvedFacts: status.approvedFacts } : {}),
   tggProbe: status.tggProbe ? { checkedAt: status.tggProbe.checkedAt, source: status.tggProbe.source, facts: status.tggProbe.facts?.length, factPreview: status.tggProbe.facts, rejected: status.tggProbe.rejected, error: status.tggProbe.error, retryAt: status.tggProbe.retryAt } : null,
   tggDiscovery: status.tggDiscovery,
   transcriptCheck: status.transcriptCheck ? Object.fromEntries(Object.entries(status.transcriptCheck).filter(([key]) => key !== 'sample')) : null,
