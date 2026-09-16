@@ -60,3 +60,9 @@ Po publikacji sprawdź oba artykuły, canonical, sitemap, 301 wariantów, 404 ni
 15.09 odczytano oficjalny harmonogram Business Rivalries i miesięczny artykuł GTA+ Rockstar przez istniejący odczyt Newswire. Rotacje 2637 sprawdzono w RockstarINTEL. W 2638 pozostaje 19 potwierdzonych pozycji oraz 10 oczekujących; w 2637 zapisano 35 pozycji. Rabat członkowski Pipe Wrench pozostaje niepotwierdzony z powodu błędu źródła.
 
 Wyzwanie 2637 wymaga sprzedaży MC Business lub Acid Lab; GTA+ daje 2X GTA$ za pierwszy finał Cluckin’ Bell tygodnia i 2X produkcji Cocaine Lockup. Poprawiono wspólne dane aplikacji, zachowując identyfikatory. 6X Bike Service wygasa 16.09; miesięczne 3X GTA$/RP ma koniec 07.10. Nie przenoś wcześniejszego zwiększenia na 2638. Przed sprzedażą wydzielenie płatnej zawartości z publicznego repo pozostaje osobnym zadaniem.
+
+## Wynik pierwszej publikacji — 16.09.2026
+
+**Wykonane i zweryfikowane:** główna zapowiedź 2638 oraz osobny artykuł 2637 działają na `gtacompanion.net`. Deploy Pages `c2f603e4-c5da-43f6-aefd-026f14ff31b3`, sukces 08:50:44 UTC, zakres aplikacji `733a5f9`. Publiczny schemat i indeks pochodzą z `ca17a2c`; treść 2637 z korekty `bee61d3`. Klucze `weekly:public` i `weekly:public:2637` odczytano po zapisie, zgodność dokumentów potwierdzona. Istniejący tydzień aplikacji 10–16.09 ma również odebrane korekty wspólnych faktów; 2638 pozostaje zapowiedzią.
+
+Odbiór: 80 testów treści, 120 testów paczki aplikacji, eksport 13/13 zasobów, lokalne i produkcyjne HTTP 54/54, Chrome komputer/390 px, linki oraz CTA bez wysyłki formularza. Nie jest to dowód indeksacji Google ani test fizycznego telefonu. Harmonogramów automatyzacji w tym zadaniu nie zmieniano. Kolejny krok: aktualizacja źródeł 16.09 wieczorem i ręczne potwierdzenie po aktualizacji 17.09.
