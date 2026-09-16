@@ -54,6 +54,19 @@ test('events retain future deadlines and include seasonal qualification and clai
   assert.ok(events.some(e => e.key.includes('/claim:startsAt')));
   assert.ok(events.some(e => e.key.includes('/qualify:expiresAt')));
 });
+test('reviewed GTA+ periods survive a weekly reset and expire at their own boundary', async () => {
+  const seed = structuredClone(legacy);
+  seed.sections.find(s => s.id === 'gta-plus').items = [{ id: 'gta-plus-2026-09-cluckin',
+    label: 'GTA+ only: first weekly finale earns 2X GTA$, September 10–October 7.' }];
+  const migrated = upgradeLegacy(seed);
+  const item = migrated.sections.find(s => s.id === 'gta-plus').items[0];
+  assert.equal(item.expiresAt, '2026-10-07T22:00:00.000Z');
+  const next = await mergeFacts(migrated, [fact], atLocal('2026-09-17', 700));
+  assert.equal(projectContent(next, atLocal('2026-09-17', 700)).sections.find(s => s.id === 'gta-plus').items[0].id, item.id);
+  assert.equal(projectContent(next, Date.parse(item.expiresAt)).sections.find(s => s.id === 'gta-plus').items.length, 0);
+  const expiredWeek = next.sections.find(s => s.id === 'discounts').items;
+  assert.ok(!expiredWeek.some(i => i.id === 'grapeseed-clubhouse-free'));
+});
 test('two fans must agree on amount, dates, platform and membership; official wins', () => {
   const docs = [
     { source: { kind: 'intel' }, current: true, facts: [fact] },

@@ -1,5 +1,6 @@
 import { validDay, windowFromDays, addDays, localParts } from './temporal.mjs';
 import { thursdayWeekId, extractDateRange, extractPublishedWeekId, cleanText, stripTags, buildWeeklyContent } from './weekly-core.mjs';
+import editorialPeriods from '../events/editorial-periods.json' with { type: 'json' };
 
 export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
@@ -138,8 +139,8 @@ export function agreeSources(documents, allowTgg) {
 }
 
 export function upgradeLegacy(input) {
-  if (input.schemaVersion === 2) return structuredClone(input);
   const c = structuredClone(input);
+  if (input.schemaVersion === 2) return applyEditorialPeriods(c);
   const parsed = extractDateRange(c.range, { publishedWeekId: c.weekId, now: new Date(c.weekId) });
   const period = windowFromDays(c.weekId, parsed?.endId || addDays(c.weekId, 6));
   Object.assign(c, period, { schemaVersion: 2, completeness: 'partial', sources: c.sourceUrl ? [{ url: c.sourceUrl, kind: 'editorial' }] : [] });
@@ -149,6 +150,19 @@ export function upgradeLegacy(input) {
   c.quickTakeEntries = c.quickTake.map((label, i) => ({ id: `quick-${i}`, label, ...period, editorial: true, confidence: 'editorial' }));
   c.beginnerPath = c.beginnerPath.map(i => ({ ...i, ...period, editorial: true, confidence: 'editorial' }));
   c.locations = (c.locations || []).map(i => ({ ...i, ...period }));
+  return applyEditorialPeriods(c);
+}
+
+function applyEditorialPeriods(c) {
+  // Reviewed membership offers have their own dates, independent of the weekly reset.
+  // Exact ids prevent a newly inferred offer from inheriting a reviewed period.
+  for (const record of editorialPeriods) for (const section of c.sections) for (const item of section.items) {
+    if (section.id === 'gta-plus' && item.editorial && record.itemIds.includes(item.id)) {
+      Object.assign(item, windowFromDays(record.startsOn, record.endsOn), {
+        sourceUrl: record.sourceUrl, sources: [{ kind: 'rockstar', scope: 'membership', url: record.sourceUrl }],
+      });
+    }
+  }
   return c;
 }
 
@@ -185,7 +199,7 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
   // Longer-lived verified offers survive the week transition.
   if (!sameWeek && current) for (const s of current.sections) {
     const target = c.sections.find(t => t.id === s.id);
-    if (target) target.items = s.items.filter(i => Date.parse(i.expiresAt) > now && !i.editorial);
+    if (target) target.items = s.items.filter(i => Date.parse(i.expiresAt) > now);
   }
   if (!sameWeek && current?.seasonalEvent && current.seasonalEvent.endsOn >= new Date(now).toISOString().slice(0, 10)) c.seasonalEvent = structuredClone(current.seasonalEvent);
   for (const f of ready) {
