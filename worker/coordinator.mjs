@@ -183,7 +183,11 @@ export class PublicationEngine {
         master = merged;
         validateSnapshot(master);
         await this.store.put('master', master);
-        state.events = collectEvents(master, state.events || [], now);
+        // The master owns its subtree, including removed/replaced item ids. Old revisions
+        // must not leave orphan alarms; future facts are added again below.
+        const ownedRoots = [`${master.weekId}/`, `${master.weekId}:`, ...(master.seasonalEvent ? [`${master.seasonalEvent.id}/`] : [])];
+        const retained = (state.events || []).filter(e => !ownedRoots.some(root => e.key.startsWith(root)));
+        state.events = collectEvents(master, retained, now);
         for (const f of facts) {
           state.events = collectEvents({ weekId: f.startsOn, ...factWindow(f), label: f.entity, sourceUrl: f.sources[0].url }, state.events, now);
         }

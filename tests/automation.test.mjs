@@ -398,6 +398,7 @@ test('migration replaces stored midnight alarms, keeps unrelated events, rearms 
   const events = collectEvents(old, [], Date.now());
   const seasonalKey = `${old.seasonalEvent.id}/2026-09-10:expiresAt:${Date.parse(old.expiresAt)}`;
   events.push({ key: seasonalKey, at: Date.parse(old.expiresAt), kind: 'expire', confidence: 'estimated' });
+  events.push({ key: `${old.weekId}/sections/challenge/items/removed-from-an-older-revision:expiresAt:${Date.parse(old.expiresAt)}`, at: Date.parse(old.expiresAt), kind: 'expire', confidence: 'estimated' });
   events.push({ key: 'separate-event', at: atLocal('2026-09-18', 1) });
   await storage.put('master', old);
   await storage.put('state', { events, sources: [{ kind: 'rockstar', scope: 'weekly', current: true, facts: 1 }], nextCheck: { at: atLocal('2026-09-16', 1140) } });
