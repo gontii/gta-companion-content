@@ -66,3 +66,24 @@ Wyzwanie 2637 wymaga sprzedaży MC Business lub Acid Lab; GTA+ daje 2X GTA$ za p
 **Wykonane i zweryfikowane:** główna zapowiedź 2638 oraz osobny artykuł 2637 działają na `gtacompanion.net`. Deploy Pages `c2f603e4-c5da-43f6-aefd-026f14ff31b3`, sukces 08:50:44 UTC, zakres aplikacji `733a5f9`. Publiczny schemat i indeks pochodzą z `ca17a2c`; treść 2637 z korekty `bee61d3`. Klucze `weekly:public` i `weekly:public:2637` odczytano po zapisie, zgodność dokumentów potwierdzona. Istniejący tydzień aplikacji 10–16.09 ma również odebrane korekty wspólnych faktów; 2638 pozostaje zapowiedzią.
 
 Odbiór: 80 testów treści, 120 testów paczki aplikacji, eksport 13/13 zasobów, lokalne i produkcyjne HTTP 54/54, Chrome komputer/390 px, linki oraz CTA bez wysyłki formularza. Nie jest to dowód indeksacji Google ani test fizycznego telefonu. Harmonogramów automatyzacji w tym zadaniu nie zmieniano. Kolejny krok: aktualizacja źródeł 16.09 wieczorem i ręczne potwierdzenie po aktualizacji 17.09.
+
+## Ponowna weryfikacja zapowiedzi 2638 — 17.09.2026, zadanie #27
+
+Odczytano oficjalny harmonogram Business Rivalries (06:47:24 UTC), miesięczny
+artykuł GTA+ (06:47:25 UTC) oraz stronę korzyści GTA+ w Chrome (zapis weryfikacji
+06:48:23 UTC). Najnowsze wyniki oficjalnego odczytu Newswire nie dostarczyły
+nowych rotacji. Porównanie zachowuje 19 potwierdzonych pozycji i 10 oczekujących;
+zmianie ulegają wyłącznie czasy weryfikacji. Stan to nadal `preview`,
+`confirmedAt: null`; Bike Service GTA+ pozostaje 3X do 07.10, bez przedłużenia
+6X z 10–16.09. Strona korzyści potwierdza odbiór ofert do 07.10; etykieta
+wczesnego dostępu Horus i cena katalogowa nie potwierdzają jeszcze sprzedaży
+ogólnej w grze. Aktywacja pozostaje w #28.
+
+Odbiór lokalny: `npm test` 97/97, `prepare-public-weekly.mjs` poprawny, HTTP
+28/28, Chrome komputer i 390 × 844. Sprawdzono rzeczywiste przewijanie tabel,
+źródła, daty, archiwum 2637, powrót oraz odnośnik do bety. Historyczne testy
+stanów dostały stałe daty źródeł, aby ponowna weryfikacja dokumentu nie
+kolidowała z symulowanym 16.09. Rzeczywisty dokument nadal przechodzi walidację.
+Artefakt zawiera tylko `weekly:public`, z indeksem odczytanym z KV; przed zapisem
+wymagane ponowne porównanie bieżącego KV. Publikacja i jej dowody są zapisywane
+w kanonicznej dokumentacji projektu po odczycie produkcji.
