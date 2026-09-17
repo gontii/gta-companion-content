@@ -1,0 +1,271 @@
+[
+  {
+    "entity": "Grapeseed Bunker",
+    "offer": "Claim for GTA$0 from Maze Bank Foreclosures.",
+    "section": "free-vehicles",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "official",
+    "sources": [
+      {
+        "kind": "rockstar",
+        "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+      }
+    ]
+  },
+  {
+    "entity": "Dolla Dolla livery",
+    "offer": "Play this week to unlock it for Avenger, Ardent, Oppressor and Oppressor Mk II; vehicles are not included.",
+    "section": "free-vehicles",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "official",
+    "sources": [
+      {
+        "kind": "rockstar",
+        "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+      }
+    ]
+  },
+  {
+    "entity": "Business Battle clothing",
+    "offer": "Deliver crates for Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap or Bourgeoix Tee.",
+    "section": "free-vehicles",
+    "startsOn": "2026-09-03",
+    "endsOn": "2026-09-30",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "official",
+    "sources": [
+      {
+        "kind": "rockstar",
+        "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+      }
+    ],
+    "windowPolicy": "independent"
+  },
+  {
+    "entity": "Vapid Dominator ASP",
+    "offer": "Casino podium: chance to win from the Lucky Wheel.",
+    "section": "free-vehicles",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Dinka LSCM Jester RR",
+    "offer": "Prize Ride: win an LS Car Meet race on four consecutive days.",
+    "section": "free-vehicles",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Compact EMP Launcher",
+    "offer": "Available at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Heavy Sniper",
+    "offer": "Available at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Pump Shotgun",
+    "offer": "Available at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Pipe Wrench",
+    "offer": "Available at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Tear Gas",
+    "offer": "Available at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Sticky Bombs",
+    "offer": "Available at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Molotovs",
+    "offer": "Available at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Stun Gun",
+    "offer": "40% off at the Gun Van.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  },
+  {
+    "entity": "Tactical SMG",
+    "offer": "Available at the Gun Van; 30% off requires GTA+.",
+    "section": "gun-van",
+    "startsOn": "2026-09-17",
+    "endsOn": "2026-09-23",
+    "eligibility": "all",
+    "platform": "all",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "kind": "intel",
+        "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+      },
+      {
+        "kind": "editorial",
+        "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026"
+      }
+    ]
+  }
+]

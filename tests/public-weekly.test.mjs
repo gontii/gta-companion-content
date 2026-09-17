@@ -34,7 +34,7 @@ test('strict public contract rejects app payload, access data, unknown fields, i
     d=>d.sections[0].items[0].offer='<script>bad</script>',
     d=>d.sections[0].items[0].endsOn='2026-09-16',
     d=>d.sections[0].items[0].sourceIds=['missing'],
-    d=>d.sections[5].items[0].offer='Old podium car',
+    d=>d.sections.find(s=>s.id==='rotations').items.find(i=>i.status==='pending').offer='Unconfirmed detail',
     d=>d.sections[4].items[0].gtaPlus=false,
     d=>d.sections[0].items[0].id=d.sections[0].items[1].id,
     d=>d.verifiedAt='2099-09-17T12:00:00.000Z'
@@ -52,7 +52,11 @@ test('2638 editorial facts match known seasonal challenge, keep membership dates
   assert.ok(d.sections.find(s=>s.id==='gta-plus').items.every(i=>i.endsOn==='2026-10-07'&&i.gtaPlus));
   assert.equal(find('gta-plus-2026-09-bike-service').offer,'3X GTA$ and RP.');
   assert.match(find('gta-plus-2026-09-cluckin').offer,/first finale/);
-  assert.ok(d.sections.find(s=>s.id==='rotations').items.every(i=>i.status==='pending'));
+  assert.equal(find('podium-vehicle').name,'Vapid Dominator ASP');
+  assert.equal(find('prize-ride').name,'Dinka LSCM Jester RR');
+  assert.match(find('prize-ride').requirements,/four consecutive days/);
+  assert.match(find('gun-van').requirements,/30% off for GTA\+ members only/);
+  assert.equal(find('test-rides').status,'pending');
   assert.doesNotMatch(raw,/6X|Grapeseed Clubhouse|Karin S95|Junk Tracksuit/);
 });
 test('public KV preparation never writes app key; active release requires paired, complete, unchanged editorial approval',()=>{

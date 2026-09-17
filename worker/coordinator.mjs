@@ -1,3 +1,4 @@
+import { supplementReviewedFacts } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
 import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
@@ -178,7 +179,7 @@ export class PublicationEngine {
         state.sourceFailures = result.failures;
         await service.prune();
       }
-      const merged = await mergeFacts(master, facts, now);
+      const merged = await mergeFacts(master, supplementReviewedFacts(master, facts, now), now);
       if (merged) {
         master = merged;
         validateSnapshot(master);
