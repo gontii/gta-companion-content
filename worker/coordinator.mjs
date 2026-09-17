@@ -1,4 +1,4 @@
-import { supplementReviewedFacts } from '../scripts/reviewed-weekly.mjs';
+import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
 import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
@@ -104,7 +104,7 @@ export class PublicationEngine {
             retryAt: retryAt ? new Date(retryAt).toISOString() : null });
         }
       }
-      let master = await this.store.get('master');
+      let master = normalizeReviewedSources(await this.store.get('master'));
       if (this.env.PUBLICATION_MODE === 'observe' && state.validationVersion !== FACT_VALIDATION_VERSION) {
         // Experimental candidates never carry weaker validation into the first publication.
         if (master) await this.store.put(`archived-observation:${state.validationVersion || 0}`, master);

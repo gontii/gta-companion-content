@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { supplementReviewedFacts } from '../scripts/reviewed-weekly.mjs';
+import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { mergeFacts, validateSnapshot } from '../scripts/facts.mjs';
 import { projectContent } from '../scripts/temporal.mjs';
 
@@ -27,4 +27,11 @@ test('świeższe fakty źródła mają pierwszeństwo przed uzupełnieniem', () 
   const merged = supplementReviewedFacts(null, [correction], now);
   assert.equal(merged.length, 14);
   assert.equal(merged[0], correction);
+});
+
+test('naprawa źródeł zachowuje cytowanie obsługiwane przez aplikację', () => {
+  const bad = { sources: [{url:'https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026'}, {url:'https://rockstarintel.com/article'}] };
+  const fixed = normalizeReviewedSources(bad);
+  assert.deepEqual(fixed.sources, [{url:'https://rockstarintel.com/article'}]);
+  assert.equal(bad.sources.length, 2);
 });

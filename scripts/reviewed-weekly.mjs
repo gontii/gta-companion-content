@@ -14,3 +14,13 @@ export function supplementReviewedFacts(master, facts, now) {
   });
   return [...facts, ...additions];
 }
+
+// Wersja aplikacji obsługuje cytowania RockstarINTEL, ale nie drugi serwis.
+// Drugie źródło pozostaje w dokumencie publicznym i odbiorze redakcyjnym.
+// Naprawia również kopię uzupełnienia już przechowywaną przez automat.
+export function normalizeReviewedSources(master) {
+  if (!master) return master;
+  const unsupported = 'https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026';
+  return JSON.parse(JSON.stringify(master, (key, value) =>
+    key === 'sources' && Array.isArray(value) ? value.filter(s => s.url !== unsupported) : value));
+}
