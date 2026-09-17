@@ -200,7 +200,143 @@
       ]
     }
   ],
-  "locations": [],
+  "locations": [
+    {
+      "id": "auto-location-bunker-research",
+      "activity": "Bunker Research & Weekly Challenge",
+      "name": "Call Agent 14",
+      "area": "Your phone → Contacts → Agent 14",
+      "note": "Own and set up a Bunker, then call Agent 14 and request Bunker Research. Follow the mission marker and return the research to your Bunker. For a challenge requiring these missions, buying supplies or paying to fast-track research is not a substitute.\n\nThis week: September Business Rivalries — Complete 3 Bunker Research Missions from Agent 14 to receive an extra GTA$1,000,000 and the Camo Ammu-Nation Sweatsuit.",
+      "itemIds": [
+        "business-rivalries-2026-09-17"
+      ],
+      "startsAt": "2026-09-17T09:00:00.000Z",
+      "expiresAt": "2026-09-24T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-ammu-nation",
+      "activity": "Ammu-Nation Contract",
+      "name": "Duneloader inside your Bunker",
+      "area": "Your owned Bunker → entrance",
+      "note": "Enter your Bunker and look for the loaded Duneloader marked with a blue blip near the entrance. Get in to start the surplus-weapons delivery, then follow the route to the assigned Ammu-Nation. If no load is ready, return later.\n\nThis week: Ammu-Nation Contract — Double Rewards for Ammu-Nation Contract",
+      "itemIds": [
+        "auto-8dc3507a0923acfe65"
+      ],
+      "startsAt": "2026-09-17T09:00:00.000Z",
+      "expiresAt": "2026-09-24T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-grapeseed-bunker",
+      "activity": "Free Property",
+      "name": "Grapeseed Bunker",
+      "area": "Grapeseed, Blaine County",
+      "note": "Open the in-game phone → Internet → Maze Bank Foreclosures, select the Grapeseed Bunker and check the displayed price before confirming. The offer is for this property; optional upgrades are separate. If you already own a Bunker, check the trade-in consequences before replacing it.\n\nThis week: Grapeseed Bunker — Claim for GTA$0 from Maze Bank Foreclosures.",
+      "itemIds": [
+        "auto-699174c83782966b29"
+      ],
+      "startsAt": "2026-09-17T09:00:00.000Z",
+      "expiresAt": "2026-09-24T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-prize-ride",
+      "activity": "Prize Ride",
+      "name": "Los Santos Car Meet",
+      "area": "Cypress Flats → LS Car Meet map icon",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Dinka LSCM Jester RR — Prize Ride: win an LS Car Meet race on four consecutive days.",
+      "itemIds": [
+        "auto-a400f3d0728f71e168"
+      ],
+      "startsAt": "2026-09-17T09:00:00.000Z",
+      "expiresAt": "2026-09-24T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-podium",
+      "activity": "Casino Podium",
+      "name": "The Diamond Casino & Resort",
+      "area": "East Vinewood → Casino map icon",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Vapid Dominator ASP — Casino podium: chance to win from the Lucky Wheel.",
+      "itemIds": [
+        "auto-b4ddc14564677d958f"
+      ],
+      "startsAt": "2026-09-17T09:00:00.000Z",
+      "expiresAt": "2026-09-24T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-gun-van",
+      "activity": "Gun Van",
+      "name": "Mobile weapons dealer",
+      "area": "Daily rotating stop in Southern San Andreas",
+      "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
+      "itemIds": [
+        "auto-11a7f63585d689f2f0"
+      ],
+      "startsAt": "2026-09-17T09:00:00.000Z",
+      "expiresAt": "2026-09-24T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-business-battles",
+      "activity": "Business Battle Rewards",
+      "name": "Freemode event cargo",
+      "area": "Session-dependent event marker",
+      "note": "Wait for a Business Battle in Freemode, then use the event’s cargo marker and delivery destination. Pick up and deliver the crates; the route is assigned by the event, not one permanent address. Check the current reward description below.\n\nThis week: Business Battle clothing — Deliver crates for Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap or Bourgeoix Tee.",
+      "itemIds": [
+        "auto-413dca2cf0fe8b167b"
+      ],
+      "startsAt": "2026-09-03T09:00:00.000Z",
+      "expiresAt": "2026-09-30T22:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-la-coureuse",
+      "activity": "La Coureuse Reward",
+      "name": "Legendary Motorsport",
+      "area": "In-game phone → Internet → Legendary Motorsport",
+      "note": "First satisfy the qualification shown below. The car is claimed through the in-game website during its separate claim window, not by visiting a street showroom. Do not buy it early expecting the later free claim to apply. Check platform eligibility for the HSW upgrade.\n\nThis week: Free Penaud La Coureuse — Qualify by completing at least one Weekly Challenge; claim 2026-09-24–2026-09-30.",
+      "itemIds": [
+        "auto-36b98d7a21d1bb8427"
+      ],
+      "startsAt": "2026-09-03T09:00:00.000Z",
+      "expiresAt": "2026-09-23T22:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-astron",
+      "activity": "Vehicle Discount",
+      "name": "Legendary Motorsport",
+      "area": "In-game phone → Internet → Legendary Motorsport",
+      "note": "Find the exact model named below and check its current price before buying. Astron Custom is the Enhanced-platform model; do not confuse it with the standard Astron. A discount does not make the car free.\n\nThis week: Pfister Astron Custom — 70% off Pfister Astron Custom (PS5, Xbox Series X|S, PC Enhanced)",
+      "itemIds": [
+        "auto-d115a6eb91900803c5"
+      ],
+      "startsAt": "2026-09-17T09:00:00.000Z",
+      "expiresAt": "2026-09-24T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    }
+  ],
   "sections": [
     {
       "id": "bonuses",
@@ -398,6 +534,32 @@
       "title": "Discounts & Offers",
       "completeness": "partial",
       "items": [
+        {
+          "id": "auto-b9d815110373ec3474",
+          "label": "Grapeseed Bunker — FREE",
+          "factKey": "discounts:grapeseed bunker:all:all",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-16"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-09-17"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+        },
         {
           "id": "auto-d115a6eb91900803c5",
           "label": "Pfister Astron Custom — 70% off Pfister Astron Custom (PS5, Xbox Series X|S, PC Enhanced)",
@@ -823,6 +985,12 @@
       "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
     },
     {
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts",
+      "kind": "gtabase",
+      "scope": "weekly",
+      "publishedOn": "2026-09-17"
+    },
+    {
       "kind": "rockstar",
       "scope": "membership",
       "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
@@ -918,6 +1086,6 @@
   },
   "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
   "nextBoundaryAt": "2026-09-23T22:00:00.000Z",
-  "revision": "b759d668db2873359f3eefd75dacc4fd3bf572e4eae03e0c4c06e4a3bc6b265c",
-  "generatedAt": "2026-09-17T10:07:05.681Z"
+  "revision": "66c16d3de4456f84f8cd72fdfdc90a9bf171206d28c4e4c3dfd323e3829c3fa9",
+  "generatedAt": "2026-09-17T10:51:53.879Z"
 }
