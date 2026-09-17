@@ -1,3 +1,4 @@
+import { rebuildWeeklyLocations } from '../scripts/weekly-locations.mjs';
 import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
@@ -181,7 +182,7 @@ export class PublicationEngine {
       }
       const merged = await mergeFacts(master, supplementReviewedFacts(master, facts, now), now);
       if (merged) {
-        master = merged;
+        master = rebuildWeeklyLocations(merged, now);
         validateSnapshot(master);
         await this.store.put('master', master);
         // The master owns its subtree, including removed/replaced item ids. Old revisions
