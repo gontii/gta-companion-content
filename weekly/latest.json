@@ -307,21 +307,6 @@
       "timingConfidence": "estimated"
     },
     {
-      "id": "auto-location-la-coureuse",
-      "activity": "La Coureuse Reward",
-      "name": "Legendary Motorsport",
-      "area": "In-game phone → Internet → Legendary Motorsport",
-      "note": "First satisfy the qualification shown below. The car is claimed through the in-game website during its separate claim window, not by visiting a street showroom. Do not buy it early expecting the later free claim to apply. Check platform eligibility for the HSW upgrade.\n\nThis week: Free Penaud La Coureuse — Qualify by completing at least one Weekly Challenge; claim 2026-09-24–2026-09-30.",
-      "itemIds": [
-        "auto-36b98d7a21d1bb8427"
-      ],
-      "startsAt": "2026-09-03T09:00:00.000Z",
-      "expiresAt": "2026-09-23T22:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated"
-    },
-    {
       "id": "auto-location-astron",
       "activity": "Vehicle Discount",
       "name": "Legendary Motorsport",
@@ -754,28 +739,8 @@
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "auto-36b98d7a21d1bb8427",
-          "label": "Free Penaud La Coureuse — Qualify by completing at least one Weekly Challenge; claim 2026-09-24–2026-09-30.",
-          "factKey": "other:free penaud la coureuse:all:all",
-          "startsAt": "2026-09-03T09:00:00.000Z",
-          "expiresAt": "2026-09-23T22:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "windowPolicy": "independent",
-          "confidence": "official",
-          "sources": [
-            {
-              "kind": "rockstar",
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "gta-plus",
@@ -1085,7 +1050,7 @@
     }
   },
   "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-  "nextBoundaryAt": "2026-09-23T22:00:00.000Z",
-  "revision": "66c16d3de4456f84f8cd72fdfdc90a9bf171206d28c4e4c3dfd323e3829c3fa9",
-  "generatedAt": "2026-09-17T10:51:53.879Z"
+  "nextBoundaryAt": "2026-09-24T09:00:00.000Z",
+  "revision": "722921af11aea2f655988bc1e7b2fde53f7f7496d3be76d2a22dcfc33db39a89",
+  "generatedAt": "2026-09-23T22:00:00.043Z"
 }
