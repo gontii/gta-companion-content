@@ -198,38 +198,7 @@
       ]
     }
   ],
-  "locations": [
-    {
-      "id": "auto-location-business-battles",
-      "activity": "Business Battle Rewards",
-      "name": "Freemode event cargo",
-      "area": "Session-dependent event marker",
-      "note": "Wait for a Business Battle in Freemode, then use the event’s cargo marker and delivery destination. Pick up and deliver the crates; the route is assigned by the event, not one permanent address. Check the current reward description below.\n\nThis week: Business Battle clothing — Deliver crates for Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap or Bourgeoix Tee.",
-      "itemIds": [
-        "auto-413dca2cf0fe8b167b"
-      ],
-      "startsAt": "2026-09-03T09:00:00.000Z",
-      "expiresAt": "2026-09-30T22:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated"
-    },
-    {
-      "id": "auto-location-la-coureuse",
-      "activity": "La Coureuse Reward",
-      "name": "Legendary Motorsport",
-      "area": "In-game phone → Internet → Legendary Motorsport",
-      "note": "First satisfy the qualification shown below. The car is claimed through the in-game website during its separate claim window, not by visiting a street showroom. Do not buy it early expecting the later free claim to apply. Check platform eligibility for the HSW upgrade.\n\nThis week: Free Penaud La Coureuse — Claim at Legendary Motorsport if you completed a Weekly Challenge during 2026-09-03–2026-09-23.",
-      "itemIds": [
-        "auto-36b98d7a21d1bb8427"
-      ],
-      "startsAt": "2026-09-24T09:00:00.000Z",
-      "expiresAt": "2026-10-01T09:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated"
-    }
-  ],
+  "locations": [],
   "sections": [
     {
       "id": "bonuses",
@@ -327,27 +296,7 @@
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
       "completeness": "pending",
-      "items": [
-        {
-          "id": "auto-413dca2cf0fe8b167b",
-          "label": "Business Battle clothing — Deliver crates for Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap or Bourgeoix Tee.",
-          "factKey": "free-vehicles:business battle clothing:all:all",
-          "startsAt": "2026-09-03T09:00:00.000Z",
-          "expiresAt": "2026-09-30T22:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "windowPolicy": "independent",
-          "confidence": "official",
-          "sources": [
-            {
-              "kind": "rockstar",
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        }
-      ]
+      "items": []
     },
     {
       "id": "discounts",
@@ -385,28 +334,8 @@
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "auto-36b98d7a21d1bb8427",
-          "label": "Free Penaud La Coureuse — Claim at Legendary Motorsport if you completed a Weekly Challenge during 2026-09-03–2026-09-23.",
-          "factKey": "other:free penaud la coureuse:all:all",
-          "startsAt": "2026-09-24T09:00:00.000Z",
-          "expiresAt": "2026-09-30T22:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "windowPolicy": "independent",
-          "confidence": "official",
-          "sources": [
-            {
-              "kind": "rockstar",
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "gta-plus",
@@ -618,95 +547,8 @@
     }
   ],
   "completeness": "partial",
-  "seasonalEvent": {
-    "id": "business-rivalries-2026-09",
-    "title": "September Business Rivalries",
-    "startsOn": "2026-09-03",
-    "endsOn": "2026-09-30",
-    "summary": "10× Weekly Challenge rewards — GTA$1M per week, up to GTA$4M",
-    "description": "The 10× bonus applies to the Weekly Challenge prize, not all business sales. Complete each weekly challenge to earn an extra GTA$1,000,000.",
-    "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-    "weeks": [
-      {
-        "startsAt": "2026-09-03T09:00:00.000Z",
-        "expiresAt": "2026-09-10T09:00:00.000Z",
-        "originalZone": "Europe/Warsaw",
-        "precision": "date",
-        "timingConfidence": "estimated",
-        "startsOn": "2026-09-03",
-        "endsOn": "2026-09-09",
-        "challenge": "Sell GTA$1,000,000 worth of Special Cargo",
-        "reward": "GTA$1,000,000",
-        "outfit": "Yeti x LS Customs Tracksuit",
-        "status": "Ended"
-      },
-      {
-        "startsAt": "2026-09-10T09:00:00.000Z",
-        "expiresAt": "2026-09-17T09:00:00.000Z",
-        "originalZone": "Europe/Warsaw",
-        "precision": "date",
-        "timingConfidence": "estimated",
-        "startsOn": "2026-09-10",
-        "endsOn": "2026-09-16",
-        "challenge": "Earn GTA$1,000,000 selling MC Business or Acid Lab product",
-        "reward": "GTA$1,000,000",
-        "outfit": "Junk Tracksuit",
-        "status": "Ended"
-      },
-      {
-        "startsAt": "2026-09-17T09:00:00.000Z",
-        "expiresAt": "2026-09-24T09:00:00.000Z",
-        "originalZone": "Europe/Warsaw",
-        "precision": "date",
-        "timingConfidence": "estimated",
-        "startsOn": "2026-09-17",
-        "endsOn": "2026-09-23",
-        "challenge": "Complete 3 Bunker Research Missions from Agent 14",
-        "reward": "GTA$1,000,000",
-        "outfit": "Camo Ammu-Nation Sweatsuit",
-        "targetCount": 3,
-        "status": "Ended"
-      },
-      {
-        "startsAt": "2026-09-24T09:00:00.000Z",
-        "expiresAt": "2026-10-01T09:00:00.000Z",
-        "originalZone": "Europe/Warsaw",
-        "precision": "date",
-        "timingConfidence": "estimated",
-        "startsOn": "2026-09-24",
-        "endsOn": "2026-09-30",
-        "challenge": "Sell GTA$1,000,000 across all businesses",
-        "reward": "GTA$1,000,000",
-        "outfit": "Retro Fruit Tracksuit",
-        "status": "This week"
-      }
-    ],
-    "vehicleReward": {
-      "name": "Free Penaud La Coureuse",
-      "qualifyFrom": "2026-09-03",
-      "qualifyUntil": "2026-09-23",
-      "claimFrom": "2026-09-24",
-      "claimUntil": "2026-09-30",
-      "description": "Complete at least one Weekly Challenge between September 3–23, then return September 24–30 to claim the car at Legendary Motorsport.",
-      "upgrade": "Complimentary HSW upgrade on PS5, Xbox Series X|S and PC (Enhanced).",
-      "qualifyWindow": {
-        "startsAt": "2026-09-03T09:00:00.000Z",
-        "expiresAt": "2026-09-23T22:00:00.000Z",
-        "originalZone": "Europe/Warsaw",
-        "precision": "date",
-        "timingConfidence": "estimated"
-      },
-      "claimWindow": {
-        "startsAt": "2026-09-24T09:00:00.000Z",
-        "expiresAt": "2026-09-30T22:00:00.000Z",
-        "originalZone": "Europe/Warsaw",
-        "precision": "date",
-        "timingConfidence": "estimated"
-      }
-    }
-  },
   "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-  "nextBoundaryAt": "2026-09-30T22:00:00.000Z",
-  "revision": "ae23e3398415ec00df5aa1a0650e4b8eca7b9519550accf3e688214e8ad54d07",
-  "generatedAt": "2026-09-24T09:00:00.053Z"
+  "nextBoundaryAt": "2026-10-01T09:00:00.000Z",
+  "revision": "12132d9f77e9d5602c57068c0309d0c4ef4ed347e110e5955e0c5a7649a3a19a",
+  "generatedAt": "2026-09-30T22:00:00.044Z"
 }
