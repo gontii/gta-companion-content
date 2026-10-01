@@ -26,7 +26,7 @@ Po zapisie KV automat czeka co najmniej 75 sekund na propagację i porównuje pe
 
 1. Potwierdzone fakty Rockstar mają pierwszeństwo.
 2. RockstarINTEL i GTABase muszą zgadzać się co do oferty, liczb, platform, członkostwa i dat. Rozbieżność pozostawia pozycję oczekującą.
-3. Wyłącznie przy braku bieżącego artykułu w monitorowanych źródłach sprawdzamy odpowiedni film kanału TGG `UC72PuhDwKtZ5MikpGNhPAtA`. Sama dostępność napisów lub tytuł filmu nie są dowodem treści.
+3. Gdy oficjalny artykuł Rockstar nie jest potwierdzony (także wtedy, gdy RockstarINTEL i GTABase są już bieżące, bo film TGG zwykle wyprzedza artykuły), sprawdzamy odpowiedni film kanału TGG `UC72PuhDwKtZ5MikpGNhPAtA`. Fakty z transkrypcji dostają zaufanie `transcript` i zostają zastąpione, gdy pojawią się fakty oficjalne lub potwierdzone przez dwa źródła. Sama dostępność napisów lub tytuł filmu nie są dowodem treści.
 
 Model Workers AI wyodrębnia fakty i fragmenty dowodowe, a kod weryfikuje ich obecność oraz liczby, daty, platformy i GTA+. Nieznane pola nie stają się ofertami. Niepełna aktualizacja ma oznaczone sekcje oczekujące. Ręczne korekty istniejącego tygodnia zachowują identyfikatory i termin ważności. Brak nowego miesięcznego GTA+ nie zatrzymuje sekcji tygodniowych.
 

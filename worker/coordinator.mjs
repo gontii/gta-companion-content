@@ -158,11 +158,17 @@ export class PublicationEngine {
       if (requested || !state.nextCheck || state.nextCheck.at <= now) {
         const service = new SourceService(this.store, this.env, now);
         const result = await service.websites();
-        if (!result.hasCurrentArticle) {
+        // TGG usually posts the weekly video before the articles do, so check it
+        // whenever the official Rockstar weekly article is unconfirmed — even if
+        // fan articles are current. Its facts keep transcript confidence until
+        // official facts replace them.
+        const officialCurrent = result.documents.some(d => d.source.kind === 'rockstar' &&
+          d.source.scope === 'weekly' && d.current);
+        if (!result.hasCurrentArticle || !officialCurrent) {
           try { result.documents.push(await service.tgg()); }
           catch (error) { result.failures.push({ kind: 'tgg', reason: error.message.slice(0, 180) }); }
         }
-        const approved = agreeSources(result.documents, !result.hasCurrentArticle);
+        const approved = agreeSources(result.documents, !officialCurrent);
         const all = new Map(facts.filter(f => Date.parse(factWindow(f).expiresAt) > now).map(f => [factKey(f) + ':' + f.startsOn, f]));
         for (const f of approved) {
           const key = factKey(f) + ':' + f.startsOn;
