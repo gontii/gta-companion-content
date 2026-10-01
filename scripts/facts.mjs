@@ -130,7 +130,9 @@ export function agreeSources(documents, allowTgg) {
     const match = base.find(b => factSignature(b) === factSignature(f));
     if (match) approved.set(periodKey(f), { ...f, sources: [...f.sources, ...match.sources], confidence: 'corroborated' });
   }
-  if (allowTgg && !documents.some(d => d.source.kind !== 'tgg' && d.source.scope !== 'membership' && d.current)) {
+  // TGG facts stand in while the official Rockstar weekly article is unconfirmed;
+  // current fan articles do not block them, because the video usually precedes them.
+  if (allowTgg && !documents.some(d => d.source.kind === 'rockstar' && d.source.scope === 'weekly' && d.current)) {
     for (const f of documents.filter(d => d.source.kind === 'tgg').flatMap(d => d.facts)) {
       if (!approved.has(periodKey(f))) approved.set(periodKey(f), { ...f, confidence: 'transcript' });
     }

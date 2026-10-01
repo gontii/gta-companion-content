@@ -85,7 +85,8 @@ test('two fans must agree on amount, dates, platform and membership; official wi
     { source: { kind: 'gtabase' }, current: true, facts: [{ ...fact, offer: '3X GTA$ & RP' }] },
     { source: { kind: 'tgg' }, facts: [fact] },
   ];
-  assert.equal(agreeSources(docs, true).length, 0);
+  // TGG stands in while the official Rockstar article is missing, even when fans are current.
+  assert.deepEqual(agreeSources(docs, true).map(f => f.confidence), ['transcript']);
   docs[1].facts = [fact]; assert.equal(agreeSources(docs, true)[0].confidence, 'corroborated');
   docs.push({ source: { kind: 'rockstar' }, facts: [{ ...fact, offer: '4X GTA$ & RP' }] });
   assert.equal(agreeSources(docs, true)[0].offer, '4X GTA$ & RP');
@@ -93,6 +94,19 @@ test('two fans must agree on amount, dates, platform and membership; official wi
     assert.equal(agreeSources([docs[0], { ...docs[1], facts: [{ ...fact, [field]: 'different' }] }], false).length, 0);
   }
   assert.equal(agreeSources([docs[2]], true)[0].confidence, 'transcript');
+});
+
+test('tgg facts are blocked by a current official Rockstar weekly article, not by fan articles', () => {
+  const official = { source: { kind: 'rockstar', scope: 'weekly' }, current: true, facts: [{ ...fact, offer: '4X GTA$ & RP' }] };
+  assert.deepEqual(agreeSources([official, { source: { kind: 'tgg' }, facts: [fact] }], false).map(f => f.confidence), ['official']);
+  const membership = { source: { kind: 'rockstar', scope: 'membership' }, current: true, facts: [] };
+  assert.equal(agreeSources([membership, { source: { kind: 'tgg' }, facts: [fact] }], true)[0].confidence, 'transcript');
+  const fans = [
+    { source: { kind: 'intel' }, current: true, facts: [fact] },
+    { source: { kind: 'gtabase' }, current: true, facts: [{ ...fact, offer: '3X GTA$ & RP' }] },
+  ];
+  assert.deepEqual(agreeSources([...fans, { source: { kind: 'tgg' }, facts: [{ ...fact, offer: '5X GTA$ & RP' }] }], true)
+    .map(f => f.confidence), ['transcript']);
 });
 test('future preview activates later, verified smaller week and stable correction ids', async () => {
   let c = await mergeFacts(legacy, [fact], atLocal('2026-09-16', 650));
@@ -154,7 +168,7 @@ class Storage {
 }
 test('observation refreshes editorial corrections from live content before writer cutover', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-16T08:50:00Z') });
-  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
+  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [{ source: { kind: 'rockstar', scope: 'weekly' }, current: true, facts: [], rejected: [] }], failures: [], hasCurrentArticle: true }));
   const storage = new Storage(); let live = structuredClone(legacy);
   const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'observe', CONTENT_KV: { get: async () => live } });
   await engine.alarm();
@@ -175,7 +189,7 @@ test('budget reservation persists before IO, cached transcript does not consume 
 });
 test('coordinator recovers a KV crash, deduplicates publication and persists next date on failure', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-15T08:50:00Z') });
-  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
+  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [{ source: { kind: 'rockstar', scope: 'weekly' }, current: true, facts: [], rejected: [] }], failures: [], hasCurrentArticle: true }));
   const storage = new Storage(); let writes = 0, crash = true;
   const env = { PUBLICATION_MODE: 'publish', CONTENT_KV: {
     get: async () => legacy,
@@ -280,7 +294,7 @@ test('downloaded caption evidence survives an exhausted AI allowance', async t =
 test('TGG probe waits for the UTC allowance reset and then resumes itself', async t => {
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-15T18:00:00Z') });
   const storage = new Storage(); let calls = 0;
-  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
+  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [{ source: { kind: 'rockstar', scope: 'weekly' }, current: true, facts: [], rejected: [] }], failures: [], hasCurrentArticle: true }));
   t.mock.method(SourceService.prototype, 'tgg', async () => {
     if (++calls === 1) throw new Error('ai_free_budget_exhausted');
     return { source: { kind: 'tgg' }, facts: [], rejected: [] };
@@ -421,7 +435,7 @@ test('source refresh at 08:00 retains weekly facts until 11:00 instead of prunin
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-24T06:00:00Z') });
   const storage = new Storage();
   await storage.put('fact:keep', fact);
-  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
+  t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [{ source: { kind: 'rockstar', scope: 'weekly' }, current: true, facts: [], rejected: [] }], failures: [], hasCurrentArticle: true }));
   const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'publish', CONTENT_KV: { get: async () => null, put: async () => {} } });
   await engine.alarm();
   assert.ok(await storage.get('fact:keep'));
