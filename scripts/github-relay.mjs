@@ -30,7 +30,7 @@ async function syncIssues(incidents) {
   const ours = issues.filter(i => !i.pull_request && i.body?.startsWith(marker));
   for (const incident of incidents) {
     const tag = `${marker}${incident.key} -->`;
-    const body = `${tag}\nAutomatyczna kontrola GTA Companion.\n\nPowód: ${incident.reason}\n\nPoczątek: ${incident.since || 'brak danych'}\n\nNastępne sprawdzenie wykona Cloudflare. Zgłoszenie zamknie się po potwierdzeniu usunięcia problemu.`;
+    const body = `${tag}\nAutomatyczna kontrola GTA Companion.\n\nGłówny rejestr napraw i kontrola obu kanałów: https://github.com/gontii/gtacompanion/issues/10\n\nPowód: ${incident.reason}\n\nPoczątek: ${incident.since || 'brak danych'}\n\nNastępne sprawdzenie wykona Cloudflare. Zgłoszenie zamknie się po potwierdzeniu usunięcia problemu.`;
     const found = ours.find(i => i.body.startsWith(tag));
     if (!found) await gh('issues', 'POST', { title: `[Aktualizacje] ${incident.reason}`.slice(0, 180), body });
     else if (found.body !== body) await gh(`issues/${found.number}`, 'PATCH', { body });
@@ -64,6 +64,14 @@ for (const entry of entries.sort((a, b) => a.snapshot.generatedAt.localeCompare(
   validateSnapshot(snapshot, { published: true });
   if (!/^[a-f0-9]{64}$/.test(snapshot.revision) || !/^\d{4}-\d{2}-\d{2}$/.test(snapshot.weekId)) throw new Error('Nieprawidłowy identyfikator publikacji');
   await mkdir('weekly/revisions', { recursive: true });
+  if (entry.publicPage) {
+    const { validatePublicPage } = await import('../schemas/public-weekly.mjs');
+    validatePublicPage(entry.publicPage);
+    await mkdir('weekly/public', { recursive: true });
+    const publicFile = `weekly/public/${entry.publicPage.current.issue}.json`;
+    await writeFile(publicFile, JSON.stringify(entry.publicPage.current, null, 2) + '\n'); paths.add(publicFile);
+    await writeFile('weekly/public/index.json', JSON.stringify(entry.publicPage.archive, null, 2) + '\n'); paths.add('weekly/public/index.json');
+  }
   const serialized = `${JSON.stringify(snapshot, null, 2)}\n`;
   const file = `weekly/revisions/${snapshot.revision}.json`;
   await writeFile(file, serialized); paths.add(file);
@@ -85,7 +93,7 @@ if (paths.size) {
   }
   await worker('/ack', { ids: entries.map(e => e.id) });
 }
-const incidents = status.incidents || [];
+const incidents = (status.incidents || []).filter(i => !/^missing-|^publication-unverified$/.test(i.key));
 if (!status.heartbeatAt || Date.now() - Date.parse(status.heartbeatAt) > 45 * 60000) incidents.push({ key: 'cloudflare-silent', reason: 'Brak sygnału harmonogramu Cloudflare przez ponad 45 minut', since: status.heartbeatAt });
 if (status.mode === 'publish') await syncIssues(incidents);
 console.log(JSON.stringify({ mode: status.mode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,

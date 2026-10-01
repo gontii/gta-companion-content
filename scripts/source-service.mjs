@@ -1,3 +1,4 @@
+import { extractRockstarFacts } from './rockstar-facts.mjs';
 import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText } from './weekly-core.mjs';
 import { articleDocument, hash, validateFacts, FACT_VALIDATION_VERSION } from './facts.mjs';
 import { safeFetch, readBounded } from './http.mjs';
@@ -56,7 +57,7 @@ export class SourceService {
   async extract(doc) {
     const key = `extracted:${await hash([PROMPT_VERSION, FACT_VALIDATION_VERSION, doc.source.url, doc.text])}`;
     const cached = await this.storage.get(key);
-    if (cached) return { ...doc, ...cached };
+    if (cached) { await this.diagnostic(doc, cached); return { ...doc, ...cached }; }
     const rawKey = `ai-result:${await hash([AI_MODEL, PROMPT_VERSION, doc.source.url, doc.publishedOn, doc.period, doc.text])}`;
     let saved = await this.storage.get(rawKey);
     if (!saved) {
@@ -94,9 +95,20 @@ export class SourceService {
       }
     }
     const raw = saved.raw;
-    const extracted = validateFacts(raw, doc);
+    const validated = validateFacts(raw, doc);
+    const deterministic = extractRockstarFacts(doc);
+    const unique = new Map([...validated.facts, ...deterministic.facts].map(f => [JSON.stringify([f.section, f.entity, f.startsOn, f.endsOn]), f]));
+    const extracted = { facts: [...unique.values()], rejected: validated.rejected };
+    await this.diagnostic(doc, extracted);
     await this.storage.put(key, { ...extracted, cachedAt: this.now });
     return { ...doc, ...extracted };
+  }
+  async diagnostic(doc, extracted) {
+    await this.storage.put(`last-extraction:${doc.source.kind}:${doc.source.scope || 'weekly'}`, {
+      source: doc.source, period: doc.period, validationVersion: FACT_VALIDATION_VERSION, cachedAt: this.now,
+      accepted: extracted.facts.length, rejected: extracted.rejected,
+      sample: extracted.facts.slice(0, 5).map(({entity, offer, startsOn, endsOn}) => ({entity, offer, startsOn, endsOn})),
+    });
   }
   async websites() {
     const documents = [], failures = [];

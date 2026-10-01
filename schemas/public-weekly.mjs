@@ -8,13 +8,13 @@ export const SECTIONS = {
 };
 const fail = (message) => { throw new Error(message); };
 const requireValue = (condition, message) => { if (!condition) fail(message); };
-const object = (value, keys) => {
+const object = (value, keys, optional = []) => {
   requireValue(value && typeof value === 'object' && !Array.isArray(value), 'Wymagany obiekt');
-  requireValue(Object.keys(value).length === keys.length && keys.every(k => Object.hasOwn(value, k)), 'Nieznane lub brakujące pola publiczne');
+  requireValue(Object.keys(value).every(k => keys.includes(k) || optional.includes(k)) && keys.every(k => Object.hasOwn(value, k)), 'Nieznane lub brakujące pola publiczne');
 };
 const text = (value, max = 700) => requireValue(typeof value === 'string' && value.trim() === value && value.length > 0 && value.length <= max &&
   !/[<>\u0000-\u001f]/.test(value), 'Niepoprawny tekst');
-const id = value => requireValue(typeof value === 'string' && /^[a-z][a-z0-9-]{0,89}$/.test(value), 'Niepoprawny identyfikator');
+const id = value => requireValue(typeof value === 'string' && /^[a-z0-9][a-z0-9-]{0,89}$/.test(value), 'Niepoprawny identyfikator');
 export function date(value) {
   requireValue(typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value), 'Niepoprawna data');
   const ms = Date.parse(value + 'T00:00:00Z');
@@ -36,7 +36,12 @@ export function issueNumber(startsOn) {
 export function validatePublicWeekly(doc, now = Date.now()) {
   requireValue(Number.isFinite(now), 'Niepoprawny czas weryfikacji');
   requireValue(new TextEncoder().encode(JSON.stringify(doc)).length <= MAX_PUBLIC_BYTES, 'Dokument za duży');
-  object(doc, ['schemaVersion', 'issue', 'weekId', 'startsOn', 'endsOn', 'status', 'verifiedAt', 'confirmedAt', 'platforms', 'sections', 'sources']);
+  object(doc, ['schemaVersion', 'issue', 'weekId', 'startsOn', 'endsOn', 'status', 'verifiedAt', 'confirmedAt', 'platforms', 'sections', 'sources'], ['startsAt', 'expiresAt', 'revision']);
+  const timing = value => {
+    if (value.startsAt !== undefined || value.expiresAt !== undefined) requireValue(timestamp(value.startsAt) < timestamp(value.expiresAt), 'Niepoprawny okres godzinowy');
+  };
+  timing(doc);
+  if (doc.revision !== undefined) requireValue(/^[a-f0-9]{64}$/.test(doc.revision), 'Niepoprawna rewizja');
   requireValue(doc.schemaVersion === 1, 'Nieobsługiwana wersja');
   requireValue(doc.issue === issueNumber(doc.startsOn) && doc.weekId === doc.startsOn, 'Niepoprawny numer wydania lub weekId');
   requireValue(date(doc.endsOn) >= date(doc.startsOn), 'Odwrócony okres');
@@ -44,7 +49,7 @@ export function validatePublicWeekly(doc, now = Date.now()) {
   requireValue(['preview', 'active'].includes(doc.status), 'Niepoprawny stan redakcyjny');
   requireValue(timestamp(doc.verifiedAt) <= now, 'Weryfikacja nie może pochodzić z przyszłości');
   if (doc.status === 'active') {
-    requireValue(timestamp(doc.confirmedAt) >= date(doc.startsOn) && timestamp(doc.confirmedAt) <= timestamp(doc.verifiedAt),
+    requireValue(timestamp(doc.confirmedAt) >= (doc.startsAt ? timestamp(doc.startsAt) : date(doc.startsOn)) && timestamp(doc.confirmedAt) <= timestamp(doc.verifiedAt),
       'Aktywne wydanie wymaga potwierdzenia po rozpoczęciu okresu');
   } else requireValue(doc.confirmedAt === null, 'Zapowiedź nie może udawać potwierdzenia aktywności');
   requireValue(JSON.stringify(doc.platforms) === JSON.stringify(PLATFORMS), 'Niepoprawny zakres platform');
@@ -69,7 +74,9 @@ export function validatePublicWeekly(doc, now = Date.now()) {
   for (const section of doc.sections) {
     requireValue(Array.isArray(section.items) && section.items.length > 0 && section.items.length <= 100, 'Pusta lub zbyt duża sekcja');
     for (const item of section.items) {
-      object(item, ['id', 'name', 'status', 'offer', 'requirements', 'startsOn', 'endsOn', 'claim', 'gtaPlus', 'sourceIds']);
+      object(item, ['id', 'name', 'status', 'offer', 'requirements', 'startsOn', 'endsOn', 'claim', 'gtaPlus', 'sourceIds'], ['startsAt', 'expiresAt', 'targetCount']);
+      timing(item);
+      if (item.targetCount !== undefined) requireValue(Number.isInteger(item.targetCount) && item.targetCount > 1 && item.status === 'confirmed', 'Niepoprawna liczba wykonań');
       id(item.id); requireValue(!allIds.has(item.id), 'Powtórzony identyfikator'); allIds.add(item.id);
       text(item.name, 150);
       requireValue(typeof item.gtaPlus === 'boolean' && item.gtaPlus === (section.id === 'gta-plus'), 'Błędne oznaczenie GTA+');
@@ -95,12 +102,12 @@ export function validatePublicWeekly(doc, now = Date.now()) {
   requireValue(known > 0, 'Brak potwierdzonych faktów');
   return doc;
 }
-// Daty Rockstar nie podają godziny resetu. UTC jest granicą prezentacji strony,
-// a przejście preview -> active zawsze wymaga decyzji redakcyjnej.
+// Starsze dokumenty zachowują granice UTC. Nowe paczki mają wspólne zegary
+// aplikacji; potwierdzenie faktów i początek okresu są wymagane przed aktywacją.
 export function publicState(doc, now = Date.now()) {
   const today = new Date(now).toISOString().slice(0, 10);
-  if (today > doc.endsOn) return 'ended';
-  return doc.status === 'active' && today >= doc.startsOn ? 'active' : 'preview';
+  if (doc.expiresAt ? now >= Date.parse(doc.expiresAt) : today > doc.endsOn) return 'ended';
+  return doc.status === 'active' && (doc.startsAt ? now >= Date.parse(doc.startsAt) : today >= doc.startsOn) ? 'active' : 'preview';
 }
 
 // Bieżący dokument z indeksem osobnych wydań; starszy format pary pozostaje odczytywalny.

@@ -1,3 +1,4 @@
+import { createBundle } from '../scripts/publication-bundle.mjs';
 import { rebuildWeeklyLocations } from '../scripts/weekly-locations.mjs';
 import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
@@ -18,11 +19,8 @@ export class PublicationEngine {
     const state = await this.store.get('state') || {};
     const master = await this.store.get('master');
     const outbox = await this.store.list({ prefix: 'outbox:', limit: 100 });
-    const extraction = [...(await this.store.list({ prefix: 'extracted:', limit: 12 })).values()].map(v => ({
-      cachedAt: v.cachedAt, accepted: v.facts.length, rejected: v.rejected.slice(0, 5),
-      sample: v.facts.slice(0, 2).map(f => ({ entity: f.entity, offer: f.offer, startsOn: f.startsOn, endsOn: f.endsOn, sourceUrl: f.sources[0].url })),
-    }));
-    return { mode: this.env.PUBLICATION_MODE, ...state, outboxCount: outbox.size, progress: await this.store.get('progress'),
+    const extraction = [...(await this.store.list({ prefix: 'last-extraction:', limit: 12 })).values()];
+    return { mode: this.env.PUBLICATION_MODE, publicationPaused: !!await this.store.get('publication-paused'), ...state, outboxCount: outbox.size, progress: await this.store.get('progress'),
       extraction, aiBudget: await new AiBudget(this.store).state(),
       candidate: master ? publicSnapshot(projectContent(master, Date.now())) : null,
       approvedFacts: [...(await this.store.list({ prefix: 'fact:', limit: 1000 })).values()].map(({ evidence, dateEvidence, ...fact }) => fact),
@@ -47,6 +45,31 @@ export class PublicationEngine {
     await this.store.put('smoke-token-set-at', Date.now());
     await this.requestCheck();
   }
+  async rollback(revision) {
+    if (this.running) throw new Error('rollback_run_in_flight');
+    const publication = await this.store.get('publication');
+    if (!revision || publication?.revision !== revision) throw new Error('rollback_revision_changed');
+    const previous = await this.store.get('previous-publication');
+    const page = await this.store.get('previous-public-page');
+    if (!previous || !page) throw new Error('rollback_baseline_missing');
+    await this.store.put('publication-paused', true);
+    await this.store.put('rollback-current-master', await this.store.get('master'));
+    await this.store.put('rollback-current-state', await this.store.get('state'));
+    await this.store.put('rollback-current-publication', publication);
+    const edition = page.current || page.editions?.[0] || page;
+    await this.env.CONTENT_KV.put(`weekly:public:${edition.issue}`, JSON.stringify(edition));
+    await this.env.CONTENT_KV.put('weekly:latest', JSON.stringify(previous));
+    await this.env.CONTENT_KV.put('weekly:public', JSON.stringify(page));
+    await this.env.CONTENT_KV.put('weekly:receipt', JSON.stringify({ weekId: previous.weekId, verifiedRevision: null, verifiedAt: null }));
+    await this.store.put('master', await this.store.get('previous-master'));
+    for (const key of (await this.store.list({ prefix: 'fact:', limit: 1000 })).keys()) await this.store.delete(key);
+    for (const key of await this.store.get('previous-fact-keys') || []) await this.store.put(key.replace('previous-', ''), await this.store.get(key));
+    await this.store.put('publication', previous);
+    await this.store.put('state', { ...await this.store.get('previous-coordinator-state'), verifiedRevision: null });
+    await this.store.delete('pending-bundle');
+    await this.store.delete('pending-publication');
+    return { paused: true, revision: previous.revision };
+  }
   async requestCheck() {
     // A request cannot race an in-flight run's final state write.
     await this.store.put('check-requested', true);
@@ -61,7 +84,7 @@ export class PublicationEngine {
   async wake() {
     const alarm = await this.store.getAlarm();
     const state = await this.store.get('state');
-    if (state?.timingPolicyVersion !== TIMING_POLICY_VERSION || !alarm || alarm < Date.now() - 2 * MINUTE) await this.store.setAlarm(Date.now() + 1000);
+    if (state?.timingPolicyVersion !== TIMING_POLICY_VERSION || state?.validationVersion !== FACT_VALIDATION_VERSION || !alarm || alarm < Date.now() - 2 * MINUTE) await this.store.setAlarm(Date.now() + 1000);
     await this.store.put('heartbeat', Date.now());
   }
   async alarm() {
@@ -71,11 +94,13 @@ export class PublicationEngine {
   }
   async queueHistory(snapshot, verifiedAt = null) {
     const id = await hash([snapshot.revision, verifiedAt ? 'verified' : 'published']);
-    await this.store.put(`outbox:${id}`, { id, snapshot, verifiedAt });
+    const page = await this.store.get(`bundle:${snapshot.revision}:2`);
+    await this.store.put(`outbox:${id}`, { id, snapshot, ...(page ? { publicPage: page } : {}), verifiedAt });
   }
   async run() {
     const now = Date.now();
     const state = await this.store.get('state') || { events: [], incidents: [] };
+    const rollbackState = structuredClone(state);
     // Supervisor can recover even after all platform alarm retries are exhausted.
     await this.store.setAlarm(now + 15 * MINUTE);
     state.lastAttemptAt = new Date(now).toISOString();
@@ -105,6 +130,7 @@ export class PublicationEngine {
             retryAt: retryAt ? new Date(retryAt).toISOString() : null });
         }
       }
+      if (await this.store.get('publication-paused')) return;
       let master = normalizeReviewedSources(await this.store.get('master'));
       if (this.env.PUBLICATION_MODE === 'observe' && state.validationVersion !== FACT_VALIDATION_VERSION) {
         // Experimental candidates never carry weaker validation into the first publication.
@@ -127,6 +153,7 @@ export class PublicationEngine {
       }
       let facts = [...(await this.store.list({ prefix: 'fact:', limit: 1000 })).values()];
       if (!facts.length) facts = await this.store.get('facts') || [];
+      const rollbackFacts = [...facts];
       if (master && state.timingPolicyVersion !== TIMING_POLICY_VERSION) {
         // Preserve the pre-migration evidence and history. Rebuild only affected deadlines.
         const archive = await this.store.get(`archived-timing:${TIMING_POLICY_VERSION}`);
@@ -155,7 +182,7 @@ export class PublicationEngine {
       }
       const requested = await this.store.get('check-requested');
       if (requested) await this.store.delete('check-requested');
-      if (requested || !state.nextCheck || state.nextCheck.at <= now) {
+      if (requested || state.validationVersion !== FACT_VALIDATION_VERSION || !state.nextCheck || state.nextCheck.at <= now) {
         const service = new SourceService(this.store, this.env, now);
         const result = await service.websites();
         if (!result.hasCurrentArticle) {
@@ -163,13 +190,14 @@ export class PublicationEngine {
           catch (error) { result.failures.push({ kind: 'tgg', reason: error.message.slice(0, 180) }); }
         }
         const approved = agreeSources(result.documents, !result.hasCurrentArticle);
-        const all = new Map(facts.filter(f => Date.parse(factWindow(f).expiresAt) > now).map(f => [factKey(f) + ':' + f.startsOn, f]));
+        const all = new Map((state.validationVersion === FACT_VALIDATION_VERSION ? facts : []).filter(f => Date.parse(factWindow(f).expiresAt) > now).map(f => [factKey(f) + ':' + f.startsOn, f]));
         for (const f of approved) {
           const key = factKey(f) + ':' + f.startsOn;
           if (all.get(key)?.confidence === 'official' && f.confidence !== 'official') continue;
           all.set(key, f);
         }
-        facts = [...all.values()];
+        facts = supplementReviewedFacts(master, [...all.values()], now);
+        state.validationVersion = FACT_VALIDATION_VERSION;
         // Separate SQLite-backed rows avoid the 128 KiB per-value limit during long events.
         for (const f of facts) await this.store.put(`fact:${await hash([factKey(f), f.startsOn])}`, f);
         const rows = await this.store.list({ prefix: 'fact:', limit: 1000 });
@@ -180,6 +208,7 @@ export class PublicationEngine {
         state.sourceFailures = result.failures;
         await service.prune();
       }
+      const rollbackMaster = master;
       const merged = await mergeFacts(master, supplementReviewedFacts(master, facts, now), now);
       if (merged) {
         master = rebuildWeeklyLocations(merged, now);
@@ -197,20 +226,53 @@ export class PublicationEngine {
         delete projected.generatedAt; delete projected.revision;
         const revision = await hash(projected);
         const publication = await this.store.get('publication');
-        if (revision !== publication?.revision && this.env.PUBLICATION_MODE === 'publish' && !await this.store.get('pending-publication')) {
+        if ((revision !== publication?.revision || !await this.store.get('bundle-manifest')) && this.env.PUBLICATION_MODE === 'publish' && !await this.store.get('pending-bundle')) {
           const snapshot = { ...projected, revision, generatedAt: new Date(now).toISOString() };
-          // Write-ahead record: after a crash repeat exactly the same payload/revision.
-          await this.store.put('pending-publication', snapshot);
+          const page = await this.env.CONTENT_KV.get('weekly:public', 'json');
+          const bundle = await createBundle(snapshot, page, now);
+          // Each document is a separate SQLite row, below the per-value limit.
+          for (let i = 0; i < bundle.values.length; i++) await this.store.put(`bundle:${revision}:${i}`, bundle.values[i]);
+          const { values, ...manifest } = bundle;
+          await this.store.put('pending-bundle', { ...manifest, step: 0 });
+          // Preserve coordinator data together with previous documents; restoring only
+          // KV would let the next alarm immediately republish the broken state.
+          const previous = await this.store.get('bundle-manifest');
+          if (previous) await this.store.put('previous-bundle-manifest', previous);
+          await this.store.put('previous-coordinator-state', rollbackState);
+          await this.store.put('previous-master', rollbackMaster);
+          await this.store.put('previous-public-page', page || null);
+          const previousKeys = [];
+          for (const fact of rollbackFacts) {
+            const key = `previous-fact:${await hash([factKey(fact), fact.startsOn])}`;
+            await this.store.put(key, fact); previousKeys.push(key);
+          }
+          await this.store.put('previous-fact-keys', previousKeys);
+          await this.store.put('previous-publication', publication || null);
         }
         state.candidateRevision = revision;
       }
-      const pending = await this.store.get('pending-publication');
+      // Finish an older write-ahead record during the upgrade, through both channels.
+      const legacyPending = await this.store.get('pending-publication');
+      if (legacyPending && !await this.store.get('pending-bundle')) {
+        const bundle = await createBundle(legacyPending, await this.env.CONTENT_KV.get('weekly:public', 'json'), now);
+        for (let i = 0; i < bundle.values.length; i++) await this.store.put(`bundle:${bundle.revision}:${i}`, bundle.values[i]);
+        const { values, ...manifest } = bundle;
+        await this.store.put('pending-bundle', { ...manifest, step: 0 });
+      }
+      const pending = await this.store.get('pending-bundle');
       if (pending && this.env.PUBLICATION_MODE === 'publish') {
-        const old = await this.store.get('publication');
-        if (old) await this.store.put('previous-publication', old);
-        await this.env.CONTENT_KV.put('weekly:latest', JSON.stringify(pending));
-        await this.store.put('publication', pending);
-        await this.queueHistory(pending);
+        for (let i = pending.step; i < pending.writes.length; i++) {
+          const payload = await this.store.get(`bundle:${pending.revision}:${i}`);
+          if (!payload || await hash(payload) !== pending.writes[i].digest) throw new Error('publication_bundle_corrupted');
+          await this.env.CONTENT_KV.put(pending.writes[i].key, JSON.stringify(payload));
+          pending.step = i + 1;
+          await this.store.put('pending-bundle', pending);
+        }
+        const snapshot = await this.store.get(`bundle:${pending.revision}:1`);
+        await this.store.put('publication', snapshot);
+        await this.store.put('bundle-manifest', pending);
+        await this.queueHistory(snapshot);
+        await this.store.delete('pending-bundle');
         await this.store.delete('pending-publication');
         state.publishedRevision = pending.revision;
         state.lastPublishedAt = new Date(now).toISOString();
@@ -218,21 +280,32 @@ export class PublicationEngine {
         state.verifiedRevision = null;
       }
       const publication = await this.store.get('publication');
-      if (publication && state.verifiedRevision !== publication.revision && state.verifyAfter <= now) {
+      const manifest = await this.store.get('bundle-manifest');
+      if (publication && manifest && state.verifiedRevision !== publication.revision && state.verifyAfter <= now) {
+        // Independent live read: Pages reads both KV documents without exposing the
+        // protected payload. This receipt is compared before freshness can turn green.
+        const response = await safeFetch(`https://gtacompanion.net/api/content-status?revision=${publication.revision}`);
+        if (!response.ok) throw new Error(`content_status_http_${response.status}`);
+        const live = JSON.parse(await readBounded(response, 12000));
+        if (live.app?.revision !== publication.revision || live.public?.revision !== publication.revision || live.article?.revision !== publication.revision || live.reasons?.includes('channels_diverged')) throw new Error('publication_propagating');
         const token = await this.store.get('smoke-token');
-        if (!token) throw new Error('smoke_token_missing');
-        const denied = await safeFetch('https://gtacompanion.net/api/weekly');
-        if (denied.status !== 401) throw new Error('weekly_api_not_gated');
-        await denied.body?.cancel();
-        const response = await safeFetch(`https://gtacompanion.net/api/weekly?revision=${publication.revision}`, { headers: { authorization: `Bearer ${token}` } });
-        if (!response.ok) throw new Error(`weekly_api_http_${response.status}`);
-        const live = JSON.parse(await readBounded(response, 150000));
-        const expected = projectContent(publication, Date.now());
-        if (await hash(live) !== await hash(expected)) throw new Error('weekly_api_content_mismatch');
+        if (token) {
+          const api = await safeFetch(`https://gtacompanion.net/api/weekly?revision=${publication.revision}`, { headers: { authorization: `Bearer ${token}` } });
+          if (!api.ok) throw new Error(`weekly_api_http_${api.status}`);
+          const actual = JSON.parse(await readBounded(api, 150000));
+          if (await hash(actual) !== await hash(projectContent(publication, Date.now()))) throw new Error('weekly_api_content_mismatch');
+        }
+        const publicApi = await safeFetch(`https://gtacompanion.net/api/weekly-public?revision=${publication.revision}`);
+        if (!publicApi.ok) throw new Error(`public_api_http_${publicApi.status}`);
+        const publicLive = JSON.parse(await readBounded(publicApi, 150000));
+        if (publicLive.revision !== publication.revision) throw new Error('public_api_propagating');
         state.verifiedRevision = publication.revision;
         state.lastVerifiedAt = new Date().toISOString();
         await this.queueHistory(publication, state.lastVerifiedAt);
       }
+      await this.env.CONTENT_KV.put('weekly:receipt', JSON.stringify({ weekId: publication?.weekId || null,
+        publishedRevision: state.publishedRevision || null, verifiedRevision: state.verifiedRevision || null,
+        verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString() }));
       const currentWeek = thursdayWeekId(new Date(now));
       const expectedAt = atLocal(currentWeek, 11 * 60);
       const missing = !master || master.weekId < currentWeek || !projectContent(master, now).sections.some(s => ['bonuses', 'discounts'].includes(s.id) && s.items.length);
@@ -253,7 +326,10 @@ export class PublicationEngine {
       state.incidents = [{ key: 'updater-error', reason: state.lastError, since: state.lastAttemptAt }];
     } finally {
       state.nextCheck = nextCheck(now, state.events || [], !!state.pending);
-      nextAt = state.nextCheck.at;
+      if (state.pending) state.nextCheck.at = Math.min(state.nextCheck.at, now + 15 * MINUTE);
+      // Re-project and confirm the publication on a natural alarm at least every
+      // 15 minutes. Source checks retain their separate budgeted schedule.
+      nextAt = Math.min(state.nextCheck.at, now + 15 * MINUTE);
       if (state.verifyAfter && state.verifiedRevision !== state.publishedRevision) nextAt = Math.min(nextAt, Math.max(now + MINUTE, state.verifyAfter));
       if (state.lastError) nextAt = Math.min(nextAt, now + 15 * MINUTE);
       // A request received during source IO must survive the final alarm write.

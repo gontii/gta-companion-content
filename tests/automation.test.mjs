@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { atLocal, nextCheck, localParts, windowFromDays, collectEvents, projectContent, normalizeWeeklyTiming } from '../scripts/temporal.mjs';
-import { agreeSources, mergeFacts, validateFacts, upgradeLegacy, validateSnapshot, factWindow } from '../scripts/facts.mjs';
+import { agreeSources, mergeFacts, validateFacts, upgradeLegacy, validateSnapshot, factWindow, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
 import { selectTggVideo, TGG_CHANNEL, SourceService } from '../scripts/source-service.mjs';
 import { PublicationEngine } from '../worker/coordinator.mjs';
 
@@ -178,7 +178,7 @@ test('coordinator recovers a KV crash, deduplicates publication and persists nex
   t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
   const storage = new Storage(); let writes = 0, crash = true;
   const env = { PUBLICATION_MODE: 'publish', CONTENT_KV: {
-    get: async () => legacy,
+    get: async key => key === 'weekly:latest' ? legacy : null,
     put: async () => { writes++; if (crash) { crash = false; throw new Error('test-kv-crash'); } },
   } };
   let engine = new PublicationEngine({ storage }, env);
@@ -186,12 +186,13 @@ test('coordinator recovers a KV crash, deduplicates publication and persists nex
   const failed = await engine.status();
   assert.equal(failed.lastError, 'test-kv-crash');
   assert.ok(Date.parse(failed.nextRunAt) > Date.now());
-  const intended = await storage.get('pending-publication');
+  const bundle = await storage.get('pending-bundle');
+  const intended = await storage.get(`bundle:${bundle.revision}:1`);
   engine = new PublicationEngine({ storage }, env);
   await engine.alarm();
   assert.deepEqual(await storage.get('publication'), intended);
   await engine.alarm();
-  assert.equal(writes, 2);
+  assert.equal(writes, 6);
   assert.equal((await engine.outbox()).entries.length, 1);
 });
 
@@ -401,11 +402,11 @@ test('migration replaces stored midnight alarms, keeps unrelated events, rearms 
   events.push({ key: `${old.weekId}/sections/challenge/items/removed-from-an-older-revision:expiresAt:${Date.parse(old.expiresAt)}`, at: Date.parse(old.expiresAt), kind: 'expire', confidence: 'estimated' });
   events.push({ key: 'separate-event', at: atLocal('2026-09-18', 1) });
   await storage.put('master', old);
-  await storage.put('state', { events, sources: [{ kind: 'rockstar', scope: 'weekly', current: true, facts: 1 }], nextCheck: { at: atLocal('2026-09-16', 1140) } });
+  await storage.put('state', { validationVersion: FACT_VALIDATION_VERSION, events, sources: [{ kind: 'rockstar', scope: 'weekly', current: true, facts: 1 }], nextCheck: { at: atLocal('2026-09-16', 1140) } });
   await storage.setAlarm(atLocal('2026-09-16', 1140));
   t.mock.method(SourceService.prototype, 'websites', async () => { throw new Error('unexpected source call'); });
   let published;
-  const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'publish', CONTENT_KV: { put: async (_, json) => { published = JSON.parse(json); } } });
+  const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'publish', CONTENT_KV: { get: async () => null, put: async (key, json) => { if (key === 'weekly:latest') published = JSON.parse(json); } } });
   await engine.wake();
   assert.equal(await storage.getAlarm(), Date.now() + 1000);
   await engine.alarm();
@@ -421,6 +422,7 @@ test('source refresh at 08:00 retains weekly facts until 11:00 instead of prunin
   t.mock.timers.enable({ apis: ['Date'], now: new Date('2026-09-24T06:00:00Z') });
   const storage = new Storage();
   await storage.put('fact:keep', fact);
+  await storage.put('state', { validationVersion: FACT_VALIDATION_VERSION });
   t.mock.method(SourceService.prototype, 'websites', async () => ({ documents: [], failures: [], hasCurrentArticle: true }));
   const engine = new PublicationEngine({ storage }, { PUBLICATION_MODE: 'publish', CONTENT_KV: { get: async () => null, put: async () => {} } });
   await engine.alarm();

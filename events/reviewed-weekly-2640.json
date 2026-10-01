@@ -1,0 +1,941 @@
+[
+  {
+    "section": "challenge",
+    "entity": "Bail Office Bounties",
+    "offer": "Secure two Bail Office Bounties to receive the Green Vintage Skull Mask and GTA$100,000.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ],
+    "targetCount": 2
+  },
+  {
+    "section": "free-vehicles",
+    "entity": "Cheerleader Massacre 3 T-Shirt",
+    "offer": "FREE; claim from in-game clothing stores during this week.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "Slasher",
+    "offer": "3X GTA$ & RP",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "Halloween Survivals",
+    "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "San Andreas Super Sport Series",
+    "offer": "3X GTA$ & RP; Hotring Races and Random Transform Races.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "Community Race Series",
+    "offer": "3X GTA$ & RP",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "UFO Business Battles",
+    "offer": "2X GTA$ & RP",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "Jack O’Lanterns",
+    "offer": "2X GTA$ & RP",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "Ghosts Exposed",
+    "offer": "2X GTA$; photograph the ghosts.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "bonuses",
+    "entity": "Standard and Most Wanted Bail Office Targets",
+    "offer": "2X GTA$ & RP",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-31",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ],
+    "windowPolicy": "independent"
+  },
+  {
+    "section": "bonuses",
+    "entity": "Dispatch Work",
+    "offer": "2X GTA$ & RP",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-31",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ],
+    "windowPolicy": "independent"
+  },
+  {
+    "section": "discounts",
+    "entity": "Albany Brigham",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Albany Fränken Stange",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Albany Lurcher",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Declasse Tornado Rat Rod",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "LCC Sanctus",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Declasse Vigero ZX",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Sea Sparrow",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Nagasaki Buzzard Attack Chopper",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Lampadati Komoda",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Western Powersurge",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Benefactor Schlagen GT",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Ocelot Ardent",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Nagasaki Ultralight",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Grotti Brioso 300",
+    "offer": "30% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Hawick Agency",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Little Seoul Agency",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Rockford Hills Agency",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Vespucci Canals Agency",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "discounts",
+    "entity": "Celebrity Solutions Agency",
+    "offer": "40% off",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "gun-van",
+    "entity": "Baseball Bat",
+    "offer": "FREE at the Gun Van; daily van location awaits a current source.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "gun-van",
+    "entity": "The Shocker",
+    "offer": "FREE at the Gun Van; daily van location awaits a current source.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "gun-van",
+    "entity": "Service Carbine",
+    "offer": "30% off at the Gun Van; daily van location awaits a current source.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "gun-van",
+    "entity": "Up-n-Atomizer",
+    "offer": "50% off at the Gun Van; GTA+ membership required.",
+    "eligibility": "gta-plus",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "gun-van",
+    "entity": "Unholy Hellbringer",
+    "offer": "50% off at the Gun Van; GTA+ membership required.",
+    "eligibility": "gta-plus",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "gun-van",
+    "entity": "Widowmaker",
+    "offer": "50% off at the Gun Van; GTA+ membership required.",
+    "eligibility": "gta-plus",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "other",
+    "entity": "Premium Deluxe Motorsport",
+    "offer": "Available to purchase and test: Albany Brigham, Albany Fränken Stange, Albany Lurcher, Declasse Tornado Rat Rod and LCC Sanctus.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "other",
+    "entity": "Luxury Autos",
+    "offer": "Available to purchase: Dewbauchee Rapid GT X and Übermacht Sentinel XS4.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "other",
+    "entity": "Test Track Vehicles",
+    "offer": "Test drive Ocelot Locust, Dewbauchee Seven-70 and Declasse Vamos.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "other",
+    "entity": "Premium Race",
+    "offer": "Arms Race; race entry conditions apply.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "other",
+    "entity": "Time Trial",
+    "offer": "Maze Bank Arena.",
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  },
+  {
+    "section": "other",
+    "entity": "Premium Test Ride",
+    "offer": "Test drive the Maibatsu MonstroCiti; PS5, Xbox Series X|S or PC Enhanced required.",
+    "eligibility": "all",
+    "platform": "enhanced",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ]
+  }
+]

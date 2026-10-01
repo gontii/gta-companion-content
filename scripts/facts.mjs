@@ -6,11 +6,12 @@ export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
-export const FACT_VALIDATION_VERSION = 8;
+export const FACT_VALIDATION_VERSION = 9;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
-export const factSignature = f => JSON.stringify([factKey(f), normal(f.offer), f.startsOn, f.endsOn, f.timing || null]);
+export { factSignature } from './offer-traits.mjs';
+import { factSignature } from './offer-traits.mjs';
 export function factWindow(f) {
   return { ...windowFromDays(f.startsOn, f.endsOn, f.windowPolicy !== 'independent' && f.section !== 'gta-plus' && !f.sources?.some(s => s.scope === 'membership') && isWeeklyPeriod(f.startsOn, f.endsOn)), ...(f.timing || {}) };
 }
@@ -30,18 +31,30 @@ export function articleDocument(source, now = new Date()) {
     cards = parsed.sections.map(s => `${s.title}:\n${s.items.map(i => i.label).join('\n')}`).join('\n');
   } catch { /* A partial article can still supply independently grounded facts. */ }
   const normalized = cards ? `Structured offers parsed from the article (${period?.rangeText || ''}):\n${cards}\n\nArticle:\n${text}` : text;
-  return { ...source, html: undefined, text: normalized.slice(0, 35_000), publishedOn, period,
+  return { ...source, text: normalized.slice(0, 35_000), publishedOn, period,
     source: { url: source.sourceUrl, kind: source.kind, scope: source.scope || 'weekly', publishedOn } };
 }
 
-function dateIsSupported(date, evidence) {
-  if (evidence.includes(date)) return true;
-  const d = new Date(`${date}T12:00:00Z`);
-  const month = new Intl.DateTimeFormat('en-US', { month: 'long', timeZone: 'UTC' }).format(d);
-  const day = d.getUTCDate();
-  // Month must be present; range end may omit a repeated month.
-  return new RegExp(`\\b${month.slice(0, 3)}[a-z]*\\b`, 'i').test(evidence) &&
-    new RegExp(`\\b${day}(?:st|nd|rd|th)?\\b`).test(evidence);
+export function periodIsSupported(start, end, evidence, doc) {
+  if (!validDay(start) || !validDay(end)) return false;
+  // A complete range must match both endpoints; unrelated numbers in a paragraph
+  // and one month name cannot prove a cross-month period.
+  const months = 'January February March April May June July August September October November December'.split(' ');
+  const month = months[new Date(start).getUTCMonth()];
+  const endMonth = months[new Date(end).getUTCMonth()];
+  const day = new Date(start).getUTCDate(), last = new Date(end).getUTCDate();
+  const word = m => m.slice(0, 3) + '[a-z]*';
+  const dash = '(?:[-–—]|through|to)';
+  const pattern = new RegExp(`\\b${word(month)}\\s+${day}(?:st|nd|rd|th)?(?:,?\\s+20\\d{2})?\\s*${dash}\\s*${month === endMonth ? '(?:' + word(endMonth) + '\\s+)?' : word(endMonth) + '\\s+'}${last}(?:st|nd|rd|th)?\\b`, 'i');
+  if (evidence.includes(start) && evidence.includes(end) || pattern.test(evidence)) return true;
+  // An explicit whole month is an independent window, never the event week.
+  if (day === 1 && last === new Date(Date.UTC(new Date(end).getUTCFullYear(), new Date(end).getUTCMonth() + 1, 0)).getUTCDate() && month === endMonth &&
+      new RegExp(`(?:all ${word(month)} long|throughout ${word(month)})`, 'i').test(evidence)) return true;
+  // Explicit time evidence can describe the endpoints in two separate clauses.
+  if (/\d{1,2}:\d{2}/.test(evidence) && evidence.toLowerCase().includes(month.toLowerCase()) && evidence.toLowerCase().includes(endMonth.toLowerCase())) {
+    return new RegExp(`\\b${word(month)}\\s+${day}\\b`, 'i').test(evidence) && new RegExp(`\\b${word(endMonth)}\\s+${last}\\b`, 'i').test(evidence);
+  }
+  return false;
 }
 
 export function validateFacts(raw, doc) {
@@ -61,7 +74,10 @@ export function validateFacts(raw, doc) {
       if (/\bfree\b/i.test(f.offer) && !/\bfree\b|at no cost|complimentary/i.test(f.evidence)) throw new Error('unsupported_free_offer');
       const requirementChecks = [
         [/\bcomplete\b[\s\S]{0,140}\b(?:to|then|for|unlock|claim)\b/i, /complete|qualif|challenge/i],
-        [/consecutive/i, /consecutive/i],
+        [/consecutive|in a row/i, /consecutive|in a row/i],
+        [/\bwin\b|finish first/i, /\bwin\b|finish first/i],
+        [/without dying/i, /without dying/i],
+        [/first[\s\S]{0,90}(?:week|weekly)/i, /first[\s\S]{0,90}(?:week|weekly)/i],
         [/chance|lucky wheel|spin/i, /chance|lucky wheel|spin/i],
         [/\bown\b|requires? (?:an? |the )?(?:clubhouse|custom|property|business)/i, /own|require|clubhouse|custom|property|business/i],
       ];
@@ -78,7 +94,7 @@ export function validateFacts(raw, doc) {
           Date.parse(f.endsOn) - Date.parse(f.startsOn) > 62 * 86_400_000) throw new Error('invalid_dates');
       if (Number.isFinite(Date.parse(doc.publishedOn)) && (Date.parse(f.startsOn) < Date.parse(doc.publishedOn) - 35 * 86_400_000 || Date.parse(f.startsOn) > Date.parse(doc.publishedOn) + 62 * 86_400_000)) throw new Error('date_outside_source_context');
       // A guessed current week cannot override a quote about a different event period.
-      if (!dateIsSupported(f.startsOn, f.dateEvidence) || !dateIsSupported(f.endsOn, f.dateEvidence)) throw new Error('unsupported_dates');
+      if (!periodIsSupported(f.startsOn, f.endsOn, f.dateEvidence, doc)) throw new Error('unsupported_dates');
       if (f.section === 'gta-plus' && f.eligibility !== 'gta-plus') throw new Error('member_scope');
       if (f.eligibility === 'gta-plus' && !/gta\+|gta plus|member/i.test(f.evidence)) throw new Error('member_evidence');
       if (f.platform === 'enhanced' && !/enhanced|ps5|series x|playstation 5/i.test(f.evidence)) throw new Error('platform_evidence');
@@ -127,7 +143,8 @@ export function agreeSources(documents, allowTgg) {
   const approved = new Map(official.map(f => [periodKey(f), { ...f, confidence: 'official' }]));
   for (const f of intel) {
     if (approved.has(periodKey(f))) continue;
-    const match = base.find(b => factSignature(b) === factSignature(f));
+    const signature = factSignature(f);
+    const match = signature && base.find(b => factSignature(b) === signature);
     if (match) approved.set(periodKey(f), { ...f, sources: [...f.sources, ...match.sources], confidence: 'corroborated' });
   }
   if (allowTgg && !documents.some(d => d.source.kind !== 'tgg' && d.source.scope !== 'membership' && d.current)) {
@@ -216,13 +233,22 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     const id = existing?.id || f.itemId || `auto-${(await hash(key)).slice(0, 18)}`;
     const label = `${f.entity} — ${f.offer}${f.eligibility === 'gta-plus' ? ' (GTA+ only)' : ''}${f.platform === 'enhanced' ? ' (PS5, Xbox Series X|S, PC Enhanced)' : f.platform === 'legacy' ? ' (Legacy)' : ''}`;
     const item = { id, label, factKey: key, ...timing, ...(f.windowPolicy ? { windowPolicy: f.windowPolicy } : {}), confidence: f.confidence, sources: f.sources,
-      sourceUrl: f.sources[0].url, evidence: f.evidence, dateEvidence: f.dateEvidence,
+      entity: f.entity, offer: f.offer, eligibility: f.eligibility, platform: f.platform, sourceUrl: f.sources[0].url, evidence: f.evidence, dateEvidence: f.dateEvidence,
       ...(f.targetCount ? { targetCount: f.targetCount } : {}),
       ...(f.offsetMs !== undefined ? { videoId: f.sources[0].videoId, offsetMs: f.offsetMs } : {}) };
     section.items = section.items.filter(i => i.id !== id);
     section.items.push(item);
     section.completeness = 'partial';
   }
+  // One free property/reward must not appear again as a 100% discount.
+  const rewards = c.sections.find(s => s.id === 'free-vehicles')?.items || [];
+  const discounts = c.sections.find(s => s.id === 'discounts');
+  if (discounts) discounts.items = discounts.items.filter(item => !rewards.some(reward => {
+    const sameEntity = item.entity && reward.entity && normal(item.entity) === normal(reward.entity);
+    return sameEntity && item.startsAt === reward.startsAt && item.expiresAt === reward.expiresAt &&
+      item.eligibility === reward.eligibility && item.platform === reward.platform &&
+      /free|GTA\$0\b|100% off/i.test(item.offer || item.label) && /free|GTA\$0\b/i.test(reward.offer || reward.label);
+  }));
   for (const section of c.sections) section.items.sort((a, b) => a.editorial && b.editorial ? 0 : a.editorial ? -1 : b.editorial ? 1 : a.id.localeCompare(b.id));
   if (!c.quickTakeEntries?.some(i => i.editorial)) c.quickTakeEntries = c.sections.flatMap(s => s.items).slice(0, 4).map(i => ({ ...i, itemIds: [i.id] }));
   if (!c.beginnerPath.some(i => i.editorial)) c.beginnerPath = c.sections.filter(s => ['challenge', 'free-vehicles', 'bonuses'].includes(s.id)).flatMap(s => s.items).slice(0, 4).map(i => ({ ...i, id: `bp-${i.id}`, itemIds: [i.id] }));
