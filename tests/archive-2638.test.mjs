@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {preparePublicWeekly} from '../scripts/prepare-public-weekly.mjs';
+import {publicState} from '../schemas/public-weekly.mjs';
+import {parseWeeklyContent} from '../schemas/app-weekly-parser.mjs';
+const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
+test('korekta 2638 jest odebrana jako zakończone archiwum i zapisuje tylko swój klucz',()=>{
+ const publicText=read('weekly/public/2638.json'),appText=read('weekly/2026-09-17.json');
+ const review=JSON.parse(read('reviews/2638-archive.json'));
+ const doc=JSON.parse(publicText),app=JSON.parse(appText),now=Math.max(Date.now(),Date.parse(review.reviewedAt));
+ assert.equal(publicState(doc,now),'ended');assert.equal(doc.status,'active');
+ const bulk=preparePublicWeekly(publicText,{appText,review,target:'archive',now});
+ assert.deepEqual(bulk.map(x=>x.key),['weekly:public:2638']);assert.deepEqual(JSON.parse(bulk[0].value),doc);
+ assert.ok(parseWeeklyContent(app));
+ const appIds=new Set(app.sections.flatMap(s=>s.items).map(i=>i.id));
+ for(const id of review.checkedFactIds)assert.ok(review.appFactIdsByPublicId[id]?.every(id=>appIds.has(id)),id);
+ for(const id of review.removedDuplicateIds)assert.ok(!appIds.has(id));
+ assert.deepEqual(doc.sections.flatMap(s=>s.items).filter(i=>i.status==='pending').map(i=>i.id),review.pendingFactIds);
+ for(const [pub,application] of [[publicText+' ',appText],[publicText,appText+' ']])assert.throws(()=>preparePublicWeekly(pub,{appText:application,review,target:'archive',now}),/Zmiana dokumentu/);
+ const current=JSON.parse(read('weekly/latest.json'));assert.notEqual(current.weekId,app.weekId);
+});

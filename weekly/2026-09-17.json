@@ -9,15 +9,15 @@
   "precision": "date",
   "timingConfidence": "estimated",
   "quickTake": [
-    "Ammu-Nation Contract — Double Rewards for Ammu-Nation Contract",
-    "Bunker Research Missions — 2X GTA$, RP, and Research Progress for Bunker Research Missions",
-    "Safeguard Deliveries — 2X GTA$ and RP for Safeguard Deliveries",
-    "September Business Rivalries — Complete 3 Bunker Research Missions from Agent 14 to receive an extra GTA$1,000,000 and the Camo Ammu-Nation Sweatsuit."
+    "Ammu-Nation Contracts — 2X GTA$ and RP. Bunker required; surplus weapon deliveries start from its Duneloader.",
+    "Bunker Research Missions — 2X GTA$, RP and Research Progress. Bunker required; missions are requested from Agent 14.",
+    "Safeguard Deliveries — 2X GTA$ and RP. Deliver security cargo from Bobcat Security or Gruppe Sechs depots.",
+    "Weekly Challenge — GTA$1,000,000 plus the Camo Ammu-Nation Sweatsuit. Complete three Bunker Research Missions during September 17–23."
   ],
   "quickTakeEntries": [
     {
       "id": "auto-8dc3507a0923acfe65",
-      "label": "Ammu-Nation Contract — Double Rewards for Ammu-Nation Contract",
+      "label": "Ammu-Nation Contracts — 2X GTA$ and RP. Bunker required; surplus weapon deliveries start from its Duneloader.",
       "factKey": "bonuses:ammu nation contract:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -40,7 +40,7 @@
     },
     {
       "id": "auto-c6dd9b98360110673a",
-      "label": "Bunker Research Missions — 2X GTA$, RP, and Research Progress for Bunker Research Missions",
+      "label": "Bunker Research Missions — 2X GTA$, RP and Research Progress. Bunker required; missions are requested from Agent 14.",
       "factKey": "bonuses:bunker research missions:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -63,7 +63,7 @@
     },
     {
       "id": "auto-fff8c148151f68afa2",
-      "label": "Safeguard Deliveries — 2X GTA$ and RP for Safeguard Deliveries",
+      "label": "Safeguard Deliveries — 2X GTA$ and RP. Deliver security cargo from Bobcat Security or Gruppe Sechs depots.",
       "factKey": "bonuses:safeguard deliveries:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -86,7 +86,7 @@
     },
     {
       "id": "business-rivalries-2026-09-17",
-      "label": "September Business Rivalries — Complete 3 Bunker Research Missions from Agent 14 to receive an extra GTA$1,000,000 and the Camo Ammu-Nation Sweatsuit.",
+      "label": "Weekly Challenge — GTA$1,000,000 plus the Camo Ammu-Nation Sweatsuit. Complete three Bunker Research Missions during September 17–23.",
       "factKey": "challenge:september business rivalries:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -110,7 +110,7 @@
   "beginnerPath": [
     {
       "id": "bp-auto-8dc3507a0923acfe65",
-      "label": "Ammu-Nation Contract — Double Rewards for Ammu-Nation Contract",
+      "label": "Ammu-Nation Contracts — 2X GTA$ and RP. Bunker required; surplus weapon deliveries start from its Duneloader.",
       "factKey": "bonuses:ammu nation contract:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -133,7 +133,7 @@
     },
     {
       "id": "bp-auto-c6dd9b98360110673a",
-      "label": "Bunker Research Missions — 2X GTA$, RP, and Research Progress for Bunker Research Missions",
+      "label": "Bunker Research Missions — 2X GTA$, RP and Research Progress. Bunker required; missions are requested from Agent 14.",
       "factKey": "bonuses:bunker research missions:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -156,7 +156,7 @@
     },
     {
       "id": "bp-auto-fff8c148151f68afa2",
-      "label": "Safeguard Deliveries — 2X GTA$ and RP for Safeguard Deliveries",
+      "label": "Safeguard Deliveries — 2X GTA$ and RP. Deliver security cargo from Bobcat Security or Gruppe Sechs depots.",
       "factKey": "bonuses:safeguard deliveries:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -179,7 +179,7 @@
     },
     {
       "id": "bp-business-rivalries-2026-09-17",
-      "label": "September Business Rivalries — Complete 3 Bunker Research Missions from Agent 14 to receive an extra GTA$1,000,000 and the Camo Ammu-Nation Sweatsuit.",
+      "label": "Weekly Challenge — GTA$1,000,000 plus the Camo Ammu-Nation Sweatsuit. Complete three Bunker Research Missions during September 17–23.",
       "factKey": "challenge:september business rivalries:all:all",
       "startsAt": "2026-09-17T09:00:00.000Z",
       "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -206,7 +206,7 @@
       "activity": "Bunker Research & Weekly Challenge",
       "name": "Call Agent 14",
       "area": "Your phone → Contacts → Agent 14",
-      "note": "Own and set up a Bunker, then call Agent 14 and request Bunker Research. Follow the mission marker and return the research to your Bunker. For a challenge requiring these missions, buying supplies or paying to fast-track research is not a substitute.\n\nThis week: September Business Rivalries — Complete 3 Bunker Research Missions from Agent 14 to receive an extra GTA$1,000,000 and the Camo Ammu-Nation Sweatsuit.",
+      "note": "Own and set up a Bunker, then call Agent 14 and request Bunker Research. Follow the mission marker and return the research to your Bunker. For a challenge requiring these missions, buying supplies or paying to fast-track research is not a substitute.\n\nThis week: Weekly Challenge — GTA$1,000,000 plus the Camo Ammu-Nation Sweatsuit. Complete three Bunker Research Missions during September 17–23.",
       "itemIds": [
         "business-rivalries-2026-09-17"
       ],
@@ -221,7 +221,7 @@
       "activity": "Ammu-Nation Contract",
       "name": "Duneloader inside your Bunker",
       "area": "Your owned Bunker → entrance",
-      "note": "Enter your Bunker and look for the loaded Duneloader marked with a blue blip near the entrance. Get in to start the surplus-weapons delivery, then follow the route to the assigned Ammu-Nation. If no load is ready, return later.\n\nThis week: Ammu-Nation Contract — Double Rewards for Ammu-Nation Contract",
+      "note": "Enter your Bunker and look for the loaded Duneloader marked with a blue blip near the entrance. Get in to start the surplus-weapons delivery, then follow the route to the assigned Ammu-Nation. If no load is ready, return later.\n\nThis week: Ammu-Nation Contracts — 2X GTA$ and RP. Bunker required; surplus weapon deliveries start from its Duneloader.",
       "itemIds": [
         "auto-8dc3507a0923acfe65"
       ],
@@ -236,7 +236,7 @@
       "activity": "Free Property",
       "name": "Grapeseed Bunker",
       "area": "Grapeseed, Blaine County",
-      "note": "Open the in-game phone → Internet → Maze Bank Foreclosures, select the Grapeseed Bunker and check the displayed price before confirming. The offer is for this property; optional upgrades are separate. If you already own a Bunker, check the trade-in consequences before replacing it.\n\nThis week: Grapeseed Bunker — Claim for GTA$0 from Maze Bank Foreclosures.",
+      "note": "Open the in-game phone → Internet → Maze Bank Foreclosures, select the Grapeseed Bunker and check the displayed price before confirming. The offer is for this property; optional upgrades are separate. If you already own a Bunker, check the trade-in consequences before replacing it.\n\nThis week: Grapeseed Bunker — Property available for GTA$0. Claim through Maze Bank Foreclosures during the offer period.",
       "itemIds": [
         "auto-699174c83782966b29"
       ],
@@ -251,7 +251,7 @@
       "activity": "Prize Ride",
       "name": "Los Santos Car Meet",
       "area": "Cypress Flats → LS Car Meet map icon",
-      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Dinka LSCM Jester RR — Prize Ride: win an LS Car Meet race on four consecutive days.",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Dinka LSCM Jester RR — LS Car Meet Prize Ride: Dinka LSCM Jester RR. Win an LS Car Meet Series race on four consecutive days; collect through the Prize Ride menu after completing the challenge.",
       "itemIds": [
         "auto-a400f3d0728f71e168"
       ],
@@ -266,7 +266,7 @@
       "activity": "Casino Podium",
       "name": "The Diamond Casino & Resort",
       "area": "East Vinewood → Casino map icon",
-      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Vapid Dominator ASP — Casino podium: chance to win from the Lucky Wheel.",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Vapid Dominator ASP — Casino podium prize: Vapid Dominator ASP. A Lucky Wheel spin gives a chance to win; no guaranteed award. GTA+ allows two spins per 24 hours.",
       "itemIds": [
         "auto-b4ddc14564677d958f"
       ],
@@ -296,7 +296,7 @@
       "activity": "Business Battle Rewards",
       "name": "Freemode event cargo",
       "area": "Session-dependent event marker",
-      "note": "Wait for a Business Battle in Freemode, then use the event’s cargo marker and delivery destination. Pick up and deliver the crates; the route is assigned by the event, not one permanent address. Check the current reward description below.\n\nThis week: Business Battle clothing — Deliver crates for Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap or Bourgeoix Tee.",
+      "note": "Wait for a Business Battle in Freemode, then use the event’s cargo marker and delivery destination. Pick up and deliver the crates; the route is assigned by the event, not one permanent address. Check the current reward description below.\n\nThis week: Business Battle clothing — Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap and Bourgeoix Tee are available rewards. Deliver Business Battle crates during the September event.",
       "itemIds": [
         "auto-413dca2cf0fe8b167b"
       ],
@@ -311,7 +311,7 @@
       "activity": "Vehicle Discount",
       "name": "Legendary Motorsport",
       "area": "In-game phone → Internet → Legendary Motorsport",
-      "note": "Find the exact model named below and check its current price before buying. Astron Custom is the Enhanced-platform model; do not confuse it with the standard Astron. A discount does not make the car free.\n\nThis week: Pfister Astron Custom — 70% off Pfister Astron Custom (PS5, Xbox Series X|S, PC Enhanced)",
+      "note": "Find the exact model named below and check its current price before buying. Astron Custom is the Enhanced-platform model; do not confuse it with the standard Astron. A discount does not make the car free.\n\nThis week: Pfister Astron Custom — 70% off. Available from Legendary Motorsport on PC Enhanced, PS5 and Xbox Series X|S.",
       "itemIds": [
         "auto-d115a6eb91900803c5"
       ],
@@ -330,7 +330,7 @@
       "items": [
         {
           "id": "auto-8dc3507a0923acfe65",
-          "label": "Ammu-Nation Contract — Double Rewards for Ammu-Nation Contract",
+          "label": "Ammu-Nation Contracts — 2X GTA$ and RP. Bunker required; surplus weapon deliveries start from its Duneloader.",
           "factKey": "bonuses:ammu nation contract:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -340,17 +340,20 @@
           "confidence": "official",
           "sources": [
             {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
               "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
+              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
             }
           ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "entity": "Ammu-Nation Contracts",
+          "offer": "2X GTA$ and RP.",
+          "requirements": "Bunker required; surplus weapon deliveries start from its Duneloader.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-c6dd9b98360110673a",
-          "label": "Bunker Research Missions — 2X GTA$, RP, and Research Progress for Bunker Research Missions",
+          "label": "Bunker Research Missions — 2X GTA$, RP and Research Progress. Bunker required; missions are requested from Agent 14.",
           "factKey": "bonuses:bunker research missions:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -360,17 +363,20 @@
           "confidence": "official",
           "sources": [
             {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
               "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
+              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
             }
           ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "entity": "Bunker Research Missions",
+          "offer": "2X GTA$, RP and Research Progress.",
+          "requirements": "Bunker required; missions are requested from Agent 14.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-fff8c148151f68afa2",
-          "label": "Safeguard Deliveries — 2X GTA$ and RP for Safeguard Deliveries",
+          "label": "Safeguard Deliveries — 2X GTA$ and RP. Deliver security cargo from Bobcat Security or Gruppe Sechs depots.",
           "factKey": "bonuses:safeguard deliveries:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -380,13 +386,64 @@
           "confidence": "official",
           "sources": [
             {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
               "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
+              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
             }
           ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "entity": "Safeguard Deliveries",
+          "offer": "2X GTA$ and RP.",
+          "requirements": "Deliver security cargo from Bobcat Security or Gruppe Sechs depots.",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-community-missions-triple",
+          "entity": "Community Mission Series",
+          "offer": "3X GTA$ and RP.",
+          "requirements": "Community Mission Series on PC Enhanced, PS5 and Xbox Series X|S. The exact September 17 mission selection remains unverified.",
+          "label": "Community Mission Series — 3X GTA$ and RP. Community Mission Series on PC Enhanced, PS5 and Xbox Series X|S. The exact September 17 mission selection remains unverified.",
+          "startsAt": "2026-09-03T09:00:00.000Z",
+          "expiresAt": "2026-09-23T22:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+            }
+          ],
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "eligibility": "all",
+          "platform": "enhanced"
+        },
+        {
+          "id": "archive-featured-series-double",
+          "entity": "Featured Series",
+          "offer": "2X GTA$ and RP on Stockpile and Trap Door.",
+          "requirements": "Launch the Featured Series during September 17–23; no subscription required.",
+          "label": "Featured Series — 2X GTA$ and RP on Stockpile and Trap Door. Launch the Featured Series during September 17–23; no subscription required.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
         }
       ]
     },
@@ -397,7 +454,7 @@
       "items": [
         {
           "id": "business-rivalries-2026-09-17",
-          "label": "September Business Rivalries — Complete 3 Bunker Research Missions from Agent 14 to receive an extra GTA$1,000,000 and the Camo Ammu-Nation Sweatsuit.",
+          "label": "Weekly Challenge — GTA$1,000,000 plus the Camo Ammu-Nation Sweatsuit. Complete three Bunker Research Missions during September 17–23.",
           "factKey": "challenge:september business rivalries:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -412,7 +469,12 @@
             }
           ],
           "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-          "targetCount": 3
+          "targetCount": 3,
+          "entity": "Weekly Challenge",
+          "offer": "GTA$1,000,000 plus the Camo Ammu-Nation Sweatsuit.",
+          "requirements": "Complete three Bunker Research Missions during September 17–23.",
+          "eligibility": "all",
+          "platform": "all"
         }
       ]
     },
@@ -423,7 +485,7 @@
       "items": [
         {
           "id": "auto-099ca6190e89b0adf3",
-          "label": "Dolla Dolla livery — Play this week to unlock it for Avenger, Ardent, Oppressor and Oppressor Mk II; vehicles are not included.",
+          "label": "Dolla Dolla livery — Login reward for the Avenger, Ardent, Oppressor and Oppressor Mk II. Play GTA Online during September 17–23 to unlock the livery; the vehicles are separate.",
           "factKey": "free-vehicles:dolla dolla livery:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -437,11 +499,16 @@
               "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
             }
           ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "entity": "Dolla Dolla livery",
+          "offer": "Login reward for the Avenger, Ardent, Oppressor and Oppressor Mk II.",
+          "requirements": "Play GTA Online during September 17–23 to unlock the livery; the vehicles are separate.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-413dca2cf0fe8b167b",
-          "label": "Business Battle clothing — Deliver crates for Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap or Bourgeoix Tee.",
+          "label": "Business Battle clothing — Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap and Bourgeoix Tee are available rewards. Deliver Business Battle crates during the September event.",
           "factKey": "free-vehicles:business battle clothing:all:all",
           "startsAt": "2026-09-03T09:00:00.000Z",
           "expiresAt": "2026-09-30T22:00:00.000Z",
@@ -456,11 +523,16 @@
               "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
             }
           ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "entity": "Business Battle clothing",
+          "offer": "Six Figure Tee, Ride or Die Tee, Red & White Ammu-Nation Cap and Bourgeoix Tee are available rewards.",
+          "requirements": "Deliver Business Battle crates during the September event.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-699174c83782966b29",
-          "label": "Grapeseed Bunker — Claim for GTA$0 from Maze Bank Foreclosures.",
+          "label": "Grapeseed Bunker — Property available for GTA$0. Claim through Maze Bank Foreclosures during the offer period.",
           "factKey": "free-vehicles:grapeseed bunker:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -474,11 +546,16 @@
               "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
             }
           ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "entity": "Grapeseed Bunker",
+          "offer": "Property available for GTA$0.",
+          "requirements": "Claim through Maze Bank Foreclosures during the offer period.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-a400f3d0728f71e168",
-          "label": "Dinka LSCM Jester RR — Prize Ride: win an LS Car Meet race on four consecutive days.",
+          "label": "Dinka LSCM Jester RR — LS Car Meet Prize Ride: Dinka LSCM Jester RR. Win an LS Car Meet Series race on four consecutive days; collect through the Prize Ride menu after completing the challenge.",
           "factKey": "free-vehicles:dinka lscm jester rr:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -490,13 +567,23 @@
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Dinka LSCM Jester RR",
+          "offer": "LS Car Meet Prize Ride: Dinka LSCM Jester RR.",
+          "requirements": "Win an LS Car Meet Series race on four consecutive days; collect through the Prize Ride menu after completing the challenge.",
+          "eligibility": "all",
+          "platform": "all",
+          "targetCount": 4
         },
         {
           "id": "auto-b4ddc14564677d958f",
-          "label": "Vapid Dominator ASP — Casino podium: chance to win from the Lucky Wheel.",
+          "label": "Vapid Dominator ASP — Casino podium prize: Vapid Dominator ASP. A Lucky Wheel spin gives a chance to win; no guaranteed award. GTA+ allows two spins per 24 hours.",
           "factKey": "free-vehicles:vapid dominator asp:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -508,9 +595,18 @@
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Vapid Dominator ASP",
+          "offer": "Casino podium prize: Vapid Dominator ASP.",
+          "requirements": "A Lucky Wheel spin gives a chance to win; no guaranteed award. GTA+ allows two spins per 24 hours.",
+          "eligibility": "all",
+          "platform": "all"
         }
       ]
     },
@@ -520,34 +616,8 @@
       "completeness": "partial",
       "items": [
         {
-          "id": "auto-b9d815110373ec3474",
-          "label": "Grapeseed Bunker — FREE",
-          "factKey": "discounts:grapeseed bunker:all:all",
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-09-16"
-            },
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-09-17"
-            }
-          ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
-        },
-        {
           "id": "auto-d115a6eb91900803c5",
-          "label": "Pfister Astron Custom — 70% off Pfister Astron Custom (PS5, Xbox Series X|S, PC Enhanced)",
+          "label": "Pfister Astron Custom — 70% off. Available from Legendary Motorsport on PC Enhanced, PS5 and Xbox Series X|S.",
           "factKey": "discounts:pfister astron custom:all:enhanced",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
@@ -557,13 +627,42 @@
           "confidence": "official",
           "sources": [
             {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
               "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
+              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
             }
           ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "entity": "Pfister Astron Custom",
+          "offer": "70% off.",
+          "requirements": "Available from Legendary Motorsport on PC Enhanced, PS5 and Xbox Series X|S.",
+          "eligibility": "all",
+          "platform": "enhanced"
+        },
+        {
+          "id": "archive-other-discounts",
+          "entity": "Remaining weekly discounts",
+          "offer": "30% off Ocelot XA-21, Bravado Half-track, Imponte Nightshade, HVY Nightshark, Pegassi Torero, Übermacht Niobe, Vom Feuer Anti-Aircraft Trailer, Western Company Rogue, Karin Everon, Buckingham Shamal, Shitzu Hakuchou Drag, Lampadati Viseris, Principe Lectro, Grotti Bestia GTS, Albany Hermes and Schyster Deviant.",
+          "requirements": "Applies to the listed models during September 17–23; optional upgrades are separate. Grapeseed Bunker is listed once under Rewards.",
+          "label": "Remaining weekly discounts — 30% off Ocelot XA-21, Bravado Half-track, Imponte Nightshade, HVY Nightshark, Pegassi Torero, Übermacht Niobe, Vom Feuer Anti-Aircraft Trailer, Western Company Rogue, Karin Everon, Buckingham Shamal, Shitzu Hakuchou Drag, Lampadati Viseris, Principe Lectro, Grotti Bestia GTS, Albany Hermes and Schyster Deviant. Applies to the listed models during September 17–23; optional upgrades are separate. Grapeseed Bunker is listed once under Rewards.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
         }
       ]
     },
@@ -574,165 +673,232 @@
       "items": [
         {
           "id": "auto-11a7f63585d689f2f0",
-          "label": "Tear Gas — Available at the Gun Van.",
+          "label": "Tear Gas — 10% off normally; 20% off for GTA+.",
           "factKey": "gun-van:tear gas:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Tear Gas",
+          "offer": "10% off normally; 20% off for GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-4f21e1197e5805f694",
-          "label": "Tactical SMG — Available at the Gun Van; 30% off requires GTA+.",
+          "label": "Tactical SMG — 10% off normally; 30% off for GTA+ members only.",
           "factKey": "gun-van:tactical smg:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Tactical SMG",
+          "offer": "10% off normally; 30% off for GTA+ members only.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-7b560b042f42c1d5f9",
-          "label": "Stun Gun — 40% off at the Gun Van.",
+          "label": "Stun Gun — 40% off for everyone, including GTA+.",
           "factKey": "gun-van:stun gun:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Stun Gun",
+          "offer": "40% off for everyone, including GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-8696d77619f969d318",
-          "label": "Molotovs — Available at the Gun Van.",
+          "label": "Molotovs — 10% off normally; 20% off for GTA+.",
           "factKey": "gun-van:molotovs:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Molotovs",
+          "offer": "10% off normally; 20% off for GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-8b7a42c6fb65b1af8d",
-          "label": "Compact EMP Launcher — Available at the Gun Van.",
+          "label": "Compact EMP Launcher — 10% off normally; 20% off for GTA+.",
           "factKey": "gun-van:compact emp launcher:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Compact EMP Launcher",
+          "offer": "10% off normally; 20% off for GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-b29df3557b7503adb2",
-          "label": "Heavy Sniper — Available at the Gun Van.",
+          "label": "Heavy Sniper — 10% off normally; 20% off for GTA+.",
           "factKey": "gun-van:heavy sniper:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Heavy Sniper",
+          "offer": "10% off normally; 20% off for GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-bee6c3a46099969d0f",
-          "label": "Pipe Wrench — Available at the Gun Van.",
+          "label": "Pipe Wrench — 10% off normally; 20% off for GTA+.",
           "factKey": "gun-van:pipe wrench:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Pipe Wrench",
+          "offer": "10% off normally; 20% off for GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-e3f5f6fd44a4f09615",
-          "label": "Sticky Bombs — Available at the Gun Van.",
+          "label": "Sticky Bombs — 10% off normally; 20% off for GTA+.",
           "factKey": "gun-van:sticky bombs:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Sticky Bombs",
+          "offer": "10% off normally; 20% off for GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
         },
         {
           "id": "auto-e41d414a9c925735fa",
-          "label": "Pump Shotgun — Available at the Gun Van.",
+          "label": "Pump Shotgun — 10% off normally; 20% off for GTA+.",
           "factKey": "gun-van:pump shotgun:all:all",
           "startsAt": "2026-09-17T09:00:00.000Z",
           "expiresAt": "2026-09-24T09:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "corroborated",
+          "confidence": "editorial",
           "sources": [
             {
               "kind": "intel",
               "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
             }
           ],
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "entity": "Pump Shotgun",
+          "offer": "10% off normally; 20% off for GTA+.",
+          "requirements": "Gun Van stock during September 17–23; daily parking location unverified.",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-gun-van-armor",
+          "entity": "Gun Van body armor",
+          "offer": "Super Light, Light, Standard, Heavy and Super Heavy Armor: 10% off; 20% off for GTA+.",
+          "requirements": "Armor inventory belongs to September 17–23; daily Gun Van parking is not verified.",
+          "label": "Gun Van body armor — Super Light, Light, Standard, Heavy and Super Heavy Armor: 10% off; 20% off for GTA+. Armor inventory belongs to September 17–23; daily Gun Van parking is not verified.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "editorial",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
         }
       ]
     },
@@ -740,7 +906,239 @@
       "id": "other",
       "title": "Other weekly items",
       "completeness": "pending",
-      "items": []
+      "items": [
+        {
+          "id": "archive-business-rivalries-month",
+          "entity": "Business Rivalries",
+          "offer": "Weekly Challenge prizes are GTA$1,000,000 each, up to GTA$4,000,000 across four weeks.",
+          "requirements": "Each week has its own challenge. The 10X increase is for the challenge prize, not business sale payouts.",
+          "label": "Business Rivalries — Weekly Challenge prizes are GTA$1,000,000 each, up to GTA$4,000,000 across four weeks. Each week has its own challenge. The 10X increase is for the challenge prize, not business sale payouts.",
+          "startsAt": "2026-09-03T09:00:00.000Z",
+          "expiresAt": "2026-09-30T22:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+            }
+          ],
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-la-coureuse-qualification",
+          "entity": "Penaud La Coureuse qualification",
+          "offer": "Free La Coureuse and a complimentary HSW upgrade after qualifying.",
+          "requirements": "Complete at least one Weekly Challenge between September 3 and September 23.",
+          "label": "Penaud La Coureuse qualification — Free La Coureuse and a complimentary HSW upgrade after qualifying. Complete at least one Weekly Challenge between September 3 and September 23.",
+          "startsAt": "2026-09-03T09:00:00.000Z",
+          "expiresAt": "2026-09-23T22:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
+            }
+          ],
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+          "eligibility": "all",
+          "platform": "all",
+          "claim": {
+            "startsOn": "2026-09-24",
+            "endsOn": "2026-09-30",
+            "details": "Return during this claim window; the car is claimed at Legendary Motorsport. HSW upgrade applies on PC Enhanced, PS5 and Xbox Series X|S."
+          }
+        },
+        {
+          "id": "archive-test-rides",
+          "entity": "Test rides and HSW test vehicle",
+          "offer": "LS Car Meet test vehicles: Lampadati Viseris, Schyster Deviant and Grotti Bestia GTS. HSW Premium Test Ride: Bravado Banshee GTS.",
+          "requirements": "Visit the LS Car Meet test track; HSW is limited to PC Enhanced, PS5 and Xbox Series X|S. Test access does not grant ownership.",
+          "label": "Test rides and HSW test vehicle — LS Car Meet test vehicles: Lampadati Viseris, Schyster Deviant and Grotti Bestia GTS. HSW Premium Test Ride: Bravado Banshee GTS. Visit the LS Car Meet test track; HSW is limited to PC Enhanced, PS5 and Xbox Series X|S. Test access does not grant ownership.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-showrooms",
+          "entity": "Premium Deluxe Motorsport and Luxury Autos",
+          "offer": "Premium Deluxe Motorsport: Ocelot XA-21, Bravado Half-track, Imponte Nightshade, HVY Nightshark and Pegassi Torero. Luxury Autos: Pegassi Horus and Progen Luiva.",
+          "requirements": "Display vehicles available to buy during September 17–23. The five Premium Deluxe models have the separate 30% weekly discount; showroom access is not a free reward.",
+          "label": "Premium Deluxe Motorsport and Luxury Autos — Premium Deluxe Motorsport: Ocelot XA-21, Bravado Half-track, Imponte Nightshade, HVY Nightshark and Pegassi Torero. Luxury Autos: Pegassi Horus and Progen Luiva. Display vehicles available to buy during September 17–23. The five Premium Deluxe models have the separate 30% weekly discount; showroom access is not a free reward.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-salvage-yard",
+          "entity": "Salvage Yard robbery targets",
+          "offer": "The Duggan Robbery: Karin Previon. The Podium Robbery: Dinka Sugoi. The McTony Robbery: Declasse Mamba.",
+          "requirements": "Own a Salvage Yard and choose the robbery on its computer. These are robbery targets; personal claim eligibility is not verified.",
+          "label": "Salvage Yard robbery targets — The Duggan Robbery: Karin Previon. The Podium Robbery: Dinka Sugoi. The McTony Robbery: Declasse Mamba. Own a Salvage Yard and choose the robbery on its computer. These are robbery targets; personal claim eligibility is not verified.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-weekly-activities",
+          "entity": "Premium Race and time trials",
+          "offer": "Premium Race: Congestion Charge (Supers). Time Trial: Cypress Flats. HSW Time Trial: Sandy Shores to La Puerta.",
+          "requirements": "Use the appropriate race or trial marker. The Premium Race is restricted to Supers; HSW requires PC Enhanced, PS5 or Xbox Series X|S.",
+          "label": "Premium Race and time trials — Premium Race: Congestion Charge (Supers). Time Trial: Cypress Flats. HSW Time Trial: Sandy Shores to La Puerta. Use the appropriate race or trial marker. The Premium Race is restricted to Supers; HSW requires PC Enhanced, PS5 or Xbox Series X|S.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-kortz-art",
+          "entity": "Kortz Center artwork rotation",
+          "offer": "Mi O Melee; To Beat About the Bush; Hare Oneself Think.",
+          "requirements": "Primary artwork targets for The Kortz Center Heist during September 17–23. Completion-bonus details remain unverified.",
+          "label": "Kortz Center artwork rotation — Mi O Melee; To Beat About the Bush; Hare Oneself Think. Primary artwork targets for The Kortz Center Heist during September 17–23. Completion-bonus details remain unverified.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-horus-general-sale",
+          "entity": "Pegassi Horus general-sale availability and price",
+          "offer": "Pegassi Horus available to everyone from Legendary Motorsport for GTA$2,810,000 from September 17.",
+          "requirements": "General sale follows the September 10–16 GTA+ early-access week. The separate free GTA+ claim continues through October 7.",
+          "label": "Pegassi Horus general-sale availability and price — Pegassi Horus available to everyone from Legendary Motorsport for GTA$2,810,000 from September 17. General sale follows the September 10–16 GTA+ early-access week. The separate free GTA+ claim continues through October 7.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
+            },
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            },
+            {
+              "kind": "gtabase",
+              "url": "https://www.gtabase.com/vehicles/grand-theft-auto-v/horus"
+            }
+          ],
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
+          "eligibility": "all",
+          "platform": "all"
+        },
+        {
+          "id": "archive-fib-priority-file",
+          "entity": "FIB Priority File",
+          "offer": "The Brute Force File.",
+          "requirements": "Select the Priority File at the Darnell Bros Garment Factory during September 17–23.",
+          "label": "FIB Priority File — The Brute Force File. Select the Priority File at the Darnell Bros Garment Factory during September 17–23.",
+          "startsAt": "2026-09-17T09:00:00.000Z",
+          "expiresAt": "2026-09-24T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "kind": "intel",
+              "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
+            }
+          ],
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
+          "eligibility": "all",
+          "platform": "all"
+        }
+      ]
     },
     {
       "id": "gta-plus",
@@ -749,7 +1147,7 @@
       "items": [
         {
           "id": "gta-plus-2026-09-status",
-          "label": "GTA+ only: September benefits confirmed against Rockstar on September 15; valid September 10–October 7 unless a shorter period is stated.",
+          "label": "GTA+ September benefits — historical September 10–October 7 period; source checked again on 2026-10-01.",
           "tag": "limited",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
@@ -769,173 +1167,186 @@
         {
           "id": "gta-plus-2026-09-horus",
           "tag": "limited",
-          "label": "GTA+ only: claim the Pegassi Horus for free at The Vinewood Car Club with the Velvet Iris livery, through October 7. Early access ends September 16; general sale begins September 17.",
+          "label": "Pegassi Horus — Free member vehicle with the Velvet Iris livery. Active GTA+; claim at The Vinewood Car Club. The early-access week ends before this edition.",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "entity": "Pegassi Horus",
+          "offer": "Free member vehicle with the Velvet Iris livery.",
+          "requirements": "Active GTA+; claim at The Vinewood Car Club. The early-access week ends before this edition.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         },
         {
           "id": "gta-plus-2026-09-cluckin",
           "tag": "limited",
-          "label": "GTA+ only: 2X GTA$ on your first weekly completion of the Cluckin’ Bell Farm Raid finale, Scene of the Crime, September 10–October 7. No extra RP multiplier is announced.",
+          "label": "Cluckin’ Bell Farm Raid — 2X GTA$ on the first finale completed each week. Active GTA+; applies to Scene of the Crime once per week, not every replay or a blanket RP bonus.",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "entity": "Cluckin’ Bell Farm Raid",
+          "offer": "2X GTA$ on the first finale completed each week.",
+          "requirements": "Active GTA+; applies to Scene of the Crime once per week, not every replay or a blanket RP bonus.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         },
         {
           "id": "gta-plus-2026-09-production",
           "tag": "limited",
-          "label": "GTA+ only: 2X Cocaine Lockup production speed, September 10–October 7. This offer does not announce a Nightclub production bonus.",
+          "label": "Cocaine production — 2X production speed in the Cocaine Lockup. Active GTA+ and the Biker Business; the announcement does not establish a Nightclub production bonus.",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "entity": "Cocaine production",
+          "offer": "2X production speed in the Cocaine Lockup.",
+          "requirements": "Active GTA+ and the Biker Business; the announcement does not establish a Nightclub production bonus.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         },
         {
           "id": "gta-plus-2026-09-mc",
           "tag": "limited",
-          "label": "GTA+ only: 60% off Biker Business Properties, Upgrades and Modifications through October 7.",
+          "label": "Biker Businesses — 60% off properties, upgrades and modifications. Active GTA+; eligible Biker Business purchases.",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "entity": "Biker Businesses",
+          "offer": "60% off properties, upgrades and modifications.",
+          "requirements": "Active GTA+; eligible Biker Business purchases.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         },
         {
           "id": "gta-plus-2026-09-bikes",
           "tag": "limited",
-          "label": "GTA+ only: 50% off Nagasaki Shinobi, Shotaro, Stryder, Chimera and BF400 through October 7.",
+          "label": "Nagasaki motorcycles — 50% off Shinobi, Shotaro, Stryder, Chimera and BF400. Active GTA+; listed motorcycle models.",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-shotaro",
-          "tag": "limited",
-          "label": "GTA+ only: Nagasaki Shotaro is included in the confirmed 50% Nagasaki motorcycle sale through October 7.",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "editorial",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
-          "sources": [
-            {
-              "kind": "rockstar",
-              "scope": "membership",
-              "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
-            }
-          ]
+          ],
+          "entity": "Nagasaki motorcycles",
+          "offer": "50% off Shinobi, Shotaro, Stryder, Chimera and BF400.",
+          "requirements": "Active GTA+; listed motorcycle models.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         },
         {
           "id": "gta-plus-2026-09-clothes",
           "tag": "limited",
-          "label": "GTA+ only: Bigness Patchwork Revere Collar shirt and Patchwork Jeans are added to your wardrobe during September 10–October 7.",
+          "label": "Bigness Patchwork clothing — Bigness Patchwork Revere Collar shirt and Bigness Patchwork Jeans added to the wardrobe. Active GTA+ during the monthly benefit period.",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "entity": "Bigness Patchwork clothing",
+          "offer": "Bigness Patchwork Revere Collar shirt and Bigness Patchwork Jeans added to the wardrobe.",
+          "requirements": "Active GTA+ during the monthly benefit period.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         },
         {
           "id": "gta-plus-2026-09-paint",
           "tag": "limited",
-          "label": "GTA+ only: free Cyan/Red Flip Chameleon Paint and matching Wheel Paint at vehicle workshops and mod bays through October 7.",
+          "label": "Cyan/Red Flip paints — Free Chameleon body and wheel paints. Active GTA+; available at vehicle workshops and mod bays.",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "entity": "Cyan/Red Flip paints",
+          "offer": "Free Chameleon body and wheel paints.",
+          "requirements": "Active GTA+; available at vehicle workshops and mod bays.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         },
         {
           "id": "gta-plus-2026-09-bike-service",
-          "label": "GTA+ only: Bike Service Missions pay 3X GTA$ and RP through October 7; the GTA$ reward is increased to 6X during September 10–16. Clubhouse Custom Bike Shop required.",
+          "label": "Bike Service — 3X GTA$ and RP. Active GTA+ and a Clubhouse Custom Bike Shop. The September 10–16 increase has ended before this edition.",
           "tag": "limited",
           "startsAt": "2026-09-10T09:00:00.000Z",
           "expiresAt": "2026-10-07T22:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
-          "confidence": "editorial",
+          "confidence": "official",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
           "sources": [
             {
               "kind": "rockstar",
-              "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "entity": "Bike Service",
+          "offer": "3X GTA$ and RP.",
+          "requirements": "Active GTA+ and a Clubhouse Custom Bike Shop. The September 10–16 increase has ended before this edition.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced"
         }
       ]
     }
@@ -950,15 +1361,16 @@
       "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/"
     },
     {
-      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts",
       "kind": "gtabase",
-      "scope": "weekly",
-      "publishedOn": "2026-09-17"
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts"
     },
     {
       "kind": "rockstar",
-      "scope": "membership",
       "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
+    },
+    {
+      "kind": "gtabase",
+      "url": "https://www.gtabase.com/vehicles/grand-theft-auto-v/horus"
     }
   ],
   "completeness": "partial",
@@ -1051,6 +1463,6 @@
   },
   "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
   "nextBoundaryAt": "2026-09-24T09:00:00.000Z",
-  "revision": "722921af11aea2f655988bc1e7b2fde53f7f7496d3be76d2a22dcfc33db39a89",
-  "generatedAt": "2026-09-23T22:00:00.043Z"
+  "generatedAt": "2026-10-01T21:36:06.617Z",
+  "revision": "11ba438e29bfe9eb60c5f101ccf67d3d45293e7a1a13901df877ee2d3087d401"
 }

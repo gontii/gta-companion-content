@@ -4,7 +4,8 @@ import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {validatePublicWeekly,issueNumber,publicState} from '../schemas/public-weekly.mjs';
 import {preparePublicWeekly} from '../scripts/prepare-public-weekly.mjs';
-const raw=readFileSync(new URL('../weekly/public/2638.json',import.meta.url),'utf8');
+// Stała zapowiedź służy do testów historycznego zegara, niezależnie od korekt archiwum.
+const raw=readFileSync(new URL('./fixtures/public-weekly-2638-preview.json',import.meta.url),'utf8');
 // Testy historycznych stanów mają własny czas, niezależny od kolejnej korekty źródeł.
 const fixture=()=>{
   const d=JSON.parse(raw);

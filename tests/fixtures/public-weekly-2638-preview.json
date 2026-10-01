@@ -4,9 +4,9 @@
   "weekId": "2026-09-17",
   "startsOn": "2026-09-17",
   "endsOn": "2026-09-23",
-  "status": "active",
-  "verifiedAt": "2026-10-01T21:36:06.617Z",
-  "confirmedAt": "2026-10-01T21:36:06.617Z",
+  "status": "preview",
+  "verifiedAt": "2026-09-17T09:33:07.489Z",
+  "confirmedAt": null,
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -28,15 +28,13 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         },
         {
           "id": "ammu-nation-double",
           "name": "Ammu-Nation Contracts",
           "status": "confirmed",
-          "offer": "2X GTA$ and RP.",
+          "offer": "Double rewards.",
           "requirements": "Bunker required; surplus weapon deliveries start from its Duneloader.",
           "startsOn": "2026-09-17",
           "endsOn": "2026-09-23",
@@ -44,9 +42,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         },
         {
           "id": "safeguard-double",
@@ -60,42 +56,21 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         },
         {
           "id": "community-missions-triple",
           "name": "Community Mission Series",
           "status": "confirmed",
           "offer": "3X GTA$ and RP.",
-          "requirements": "Community Mission Series on PC Enhanced, PS5 and Xbox Series X|S. The exact September 17 mission selection remains unverified.",
+          "requirements": "Featured Community Missions on the platforms listed above; the September 17 selection is awaiting confirmation.",
           "startsOn": "2026-09-03",
           "endsOn": "2026-09-23",
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-03T09:00:00.000Z",
-          "expiresAt": "2026-09-23T22:00:00.000Z"
-        },
-        {
-          "id": "featured-series-double",
-          "name": "Featured Series",
-          "status": "confirmed",
-          "offer": "2X GTA$ and RP on Stockpile and Trap Door.",
-          "requirements": "Launch the Featured Series during September 17–23; no subscription required.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         }
       ]
     },
@@ -114,9 +89,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         },
         {
           "id": "business-rivalries-2026-09-17",
@@ -130,10 +103,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "targetCount": 3,
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         },
         {
           "id": "dolla-dolla-livery",
@@ -147,9 +117,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         }
       ]
     },
@@ -168,26 +136,19 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         },
         {
           "id": "other-discounts",
           "name": "Remaining weekly discounts",
-          "status": "confirmed",
-          "offer": "30% off Ocelot XA-21, Bravado Half-track, Imponte Nightshade, HVY Nightshark, Pegassi Torero, Übermacht Niobe, Vom Feuer Anti-Aircraft Trailer, Western Company Rogue, Karin Everon, Buckingham Shamal, Shitzu Hakuchou Drag, Lampadati Viseris, Principe Lectro, Grotti Bestia GTS, Albany Hermes and Schyster Deviant.",
-          "requirements": "Applies to the listed models during September 17–23; optional upgrades are separate. Grapeseed Bunker is listed once under Rewards.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          "sourceIds": []
         }
       ]
     },
@@ -206,9 +167,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-03T09:00:00.000Z",
-          "expiresAt": "2026-09-30T22:00:00.000Z"
+          ]
         },
         {
           "id": "la-coureuse-qualification",
@@ -226,9 +185,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-03T09:00:00.000Z",
-          "expiresAt": "2026-09-23T22:00:00.000Z"
+          ]
         },
         {
           "id": "business-battle-clothing",
@@ -242,9 +199,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "business-rivalries"
-          ],
-          "startsAt": "2026-09-03T09:00:00.000Z",
-          "expiresAt": "2026-09-30T22:00:00.000Z"
+          ]
         }
       ]
     },
@@ -262,10 +217,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         },
         {
           "id": "gta-plus-2026-09-cluckin",
@@ -278,10 +232,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         },
         {
           "id": "gta-plus-2026-09-bike-service",
@@ -294,10 +247,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         },
         {
           "id": "gta-plus-2026-09-production",
@@ -310,10 +262,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         },
         {
           "id": "gta-plus-2026-09-mc",
@@ -326,10 +277,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         },
         {
           "id": "gta-plus-2026-09-bikes",
@@ -342,10 +292,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         },
         {
           "id": "gta-plus-2026-09-paint",
@@ -358,26 +307,24 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         },
         {
           "id": "gta-plus-2026-09-clothes",
           "name": "Bigness Patchwork clothing",
           "status": "confirmed",
-          "offer": "Bigness Patchwork Revere Collar shirt and Bigness Patchwork Jeans added to the wardrobe.",
+          "offer": "Revere Collar shirt and Jeans added to the wardrobe.",
           "requirements": "Active GTA+ during the monthly benefit period.",
           "startsOn": "2026-09-10",
           "endsOn": "2026-10-07",
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "september-gta-plus"
-          ],
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z"
+            "september-gta-plus",
+            "gta-plus-benefits"
+          ]
         }
       ]
     },
@@ -388,62 +335,50 @@
           "id": "podium-vehicle",
           "name": "Vapid Dominator ASP",
           "status": "confirmed",
-          "offer": "Casino podium prize: Vapid Dominator ASP.",
-          "requirements": "A Lucky Wheel spin gives a chance to win; no guaranteed award. GTA+ allows two spins per 24 hours.",
+          "offer": "Casino podium prize.",
+          "requirements": "A Lucky Wheel spin gives a chance to win; no guaranteed award.",
           "startsOn": "2026-09-17",
           "endsOn": "2026-09-23",
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
             "intel-sep17",
-            "igta-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+            "igta-sep17"
+          ]
         },
         {
           "id": "prize-ride",
           "name": "Dinka LSCM Jester RR",
           "status": "confirmed",
-          "offer": "LS Car Meet Prize Ride: Dinka LSCM Jester RR.",
-          "requirements": "Win an LS Car Meet Series race on four consecutive days; collect through the Prize Ride menu after completing the challenge.",
+          "offer": "LS Car Meet Prize Ride.",
+          "requirements": "Win an LS Car Meet race on four consecutive days.",
           "startsOn": "2026-09-17",
           "endsOn": "2026-09-23",
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
             "intel-sep17",
-            "igta-sep17",
-            "gtabase-sep17"
-          ],
-          "targetCount": 4,
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+            "igta-sep17"
+          ]
         },
         {
           "id": "test-rides",
           "name": "Test rides and HSW test vehicle",
-          "status": "confirmed",
-          "offer": "LS Car Meet test vehicles: Lampadati Viseris, Schyster Deviant and Grotti Bestia GTS. HSW Premium Test Ride: Bravado Banshee GTS.",
-          "requirements": "Visit the LS Car Meet test track; HSW is limited to PC Enhanced, PS5 and Xbox Series X|S. Test access does not grant ownership.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          "sourceIds": []
         },
         {
           "id": "gun-van",
           "name": "Gun Van stock and discounts",
           "status": "confirmed",
-          "offer": "Compact EMP Launcher, Heavy Sniper, Pump Shotgun, Pipe Wrench, Tactical SMG, Stun Gun, Tear Gas, Sticky Bombs and Molotovs. Stun Gun: 40% off for everyone.",
-          "requirements": "Tactical SMG: 10% off normally; 30% off for GTA+ members only. Other listed weapons and throwables: 10% normally, 20% for GTA+. The Stun Gun member discount remains 40%. Daily parking location is unverified.",
+          "offer": "Compact EMP Launcher, Heavy Sniper, Pump Shotgun, Pipe Wrench, Tactical SMG, Stun Gun, Tear Gas, Sticky Bombs and Molotovs. Stun Gun: 40% off.",
+          "requirements": "Tactical SMG: 30% off for GTA+ members only; the weapon itself is available to everyone.",
           "startsOn": "2026-09-17",
           "endsOn": "2026-09-23",
           "claim": null,
@@ -451,156 +386,59 @@
           "sourceIds": [
             "intel-sep17",
             "igta-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          ]
         },
         {
           "id": "showrooms",
           "name": "Premium Deluxe Motorsport and Luxury Autos",
-          "status": "confirmed",
-          "offer": "Premium Deluxe Motorsport: Ocelot XA-21, Bravado Half-track, Imponte Nightshade, HVY Nightshark and Pegassi Torero. Luxury Autos: Pegassi Horus and Progen Luiva.",
-          "requirements": "Display vehicles available to buy during September 17–23. The five Premium Deluxe models have the separate 30% weekly discount; showroom access is not a free reward.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          "sourceIds": []
         },
         {
           "id": "salvage-yard",
-          "name": "Salvage Yard robbery targets",
-          "status": "confirmed",
-          "offer": "The Duggan Robbery: Karin Previon. The Podium Robbery: Dinka Sugoi. The McTony Robbery: Declasse Mamba.",
-          "requirements": "Own a Salvage Yard and choose the robbery on its computer. These are robbery targets; personal claim eligibility is not verified.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
+          "name": "Salvage Yard Robberies and claimable vehicles",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          "sourceIds": []
         },
         {
           "id": "weekly-activities",
-          "name": "Premium Race and time trials",
-          "status": "confirmed",
-          "offer": "Premium Race: Congestion Charge (Supers). Time Trial: Cypress Flats. HSW Time Trial: Sandy Shores to La Puerta.",
-          "requirements": "Use the appropriate race or trial marker. The Premium Race is restricted to Supers; HSW requires PC Enhanced, PS5 or Xbox Series X|S.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
+          "name": "Featured modes, Community Mission selection and time trials",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          "sourceIds": []
         },
         {
           "id": "kortz-art",
           "name": "Kortz Center artwork rotation",
-          "status": "confirmed",
-          "offer": "Mi O Melee; To Beat About the Bush; Hare Oneself Think.",
-          "requirements": "Primary artwork targets for The Kortz Center Heist during September 17–23. Completion-bonus details remain unverified.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "gtabase-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
+          "sourceIds": []
         },
         {
           "id": "horus-general-sale",
           "name": "Pegassi Horus general-sale availability and price",
-          "status": "confirmed",
-          "offer": "Pegassi Horus available to everyone from Legendary Motorsport for GTA$2,810,000 from September 17.",
-          "requirements": "General sale follows the September 10–16 GTA+ early-access week. The separate free GTA+ claim continues through October 7.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "september-gta-plus",
-            "intel-sep17",
-            "gtabase-horus"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
-        },
-        {
-          "id": "gun-van-armor",
-          "name": "Gun Van body armor",
-          "status": "confirmed",
-          "offer": "Super Light, Light, Standard, Heavy and Super Heavy Armor: 10% off; 20% off for GTA+.",
-          "requirements": "Armor inventory belongs to September 17–23; daily Gun Van parking is not verified.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
-        },
-        {
-          "id": "fib-priority-file",
-          "name": "FIB Priority File",
-          "status": "confirmed",
-          "offer": "The Brute Force File.",
-          "requirements": "Select the Priority File at the Darnell Bros Garment Factory during September 17–23.",
-          "startsOn": "2026-09-17",
-          "endsOn": "2026-09-23",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "intel-sep17",
-            "igta-sep17"
-          ],
-          "startsAt": "2026-09-17T09:00:00.000Z",
-          "expiresAt": "2026-09-24T09:00:00.000Z"
-        },
-        {
-          "id": "community-mission-selection",
-          "name": "Exact Community Mission selection",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": []
-        },
-        {
-          "id": "salvage-yard-claimability",
-          "name": "Salvage Yard personal vehicle claims",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": []
-        },
-        {
-          "id": "kortz-completion-bonuses",
-          "name": "Kortz Center first-completion reset and no-death bonus",
           "status": "pending",
           "offer": null,
           "requirements": null,
@@ -618,13 +456,13 @@
       "id": "business-rivalries",
       "title": "Rockstar: September Business Rivalries schedule",
       "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-      "verifiedAt": "2026-10-01T21:36:06.617Z"
+      "verifiedAt": "2026-09-17T06:47:24.750Z"
     },
     {
       "id": "september-gta-plus",
       "title": "Rockstar: September GTA+ announcement",
       "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
-      "verifiedAt": "2026-10-01T21:36:06.617Z"
+      "verifiedAt": "2026-09-17T06:47:25.153Z"
     },
     {
       "id": "gta-plus-benefits",
@@ -636,27 +474,13 @@
       "id": "intel-sep17",
       "title": "RockstarINTEL: September 17–23",
       "url": "https://rockstarintel.com/gta-online-event-week-new-car-and-rewards-september-17th-23rd/",
-      "verifiedAt": "2026-10-01T21:36:06.617Z"
+      "verifiedAt": "2026-09-17T09:33:07.489Z"
     },
     {
       "id": "igta-sep17",
       "title": "iGrandTheftAuto: September 17–23",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026",
-      "verifiedAt": "2026-10-01T21:36:06.617Z"
-    },
-    {
-      "id": "gtabase-sep17",
-      "title": "GTABase: September 17–23 rotations and discounts",
-      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-17-23-business-rivalries-event-3rd-week-bonuses-discounts",
-      "verifiedAt": "2026-10-01T21:36:06.617Z"
-    },
-    {
-      "id": "gtabase-horus",
-      "title": "GTABase: Horus price and general-sale date",
-      "url": "https://www.gtabase.com/vehicles/grand-theft-auto-v/horus",
-      "verifiedAt": "2026-10-01T21:36:06.617Z"
+      "verifiedAt": "2026-09-17T09:33:07.489Z"
     }
-  ],
-  "startsAt": "2026-09-17T09:00:00.000Z",
-  "expiresAt": "2026-09-24T09:00:00.000Z"
+  ]
 }

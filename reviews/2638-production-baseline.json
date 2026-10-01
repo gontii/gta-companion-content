@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-01T21:42:10.639Z",
+  "values": [
+    {
+      "key": "weekly:public",
+      "status": 200,
+      "sha256": "39f039bb0b046d890b593901997f82111321e88cf9d0de2c4ed7df1a0fd5e305",
+      "revision": "551ee51ac383fee3f2d301e0b17505a6705434854e59d0048e48b4f7dccd72de",
+      "issue": "2640",
+      "weekId": "2026-10-01"
+    },
+    {
+      "key": "weekly:latest",
+      "status": 200,
+      "sha256": "f67426400d6309910e67caf8407620ccced058ef72cd6a2bcda4e1600839c035",
+      "revision": "551ee51ac383fee3f2d301e0b17505a6705434854e59d0048e48b4f7dccd72de",
+      "weekId": "2026-10-01"
+    },
+    {
+      "key": "weekly:public:2638",
+      "status": 200,
+      "sha256": "61124955d26bce215c4b7a9ecd80d7680f4534c5ea04c5dec2a88b17b52f0e73",
+      "issue": "2638",
+      "weekId": "2026-09-17"
+    }
+  ]
+}

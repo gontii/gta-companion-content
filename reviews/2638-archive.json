@@ -1,0 +1,162 @@
+{
+  "status": "zatwierdzone",
+  "publicSha256": "a23a48d6431d846e4b61102f7b4e39b4ae7fcf9ffe205e99c05d38bd51e38d44",
+  "appSha256": "86d551dfdf4865e28fc21f4e64b574f2379a7e2499758cb675ce49c1c2d26abe",
+  "reviewedAt": "2026-10-01T21:39:30.295Z",
+  "checkedFactIds": [
+    "bunker-research-double",
+    "ammu-nation-double",
+    "safeguard-double",
+    "community-missions-triple",
+    "featured-series-double",
+    "grapeseed-bunker-free",
+    "business-rivalries-2026-09-17",
+    "dolla-dolla-livery",
+    "astron-custom-70",
+    "other-discounts",
+    "business-rivalries-month",
+    "la-coureuse-qualification",
+    "business-battle-clothing",
+    "gta-plus-2026-09-horus",
+    "gta-plus-2026-09-cluckin",
+    "gta-plus-2026-09-bike-service",
+    "gta-plus-2026-09-production",
+    "gta-plus-2026-09-mc",
+    "gta-plus-2026-09-bikes",
+    "gta-plus-2026-09-paint",
+    "gta-plus-2026-09-clothes",
+    "podium-vehicle",
+    "prize-ride",
+    "test-rides",
+    "gun-van",
+    "showrooms",
+    "salvage-yard",
+    "weekly-activities",
+    "kortz-art",
+    "horus-general-sale",
+    "gun-van-armor",
+    "fib-priority-file"
+  ],
+  "pendingFactIds": [
+    "community-mission-selection",
+    "salvage-yard-claimability",
+    "kortz-completion-bonuses"
+  ],
+  "appFactIdsByPublicId": {
+    "bunker-research-double": [
+      "auto-c6dd9b98360110673a"
+    ],
+    "ammu-nation-double": [
+      "auto-8dc3507a0923acfe65"
+    ],
+    "safeguard-double": [
+      "auto-fff8c148151f68afa2"
+    ],
+    "grapeseed-bunker-free": [
+      "auto-699174c83782966b29"
+    ],
+    "business-rivalries-2026-09-17": [
+      "business-rivalries-2026-09-17"
+    ],
+    "dolla-dolla-livery": [
+      "auto-099ca6190e89b0adf3"
+    ],
+    "astron-custom-70": [
+      "auto-d115a6eb91900803c5"
+    ],
+    "business-battle-clothing": [
+      "auto-413dca2cf0fe8b167b"
+    ],
+    "podium-vehicle": [
+      "auto-b4ddc14564677d958f"
+    ],
+    "prize-ride": [
+      "auto-a400f3d0728f71e168"
+    ],
+    "gun-van": [
+      "auto-11a7f63585d689f2f0",
+      "auto-4f21e1197e5805f694",
+      "auto-7b560b042f42c1d5f9",
+      "auto-8696d77619f969d318",
+      "auto-8b7a42c6fb65b1af8d",
+      "auto-b29df3557b7503adb2",
+      "auto-bee6c3a46099969d0f",
+      "auto-e3f5f6fd44a4f09615",
+      "auto-e41d414a9c925735fa"
+    ],
+    "community-missions-triple": [
+      "archive-community-missions-triple"
+    ],
+    "featured-series-double": [
+      "archive-featured-series-double"
+    ],
+    "other-discounts": [
+      "archive-other-discounts"
+    ],
+    "business-rivalries-month": [
+      "archive-business-rivalries-month"
+    ],
+    "la-coureuse-qualification": [
+      "archive-la-coureuse-qualification"
+    ],
+    "gta-plus-2026-09-horus": [
+      "gta-plus-2026-09-horus"
+    ],
+    "gta-plus-2026-09-cluckin": [
+      "gta-plus-2026-09-cluckin"
+    ],
+    "gta-plus-2026-09-bike-service": [
+      "gta-plus-2026-09-bike-service"
+    ],
+    "gta-plus-2026-09-production": [
+      "gta-plus-2026-09-production"
+    ],
+    "gta-plus-2026-09-mc": [
+      "gta-plus-2026-09-mc"
+    ],
+    "gta-plus-2026-09-bikes": [
+      "gta-plus-2026-09-bikes"
+    ],
+    "gta-plus-2026-09-paint": [
+      "gta-plus-2026-09-paint"
+    ],
+    "gta-plus-2026-09-clothes": [
+      "gta-plus-2026-09-clothes"
+    ],
+    "test-rides": [
+      "archive-test-rides"
+    ],
+    "showrooms": [
+      "archive-showrooms"
+    ],
+    "salvage-yard": [
+      "archive-salvage-yard"
+    ],
+    "weekly-activities": [
+      "archive-weekly-activities"
+    ],
+    "kortz-art": [
+      "archive-kortz-art"
+    ],
+    "horus-general-sale": [
+      "archive-horus-general-sale"
+    ],
+    "gun-van-armor": [
+      "archive-gun-van-armor"
+    ],
+    "fib-priority-file": [
+      "archive-fib-priority-file"
+    ]
+  },
+  "removedDuplicateIds": [
+    "auto-b9d815110373ec3474",
+    "gta-plus-2026-09-shotaro"
+  ],
+  "scope": "Odbiór redakcyjny archiwum 2638; publikacja oczekuje na osobną zgodę Przemka. Dokument aplikacji jest wyłącznie historyczny.",
+  "limitations": [
+    "Pełny cennik Gun Van i pancerze mają jedno odczytane źródło: RockstarINTEL; ceny oznaczono w dokumencie aplikacji jako editorial.",
+    "GTABase powiela zapowiedź wcześniejszego dostępu Horus w tekście tygodniowym; datę sprzedaży uzgodniono z Rockstar i kartą pojazdu.",
+    "Artykuły Rockstar odczytano przez istniejący GraphQL; brak osobnego tygodniowego artykułu 17.09 w aktualnej liście.",
+    "Trzy oczekujące fakty i dzienny postój Gun Van nie są domyślnie potwierdzone."
+  ]
+}
