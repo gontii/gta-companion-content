@@ -213,7 +213,6 @@ export class PublicationEngine {
       if (merged) {
         master = rebuildWeeklyLocations(merged, now);
         validateSnapshot(master);
-        await this.store.put('master', master);
         // The master owns its subtree, including removed/replaced item ids. Old revisions
         // must not leave orphan alarms; future facts are added again below.
         const ownedRoots = [`${master.weekId}/`, `${master.weekId}:`, ...(master.seasonalEvent ? [`${master.seasonalEvent.id}/`] : [])];
@@ -233,7 +232,6 @@ export class PublicationEngine {
           // Each document is a separate SQLite row, below the per-value limit.
           for (let i = 0; i < bundle.values.length; i++) await this.store.put(`bundle:${revision}:${i}`, bundle.values[i]);
           const { values, ...manifest } = bundle;
-          await this.store.put('pending-bundle', { ...manifest, step: 0 });
           // Preserve coordinator data together with previous documents; restoring only
           // KV would let the next alarm immediately republish the broken state.
           const previous = await this.store.get('bundle-manifest');
@@ -247,8 +245,10 @@ export class PublicationEngine {
             await this.store.put(key, fact); previousKeys.push(key);
           }
           await this.store.put('previous-fact-keys', previousKeys);
+          await this.store.put('pending-bundle', { ...manifest, step: 0 });
           await this.store.put('previous-publication', publication || null);
         }
+        await this.store.put('master', master);
         state.candidateRevision = revision;
       }
       // Finish an older write-ahead record during the upgrade, through both channels.
@@ -261,6 +261,18 @@ export class PublicationEngine {
       }
       const pending = await this.store.get('pending-bundle');
       if (pending && this.env.PUBLICATION_MODE === 'publish') {
+        // The old current edition may never have had its own article key. Keep
+        // every link in the new index readable before exposing that index.
+        if (!pending.archivesSaved) {
+          const oldPage = await this.store.get('previous-public-page');
+          const oldEditions = oldPage?.current ? [oldPage.current] : oldPage?.editions || (oldPage?.issue ? [oldPage] : []);
+          for (const edition of oldEditions.filter(e => e.endsOn < pending.weekId)) {
+            const key = `weekly:public:${edition.issue}`;
+            if (!await this.env.CONTENT_KV.get(key)) await this.env.CONTENT_KV.put(key, JSON.stringify(edition));
+          }
+          pending.archivesSaved = true;
+          await this.store.put('pending-bundle', pending);
+        }
         for (let i = pending.step; i < pending.writes.length; i++) {
           const payload = await this.store.get(`bundle:${pending.revision}:${i}`);
           if (!payload || await hash(payload) !== pending.writes[i].digest) throw new Error('publication_bundle_corrupted');
@@ -308,7 +320,7 @@ export class PublicationEngine {
         verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString() }));
       const currentWeek = thursdayWeekId(new Date(now));
       const expectedAt = atLocal(currentWeek, 11 * 60);
-      const missing = !master || master.weekId < currentWeek || !projectContent(master, now).sections.some(s => ['bonuses', 'discounts'].includes(s.id) && s.items.length);
+      const missing = !master || master.weekId < currentWeek || !projectContent(master, now).sections.filter(s => !['gta-plus', 'dlc'].includes(s.id)).flatMap(s => s.items).some(i => Date.parse(i.startsAt) >= expectedAt && Date.parse(i.expiresAt) <= atLocal(new Date(Date.parse(currentWeek) + 7 * DAY).toISOString().slice(0, 10), 660));
       state.awaitingOfficial = !state.sources?.some(s => s.kind === 'rockstar' && s.scope === 'weekly' && s.current && s.facts > 0);
       state.pending = missing || state.awaitingOfficial;
       state.expectedAt = new Date(expectedAt).toISOString();

@@ -100,3 +100,11 @@ test('rollback restores the coordinator and both channels and holds automatic pu
  await assert.rejects(engine.rollback('wrong'),/revision_changed/);await engine.rollback(current.revision);assert.equal(kv.get('weekly:latest').revision,old.revision);assert.equal(kv.get('weekly:public').current.weekId,old.weekId);
  assert.equal((await storage.get('master')).revision,old.revision);await engine.alarm();assert.equal(kv.get('weekly:latest').revision,old.revision);assert.equal(await storage.get('publication-paused'),true);
 });
+test('a new membership period plus carryover monthly bonuses cannot turn freshness green',async()=>{
+ const next=Date.parse('2026-10-08T12:00:00Z');
+ const monthly={...f,startsOn:'2026-10-01',endsOn:'2026-10-31',windowPolicy:'independent'};
+ const member={...f,section:'gta-plus',eligibility:'gta-plus',startsOn:'2026-10-08',endsOn:'2026-11-04'};
+ const app=await snapshot([monthly,member],next);const [article,,page]=(await createBundle(app,null,next)).values;
+ const h=inspectContentStatus({app,page,article,receipt:{weekId:app.weekId,verifiedRevision:app.revision,verifiedAt:new Date(next).toISOString()}},next);
+ assert.equal(h.current,false);assert.equal(h.alarm,true);assert.ok(h.reasons.includes('app_week_not_current'));
+});

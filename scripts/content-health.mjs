@@ -13,9 +13,10 @@ export function inspectContentStatus({ app, page, article, receipt }, now = Date
   catch { reasons.push('public_document_invalid'); }
   let projected;
   try { projected = app && projectContent(app, now); } catch { reasons.push('app_document_invalid'); }
-  const appFacts = projected?.sections?.filter(s => s.id !== 'gta-plus').flatMap(s => s.items) || [];
+  const weeklyWindow = i => i.startsAt && i.expiresAt && Date.parse(i.startsAt) >= expectedAt && Date.parse(i.expiresAt) <= atLocal(addDays(expectedWeek, 7), 660);
+  const appFacts = projected?.sections?.filter(s => !['gta-plus', 'dlc'].includes(s.id)).flatMap(s => s.items).filter(weeklyWindow) || [];
   const currentApp = app?.weekId === expectedWeek && now >= Date.parse(app.startsAt) && now < Date.parse(app.expiresAt) && appFacts.length > 0;
-  const publicFacts = edition?.sections?.filter(s => s.id !== 'gta-plus').flatMap(s => s.items).filter(i => i.status === 'confirmed' && i.startsAt && now >= Date.parse(i.startsAt) && now < Date.parse(i.expiresAt)) || [];
+  const publicFacts = edition?.sections?.filter(s => s.id !== 'gta-plus').flatMap(s => s.items).filter(i => i.status === 'confirmed' && weeklyWindow(i) && now >= Date.parse(i.startsAt) && now < Date.parse(i.expiresAt)) || [];
   const currentPublic = edition?.weekId === expectedWeek && edition.status === 'active' && publicFacts.length > 0 && now < Date.parse(edition.expiresAt);
   if (!currentApp) reasons.push('app_week_not_current');
   if (!currentPublic) reasons.push('public_week_not_current');
