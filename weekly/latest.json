@@ -2,18 +2,13 @@
   "schemaVersion": 2,
   "weekId": "2026-09-24",
   "range": "2026-09-24 – 2026-09-30",
-  "headline": "This week in GTA Online",
+  "headline": "New event details are being checked",
   "startsAt": "2026-09-24T09:00:00.000Z",
   "expiresAt": "2026-10-01T09:00:00.000Z",
   "originalZone": "Europe/Warsaw",
   "precision": "date",
   "timingConfidence": "estimated",
-  "quickTake": [
-    "Nightclub Management Missions — 2X Popularity for Nightclub Management Missions",
-    "Nightclub Goods Missions — 2X GTA$ and RP for Nightclub Goods Missions",
-    "QuickiePharm Deliveries — 2X GTA$ and RP for QuickiePharm Deliveries",
-    "September Business Rivalries — Sell GTA$1,000,000 across all businesses to receive an extra GTA$1,000,000 and the Retro Fruit Tracksuit."
-  ],
+  "quickTake": [],
   "quickTakeEntries": [
     {
       "id": "auto-140f753d3770615a28",
@@ -106,191 +101,20 @@
       ]
     }
   ],
-  "beginnerPath": [
-    {
-      "id": "bp-auto-140f753d3770615a28",
-      "label": "Nightclub Management Missions — 2X Popularity for Nightclub Management Missions",
-      "factKey": "bonuses:nightclub management missions:all:all",
-      "startsAt": "2026-09-24T09:00:00.000Z",
-      "expiresAt": "2026-10-01T09:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-09-03"
-        }
-      ],
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-      "itemIds": [
-        "auto-140f753d3770615a28"
-      ]
-    },
-    {
-      "id": "bp-auto-1d676d29912268443b",
-      "label": "Nightclub Goods Missions — 2X GTA$ and RP for Nightclub Goods Missions",
-      "factKey": "bonuses:nightclub goods missions:all:all",
-      "startsAt": "2026-09-24T09:00:00.000Z",
-      "expiresAt": "2026-10-01T09:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-09-03"
-        }
-      ],
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-      "itemIds": [
-        "auto-1d676d29912268443b"
-      ]
-    },
-    {
-      "id": "bp-auto-ad731fe9dbaf732aea",
-      "label": "QuickiePharm Deliveries — 2X GTA$ and RP for QuickiePharm Deliveries",
-      "factKey": "bonuses:quickiepharm deliveries:all:all",
-      "startsAt": "2026-09-24T09:00:00.000Z",
-      "expiresAt": "2026-10-01T09:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-09-03"
-        }
-      ],
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-      "itemIds": [
-        "auto-ad731fe9dbaf732aea"
-      ]
-    },
-    {
-      "id": "bp-business-rivalries-2026-09-24",
-      "label": "September Business Rivalries — Sell GTA$1,000,000 across all businesses to receive an extra GTA$1,000,000 and the Retro Fruit Tracksuit.",
-      "factKey": "challenge:september business rivalries:all:all",
-      "startsAt": "2026-09-24T09:00:00.000Z",
-      "expiresAt": "2026-10-01T09:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "kind": "rockstar",
-          "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        }
-      ],
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-      "itemIds": [
-        "business-rivalries-2026-09-24"
-      ]
-    }
-  ],
+  "beginnerPath": [],
   "locations": [],
   "sections": [
     {
       "id": "bonuses",
       "title": "Best bonuses",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "auto-140f753d3770615a28",
-          "label": "Nightclub Management Missions — 2X Popularity for Nightclub Management Missions",
-          "factKey": "bonuses:nightclub management missions:all:all",
-          "startsAt": "2026-09-24T09:00:00.000Z",
-          "expiresAt": "2026-10-01T09:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        },
-        {
-          "id": "auto-1d676d29912268443b",
-          "label": "Nightclub Goods Missions — 2X GTA$ and RP for Nightclub Goods Missions",
-          "factKey": "bonuses:nightclub goods missions:all:all",
-          "startsAt": "2026-09-24T09:00:00.000Z",
-          "expiresAt": "2026-10-01T09:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        },
-        {
-          "id": "auto-ad731fe9dbaf732aea",
-          "label": "QuickiePharm Deliveries — 2X GTA$ and RP for QuickiePharm Deliveries",
-          "factKey": "bonuses:quickiepharm deliveries:all:all",
-          "startsAt": "2026-09-24T09:00:00.000Z",
-          "expiresAt": "2026-10-01T09:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "business-rivalries-2026-09-24",
-          "label": "September Business Rivalries — Sell GTA$1,000,000 across all businesses to receive an extra GTA$1,000,000 and the Retro Fruit Tracksuit.",
-          "factKey": "challenge:september business rivalries:all:all",
-          "startsAt": "2026-09-24T09:00:00.000Z",
-          "expiresAt": "2026-10-01T09:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "kind": "rockstar",
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "free-vehicles",
@@ -301,29 +125,8 @@
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "auto-1a4c0b15697b844f7c",
-          "label": "Imponte Arbiter GT — 70% off Imponte Arbiter GT (PS5, Xbox Series X|S, PC Enhanced)",
-          "factKey": "discounts:imponte arbiter gt:all:enhanced",
-          "startsAt": "2026-09-24T09:00:00.000Z",
-          "expiresAt": "2026-10-01T09:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-09-03"
-            }
-          ],
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "gun-van",
@@ -548,7 +351,7 @@
   ],
   "completeness": "partial",
   "sourceUrl": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
-  "nextBoundaryAt": "2026-10-01T09:00:00.000Z",
-  "revision": "12132d9f77e9d5602c57068c0309d0c4ef4ed347e110e5955e0c5a7649a3a19a",
-  "generatedAt": "2026-09-30T22:00:00.044Z"
+  "nextBoundaryAt": "2026-10-07T22:00:00.000Z",
+  "revision": "7eab8ce3df0c6bc2df6f4455a87cc11673dde912754e15822ad0da66c196ede9",
+  "generatedAt": "2026-10-01T09:00:00.055Z"
 }
