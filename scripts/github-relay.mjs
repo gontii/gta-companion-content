@@ -104,8 +104,19 @@ console.log(JSON.stringify({ mode: status.mode, revision: status.publishedRevisi
   lastSourceCheckAt: status.lastSourceCheckAt, lastError: status.lastError, nextReason: status.nextReason,
   sources: status.sources, sourceFailures: status.sourceFailures,
   aiBudget: status.aiBudget, extraction: status.extraction,
-  ...(process.env.INSPECT_CANDIDATE === 'true' ? { candidate: status.candidate, approvedFacts: status.approvedFacts } : {}),
+  candidateSummary: status.candidate ? { weekId: status.candidate.weekId, revision: status.candidate.revision,
+    sections: status.candidate.sections.map(s => ({ id: s.id, items: s.items.length })), locations: status.candidate.locations.length } : null,
+  approvedFactsCount: status.approvedFacts?.length || 0,
+  apiAccessCheck: status.apiAccessCheck || null,
   tggProbe: status.tggProbe ? { checkedAt: status.tggProbe.checkedAt, source: status.tggProbe.source, facts: status.tggProbe.facts?.length, factPreview: status.tggProbe.facts, rejected: status.tggProbe.rejected, error: status.tggProbe.error, retryAt: status.tggProbe.retryAt } : null,
   tggDiscovery: status.tggDiscovery,
   transcriptCheck: status.transcriptCheck ? Object.fromEntries(Object.entries(status.transcriptCheck).filter(([key]) => key !== 'sample')) : null,
   copied: entries.length, incidents: incidents.length }));
+// Keep every diagnostic record below GitHub's single-line log limit. A complete
+// candidate plus all retained facts can otherwise disappear from the run log.
+if (process.env.INSPECT_CANDIDATE === 'true') {
+  for (const section of status.candidate?.sections || []) for (const item of section.items) {
+    console.log(JSON.stringify({ inspection: 'candidate-item', weekId: status.candidate.weekId, section: section.id, item }));
+  }
+  for (const fact of status.approvedFacts || []) console.log(JSON.stringify({ inspection: 'approved-fact', fact }));
+}
