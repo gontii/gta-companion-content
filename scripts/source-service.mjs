@@ -1,9 +1,21 @@
+import { extractWeeklyRotations } from './weekly-rotations.mjs';
+import { resolveIgtaSource, resolveGtaBossSource, resolveRedditSource } from './additional-sources.mjs';
 import { extractRockstarFacts } from './rockstar-facts.mjs';
 import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText } from './weekly-core.mjs';
 import { articleDocument, hash, validateFacts, FACT_VALIDATION_VERSION } from './facts.mjs';
 import { safeFetch, readBounded } from './http.mjs';
 import { AiBudget } from './ai-budget.mjs';
 import { DAY, localParts, windowFromDays } from './temporal.mjs';
+
+export const WEBSITE_SOURCES = [
+  ['rockstar', resolveRockstarNewswireSource, 'weekly'],
+  ['intel', resolveRockstarIntelSource, 'weekly'],
+  ['gtabase', resolveGtabaseSource, 'weekly'],
+  ['rockstar', resolveRockstarMonthlySource, 'membership'],
+  ['igta', resolveIgtaSource, 'weekly'],
+  ['gtaboss', resolveGtaBossSource, 'weekly'],
+  ['reddit', resolveRedditSource, 'weekly'],
+];
 
 export const TGG_CHANNEL = 'UC72PuhDwKtZ5MikpGNhPAtA';
 export const AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -110,9 +122,9 @@ export class SourceService {
       sample: extracted.facts.slice(0, 5).map(({entity, offer, startsOn, endsOn}) => ({entity, offer, startsOn, endsOn})),
     });
   }
-  async websites() {
+  async websites(resolvers = WEBSITE_SOURCES) {
     const documents = [], failures = [];
-    for (const [kind, resolve, scope = 'weekly'] of [['rockstar', resolveRockstarNewswireSource], ['intel', resolveRockstarIntelSource], ['gtabase', resolveGtabaseSource], ['rockstar', resolveRockstarMonthlySource, 'membership']]) {
+    for (const [kind, resolve, scope = 'weekly'] of resolvers) {
       try {
         await this.storage.put('progress', { stage: 'fetch', source: kind, at: new Date().toISOString() });
         const source = await resolve();
@@ -124,10 +136,16 @@ export class SourceService {
         doc.current = current;
         // Presence of a current article blocks TGG even if parsing/AI fails.
         const officialSufficient = documents.some(d => d.source.kind === 'rockstar' && d.source.scope === 'weekly' && new Set(d.facts.map(f => f.section)).size >= 4);
-        if (current && !(officialSufficient && kind !== 'rockstar')) {
-          try { documents.push(await this.extract(doc)); }
-          catch (error) { documents.push({ ...doc, facts: [], rejected: [] }); failures.push({ kind, reason: error.message }); }
-        } else documents.push({ ...doc, facts: [], rejected: [] });
+        const rotations = current ? extractWeeklyRotations(doc) : { facts: [], rejected: [] };
+        if (['igta', 'gtaboss', 'reddit'].includes(kind)) {
+          // New sources do not add billable extraction calls. Their narrow parser
+          // can confirm rotations; budget and transcript limits remain unchanged.
+          await this.diagnostic(doc, rotations);
+          documents.push({ ...doc, ...rotations });
+        } else if (current && !(officialSufficient && ['intel', 'gtabase'].includes(kind))) {
+          try { const extracted = await this.extract(doc); documents.push({ ...extracted, facts: [...extracted.facts, ...rotations.facts] }); }
+          catch (error) { documents.push({ ...doc, ...rotations }); failures.push({ kind, reason: error.message }); }
+        } else documents.push({ ...doc, ...rotations });
       } catch (error) { failures.push({ kind, reason: error.message.slice(0, 180) }); }
     }
     return { documents, failures, hasCurrentArticle: documents.some(d => d.current && d.source.scope !== 'membership') };

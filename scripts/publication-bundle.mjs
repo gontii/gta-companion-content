@@ -5,15 +5,30 @@ import { localParts, addDays } from './temporal.mjs';
 const sections = { bonuses: 'bonuses', challenge: 'rewards', 'free-vehicles': 'rewards', discounts: 'discounts', 'gun-van': 'rotations', other: 'events', 'gta-plus': 'gta-plus' };
 const period = item => ({ startsOn: localParts(Date.parse(item.startsAt)).date,
   endsOn: addDays(localParts(Date.parse(item.expiresAt)).date, item.timingConfidence === 'confirmed' && localParts(Date.parse(item.expiresAt)).minutes > 0 ? 0 : -1) });
+// Older installed clients have a fixed citation-host allowlist. Keep the
+// corroborating anchors in the app document and every source in the public one.
+export function compatibleAppSnapshot(snapshot) {
+  const hosts = new Set(['www.rockstargames.com', 'rockstarintel.com', 'www.gtabase.com', 'www.youtube.com']);
+  const allowed = source => { try { return hosts.has(new URL(source.url).hostname); } catch { return false; } };
+  const result = JSON.parse(JSON.stringify(snapshot, (key, value) =>
+    key === 'sources' && Array.isArray(value) ? value.filter(allowed) : value));
+  for (const item of result.sections.flatMap(s => s.items)) {
+    const original = snapshot.sections.flatMap(s => s.items).find(i => i.id === item.id);
+    if (original.sources?.length && !item.sources?.length) throw new Error('app_compatible_source_missing');
+    if (item.sources?.length) item.sourceUrl = item.sources[0].url;
+  }
+  if (result.sources?.length) result.sourceUrl = result.sources[0].url;
+  return result;
+}
 export function publicEdition(snapshot, now) {
   validateSnapshot(snapshot, { published: true });
-  if (!parseWeeklyContent(snapshot)) throw new Error('app_parser_rejected');
+  if (!parseWeeklyContent(compatibleAppSnapshot(snapshot))) throw new Error('app_parser_rejected');
   const sources = new Map();
   const rows = Object.fromEntries(Object.keys(SECTIONS).map(id => [id, []]));
   for (const section of snapshot.sections.filter(s => s.id !== 'dlc')) for (const item of section.items) {
     if (!sections[section.id]) throw new Error('public_section_unknown');
     const sourceIds = (item.sources || snapshot.sources || []).map(source => {
-      if (!sources.has(source.url)) sources.set(source.url, { id: `ref-${sources.size + 1}`, title: source.kind === 'rockstar' ? 'Rockstar Games Newswire' : source.kind === 'intel' ? 'RockstarINTEL' : source.kind === 'gtabase' ? 'GTABase' : 'Source', url: source.url, verifiedAt: snapshot.generatedAt });
+      if (!sources.has(source.url)) sources.set(source.url, { id: `ref-${sources.size + 1}`, title: ({rockstar:'Rockstar Games Newswire',intel:'RockstarINTEL',gtabase:'GTABase',igta:'IGrandTheftAuto',gtaboss:'GTA Boss',reddit:'r/gtaonline'})[source.kind] || 'Source', url: source.url, verifiedAt: snapshot.generatedAt });
       return sources.get(source.url).id;
     });
     if (!sourceIds.length) throw new Error('public_item_source_missing');
@@ -50,7 +65,7 @@ export async function createBundle(snapshot, existingPage, now) {
   const archive = [...(existingPage?.archive || []), ...oldEditions.filter(d => d.endsOn < edition.startsOn).map(({ issue, startsOn, endsOn }) => ({ issue, startsOn, endsOn }))];
   const page = { schemaVersion: 2, current: edition, archive: [...new Map(archive.map(e => [e.issue, e])).values()].sort((a,b) => b.startsOn.localeCompare(a.startsOn)) };
   validatePublicPage(page, now);
-  const writes = [{ key: `weekly:public:${edition.issue}`, value: edition }, { key: 'weekly:latest', value: snapshot }, { key: 'weekly:public', value: page }];
+  const writes = [{ key: `weekly:public:${edition.issue}`, value: edition }, { key: 'weekly:latest', value: compatibleAppSnapshot(snapshot) }, { key: 'weekly:public', value: page }];
   const hashes = await Promise.all(writes.map(w => hash(w.value)));
   return { revision: snapshot.revision, weekId: snapshot.weekId, issue: edition.issue, preparedAt: snapshot.generatedAt,
     writes: writes.map((w,i) => ({ key: w.key, digest: hashes[i] })), values: writes.map(w => w.value) };

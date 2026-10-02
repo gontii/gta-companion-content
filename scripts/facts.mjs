@@ -6,7 +6,7 @@ export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
-export const FACT_VALIDATION_VERSION = 9;
+export const FACT_VALIDATION_VERSION = 10;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
@@ -24,19 +24,36 @@ export function articleDocument(source, now = new Date()) {
   const publishedOn = extractPublishedWeekId(html);
   const selected = html.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)?.[1] || html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || html;
   const text = stripTags(selected.replace(/<(script|style|nav|footer|header)\b[^>]*>[\s\S]*?<\/\1>/gi, ' '));
-  const period = extractDateRange(html, { publishedWeekId: publishedOn, now });
+  let period = extractDateRange(html, { publishedWeekId: publishedOn, now });
+  let periodEvidence;
+  // iGTA dates the named weekly edition, not its Wednesday publication. A
+  // Thursday weekly title defines the seven-day window; retain the exact title
+  // as evidence and never synthesize a quote claiming an explicit end date.
+  if (!period && source.kind === 'igta') {
+    const title = stripTags(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '');
+    const match = /^This Week in GTA Online:\s*([A-Za-z]+ \d{1,2}, 20\d{2})$/.exec(title);
+    const start = match && Date.parse(match[1] + ' UTC');
+    if (Number.isFinite(start) && new Date(start).getUTCDay() === 4 && new Date(start).getUTCDate() === Number(match[1].match(/\d+/)[0])) {
+      const startId = new Date(start).toISOString().slice(0, 10);
+      period = { startId, endId: addDays(startId, 6), rangeText: title };
+      periodEvidence = title;
+    }
+  }
   let cards = '';
   try {
     const parsed = buildWeeklyContent(html, { now, sourceUrl: source.sourceUrl });
     cards = parsed.sections.map(s => `${s.title}:\n${s.items.map(i => i.label).join('\n')}`).join('\n');
   } catch { /* A partial article can still supply independently grounded facts. */ }
-  const normalized = cards ? `Structured offers parsed from the article (${period?.rangeText || ''}):\n${cards}\n\nArticle:\n${text}` : text;
-  return { ...source, text: normalized.slice(0, 35_000), publishedOn, period,
+  const titledText = periodEvidence ? `${periodEvidence}\n${text}` : text;
+  const normalized = cards && !['igta', 'gtaboss', 'reddit'].includes(source.kind) ? `Structured offers parsed from the article (${period?.rangeText || ''}):\n${cards}\n\nArticle:\n${titledText}` : titledText;
+  return { ...source, text: normalized.slice(0, 35_000), publishedOn, period, ...(periodEvidence ? { periodEvidence } : {}),
     source: { url: source.sourceUrl, kind: source.kind, scope: source.scope || 'weekly', publishedOn } };
 }
 
 export function periodIsSupported(start, end, evidence, doc) {
   if (!validDay(start) || !validDay(end)) return false;
+  if (doc.source.kind === 'igta' && doc.periodEvidence && evidence === doc.periodEvidence &&
+      start === doc.period?.startId && end === doc.period?.endId) return true;
   // A complete range must match both endpoints; unrelated numbers in a paragraph
   // and one month name cannot prove a cross-month period.
   const months = 'January February March April May June July August September October November December'.split(' ');
@@ -71,6 +88,15 @@ export function validateFacts(raw, doc) {
       const evidence = normal(f.evidence), dateEvidence = normal(f.dateEvidence), text = normal(doc.text);
       if (!text.includes(evidence) || !text.includes(dateEvidence) || !evidence.includes(normal(f.entity))) throw new Error('evidence_not_found');
       if (numbers(f.offer).some(n => !numbers(f.evidence).includes(n))) throw new Error('unsupported_number');
+      // A price table contradicting its own discount is not usable evidence.
+      if (doc.source.kind === 'gtaboss') {
+        const prices = [...f.evidence.matchAll(/\$\s*([\d,]+(?:\.\d+)?)/g)].map(m => Number(m[1].replaceAll(',', '')));
+        const discounts = [...f.evidence.matchAll(/(\d+(?:\.\d+)?)\s*%/g)].map(m => Number(m[1]));
+        if (prices.length >= 2 && discounts.length === prices.length - 1 && prices[0] > 0 &&
+            prices.slice(1).some((price, i) => Math.abs(price - prices[0] * (1 - discounts[i] / 100)) > 1)) {
+          throw new Error('inconsistent_source_prices');
+        }
+      }
       if (/\bfree\b/i.test(f.offer) && !/\bfree\b|at no cost|complimentary/i.test(f.evidence)) throw new Error('unsupported_free_offer');
       const requirementChecks = [
         [/\bcomplete\b[\s\S]{0,140}\b(?:to|then|for|unlock|claim)\b/i, /complete|qualif|challenge/i],
@@ -141,10 +167,15 @@ export function agreeSources(documents, allowTgg) {
   const base = documents.filter(d => d.source.kind === 'gtabase').flatMap(d => d.facts);
   const periodKey = f => `${factKey(f)}:${f.startsOn}`;
   const approved = new Map(official.map(f => [periodKey(f), { ...f, confidence: 'official' }]));
-  for (const f of intel) {
+  // Keep the original pair first. Extra weekly sources confirm an anchor, never
+  // each other: copied community posts cannot form a self-confirming quorum.
+  const extra = documents.filter(d => ['igta', 'gtaboss', 'reddit'].includes(d.source.kind) && d.current)
+    .flatMap(d => d.facts);
+  const pairs = [[intel, base], [intel, extra], [base, extra]];
+  for (const [anchors, corroborators] of pairs) for (const f of anchors) {
     if (approved.has(periodKey(f))) continue;
     const signature = factSignature(f);
-    const match = signature && base.find(b => factSignature(b) === signature);
+    const match = signature && corroborators.find(b => factSignature(b) === signature);
     if (match) approved.set(periodKey(f), { ...f, sources: [...f.sources, ...match.sources], confidence: 'corroborated' });
   }
   if (allowTgg && !documents.some(d => d.source.kind !== 'tgg' && d.source.scope !== 'membership' && d.current)) {

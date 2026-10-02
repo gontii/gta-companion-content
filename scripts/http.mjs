@@ -1,4 +1,4 @@
-const HOSTS = new Set(['graph.rockstargames.com', 'www.rockstargames.com', 'rockstarintel.com', 'www.gtabase.com', 'www.youtube.com', 'api.supadata.ai', 'gtacompanion.net']);
+const HOSTS = new Set(['graph.rockstargames.com', 'www.rockstargames.com', 'rockstarintel.com', 'www.gtabase.com', 'www.youtube.com', 'api.supadata.ai', 'gtacompanion.net', 'www.igrandtheftauto.com', 'www.gtaboss.gg', 'www.reddit.com']);
 
 export async function safeFetch(input, options = {}, fetchImpl = fetch) {
   const url = new URL(input);

@@ -11,6 +11,13 @@ export function offerTraits(f) {
   if (match) return { type: 'discount', amount: Number(match[1]), requirements: match[2].trim() };
   match = /^(?:free|at no cost|complimentary)(.*)$/.exec(text);
   if (match) return { type: 'free', requirements: match[1].trim() };
+  if (text === 'in stock') return { type: 'availability' };
+  match = /^place top (\d+) in (?:a |an |the )?ls car meet (?:race|series) for (\d+|one|two|three|four|five|six|seven) days in a row to (?:win|unlock) (?:the )?(.+)$/.exec(text);
+  if (match) {
+    const count = Number(match[2]) || ({one:1,two:2,three:3,four:4,five:5,six:6,seven:7})[match[2]];
+    const reward = match[3].replace(/ as the prize ride vehicle$/, '').trim();
+    return { type: 'prize-ride', rank: Number(match[1]), count, consecutive: true, activity: 'LS Car Meet', reward };
+  }
   // Acquisition conditions, rank/count, consecutive days, claim windows, membership
   // and platform remain exact. No edit distance, substring or language-model voting.
   return null;
