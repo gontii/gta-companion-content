@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { classifyProgressContent } from './progress-classification.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -91,6 +92,7 @@ export async function generateWeeklyFiles({ html, outputDir = '.', now = new Dat
 export async function writeCuratedWeekly(input, outputDir = '.', now = new Date()) {
   const weeklyDir = path.join(outputDir, 'weekly');
   const content = applyMemberBenefits(applySeasonalContent(input, now), now);
+  classifyProgressContent(content);
   validateContent(content);
   validatePublication(content, now);
   const existingContent = await readExistingWeeklyContent(weeklyDir, content.weekId);

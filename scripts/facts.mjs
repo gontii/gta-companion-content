@@ -1,3 +1,4 @@
+import { classifyProgressContent, validateProgressContent } from './progress-classification.mjs';
 import { validDay, windowFromDays, addDays, localParts, normalizeWeeklyTiming, isWeeklyPeriod } from './temporal.mjs';
 import { thursdayWeekId, extractDateRange, extractPublishedWeekId, cleanText, stripTags, buildWeeklyContent } from './weekly-core.mjs';
 import editorialPeriods from '../events/editorial-periods.json' with { type: 'json' };
@@ -287,7 +288,7 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
   if (!c.sources.length && current?.sources) c.sources = current.sources;
   c.sourceUrl = c.sources[0]?.url || current?.sourceUrl || null;
   c.quickTake = c.quickTakeEntries.map(i => i.label);
-  return c;
+  return classifyProgressContent(c);
 }
 
 export function validateSnapshot(c, { published = false } = {}) {
@@ -299,6 +300,7 @@ export function validateSnapshot(c, { published = false } = {}) {
     ids.add(item.id);
     if (!item.editorial && !['official', 'corroborated', 'transcript', ...(published ? ['editorial'] : [])].includes(item.confidence)) throw new Error('unverified_item');
   }
+  validateProgressContent(c);
   if (new TextEncoder().encode(JSON.stringify(c)).length > 120_000) throw new Error('snapshot_too_large');
   return c;
 }

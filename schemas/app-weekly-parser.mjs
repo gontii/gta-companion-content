@@ -7,6 +7,8 @@ function isWeeklyItem(v) {
     const validTarget = o.targetCount === undefined ||
         (typeof o.targetCount === 'number' && Number.isInteger(o.targetCount) && o.targetCount > 1);
     return isString(o.id) && isString(o.label) && validTarget && validTiming(o) &&
+        (o.progressGroup === undefined || ['primary', 'extra', 'gta-plus', 'none'].includes(o.progressGroup)) &&
+        (o.progressGroup === 'gta-plus' ? typeof o.progressPeriodId === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(o.progressPeriodId) : o.progressPeriodId === undefined) &&
         (o.itemIds === undefined || (Array.isArray(o.itemIds) && o.itemIds.every(isString))) &&
         (o.sources === undefined || (Array.isArray(o.sources) && o.sources.every(validCitation))) &&
         (o.videoId === undefined || (isString(o.videoId) && /^[\w-]{11}$/.test(o.videoId))) &&

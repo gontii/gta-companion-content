@@ -1,3 +1,4 @@
+import { classifyProgressContent } from './progress-classification.mjs';
 
 import memberPeriods from '../events/gta-plus.json' with { type: 'json' };
 export { memberPeriods };
@@ -56,7 +57,10 @@ export function applyMemberBenefits(content, now = new Date()) {
     result.sections.push({
       id: 'gta-plus',
       title: `GTA+ only — through ${period.endsOn}`,
-      items: period.items.map(item => ({ ...item, label: `GTA+ only: ${item.label} — through ${period.endsOn}` })),
+      items: period.items.map(item => ({ ...item, label: `GTA+ only: ${item.label} — through ${period.endsOn}`,
+        eligibility: 'gta-plus', confidence: 'editorial',
+        startsAt: `${period.startsOn}T09:00:00.000Z`, expiresAt: `${new Date(Date.parse(`${period.endsOn}T00:00:00Z`) + 86_400_000).toISOString().slice(0,10)}T00:00:00.000Z`,
+        sources: [{kind:'rockstar',url:period.sourceUrl,scope:'membership'}] })),
     });
   }
   if (!period && pendingIsCurrent(now) && result.weekId === pendingMemberBenefits.weekId) {
@@ -93,7 +97,7 @@ export function applyMemberBenefits(content, now = new Date()) {
     const cyclone = result.sections.find(s => s.id === 'discounts')?.items.find(i => i.id === 'coil-cyclone-ii-70-off');
     if (cyclone) cyclone.label = 'Coil Cyclone II - 70% off (PS5, Xbox Series X|S and PC Enhanced)';
   }
-  return result;
+  return classifyProgressContent(result);
 }
 
 /** Semantic checks apply to publication, not the archive's historical schema. */

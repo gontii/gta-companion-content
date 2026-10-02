@@ -1,3 +1,4 @@
+import { validateProgressContent } from './progress-classification.mjs';
 import { isSeasonalEvent } from './seasonal-content.mjs';
 import { PublicationQualityError } from './publication-quality.mjs';
 import { safeFetch, readBounded } from './http.mjs';
@@ -671,6 +672,7 @@ export function validateContent(content) {
       ids.add(item.id);
     }
   }
+  validateProgressContent(content);
   if (!Array.isArray(content.beginnerPath) || content.beginnerPath.length < 3) {
     throw new Error('beginnerPath must contain at least 3 items');
   }

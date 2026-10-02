@@ -180,7 +180,8 @@
       "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
       "itemIds": [
         "auto-1237ea9f2ca2f2c197"
-      ]
+      ],
+      "progressGroup": "none"
     },
     {
       "id": "bp-auto-2a2409bee4380ccb13",
@@ -213,7 +214,8 @@
       "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
       "itemIds": [
         "auto-2a2409bee4380ccb13"
-      ]
+      ],
+      "progressGroup": "none"
     },
     {
       "id": "bp-auto-2d6081813d30c5f7e2",
@@ -246,7 +248,8 @@
       "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
       "itemIds": [
         "auto-2d6081813d30c5f7e2"
-      ]
+      ],
+      "progressGroup": "none"
     },
     {
       "id": "bp-auto-3968c0f61679c237bd",
@@ -279,7 +282,8 @@
       "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
       "itemIds": [
         "auto-3968c0f61679c237bd"
-      ]
+      ],
+      "progressGroup": "none"
     }
   ],
   "locations": [
@@ -468,7 +472,8 @@
           "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-2a2409bee4380ccb13",
@@ -498,7 +503,8 @@
           "offer": "2X GTA$; photograph the ghosts.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-2d6081813d30c5f7e2",
@@ -528,7 +534,8 @@
           "offer": "3X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-3968c0f61679c237bd",
@@ -558,7 +565,8 @@
           "offer": "3X GTA$ & RP; Hotring Races and Random Transform Races.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-4b394bd024fcf5f15c",
@@ -588,7 +596,8 @@
           "offer": "2X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-6e31fc5b1deeee77de",
@@ -613,7 +622,8 @@
           "offer": "2X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-8a5fe258a0c0c10610",
@@ -643,7 +653,8 @@
           "offer": "2X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-b0840c9e9d40e6f7fd",
@@ -668,7 +679,8 @@
           "offer": "2X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-ea8147cbe25b331a57",
@@ -698,7 +710,8 @@
           "offer": "3X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         }
       ]
     },
@@ -730,7 +743,8 @@
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-          "targetCount": 2
+          "targetCount": 2,
+          "progressGroup": "extra"
         }
       ]
     },
@@ -761,7 +775,8 @@
           "offer": "place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Vapid Dominator GTT",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "extra"
         },
         {
           "id": "auto-8be7c4235eb4f454df",
@@ -791,7 +806,8 @@
           "offer": "FREE; claim from in-game clothing stores during this week.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "primary"
         }
       ]
     },
@@ -828,7 +844,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-381e63d4f2a4129ead",
@@ -852,7 +869,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-39a2fdf1f3f0b797f7",
@@ -882,7 +900,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-3a22c7ca810a765c70",
@@ -906,7 +925,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-58aefc5899733983fd",
@@ -936,7 +956,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-615f0073b1e72b9954",
@@ -960,7 +981,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-6c8497951f3bec3c01",
@@ -984,7 +1006,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-6f088e2ad173d5a1cb",
@@ -1014,7 +1037,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-7592533a5f66b604a7",
@@ -1038,7 +1062,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-81f101ecf1d20b6ce5",
@@ -1068,7 +1093,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-91da4c83403bae9f0b",
@@ -1092,7 +1118,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-925cffc48063c321b7",
@@ -1122,7 +1149,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-b72eafdba87d6c6c73",
@@ -1146,7 +1174,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-c50117c46163d44ee8",
@@ -1176,7 +1205,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-da82aa9ebb15097709",
@@ -1200,7 +1230,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-e17ba2d539e1e7a209",
@@ -1230,7 +1261,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-e4bafe0a1cba50484c",
@@ -1254,7 +1286,8 @@
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
         },
         {
           "id": "auto-f55dc646ffd79dcb26",
@@ -1284,7 +1317,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-f55f22cb6510d0e311",
@@ -1314,7 +1348,8 @@
           "offer": "40% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         }
       ]
     },
@@ -1345,7 +1380,8 @@
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-2073cf3ffb853a056c",
@@ -1375,7 +1411,8 @@
           "offer": "50% off at the Gun Van; GTA+ membership required.",
           "eligibility": "gta-plus",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-33f2aa77eba82a13a5",
@@ -1405,7 +1442,8 @@
           "offer": "FREE at the Gun Van; daily van location awaits a current source.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "primary"
         },
         {
           "id": "auto-3e46da396eaeeb91c7",
@@ -1435,7 +1473,8 @@
           "offer": "50% off at the Gun Van; GTA+ membership required.",
           "eligibility": "gta-plus",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-57dab79ab490d6965d",
@@ -1465,7 +1504,8 @@
           "offer": "30% off at the Gun Van; daily van location awaits a current source.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-74835df5259269a994",
@@ -1489,7 +1529,8 @@
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-7b28067bf63aea87d8",
@@ -1513,7 +1554,8 @@
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-886bd962ad25adba3f",
@@ -1537,7 +1579,8 @@
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-9b1d541f06294fccd7",
@@ -1561,7 +1604,8 @@
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-9f30eddedaa4c24e3d",
@@ -1585,7 +1629,8 @@
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-cae4fa84f2ab2246b6",
@@ -1615,7 +1660,8 @@
           "offer": "FREE at the Gun Van; daily van location awaits a current source.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "primary"
         },
         {
           "id": "auto-e48d50258c4f921f9e",
@@ -1639,7 +1685,8 @@
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-f218f93ba4e5bbeb34",
@@ -1669,7 +1716,8 @@
           "offer": "50% off at the Gun Van; GTA+ membership required.",
           "eligibility": "gta-plus",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         }
       ]
     },
@@ -1706,7 +1754,8 @@
           "offer": "Test drive Ocelot Locust, Dewbauchee Seven-70 and Declasse Vamos.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-c6afb210df51601e81",
@@ -1736,7 +1785,8 @@
           "offer": "Maze Bank Arena.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-c79321e4d78aa57785",
@@ -1766,7 +1816,8 @@
           "offer": "Test drive the Maibatsu MonstroCiti; PS5, Xbox Series X|S or PC Enhanced required.",
           "eligibility": "all",
           "platform": "enhanced",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-c9700fb675a7d44289",
@@ -1796,7 +1847,8 @@
           "offer": "Available to purchase: Dewbauchee Rapid GT X and Übermacht Sentinel XS4.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-ec8054ade3d8f76d4c",
@@ -1826,7 +1878,8 @@
           "offer": "Arms Race; race entry conditions apply.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-f4fedee87347f5308d",
@@ -1856,7 +1909,8 @@
           "offer": "Available to purchase and test: Albany Brigham, Albany Fränken Stange, Albany Lurcher, Declasse Tornado Rat Rod and LCC Sanctus.",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         }
       ]
     },
@@ -1882,7 +1936,8 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "none"
         },
         {
           "id": "gta-plus-2026-09-horus",
@@ -1901,7 +1956,9 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-09-10"
         },
         {
           "id": "gta-plus-2026-09-cluckin",
@@ -1920,7 +1977,9 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-10-01"
         },
         {
           "id": "gta-plus-2026-09-production",
@@ -1939,7 +1998,8 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "none"
         },
         {
           "id": "gta-plus-2026-09-mc",
@@ -1958,7 +2018,8 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "none"
         },
         {
           "id": "gta-plus-2026-09-bikes",
@@ -1977,7 +2038,8 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "none"
         },
         {
           "id": "gta-plus-2026-09-shotaro",
@@ -1996,7 +2058,8 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "none"
         },
         {
           "id": "gta-plus-2026-09-clothes",
@@ -2015,7 +2078,8 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "none"
         },
         {
           "id": "gta-plus-2026-09-paint",
@@ -2034,7 +2098,9 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-09-10"
         },
         {
           "id": "gta-plus-2026-09-bike-service",
@@ -2053,7 +2119,8 @@
               "scope": "membership",
               "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su"
             }
-          ]
+          ],
+          "progressGroup": "none"
         }
       ]
     }
@@ -2086,6 +2153,6 @@
   "completeness": "partial",
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
   "nextBoundaryAt": "2026-10-07T22:00:00.000Z",
-  "revision": "76ec847f6ec162fcaa31b45489ce048c8881e9b20ef5756483b107e3d2abb324",
-  "generatedAt": "2026-10-02T13:45:11.463Z"
+  "revision": "3f72aa87059d7a238e5ffaf229089a9efb4b7ef8a26c3da6399ff85a3a4185a6",
+  "generatedAt": "2026-10-02T14:18:31.273Z"
 }
