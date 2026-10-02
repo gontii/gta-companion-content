@@ -132,6 +132,16 @@ The Agency price is documented in this [location comparison](https://gamersdecid
 
 **Choose Kosatka** if scouting an island and practicing a heist route sounds enjoyable. Meet Miguel at the Music Locker to unlock the purchase, then follow Pavel's planning board. A Sparrow is convenient, but do not mentally include it in the submarine's base price. Allow for setup costs and mistakes before deciding you can afford the whole routine.
 
+For the Kosatka route, plan these **standard prices before discounts**:
+
+| Purchase | Role | Cost |
+| --- | --- | --- |
+| Base Kosatka | Required to host Cayo Perico | GTA$2,200,000 |
+| Sparrow helicopter | Optional, recommended for travel and preparation | GTA$1,815,000 |
+| Kosatka + Sparrow | Recommended combined savings, before extras | GTA$4,015,000 |
+
+The Sparrow is **not required to start the heist**. Buy it through Warstock's Kosatka renovation page, under the Moon Pool options, when your budget permits. This is the Kosatka **Sparrow**, not the separate **Sea Sparrow**. Setup fees, supplies, weapons and other upgrades are not included in GTA$4,015,000. Check the current in-game offer before buying; temporary discounts do not change the baseline savings target. [Sparrow price and Kosatka storage](https://www.gtabase.com/grand-theft-auto-v/vehicles/sparrow), [independent price and prerequisite check](https://gtacars.net/gta5/seasparrow2).
+
 **If you own a Nightclub, separate its two incomes.** Popularity controls money accumulating in the office safe. The warehouse uses technicians and eligible linked businesses to accumulate goods for sale; popularity alone does not fill it. Linked businesses must be set up and not shut down, but do not need supplies merely to support technician accrual. Acid Lab is not a Nightclub feeder. [Nightclub mechanics](https://sixcentral.co.uk/guides/nightclub).
 
 A Career Builder nightclub can therefore be useful before a large warehouse network exists. Keep up its popularity and collect the safe; expand the warehouse only when you can explain what each additional purchase enables.
@@ -173,3 +183,5 @@ Use them when they fit what you own and enjoy. Check dates, eligible platforms, 
 By GTA Companion. Sources checked on **14 September 2026**. This is a source-based guide, not a claim of controller testing on all three platforms. Rockstar Support establishes eligibility and update rules; linked independent guides supply operational details and numerical prices where Rockstar does not list them.
 
 The review included Title Update 1.73, the Kortz Center launch, and Rockstar’s September Newswire releases. [Business Rivalries](https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri) and [September GTA+ benefits](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su) are temporary offers. The dated GTA+ section above includes selected September benefits; the baseline payout table remains separate. Revision: GTA+ is now required for this route, with billing-linked cash, reward claims, and Vinewood Club actions integrated into the starting checklist.
+
+Kosatka and Sparrow base prices, purchase requirements and the combined GTA$4,015,000 budget were checked again on **2 October 2026**. This update does not reverify the other September offers or claim a physical-device test.
