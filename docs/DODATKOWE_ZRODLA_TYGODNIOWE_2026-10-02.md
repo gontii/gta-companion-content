@@ -60,7 +60,42 @@ jako dowód ceny/rabatu. Nowy parser rotacji używa samych nazw, bez tych cen.
   rozszerzeniem katalogu rozpoznawanych nazw). Wersja wdrożenia i odczyt produkcji
   zostaną dopisane po wykonaniu.
 
-Reddit RSS w lokalnym odczycie zwraca HTTP 403. Stały adapter jest dodany,
-lecz fakty z Reddita nie są uznane za pobrane. Nie omijano blokady dostępu.
+Reddit RSS w lokalnym odczycie zwrócił HTTP 403. Odczyt Workera na produkcji
+powiódł się: post został pobrany z rzeczywistą datą publikacji, bez obchodzenia
+blokady. Jego zakres 01–08.10 pozostaje odmienny od 01–07.10 dwóch głównych
+serwisów, więc sam nie potwierdza ich dat.
 Fizyczny telefon nadal wymaga bieżącego wyniku Przemka; wcześniejszej sesji
 nie przenoszono na dzisiejszy odbiór.
+
+## Wdrożenie i niezależny odczyt
+
+Commit kodu `dc852e9` wysłany na `main`. Worker
+`5d8e213c-ec6a-43fe-9f18-a666466ea7e8` wdrożony; 192.46 KiB, start 2 ms.
+[Przebieg zlecenia kontroli](https://github.com/gontii/gta-companion-content/actions/runs/37015069120)
+oraz [odczyt diagnostyki](https://github.com/gontii/gta-companion-content/actions/runs/37015231177)
+ukończone poprawnie.
+
+O 13:45:11 UTC automat odczytał siedem wpisów źródeł (w tym osobny okres GTA+):
+iGTA 11 faktów, GTA Boss 9, Reddit 10; brak błędów źródeł. Budżet AI dnia:
+0 nowych wywołań, 0 zużytych neuronów. Dodatkowe rotacje zostały uzgodnione
+z RockstarINTEL; korekty bieżącego tygodnia nadal mają pierwszeństwo.
+
+Publikacja zawiera 60 potwierdzonych pozycji, osiem kart Locations; publiczny
+adapter aplikacji dodatkowo pokazuje dwa oczekujące wpisy. Rewizja
+`76ec847f6ec162fcaa31b45489ce048c8881e9b20ef5756483b107e3d2abb324`
+zgodna w obu kanałach i artykule. Odbiór koordynatora 13:46:26.824 UTC,
+niezależny `/api/content-status` o 13:46:59.871 UTC: `current=true`,
+`alarm=false`, brak przyczyn błędu, kompletność nadal częściowa.
+
+Bezpośrednio odczytano `weekly:latest` oraz publiczne API i artykuł. Oba dokumenty
+przyjął rzeczywisty parser aplikacji; 60 wspólnych ID, opisów i terminów jest
+identycznych. Zachowano wszystkie 52 wcześniejsze aktywne ID. Rzeczywisty
+`loadWeekly.ts` z tymi odczytami: obie ścieżki (chroniona/publiczna), pamięć
+podręczna i postęp po przejściu bez sieci zaliczone w próbie programowej.
+To nie jest wynik fizycznego telefonu po tej zmianie.
+
+`npm test` w aplikacji: 329 testów funkcji i 27 komponentów, sprawdzanie typów
+i treści poprawne. Nie zmieniano kodu aplikacji, jej `eas.json` ani Pages.
+Pozostały niepotwierdzone pancerze, ograniczenia El Strickler i sprzeczne ceny.
+Następny zaplanowany przebieg kontrolny po odbiorze: 14:01:26 UTC; jego wynik
+nie jest dowodem wykonania w tej sesji.
