@@ -937,5 +937,53 @@
         "publishedOn": "2026-10-01"
       }
     ]
+  },
+  {
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "section": "other",
+    "entity": "Security Contracts Bonus",
+    "offer": "Complete five Security Contracts by October 7 to receive GTA$500,000 within 72 hours of completion.",
+    "endsOn": "2026-10-07",
+    "confidence": "corroborated",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-09-30"
+      },
+      {
+        "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
+        "kind": "gtabase",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ],
+    "targetCount": 5
+  },
+  {
+    "eligibility": "all",
+    "platform": "all",
+    "startsOn": "2026-10-01",
+    "section": "other",
+    "entity": "Halloween Weekly Challenges Completion Bonus",
+    "offer": "Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+    "endsOn": "2026-11-04",
+    "confidence": "official",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-10-01"
+      }
+    ],
+    "windowPolicy": "independent",
+    "timing": {
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z"
+    }
   }
 ]

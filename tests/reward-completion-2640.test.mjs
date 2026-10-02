@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { supplementReviewedFacts } from '../scripts/reviewed-weekly.mjs';
+import { mergeFacts, hash } from '../scripts/facts.mjs';
+import { createBundle } from '../scripts/publication-bundle.mjs';
+import { parseWeeklyContent } from '../schemas/app-weekly-parser.mjs';
+import { projectContent } from '../scripts/temporal.mjs';
+const now=Date.parse('2026-10-02T12:00:00Z');
+test('verified cash objectives retain requirements, payout delay, exact windows and the weekly/season distinction',async()=>{
+ const facts=supplementReviewedFacts(null,[],now);
+ const cash=facts.find(f=>f.entity==='Security Contracts Bonus'),season=facts.find(f=>f.entity==='Halloween Weekly Challenges Completion Bonus');
+ assert.equal(cash.targetCount,5);assert.match(cash.offer,/500,000.*72 hours/);assert.equal(cash.sources.length,2);
+ assert.match(season.offer,/all five.*November 4.*2,000,000.*72 hours/);assert.equal(season.confidence,'official');
+ const content=await mergeFacts(null,facts,now);const items=content.sections.flatMap(s=>s.items);
+ const cashItem=items.find(i=>i.entity===cash.entity),seasonItem=items.find(i=>i.entity===season.entity);
+ assert.equal(cashItem.progressGroup,'primary');assert.equal(cashItem.targetCount,5);assert.equal(seasonItem.progressGroup,'none');
+ assert.equal(cashItem.expiresAt,'2026-10-08T09:00:00.000Z');assert.equal(seasonItem.expiresAt,'2026-11-05T10:00:00.000Z');
+ const again=await mergeFacts(content,supplementReviewedFacts(content,[],now+15*60000),now+15*60000);
+ assert.equal(again.sections.flatMap(s=>s.items).find(i=>i.entity===cash.entity).id,cashItem.id);
+ again.revision=await hash(again);again.generatedAt=new Date(now).toISOString();const [article,app]=(await createBundle(again,null,now)).values;
+ assert.ok(parseWeeklyContent(app));assert.equal(article.sections.flatMap(s=>s.items).find(i=>i.id===seasonItem.id).expiresAt,seasonItem.expiresAt);
+ const next=Date.parse('2026-10-08T09:00:00Z');const nextWeek=await mergeFacts(again,supplementReviewedFacts(again,[],next),next);
+ assert.ok(!projectContent(nextWeek,next).sections.flatMap(s=>s.items).some(i=>i.entity===cash.entity));
+ assert.equal(projectContent(nextWeek,next).sections.flatMap(s=>s.items).find(i=>i.entity===season.entity).id,seasonItem.id);
+ assert.ok(!supplementReviewedFacts(null,[],Date.parse('2026-11-05T10:00:00Z')).some(i=>i.entity===season.entity));
+});

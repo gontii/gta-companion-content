@@ -19,6 +19,13 @@ export function classifyProgressItem(item, sectionId, weekId) {
     return { progressGroup: 'gta-plus', progressPeriodId: weeklyAction ? weekId :
       (item.startsAt?.slice(0, 10) || weekId) };
   }
+  // Guaranteed weekly cash objectives also appear alongside other weekly items.
+  // A season-wide bonus is informational here; it must not reset as a weekly task.
+  const duration = Date.parse(item.expiresAt) - Date.parse(item.startsAt);
+  if (sectionId === 'other' && /\bcomplete\b/i.test(offer) && duration >= 6 * 86400000 && duration <= 8 * 86400000) {
+    const amount = rewardAmount(offer);
+    if (amount !== null) return { progressGroup: amount >= 250_000 ? 'primary' : 'extra' };
+  }
   if (sectionId === 'challenge') {
     const amount = rewardAmount(offer);
     if (amount !== null) return { progressGroup: amount >= 250_000 ? 'primary' : 'extra' };
