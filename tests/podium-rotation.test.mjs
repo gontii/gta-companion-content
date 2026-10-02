@@ -40,3 +40,13 @@ test('a bare stock list preserves a confirmed active free offer and discount, th
   assert.equal(next.sections.find(s=>s.id==='gun-van').items[0].offer,'In stock');
  }
 });
+
+test('super armor names do not hide a later exact Light Armor or Heavy Armor row',()=>{
+ const classes=['Super Light Armor','Light Armor','Standard Armor','Super Heavy Armor','Heavy Armor'];
+ const html='<h2>Gun Van Contents</h2><ul>'+classes.map(name=>`<li>${name} (10%, GTA+ 20%)</li>`).join('')+'</ul>';
+ const d=make('intel','Lampadati Cinquemila',html);
+ for(const entity of classes){
+  assert.ok(d.facts.some(f=>f.entity===entity && f.offer==='In stock'));
+  assert.ok(d.facts.some(f=>f.entity===entity && f.offer==='20% off at the Gun Van' && f.eligibility==='gta-plus'));
+ }
+});
