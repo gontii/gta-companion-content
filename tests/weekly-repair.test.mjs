@@ -53,6 +53,33 @@ test('week transition, ids, missing sources and independent GTA+ expiry',async()
   const both=await snapshot([f,member]);const view=projectContent(both,Date.parse('2026-10-07T22:00:00Z'));
   assert.equal(view.sections.find(s=>s.id==='gta-plus').items.length,0);assert.equal(view.sections[0].items.length,1);
 });
+test('2637 → 2638: delayed corroboration, partial extraction and the next run preserve an editorial correction',async()=>{
+  const before=Date.parse('2026-09-16T12:00:00Z'), reset=Date.parse('2026-09-17T09:00:00Z');
+  const old={...f,entity:'Old Prize Ride',section:'free-vehicles',offer:'FREE for winning four consecutive days',startsOn:'2026-09-10',endsOn:'2026-09-16'};
+  const current={...f,entity:'Bunker Research',startsOn:'2026-09-17',endsOn:'2026-09-23'};
+  const previous=await mergeFacts(null,[old],before);
+  // A single current source and an empty delayed extraction cannot establish agreement.
+  const single=[{source:{kind:'intel'},facts:[current],current:true},{source:{kind:'gtabase'},facts:[],current:false}];
+  assert.equal(agreeSources(single,false).length,0);
+  assert.equal(projectContent(previous,reset).sections.flatMap(s=>s.items).length,0);
+  const agreed=agreeSources([...single.slice(0,1),{source:{kind:'gtabase'},facts:[{...current,sources:[{kind:'gtabase',url:'https://www.gtabase.com/current'}]}],current:true}],false);
+  const next=await mergeFacts(previous,agreed,reset);
+  assert.equal(next.weekId,'2026-09-17');
+  assert.ok(!next.sections.flatMap(s=>s.items).some(i=>i.entity==='Old Prize Ride'));
+  const correction=next.sections.find(s=>s.id==='bonuses').items[0];
+  correction.editorial=true;
+  correction.label='Bunker Research — 2X GTA$ & RP; reviewed correction';
+  const expected=structuredClone(correction);
+  const repeated=await mergeFacts(next,[{...current,offer:'3X GTA$ & RP'}],reset+15*60000);
+  assert.deepEqual(repeated.sections.find(s=>s.id==='bonuses').items,[expected]);
+  const partial=await mergeFacts(repeated,[],reset+30*60000);
+  assert.deepEqual(partial.sections.find(s=>s.id==='bonuses').items,[expected]);
+  const app=projectContent(partial,reset+30*60000);
+  app.generatedAt=new Date(reset+30*60000).toISOString();app.revision=await hash(app);
+  const bundle=await createBundle(app,null,reset+30*60000);
+  assert.equal(bundle.issue,'2638');
+  assert.equal(bundle.values[0].sections.flatMap(s=>s.items).find(i=>i.id===expected.id).offer,expected.label);
+});
 test('public version retains factual labels, ids and clocks and remains partial',async()=>{
   const app=await snapshot();const b=await createBundle(app,null,now);const [article,,page]=b.values;
   assert.equal(article.sections[0].items[0].id,app.sections[0].items[0].id);assert.equal(article.sections[0].items[0].offer,app.sections[0].items[0].label);
