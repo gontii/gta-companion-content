@@ -284,6 +284,111 @@
   ],
   "locations": [
     {
+      "id": "auto-location-halloween-survivals",
+      "activity": "Halloween Survivals",
+      "name": "Survival job selection",
+      "area": "Pause Menu → Online → Jobs → Play Job → Rockstar Created → Survivals",
+      "note": "Select the Halloween Survival named in the current offer. Ludendorff Cemetery is entered through a job or its Survival map blip; do not try to drive to North Yankton in Freemode. Availability follows the current playlist.\n\nThis week: Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "itemIds": [
+        "auto-1237ea9f2ca2f2c197"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s"
+        }
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-08T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-ghosts-exposed",
+      "activity": "Ghosts Exposed",
+      "name": "Freemode ghost photography",
+      "area": "Southern San Andreas → follow the Ghosts Exposed text and current event clues",
+      "note": "Use your phone’s Snapmatic camera to photograph the ghosts and check progress in the Interaction Menu. This is a Freemode search, not a mission started at a property. This guide has not verified this year’s individual ghost coordinates or spawn hours.\n\nThis week: Ghosts Exposed — 2X GTA$; photograph the ghosts.",
+      "itemIds": [
+        "auto-2a2409bee4380ccb13"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s"
+        }
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-08T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-dispatch-work",
+      "activity": "Dispatch Work",
+      "name": "Vincent’s Dispatch Work",
+      "area": "Freemode → your owned Law Enforcement personal vehicle",
+      "note": "First complete Slush Fund from The Cluckin’ Bell Farm Raid as leader. While driving your Law Enforcement vehicle, request Dispatch Work with the displayed prompt (R3/RS on console, B on PC). Follow Vincent’s assigned mission markers; there is no single fixed destination.\n\nThis week: Dispatch Work — 2X GTA$ & RP",
+      "itemIds": [
+        "auto-6e31fc5b1deeee77de"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/o3948k534952a8/protect-los-santos-and-acquire-new-law-enforcement-vehicles-during-the"
+        }
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-bail-office",
+      "activity": "Bail Office Targets & Challenge",
+      "name": "Your Bail Office",
+      "area": "Your owned Bail Office → bounty selection",
+      "note": "Start the bounty from your Bail Office and follow the assigned target markers. Standard and Most Wanted targets have different availability; check the current target selection and the exact weekly challenge below. Dispatch Work is a separate activity and does not substitute for securing a Bail Office bounty.\n\nThis week: Bail Office Bounties — Secure two Bail Office Bounties to receive the Green Vintage Skull Mask and GTA$100,000.",
+      "itemIds": [
+        "auto-00ad53fc144c8df50a"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/51195a98k31273/gta-online-bottom-dollar-bounties-out-now"
+        }
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-08T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-community-series",
+      "activity": "Community Series",
+      "name": "Community Series matchmaking",
+      "area": "Legion Square → series marker, or phone → Quick Join",
+      "note": "Use the Community Series marker or your phone’s Quick Join selection. Select the current Community Race Series when the offer names races; other community-created jobs do not automatically qualify for that bonus.\n\nThis week: Community Race Series — 3X GTA$ & RP",
+      "itemIds": [
+        "auto-2d6081813d30c5f7e2"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta"
+        }
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-08T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
       "id": "auto-location-gun-van",
       "activity": "Gun Van",
       "name": "Mobile weapons dealer",
@@ -1774,6 +1879,6 @@
   "completeness": "partial",
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
   "nextBoundaryAt": "2026-10-07T22:00:00.000Z",
-  "revision": "551ee51ac383fee3f2d301e0b17505a6705434854e59d0048e48b4f7dccd72de",
-  "generatedAt": "2026-10-01T20:45:03.718Z"
+  "revision": "6b4d4afcbec80e8d79114452bea752ff6848bbd7ae769afdf89dc26806f14ee8",
+  "generatedAt": "2026-10-02T13:20:00.156Z"
 }

@@ -5,11 +5,11 @@
   "startsOn": "2026-10-01",
   "endsOn": "2026-10-07",
   "status": "active",
-  "verifiedAt": "2026-10-01T20:45:03.718Z",
-  "confirmedAt": "2026-10-01T20:45:03.718Z",
+  "verifiedAt": "2026-10-02T13:20:00.156Z",
+  "confirmedAt": "2026-10-02T13:20:00.156Z",
   "startsAt": "2026-10-01T09:00:00.000Z",
   "expiresAt": "2026-10-08T09:00:00.000Z",
-  "revision": "551ee51ac383fee3f2d301e0b17505a6705434854e59d0048e48b4f7dccd72de",
+  "revision": "6b4d4afcbec80e8d79114452bea752ff6848bbd7ae769afdf89dc26806f14ee8",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -939,25 +939,25 @@
       "id": "ref-1",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
-      "verifiedAt": "2026-10-01T20:45:03.718Z"
+      "verifiedAt": "2026-10-02T13:20:00.156Z"
     },
     {
       "id": "ref-2",
       "title": "GTABase",
       "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
-      "verifiedAt": "2026-10-01T20:45:03.718Z"
+      "verifiedAt": "2026-10-02T13:20:00.156Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-01T20:45:03.718Z"
+      "verifiedAt": "2026-10-02T13:20:00.156Z"
     },
     {
       "id": "ref-4",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
-      "verifiedAt": "2026-10-01T20:45:03.718Z"
+      "verifiedAt": "2026-10-02T13:20:00.156Z"
     }
   ]
 }
