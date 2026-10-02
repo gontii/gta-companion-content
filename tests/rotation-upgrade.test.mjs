@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { PublicationEngine } from '../worker/coordinator.mjs';
+import { SourceService } from '../scripts/source-service.mjs';
+import { FACT_VALIDATION_VERSION, mergeFacts, hash } from '../scripts/facts.mjs';
+import { TIMING_POLICY_VERSION } from '../scripts/temporal.mjs';
+test('parser upgrade rechecks sources on the next natural alarm despite a cached future source schedule',async t=>{
+ const now=Date.parse('2026-10-02T12:00:00Z');t.mock.timers.enable({apis:['Date'],now:new Date(now)});
+ const base={section:'bonuses',entity:'Contact Missions',offer:'2X GTA$ & RP',eligibility:'all',platform:'all',startsOn:'2026-10-01',endsOn:'2026-10-07',sources:[{kind:'intel',url:'https://rockstarintel.com/current'}],confidence:'corroborated'};
+ const master=await mergeFacts(null,[base],now);master.revision=await hash(master);master.generatedAt=new Date(now).toISOString();
+ const oldId=master.sections[0].items[0].id;
+ const podium={...base,section:'free-vehicles',entity:'Lampadati Cinquemila',offer:'Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed'};
+ let calls=0;t.mock.method(SourceService.prototype,'websites',async()=>{calls++;return{documents:[{source:{kind:'intel'},current:true,facts:[podium],rejected:[]},{source:{kind:'igta'},current:true,facts:[{...podium,sources:[{kind:'igta',url:'https://www.igrandtheftauto.com/current'}]}],rejected:[]}],failures:[],hasCurrentArticle:true};});
+ const data=new Map([['master',master],['publication',master],['state',{validationVersion:FACT_VALIDATION_VERSION-1,timingPolicyVersion:TIMING_POLICY_VERSION,nextCheck:{at:now+86400000},events:[]}]]);
+ const storage={get:async k=>structuredClone(data.get(k)),put:async(k,v)=>data.set(k,structuredClone(v)),delete:async k=>data.delete(k),list:async({prefix,limit})=>new Map([...data].filter(([k])=>k.startsWith(prefix)).slice(0,limit)),setAlarm:async at=>data.set('alarm',at)};
+ const kv=new Map();const env={PUBLICATION_MODE:'publish',CONTENT_KV:{get:async()=>null,put:async(k,v)=>kv.set(k,JSON.parse(v))}};
+ await new PublicationEngine({storage},env).alarm();
+ assert.equal(calls,1);assert.equal(data.get('state').lastError,null);assert.equal(data.get('state').validationVersion,FACT_VALIDATION_VERSION);
+ assert.ok(kv.get('weekly:latest').sections.flatMap(s=>s.items).some(i=>i.id===oldId && i.entity==='Contact Missions'));
+ assert.ok(kv.get('weekly:latest').sections.find(s=>s.id==='free-vehicles').items.some(i=>i.entity==='Lampadati Cinquemila'));
+ assert.equal(data.has('check-requested'),false);
+});
