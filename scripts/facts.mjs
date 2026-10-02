@@ -12,7 +12,7 @@ export const normal = s => String(s || '').normalize('NFKC').toLowerCase().repla
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
 export { factSignature } from './offer-traits.mjs';
-import { factSignature } from './offer-traits.mjs';
+import { factSignature, offerTraits } from './offer-traits.mjs';
 export function factWindow(f) {
   return { ...windowFromDays(f.startsOn, f.endsOn, f.windowPolicy !== 'independent' && f.section !== 'gta-plus' && !f.sources?.some(s => s.scope === 'membership') && isWeeklyPeriod(f.startsOn, f.endsOn)), ...(f.timing || {}) };
 }
@@ -258,6 +258,10 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     const key = factKey(f);
     const existing = section.items.find(i => f.itemId && i.id === f.itemId) || section.items.find(i => i.factKey === key) || section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
     const timing = factWindow(f);
+    // Availability is weaker than a known price/discount. Keep active terms until
+    // their window ends; a bare stock list cannot revoke a confirmed free offer.
+    if (f.offer === 'In stock' && existing && ['free', 'discount'].includes(offerTraits({ offer: existing.offer })?.type) &&
+        Date.parse(existing.expiresAt) > now && Date.parse(existing.startsAt) >= Date.parse(timing.startsAt)) continue;
     if (existing?.confidence === 'official' && f.confidence !== 'official' && Date.parse(existing.expiresAt) > now &&
         Date.parse(existing.startsAt) >= Date.parse(timing.startsAt)) continue;
     // Keep a manual correction, its id and its original validity period.

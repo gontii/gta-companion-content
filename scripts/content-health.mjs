@@ -1,3 +1,4 @@
+import { reportedSectionCoverage } from './section-coverage.mjs';
 import { atLocal, localParts, addDays, projectContent } from './temporal.mjs';
 import { validatePublicPage } from '../schemas/public-weekly.mjs';
 export function inspectContentStatus({ app, page, article, receipt }, now = Date.now()) {
@@ -28,8 +29,9 @@ export function inspectContentStatus({ app, page, article, receipt }, now = Date
   if (!checked) reasons.push('publication_not_verified');
   const current = !!(currentApp && currentPublic && both && checked);
   const grace = now < expectedAt + 15 * 60000;
+  const sectionCoverage = reportedSectionCoverage(app, receipt, now, expectedWeek, expectedAt);
   return { schemaVersion: 1, checkedAt: new Date(now).toISOString(), expectedWeek, expectedAt: new Date(expectedAt).toISOString(),
     app: summary(app), public: summary(edition), article: summary(article), verifiedRevision: receipt?.verifiedRevision || null,
     verifiedAt: receipt?.verifiedAt || null, lastRunAt: receipt?.lastRunAt || null,
-    current, alarm: !current && !grace, reasons, completeness: app?.completeness || 'pending' };
+    current, alarm: !current && !grace, reasons, sectionCoverage, completenessAlarm: sectionCoverage.alarm, completeness: app?.completeness || 'pending' };
 }

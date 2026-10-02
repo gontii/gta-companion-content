@@ -1,5 +1,6 @@
 import { createBundle } from '../scripts/publication-bundle.mjs';
 import { rebuildWeeklyLocations } from '../scripts/weekly-locations.mjs';
+import { collectSectionEvidence, inspectSectionCoverage } from '../scripts/section-coverage.mjs';
 import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
@@ -206,6 +207,7 @@ export class PublicationEngine {
         state.lastSourceCheckAt = new Date(now).toISOString();
         state.sources = result.documents.map(d => ({ ...d.source, current: d.current, period: d.period, facts: d.facts.length, rejected: d.rejected.length }));
         state.sourceFailures = result.failures;
+        await this.store.put('section-evidence', collectSectionEvidence(result.documents, thursdayWeekId(new Date(now)), localParts(now).date));
         await service.prune();
       }
       const rollbackMaster = master;
@@ -315,16 +317,19 @@ export class PublicationEngine {
         state.lastVerifiedAt = new Date().toISOString();
         await this.queueHistory(publication, state.lastVerifiedAt);
       }
-      await this.env.CONTENT_KV.put('weekly:receipt', JSON.stringify({ weekId: publication?.weekId || null,
-        publishedRevision: state.publishedRevision || null, verifiedRevision: state.verifiedRevision || null,
-        verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString() }));
       const currentWeek = thursdayWeekId(new Date(now));
       const expectedAt = atLocal(currentWeek, 11 * 60);
+      state.sectionCoverage = inspectSectionCoverage(publication, await this.store.get('section-evidence'), now, currentWeek, expectedAt);
+      state.sectionCoverage.revision = publication?.revision || null;
+      await this.env.CONTENT_KV.put('weekly:receipt', JSON.stringify({ weekId: publication?.weekId || null,
+        publishedRevision: state.publishedRevision || null, verifiedRevision: state.verifiedRevision || null,
+        verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString(), sectionCoverage: state.sectionCoverage }));
       const missing = !master || master.weekId < currentWeek || !projectContent(master, now).sections.filter(s => !['gta-plus', 'dlc'].includes(s.id)).flatMap(s => s.items).some(i => Date.parse(i.startsAt) >= expectedAt && Date.parse(i.expiresAt) <= atLocal(new Date(Date.parse(currentWeek) + 7 * DAY).toISOString().slice(0, 10), 660));
       state.awaitingOfficial = !state.sources?.some(s => s.kind === 'rockstar' && s.scope === 'weekly' && s.current && s.facts > 0);
       state.pending = missing || state.awaitingOfficial;
       state.expectedAt = new Date(expectedAt).toISOString();
       state.incidents = [];
+      if (state.sectionCoverage.alarm) state.incidents.push({ key:'section-completeness', reason:`Niepotwierdzone wymagane obszary wydania: ${state.sectionCoverage.unresolved.join(', ')}`, since:state.sectionCoverage.deadlineAt });
       if (missing && now >= expectedAt + 15 * MINUTE) state.incidents.push({ key: `missing-${currentWeek}`, reason: 'Brak potwierdzonej aktualizacji po oczekiwanym terminie', since: state.expectedAt });
       for (const failure of state.sourceFailures || []) if (/budget_exhausted|local_budget_reserved|key_missing|binding_missing/.test(failure.reason)) {
         state.incidents.push({ key: failure.reason, reason: failure.reason, since: state.lastSourceCheckAt });

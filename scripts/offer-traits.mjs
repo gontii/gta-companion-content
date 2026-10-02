@@ -12,6 +12,7 @@ export function offerTraits(f) {
   match = /^(?:free|at no cost|complimentary)(.*)$/.exec(text);
   if (match) return { type: 'free', requirements: match[1].trim() };
   if (text === 'in stock') return { type: 'availability' };
+  if (text === 'podium vehicle: chance to win at the lucky wheel; winning is not guaranteed') return { type: 'podium', mechanism: 'Lucky Wheel', guaranteed: false };
   match = /^place top (\d+) in (?:a |an |the )?ls car meet (?:race|series) for (\d+|one|two|three|four|five|six|seven) days in a row to (?:win|unlock) (?:the )?(.+)$/.exec(text);
   if (match) {
     const count = Number(match[2]) || ({one:1,two:2,three:3,four:4,five:5,six:6,seven:7})[match[2]];
