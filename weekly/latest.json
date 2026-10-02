@@ -389,13 +389,28 @@
       "timingConfidence": "estimated"
     },
     {
+      "id": "auto-location-prize-ride",
+      "activity": "Prize Ride",
+      "name": "Los Santos Car Meet",
+      "area": "Cypress Flats → LS Car Meet map icon",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Vapid Dominator GTT — place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Vapid Dominator GTT",
+      "itemIds": [
+        "auto-7095f8be40a2c27ad0"
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-08T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
       "id": "auto-location-gun-van",
       "activity": "Gun Van",
       "name": "Mobile weapons dealer",
       "area": "Daily rotating stop in Southern San Andreas",
       "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
       "itemIds": [
-        "auto-2073cf3ffb853a056c"
+        "auto-1c13170003b27cbd4c"
       ],
       "startsAt": "2026-10-01T09:00:00.000Z",
       "expiresAt": "2026-10-08T09:00:00.000Z",
@@ -724,6 +739,30 @@
       "title": "Free rewards & prize vehicles",
       "completeness": "partial",
       "items": [
+        {
+          "id": "auto-7095f8be40a2c27ad0",
+          "label": "Vapid Dominator GTT — place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Vapid Dominator GTT",
+          "factKey": "free-vehicles:vapid dominator gtt:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Vapid Dominator GTT",
+          "offer": "place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Vapid Dominator GTT",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
         {
           "id": "auto-8be7c4235eb4f454df",
           "label": "Cheerleader Massacre 3 T-Shirt — FREE; claim from in-game clothing stores during this week.",
@@ -1285,6 +1324,30 @@
       "completeness": "partial",
       "items": [
         {
+          "id": "auto-1c13170003b27cbd4c",
+          "label": "Pipe Bombs — In stock",
+          "factKey": "gun-van:pipe bombs:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Pipe Bombs",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
+        {
           "id": "auto-2073cf3ffb853a056c",
           "label": "Widowmaker — 50% off at the Gun Van; GTA+ membership required. (GTA+ only)",
           "factKey": "gun-van:widowmaker:gta-plus:all",
@@ -1405,6 +1468,126 @@
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
         },
         {
+          "id": "auto-74835df5259269a994",
+          "label": "Unholy Hellbringer — In stock",
+          "factKey": "gun-van:unholy hellbringer:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Unholy Hellbringer",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
+        {
+          "id": "auto-7b28067bf63aea87d8",
+          "label": "Widowmaker — In stock",
+          "factKey": "gun-van:widowmaker:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Widowmaker",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
+        {
+          "id": "auto-886bd962ad25adba3f",
+          "label": "Combat Shotgun — In stock",
+          "factKey": "gun-van:combat shotgun:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Combat Shotgun",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "label": "Knife — In stock",
+          "factKey": "gun-van:knife:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Knife",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
+        {
+          "id": "auto-9f30eddedaa4c24e3d",
+          "label": "Up-n-Atomizer — In stock",
+          "factKey": "gun-van:up n atomizer:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Up-n-Atomizer",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
+        {
           "id": "auto-cae4fa84f2ab2246b6",
           "label": "Baseball Bat — FREE at the Gun Van; daily van location awaits a current source.",
           "factKey": "gun-van:baseball bat:all:all",
@@ -1430,6 +1613,30 @@
           ],
           "entity": "Baseball Bat",
           "offer": "FREE at the Gun Van; daily van location awaits a current source.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
+        },
+        {
+          "id": "auto-e48d50258c4f921f9e",
+          "label": "Precision Rifle — In stock",
+          "factKey": "gun-van:precision rifle:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Precision Rifle",
+          "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/"
@@ -1879,6 +2086,6 @@
   "completeness": "partial",
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
   "nextBoundaryAt": "2026-10-07T22:00:00.000Z",
-  "revision": "6b4d4afcbec80e8d79114452bea752ff6848bbd7ae769afdf89dc26806f14ee8",
-  "generatedAt": "2026-10-02T13:20:00.156Z"
+  "revision": "76ec847f6ec162fcaa31b45489ce048c8881e9b20ef5756483b107e3d2abb324",
+  "generatedAt": "2026-10-02T13:45:11.463Z"
 }
