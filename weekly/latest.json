@@ -408,6 +408,21 @@
       "timingConfidence": "estimated"
     },
     {
+      "id": "auto-location-podium",
+      "activity": "Casino Podium",
+      "name": "The Diamond Casino & Resort",
+      "area": "East Vinewood → Casino map icon",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Lampadati Cinquemila — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+      "itemIds": [
+        "auto-a1d49556176f34d6a4"
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-08T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
       "id": "auto-location-gun-van",
       "activity": "Gun Van",
       "name": "Mobile weapons dealer",
@@ -808,6 +823,31 @@
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
           "progressGroup": "primary"
+        },
+        {
+          "id": "auto-a1d49556176f34d6a4",
+          "label": "Lampadati Cinquemila — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "factKey": "free-vehicles:lampadati cinquemila:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-09-30"
+            }
+          ],
+          "entity": "Lampadati Cinquemila",
+          "offer": "Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
+          "progressGroup": "none"
         }
       ]
     },
@@ -2153,6 +2193,6 @@
   "completeness": "partial",
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
   "nextBoundaryAt": "2026-10-07T22:00:00.000Z",
-  "revision": "3f72aa87059d7a238e5ffaf229089a9efb4b7ef8a26c3da6399ff85a3a4185a6",
-  "generatedAt": "2026-10-02T14:18:31.273Z"
+  "revision": "980a8fca35f5333559c91069c4864f5e42f8ec37ec9bb21dc6c0ae3e36bebfb4",
+  "generatedAt": "2026-10-02T16:45:35.070Z"
 }
