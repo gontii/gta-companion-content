@@ -5,11 +5,11 @@
   "startsOn": "2026-10-01",
   "endsOn": "2026-10-07",
   "status": "active",
-  "verifiedAt": "2026-10-02T16:45:35.070Z",
-  "confirmedAt": "2026-10-02T16:45:35.070Z",
+  "verifiedAt": "2026-10-06T20:05:02.362Z",
+  "confirmedAt": "2026-10-06T20:05:02.362Z",
   "startsAt": "2026-10-01T09:00:00.000Z",
   "expiresAt": "2026-10-08T09:00:00.000Z",
-  "revision": "980a8fca35f5333559c91069c4864f5e42f8ec37ec9bb21dc6c0ae3e36bebfb4",
+  "revision": "fe36bad8e52909373b93e8acff0e0dc66139a40e1818de942caaa365ddf951e5",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -585,6 +585,22 @@
           ]
         },
         {
+          "id": "auto-ac0e22955c9b7758c5",
+          "name": "Halloween Weekly Challenges Completion Bonus",
+          "status": "confirmed",
+          "offer": "Halloween Weekly Challenges Completion Bonus — Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-01",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-3"
+          ]
+        },
+        {
           "id": "auto-c6afb210df51601e81",
           "name": "Time Trial",
           "status": "confirmed",
@@ -626,6 +642,24 @@
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-01",
           "endsOn": "2026-10-07",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-08T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-dd1cecabe75114caf5",
+          "name": "Security Contracts Bonus",
+          "status": "confirmed",
+          "offer": "Security Contracts Bonus — Complete five Security Contracts by October 7 to receive GTA$500,000 within 72 hours of completion.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-01",
+          "endsOn": "2026-10-07",
+          "targetCount": 5,
           "startsAt": "2026-10-01T09:00:00.000Z",
           "expiresAt": "2026-10-08T09:00:00.000Z",
           "claim": null,
@@ -1092,31 +1126,31 @@
       "id": "ref-1",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
-      "verifiedAt": "2026-10-02T16:45:35.070Z"
+      "verifiedAt": "2026-10-06T20:05:02.362Z"
     },
     {
       "id": "ref-2",
       "title": "GTABase",
       "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
-      "verifiedAt": "2026-10-02T16:45:35.070Z"
+      "verifiedAt": "2026-10-06T20:05:02.362Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-02T16:45:35.070Z"
+      "verifiedAt": "2026-10-06T20:05:02.362Z"
     },
     {
       "id": "ref-4",
       "title": "IGrandTheftAuto",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-october-1-2026",
-      "verifiedAt": "2026-10-02T16:45:35.070Z"
+      "verifiedAt": "2026-10-06T20:05:02.362Z"
     },
     {
       "id": "ref-5",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
-      "verifiedAt": "2026-10-02T16:45:35.070Z"
+      "verifiedAt": "2026-10-06T20:05:02.362Z"
     }
   ]
 }
