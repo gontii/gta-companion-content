@@ -5,11 +5,11 @@
   "startsOn": "2026-10-01",
   "endsOn": "2026-10-07",
   "status": "active",
-  "verifiedAt": "2026-10-06T20:05:02.362Z",
-  "confirmedAt": "2026-10-06T20:05:02.362Z",
+  "verifiedAt": "2026-10-07T22:00:00.078Z",
+  "confirmedAt": "2026-10-07T22:00:00.078Z",
   "startsAt": "2026-10-01T09:00:00.000Z",
   "expiresAt": "2026-10-08T09:00:00.000Z",
-  "revision": "fe36bad8e52909373b93e8acff0e0dc66139a40e1818de942caaa365ddf951e5",
+  "revision": "93c37b84d445440374c900e96020d1c11d40ce6736dc60ddac42352c14f72b89",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -758,166 +758,6 @@
             "ref-1",
             "ref-2"
           ]
-        },
-        {
-          "id": "gta-plus-2026-09-status",
-          "name": "GTA+ only: September benefits confirmed against Rockstar on September 15; valid September 10–October 7 unless a shorter period is stated.",
-          "status": "confirmed",
-          "offer": "GTA+ only: September benefits confirmed against Rockstar on September 15; valid September 10–October 7 unless a shorter period is stated.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-horus",
-          "name": "GTA+ only: claim the Pegassi Horus for free at The Vinewood Car Club with the Velvet Iris livery, through October 7. Early access ends September 16; g",
-          "status": "confirmed",
-          "offer": "GTA+ only: claim the Pegassi Horus for free at The Vinewood Car Club with the Velvet Iris livery, through October 7. Early access ends September 16; general sale begins September 17.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-cluckin",
-          "name": "GTA+ only: 2X GTA$ on your first weekly completion of the Cluckin’ Bell Farm Raid finale, Scene of the Crime, September 10–October 7. No extra RP mult",
-          "status": "confirmed",
-          "offer": "GTA+ only: 2X GTA$ on your first weekly completion of the Cluckin’ Bell Farm Raid finale, Scene of the Crime, September 10–October 7. No extra RP multiplier is announced.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-production",
-          "name": "GTA+ only: 2X Cocaine Lockup production speed, September 10–October 7. This offer does not announce a Nightclub production bonus.",
-          "status": "confirmed",
-          "offer": "GTA+ only: 2X Cocaine Lockup production speed, September 10–October 7. This offer does not announce a Nightclub production bonus.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-mc",
-          "name": "GTA+ only: 60% off Biker Business Properties, Upgrades and Modifications through October 7.",
-          "status": "confirmed",
-          "offer": "GTA+ only: 60% off Biker Business Properties, Upgrades and Modifications through October 7.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-bikes",
-          "name": "GTA+ only: 50% off Nagasaki Shinobi, Shotaro, Stryder, Chimera and BF400 through October 7.",
-          "status": "confirmed",
-          "offer": "GTA+ only: 50% off Nagasaki Shinobi, Shotaro, Stryder, Chimera and BF400 through October 7.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-shotaro",
-          "name": "GTA+ only: Nagasaki Shotaro is included in the confirmed 50% Nagasaki motorcycle sale through October 7.",
-          "status": "confirmed",
-          "offer": "GTA+ only: Nagasaki Shotaro is included in the confirmed 50% Nagasaki motorcycle sale through October 7.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-clothes",
-          "name": "GTA+ only: Bigness Patchwork Revere Collar shirt and Patchwork Jeans are added to your wardrobe during September 10–October 7.",
-          "status": "confirmed",
-          "offer": "GTA+ only: Bigness Patchwork Revere Collar shirt and Patchwork Jeans are added to your wardrobe during September 10–October 7.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-paint",
-          "name": "GTA+ only: free Cyan/Red Flip Chameleon Paint and matching Wheel Paint at vehicle workshops and mod bays through October 7.",
-          "status": "confirmed",
-          "offer": "GTA+ only: free Cyan/Red Flip Chameleon Paint and matching Wheel Paint at vehicle workshops and mod bays through October 7.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
-        },
-        {
-          "id": "gta-plus-2026-09-bike-service",
-          "name": "GTA+ only: Bike Service Missions pay 3X GTA$ and RP through October 7; the GTA$ reward is increased to 6X during September 10–16. Clubhouse Custom Bik",
-          "status": "confirmed",
-          "offer": "GTA+ only: Bike Service Missions pay 3X GTA$ and RP through October 7; the GTA$ reward is increased to 6X during September 10–16. Clubhouse Custom Bike Shop required.",
-          "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-09-10",
-          "endsOn": "2026-10-07",
-          "startsAt": "2026-09-10T09:00:00.000Z",
-          "expiresAt": "2026-10-07T22:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-5"
-          ]
         }
       ]
     },
@@ -1126,31 +966,25 @@
       "id": "ref-1",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-returns-october-1st-7th/",
-      "verifiedAt": "2026-10-06T20:05:02.362Z"
+      "verifiedAt": "2026-10-07T22:00:00.078Z"
     },
     {
       "id": "ref-2",
       "title": "GTABase",
       "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-1-7-halloween-in-los-santos-bonuses-discounts",
-      "verifiedAt": "2026-10-06T20:05:02.362Z"
+      "verifiedAt": "2026-10-07T22:00:00.078Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-06T20:05:02.362Z"
+      "verifiedAt": "2026-10-07T22:00:00.078Z"
     },
     {
       "id": "ref-4",
       "title": "IGrandTheftAuto",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-october-1-2026",
-      "verifiedAt": "2026-10-06T20:05:02.362Z"
-    },
-    {
-      "id": "ref-5",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
-      "verifiedAt": "2026-10-06T20:05:02.362Z"
+      "verifiedAt": "2026-10-07T22:00:00.078Z"
     }
   ]
 }
