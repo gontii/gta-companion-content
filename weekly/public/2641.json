@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "issue": "2641",
+  "weekId": "2026-10-08",
+  "startsOn": "2026-10-08",
+  "endsOn": "2026-10-14",
+  "status": "active",
+  "verifiedAt": "2026-10-08T09:00:00.060Z",
+  "confirmedAt": "2026-10-08T09:00:00.060Z",
+  "startsAt": "2026-10-08T09:00:00.000Z",
+  "expiresAt": "2026-10-15T09:00:00.000Z",
+  "revision": "dd980057bb4f425a14a6375a55d5173e63edc9d2488c6ed7c0748c10756ecff0",
+  "platforms": [
+    "PC Enhanced",
+    "PS5",
+    "Xbox Series X|S"
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "items": [
+        {
+          "id": "auto-6e31fc5b1deeee77de",
+          "name": "Dispatch Work",
+          "status": "confirmed",
+          "offer": "Dispatch Work — 2X GTA$ & RP",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-01",
+          "endsOn": "2026-10-31",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-31T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-b0840c9e9d40e6f7fd",
+          "name": "Standard and Most Wanted Bail Office Targets",
+          "status": "confirmed",
+          "offer": "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-01",
+          "endsOn": "2026-10-31",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-31T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "items": [
+        {
+          "id": "auto-a3859c11d66f011aa8",
+          "name": "in two Adversary modes",
+          "status": "confirmed",
+          "offer": "in two Adversary modes — Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "discounts",
+      "items": [
+        {
+          "id": "pending-discounts",
+          "name": "Discounts details",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "items": [
+        {
+          "id": "auto-ac0e22955c9b7758c5",
+          "name": "Halloween Weekly Challenges Completion Bonus",
+          "status": "confirmed",
+          "offer": "Halloween Weekly Challenges Completion Bonus — Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-01",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "items": [
+        {
+          "id": "pending-gta-plus",
+          "name": "GTA+ member benefits details",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "rotations",
+      "items": [
+        {
+          "id": "auto-1c13170003b27cbd4c",
+          "name": "Pipe Bombs",
+          "status": "confirmed",
+          "offer": "Pipe Bombs — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-33f2aa77eba82a13a5",
+          "name": "The Shocker",
+          "status": "confirmed",
+          "offer": "The Shocker — FREE",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-4"
+          ]
+        },
+        {
+          "id": "auto-57dab79ab490d6965d",
+          "name": "Service Carbine",
+          "status": "confirmed",
+          "offer": "Service Carbine — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-74835df5259269a994",
+          "name": "Unholy Hellbringer",
+          "status": "confirmed",
+          "offer": "Unholy Hellbringer — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-7b28067bf63aea87d8",
+          "name": "Widowmaker",
+          "status": "confirmed",
+          "offer": "Widowmaker — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-886bd962ad25adba3f",
+          "name": "Combat Shotgun",
+          "status": "confirmed",
+          "offer": "Combat Shotgun — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "name": "Knife",
+          "status": "confirmed",
+          "offer": "Knife — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-9f30eddedaa4c24e3d",
+          "name": "Up-n-Atomizer",
+          "status": "confirmed",
+          "offer": "Up-n-Atomizer — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "name": "Baseball Bat",
+          "status": "confirmed",
+          "offer": "Baseball Bat — FREE",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-4"
+          ]
+        },
+        {
+          "id": "auto-e48d50258c4f921f9e",
+          "name": "Precision Rifle",
+          "status": "confirmed",
+          "offer": "Precision Rifle — In stock",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "pending-gun-van-stock",
+          "name": "Other Gun Van stock and discounts",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "pending-prize-vehicles",
+          "name": "Podium and Prize Ride requirements",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ref-1",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "verifiedAt": "2026-10-08T09:00:00.060Z"
+    },
+    {
+      "id": "ref-2",
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "verifiedAt": "2026-10-08T09:00:00.060Z"
+    },
+    {
+      "id": "ref-3",
+      "title": "IGrandTheftAuto",
+      "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-october-8-2026",
+      "verifiedAt": "2026-10-08T09:00:00.060Z"
+    },
+    {
+      "id": "ref-4",
+      "title": "GTABase",
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+      "verifiedAt": "2026-10-08T09:00:00.060Z"
+    }
+  ]
+}
