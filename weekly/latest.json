@@ -12,7 +12,7 @@
     "Dispatch Work — 2X GTA$ & RP",
     "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
     "in two Adversary modes — Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
-    "Pipe Bombs — In stock"
+    "Annis Savestra — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed"
   ],
   "quickTakeEntries": [
     {
@@ -99,9 +99,9 @@
       ]
     },
     {
-      "id": "auto-1c13170003b27cbd4c",
-      "label": "Pipe Bombs — In stock",
-      "factKey": "gun-van:pipe bombs:all:all",
+      "id": "auto-097169ff12dd845c70",
+      "label": "Annis Savestra — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+      "factKey": "free-vehicles:annis savestra:all:all",
       "startsAt": "2026-10-08T09:00:00.000Z",
       "expiresAt": "2026-10-15T09:00:00.000Z",
       "originalZone": "Europe/Warsaw",
@@ -116,13 +116,13 @@
           "publishedOn": "2026-10-07"
         }
       ],
-      "entity": "Pipe Bombs",
-      "offer": "In stock",
+      "entity": "Annis Savestra",
+      "offer": "Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
       "itemIds": [
-        "auto-1c13170003b27cbd4c"
+        "auto-097169ff12dd845c70"
       ]
     }
   ],
@@ -212,6 +212,34 @@
         "auto-a3859c11d66f011aa8"
       ],
       "progressGroup": "extra"
+    },
+    {
+      "id": "bp-auto-097169ff12dd845c70",
+      "label": "Annis Savestra — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+      "factKey": "free-vehicles:annis savestra:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Annis Savestra",
+      "offer": "Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-097169ff12dd845c70"
+      ],
+      "progressGroup": "none"
     }
   ],
   "locations": [
@@ -253,6 +281,36 @@
       ],
       "startsAt": "2026-10-01T09:00:00.000Z",
       "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-prize-ride",
+      "activity": "Prize Ride",
+      "name": "Los Santos Car Meet",
+      "area": "Cypress Flats → LS Car Meet map icon",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Declasse Walton L35 — place top 4 in a LS Car Meet Race for 2 days in a row to unlock the Declasse Walton L35",
+      "itemIds": [
+        "auto-5fca03acb73a89d28c"
+      ],
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-podium",
+      "activity": "Casino Podium",
+      "name": "The Diamond Casino & Resort",
+      "area": "East Vinewood → Casino map icon",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Annis Savestra — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+      "itemIds": [
+        "auto-097169ff12dd845c70"
+      ],
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated"
@@ -368,14 +426,466 @@
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "completeness": "pending",
-      "items": []
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-097169ff12dd845c70",
+          "label": "Annis Savestra — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "factKey": "free-vehicles:annis savestra:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Annis Savestra",
+          "offer": "Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-5fca03acb73a89d28c",
+          "label": "Declasse Walton L35 — place top 4 in a LS Car Meet Race for 2 days in a row to unlock the Declasse Walton L35",
+          "factKey": "free-vehicles:declasse walton l35:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Declasse Walton L35",
+          "offer": "place top 4 in a LS Car Meet Race for 2 days in a row to unlock the Declasse Walton L35",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "extra"
+        },
+        {
+          "id": "auto-fdb3ad31e0e2758d3d",
+          "label": "Twilight Knife T-Shirt — Reward for playing GTA Online",
+          "factKey": "free-vehicles:twilight knife t shirt:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "Twilight Knife T-Shirt",
+          "offer": "Reward for playing GTA Online",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "pending",
-      "items": []
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-1b927f7e7e2bf3b686",
+          "label": "Dinka Jester RR — 30% off",
+          "factKey": "discounts:dinka jester rr:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Dinka Jester RR",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-3210e542d4e808f149",
+          "label": "Grotti Itali GTO — 30% off",
+          "factKey": "discounts:grotti itali gto:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Grotti Itali GTO",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-395f9b552d4c0ccc44",
+          "label": "Karin Hotring Everon — 30% off",
+          "factKey": "discounts:karin hotring everon:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Karin Hotring Everon",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-39a2fdf1f3f0b797f7",
+          "label": "LCC Sanctus — 40% off",
+          "factKey": "discounts:lcc sanctus:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "LCC Sanctus",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-414f6fdf5e1f1a93a7",
+          "label": "Bravado Greenwood — 30% off",
+          "factKey": "discounts:bravado greenwood:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Bravado Greenwood",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-58aefc5899733983fd",
+          "label": "Albany Fränken Stange — 40% off",
+          "factKey": "discounts:albany fr nken stange:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Albany Fränken Stange",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-5b6bb533a7b07a7982",
+          "label": "Emperor ETR1 — 30% off",
+          "factKey": "discounts:emperor etr1:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Emperor ETR1",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7a75bfe2c282ae13a1",
+          "label": "Benefactor Terrorbyte — 30% off",
+          "factKey": "discounts:benefactor terrorbyte:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Benefactor Terrorbyte",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-81f101ecf1d20b6ce5",
+          "label": "Albany Lurcher — 40% off",
+          "factKey": "discounts:albany lurcher:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Albany Lurcher",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-836a4ce43ee5bb64fb",
+          "label": "Übermacht SC1 — 30% off",
+          "factKey": "discounts:bermacht sc1:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Übermacht SC1",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-925cffc48063c321b7",
+          "label": "Declasse Tornado Rat Rod — 40% off",
+          "factKey": "discounts:declasse tornado rat rod:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Declasse Tornado Rat Rod",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-aeaadf36d884cfe79e",
+          "label": "Pegassi Tempesta — 30% off",
+          "factKey": "discounts:pegassi tempesta:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Pegassi Tempesta",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-b4b14643bc671b2f15",
+          "label": "Annis Remus — 30% off",
+          "factKey": "discounts:annis remus:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Annis Remus",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-c6b77b109ca45c223b",
+          "label": "BF Club — 30% off",
+          "factKey": "discounts:bf club:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "BF Club",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-f55f22cb6510d0e311",
+          "label": "Albany Brigham — 40% off",
+          "factKey": "discounts:albany brigham:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Albany Brigham",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "gun-van",
@@ -403,6 +913,31 @@
           "entity": "Pipe Bombs",
           "offer": "In stock",
           "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2073cf3ffb853a056c",
+          "label": "Widowmaker — 50% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:widowmaker:gta-plus:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Widowmaker",
+          "offer": "50% off at the Gun Van",
+          "eligibility": "gta-plus",
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
           "progressGroup": "none"
@@ -437,6 +972,31 @@
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
           "progressGroup": "primary"
+        },
+        {
+          "id": "auto-3e46da396eaeeb91c7",
+          "label": "Up-n-Atomizer — 50% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:up n atomizer:gta-plus:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Up-n-Atomizer",
+          "offer": "50% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
         },
         {
           "id": "auto-57dab79ab490d6965d",
@@ -643,6 +1203,31 @@
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
           "progressGroup": "none"
+        },
+        {
+          "id": "auto-f218f93ba4e5bbeb34",
+          "label": "Unholy Hellbringer — 50% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:unholy hellbringer:gta-plus:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Unholy Hellbringer",
+          "offer": "50% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
         }
       ]
     },
@@ -709,6 +1294,6 @@
   "completeness": "partial",
   "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
   "nextBoundaryAt": "2026-10-15T09:00:00.000Z",
-  "revision": "dd980057bb4f425a14a6375a55d5173e63edc9d2488c6ed7c0748c10756ecff0",
-  "generatedAt": "2026-10-08T09:00:00.060Z"
+  "revision": "04e36ee180574437ed540dd6f39ee5fe1525581f7f846bc383e949fe7e41e3d4",
+  "generatedAt": "2026-10-09T21:18:40.557Z"
 }

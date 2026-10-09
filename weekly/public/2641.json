@@ -5,11 +5,11 @@
   "startsOn": "2026-10-08",
   "endsOn": "2026-10-14",
   "status": "active",
-  "verifiedAt": "2026-10-08T09:00:00.060Z",
-  "confirmedAt": "2026-10-08T09:00:00.060Z",
+  "verifiedAt": "2026-10-09T21:18:40.557Z",
+  "confirmedAt": "2026-10-09T21:18:40.557Z",
   "startsAt": "2026-10-08T09:00:00.000Z",
   "expiresAt": "2026-10-15T09:00:00.000Z",
-  "revision": "dd980057bb4f425a14a6375a55d5173e63edc9d2488c6ed7c0748c10756ecff0",
+  "revision": "04e36ee180574437ed540dd6f39ee5fe1525581f7f846bc383e949fe7e41e3d4",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -71,6 +71,56 @@
           "sourceIds": [
             "ref-1"
           ]
+        },
+        {
+          "id": "auto-097169ff12dd845c70",
+          "name": "Annis Savestra",
+          "status": "confirmed",
+          "offer": "Annis Savestra — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-5fca03acb73a89d28c",
+          "name": "Declasse Walton L35",
+          "status": "confirmed",
+          "offer": "Declasse Walton L35 — place top 4 in a LS Car Meet Race for 2 days in a row to unlock the Declasse Walton L35",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-fdb3ad31e0e2758d3d",
+          "name": "Twilight Knife T-Shirt",
+          "status": "confirmed",
+          "offer": "Twilight Knife T-Shirt — Reward for playing GTA Online",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1"
+          ]
         }
       ]
     },
@@ -78,16 +128,259 @@
       "id": "discounts",
       "items": [
         {
-          "id": "pending-discounts",
-          "name": "Discounts details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "auto-1b927f7e7e2bf3b686",
+          "name": "Dinka Jester RR",
+          "status": "confirmed",
+          "offer": "Dinka Jester RR — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-3210e542d4e808f149",
+          "name": "Grotti Itali GTO",
+          "status": "confirmed",
+          "offer": "Grotti Itali GTO — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-395f9b552d4c0ccc44",
+          "name": "Karin Hotring Everon",
+          "status": "confirmed",
+          "offer": "Karin Hotring Everon — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-39a2fdf1f3f0b797f7",
+          "name": "LCC Sanctus",
+          "status": "confirmed",
+          "offer": "LCC Sanctus — 40% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-414f6fdf5e1f1a93a7",
+          "name": "Bravado Greenwood",
+          "status": "confirmed",
+          "offer": "Bravado Greenwood — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-58aefc5899733983fd",
+          "name": "Albany Fränken Stange",
+          "status": "confirmed",
+          "offer": "Albany Fränken Stange — 40% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-5b6bb533a7b07a7982",
+          "name": "Emperor ETR1",
+          "status": "confirmed",
+          "offer": "Emperor ETR1 — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-7a75bfe2c282ae13a1",
+          "name": "Benefactor Terrorbyte",
+          "status": "confirmed",
+          "offer": "Benefactor Terrorbyte — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-81f101ecf1d20b6ce5",
+          "name": "Albany Lurcher",
+          "status": "confirmed",
+          "offer": "Albany Lurcher — 40% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-836a4ce43ee5bb64fb",
+          "name": "Übermacht SC1",
+          "status": "confirmed",
+          "offer": "Übermacht SC1 — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-925cffc48063c321b7",
+          "name": "Declasse Tornado Rat Rod",
+          "status": "confirmed",
+          "offer": "Declasse Tornado Rat Rod — 40% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-aeaadf36d884cfe79e",
+          "name": "Pegassi Tempesta",
+          "status": "confirmed",
+          "offer": "Pegassi Tempesta — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-b4b14643bc671b2f15",
+          "name": "Annis Remus",
+          "status": "confirmed",
+          "offer": "Annis Remus — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-c6b77b109ca45c223b",
+          "name": "BF Club",
+          "status": "confirmed",
+          "offer": "BF Club — 30% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-f55f22cb6510d0e311",
+          "name": "Albany Brigham",
+          "status": "confirmed",
+          "offer": "Albany Brigham — 40% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
         }
       ]
     },
@@ -116,16 +409,55 @@
       "id": "gta-plus",
       "items": [
         {
-          "id": "pending-gta-plus",
-          "name": "GTA+ member benefits details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "auto-2073cf3ffb853a056c",
+          "name": "Widowmaker",
+          "status": "confirmed",
+          "offer": "Widowmaker — 50% off at the Gun Van (GTA+ only)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
           "claim": null,
           "gtaPlus": true,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-3e46da396eaeeb91c7",
+          "name": "Up-n-Atomizer",
+          "status": "confirmed",
+          "offer": "Up-n-Atomizer — 50% off at the Gun Van (GTA+ only)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-f218f93ba4e5bbeb34",
+          "name": "Unholy Hellbringer",
+          "status": "confirmed",
+          "offer": "Unholy Hellbringer — 50% off at the Gun Van (GTA+ only)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
         }
       ]
     },
@@ -334,25 +666,25 @@
       "id": "ref-1",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-08T09:00:00.060Z"
+      "verifiedAt": "2026-10-09T21:18:40.557Z"
     },
     {
       "id": "ref-2",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
-      "verifiedAt": "2026-10-08T09:00:00.060Z"
+      "verifiedAt": "2026-10-09T21:18:40.557Z"
     },
     {
       "id": "ref-3",
       "title": "IGrandTheftAuto",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-october-8-2026",
-      "verifiedAt": "2026-10-08T09:00:00.060Z"
+      "verifiedAt": "2026-10-09T21:18:40.557Z"
     },
     {
       "id": "ref-4",
       "title": "GTABase",
       "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
-      "verifiedAt": "2026-10-08T09:00:00.060Z"
+      "verifiedAt": "2026-10-09T21:18:40.557Z"
     }
   ]
 }
