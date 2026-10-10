@@ -1,0 +1,714 @@
+{
+  "schemaVersion": 2,
+  "weekId": "2026-10-08",
+  "range": "2026-10-08 – 2026-10-14",
+  "headline": "This week in GTA Online",
+  "startsAt": "2026-10-08T09:00:00.000Z",
+  "expiresAt": "2026-10-15T09:00:00.000Z",
+  "originalZone": "Europe/Warsaw",
+  "precision": "date",
+  "timingConfidence": "estimated",
+  "quickTake": [
+    "Dispatch Work — 2X GTA$ & RP",
+    "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
+    "in two Adversary modes — Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+    "Pipe Bombs — In stock"
+  ],
+  "quickTakeEntries": [
+    {
+      "id": "auto-6e31fc5b1deeee77de",
+      "label": "Dispatch Work — 2X GTA$ & RP",
+      "factKey": "bonuses:dispatch work:all:all",
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "windowPolicy": "independent",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-10-01"
+        }
+      ],
+      "entity": "Dispatch Work",
+      "offer": "2X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "itemIds": [
+        "auto-6e31fc5b1deeee77de"
+      ]
+    },
+    {
+      "id": "auto-b0840c9e9d40e6f7fd",
+      "label": "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
+      "factKey": "bonuses:standard and most wanted bail office targets:all:all",
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "windowPolicy": "independent",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-10-01"
+        }
+      ],
+      "entity": "Standard and Most Wanted Bail Office Targets",
+      "offer": "2X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "itemIds": [
+        "auto-b0840c9e9d40e6f7fd"
+      ]
+    },
+    {
+      "id": "auto-a3859c11d66f011aa8",
+      "label": "in two Adversary modes — Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+      "factKey": "challenge:in two adversary modes:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-10-01"
+        }
+      ],
+      "entity": "in two Adversary modes",
+      "offer": "Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "itemIds": [
+        "auto-a3859c11d66f011aa8"
+      ]
+    },
+    {
+      "id": "auto-1c13170003b27cbd4c",
+      "label": "Pipe Bombs — In stock",
+      "factKey": "gun-van:pipe bombs:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Pipe Bombs",
+      "offer": "In stock",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-1c13170003b27cbd4c"
+      ]
+    }
+  ],
+  "beginnerPath": [
+    {
+      "id": "bp-auto-6e31fc5b1deeee77de",
+      "label": "Dispatch Work — 2X GTA$ & RP",
+      "factKey": "bonuses:dispatch work:all:all",
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "windowPolicy": "independent",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-10-01"
+        }
+      ],
+      "entity": "Dispatch Work",
+      "offer": "2X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "itemIds": [
+        "auto-6e31fc5b1deeee77de"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-b0840c9e9d40e6f7fd",
+      "label": "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
+      "factKey": "bonuses:standard and most wanted bail office targets:all:all",
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "windowPolicy": "independent",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-10-01"
+        }
+      ],
+      "entity": "Standard and Most Wanted Bail Office Targets",
+      "offer": "2X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "itemIds": [
+        "auto-b0840c9e9d40e6f7fd"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-a3859c11d66f011aa8",
+      "label": "in two Adversary modes — Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+      "factKey": "challenge:in two adversary modes:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-10-01"
+        }
+      ],
+      "entity": "in two Adversary modes",
+      "offer": "Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "itemIds": [
+        "auto-a3859c11d66f011aa8"
+      ],
+      "progressGroup": "extra"
+    }
+  ],
+  "locations": [
+    {
+      "id": "auto-location-dispatch-work",
+      "activity": "Dispatch Work",
+      "name": "Vincent’s Dispatch Work",
+      "area": "Freemode → your owned Law Enforcement personal vehicle",
+      "note": "First complete Slush Fund from The Cluckin’ Bell Farm Raid as leader. While driving your Law Enforcement vehicle, request Dispatch Work with the displayed prompt (R3/RS on console, B on PC). Follow Vincent’s assigned mission markers; there is no single fixed destination.\n\nThis week: Dispatch Work — 2X GTA$ & RP",
+      "itemIds": [
+        "auto-6e31fc5b1deeee77de"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/o3948k534952a8/protect-los-santos-and-acquire-new-law-enforcement-vehicles-during-the"
+        }
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-bail-office",
+      "activity": "Bail Office Targets & Challenge",
+      "name": "Your Bail Office",
+      "area": "Your owned Bail Office → bounty selection",
+      "note": "Start the bounty from your Bail Office and follow the assigned target markers. Standard and Most Wanted targets have different availability; check the current target selection and the exact weekly challenge below. Dispatch Work is a separate activity and does not substitute for securing a Bail Office bounty.\n\nThis week: Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
+      "itemIds": [
+        "auto-b0840c9e9d40e6f7fd"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/51195a98k31273/gta-online-bottom-dollar-bounties-out-now"
+        }
+      ],
+      "startsAt": "2026-10-01T09:00:00.000Z",
+      "expiresAt": "2026-10-31T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-gun-van",
+      "activity": "Gun Van",
+      "name": "Mobile weapons dealer",
+      "area": "Daily rotating stop in Southern San Andreas",
+      "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
+      "itemIds": [
+        "auto-1c13170003b27cbd4c"
+      ],
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    }
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-6e31fc5b1deeee77de",
+          "label": "Dispatch Work — 2X GTA$ & RP",
+          "factKey": "bonuses:dispatch work:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-31T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "windowPolicy": "independent",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "Dispatch Work",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-b0840c9e9d40e6f7fd",
+          "label": "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
+          "factKey": "bonuses:standard and most wanted bail office targets:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-10-31T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "windowPolicy": "independent",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "Standard and Most Wanted Bail Office Targets",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-a3859c11d66f011aa8",
+          "label": "in two Adversary modes — Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+          "factKey": "challenge:in two adversary modes:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "in two Adversary modes",
+          "offer": "Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "extra"
+        }
+      ]
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free rewards & prize vehicles",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts & Offers",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-1c13170003b27cbd4c",
+          "label": "Pipe Bombs — In stock",
+          "factKey": "gun-van:pipe bombs:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Pipe Bombs",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-33f2aa77eba82a13a5",
+          "label": "The Shocker — FREE",
+          "factKey": "gun-van:the shocker:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "The Shocker",
+          "offer": "FREE",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "primary"
+        },
+        {
+          "id": "auto-57dab79ab490d6965d",
+          "label": "Service Carbine — In stock",
+          "factKey": "gun-van:service carbine:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Service Carbine",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-74835df5259269a994",
+          "label": "Unholy Hellbringer — In stock",
+          "factKey": "gun-van:unholy hellbringer:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Unholy Hellbringer",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7b28067bf63aea87d8",
+          "label": "Widowmaker — In stock",
+          "factKey": "gun-van:widowmaker:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Widowmaker",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-886bd962ad25adba3f",
+          "label": "Combat Shotgun — In stock",
+          "factKey": "gun-van:combat shotgun:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Combat Shotgun",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "label": "Knife — In stock",
+          "factKey": "gun-van:knife:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Knife",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9f30eddedaa4c24e3d",
+          "label": "Up-n-Atomizer — In stock",
+          "factKey": "gun-van:up n atomizer:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Up-n-Atomizer",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "label": "Baseball Bat — FREE",
+          "factKey": "gun-van:baseball bat:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Baseball Bat",
+          "offer": "FREE",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "primary"
+        },
+        {
+          "id": "auto-e48d50258c4f921f9e",
+          "label": "Precision Rifle — In stock",
+          "factKey": "gun-van:precision rifle:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Precision Rifle",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-ac0e22955c9b7758c5",
+          "label": "Halloween Weekly Challenges Completion Bonus — Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "factKey": "other:halloween weekly challenges completion bonus:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "windowPolicy": "independent",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "Halloween Weekly Challenges Completion Bonus",
+          "offer": "Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "title": "GTA+ benefits",
+      "completeness": "pending",
+      "items": []
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "kind": "rockstar",
+      "scope": "weekly",
+      "publishedOn": "2026-10-01"
+    },
+    {
+      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-10-07"
+    },
+    {
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+      "kind": "gtabase",
+      "scope": "weekly",
+      "publishedOn": "2026-10-07"
+    }
+  ],
+  "completeness": "partial",
+  "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+  "nextBoundaryAt": "2026-10-15T09:00:00.000Z",
+  "revision": "dd980057bb4f425a14a6375a55d5173e63edc9d2488c6ed7c0748c10756ecff0",
+  "generatedAt": "2026-10-08T09:00:00.060Z"
+}
