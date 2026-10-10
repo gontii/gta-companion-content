@@ -80,7 +80,7 @@ export async function createBundle(snapshot, existingPage, now) {
   const archive = [...(existingPage?.archive || []), ...oldEditions.filter(d => d.endsOn < edition.startsOn).map(({ issue, startsOn, endsOn }) => ({ issue, startsOn, endsOn }))];
   const page = { schemaVersion: 2, current: edition, archive: [...new Map(archive.map(e => [e.issue, e])).values()].sort((a,b) => b.startsOn.localeCompare(a.startsOn)) };
   validatePublicPage(page, now);
-  const writes = [{ key: `weekly:public:${edition.issue}`, value: edition }, { key: 'weekly:latest', value: compatibleAppSnapshot(snapshot) }, { key: 'weekly:public', value: page }];
+  const writes = [{ key: `weekly:public:${edition.issue}`, value: edition }, { key: 'weekly:latest', value: compatibleAppSnapshot(snapshot) }, { key: 'weekly:public', value: page }, { key: 'weekly:app:public', value: compatibleAppSnapshot(snapshot) }];
   const hashes = await Promise.all(writes.map(w => hash(w.value)));
   return { revision: snapshot.revision, weekId: snapshot.weekId, issue: edition.issue, preparedAt: snapshot.generatedAt,
     writes: writes.map((w,i) => ({ key: w.key, digest: hashes[i] })), values: writes.map(w => w.value) };

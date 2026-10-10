@@ -192,7 +192,7 @@ test('coordinator recovers a KV crash, deduplicates publication and persists nex
   await engine.alarm();
   assert.deepEqual(await storage.get('publication'), intended);
   await engine.alarm();
-  assert.equal(writes, 6);
+  assert.equal(writes, 7);
   assert.equal((await engine.outbox()).entries.length, 1);
 });
 
