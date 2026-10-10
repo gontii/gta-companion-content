@@ -5,11 +5,11 @@
   "startsOn": "2026-10-08",
   "endsOn": "2026-10-14",
   "status": "active",
-  "verifiedAt": "2026-10-09T21:18:40.557Z",
-  "confirmedAt": "2026-10-09T21:18:40.557Z",
+  "verifiedAt": "2026-10-10T05:33:41.563Z",
+  "confirmedAt": "2026-10-10T05:33:41.563Z",
   "startsAt": "2026-10-08T09:00:00.000Z",
   "expiresAt": "2026-10-15T09:00:00.000Z",
-  "revision": "04e36ee180574437ed540dd6f39ee5fe1525581f7f846bc383e949fe7e41e3d4",
+  "revision": "736a8f95be5d4ede902770756d6acbf5edf1ff8a09e0d249146378bb7302de6f",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -20,19 +20,146 @@
       "id": "bonuses",
       "items": [
         {
+          "id": "auto-1237ea9f2ca2f2c197",
+          "name": "Halloween Survivals",
+          "status": "confirmed",
+          "offer": "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-2a2409bee4380ccb13",
+          "name": "Ghosts Exposed",
+          "status": "confirmed",
+          "offer": "Ghosts Exposed — 2X GTA$",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-2b6a5e7b2c0c61d55d",
+          "name": "The Black Box File",
+          "status": "confirmed",
+          "offer": "The Black Box File — 2X GTA$ & RP; this week’s FIB Priority File.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-2d6081813d30c5f7e2",
+          "name": "Community Race Series",
+          "status": "confirmed",
+          "offer": "Community Race Series — 3X GTA$ & RP",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-3968c0f61679c237bd",
+          "name": "San Andreas Super Sport Series",
+          "status": "confirmed",
+          "offer": "San Andreas Super Sport Series — 3X GTA$ & RP; Hotring Races and Random Transform Races.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-4b394bd024fcf5f15c",
+          "name": "Jack O' Lanterns",
+          "status": "confirmed",
+          "offer": "Jack O' Lanterns — 2X GTA$ & RP",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
           "id": "auto-6e31fc5b1deeee77de",
           "name": "Dispatch Work",
           "status": "confirmed",
           "offer": "Dispatch Work — 2X GTA$ & RP",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
-          "startsOn": "2026-10-01",
-          "endsOn": "2026-10-31",
-          "startsAt": "2026-10-01T09:00:00.000Z",
-          "expiresAt": "2026-10-31T23:00:00.000Z",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-1"
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-8a5fe258a0c0c10610",
+          "name": "UFO Business Battles",
+          "status": "confirmed",
+          "offer": "UFO Business Battles — 2X GTA$ & RP",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
           ]
         },
         {
@@ -48,7 +175,25 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-1"
+            "ref-4"
+          ]
+        },
+        {
+          "id": "auto-d8b235424d6e0a0578",
+          "name": "Halloween Featured Series",
+          "status": "confirmed",
+          "offer": "Halloween Featured Series — 3X GTA$ & RP; Slasher and Ramius – Slasher.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
           ]
         }
       ]
@@ -60,7 +205,7 @@
           "id": "auto-a3859c11d66f011aa8",
           "name": "in two Adversary modes",
           "status": "confirmed",
-          "offer": "in two Adversary modes — Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+          "offer": "Adversary Modes — Win two Adversary Modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
           "endsOn": "2026-10-14",
@@ -69,7 +214,7 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-1"
+            "ref-4"
           ]
         },
         {
@@ -85,6 +230,25 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-10296cce952ca12394",
+          "name": "Payphone Hits",
+          "status": "confirmed",
+          "offer": "Payphone Hits — Complete five Payphone Hits to receive GTA$500,000 within 72 hours of completion.",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "targetCount": 5,
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
             "ref-2",
             "ref-3"
           ]
@@ -93,7 +257,7 @@
           "id": "auto-5fca03acb73a89d28c",
           "name": "Declasse Walton L35",
           "status": "confirmed",
-          "offer": "Declasse Walton L35 — place top 4 in a LS Car Meet Race for 2 days in a row to unlock the Declasse Walton L35",
+          "offer": "Declasse Walton L35 — Place top 4 in an LS Car Meet race for 2 days in a row to unlock the Declasse Walton L35",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
           "endsOn": "2026-10-14",
@@ -102,8 +266,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -119,7 +283,7 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-1"
+            "ref-4"
           ]
         }
       ]
@@ -140,8 +304,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -157,8 +321,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -174,8 +338,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -191,8 +355,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -208,8 +372,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -225,8 +389,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -242,8 +406,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -259,8 +423,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -276,8 +440,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -293,8 +457,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -310,6 +474,24 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-a0466fff95e3dbdb62",
+          "name": "Agency Properties, Upgrades and Modifications",
+          "status": "confirmed",
+          "offer": "Agency Properties, Upgrades and Modifications — 40% off",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
             "ref-2",
             "ref-3"
           ]
@@ -327,8 +509,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -344,8 +526,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -361,8 +543,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -378,8 +560,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         }
       ]
@@ -400,7 +582,7 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-1"
+            "ref-4"
           ]
         }
       ]
@@ -409,10 +591,10 @@
       "id": "gta-plus",
       "items": [
         {
-          "id": "auto-2073cf3ffb853a056c",
-          "name": "Widowmaker",
+          "id": "auto-4489f98d822b54161b",
+          "name": "Jack O' Lanterns",
           "status": "confirmed",
-          "offer": "Widowmaker — 50% off at the Gun Van (GTA+ only)",
+          "offer": "Jack O' Lanterns — 4X GTA$ & RP (GTA+ only)",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
           "endsOn": "2026-10-14",
@@ -421,8 +603,81 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-1",
             "ref-2",
             "ref-3"
+          ]
+        },
+        {
+          "id": "auto-a9ccb4a19c87a482f2",
+          "name": "Ghosts Exposed",
+          "status": "confirmed",
+          "offer": "Ghosts Exposed — 4X GTA$ (GTA+ only)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-bbbcf38a2cec3fa1f0",
+          "name": "Halloween Survivals",
+          "status": "confirmed",
+          "offer": "Halloween Survivals — 6X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals. (GTA+ only)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-01bb27b1dd7dc918d3",
+          "name": "Service Carbine",
+          "status": "confirmed",
+          "offer": "Service Carbine — 30% off at the Gun Van (GTA+ only)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-10-14",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-2073cf3ffb853a056c",
+          "name": "Widowmaker",
+          "status": "confirmed",
+          "offer": "Widowmaker — 50% off at the Gun Van (GTA+ only)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
           ]
         },
         {
@@ -432,14 +687,15 @@
           "offer": "Up-n-Atomizer — 50% off at the Gun Van (GTA+ only)",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
-          "endsOn": "2026-10-14",
+          "endsOn": "2026-11-04",
           "startsAt": "2026-10-08T09:00:00.000Z",
-          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-5",
+            "ref-6",
+            "ref-7"
           ]
         },
         {
@@ -449,14 +705,303 @@
           "offer": "Unholy Hellbringer — 50% off at the Gun Van (GTA+ only)",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
-          "endsOn": "2026-10-14",
+          "endsOn": "2026-11-04",
           "startsAt": "2026-10-08T09:00:00.000Z",
-          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-22536be77717687c5f",
+          "name": "The Vinewood Club",
+          "status": "confirmed",
+          "offer": "The Vinewood Club — Access to the Car Club, 100-car Garage, Workshop and in-game App; recurring membership amenities. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-2ee5acf9b564ed5668",
+          "name": "Albany Brigham",
+          "status": "confirmed",
+          "offer": "Albany Brigham — Around 60% off by stacking discounts at The Vinewood Car Club; check the final in-game price. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-2f61b30d5a541702e0",
+          "name": "Ride or Die Jeans",
+          "status": "confirmed",
+          "offer": "Ride or Die Jeans — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-3e76bf55a0df83c867",
+          "name": "Trippy weapon finishes",
+          "status": "confirmed",
+          "offer": "Trippy weapon finishes — Available for the Baseball Bat and Knife at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-442978c9a8d2f44de1",
+          "name": "Skeleton Bodysuit",
+          "status": "confirmed",
+          "offer": "Skeleton Bodysuit — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-49aa0c521475aa7a14",
+          "name": "Pegassi Oppressor",
+          "status": "confirmed",
+          "offer": "Pegassi Oppressor — FREE with the Skulls livery; claim at The Vinewood Car Club or Warstock Cache & Carry. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-4d1cae5779366fd86f",
+          "name": "Mummy Costume",
+          "status": "confirmed",
+          "offer": "Mummy Costume — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-4f35ed99b4d59aac0f",
+          "name": "Ride or Die Chore Jacket",
+          "status": "confirmed",
+          "offer": "Ride or Die Chore Jacket — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-5cd14d38e0b9fdfa4c",
+          "name": "GTA$500,000 monthly deposit",
+          "status": "confirmed",
+          "offer": "GTA$500,000 monthly deposit — Recurring GTA$500,000 on your membership billing date; not an extra one-time event reward. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-7188858ef69ce91471",
+          "name": "MTL Brickade 6x6",
+          "status": "confirmed",
+          "offer": "MTL Brickade 6x6 — FREE with a complimentary Manchez Scout C; claim at The Freakshop in Mirror Park. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-813ebe7cf80656ddc9",
+          "name": "GTA+ Games Library",
+          "status": "confirmed",
+          "offer": "GTA+ Games Library — Access to the included Rockstar Games titles while your membership and their availability last; recurring benefit. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-b2c3e8738749ab03c4",
+          "name": "LCC Sanctus",
+          "status": "confirmed",
+          "offer": "LCC Sanctus — Around 60% off by stacking discounts at The Vinewood Car Club; check the final in-game price. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-cabd35fa2cebee9c79",
+          "name": "Red/Orange Flip Chameleon Paint",
+          "status": "confirmed",
+          "offer": "Red/Orange Flip Chameleon Paint — FREE at Auto Shops. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-d920306eb2d6931f33",
+          "name": "Acid Lab Supplies",
+          "status": "confirmed",
+          "offer": "Acid Lab Supplies — FREE supplies for your Acid Lab. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-e9acda331f20d2c086",
+          "name": "Red/Orange Flip Chameleon Wheel Paint",
+          "status": "confirmed",
+          "offer": "Red/Orange Flip Chameleon Wheel Paint — FREE at Auto Shops. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-fbb344150302deb2f7",
+          "name": "Member-only Shark Cards",
+          "status": "confirmed",
+          "offer": "Member-only Shark Cards — 15% bonus GTA$ on member-only Shark Cards; recurring membership benefit. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "The conditions and platform restrictions stated in the offer apply.",
+          "startsOn": "2026-10-08",
+          "endsOn": "2026-11-04",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-5",
+            "ref-6",
+            "ref-7"
           ]
         }
       ]
@@ -477,15 +1022,15 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
           "id": "auto-33f2aa77eba82a13a5",
           "name": "The Shocker",
           "status": "confirmed",
-          "offer": "The Shocker — FREE",
+          "offer": "The Shocker — FREE at the Gun Van",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
           "endsOn": "2026-10-14",
@@ -494,15 +1039,16 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
+            "ref-1",
             "ref-2",
-            "ref-4"
+            "ref-3"
           ]
         },
         {
           "id": "auto-57dab79ab490d6965d",
           "name": "Service Carbine",
           "status": "confirmed",
-          "offer": "Service Carbine — In stock",
+          "offer": "Service Carbine — 30% off at the Gun Van",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
           "endsOn": "2026-10-14",
@@ -511,6 +1057,7 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
+            "ref-1",
             "ref-2",
             "ref-3"
           ]
@@ -528,8 +1075,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -545,8 +1092,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -562,8 +1109,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -579,8 +1126,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
@@ -596,15 +1143,15 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
           "id": "auto-cae4fa84f2ab2246b6",
           "name": "Baseball Bat",
           "status": "confirmed",
-          "offer": "Baseball Bat — FREE",
+          "offer": "Baseball Bat — FREE at the Gun Van",
           "requirements": "The conditions and platform restrictions stated in the offer apply.",
           "startsOn": "2026-10-08",
           "endsOn": "2026-10-14",
@@ -613,8 +1160,9 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
+            "ref-1",
             "ref-2",
-            "ref-4"
+            "ref-3"
           ]
         },
         {
@@ -630,25 +1178,13 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-2",
-            "ref-3"
+            "ref-1",
+            "ref-2"
           ]
         },
         {
           "id": "pending-gun-van-stock",
           "name": "Other Gun Van stock and discounts",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": []
-        },
-        {
-          "id": "pending-prize-vehicles",
-          "name": "Podium and Prize Ride requirements",
           "status": "pending",
           "offer": null,
           "requirements": null,
@@ -664,27 +1200,45 @@
   "sources": [
     {
       "id": "ref-1",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-09T21:18:40.557Z"
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "verifiedAt": "2026-10-10T05:33:41.563Z"
     },
     {
       "id": "ref-2",
-      "title": "RockstarINTEL",
-      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
-      "verifiedAt": "2026-10-09T21:18:40.557Z"
+      "title": "IGrandTheftAuto",
+      "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-october-8-2026",
+      "verifiedAt": "2026-10-10T05:33:41.563Z"
     },
     {
       "id": "ref-3",
-      "title": "IGrandTheftAuto",
-      "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-october-8-2026",
-      "verifiedAt": "2026-10-09T21:18:40.557Z"
+      "title": "GTABase",
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+      "verifiedAt": "2026-10-10T05:33:41.563Z"
     },
     {
       "id": "ref-4",
-      "title": "GTABase",
-      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
-      "verifiedAt": "2026-10-09T21:18:40.557Z"
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "verifiedAt": "2026-10-10T05:33:41.563Z"
+    },
+    {
+      "id": "ref-5",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+      "verifiedAt": "2026-10-10T05:33:41.563Z"
+    },
+    {
+      "id": "ref-6",
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+      "verifiedAt": "2026-10-10T05:33:41.563Z"
+    },
+    {
+      "id": "ref-7",
+      "title": "Source",
+      "url": "https://gta.guide/article/gta-plus-bonuses-october-2026",
+      "verifiedAt": "2026-10-10T05:33:41.563Z"
     }
   ]
 }
