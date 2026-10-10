@@ -225,7 +225,7 @@ export class PublicationEngine {
         }
         const projected = publicSnapshot(projectContent(master, now));
         delete projected.generatedAt; delete projected.revision;
-        const revision = await hash(projected);
+        const revision = await hash([projected, { publicProjection: 2 }]);
         const publication = await this.store.get('publication');
         if ((revision !== publication?.revision || !await this.store.get('bundle-manifest')) && this.env.PUBLICATION_MODE === 'publish' && !await this.store.get('pending-bundle')) {
           const snapshot = { ...projected, revision, generatedAt: new Date(now).toISOString() };

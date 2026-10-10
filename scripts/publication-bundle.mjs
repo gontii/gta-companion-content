@@ -34,8 +34,23 @@ export function publicEdition(snapshot, now) {
     if (!sourceIds.length) throw new Error('public_item_source_missing');
     const gtaPlus = section.id === 'gta-plus' || item.eligibility === 'gta-plus';
     const target = gtaPlus ? 'gta-plus' : sections[section.id];
-    rows[target].push({ id: item.id, name: (item.entity || item.label.split(' — ')[0]).slice(0, 150).trim(), status: 'confirmed',
-      offer: item.label, requirements: 'The conditions and platform restrictions stated in the offer apply.',
+    const location = snapshot.locations?.find(l => l.itemIds?.includes(item.id));
+    const access = location ? `${location.area}. ${location.note.split('\n\nThis week:')[0]}` :
+      (item.offer || item.label.split(' — ').slice(1).join(' — ') || item.label);
+    // Retain actual action/access conditions instead of a generic disclaimer.
+    let requirements = `${gtaPlus ? 'Active GTA+ membership required. ' : ''}${access}`.replace(/\s+/g, ' ').trim();
+    const event = snapshot.seasonalCashEvent;
+    if (event && section.id === 'other' && /Halloween Weekly Challenges Completion Bonus/.test(item.label)) {
+      const schedule = event.weeks.map((w, i) => `Week ${i + 1} (${w.startsOn}–${w.endsOn}): ${w.challenge}; ${w.reward} and ${w.outfit}.`).join(' ');
+      requirements = `${event.summary}. Paid within 72 hours of completing all five; Payphone Hits is separate. ${schedule}`;
+    }
+    if (requirements.length > 700) throw new Error('public_requirements_too_long');
+    for (const source of location?.sources || []) {
+      if (!sources.has(source.url)) sources.set(source.url, { id: `ref-${sources.size + 1}`, title: source.kind === 'rockstar' ? 'Rockstar Games Newswire' : 'Source', url: source.url, verifiedAt: snapshot.generatedAt });
+      sourceIds.push(sources.get(source.url).id);
+    }
+    rows[target].push({ id: item.id, name: (item.label.split(' — ')[0] || item.entity).slice(0, 150).trim(), status: 'confirmed',
+      offer: item.label, requirements,
       ...period(item), ...(item.targetCount ? { targetCount: item.targetCount } : {}), startsAt: item.startsAt, expiresAt: item.expiresAt, claim: null, gtaPlus, sourceIds: [...new Set(sourceIds)] });
   }
   for (const [id, items] of Object.entries(rows)) {

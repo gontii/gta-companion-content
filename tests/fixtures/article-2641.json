@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 2,
+  "weekId": "2026-10-08",
+  "range": "2026-10-08 – 2026-10-14",
+  "headline": "This week in GTA Online",
+  "startsAt": "2026-10-08T09:00:00.000Z",
+  "expiresAt": "2026-10-15T09:00:00.000Z",
+  "originalZone": "Europe/Warsaw",
+  "precision": "date",
+  "timingConfidence": "estimated",
+  "locations": [
+    {
+      "id": "auto-location-halloween-survivals",
+      "activity": "Halloween Survivals",
+      "name": "Survival job selection",
+      "area": "Pause Menu → Online → Jobs → Play Job → Rockstar Created → Survivals",
+      "note": "Select the Halloween Survival named in the current offer. Ludendorff Cemetery is entered through a job or its Survival map blip; do not try to drive to North Yankton in Freemode. Availability follows the current playlist.\n\nThis week: Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "itemIds": [
+        "auto-1237ea9f2ca2f2c197"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s"
+        }
+      ],
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    }
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-1237ea9f2ca2f2c197",
+          "label": "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+          "factKey": "bonuses:halloween survivals:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Halloween Survivals",
+          "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-bbbcf38a2cec3fa1f0",
+          "label": "Halloween Survivals — 6X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals. (GTA+ only)",
+          "factKey": "bonuses:halloween survivals:gta-plus:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Halloween Survivals",
+          "offer": "6X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-10296cce952ca12394",
+          "label": "Payphone Hits — Complete five Payphone Hits to receive GTA$500,000 within 72 hours of completion.",
+          "factKey": "challenge:payphone hits:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Payphone Hits",
+          "offer": "Complete five Payphone Hits to receive GTA$500,000 within 72 hours of completion.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "targetCount": 5,
+          "progressGroup": "primary"
+        },
+        {
+          "id": "auto-a3859c11d66f011aa8",
+          "label": "Adversary Modes — Week 2/5: Win two Adversary Modes to receive GTA$100,000 and the Pink Skull Emissive Mask. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
+          "factKey": "challenge:in two adversary modes:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+            }
+          ],
+          "entity": "in two Adversary modes",
+          "offer": "Week 2/5: Win two Adversary Modes to receive GTA$100,000 and the Pink Skull Emissive Mask. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "targetCount": 2,
+          "seasonalEventId": "halloween-challenges-2026-10",
+          "progressGroup": "primary"
+        }
+      ]
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free rewards & prize vehicles",
+      "completeness": "partial",
+      "items": []
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts & Offers",
+      "completeness": "partial",
+      "items": []
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "completeness": "partial",
+      "items": []
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-ac0e22955c9b7758c5",
+          "label": "Halloween Weekly Challenges Completion Bonus — Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "factKey": "other:halloween weekly challenges completion bonus:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "windowPolicy": "independent",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "Halloween Weekly Challenges Completion Bonus",
+          "offer": "Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "title": "GTA+ benefits",
+      "completeness": "partial",
+      "items": []
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-10-07"
+    },
+    {
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+      "kind": "gtabase",
+      "scope": "weekly",
+      "publishedOn": "2026-10-07"
+    },
+    {
+      "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "kind": "rockstar",
+      "scope": "weekly",
+      "publishedOn": "2026-10-01"
+    },
+    {
+      "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+      "kind": "rockstar",
+      "scope": "membership",
+      "publishedOn": "2026-10-08"
+    },
+    {
+      "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+      "kind": "intel",
+      "scope": "membership",
+      "publishedOn": "2026-10-08"
+    }
+  ],
+  "completeness": "partial",
+  "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+  "seasonalCashEvent": {
+    "id": "halloween-challenges-2026-10",
+    "kind": "cash",
+    "title": "Halloween — Five Weekly Challenges",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-11-04",
+    "summary": "Complete all five weekly challenges to earn an extra GTA$2,000,000",
+    "description": "A different challenge each week. Complete every week during October 1–November 4. The extra GTA$2,000,000 is deposited within 72 hours of completing all five; Payphone Hits is a separate bonus and does not count towards this series.",
+    "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+    "weeks": [
+      {
+        "startsOn": "2026-10-01",
+        "endsOn": "2026-10-07",
+        "challenge": "Secure two Bail Office Bounties",
+        "reward": "GTA$100,000",
+        "outfit": "Green Vintage Skull Mask",
+        "targetCount": 2
+      },
+      {
+        "startsOn": "2026-10-08",
+        "endsOn": "2026-10-14",
+        "challenge": "Win two Adversary Modes",
+        "reward": "GTA$100,000",
+        "outfit": "Pink Skull Emissive Mask",
+        "targetCount": 2
+      },
+      {
+        "startsOn": "2026-10-15",
+        "endsOn": "2026-10-21",
+        "challenge": "Win three Races",
+        "reward": "GTA$100,000",
+        "outfit": "Orange Glow Skeleton Onesie",
+        "targetCount": 3
+      },
+      {
+        "startsOn": "2026-10-22",
+        "endsOn": "2026-10-28",
+        "challenge": "Complete all waves of a Survival",
+        "reward": "GTA$150,000",
+        "outfit": "Gray Space Interloper Outfit"
+      },
+      {
+        "startsOn": "2026-10-29",
+        "endsOn": "2026-11-04",
+        "challenge": "Complete 10 waves in a Survival without dying",
+        "reward": "GTA$250,000",
+        "outfit": "Slasher Clown Outfit"
+      }
+    ]
+  },
+  "nextBoundaryAt": "2026-10-15T09:00:00.000Z",
+  "revision": "9ba05ebbe7a3b262cfa07850517ccd054e1a205b553c3e2550cd35b74d085f85",
+  "generatedAt": "2026-10-10T06:30:11.968Z",
+  "quickTakeEntries": [
+    {
+      "id": "auto-1237ea9f2ca2f2c197",
+      "label": "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "factKey": "bonuses:halloween survivals:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Halloween Survivals",
+      "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-1237ea9f2ca2f2c197"
+      ]
+    },
+    {
+      "id": "auto-2a2409bee4380ccb13",
+      "label": "Ghosts Exposed — 2X GTA$",
+      "factKey": "bonuses:ghosts exposed:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Ghosts Exposed",
+      "offer": "2X GTA$",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-2a2409bee4380ccb13"
+      ]
+    },
+    {
+      "id": "auto-2b6a5e7b2c0c61d55d",
+      "label": "The Black Box File — 2X GTA$ & RP; this week’s FIB Priority File.",
+      "factKey": "bonuses:the black box file:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "The Black Box File",
+      "offer": "2X GTA$ & RP; this week’s FIB Priority File.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-2b6a5e7b2c0c61d55d"
+      ]
+    },
+    {
+      "id": "auto-2d6081813d30c5f7e2",
+      "label": "Community Race Series — 3X GTA$ & RP",
+      "factKey": "bonuses:community race series:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Community Race Series",
+      "offer": "3X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-2d6081813d30c5f7e2"
+      ]
+    }
+  ],
+  "beginnerPath": [
+    {
+      "id": "bp-auto-1237ea9f2ca2f2c197",
+      "label": "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "factKey": "bonuses:halloween survivals:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Halloween Survivals",
+      "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-1237ea9f2ca2f2c197"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-2a2409bee4380ccb13",
+      "label": "Ghosts Exposed — 2X GTA$",
+      "factKey": "bonuses:ghosts exposed:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Ghosts Exposed",
+      "offer": "2X GTA$",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-2a2409bee4380ccb13"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-2b6a5e7b2c0c61d55d",
+      "label": "The Black Box File — 2X GTA$ & RP; this week’s FIB Priority File.",
+      "factKey": "bonuses:the black box file:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "The Black Box File",
+      "offer": "2X GTA$ & RP; this week’s FIB Priority File.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-2b6a5e7b2c0c61d55d"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-2d6081813d30c5f7e2",
+      "label": "Community Race Series — 3X GTA$ & RP",
+      "factKey": "bonuses:community race series:all:all",
+      "startsAt": "2026-10-08T09:00:00.000Z",
+      "expiresAt": "2026-10-15T09:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        },
+        {
+          "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+          "kind": "gtabase",
+          "scope": "weekly",
+          "publishedOn": "2026-10-07"
+        }
+      ],
+      "entity": "Community Race Series",
+      "offer": "3X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+      "itemIds": [
+        "auto-2d6081813d30c5f7e2"
+      ],
+      "progressGroup": "none"
+    }
+  ],
+  "quickTake": [
+    "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+    "Ghosts Exposed — 2X GTA$",
+    "The Black Box File — 2X GTA$ & RP; this week’s FIB Priority File.",
+    "Community Race Series — 3X GTA$ & RP"
+  ]
+}
