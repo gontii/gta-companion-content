@@ -858,8 +858,40 @@
       "completeness": "partial",
       "items": [
         {
+          "id": "auto-10296cce952ca12394",
+          "label": "Payphone Hits — Complete five Payphone Hits to receive GTA$500,000 within 72 hours of completion.",
+          "factKey": "challenge:payphone hits:all:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-10-15T09:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-10-07"
+            }
+          ],
+          "entity": "Payphone Hits",
+          "offer": "Complete five Payphone Hits to receive GTA$500,000 within 72 hours of completion.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+          "targetCount": 5,
+          "progressGroup": "primary"
+        },
+        {
           "id": "auto-a3859c11d66f011aa8",
-          "label": "Adversary Modes — Win two Adversary Modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+          "label": "Adversary Modes — Week 2/5: Win two Adversary Modes to receive GTA$100,000 and the Pink Skull Emissive Mask. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
           "factKey": "challenge:in two adversary modes:all:all",
           "startsAt": "2026-10-08T09:00:00.000Z",
           "expiresAt": "2026-10-15T09:00:00.000Z",
@@ -869,18 +901,18 @@
           "confidence": "official",
           "sources": [
             {
-              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
               "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-10-01"
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
             }
           ],
           "entity": "in two Adversary modes",
-          "offer": "Win in two Adversary modes to receive the Pink Skull Emissive Mask and GTA$100,000.",
+          "offer": "Week 2/5: Win two Adversary Modes to receive GTA$100,000 and the Pink Skull Emissive Mask. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-          "progressGroup": "extra"
+          "targetCount": 2,
+          "seasonalEventId": "halloween-challenges-2026-10",
+          "progressGroup": "primary"
         }
       ]
     },
@@ -912,38 +944,6 @@
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-10296cce952ca12394",
-          "label": "Payphone Hits — Complete five Payphone Hits to receive GTA$500,000 within 72 hours of completion.",
-          "factKey": "free-vehicles:payphone hits:all:all",
-          "startsAt": "2026-10-08T09:00:00.000Z",
-          "expiresAt": "2026-10-15T09:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-10-07"
-            },
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-8-14-second-week-of-halloween-event-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-10-07"
-            }
-          ],
-          "entity": "Payphone Hits",
-          "offer": "Complete five Payphone Hits to receive GTA$500,000 within 72 hours of completion.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
-          "targetCount": 5,
           "progressGroup": "none"
         },
         {
@@ -2385,7 +2385,57 @@
   ],
   "completeness": "partial",
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-continues-october-8th-14th/",
+  "seasonalCashEvent": {
+    "id": "halloween-challenges-2026-10",
+    "kind": "cash",
+    "title": "Halloween — Five Weekly Challenges",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-11-04",
+    "summary": "Complete all five weekly challenges to earn an extra GTA$2,000,000",
+    "description": "A different challenge each week. Complete every week during October 1–November 4. The extra GTA$2,000,000 is deposited within 72 hours of completing all five; Payphone Hits is a separate bonus and does not count towards this series.",
+    "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+    "weeks": [
+      {
+        "startsOn": "2026-10-01",
+        "endsOn": "2026-10-07",
+        "challenge": "Secure two Bail Office Bounties",
+        "reward": "GTA$100,000",
+        "outfit": "Green Vintage Skull Mask",
+        "targetCount": 2
+      },
+      {
+        "startsOn": "2026-10-08",
+        "endsOn": "2026-10-14",
+        "challenge": "Win two Adversary Modes",
+        "reward": "GTA$100,000",
+        "outfit": "Pink Skull Emissive Mask",
+        "targetCount": 2
+      },
+      {
+        "startsOn": "2026-10-15",
+        "endsOn": "2026-10-21",
+        "challenge": "Win three Races",
+        "reward": "GTA$100,000",
+        "outfit": "Orange Glow Skeleton Onesie",
+        "targetCount": 3
+      },
+      {
+        "startsOn": "2026-10-22",
+        "endsOn": "2026-10-28",
+        "challenge": "Complete all waves of a Survival",
+        "reward": "GTA$150,000",
+        "outfit": "Gray Space Interloper Outfit"
+      },
+      {
+        "startsOn": "2026-10-29",
+        "endsOn": "2026-11-04",
+        "challenge": "Complete 10 waves in a Survival without dying",
+        "reward": "GTA$250,000",
+        "outfit": "Slasher Clown Outfit"
+      }
+    ]
+  },
   "nextBoundaryAt": "2026-10-15T09:00:00.000Z",
-  "revision": "736a8f95be5d4ede902770756d6acbf5edf1ff8a09e0d249146378bb7302de6f",
-  "generatedAt": "2026-10-10T05:33:41.563Z"
+  "revision": "88aee83fb4655fe6013905685bc283e7b2a26168d1c97a125f96af54c0ab268a",
+  "generatedAt": "2026-10-10T11:20:00.659Z"
 }
