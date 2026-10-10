@@ -35,7 +35,7 @@ export function selectTggVideo(xml, now) {
 
 function isTggTopic(v) {
   return v.channelId === TGG_CHANNEL && /^[\w-]{11}$/.test(v.videoId) &&
-    /gta online/i.test(v.title) && /weekly|event week|update|bonuses|this week/i.test(v.title) &&
+    (/gta online/i.test(v.title) || /^GTA HALLOWEEN UPDATE WEEK\s+\d+\b/i.test(v.title)) && /weekly|event week|update|bonuses|this week/i.test(v.title) &&
     !/gta\s*(?:6|vi)\b|rumou?r|speculat|money guide|beginners? guide|livestream/i.test(v.title);
 }
 export function selectTggCandidate(videos, now) {

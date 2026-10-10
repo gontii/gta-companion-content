@@ -27,6 +27,7 @@ export function classifyProgressItem(item, sectionId, weekId) {
     if (amount !== null) return { progressGroup: amount >= 250_000 ? 'primary' : 'extra' };
   }
   if (sectionId === 'challenge') {
+    if (item.seasonalEventId === 'halloween-challenges-2026-10') return { progressGroup: 'primary' };
     const amount = rewardAmount(offer);
     if (amount !== null) return { progressGroup: amount >= 250_000 ? 'primary' : 'extra' };
     return /complete|finish|win|place|secure|collect/i.test(offer) ? { progressGroup: 'extra' } : { progressGroup: 'none' };

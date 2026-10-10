@@ -2,12 +2,13 @@ import { classifyProgressContent, validateProgressContent } from './progress-cla
 import { validDay, windowFromDays, addDays, localParts, normalizeWeeklyTiming, isWeeklyPeriod } from './temporal.mjs';
 import { thursdayWeekId, extractDateRange, extractPublishedWeekId, cleanText, stripTags, buildWeeklyContent } from './weekly-core.mjs';
 import editorialPeriods from '../events/editorial-periods.json' with { type: 'json' };
+import halloweenEvent from '../events/halloween-challenges-2026-10.json' with { type: 'json' };
 
 export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
-export const FACT_VALIDATION_VERSION = 11;
+export const FACT_VALIDATION_VERSION = 14;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
@@ -174,7 +175,9 @@ export function agreeSources(documents, allowTgg) {
     .flatMap(d => d.facts);
   const pairs = [[intel, base], [intel, extra], [base, extra]];
   for (const [anchors, corroborators] of pairs) for (const f of anchors) {
-    if (approved.has(periodKey(f))) continue;
+    const existing = approved.get(periodKey(f));
+    if (existing && !(existing.confidence !== 'official' && offerTraits(existing)?.type === 'availability' &&
+        ['discount', 'free'].includes(offerTraits(f)?.type))) continue;
     const signature = factSignature(f);
     const match = signature && corroborators.find(b => factSignature(b) === signature);
     if (match) approved.set(periodKey(f), { ...f, sources: [...f.sources, ...match.sources], confidence: 'corroborated' });
@@ -220,6 +223,11 @@ export function seasonalFacts(event) {
   const sources = [{ kind: 'rockstar', url: event.sourceUrl }];
   const make = (entity, offer, startsOn, endsOn, section) => ({ entity, offer, startsOn, endsOn, section,
     eligibility: 'all', platform: 'all', confidence: 'official', sources, ...(section === 'other' ? { windowPolicy: 'independent' } : {}) });
+  if (!event.vehicleReward) return event.weeks.map((w, index) => ({
+    ...make('in two Adversary modes' === w.challenge ? w.challenge : (index === 1 ? 'in two Adversary modes' : event.title),
+      `Week ${index + 1}/${event.weeks.length}: ${w.challenge} to receive ${w.reward} and the ${w.outfit}. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.`, w.startsOn, w.endsOn, 'challenge'),
+    seasonalEventId: event.id, ...(w.targetCount ? { targetCount: w.targetCount } : {}),
+  }));
   return [
     ...event.weeks.map(w => ({ ...make(event.title, `${w.challenge} to receive an extra ${w.reward} and the ${w.outfit}.`, w.startsOn, w.endsOn, 'challenge'), itemId: `business-rivalries-${w.startsOn}`, ...(w.targetCount ? { targetCount: w.targetCount } : {}) })),
     make(event.vehicleReward.name, `Qualify by completing at least one Weekly Challenge; claim ${event.vehicleReward.claimFrom}–${event.vehicleReward.claimUntil}.`, event.vehicleReward.qualifyFrom, event.vehicleReward.qualifyUntil, 'other'),
@@ -229,10 +237,15 @@ export function seasonalFacts(event) {
 
 export async function mergeFacts(previous, facts, now = Date.now()) {
   const current = previous ? upgradeLegacy(previous) : null;
-  const known = seasonalFacts(current?.seasonalEvent);
+  const today = localParts(now).date;
+  const cashEvent = today >= halloweenEvent.startsOn && today <= halloweenEvent.endsOn ? halloweenEvent : null;
+  const hasWeeklyEvidence = facts.some(f => f.section !== 'gta-plus' && f.windowPolicy !== 'independent' &&
+    !f.sources?.some(s => s.scope === 'membership') && isWeeklyPeriod(f.startsOn, f.endsOn) &&
+    thursdayWeekId(new Date(f.startsOn)) === thursdayWeekId(new Date(now)));
+  const known = [...seasonalFacts(current?.seasonalEvent), ...seasonalFacts(hasWeeklyEvidence ? cashEvent : null)];
   // The reviewed seasonal schedule already defines the one weekly challenge.
   facts = [...facts.filter(f => !(f.section === 'challenge' && known.some(k => k.section === 'challenge' &&
-    k.startsOn === f.startsOn && k.endsOn === f.endsOn))), ...known];
+    k.startsOn === f.startsOn && k.endsOn === f.endsOn && (!k.seasonalEventId || normal(k.entity) === normal(f.entity))))), ...known];
   const ready = facts.filter(f => Date.parse(factWindow(f).startsAt) <= now && Date.parse(factWindow(f).expiresAt) > now)
     .sort((a, b) => Date.parse(factWindow(a).startsAt) - Date.parse(factWindow(b).startsAt));
   const latestWeek = [current?.weekId, ...ready.map(f => thursdayWeekId(new Date(f.startsOn)))].filter(Boolean).sort().at(-1);
@@ -245,6 +258,8 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     sections: Object.entries(SECTION_TITLES).map(([id, title]) => ({ id, title, completeness: 'pending', items: [] })),
     sources: [], completeness: 'partial',
   };
+  if (cashEvent) c.seasonalCashEvent = structuredClone(cashEvent);
+  else delete c.seasonalCashEvent;
   // Longer-lived verified offers survive the week transition.
   if (!sameWeek && current) for (const s of current.sections) {
     const target = c.sections.find(t => t.id === s.id);
@@ -267,15 +282,23 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     // Keep a manual correction, its id and its original validity period.
     if (existing?.editorial && Date.parse(existing.expiresAt) > now) continue;
     const id = existing?.id || f.itemId || `auto-${(await hash(key)).slice(0, 18)}`;
-    const label = `${f.entity} — ${f.offer}${f.eligibility === 'gta-plus' ? ' (GTA+ only)' : ''}${f.platform === 'enhanced' ? ' (PS5, Xbox Series X|S, PC Enhanced)' : f.platform === 'legacy' ? ' (Legacy)' : ''}`;
+    // Display corrections must not change fact keys or players' progress ids.
+    const displayEntity = f.section === 'challenge' && /^in two Adversary modes$/i.test(f.entity) ? 'Adversary Modes' : f.entity;
+    const displayOffer = f.offer.replace(/^Win in two Adversary modes\b/i, 'Win two Adversary Modes')
+      .replace(/^place top (\d+) in a LS Car Meet Race/i, 'Place top $1 in an LS Car Meet race');
+    const label = `${displayEntity} — ${displayOffer}${f.eligibility === 'gta-plus' ? ' (GTA+ only)' : ''}${f.platform === 'enhanced' ? ' (PS5, Xbox Series X|S, PC Enhanced)' : f.platform === 'legacy' ? ' (Legacy)' : ''}`;
     const item = { id, label, factKey: key, ...timing, ...(f.windowPolicy ? { windowPolicy: f.windowPolicy } : {}), confidence: f.confidence, sources: f.sources,
       entity: f.entity, offer: f.offer, eligibility: f.eligibility, platform: f.platform, sourceUrl: f.sources[0].url, evidence: f.evidence, dateEvidence: f.dateEvidence,
       ...(f.targetCount ? { targetCount: f.targetCount } : {}),
+      ...(f.seasonalEventId ? { seasonalEventId: f.seasonalEventId } : {}),
       ...(f.offsetMs !== undefined ? { videoId: f.sources[0].videoId, offsetMs: f.offsetMs } : {}) };
     section.items = section.items.filter(i => i.id !== id);
     section.items.push(item);
     section.completeness = 'partial';
   }
+  // Moving a reviewed objective between sections must not leave its old copy.
+  const challenges = c.sections.find(s => s.id === 'challenge')?.items || [];
+  for (const section of c.sections.filter(s => s.id !== 'challenge')) section.items = section.items.filter(i => !challenges.some(t => t.id === i.id));
   // One free property/reward must not appear again as a 100% discount.
   const rewards = c.sections.find(s => s.id === 'free-vehicles')?.items || [];
   const discounts = c.sections.find(s => s.id === 'discounts');

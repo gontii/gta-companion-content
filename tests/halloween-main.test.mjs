@@ -1,0 +1,23 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mergeFacts } from '../scripts/facts.mjs';
+import { supplementReviewedFacts } from '../scripts/reviewed-weekly.mjs';
+import { parseWeeklyContent } from '../schemas/app-weekly-parser.mjs';
+import { compatibleAppSnapshot } from '../scripts/publication-bundle.mjs';
+test('Halloween series is visible, week two is main and Payphone Hits is a separate main weekly challenge', async () => {
+  const now=Date.parse('2026-10-10T12:00:00Z');
+  const c=await mergeFacts(null,supplementReviewedFacts(null,[],now),now);
+  assert.equal(c.seasonalCashEvent.weeks.length,5);
+  assert.match(c.seasonalCashEvent.summary,/2,000,000/);
+  const tasks=c.sections.find(s=>s.id==='challenge').items;
+  const halloween=tasks.find(i=>i.seasonalEventId==='halloween-challenges-2026-10');
+  assert.match(halloween.label,/Week 2\/5.*Win two Adversary Modes/);
+  assert.equal(halloween.progressGroup,'primary');
+  assert.equal(halloween.targetCount,2);
+  const payphone=tasks.find(i=>i.entity==='Payphone Hits');
+  assert.equal(payphone.targetCount,5);
+  assert.equal(payphone.progressGroup,'primary');
+  assert.equal(payphone.id,'auto-10296cce952ca12394');
+  assert.ok(!c.sections.find(s=>s.id==='free-vehicles').items.some(i=>i.entity==='Payphone Hits'));
+  assert.ok(parseWeeklyContent(compatibleAppSnapshot({...c,generatedAt:new Date(now).toISOString(),revision:'a'.repeat(64)})),'cash event is additive and compatible with installed clients');
+});

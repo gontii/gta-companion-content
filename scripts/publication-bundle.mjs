@@ -59,8 +59,11 @@ export function publicEdition(snapshot, now) {
     // A populated category does not establish that unknown rotations or offers are absent.
     else if (id === 'rotations') {
       items.push({ id: 'pending-gun-van-stock', name: 'Other Gun Van stock and discounts', status: 'pending', offer: null, requirements: null, startsOn: null, endsOn: null, claim: null, gtaPlus: false, sourceIds: [] });
-      items.push({ id: 'pending-prize-vehicles', name: 'Podium and Prize Ride requirements', status: 'pending', offer: null, requirements: null,
-      startsOn: null, endsOn: null, claim: null, gtaPlus: false, sourceIds: [] });
+      const rewards = snapshot.sections.find(s => s.id === 'free-vehicles')?.items || [];
+      if (!rewards.some(i => /podium|lucky wheel/i.test(i.label)) || !rewards.some(i => /prize ride|LS Car Meet/i.test(i.label))) {
+        items.push({ id: 'pending-prize-vehicles', name: 'Podium and Prize Ride requirements', status: 'pending', offer: null, requirements: null,
+        startsOn: null, endsOn: null, claim: null, gtaPlus: false, sourceIds: [] });
+      }
     }
   }
   const edition = { schemaVersion: 1, issue: issueNumber(snapshot.weekId), weekId: snapshot.weekId, startsOn: snapshot.weekId,

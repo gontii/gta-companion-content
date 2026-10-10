@@ -5,6 +5,14 @@ import { validateFacts } from './facts.mjs';
 export function extractRockstarFacts(doc) {
   if (doc.source.kind !== 'rockstar' || !doc.html) return { facts: [], rejected: [] };
   const facts = [];
+  const apparel = /<p\b[^>]*>Playing GTA Online throughout the month[\s\S]*?free items[\s\S]*?<\/p>\s*<ul>([\s\S]*?)<\/ul>/i.exec(doc.html);
+  if (apparel && doc.source.scope !== 'membership') for (const [, row] of apparel[1].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)) {
+    const evidence = stripTags(row);
+    const match = /^(October\s+\d+\s*[-–—]\s*(?:November\s+)?\d+):\s*(.+)$/i.exec(evidence);
+    const period = match && extractDateRange(match[1], { publishedWeekId: doc.publishedOn, now: new Date(doc.publishedOn) });
+    if (period) facts.push({ section:'free-vehicles', entity:match[2], offer:'Reward for playing GTA Online',
+      eligibility:'all', platform:'all', startsOn:period.startId, endsOn:period.endId, evidence, dateEvidence:match[1] });
+  }
   let discountPeriod = null, discountEvidence = '';
   for (const [block, tag, html] of doc.html.matchAll(/<(h[1-6]|p)\b[^>]*>([\s\S]*?)<\/\1>/gi)) {
     const text = stripTags(html);

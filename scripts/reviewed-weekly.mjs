@@ -1,15 +1,20 @@
 import previous from '../events/reviewed-weekly-2638.json' with { type: 'json' };
 import current from '../events/reviewed-weekly-2640.json' with { type: 'json' };
-const reviewed = [...previous, ...current];
-import { factKey, factWindow } from './facts.mjs';
+import latest from '../events/reviewed-weekly-2641.json' with { type: 'json' };
+const reviewed = [...previous, ...current, ...latest];
+import { factKey, factWindow, normal } from './facts.mjs';
 
 // Zatwierdzone uzupełnienie wydania 2638. Wypełnia braki, nie nadpisuje
 // istniejących korekt ani świeższych faktów dostarczonych przez źródła.
 export function supplementReviewedFacts(master, facts, now) {
   // Potwierdzona korekta wygrywa z ponowną ekstrakcją tego samego okresu.
-  const active = current.filter(f => now >= Date.parse(factWindow(f).startsAt) && now < Date.parse(factWindow(f).expiresAt));
+  const corrections = [...current, ...latest];
+  const active = corrections.filter(f => now >= Date.parse(factWindow(f).startsAt) && now < Date.parse(factWindow(f).expiresAt));
   const corrected = new Set(active.map(f => factKey(f) + ':' + f.startsOn));
   facts = facts.filter(f => !corrected.has(factKey(f) + ':' + f.startsOn));
+  // Two sources reverse this same Bail Office name. Do not publish it twice.
+  facts = facts.filter(f => !(f.section === 'bonuses' && normal(f.entity) === 'bail office standard and most wanted targets' &&
+    active.some(a => a.section === f.section && normal(a.entity) === 'standard and most wanted bail office targets' && a.eligibility === f.eligibility)));
   const keys = new Set(facts.map(factKey));
   const existing = master?.sections?.flatMap(s => s.items) || [];
   const additions = reviewed.filter(f => {
@@ -18,7 +23,7 @@ export function supplementReviewedFacts(master, facts, now) {
     if (keys.has(factKey(f))) return false;
     return !existing.some(i => i.factKey === factKey(f) && Date.parse(i.expiresAt) > now);
   });
-  return [...facts, ...additions.filter(f => !current.includes(f)), ...active];
+  return [...facts, ...additions.filter(f => !corrections.includes(f)), ...active];
 }
 
 // Wersja aplikacji obsługuje cytowania RockstarINTEL, ale nie drugi serwis.

@@ -1,0 +1,17 @@
+{
+  "id": "halloween-challenges-2026-10",
+  "kind": "cash",
+  "title": "Halloween — Five Weekly Challenges",
+  "startsOn": "2026-10-01",
+  "endsOn": "2026-11-04",
+  "summary": "Complete all five weekly challenges to earn an extra GTA$2,000,000",
+  "description": "A different challenge each week. Complete every week during October 1–November 4. The extra GTA$2,000,000 is deposited within 72 hours of completing all five; Payphone Hits is a separate bonus and does not count towards this series.",
+  "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+  "weeks": [
+    {"startsOn":"2026-10-01","endsOn":"2026-10-07","challenge":"Secure two Bail Office Bounties","reward":"GTA$100,000","outfit":"Green Vintage Skull Mask","targetCount":2},
+    {"startsOn":"2026-10-08","endsOn":"2026-10-14","challenge":"Win two Adversary Modes","reward":"GTA$100,000","outfit":"Pink Skull Emissive Mask","targetCount":2},
+    {"startsOn":"2026-10-15","endsOn":"2026-10-21","challenge":"Win three Races","reward":"GTA$100,000","outfit":"Orange Glow Skeleton Onesie","targetCount":3},
+    {"startsOn":"2026-10-22","endsOn":"2026-10-28","challenge":"Complete all waves of a Survival","reward":"GTA$150,000","outfit":"Gray Space Interloper Outfit"},
+    {"startsOn":"2026-10-29","endsOn":"2026-11-04","challenge":"Complete 10 waves in a Survival without dying","reward":"GTA$250,000","outfit":"Slasher Clown Outfit"}
+  ]
+}
