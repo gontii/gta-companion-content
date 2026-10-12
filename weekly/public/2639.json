@@ -1,0 +1,1207 @@
+{
+  "schemaVersion": 1,
+  "issue": "2639",
+  "weekId": "2026-09-24",
+  "startsOn": "2026-09-24",
+  "endsOn": "2026-09-30",
+  "status": "active",
+  "verifiedAt": "2026-10-12T06:17:29.024Z",
+  "confirmedAt": "2026-10-12T06:17:29.024Z",
+  "platforms": [
+    "PC Enhanced",
+    "PS5",
+    "Xbox Series X|S"
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "items": [
+        {
+          "id": "auto-140f753d3770615a28",
+          "name": "Nightclub Management Missions",
+          "status": "confirmed",
+          "offer": "2X Nightclub Popularity.",
+          "requirements": "Complete Nightclub management work; this bonus increases Popularity, not a blanket GTA$/RP payout.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "auto-1d676d29912268443b",
+          "name": "Nightclub Goods Missions",
+          "status": "confirmed",
+          "offer": "2X GTA$ and RP.",
+          "requirements": "Request Nightclub Goods from Yohan and complete the sourcing mission; this does not double all Nightclub sales.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "auto-ad731fe9dbaf732aea",
+          "name": "QuickiePharm Deliveries",
+          "status": "confirmed",
+          "offer": "2X GTA$ and RP.",
+          "requirements": "Complete QuickiePharm medical courier deliveries.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "featured-series",
+          "name": "Featured Series",
+          "status": "confirmed",
+          "offer": "2X GTA$ and RP.",
+          "requirements": "Play the featured Deadline, Deadline Duet or Tiny Racers jobs.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "community-combat",
+          "name": "Community Combat Series",
+          "status": "confirmed",
+          "offer": "2X GTA$ and RP.",
+          "requirements": "Complete jobs in the Community Combat Series; the earlier September 3X promotion ended on September 23.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "items": [
+        {
+          "id": "business-rivalries-2026-09-24",
+          "name": "Weekly Challenge",
+          "status": "confirmed",
+          "offer": "GTA$1,000,000 bonus and Retro Fruit Tracksuit.",
+          "requirements": "Sell a combined GTA$1,000,000 across businesses during September 24–30.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "la-coureuse-claim",
+          "name": "Penaud La Coureuse",
+          "status": "confirmed",
+          "offer": "Free vehicle and complimentary HSW upgrade.",
+          "requirements": "Eligibility required completing at least one Weekly Challenge between September 3–23. Return September 24–30 and claim the car at Legendary Motorsport; HSW upgrade at Hao’s Special Works on PS5, Xbox Series X|S or PC Enhanced. Completing only the September 24–30 challenge does not meet that earlier eligibility window.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": {
+            "startsOn": "2026-09-24",
+            "endsOn": "2026-09-30",
+            "details": "Claim the car and complimentary HSW upgrade within this return window."
+          },
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "business-battle-clothing",
+          "name": "Business Battle clothing",
+          "status": "confirmed",
+          "offer": "Guaranteed clothing reward from delivered crates.",
+          "requirements": "Deliver Business Battle crates for Six Figure Tee, Ride or Die Tee, Red and White Ammu-Nation Cap or Bourgeoix Tee.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "podium-penetrator",
+          "name": "Ocelot Penetrator",
+          "status": "confirmed",
+          "offer": "Casino podium vehicle.",
+          "requirements": "Spin the Lucky Wheel at The Diamond Casino & Resort for a chance to win; a win is not guaranteed.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "prize-zorrusso",
+          "name": "Pegassi Zorrusso",
+          "status": "confirmed",
+          "offer": "LS Car Meet Prize Ride.",
+          "requirements": "Win an LS Car Meet Series race on four consecutive days.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "discounts",
+      "items": [
+        {
+          "id": "free-nightclub",
+          "name": "Elysian Island Nightclub",
+          "status": "confirmed",
+          "offer": "Free property.",
+          "requirements": "Claim the Elysian Island location from Maze Bank Foreclosures during this week.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "arbiter-sale",
+          "name": "Imponte Arbiter GT",
+          "status": "confirmed",
+          "offer": "70% off.",
+          "requirements": "Purchase from Southern San Andreas Super Autos on PS5, Xbox Series X|S or PC Enhanced.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-enus-stafford",
+          "name": "Enus Stafford",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-dinka-jester-classic",
+          "name": "Dinka Jester Classic",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-hvy-menacer",
+          "name": "HVY Menacer",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-dewbauchee-jb-700w",
+          "name": "Dewbauchee JB 700W",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-vysser-neo",
+          "name": "Vysser Neo",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-nagasaki-blazer-aqua",
+          "name": "Nagasaki Blazer Aqua",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-benefactor-turreted-limo",
+          "name": "Benefactor Turreted Limo",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-vapid-retinue-mk-ii",
+          "name": "Vapid Retinue Mk II",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-truffade-nero",
+          "name": "Truffade Nero",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-declasse-drift-yosemite",
+          "name": "Declasse Drift Yosemite",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-nagasaki-outlaw",
+          "name": "Nagasaki Outlaw",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-pfister-comet-sr",
+          "name": "Pfister Comet SR",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-vapid-gb200",
+          "name": "Vapid GB200",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-vapid-caracara-4x4",
+          "name": "Vapid Caracara 4x4",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "sale-grotti-stinger-gt",
+          "name": "Grotti Stinger GT",
+          "status": "confirmed",
+          "offer": "30% off.",
+          "requirements": "Buy the named model during the event week; showroom availability is listed separately.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "items": [
+        {
+          "id": "business-rivalries-finale",
+          "name": "Business Rivalries — Nightclub week",
+          "status": "confirmed",
+          "offer": "Final week of the September event.",
+          "requirements": "Nightclub offers and the final Weekly Challenge run September 24–30; previous Office, Biker and Gunrunning weeks have ended.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "rockstar",
+            "igta",
+            "reddit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "items": [
+        {
+          "id": "gta-plus-2026-09-horus",
+          "name": "Pegassi Horus",
+          "status": "confirmed",
+          "offer": "Free member vehicle with the Velvet Iris livery.",
+          "requirements": "Active GTA+; claim at The Vinewood Car Club. The early-access week ends before this edition.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "gta-plus-2026-09-cluckin",
+          "name": "Cluckin’ Bell Farm Raid",
+          "status": "confirmed",
+          "offer": "2X GTA$ on the first finale completed each week.",
+          "requirements": "Active GTA+; applies to Scene of the Crime once per week, not every replay or a blanket RP bonus.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "gta-plus-2026-09-bike-service",
+          "name": "Bike Service",
+          "status": "confirmed",
+          "offer": "3X GTA$ and RP.",
+          "requirements": "Active GTA+ and a Clubhouse Custom Bike Shop. The September 10–16 increase has ended before this edition.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "gta-plus-2026-09-production",
+          "name": "Cocaine production",
+          "status": "confirmed",
+          "offer": "2X production speed in the Cocaine Lockup.",
+          "requirements": "Active GTA+ and the Biker Business; the announcement does not establish a Nightclub production bonus.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "gta-plus-2026-09-mc",
+          "name": "Biker Businesses",
+          "status": "confirmed",
+          "offer": "60% off properties, upgrades and modifications.",
+          "requirements": "Active GTA+; eligible Biker Business purchases.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "gta-plus-2026-09-bikes",
+          "name": "Nagasaki motorcycles",
+          "status": "confirmed",
+          "offer": "50% off Shinobi, Shotaro, Stryder, Chimera and BF400.",
+          "requirements": "Active GTA+; listed motorcycle models.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "gta-plus-2026-09-paint",
+          "name": "Cyan/Red Flip paints",
+          "status": "confirmed",
+          "offer": "Free Chameleon body and wheel paints.",
+          "requirements": "Active GTA+; available at vehicle workshops and mod bays.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "gta-plus-2026-09-clothes",
+          "name": "Bigness Patchwork clothing",
+          "status": "confirmed",
+          "offer": "Bigness Patchwork Revere Collar shirt and Bigness Patchwork Jeans added to the wardrobe.",
+          "requirements": "Active GTA+ during the monthly benefit period.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ],
+          "startsAt": "2026-09-10T09:00:00.000Z",
+          "expiresAt": "2026-10-07T22:00:00.000Z"
+        },
+        {
+          "id": "monthly-deposit",
+          "name": "Monthly GTA$ deposit",
+          "status": "confirmed",
+          "offer": "GTA$500,000 on the membership billing date.",
+          "requirements": "Requires an active GTA+ membership; recurring benefit, not an extra event prize.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ]
+        },
+        {
+          "id": "member-shark",
+          "name": "Member Shark Cards",
+          "status": "confirmed",
+          "offer": "15% bonus GTA$ on member-only Shark Cards.",
+          "requirements": "Active GTA+; applies to the designated member-only cards.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ]
+        },
+        {
+          "id": "club-app-library",
+          "name": "The Vinewood Club App and GTA+ Games Library",
+          "status": "confirmed",
+          "offer": "Access to member app tools and included Rockstar titles.",
+          "requirements": "Active membership and availability of the included titles required.",
+          "startsOn": "2026-09-10",
+          "endsOn": "2026-10-07",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "membership"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rotations",
+      "items": [
+        {
+          "id": "premium-deluxe-enus-stafford",
+          "name": "Enus Stafford",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Motorsport stock.",
+          "requirements": "View, test-drive or buy at Simeon’s Premium Deluxe Motorsport showroom.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "premium-deluxe-dinka-jester-classic",
+          "name": "Dinka Jester Classic",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Motorsport stock.",
+          "requirements": "View, test-drive or buy at Simeon’s Premium Deluxe Motorsport showroom.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "premium-deluxe-hvy-menacer",
+          "name": "HVY Menacer",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Motorsport stock.",
+          "requirements": "View, test-drive or buy at Simeon’s Premium Deluxe Motorsport showroom.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "premium-deluxe-dewbauchee-jb-700w",
+          "name": "Dewbauchee JB 700W",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Motorsport stock.",
+          "requirements": "View, test-drive or buy at Simeon’s Premium Deluxe Motorsport showroom.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "premium-deluxe-vapid-speedo",
+          "name": "Vapid Speedo",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Motorsport stock.",
+          "requirements": "View, test-drive or buy at Simeon’s Premium Deluxe Motorsport showroom.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "luxury-autos-annis-minimus",
+          "name": "Annis Minimus",
+          "status": "confirmed",
+          "offer": "Luxury Autos stock.",
+          "requirements": "View or buy at Luxury Autos in Rockford Hills.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "luxury-autos-karin-everon-rs",
+          "name": "Karin Everon RS",
+          "status": "confirmed",
+          "offer": "Luxury Autos stock.",
+          "requirements": "View or buy at Luxury Autos in Rockford Hills.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "test-ride-vysser-neo",
+          "name": "Vysser Neo",
+          "status": "confirmed",
+          "offer": "LS Car Meet Test Ride.",
+          "requirements": "Use the LS Car Meet Test Track.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "test-ride-declasse-drift-yosemite",
+          "name": "Declasse Drift Yosemite",
+          "status": "confirmed",
+          "offer": "LS Car Meet Test Ride.",
+          "requirements": "Use the LS Car Meet Test Track.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "test-ride-vapid-gb200",
+          "name": "Vapid GB200",
+          "status": "confirmed",
+          "offer": "LS Car Meet Test Ride.",
+          "requirements": "Use the LS Car Meet Test Track.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "premium-hsw",
+          "name": "Imponte Arbiter GT",
+          "status": "confirmed",
+          "offer": "HSW Premium Test Ride.",
+          "requirements": "Visit Hao’s Special Works at the LS Car Meet on PS5, Xbox Series X|S or PC Enhanced.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "premium-race",
+          "name": "Across the Wilderness",
+          "status": "confirmed",
+          "offer": "Premium Race.",
+          "requirements": "Off-Road race.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "time-trial",
+          "name": "Up-n-Atom",
+          "status": "confirmed",
+          "offer": "Weekly Time Trial.",
+          "requirements": "Follow the Time Trial marker and beat its par time.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "hsw-time-trial",
+          "name": "Textile City to Stab City",
+          "status": "confirmed",
+          "offer": "HSW Time Trial.",
+          "requirements": "Use an HSW-upgraded eligible vehicle on PS5, Xbox Series X|S or PC Enhanced.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "cargo-ship",
+          "name": "Pfister Comet S2 Cabrio",
+          "status": "confirmed",
+          "offer": "The Cargo Ship Robbery.",
+          "requirements": "Launch the named robbery from an owned Salvage Yard; these sources do not establish a claimable personal vehicle.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gangbanger",
+          "name": "Mammoth Patriot Mil-Spec",
+          "status": "confirmed",
+          "offer": "The Gangbanger Robbery.",
+          "requirements": "Launch the named robbery from an owned Salvage Yard; these sources do not establish a claimable personal vehicle.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "podium-robbery",
+          "name": "Karin Boor",
+          "status": "confirmed",
+          "offer": "The Podium Robbery.",
+          "requirements": "Launch the named robbery from an owned Salvage Yard; these sources do not establish a claimable personal vehicle.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "fib-priority",
+          "name": "The Fine Art File",
+          "status": "confirmed",
+          "offer": "FIB Priority File.",
+          "requirements": "Select the priority file at an owned Garment Factory.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "kortz-targets",
+          "name": "Kortz Center Heist targets",
+          "status": "confirmed",
+          "offer": "The Outcome of Endeavour; What are Melons?; In Excess of Success; The Girl With the Pearl Necklace.",
+          "requirements": "These are the week’s primary art targets.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "base",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-battle-rifle",
+          "name": "Battle Rifle",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-tactical-smg",
+          "name": "Tactical SMG",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-combat-shotgun",
+          "name": "Combat Shotgun",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-minigun",
+          "name": "Minigun",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-combat-pistol",
+          "name": "Combat Pistol",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-switchblade",
+          "name": "Switchblade",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-tear-gas",
+          "name": "Tear Gas",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-molotovs",
+          "name": "Molotovs",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-stock-pipe-bombs",
+          "name": "Pipe Bombs",
+          "status": "confirmed",
+          "offer": "Gun Van inventory.",
+          "requirements": "Browse the Gun Van stock; the parking location changes daily and no historical daily stop is asserted. Conflicting discount percentages are not confirmed in this edition.",
+          "startsOn": "2026-09-24",
+          "endsOn": "2026-09-30",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "intel",
+            "igta",
+            "reddit"
+          ]
+        },
+        {
+          "id": "gun-discounts-pending",
+          "name": "Gun Van discount percentages — conflicting reports",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "rockstar",
+      "title": "Rockstar Games — Business Rivalries schedule",
+      "url": "https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri",
+      "verifiedAt": "2026-10-12T06:17:29.024Z"
+    },
+    {
+      "id": "membership",
+      "title": "Rockstar Games — September GTA+ benefits",
+      "url": "https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su",
+      "verifiedAt": "2026-10-12T06:17:29.024Z"
+    },
+    {
+      "id": "intel",
+      "title": "RockstarINTEL — September 24–30",
+      "url": "https://rockstarintel.com/gta-online-event-week-event-finale-september-24th-30th/",
+      "verifiedAt": "2026-10-12T06:17:29.024Z"
+    },
+    {
+      "id": "base",
+      "title": "GTABase — September 24–30",
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-september-24-30-business-rivalries-event-final-week-bonuses-discounts",
+      "verifiedAt": "2026-10-12T06:17:29.024Z"
+    },
+    {
+      "id": "igta",
+      "title": "iGrandTheftAuto — September 24",
+      "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-24-2026",
+      "verifiedAt": "2026-10-12T06:17:29.024Z"
+    },
+    {
+      "id": "reddit",
+      "title": "r/gtaonline — September 24 weekly post",
+      "url": "https://www.reddit.com/r/gtaonline/comments/1woh8g4/weekly_bonuses_and_discounts_september_24th_to/",
+      "verifiedAt": "2026-10-12T06:17:29.024Z"
+    }
+  ]
+}
