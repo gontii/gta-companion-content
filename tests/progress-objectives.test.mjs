@@ -56,3 +56,11 @@ test('merge repairs stored live duplicates and repeated source extraction, prese
   tasks=projectContent(merged,Date.parse('2026-10-15T12:15:00Z')).sections.flatMap(s=>s.items).filter(i=>objectiveKey(i)===objectiveKey(canonical));
   assert.equal(tasks.length,1);assert.equal(tasks[0].id,'season-progress');
 });
+
+test('unknown offer syntax still rejects exact repetitions across sections without fuzzy merging',()=>{
+  const item={...base,id:'first',entity:'Some activity',label:'Some activity — Special verified offer',offer:'Special verified offer'};
+  const c={sections:[{id:'other',items:[item]},{id:'bonuses',items:[{...item,id:'second'}]}]};
+  assert.equal(duplicateObjectives(c).length,1);deduplicateObjectives(c);
+  assert.equal(c.sections.flatMap(s=>s.items).length,1);
+  assert.notEqual(objectiveKey(item),objectiveKey({...item,offer:'Special verified offer with an extra requirement'}));
+});

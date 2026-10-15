@@ -11,13 +11,16 @@ export function objectiveParts(item) {
   if (!match || !/^(?:win|complete|finish|secure|collect|sell|deliver|place)\b/i.test(match[1])) return null;
   const action = objectiveText(match[1]);
   // Kolejność wypisania gotówki i przedmiotu nie zmienia nagrody.
-  const reward = objectiveText(match[2]).split(' ').filter(w => !['the','a','an','and','extra'].includes(w)).sort().join(' ');
+  const reward = objectiveText(match[2]).split(/\s+and\s+/).map(part => part.replace(/^(?:(?:the|a|an|extra)\s+)+/, '')).sort().join(' and ');
   return { action, reward };
 }
 export function objectiveKey(item) {
   const parts = objectiveParts(item);
-  if (!parts) return null;
-  return JSON.stringify([parts.action, parts.reward, item.startsAt, item.expiresAt,
+  // Dla nieznanego opisu kontrolujemy ścisłe powtórzenie oferty i encji.
+  // Różnych sformułowań nie uznajemy za równoważne bez rozpoznanych warunków.
+  const identity = parts ? ['objective', parts.action, parts.reward]
+    : ['offer', objectiveText(item.entity || item.label), objectiveText(item.offer || item.label)];
+  return JSON.stringify([...identity, item.startsAt, item.expiresAt,
     item.eligibility || 'all', item.platform || 'all']);
 }
 const verified = item => ['official','corroborated'].includes(item.confidence) ||

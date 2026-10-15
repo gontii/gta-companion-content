@@ -125,10 +125,11 @@ koordynatora. Preferuje kanoniczny etap sezonu i zachowuje jego ID, cel
 licznika oraz odnośniki wskazówek. Postęp zapisany pod ID kanonicznego Main
 pozostaje dostępny; usunięty osobny wpis Extra nie jest migracją postępu
 lokalnego. Walidator przed utworzeniem paczki blokuje wykryte powtórzenia
-błędem `duplicate_progress_objective`. Zmiana wersji walidacji na 15 budzi
+błędem `duplicate_progress_objective`. Dla nieznanej składni dodatkowo
+wykrywa dokładne powtórzenia tej samej encji i oferty między sekcjami. Zmiana wersji walidacji na 15 budzi
 nadzorcę; limity źródeł i AI pozostają bez zmian.
 
-Weryfikacja lokalna: 157/157 testów, w tym regresja zapisanego duplikatu,
+Weryfikacja lokalna: 158/158 testów, w tym regresja zapisanego duplikatu,
 powtórnego pobrania i kolejnego przebiegu. Kopia produkcji 2642: 43 → 42
 pozycje; zostaje `auto-144dcc1046a3ee0e60`, Main, cel 3. Parser aplikacji
 i dokument publiczny przyjmują naprawiony dokument. Wdrożenie i odbiór
