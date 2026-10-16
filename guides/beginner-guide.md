@@ -156,6 +156,12 @@ A Career Builder nightclub can therefore be useful before a large warehouse netw
 - Leave enough time for a sale; starting one tired and rushed is avoidable risk.
 - Note your cash, owned equipment, and next unlock before logging off.
 
+## Keep a plan between sessions
+
+Choose one mission chain or unlock from this guide before you start playing. Note what you completed and what you need next, so your next session begins with a clear task. Check the [Weekly Update](https://gtacompanion.net/gta-online/weekly-update) for dated offers that fit what you already own; an expired bonus is not part of your savings plan.
+
+GTA Companion Pro brings activity checklists and progress tracking into one planner. You mark tasks yourself, and progress stays on this device. Pro is a separate app subscription from Rockstar’s GTA+ membership: it does not include GTA+, in-game money, or member rewards. Check the current Pro plans and access terms before subscribing.
+
 ## FAQ
 
 ### Can I follow this entirely solo?
