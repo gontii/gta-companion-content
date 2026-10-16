@@ -102,3 +102,36 @@ Kontrola lokalna: 97/97 testów, w tym migracja zapisanych alarmów, naprawa pam
 Odbiór końcowy 16.09: Worker `e614b3da-c847-484d-9312-44f3b0859ca0`, kod `9231971` + `962759b`; zgodna aplikacja Pages `fa5b43af-ac55-4493-9c53-0adff93b64e1`, kod `8fec99b`. Rewizja `502dba083cfab7d2affb58494dc7afe0676402d8fe24b638e31775cc5cd5bc48` opublikowana o 10:52:27 UTC, pełne API zgodne o 10:53:42 UTC; historia `4a3a484`. [Odczyt końcowy 35087784087](https://github.com/gontii/gta-companion-content/actions/runs/35087784087) potwierdza brak błędu i incydentów, pustą kolejkę, `timingPolicyVersion=1`, następny start 16.09 o 15:00 UTC (17:00 w Polsce), pierwszą granicę treści 17.09 o 09:00 UTC (11:00).
 
 Odbiór wykrył osierocone alarmy ofert usuniętych we wcześniejszych rewizjach. Przebieg odtwarza teraz terminy należące do bieżącego tygodnia z aktualnej treści i zapisanych faktów; zachowuje inne przyszłe zdarzenia. Poprawka ma test regresji; 97/97 lokalnie i [CI 35087653017](https://github.com/gontii/gta-companion-content/actions/runs/35087653017). Po jej wdrożeniu rewizja pozostała ta sama i nie pojawiło się dodatkowe wywołanie AI (nadal 2 dzisiaj). Granice 00:00/10:59/11:00 sprawdzono także na rzeczywistym opublikowanym JSON: 57 ofert zachowanych do resetu, GTA+ zachowuje osobny okres. Rzeczywisty przyszły reset pozostaje do obserwacji przez harmonogram.
+
+## Duplikaty zadań i etapy większych wyzwań — 15.10.2026
+
+Decyzja Przemka: to samo zadanie występuje raz, niezależnie od sekcji Main
+lub Extra i nazwy nadanej przez źródło. Zweryfikowany tygodniowy etap
+większego wyzwania trafia do Main także z nagrodą poniżej GTA$250 000,
+szczególnie jeśli odblokowuje premię za kilka tygodni powyżej tego progu.
+Samodzielne zadania zachowują dotychczasowy próg GTA$250 000. Premia za cały
+sezon pozostaje informacją; nie dostaje licznika resetowanego co tydzień.
+
+Przyczyna powtórzenia z 15–21.10: `factKey` zawiera nazwę encji, więc
+`Races` i `Halloween — Five Weekly Challenges` dawały dwa różne wpisy tego
+samego celu. Nowy krok porównuje działanie i warunki, nagrodę (niezależnie
+od kolejności gotówki i przedmiotu), okres, platformę oraz wymagane
+uprawnienia. Zapis liczby słownie lub cyfrą jest równoważny. Różne liczby,
+tryby, nagrody, platformy i terminy nie są scalane. Nierozpoznanych opisów
+nie łączymy na podstawie podobieństwa nazw.
+
+Scalanie działa przy każdym przebiegu, również na już zapisanym stanie
+koordynatora. Preferuje kanoniczny etap sezonu i zachowuje jego ID, cel
+licznika oraz odnośniki wskazówek. Postęp zapisany pod ID kanonicznego Main
+pozostaje dostępny; usunięty osobny wpis Extra nie jest migracją postępu
+lokalnego. Walidator przed utworzeniem paczki blokuje wykryte powtórzenia
+błędem `duplicate_progress_objective`. Dla nieznanej składni dodatkowo
+wykrywa dokładne powtórzenia tej samej encji i oferty między sekcjami. Zmiana wersji walidacji na 15 budzi
+nadzorcę; limity źródeł i AI pozostają bez zmian.
+
+Weryfikacja lokalna: 158/158 testów, w tym regresja zapisanego duplikatu,
+powtórnego pobrania i kolejnego przebiegu. Kopia produkcji 2642: 43 → 42
+pozycje; zostaje `auto-144dcc1046a3ee0e60`, Main, cel 3. Parser aplikacji
+i dokument publiczny przyjmują naprawiony dokument. Wdrożenie i odbiór
+produkcji wymagają osobnego potwierdzenia w zgłoszeniu
+https://github.com/gontii/gtacompanion/issues/10.

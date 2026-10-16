@@ -1,3 +1,4 @@
+import { deduplicateObjectives, duplicateObjectives } from './progress-objectives.mjs';
 import { classifyProgressContent, validateProgressContent } from './progress-classification.mjs';
 import { validDay, windowFromDays, addDays, localParts, normalizeWeeklyTiming, isWeeklyPeriod } from './temporal.mjs';
 import { thursdayWeekId, extractDateRange, extractPublishedWeekId, cleanText, stripTags, buildWeeklyContent } from './weekly-core.mjs';
@@ -8,7 +9,7 @@ export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
-export const FACT_VALIDATION_VERSION = 14;
+export const FACT_VALIDATION_VERSION = 15;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
@@ -299,6 +300,7 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
   // Moving a reviewed objective between sections must not leave its old copy.
   const challenges = c.sections.find(s => s.id === 'challenge')?.items || [];
   for (const section of c.sections.filter(s => s.id !== 'challenge')) section.items = section.items.filter(i => !challenges.some(t => t.id === i.id));
+  deduplicateObjectives(c);
   // One free property/reward must not appear again as a 100% discount.
   const rewards = c.sections.find(s => s.id === 'free-vehicles')?.items || [];
   const discounts = c.sections.find(s => s.id === 'discounts');
@@ -327,6 +329,7 @@ export function validateSnapshot(c, { published = false } = {}) {
     ids.add(item.id);
     if (!item.editorial && !['official', 'corroborated', 'transcript', ...(published ? ['editorial'] : [])].includes(item.confidence)) throw new Error('unverified_item');
   }
+  if (duplicateObjectives(c).length) throw new Error('duplicate_progress_objective');
   validateProgressContent(c);
   if (new TextEncoder().encode(JSON.stringify(c)).length > 120_000) throw new Error('snapshot_too_large');
   return c;

@@ -1,3 +1,6 @@
+import halloweenEvent from '../events/halloween-challenges-2026-10.json' with { type: 'json' };
+import septemberEvent from '../events/business-rivalries-2026-09.json' with { type: 'json' };
+import { objectiveParts, objectiveText } from './progress-objectives.mjs';
 /** Progress is editorial data derived from corroborated/official facts, never inferred by the app. */
 export const PROGRESS_GROUPS = ['primary', 'extra', 'gta-plus', 'none'];
 const verified = item => ['official', 'corroborated'].includes(item.confidence) ||
@@ -8,7 +11,7 @@ const rewardAmount = offer => {
     offer.match(/(?:receive|earn|reward(?:ed)?|bonus|extra)[^.;]{0,90}?GTA\$\s*([\d,]+)/i);
   return reward ? Number(reward[1].replaceAll(',', '')) : null;
 };
-export function classifyProgressItem(item, sectionId, weekId) {
+export function classifyProgressItem(item, sectionId, weekId, events = [halloweenEvent, septemberEvent]) {
   if (!verified(item)) return { progressGroup: 'none' };
   const offer = item.offer || '';
   const label = item.label || '';
@@ -19,6 +22,14 @@ export function classifyProgressItem(item, sectionId, weekId) {
     return { progressGroup: 'gta-plus', progressPeriodId: weeklyAction ? weekId :
       (item.startsAt?.slice(0, 10) || weekId) };
   }
+  // Zweryfikowany etap większego wyzwania jest głównym zadaniem, nawet
+  // przy małej nagrodzie tygodnia. Premia sezonowa nie jest osobnym licznikiem.
+  const action = objectiveParts(item)?.action;
+  if (['challenge', 'other'].includes(sectionId) && events.some(event =>
+    event?.weeks?.length > 1 && event.weeks.some(week => week.startsOn === weekId &&
+      action === objectiveText(week.challenge)) &&
+    item.sources?.some(source => source.kind === 'rockstar' && source.url === event.sourceUrl)))
+    return { progressGroup: 'primary' };
   // Guaranteed weekly cash objectives also appear alongside other weekly items.
   // A season-wide bonus is informational here; it must not reset as a weekly task.
   const duration = Date.parse(item.expiresAt) - Date.parse(item.startsAt);
@@ -27,7 +38,6 @@ export function classifyProgressItem(item, sectionId, weekId) {
     if (amount !== null) return { progressGroup: amount >= 250_000 ? 'primary' : 'extra' };
   }
   if (sectionId === 'challenge') {
-    if (item.seasonalEventId === 'halloween-challenges-2026-10') return { progressGroup: 'primary' };
     const amount = rewardAmount(offer);
     if (amount !== null) return { progressGroup: amount >= 250_000 ? 'primary' : 'extra' };
     return /complete|finish|win|place|secure|collect/i.test(offer) ? { progressGroup: 'extra' } : { progressGroup: 'none' };
@@ -41,7 +51,7 @@ export function classifyProgressItem(item, sectionId, weekId) {
 export function classifyProgressContent(content) {
   for (const section of content.sections) for (const item of section.items) {
     delete item.progressPeriodId;
-    Object.assign(item, classifyProgressItem(item, section.id, content.weekId));
+    Object.assign(item, classifyProgressItem(item, section.id, content.weekId, [halloweenEvent, septemberEvent, content.seasonalCashEvent, content.seasonalEvent].filter(Boolean)));
   }
   for (const tip of content.beginnerPath || []) {
     const linked = content.sections.flatMap(s => s.items).find(i => i.id === tip.itemIds?.[0] || i.id === tip.id);
