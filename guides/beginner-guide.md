@@ -1,6 +1,6 @@
-# GTA Online Beginner Guide 2026: Your First Steps on Enhanced
+# GTA Online Beginner Guide 2026: Solo on Enhanced with GTA+
 
-Start by learning to survive, host a mission chain that needs no property, and build one manageable income source. You do not need a supercar collection to have a useful evening in Los Santos.
+This GTA Online beginner guide follows a solo starting route on Enhanced with an active GTA+ membership. Start by learning to survive, host a mission chain that needs no property, and build one manageable income source. You do not need a supercar collection to have a useful evening in Los Santos.
 
 This guide is for solo beginners on PC Enhanced, PS5, and Xbox Series X|S with an **active paid GTA+ membership**. Buying GTA+ is the first requirement of this particular starting route, not a requirement to play GTA Online. Shark Cards are not part of the route. You also need access to the game and any online multiplayer subscription required by your console platform.
 
