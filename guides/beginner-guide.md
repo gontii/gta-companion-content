@@ -27,7 +27,7 @@ Reserve that cash toward the Acid Lab rather than immediately spending it on cos
 
 **Use the phone tools as your businesses grow.** The Vinewood Club App provides vehicle requests, ammo purchases, collection of accumulated safe earnings, and supported staff-management actions. These save trips; they do not create income from businesses you do not own or turn unsold product into a safe balance. [The Vinewood Club features](https://www.rockstargames.com/gta-plus/benefits).
 
-**Dated offer: 10 September–7 October 2026.** Rockstar lists 2X GTA$ for the first Cluckin' Bell finale completed each week during this period. Schedule a first hosted completion in a week when you can finish the chain; repeated finales that week do not all get this offer. The September announcement also offers the Pegassi Horus as the claimable member vehicle and 60% off Biker Business properties, upgrades, and modifications. A discounted business still needs capital and attention, so it does not automatically outrank the Acid Lab route. After 7 October, treat this paragraph as an expired example and check the new offers; do not carry its multiplier into your budget. [Rockstar's September GTA+ announcement](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su).
+Check the dates of current GTA+ offers before planning a purchase or mission. The expired September offer is retained in the historical example near the end of this guide.
 
 ## 1. Choose the right edition and learn the controls
 
@@ -58,7 +58,7 @@ Finish your selected career's introduction. Write down what you now own and how 
 
 **If Career Builder is absent:** keep going. Finish the introduction available to your character and use the property-free missions below. You will take longer to build a reserve, but you are not missing a mandatory unlock. Do not assume that a second character qualifies for another starting package.
 
-## 3. Make your first session manageable
+## 3. Start an Invite Only Session and prepare your supplies
 
 Once you reach Freemode, open **Pause > Online > Find New Session > Invite Only Session**. This gives you space to learn without strangers interrupting. Eligible business sourcing and sales can run in private sessions; public-session bonuses are optional compensation for extra risk. [Session and business guidance](https://www.gtabase.com/articles/grand-theft-auto-v/gta-online-full-guide-freemode-jobs-progress-making-money).
 
@@ -72,7 +72,7 @@ For transport, use your claimed GTA+ vehicle or the vehicle supplied by your int
 
 Before a firefight, park somewhere sensible, locate cover, and reload. Fight one angle at a time. If you keep dying, restock and choose a lower offered difficulty rather than buying an expensive vehicle in frustration. The first goal is a repeatable completion, not a fast completion.
 
-## 4. Earn your first money with Vincent
+## 4. Cluckin' Bell Farm Raid: earn your first money with Vincent
 
 In Freemode, wait for Vincent's call, then visit the **V at Vespucci Police Station** to start Cluckin' Bell Farm Raid. This is not Dispatch Work: you do not need to buy a police car. The raid supports solo play and requires no property purchase or setup fee. [Rockstar's raid introduction](https://www.rockstargames.com/intl/newswire/article/39ok12a82k4537/gta-online-the-cluckin-bell-farm-raid-now-available).
 
@@ -89,11 +89,11 @@ The train and hacking-device preparation can feel unfamiliar; read the objective
 | Entry | GTA$0 setup fee; no property required |
 | Joining another host | Separate participant reward; not the host amount |
 
-The numerical host amounts are corroborated by [GTABase's updated payout table](https://www.gtabase.com/gta-online/jobs/heists/) and [GTA Boss's August guide](https://www.gtaboss.gg/gta-5-online/guides/how-to-complete-the-cluckin-bell-farm-raid-in-gta-online). These are the baseline amounts before the dated GTA+ offer above; they exclude setup earnings, separate first-ever Awards, and temporary promotions. Do not budget an unclaimed Award as cash already received.
+The numerical host amounts are corroborated by [GTABase's updated payout table](https://www.gtabase.com/gta-online/jobs/heists/) and [GTA Boss's August guide](https://www.gtaboss.gg/gta-5-online/guides/how-to-complete-the-cluckin-bell-farm-raid-in-gta-online). These are the baseline amounts before temporary GTA+ offers; they exclude setup earnings, separate first-ever Awards, and temporary promotions. Do not budget an unclaimed Award as cash already received.
 
 A host cooldown follows completion. Use the wait for another activity instead of repeatedly trying to restart. Do not expect a beginner's full chain to fit a speedrunner's video length.
 
-## 5. Meet Dax and build the Acid Lab
+## 5. First Dose missions: meet Dax and build the Acid Lab
 
 For First Dose, follow Ron's call to **Ace Liquor in Sandy Shores** and start Welcome to the Troupe. Continue the Dax mission chain from the Freakshop. Host all six missions to progress your own unlocks. These missions need no purchased business and can be played solo. [Drug Wars introduction](https://www.rockstargames.com/newswire/article/75258k488okk33/gta-online-los-santos-drug-wars-now-available).
 
@@ -184,10 +184,16 @@ When you can buy one without postponing the business upgrade or operating reserv
 
 Use them when they fit what you own and enjoy. Check dates, eligible platforms, membership conditions, host requirements, and whether a reward is a rebate or an immediate payment. Temporary bonuses are not the same as the recurring first-completion weekly payout system.
 
+## Historical GTA+ example: expired September offer
+
+**Expired offer: 10 September–7 October 2026.** During this period, Rockstar listed 2X GTA$ for the first Cluckin' Bell finale completed each week. Repeated finales that week did not all get this offer. The September announcement also offered the Pegassi Horus as the claimable member vehicle and 60% off Biker Business properties, upgrades, and modifications. A discounted business still needed capital and attention. This is a historical example, not a current bonus; do not carry its multiplier into your budget. [Rockstar's September GTA+ announcement](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su).
+
 ## Sources and review method
 
 By GTA Companion. Sources checked on **14 September 2026**. This is a source-based guide, not a claim of controller testing on all three platforms. Rockstar Support establishes eligibility and update rules; linked independent guides supply operational details and numerical prices where Rockstar does not list them.
 
-The review included Title Update 1.73, the Kortz Center launch, and Rockstar’s September Newswire releases. [Business Rivalries](https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri) and [September GTA+ benefits](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su) are temporary offers. The dated GTA+ section above includes selected September benefits; the baseline payout table remains separate. Revision: GTA+ is now required for this route, with billing-linked cash, reward claims, and Vinewood Club actions integrated into the starting checklist.
+The review included Title Update 1.73, the Kortz Center launch, and Rockstar’s September Newswire releases. [Business Rivalries](https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri) and [September GTA+ benefits](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su) are temporary offers. The historical GTA+ example above includes selected expired September benefits; the baseline payout table remains separate. Revision: GTA+ is now required for this route, with billing-linked cash, reward claims, and Vinewood Club actions integrated into the starting checklist.
 
 Kosatka and Sparrow base prices, purchase requirements and the combined GTA$4,015,000 budget were checked again on **2 October 2026**. This update does not reverify the other September offers or claim a physical-device test.
+
+Editorial update, **18 October 2026**: clearer mission headings and the expired GTA+ example moved out of the starting route. The source-check dates above still apply; this edit is not a new verification of all game facts.
