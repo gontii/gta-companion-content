@@ -5,7 +5,9 @@ import { validateSnapshot } from './facts.mjs';
 const base = process.env.CONTENT_UPDATER_URL;
 const secret = process.env.CONTENT_AUTOMATION_TOKEN;
 const repo = process.env.GITHUB_REPOSITORY || 'gontii/gta-companion-content';
-if (!base || !secret || !process.env.GH_TOKEN) throw new Error('Brak konfiguracji przekaźnika');
+const externalIncidents = process.env.CONTENT_INCIDENTS_MODE === 'external';
+if (!['github', 'external'].includes(process.env.CONTENT_INCIDENTS_MODE || 'github')) throw new Error('Niepoprawny tryb alarmów');
+if (!base || !secret || (!externalIncidents && !process.env.GH_TOKEN)) throw new Error('Brak konfiguracji przekaźnika');
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 const gh = async (path, method = 'GET', body) => {
   const response = await fetch(`https://api.github.com/repos/${repo}/${path}`, {
@@ -25,6 +27,7 @@ const worker = async (path, body) => {
 };
 
 async function syncIssues(incidents) {
+  if (externalIncidents) return; // Alarmy przejął Cloud Monitoring; bez tokena Issues.
   const marker = '<!-- gta-content-automation:';
   const issues = await gh('issues?state=open&per_page=100');
   const ours = issues.filter(i => !i.pull_request && i.body?.startsWith(marker));
@@ -50,7 +53,7 @@ if (status.needsSmokeToken && process.env.BETA_SMOKE_CODE && process.env.SMOKE_T
     body: JSON.stringify({ code: process.env.BETA_SMOKE_CODE, email: process.env.SMOKE_TEST_EMAIL }),
   });
   const result = await response.json();
-  if (!response.ok || !result.token) throw new Error('Nie udało się odświeżyć dostępu do smoke testu');
+  if (!response.ok || !result.token) throw new Error(`Odnowienie odbioru: HTTP ${response.status}, ${/^[a-z_]+$/.test(result.error || '') ? result.error : 'nieznany_blad'}`);
   await worker('/smoke-token', { token: result.token });
 }
 if (process.env.REQUEST_CONTENT_CHECK === 'true') await worker('/check', {});
