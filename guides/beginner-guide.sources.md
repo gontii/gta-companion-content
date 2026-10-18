@@ -57,3 +57,10 @@ Zweryfikowano na żywo:
 - Nie podano porównania ceny do pizzy jako faktu ani stałej ceny w jednej walucie: czytelnik sprawdza lokalną cenę i odnawianie w sklepie platformy. Nie wykonano zakupu ani logowania do kont graczy.
 
 Przegląd logiczny sześciu ścieżek rozszerzono o konto/platformę GTA+, otrzymany przelew, odbiór pojazdu i daty oferty. Wciąż bez testu w samej grze.
+
+
+## Korekta importu Surfera — 18.10.2026
+
+Przygotowane: wstęp, skrócona tabela kamieni postępu i śródtytuły przeniesione do kanonicznego Markdown. Usunięto powtórzenia i niepotwierdzone dodatki o limicie 8 nieruchomości, cenie Akumy, stałych zarobkach godzinowych, kwotach G’s Cache/Stash House/BMX, RP ochroniarza i darmowej instalacji Acid Lab. Zachowano bazową tabelę wypłat zamiast ponownego dodawania historycznego 500 tys.
+
+Odczyt na żywo [Rockstar Career Builder](https://support.rockstargames.com/articles/1UfYjMN0NnpJcoC5DLZkf4/gta-online-career-builder-overview) potwierdził PC Enhanced, PS5 oraz Xbox Series X|S, jednorazowość i przeniesienie maksymalnie 1 mln z przydziału 4 mln. Nie użyto błędnego „PS5 only”. Instalacja i ulepszenie pozostają oddzielnymi kosztami z wcześniejszego rejestru; brak obietnicy bezpłatnej instalacji na podstawie dawnej promocji GTA+. Tabela sterowania odtworzona z kanonicznego źródła, opis Interaction Menu poza tabelą. CTA generuje renderer, nie jest kopiowane ponownie do treści. Bez zmiany daty pełnej weryfikacji wszystkich faktów ani testu w grze.

@@ -1,8 +1,27 @@
 # GTA Online Beginner Guide 2026: Solo on Enhanced with GTA+
 
-This GTA Online beginner guide follows a solo starting route on Enhanced with an active GTA+ membership. Start by learning to survive, host a mission chain that needs no property, and build one manageable income source. You do not need a supercar collection to have a useful evening in Los Santos.
+## Introduction
+
+This GTA Online beginner guide follows a structured solo route for new and returning players on Enhanced with GTA+. Learn the controls, complete your first mission chains, unlock the Acid Lab, and choose what deserves your next savings. Start with one manageable business and practical transport before spending on luxury cars.
+
+The route covers character creation, Career Builder, Invite Only Sessions, Vincent's Cluckin' Bell Farm Raid, and First Dose with Dax. Each section gives you a next step and explains the costs or conditions that matter before a purchase.
 
 This guide is for solo beginners on PC Enhanced, PS5, and Xbox Series X|S with an **active paid GTA+ membership**. Buying GTA+ is the first requirement of this particular starting route, not a requirement to play GTA Online. Shark Cards are not part of the route. You also need access to the game and any online multiplayer subscription required by your console platform.
+
+## Quick Start Checklist for Beginners
+
+| Milestone | What to do | Cost or condition |
+| --- | --- | --- |
+| Check your edition | Use PC Enhanced, PS5, or Xbox Series X/S | Install the matching edition, not Legacy or the older console version |
+| Activate GTA+ | Check credited cash and eligible member rewards | Paid membership for this route; separate from GTA Companion Pro |
+| Create your character | Choose appearance and starting stats, then finish the introduction | Returning players can continue without resetting a character |
+| Check Career Builder | Choose a career if your account is eligible | One-time GTA$4,000,000 allocation; carry over at most GTA$1,000,000 |
+| Prepare a private session | Enter Invite Only; replenish snacks, armor, and ammunition | Use equipment available to your rank |
+| Host Cluckin' Bell | Meet Vincent at the V marker in Vespucci | No property purchase or setup fee; host rewards explained below |
+| Complete First Dose | Host the six missions and recover the lab equipment | This unlock route does not make Acid Lab installation free |
+| Install and upgrade Acid Lab | Budget GTA$750,000 for installation plus GTA$250,000 for the upgrade | Upgrade requires 10 separate Fooligan Jobs; operating costs are extra |
+
+Career Builder is available on **PC Enhanced, PS5, and Xbox Series X/S**, subject to the one-time eligibility rules. The full GTA$4,000,000 is a setup allocation, not cash you can keep. [Rockstar's Career Builder rules](https://support.rockstargames.com/articles/1UfYjMN0NnpJcoC5DLZkf4/gta-online-career-builder-overview).
 
 ## Your short starting route
 
@@ -17,13 +36,19 @@ Treat these as milestones across several evenings. Reaching a mission checkpoint
 
 ## Before you begin: activate GTA+ and use it
 
+### Claiming your GTA+ rewards
+
 Purchase GTA+ for your playing account and platform through [Rockstar's membership page](https://www.rockstargames.com/gta-plus). Check the displayed local price and recurring billing terms before confirming. We use membership for a starting cash contribution, an eligible vehicle to claim, and convenient business management; it does not complete missions or unlock every business for you.
 
 **Start with money that has arrived.** The monthly GTA$500,000 deposit follows subscription billing, not the start of a new benefits event. Check Maze Bank before counting it toward a purchase. Do not add another GTA$500,000 simply because the benefits calendar changes. [Rockstar's deposit timing](https://support.rockstargames.com/articles/wbpFvoosXZRVdb4sXoGU1/gta-monthly-gtausd500-000-bonus-in-grand-theft-auto-online).
 
 Reserve that cash toward the Acid Lab rather than immediately spending it on cosmetics. Once received, GTA$500,000 covers half of the GTA$1,000,000 installation-and-upgrade budget explained below; mission progress, the other half, and operating expenses still have to be covered. Career Builder cash is separate, and its maximum carry-over is not guaranteed if you spend more during setup.
 
+### How to claim your vehicle
+
 **Claim before shopping.** Open The Vinewood Club App on your in-game phone or visit the Car Club to inspect the current member vehicle. Verify that the claim price is GTA$0 and select storage when prompted. Use the eligible reward as transport before buying a similar car. The vehicle changes with the offer period; a test-drive loan is not the same as claiming ownership. [Membership benefits](https://support.rockstargames.com/articles/21l14aEXmnyjFrnsqQ6eXG/gta-membership-benefits).
+
+### Using the Vinewood Club App
 
 **Use the phone tools as your businesses grow.** The Vinewood Club App provides vehicle requests, ammo purchases, collection of accumulated safe earnings, and supported staff-management actions. These save trips; they do not create income from businesses you do not own or turn unsold product into a safe balance. [The Vinewood Club features](https://www.rockstargames.com/gta-plus/benefits).
 
@@ -35,7 +60,9 @@ On PC, launch **Grand Theft Auto V Enhanced**, not Legacy. On PS5, check that yo
 
 Enhanced and Legacy PC sessions are separate, and there is no shared matchmaking across PC, PlayStation, and Xbox. Agree on the same platform and edition before arranging a session with a friend. [Edition and multiplayer explanation](https://www.pcgamer.com/games/grand-theft-auto/gta-online-crossplay-enhanced-pc-ps5/).
 
-Choose GTA Online from the game's main menu and follow the character-creation prompts. A returning player may see migration options; read those separately before moving an existing profile. This starting route does not require migration or a character reset.
+Choose GTA Online from the game's main menu, create your character, and choose your appearance and starting stats. Follow the introduction before trying to run missions from Freemode. A returning player may see migration options; read those separately before moving an existing profile. This starting route does not require migration or a character reset.
+
+### Default controls
 
 These are default controls. If you changed your bindings or use a controller on PC, follow the on-screen prompts and the controls screen.
 
@@ -50,15 +77,21 @@ Rockstar documents the [Interaction Menu controls](https://support.rockstargames
 
 ## 2. Start with Career Builder — or without it
 
-**If Career Builder is offered:** its GTA$4,000,000 is a one-time starting allocation. You must spend at least GTA$3,000,000 within the selection process and can carry no more than GTA$1,000,000 into play. The four paths are Executive, Gunrunner, Nightclub Owner, and Biker. Deleting a character does not restore the allocation. [Rockstar's Career Builder rules](https://support.rockstargames.com/articles/1UfYjMN0NnpJcoC5DLZkf4/gta-online-career-builder-overview).
+### Career Builder options
+
+**If Career Builder is offered:** on PC Enhanced, PS5, and Xbox Series X/S, its GTA$4,000,000 is a one-time starting allocation. You must spend at least GTA$3,000,000 within the selection process and can carry no more than GTA$1,000,000 into play. The four paths are Executive, Gunrunner, Nightclub Owner, and Biker. Deleting a character does not restore the allocation. [Rockstar's Career Builder rules](https://support.rockstargames.com/articles/1UfYjMN0NnpJcoC5DLZkf4/gta-online-career-builder-overview).
 
 For a cautious solo start, I would favor Nightclub Owner if you like short upkeep visits, or Gunrunner if you want to learn supply-and-sale management. That is a preference about workload, not a promise that either produces the most money immediately. Compare the packages shown before confirming; prioritize a usable business, adequate equipment, and transport over cosmetics.
 
 Finish your selected career's introduction. Write down what you now own and how much cash remains. A nightclub, bunker, or warehouse obtained here is already part of your route: learn it before purchasing a replacement.
 
+### If Career Builder is absent
+
 **If Career Builder is absent:** keep going. Finish the introduction available to your character and use the property-free missions below. You will take longer to build a reserve, but you are not missing a mandatory unlock. Do not assume that a second character qualifies for another starting package.
 
 ## 3. Start an Invite Only Session and prepare your supplies
+
+### Preparing for missions
 
 Once you reach Freemode, open **Pause > Online > Find New Session > Invite Only Session**. This gives you space to learn without strangers interrupting. Eligible business sourcing and sales can run in private sessions; public-session bonuses are optional compensation for extra risk. [Session and business guidance](https://www.gtabase.com/articles/grand-theft-auto-v/gta-online-full-guide-freemode-jobs-progress-making-money).
 
@@ -95,6 +128,8 @@ A host cooldown follows completion. Use the wait for another activity instead of
 
 ## 5. First Dose missions: meet Dax and build the Acid Lab
 
+### Unlocking the Acid Lab
+
 For First Dose, follow Ron's call to **Ace Liquor in Sandy Shores** and start Welcome to the Troupe. Continue the Dax mission chain from the Freakshop. Host all six missions to progress your own unlocks. These missions need no purchased business and can be played solo. [Drug Wars introduction](https://www.rockstargames.com/newswire/article/75258k488okk33/gta-online-los-santos-drug-wars-now-available).
 
 My suggested learning order is the opening First Dose mission, some practice with cover, Vincent's chain for capital, then the rest of First Dose. If one strand becomes frustrating, switch to the other. You are learning different encounters, not racing a fixed timetable.
@@ -118,6 +153,8 @@ For the operating loop, obtain supplies through Mutt, let production run while y
 Reserve the upgrade money before optional purchases. If your Career Builder business is already useful, alternate its manageable tasks with Dax's jobs. The Acid Lab is an additional option, not a reason to abandon an existing income source.
 
 ## 6. Decide what deserves your next savings
+
+### Comparing your next major purchases
 
 After learning one business, choose the next purchase by the kind of session you want.
 
@@ -196,4 +233,4 @@ The review included Title Update 1.73, the Kortz Center launch, and Rockstar’s
 
 Kosatka and Sparrow base prices, purchase requirements and the combined GTA$4,015,000 budget were checked again on **2 October 2026**. This update does not reverify the other September offers or claim a physical-device test.
 
-Editorial update, **18 October 2026**: clearer mission headings and the expired GTA+ example moved out of the starting route. The source-check dates above still apply; this edit is not a new verification of all game facts.
+Editorial update, **18 October 2026**: added a quick-start checklist and clearer section headings, removed repeated or unsupported suggestions, and kept the expired GTA+ example outside the starting route. Career Builder availability on all three Enhanced platforms was rechecked against Rockstar Support. The earlier source-check dates still apply to the other game facts; this edit is not a new verification of every payout or offer.
