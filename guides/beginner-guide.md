@@ -271,7 +271,7 @@ Use the no-bonus route. Do not delete a character chasing the one-time allocatio
 
 ### When should I buy expensive cars?
 
-When you can buy one without postponing the business upgrade or operating reserve you still need, and in the early game, selling an eligible stolen car can bring in extra cash, subject to sale restrictions and the vehicle’s value, so beginners should prioritize a practical vehicle over luxury cars instead of paying for something flashy. With around 500 vehicles to choose from in GTA Online and property limits that depend on the property type, there is no rush to buy an expensive car at the beginning, and claiming the duke o'death early gives you a strong free option from Warstock. Pick a car you want to drive, and treat it as a reward rather than an income guarantee.
+When you can buy one without postponing the business upgrade or operating reserve you still need, and in the early game, selling an eligible stolen car can bring in extra cash, subject to sale restrictions and the vehicle’s value, so beginners should prioritize a practical vehicle over luxury cars instead of paying for something flashy. With around 500 vehicles to choose from in GTA Online and property limits that depend on the property type, there is no rush to buy an expensive car at the beginning, and check the current Warstock price for the Duke O'Death before budgeting for it. Pick a car you want to drive, and treat it as a reward rather than an income guarantee.
 
 ### Should I follow weekly bonuses?
 
