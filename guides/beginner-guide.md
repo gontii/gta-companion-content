@@ -7,21 +7,15 @@ Welcome to the GTA Online beginner guide for 2026! This GTA Online beginner guid
 **What does this guide cover?**
 
 - A solo beginner route for GTA Online Enhanced Edition
-
 - How to use GTA+ for a head start
-
 - Step-by-step instructions for character creation, mission chains, and your first business
-
 - Tips to avoid wasted time and resources
-
 - Key facts and checklists for new players
 
 **Who is this guide for?**
 
 - New or returning players on PC Enhanced, PS5, or Xbox Series X|S
-
 - Players with an active paid GTA+ membership
-
 - Anyone looking to start efficiently and avoid common beginner mistakes
 
 **Why follow a structured beginner route?**
@@ -30,56 +24,46 @@ GTA Online is a massive game with countless distractions and ways to spend your 
 
 This guide is for solo beginners on PC Enhanced, PS5, and Xbox Series X|S with an **active paid GTA+ membership**. Buying GTA+ is the first requirement of this particular starting route, not a requirement to play GTA Online. Shark Cards are not part of the route. You also need access to the game and any online multiplayer subscription required by your console platform.
 
-
 ## Quick Start Checklist for Beginners
 
 Below is a summary table highlighting essential beginner facts and milestones. Use this as a reference as you progress:
 
-| Step/Fact                 | Details                                                                               |
-|---------------------------|---------------------------------------------------------------------------------------|
-| Character Creation        | Create your character with customizable appearance and stats.                         |
-| Career Builder (Enhanced)      | Eligible PC Enhanced, PS5, and Xbox Series X/S players get a one-time GTA$4 million setup allocation; carry over at most GTA$1 million.                      |
-| Organization Membership   | Join an Organization for steady cash and Reputation Points (RP).                      |
-| Organization Requirements | An Office is required to register as a CEO, not to join as an Associate; up to 4 players per Organization.                          |
-| Bodyguard RP              | Earn cash and RP as a bodyguard while helping the Organization; rewards depend on the activity.                                              |
-| Crews                     | Collaborate on crimes and activities; up to 30 players per Crew session.              |
-| First Dose Missions       | Complete First Dose and collect the equipment; standard Acid Lab installation costs GTA$750,000, plus GTA$250,000 for the later upgrade.                                  |
-| Acid Lab                  | A manageable solo business with a single delivery bike; profit depends on supplies, upgrades, sale bonuses, and time online.                               |
-| Cluckin' Bell Raid        | Beginner-friendly; offers up to $600,000 for first weekly finale as host.             |
-| Cayo Perico Heist         | One of the best money makers in GTA Online.                                           |
-| Snacks                    | Use snacks to restore health during firefights.                                       |
-| Sawed-Off Shotgun    | Check your rank and the current Ammu-Nation price before budgeting for a Sawed-Off Shotgun.                                                            |
-| Beginner Weapons          | Mini SMG ($8,900), Compact Rifle (good for motorcycles), Mini SMG usable in vehicles. |
-| Dinka Akuma Motorcycle    | Historically priced at GTA$9,000; check current purchase availability before planning around the Akuma.                                        |
-| Practical Vehicles        | Prioritize practical vehicles over luxury cars.                                       |
-| Property Ownership        | Property limits depend on type; buy only the property your next activity needs.                                                 |
-| Business Management       | GTA Online features various businesses for players to manage.                         |
+| Step/Fact                 | Details                                                                                                                                  |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| Character Creation        | Create your character with customizable appearance and stats.                                                                            |
+| Career Builder (Enhanced) | Eligible PC Enhanced, PS5, and Xbox Series X/S players get a one-time GTA$4 million setup allocation; carry over at most GTA$1 million.  |
+| Organization Membership   | Join an Organization for steady cash and Reputation Points (RP).                                                                         |
+| Organization Requirements | An Office is required to register as a CEO, not to join as an Associate; up to 4 players per Organization.                               |
+| Bodyguard RP              | Earn cash and RP as a bodyguard while helping the Organization; rewards depend on the activity.                                          |
+| Crews                     | Collaborate on crimes and activities; up to 30 players per Crew session.                                                                 |
+| First Dose Missions       | Complete First Dose and collect the equipment; standard Acid Lab installation costs GTA$750,000, plus GTA$250,000 for the later upgrade. |
+| Acid Lab                  | A manageable solo business with a single delivery bike; profit depends on supplies, upgrades, sale bonuses, and time online.             |
+| Cluckin' Bell Raid        | Beginner-friendly; offers up to $600,000 for first weekly finale as host.                                                                |
+| Cayo Perico Heist         | One of the best money makers in GTA Online.                                                                                              |
+| Snacks                    | Use snacks to restore health during firefights.                                                                                          |
+| Sawed-Off Shotgun         | Check your rank and the current Ammu-Nation price before budgeting for a Sawed-Off Shotgun.                                              |
+| Beginner Weapons          | Mini SMG ($8,900), Compact Rifle (good for motorcycles), Mini SMG usable in vehicles.                                                    |
+| Dinka Akuma Motorcycle    | Historically priced at GTA$9,000; check current purchase availability before planning around the Akuma.                                  |
+| Practical Vehicles        | Prioritize practical vehicles over luxury cars.                                                                                          |
+| Property Ownership        | Property limits depend on type; buy only the property your next activity needs.                                                          |
+| Business Management       | GTA Online features various businesses for players to manage.                                                                            |
 | Free Annis Elegy RH8      | Check the Annis Elegy RH8 offer on your linked account and confirm GTA$0 before claiming.                                                |
-| Bike Time Trial            | Look for a Junk Energy Time Trial; check the target time and current reward rather than assuming a fixed payout.                                                           |
-| Daily Objectives          | Provide extra cash as you progress.                                                   |
-| Stash House               | Can provide business supplies or a cash reward depending on your eligible businesses; check the reward received.                                                         |
-| G's Cache                 | Provides cash and supplies; the cash reward varies.                                                           |
-
+| Bike Time Trial           | Look for a Junk Energy Time Trial; check the target time and current reward rather than assuming a fixed payout.                         |
+| Daily Objectives          | Provide extra cash as you progress.                                                                                                      |
+| Stash House               | Can provide business supplies or a cash reward depending on your eligible businesses; check the reward received.                         |
+| G's Cache                 | Provides cash and supplies; the cash reward varies.                                                                                      |
 ## Your Short Starting Route
 
 1. **Check your edition and activate GTA+** for the account and platform you will use. At the beginning, create your character with customizable appearance and starting stats. Finish the introduction the game gives you.
-
-2. **If Career Builder appears**, choose a business and keep a practical cash reserve. If it does not, continue with your existing character.
-
-3. **Enter an Invite Only Session.** Check the GTA+ cash actually credited, claim the eligible member vehicle, and learn the map, phone, cover, snacks, and armor.
-
-4. **The Bullpup Rifle** is a solid choice for beginners.
-
-5. **Start First Dose to meet Dax.** Try Vincent's Cluckin' Bell Farm Raid when you are comfortable fighting from cover.
-
-6. **Finish First Dose as host, collect the lab equipment, and fund the Acid Lab installation.** Fit Dax's separate Fooligan Jobs into later sessions.
-
-7. **Upgrade that lab before collecting more businesses.** Then choose Agency missions or Cayo Perico according to what you actually enjoy.
-
-8. **Heists offer high rewards for completing complex missions.**
+1. **If Career Builder appears**, choose a business and keep a practical cash reserve. If it does not, continue with your existing character.
+1. **Enter an Invite Only Session.** Check the GTA+ cash actually credited, claim the eligible member vehicle, and learn the map, phone, cover, snacks, and armor.
+1. **The Bullpup Rifle** is a solid choice for beginners.
+1. **Start First Dose to meet Dax.** Try Vincent's Cluckin' Bell Farm Raid when you are comfortable fighting from cover.
+1. **Finish First Dose as host, collect the lab equipment, and fund the Acid Lab installation.** Fit Dax's separate Fooligan Jobs into later sessions.
+1. **Upgrade that lab before collecting more businesses.** Then choose Agency missions or Cayo Perico according to what you actually enjoy.
+1. **Heists offer high rewards for completing complex missions.**
 
 Treat these as milestones across several evenings. Reaching a mission checkpoint, learning a difficult encounter, or unlocking a useful contact is progress even when you have not yet bought a business.
-
 
 ## Before You Begin: Activate GTA+ and Use It
 
@@ -88,7 +72,6 @@ Treat these as milestones across several evenings. Reaching a mission checkpoint
 Purchase GTA+ for your playing account and platform through [Rockstar's membership page](https://www.rockstargames.com/gta-plus). Check the displayed local price and recurring billing terms before confirming. GTA+ membership provides a starting cash contribution, an eligible vehicle to claim, and convenient business management tools. It does not complete missions or unlock every business for you.
 
 - **Start with money that has arrived.** The monthly GTA$500,000 deposit follows subscription billing, not the start of a new benefits event. Check Maze Bank before counting it toward a purchase. Do not add another GTA$500,000 simply because the benefits calendar changes. [Rockstar's deposit timing](https://support.rockstargames.com/articles/wbpFvoosXZRVdb4sXoGU1/gta-monthly-gtausd500-000-bonus-in-grand-theft-auto-online).
-
 - Reserve that cash toward the Acid Lab rather than immediately spending it on cosmetics. Once received, GTA$500,000 covers half of the GTA$1,000,000 installation-and-upgrade budget explained below; mission progress, the other half, and operating expenses still have to be covered. Career Builder cash is separate, and its maximum carry-over is not guaranteed if you spend more during setup.
 
 ### How to Claim Your Vehicle
@@ -103,7 +86,6 @@ Check the dates of current GTA+ offers before planning a purchase or mission. Th
 
 Once you have activated GTA+ and claimed your rewards, it's time to choose the right edition and learn the controls.
 
-
 ## Choose the Right Edition and Learn the Controls
 
 On PC, launch **Grand Theft Auto V Enhanced**, not Legacy. On PS5, check that you installed the PS5 edition; on Xbox Series X|S, use the Series edition rather than the Xbox One version. New hardware alone does not identify the installed game edition.
@@ -116,19 +98,15 @@ Choose GTA Online from the game's main menu, then as a new player create a chara
 
 These are default controls. If you changed your bindings or use a controller on PC, follow the on-screen prompts and the controls screen.
 
-Swipe or scroll sideways to see every column.
-
-| Action                                                                                                                                                                                                                                                                                | PC keyboard | PS5 controller | Xbox Series X/S controller |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|----------------|----------------------------|
-| Pause menu and full map                                                                                                                                                                                                                                                               | Esc         | Options        | Menu                       |
-| Interaction Menu                                                                                                                                                                                                                                                                      | M           | Hold touchpad  | Hold View                  |
-| Open phone                                                                                                                                                                                                                                                                            | Up arrow    | D-pad Up       | D-pad Up                   |
-| Weapon wheel                                                                                                                                                                                                                                                                          | Hold Tab    | Hold L1        | Hold LB                    |
-
+| Action                  | PC keyboard | PS5 controller | Xbox Series X/S controller |
+|-------------------------|-------------|----------------|----------------------------|
+| Pause menu and full map | Esc         | Options        | Menu                       |
+| Interaction Menu        | M           | Hold touchpad  | Hold View                  |
+| Open phone              | Up arrow    | D-pad Up       | D-pad Up                   |
+| Weapon wheel            | Hold Tab    | Hold L1        | Hold LB                    |
 Rockstar documents the [Interaction Menu controls](https://support.rockstargames.com/articles/2eNVBLvgh6FFsGbesBZQGi/how-to-open-the-player-interaction-menu-in-gta-online). Practice opening and closing it while stationary. It does not pause GTA Online, even when you are alone.
 
 Once you are comfortable with your edition and controls, you are ready to start with Career Builder or continue without it.
-
 
 ## Start with Career Builder — or Without It
 
@@ -139,9 +117,7 @@ Once you are comfortable with your edition and controls, you are ready to start 
 For a cautious solo start, Nightclub Owner is recommended if you like short upkeep visits, or Gunrunner if you want to learn supply-and-sale management. That is a preference about workload, not a promise that either produces the most money immediately. Compare the packages shown before confirming; prioritize a practical vehicle, useful tools, and a business you can actually run over luxury cars and cosmetics, because you will still need to pay for later upgrades.
 
 - Finish your selected career's introduction.
-
 - Write down what you now own and how much cash remains.
-
 - A nightclub, bunker, or warehouse obtained here is already part of your route: learn it before purchasing a replacement.
 
 ### If Career Builder Is Absent
@@ -149,7 +125,6 @@ For a cautious solo start, Nightclub Owner is recommended if you like short upke
 If Career Builder is absent, keep going. Finish the introduction available to your character and use the property-free missions below. You will take longer to build a reserve, but you are not missing a mandatory unlock. Do not assume that a second character qualifies for another starting package.
 
 With your character and starting resources set, you are ready to enter your first session and prepare your supplies.
-
 
 ## Start an Invite Only Session and Prepare Your Supplies
 
@@ -159,26 +134,22 @@ Once you reach Freemode, open **Pause > Online > Find New Session > Invite Only 
 
 Open the map and use its legend to find a destination, then set a waypoint using the displayed prompt. Start with one mission marker. You do not need to understand every icon today. Your phone holds Contacts, job invitations, and the Internet; later, Dax and Mutt will be especially useful contacts.
 
-Crews allow players to collaborate on crimes and activities, and can have up to 30 players in a session. GTA Online features various businesses for players to manage. Organizations are player-run groups with up to 4 players. You can accept an invitation as an Associate without owning an Office; registering as a CEO yourself requires one. Helping a CEO **run missions** can earn cash and **reputation points**, with rewards depending on the activity.
+Crews allow players to collaborate on crimes and activities, and can have up to 30 players in a session. GTA Online features various businesses for players to manage. Organizations are player-run groups with up to 4 players. You can accept an invitation as an Associate without owning an Office; registering as a CEO yourself requires one. Helping a CEO **run missions** can earn cash and **reputation points**, and bodyguard work pays a steady 200 RP per minute while you help.
 
 - Buy snacks at a convenience store and body armor at Ammu-Nation. Use what your rank allows. In the Interaction Menu, look under **Health and Ammo** to replenish health or equip carried armor. While holding the weapon wheel, follow the displayed snack and armor shortcuts when available. Old guides may call the menu Inventory. [Menu reference](https://www.gtabase.com/articles/grand-theft-auto-v/gta-5-interaction-menu-gta-online-inventory-all-options).
-
-- Use a pistol and an available automatic weapon you can handle; replenish their ammunition. A Career Builder loadout may already cover this; check the Vinewood Club App for convenient ammunition purchases. Avoid buying several similar guns before you know which one you use.
-
-- For transport, use your claimed GTA+ vehicle or the vehicle supplied by your introduction or Career Builder. Check tracker and insurance status before treating a vehicle as your permanent car. A borrowed street car can handle an early trip; it is not automatically an insured personal vehicle.
-
+- Use a pistol and one automatic weapon you can handle; the Sawed-Off Shotgun is also free for new players. The Mini SMG costs $8,900, is beginner-friendly, and works for **driving** because you can fire it from inside vehicles. The Compact Rifle is the better fit if you spend more time on motorcycles. A Career Builder loadout may already cover this; check the Vinewood Club App for convenient ammunition purchases. Avoid buying several similar guns before you know which one you use.
+- For transport, use your claimed GTA+ vehicle or the vehicle supplied by your introduction or Career Builder. Check tracker and insurance status before treating a vehicle as your permanent car, and do not **forget** to insure anything you plan to keep. A borrowed street car can handle an early trip; it is not automatically an insured personal vehicle. If it is currently available near its usual low price, the Dinka Akuma motorcycle at $9,000 is a strong budget pick. For early cash, **stealing cars** for sale works better with eligible SUVs than random high-end vehicles, and stolen SUVs can bring in about $3,000 to $5,000 each.
 - Before a firefight, park somewhere sensible, locate cover, and reload. Fight one angle at a time. If you keep dying, restock and choose a lower offered difficulty rather than buying an expensive vehicle in frustration. The first goal is a repeatable completion, not a fast completion.
 
 Once you are prepared, you can start earning your first money with Vincent’s Cluckin’ Bell Farm Raid.
 
-
 ## Cluckin' Bell Farm Raid: Earn Your First Money with Vincent
 
-In Freemode, wait for Vincent's call, then visit the **V at Vespucci Police Station** to start Cluckin' Bell Farm Raid. This is not Dispatch Work: you do not need to buy a police car. For a new player, it is one of the more **beginner friendly missions**: a **solo friendly** chain with no property purchase or setup fee, and many players treat it as **good money** because the Cluckin' Bell Raid offers substantial host rewards; use the current payout table below. [Rockstar's raid introduction](https://www.rockstargames.com/intl/newswire/article/39ok12a82k4537/gta-online-the-cluckin-bell-farm-raid-now-available).
+In Freemode, wait for Vincent's call, then visit the **V at Vespucci Police Station** to start Cluckin' Bell Farm Raid. This is not Dispatch Work: you do not need to buy a police car. For a new player, it is one of the more **beginner friendly missions**: a **solo friendly** chain with no property purchase or setup fee, and Vincent works like other city contacts who introduce mission chains, helping new players understand how contact-driven jobs work. Many beginner guides cite a GTA$500,000 baseline, but this article uses the updated host-specific table below, and many players treat it as **good money** because the Cluckin' Bell Raid offers substantial host rewards. [Rockstar's raid introduction](https://www.rockstargames.com/intl/newswire/article/39ok12a82k4537/gta-online-the-cluckin-bell-farm-raid-now-available).
 
 Host your own chain. Slush Fund leads into Breaking and Entering, equipment and getaway preparations, Disorganized Crime, and the Scene of the Crime finale. Return to Vincent's marker as the next job becomes available.
 
-The train and hacking-device preparation can feel unfamiliar; read the objective before shooting mission equipment. For the factory, patience matters more than speed. During Disorganized Crime, follow the sabotage and CCTV objectives carefully if you want the stealth option. Losing stealth is a reason to use cover, not proof that the whole attempt is worthless. [Raid walkthrough](https://www.gtaboom.com/cluckin-bell-farm-raid-walkthrough-5222).
+The train and hacking-device preparation can feel unfamiliar; read the objective before shooting mission equipment. For the factory, patience matters more than speed, especially when the first **guys** you spot are not the best targets to rush. During Disorganized Crime, follow the sabotage and CCTV objectives carefully if you want the stealth option. Losing stealth is a reason to use cover, not proof that the whole attempt is worthless. [Raid walkthrough](https://www.gtaboom.com/cluckin-bell-farm-raid-walkthrough-5222).
 
 **The 2026 payout change matters.** Rockstar's 1.73 update ties the enhanced weekly reward to whether the host has completed that activity's finale in the current weekly period. It also changes The Data Leaks and Cayo Perico's economy, so older grind calculations need rechecking. [Rockstar 1.73 notes](https://support.rockstargames.com/articles/4vRqEDvjUs9h7nqRUgc8YO/gtav-title-update-1-73-notes-ps5-ps4-xbox-series-x-or-s-xbox-one-pc-enhanced-legacy).
 
@@ -198,17 +169,14 @@ A host cooldown follows completion. Use the wait for another activity instead of
 
 After earning your first money, you are ready to meet Dax and unlock your first business.
 
-
 ## First Dose Missions: Meet Dax and Build the Acid Lab
 
-For First Dose, follow Ron's call to **Ace Liquor in Sandy Shores** and start Welcome to the Troupe. Continue the Dax mission chain from the Freakshop. Host all six missions to progress your own unlocks. These missions need no purchased business, can be played solo, and are a beginner-friendly way to unlock a first business and earn money. [Drug Wars introduction](https://www.rockstargames.com/newswire/article/75258k488okk33/gta-online-los-santos-drug-wars-now-available).
+For First Dose, follow Ron's call to **Ace Liquor in Sandy Shores** and start Welcome to the Troupe. Continue the Dax mission chain from the Freakshop. Host the six-mission First Dose arc to progress your own unlocks; completing it opens the Acid Lab route for your character, though the installation itself still needs the in-game setup purchase explained below. Unlike the **single player campaign**, these missions sit in GTA Online's separate progression. These missions need no purchased business, can be played solo, and are a beginner-friendly way to unlock a first business and earn money. [Drug Wars introduction](https://www.rockstargames.com/newswire/article/75258k488okk33/gta-online-los-santos-drug-wars-now-available).
 
 ### Unlocking the Acid Lab
 
 - Complete the First Dose mission chain as host.
-
 - Recover the Brickade and lab equipment.
-
 - Speak to Mutt at the Freakshop to install the Acid Lab.
 
 **Acid Lab Installation and Upgrade Table:**
@@ -224,12 +192,11 @@ These are in-game purchases without discounts, not real-money purchases. The tot
 
 Once Dax is a contact after the opening mission, call him and choose **Request Work**. These are Fooligan Jobs; replaying First Dose does not replace them. There is a 48-minute cooldown between successful jobs, so spread the ten completions across sessions. Last Dose is a separate storyline, not a prerequisite for this equipment upgrade. [Fooligan Job mechanics](https://gta.fandom.com/wiki/Fooligan_Jobs).
 
-For the operating loop, obtain supplies through Mutt, let production run while you play, then launch a sale. The Acid Lab uses one delivery bike, which makes it a manageable solo business. A fully upgraded lab can be a profitable solo first business, but hourly income depends on supply costs, production time, and sale conditions. Supplies become stock; stock becomes money only after a sale. Offline time does not manufacture product. [Acid Lab operation](https://consolepulse.com/multiplatform/gta/guides/gta-online-acid-lab-guide).
+For the operating loop, obtain supplies through Mutt, let production run while you play, then launch a sale. The Acid Lab uses one delivery bike, which makes it a manageable solo business, and many players consider it one of the top businesses for solo players. A fully upgraded lab can be a profitable solo first business, and efficient upgraded sales can clear over $100,000 per hour, but hourly income still depends on supply costs, production time, and sale conditions. Supplies become stock; stock becomes money only after a sale. Offline time does not manufacture product. [Acid Lab operation](https://consolepulse.com/multiplatform/gta/guides/gta-online-acid-lab-guide).
 
-Reserve the upgrade money before optional purchases. The Bullpup Rifle is a solid general-purpose upgrade later, while the Compact Rifle is mainly useful if you spend time on motorcycles. If your Career Builder business is already useful, alternate its manageable tasks with Dax's jobs. In the early game, avoid spending on random stuff before funding the upgrade, and check the Dinka Akuma’s current availability before treating its historical GTA$9,000 price as a purchase you can make today. The Acid Lab is an additional option, not a reason to abandon an existing income source, and Cayo Perico becomes one of the best money makers later but this is simpler first.
+Reserve the upgrade money before optional purchases. The First Dose chain gives you access to this route without an earlier business purchase, but the installation, the Equipment Upgrade, and prep like a homing launcher for “Make War Not Love” still need funding. The Bullpup Rifle is a solid general-purpose upgrade later, while the Compact Rifle is mainly useful if you spend time on motorcycles. If your Career Builder business is already useful, alternate its manageable tasks with Dax's jobs. In the early game, avoid spending on random stuff before funding the upgrade, and check the Dinka Akuma’s current availability before treating its historical GTA$9,000 price as a purchase you can make today. The Acid Lab is an additional option, not a reason to abandon an existing income source, and Cayo Perico becomes one of the best money makers later but this is simpler first.
 
 With your first business running, you can now decide what deserves your next savings and plan your next big purchase.
-
 
 ## Decide What Deserves Your Next Savings
 
@@ -237,13 +204,13 @@ After learning one business, choose the next purchase by the kind of session you
 
 ### Comparing Your Next Major Purchases
 
-This table compares the standard entry prices and best fit for the next major purchases:
+This table compares the standard entry prices and best fit for the next major purchases, and it helps to stay disciplined: GTA Online has around 500 vehicles to tempt you, plus plenty of **clothing** to buy, while businesses require significant investment to operate effectively and you can own up to 8 properties later, so keep early purchases tied to your next activity.
 
 | Choice              | Standard entry price          | Best fit and extra budget                                                                            |
 |---------------------|-------------------------------|------------------------------------------------------------------------------------------------------|
 | Little Seoul Agency | GTA$2,010,000, base property  | Story-led combat and shorter contracts; optional armory and workshop cost extra                      |
 | Kosatka             | GTA$2,200,000, base submarine | Learning Cayo Perico's scouting, preparation, and stealth; setup fees and optional Sparrow are extra |
-The Agency price is documented in this [location comparison](https://gamersdecide.com/articles/gta-online-best-agency-locations); Kosatka pricing and the Miguel Madrazo meeting requirement are documented by [GTABase](https://www.gtabase.com/grand-theft-auto-v/vehicles/kosatka-submarine-hq). These are non-discounted entry prices, not all-in packages or earnings forecasts. It is also worth checking **legendary motorsport** for the Annis Elegy RH8, and checking whether your linked Rockstar account shows a GTA$0 claim price before you confirm.
+The Agency price is documented in this [location comparison](https://gamersdecide.com/articles/gta-online-best-agency-locations); Kosatka pricing and the Miguel Madrazo meeting requirement are documented by [GTABase](https://www.gtabase.com/grand-theft-auto-v/vehicles/kosatka-submarine-hq). These are non-discounted entry prices, not all-in packages or earnings forecasts. It is also worth checking **legendary motorsport** for the Annis Elegy RH8, and checking whether your linked Rockstar account shows a GTA$0 claim price before you confirm. You can build out multiple places later, but there is no need to rush toward the maximum property count early.
 
 **Choose Agency** if you prefer working through combat missions and having several activities available from a city base. Security Contracts lead into the Dr. Dre VIP storyline. Do not buy it expecting an immediately maximized passive safe or the same finale payment on every repeat. [Agency mission progression](https://www.pcgamer.com/how-to-make-money-in-gta-online/).
 
@@ -266,42 +233,27 @@ A Career Builder nightclub can therefore be useful before a large warehouse netw
 
 With your next savings goal in mind, you can now use checklists to keep your sessions efficient and focused.
 
-
 ## A Checklist for Your Next Sessions
 
 - Check your GTA+ offers and their end dates; claim eligible rewards before buying alternatives.
-
 - Check Daily Objectives for extra cash; daily activities pay modestly, but they are easy to clear as you progress in GTA Online.
-
 - Refill the consumables you used and confirm your next destination.
-
 - Complete one mission or preparation step before browsing shopping websites.
-
 - Request a Dax job if available and record successful completions toward ten.
-
 - Visit the Stash House when it appears; it can provide supplies for an eligible business or a cash reward when the relevant conditions apply.
-
 - G's Cache provides a variable cash reward and supplies, and works well between larger jobs.
-
 - Check supplies and stock in the business you are actually using; collect available safe earnings through the Vinewood Club App.
-
 - Leave enough time for a sale; starting one tired and rushed is avoidable risk.
-
 - Note your cash, owned equipment, and next unlock before logging off.
-
 
 ## Keep a Plan Between Sessions
 
 - Choose one mission chain or unlock from this guide before you start playing.
-
 - Note what you completed and what you need next, so your next session begins with a clear task.
-
-- A Junk Energy bike time trial, Stash House, or G's Cache can be a shorter-session goal. Check the time-trial target and reward, and distinguish cash received from business supplies instead of planning around a fixed payout.
-
+- A Junk Energy bike time trial, Stash House, or G's Cache can be a shorter-session goal. When that event is active, complete the BMX-style challenge for a commonly cited GTA$51,000 reward, but still verify the current target and payout; a cheap garage is a separate early buy, not a reason to plan around a fixed payout or confuse cash with business supplies.
 - Check the [Weekly Update](https://gtacompanion.net/gta-online/weekly-update) for dated offers that fit what you already own; an expired bonus is not part of your savings plan.
 
-[GTA Companion](https://gtacompanion.net/) Pro brings activity checklists and progress tracking into one planner. You mark tasks yourself, and progress stays on this device. Pro is a separate app subscription from Rockstar’s GTA+ membership: it does not include GTA+, in-game money, or member rewards. Check the current Pro plans and access terms before subscribing.
-
+GTA Companion Pro is a separate app planner with activity checklists and progress tracking. You mark tasks yourself, and progress stays on this device. Pro is separate from Rockstar’s GTA+ membership and does not include GTA+, in-game money, or member rewards. Check the current sales and access status on the [GTA Companion plans page](https://gtacompanion.net/pricing) before deciding whether to subscribe.
 
 ## FAQ
 
@@ -319,17 +271,15 @@ Use the no-bonus route. Do not delete a character chasing the one-time allocatio
 
 ### When should I buy expensive cars?
 
-When you can buy one without postponing the business upgrade or operating reserve you still need, and in the early game, selling an eligible stolen car can bring in extra cash, subject to sale restrictions and the vehicle’s value instead of paying for something flashy. With many vehicles to choose from in GTA Online and property limits that depend on the property type, there is no rush to buy an expensive car at the beginning. Pick a car you want to drive, and treat it as a reward rather than an income guarantee.
+When you can buy one without postponing the business upgrade or operating reserve you still need, and in the early game, selling an eligible stolen car can bring in extra cash, subject to sale restrictions and the vehicle’s value, so beginners should prioritize a practical vehicle over luxury cars instead of paying for something flashy. With around 500 vehicles to choose from in GTA Online and property limits that depend on the property type, there is no rush to buy an expensive car at the beginning, and claiming the duke o'death early gives you a strong free option from Warstock. Pick a car you want to drive, and treat it as a reward rather than an income guarantee.
 
 ### Should I follow weekly bonuses?
 
 Use them when they fit what you own and enjoy. Check dates, eligible platforms, membership conditions, host requirements, and whether a reward is a rebate or an immediate payment. Temporary bonuses are not the same as the recurring first-completion weekly payout system.
 
-
 ## Historical GTA+ Example: Expired September Offer
 
 **Expired offer: 10 September–7 October 2026.** During this period, Rockstar listed 2X GTA$ for the first Cluckin' Bell finale completed each week. Repeated finales that week did not all get this offer. The September announcement also offered the Pegassi Horus as the claimable member vehicle and 60% off Biker Business properties, upgrades, and modifications. A discounted business still needed capital and attention. This is a historical example, not a current bonus; do not carry its multiplier into your budget. [Rockstar's September GTA+ announcement](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su).
-
 
 ## Sources and Review Method
 
@@ -340,3 +290,6 @@ The review included Title Update 1.73, the Kortz Center launch, and Rockstar’s
 Kosatka and Sparrow base prices, purchase requirements and the combined GTA$4,015,000 budget were checked again on **2 October 2026**. This update does not reverify the other September offers or claim a physical-device test.
 
 Editorial update, **18 October 2026**: retained the optimized structure and made targeted corrections to Career Builder availability, Organization eligibility, reward conditions, repeated sentences, and the controls table. The earlier source-check dates still apply to the remaining game facts; this edit is not a new verification of every game mechanic.
+
+
+Editorial update, **21 October 2026**: imported the latest Surfer-edited version. Rockstar Support was checked for GTA+ deposit timing and Title Update 1.73 weekly-finale rules. Other game prices and mechanics retain the source-check dates stated above; this update does not claim a physical-device test or current weekly offer verification.
