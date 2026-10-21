@@ -135,3 +135,24 @@ test('a new membership period plus carryover monthly bonuses cannot turn freshne
  const h=inspectContentStatus({app,page,article,receipt:{weekId:app.weekId,verifiedRevision:app.revision,verifiedAt:new Date(next).toISOString()}},next);
  assert.equal(h.current,false);assert.equal(h.alarm,true);assert.ok(h.reasons.includes('app_week_not_current'));
 });
+
+test('wygasła dawna sesja nie blokuje odbioru: skrót API i bramka 401 wystarczają do potwierdzenia danych',async t=>{
+ t.mock.timers.enable({apis:['Date'],now:new Date(now)});
+ t.mock.method(SourceService.prototype,'websites',async()=>({documents:[],failures:[],hasCurrentArticle:true}));
+ const storage=new Storage(),kv=new Map();
+ await storage.put('smoke-token','expired-local-fixture');
+ const env={PUBLICATION_MODE:'publish',CONTENT_KV:{get:async(k,type)=>type==='json'?kv.get(k):JSON.stringify(kv.get(k)),put:async(k,v)=>kv.set(k,JSON.parse(v))}};
+ const calls=[];
+ t.mock.method(globalThis,'fetch',async(input,options)=>{
+  const url=new URL(input);calls.push({url,options});const app=kv.get('weekly:latest');
+  if(url.pathname==='/api/content-status')return Response.json({app:{revision:app.revision},public:{revision:app.revision},article:{revision:app.revision},appRender:{schemaVersion:1,algorithm:'sha256',revision:app.revision,renderedAt:new Date().toISOString(),digest:await hash(projectContent(app,Date.now()))}});
+  if(url.pathname==='/api/weekly')return new Response('',{status:401});
+  if(url.pathname==='/api/weekly-public')return Response.json({revision:app.revision});
+  throw Error('unexpected-test-fetch');
+ });
+ const engine=new PublicationEngine({storage},env);await engine.alarm();t.mock.timers.tick(76000);await engine.alarm();
+ const state=await engine.status();assert.equal(state.lastError,null);assert.equal(state.verifiedRevision,kv.get('weekly:latest').revision);
+ assert.equal(state.needsSmokeToken,false);assert.equal(state.apiAccessCheck.mode,'render-digest-v1');
+ assert.equal(kv.get('weekly:receipt').verificationMode,'render-digest-v1');
+ assert.ok(calls.some(c=>c.url.pathname==='/api/weekly'));assert.ok(calls.every(c=>!new Headers(c.options?.headers).has('authorization')));
+});
