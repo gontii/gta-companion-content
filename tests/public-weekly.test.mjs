@@ -63,7 +63,8 @@ test('2638 editorial facts match known seasonal challenge, keep membership dates
 test('public KV preparation never writes app key; active release requires paired, complete, unchanged editorial approval',()=>{
   assert.deepEqual(preparePublicWeekly(raw,{now}).map(x=>x.key),['weekly:public']);
   const d=fixture();d.status='active';d.confirmedAt='2026-09-17T12:00:00.000Z';d.verifiedAt=d.confirmedAt;
-  const publicText=JSON.stringify(d),appText=JSON.stringify({...JSON.parse(readFileSync(new URL('../weekly/latest.json',import.meta.url))),weekId:d.weekId,range:'September 17 - 23, 2026'});
+  // Stała próbka: historyczny scenariusz odbioru nie zależy od kolejnych wydań latest.json.
+  const publicText=JSON.stringify(d),appText=JSON.stringify({...JSON.parse(readFileSync(new URL('./fixtures/weekly-legacy.json',import.meta.url))),weekId:d.weekId,range:'September 17 - 23, 2026'});
   const sha=s=>createHash('sha256').update(s).digest('hex');
   const review={status:'zatwierdzone',publicSha256:sha(publicText),appSha256:sha(appText),reviewedAt:'2026-09-17T13:00:00.000Z',checkedFactIds:d.sections.flatMap(s=>s.items).filter(i=>i.status==='confirmed').map(i=>i.id)};
   assert.throws(()=>preparePublicWeekly(publicText,{now}));
