@@ -320,7 +320,7 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
   return classifyProgressContent(c);
 }
 
-export function validateSnapshot(c, { published = false } = {}) {
+export function validateSnapshot(c, { published = false, archive = false } = {}) {
   if (c?.schemaVersion !== 2 || !validDay(c.weekId) || !Array.isArray(c.sections)) throw new Error('snapshot_invalid');
   const ids = new Set();
   for (const item of c.sections.flatMap(s => s.items)) {
@@ -329,7 +329,8 @@ export function validateSnapshot(c, { published = false } = {}) {
     ids.add(item.id);
     if (!item.editorial && !['official', 'corroborated', 'transcript', ...(published ? ['editorial'] : [])].includes(item.confidence)) throw new Error('unverified_item');
   }
-  if (duplicateObjectives(c).length) throw new Error('duplicate_progress_objective');
+  // Historia zachowuje dawny opublikowany dokument; nie jest nową publikacją.
+  if (!(published && archive) && duplicateObjectives(c).length) throw new Error('duplicate_progress_objective');
   validateProgressContent(c);
   if (new TextEncoder().encode(JSON.stringify(c)).length > 120_000) throw new Error('snapshot_too_large');
   return c;

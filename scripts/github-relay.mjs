@@ -64,7 +64,7 @@ let latest;
 try { latest = JSON.parse(await readFile('weekly/latest.json', 'utf8')); } catch { /* first publication */ }
 for (const entry of entries.sort((a, b) => a.snapshot.generatedAt.localeCompare(b.snapshot.generatedAt))) {
   const snapshot = entry.snapshot;
-  validateSnapshot(snapshot, { published: true });
+  validateSnapshot(snapshot, { published: true, archive: true });
   if (!/^[a-f0-9]{64}$/.test(snapshot.revision) || !/^\d{4}-\d{2}-\d{2}$/.test(snapshot.weekId)) throw new Error('Nieprawidłowy identyfikator publikacji');
   await mkdir('weekly/revisions', { recursive: true });
   if (entry.publicPage) {

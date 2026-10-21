@@ -64,3 +64,14 @@ test('unknown offer syntax still rejects exact repetitions across sections witho
   assert.equal(c.sections.flatMap(s=>s.items).length,1);
   assert.notEqual(objectiveKey(item),objectiveKey({...item,offer:'Special verified offer with an extra requirement'}));
 });
+
+test('archiwum zachowuje dawne powtórzenia, ale nie przepuszcza niepoprawnych elementów ani nowych publikacji',()=>{
+  const c={schemaVersion:2,...content()};classifyProgressContent(c);
+  for(const item of c.sections.flatMap(s=>s.items))item.label=item.offer;
+  c.sections[1].items[0].progressGroup='extra';
+  assert.equal(validateSnapshot(c,{published:true,archive:true}),c);
+  assert.throws(()=>validateSnapshot(c,{archive:true}),/duplicate_progress_objective/);
+  assert.throws(()=>validateSnapshot(c,{published:true}),/duplicate_progress_objective/);
+  c.sections[1].items[0].expiresAt='invalid';
+  assert.throws(()=>validateSnapshot(c,{published:true,archive:true}),/snapshot_item_invalid/);
+});
