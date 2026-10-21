@@ -8,6 +8,7 @@ import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, val
 import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, atLocal, MINUTE, DAY, TIMING_POLICY_VERSION } from '../scripts/temporal.mjs';
 import { thursdayWeekId } from '../scripts/weekly-core.mjs';
 import { safeFetch, readBounded } from '../scripts/http.mjs';
+import { verifyAppRender } from '../scripts/publication-verification.mjs';
 
 function publicSnapshot(c) {
   // Evidence stays in private object storage. Public history contains facts and citations,
@@ -30,7 +31,7 @@ export class PublicationEngine {
       tggDiscovery: await this.store.get('tgg-discovery-check'),
       apiAccessCheck: await this.store.get('api-access-check'),
       heartbeatAt: new Date((await this.store.get('heartbeat')) || 0).toISOString(),
-      needsSmokeToken: !await this.store.get('smoke-token-set-at') || Date.now() - await this.store.get('smoke-token-set-at') > DAY };
+      verificationMode: 'render-digest-v1', needsSmokeToken: false };
   }
   async outbox() { return { entries: [...(await this.store.list({ prefix: 'outbox:', limit: 10 })).values()] }; }
   async ack(ids) {
@@ -295,25 +296,20 @@ export class PublicationEngine {
       }
       const publication = await this.store.get('publication');
       const manifest = await this.store.get('bundle-manifest');
-      if (publication && manifest && state.verifiedRevision !== publication.revision && state.verifyAfter <= now) {
+      if (publication && manifest && (state.verifiedRevision !== publication.revision || state.verificationMode !== 'render-digest-v1') && state.verifyAfter <= now) {
         // Independent live read: Pages reads both KV documents without exposing the
         // protected payload. This receipt is compared before freshness can turn green.
         const response = await safeFetch(`https://gtacompanion.net/api/content-status?revision=${publication.revision}`);
         if (!response.ok) throw new Error(`content_status_http_${response.status}`);
         const live = JSON.parse(await readBounded(response, 12000));
         if (live.app?.revision !== publication.revision || live.public?.revision !== publication.revision || live.article?.revision !== publication.revision || live.reasons?.includes('channels_diverged')) throw new Error('publication_propagating');
-        const token = await this.store.get('smoke-token');
-        if (token) {
-          const api = await safeFetch(`https://gtacompanion.net/api/weekly?revision=${publication.revision}`, { headers: { authorization: `Bearer ${token}` } });
-          if (!api.ok) throw new Error(`weekly_api_http_${api.status}`);
-          const actual = JSON.parse(await readBounded(api, 150000));
-          if (await hash(actual) !== await hash(projectContent(publication, Date.now()))) throw new Error('weekly_api_content_mismatch');
-        }
+        await this.store.put('api-access-check', await verifyAppRender(live, publication));
         const publicApi = await safeFetch(`https://gtacompanion.net/api/weekly-public?revision=${publication.revision}`);
         if (!publicApi.ok) throw new Error(`public_api_http_${publicApi.status}`);
         const publicLive = JSON.parse(await readBounded(publicApi, 150000));
         if (publicLive.revision !== publication.revision) throw new Error('public_api_propagating');
         state.verifiedRevision = publication.revision;
+        state.verificationMode = 'render-digest-v1';
         state.lastVerifiedAt = new Date().toISOString();
         await this.queueHistory(publication, state.lastVerifiedAt);
       }
@@ -323,7 +319,7 @@ export class PublicationEngine {
       state.sectionCoverage.revision = publication?.revision || null;
       await this.env.CONTENT_KV.put('weekly:receipt', JSON.stringify({ weekId: publication?.weekId || null,
         publishedRevision: state.publishedRevision || null, verifiedRevision: state.verifiedRevision || null,
-        verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString(), sectionCoverage: state.sectionCoverage }));
+        verificationMode: state.verificationMode || null, verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString(), sectionCoverage: state.sectionCoverage }));
       const missing = !master || master.weekId < currentWeek || !projectContent(master, now).sections.filter(s => !['gta-plus', 'dlc'].includes(s.id)).flatMap(s => s.items).some(i => Date.parse(i.startsAt) >= expectedAt && Date.parse(i.expiresAt) <= atLocal(new Date(Date.parse(currentWeek) + 7 * DAY).toISOString().slice(0, 10), 660));
       state.awaitingOfficial = !state.sources?.some(s => s.kind === 'rockstar' && s.scope === 'weekly' && s.current && s.facts > 0);
       state.pending = missing || state.awaitingOfficial;

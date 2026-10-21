@@ -99,7 +99,7 @@ if (paths.size) {
 const incidents = (status.incidents || []).filter(i => !/^missing-|^publication-unverified$/.test(i.key));
 if (!status.heartbeatAt || Date.now() - Date.parse(status.heartbeatAt) > 45 * 60000) incidents.push({ key: 'cloudflare-silent', reason: 'Brak sygnału harmonogramu Cloudflare przez ponad 45 minut', since: status.heartbeatAt });
 if (status.mode === 'publish') await syncIssues(incidents);
-console.log(JSON.stringify({ mode: status.mode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
+console.log(JSON.stringify({ mode: status.mode, verificationMode: status.verificationMode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
   lastAttemptAt: status.lastAttemptAt, lastCompletedAt: status.lastCompletedAt,
   lastPublishedAt: status.lastPublishedAt, lastVerifiedAt: status.lastVerifiedAt,
   timingPolicyVersion: status.timingPolicyVersion, nextBoundaryAt: status.candidate?.nextBoundaryAt,
