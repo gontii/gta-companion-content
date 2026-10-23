@@ -648,7 +648,7 @@
         },
         {
           "id": "auto-33f2aa77eba82a13a5",
-          "label": "The Shocker — In stock",
+          "label": "The Shocker — FREE",
           "factKey": "gun-van:the shocker:all:all",
           "startsAt": "2026-10-22T09:00:00.000Z",
           "expiresAt": "2026-10-29T10:00:00.000Z",
@@ -662,14 +662,20 @@
               "kind": "intel",
               "scope": "weekly",
               "publishedOn": "2026-10-21"
+            },
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-22-28-fourth-week-of-halloween-event-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-10-21"
             }
           ],
           "entity": "The Shocker",
-          "offer": "In stock",
+          "offer": "FREE",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-october-22nd-28th/",
-          "progressGroup": "none"
+          "progressGroup": "primary"
         },
         {
           "id": "auto-3e46da396eaeeb91c7",
@@ -1500,6 +1506,12 @@
       "kind": "intel",
       "scope": "membership",
       "publishedOn": "2026-10-08"
+    },
+    {
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-22-28-fourth-week-of-halloween-event-bonuses-discounts",
+      "kind": "gtabase",
+      "scope": "weekly",
+      "publishedOn": "2026-10-21"
     }
   ],
   "completeness": "partial",
@@ -1555,6 +1567,6 @@
   },
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-october-22nd-28th/",
   "nextBoundaryAt": "2026-10-29T10:00:00.000Z",
-  "revision": "6d5459c187220a08ee37e1ac5cf1ba050195f734c0847fc6bebf28b1738eafac",
-  "generatedAt": "2026-10-22T09:00:00.045Z"
+  "revision": "001a417a95471f9b9b64da26d314b84cd0a022f3e016de59c9d4ebea729713a2",
+  "generatedAt": "2026-10-23T14:20:00.122Z"
 }
