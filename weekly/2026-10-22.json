@@ -658,10 +658,10 @@
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-october-22nd-28th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-10-21"
+              "publishedOn": "2026-10-28"
             },
             {
               "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-22-28-fourth-week-of-halloween-event-bonuses-discounts",
@@ -674,7 +674,7 @@
           "offer": "FREE",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-october-22nd-28th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
           "progressGroup": "primary"
         },
         {
@@ -1508,6 +1508,12 @@
       "publishedOn": "2026-10-08"
     },
     {
+      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-10-28"
+    },
+    {
       "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-22-28-fourth-week-of-halloween-event-bonuses-discounts",
       "kind": "gtabase",
       "scope": "weekly",
@@ -1567,6 +1573,6 @@
   },
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-october-22nd-28th/",
   "nextBoundaryAt": "2026-10-29T10:00:00.000Z",
-  "revision": "001a417a95471f9b9b64da26d314b84cd0a022f3e016de59c9d4ebea729713a2",
-  "generatedAt": "2026-10-23T14:20:00.122Z"
+  "revision": "083a0ea8c5d68f23bf43a4357521dd551dc61ad61cd1f4b2a778f252fbfff2cd",
+  "generatedAt": "2026-10-28T20:35:00.241Z"
 }

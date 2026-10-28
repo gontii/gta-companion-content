@@ -5,11 +5,11 @@
   "startsOn": "2026-10-22",
   "endsOn": "2026-10-28",
   "status": "active",
-  "verifiedAt": "2026-10-23T14:20:00.122Z",
-  "confirmedAt": "2026-10-23T14:20:00.122Z",
+  "verifiedAt": "2026-10-28T20:35:00.241Z",
+  "confirmedAt": "2026-10-28T20:35:00.241Z",
   "startsAt": "2026-10-22T09:00:00.000Z",
   "expiresAt": "2026-10-29T10:00:00.000Z",
-  "revision": "001a417a95471f9b9b64da26d314b84cd0a022f3e016de59c9d4ebea729713a2",
+  "revision": "083a0ea8c5d68f23bf43a4357521dd551dc61ad61cd1f4b2a778f252fbfff2cd",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -596,8 +596,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-1",
-            "ref-10"
+            "ref-10",
+            "ref-11"
           ]
         },
         {
@@ -768,61 +768,67 @@
       "id": "ref-1",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-october-22nd-28th/",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-2",
       "title": "IGrandTheftAuto",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-october-22-2026",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-4",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/o3948k534952a8/protect-los-santos-and-acquire-new-law-enforcement-vehicles-during-the",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-5",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-6",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/51195a98k31273/gta-online-bottom-dollar-bounties-out-now",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-7",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-8",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-9",
       "title": "Source",
       "url": "https://gta.guide/article/gta-plus-bonuses-october-2026",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     },
     {
       "id": "ref-10",
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
+    },
+    {
+      "id": "ref-11",
       "title": "GTABase",
       "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-22-28-fourth-week-of-halloween-event-bonuses-discounts",
-      "verifiedAt": "2026-10-23T14:20:00.122Z"
+      "verifiedAt": "2026-10-28T20:35:00.241Z"
     }
   ]
 }
