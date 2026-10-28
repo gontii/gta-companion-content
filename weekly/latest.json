@@ -664,10 +664,10 @@
               "publishedOn": "2026-10-28"
             },
             {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-22-28-fourth-week-of-halloween-event-bonuses-discounts",
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-29-november-4-final-week-of-halloween-event-bonuses-discounts",
               "kind": "gtabase",
               "scope": "weekly",
-              "publishedOn": "2026-10-21"
+              "publishedOn": "2026-10-28"
             }
           ],
           "entity": "The Shocker",
@@ -1514,10 +1514,10 @@
       "publishedOn": "2026-10-28"
     },
     {
-      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-22-28-fourth-week-of-halloween-event-bonuses-discounts",
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-october-29-november-4-final-week-of-halloween-event-bonuses-discounts",
       "kind": "gtabase",
       "scope": "weekly",
-      "publishedOn": "2026-10-21"
+      "publishedOn": "2026-10-28"
     }
   ],
   "completeness": "partial",
@@ -1573,6 +1573,6 @@
   },
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-october-22nd-28th/",
   "nextBoundaryAt": "2026-10-29T10:00:00.000Z",
-  "revision": "083a0ea8c5d68f23bf43a4357521dd551dc61ad61cd1f4b2a778f252fbfff2cd",
-  "generatedAt": "2026-10-28T20:35:00.241Z"
+  "revision": "f1da21c113eb63c8ee04c5a5b901cd33860a02266c562aba399c4f6f0a4f79c3",
+  "generatedAt": "2026-10-28T21:50:00.287Z"
 }
