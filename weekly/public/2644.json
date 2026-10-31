@@ -5,11 +5,11 @@
   "startsOn": "2026-10-29",
   "endsOn": "2026-11-04",
   "status": "active",
-  "verifiedAt": "2026-10-31T22:50:00.644Z",
-  "confirmedAt": "2026-10-31T22:50:00.644Z",
+  "verifiedAt": "2026-10-31T23:00:00.104Z",
+  "confirmedAt": "2026-10-31T23:00:00.104Z",
   "startsAt": "2026-10-29T10:00:00.000Z",
   "expiresAt": "2026-11-05T10:00:00.000Z",
-  "revision": "fc0825fc0f47959751080038074b765c6d01c05203635cfea49c1b9fce4d5775",
+  "revision": "69d8c9532fc6da3618cbe45cac4771dad6613e4a2ea84fd3fc6c01e2f92cc4c7",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -102,23 +102,6 @@
           ]
         },
         {
-          "id": "auto-6e31fc5b1deeee77de",
-          "name": "Dispatch Work",
-          "status": "confirmed",
-          "offer": "Dispatch Work — 2X GTA$ & RP",
-          "requirements": "Freemode → your owned Law Enforcement personal vehicle. First complete Slush Fund from The Cluckin’ Bell Farm Raid as leader. While driving your Law Enforcement vehicle, request Dispatch Work with the displayed prompt (R3/RS on console, B on PC). Follow Vincent’s assigned mission markers; there is no single fixed destination.",
-          "startsOn": "2026-10-01",
-          "endsOn": "2026-10-31",
-          "startsAt": "2026-10-01T09:00:00.000Z",
-          "expiresAt": "2026-10-31T23:00:00.000Z",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "ref-3",
-            "ref-4"
-          ]
-        },
-        {
           "id": "auto-715a776cbfd3e15c9b",
           "name": "Community Mission Series",
           "status": "confirmed",
@@ -148,23 +131,6 @@
           "gtaPlus": false,
           "sourceIds": [
             "ref-1"
-          ]
-        },
-        {
-          "id": "auto-b0840c9e9d40e6f7fd",
-          "name": "Standard and Most Wanted Bail Office Targets",
-          "status": "confirmed",
-          "offer": "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
-          "requirements": "Your owned Bail Office → bounty selection. Start the bounty from your Bail Office and follow the assigned target markers. Standard and Most Wanted targets have different availability; check the current target selection and the exact weekly challenge below. Dispatch Work is a separate activity and does not substitute for securing a Bail Office bounty.",
-          "startsOn": "2026-10-01",
-          "endsOn": "2026-10-31",
-          "startsAt": "2026-10-01T09:00:00.000Z",
-          "expiresAt": "2026-10-31T23:00:00.000Z",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "ref-3",
-            "ref-5"
           ]
         },
         {
@@ -744,9 +710,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -762,9 +728,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -892,9 +858,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -910,9 +876,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -928,9 +894,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -946,9 +912,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -964,9 +930,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -982,9 +948,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1000,9 +966,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1018,9 +984,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1036,9 +1002,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1054,9 +1020,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1072,9 +1038,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1090,9 +1056,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1124,9 +1090,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1142,9 +1108,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1160,9 +1126,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1178,9 +1144,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -1196,9 +1162,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7",
-            "ref-8"
+            "ref-4",
+            "ref-5",
+            "ref-6"
           ]
         }
       ]
@@ -1418,49 +1384,37 @@
       "id": "ref-1",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
+      "verifiedAt": "2026-10-31T23:00:00.104Z"
     },
     {
       "id": "ref-2",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
+      "verifiedAt": "2026-10-31T23:00:00.104Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
+      "verifiedAt": "2026-10-31T23:00:00.104Z"
     },
     {
       "id": "ref-4",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/newswire/article/o3948k534952a8/protect-los-santos-and-acquire-new-law-enforcement-vehicles-during-the",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
+      "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+      "verifiedAt": "2026-10-31T23:00:00.104Z"
     },
     {
       "id": "ref-5",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/newswire/article/51195a98k31273/gta-online-bottom-dollar-bounties-out-now",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+      "verifiedAt": "2026-10-31T23:00:00.104Z"
     },
     {
       "id": "ref-6",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
-    },
-    {
-      "id": "ref-7",
-      "title": "RockstarINTEL",
-      "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
-    },
-    {
-      "id": "ref-8",
       "title": "Source",
       "url": "https://gta.guide/article/gta-plus-bonuses-october-2026",
-      "verifiedAt": "2026-10-31T22:50:00.644Z"
+      "verifiedAt": "2026-10-31T23:00:00.104Z"
     }
   ]
 }

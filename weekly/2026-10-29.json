@@ -282,48 +282,6 @@
       "timingConfidence": "estimated"
     },
     {
-      "id": "auto-location-dispatch-work",
-      "activity": "Dispatch Work",
-      "name": "Vincent’s Dispatch Work",
-      "area": "Freemode → your owned Law Enforcement personal vehicle",
-      "note": "First complete Slush Fund from The Cluckin’ Bell Farm Raid as leader. While driving your Law Enforcement vehicle, request Dispatch Work with the displayed prompt (R3/RS on console, B on PC). Follow Vincent’s assigned mission markers; there is no single fixed destination.\n\nThis week: Dispatch Work — 2X GTA$ & RP",
-      "itemIds": [
-        "auto-6e31fc5b1deeee77de"
-      ],
-      "sources": [
-        {
-          "kind": "rockstar",
-          "url": "https://www.rockstargames.com/newswire/article/o3948k534952a8/protect-los-santos-and-acquire-new-law-enforcement-vehicles-during-the"
-        }
-      ],
-      "startsAt": "2026-10-01T09:00:00.000Z",
-      "expiresAt": "2026-10-31T23:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated"
-    },
-    {
-      "id": "auto-location-bail-office",
-      "activity": "Bail Office Targets & Challenge",
-      "name": "Your Bail Office",
-      "area": "Your owned Bail Office → bounty selection",
-      "note": "Start the bounty from your Bail Office and follow the assigned target markers. Standard and Most Wanted targets have different availability; check the current target selection and the exact weekly challenge below. Dispatch Work is a separate activity and does not substitute for securing a Bail Office bounty.\n\nThis week: Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
-      "itemIds": [
-        "auto-b0840c9e9d40e6f7fd"
-      ],
-      "sources": [
-        {
-          "kind": "rockstar",
-          "url": "https://www.rockstargames.com/newswire/article/51195a98k31273/gta-online-bottom-dollar-bounties-out-now"
-        }
-      ],
-      "startsAt": "2026-10-01T09:00:00.000Z",
-      "expiresAt": "2026-10-31T23:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated"
-    },
-    {
       "id": "auto-location-prize-ride",
       "activity": "Prize Ride",
       "name": "Los Santos Car Meet",
@@ -541,31 +499,6 @@
           "progressGroup": "none"
         },
         {
-          "id": "auto-6e31fc5b1deeee77de",
-          "label": "Dispatch Work — 2X GTA$ & RP",
-          "factKey": "bonuses:dispatch work:all:all",
-          "startsAt": "2026-10-01T09:00:00.000Z",
-          "expiresAt": "2026-10-31T23:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-10-07"
-            }
-          ],
-          "entity": "Dispatch Work",
-          "offer": "2X GTA$ & RP",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-          "progressGroup": "none"
-        },
-        {
           "id": "auto-715a776cbfd3e15c9b",
           "label": "Community Mission Series — 3X GTA$ & RP (PS5, Xbox Series X|S, PC Enhanced)",
           "factKey": "bonuses:community mission series:all:enhanced",
@@ -638,31 +571,6 @@
           "eligibility": "gta-plus",
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-b0840c9e9d40e6f7fd",
-          "label": "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
-          "factKey": "bonuses:standard and most wanted bail office targets:all:all",
-          "startsAt": "2026-10-01T09:00:00.000Z",
-          "expiresAt": "2026-10-31T23:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-10-07"
-            }
-          ],
-          "entity": "Standard and Most Wanted Bail Office Targets",
-          "offer": "2X GTA$ & RP",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
           "progressGroup": "none"
         },
         {
@@ -2681,7 +2589,7 @@
     ]
   },
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
-  "nextBoundaryAt": "2026-10-31T23:00:00.000Z",
-  "revision": "fc0825fc0f47959751080038074b765c6d01c05203635cfea49c1b9fce4d5775",
-  "generatedAt": "2026-10-31T22:50:00.644Z"
+  "nextBoundaryAt": "2026-11-04T23:00:00.000Z",
+  "revision": "69d8c9532fc6da3618cbe45cac4771dad6613e4a2ea84fd3fc6c01e2f92cc4c7",
+  "generatedAt": "2026-10-31T23:00:00.104Z"
 }
