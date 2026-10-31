@@ -61,6 +61,9 @@ export class PublicationEngine {
     const edition = page.current || page.editions?.[0] || page;
     await this.env.CONTENT_KV.put(`weekly:public:${edition.issue}`, JSON.stringify(edition));
     await this.env.CONTENT_KV.put('weekly:latest', JSON.stringify(previous));
+    // Rollback must restore every key from the four-key publication bundle;
+    // leaving weekly:app:public on the newer revision breaks parity.
+    await this.env.CONTENT_KV.put('weekly:app:public', JSON.stringify(previous));
     await this.env.CONTENT_KV.put('weekly:public', JSON.stringify(page));
     await this.env.CONTENT_KV.put('weekly:receipt', JSON.stringify({ weekId: previous.weekId, verifiedRevision: null, verifiedAt: null }));
     await this.store.put('master', await this.store.get('previous-master'));

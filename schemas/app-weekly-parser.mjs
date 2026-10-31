@@ -66,5 +66,15 @@ export function parseWeeklyContent(v) {
         Array.isArray(o.beginnerPath) &&
         o.beginnerPath.every(isWeeklyItem) &&
         (o.locations === undefined || (Array.isArray(o.locations) && o.locations.every(isWeeklyLocation)));
-    return valid ? v : null;
+    if (!valid)
+        return null;
+    // Checkbox progress is persisted per item id; aliased ids would corrupt it.
+    // quickTakeEntries intentionally mirror section items under the same id.
+    const seen = new Set();
+    for (const item of [...o.sections.flatMap((s) => s.items), ...o.beginnerPath]) {
+        if (seen.has(item.id))
+            return null;
+        seen.add(item.id);
+    }
+    return v;
 }

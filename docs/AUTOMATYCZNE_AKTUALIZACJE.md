@@ -10,6 +10,8 @@ GitHub Actions `content-relay.yml` odbiera historię i synchronizuje zgłoszenia
 
 Sekret `AUTOMATION_TOKEN` w Workerze odpowiada sekretowi `CONTENT_AUTOMATION_TOKEN` w GitHub. Daje dostęp wyłącznie do statusu, zlecenia sprawdzenia, odbioru/potwierdzenia historii i przekazania testowego tokenu aplikacji. Nie przyjmuje dowolnej treści do publikacji. `SUPADATA_API_KEY` występuje wyłącznie w sekretach Workera. Niczego nie zapisujemy do `.env` ani do historii Git.
 
+Rollback i wstrzymanie publikacji wymagają osobnego sekretu Workera `OPERATOR_TOKEN`, przechowywanego wyłącznie lokalnie u właściciela. Token przekaźnika GitHub nie może wywołać `/rollback`; bez ustawionego `OPERATOR_TOKEN` trasa odpowiada 404.
+
 ## Daty i publikacja
 
 `temporal.mjs` jest kontraktem współdzielonym z aplikacją przez `node scripts/sync-temporal.mjs /katalog/aplikacji`. Wszystkie czasy wynikowe są UTC, reguły dnia używają `Europe/Warsaw`, z obsługą czasu letniego i zimowego. Przy dacie bez godziny start jest szacowany na 11:00. Zwykły okres tygodniowy czwartek–środa wygasa o 11:00 w następny czwartek, a nie o północy. GTA+, krótsze wydarzenia i oddzielne okresy kwalifikacji/odbioru zachowują własne daty; dotychczasowe szacunki ich godzin nie są potwierdzonym resetem. Oba szacunki są oznaczone; nie stanowią potwierdzonej godziny resetu. Dokładne godziny przyjmujemy wyłącznie z udokumentowaną strefą i dowodem w źródle.
@@ -38,7 +40,7 @@ Model `@cf/meta/llama-3.3-70b-instruct-fp8-fast`: limit automatu 8000 neuronów/
 
 ## Uruchomienie i przełączenie
 
-1. `npm ci`, `npm test`, `npx wrangler types`, `npx wrangler deploy --dry-run`.
+1. `npm ci`, `npm test`, `npx --no-install wrangler types`, `npx --no-install wrangler deploy --dry-run`.
 2. Wdrożyć kompatybilną aplikację: wygaśnięcia we wszystkich widokach, odświeżanie po powrocie i co 15 minut, cache API 60 s. Wykonać kontrolę chronionego API.
 3. Wdrożyć Worker z `PUBLICATION_MODE=observe`. Skonfigurować sekrety, zmienną GitHub `CONTENT_UPDATER_URL` i uruchomić `content-relay.yml` z `request_check=true`.
 4. Potwierdzić odczyt właściwych artykułów i poprawność zaakceptowanych/odrzuconych faktów. Zalogować Supadata w darmowym planie, ustawić klucz bez wypisywania go i sprawdzić rzeczywistą transkrypcję z Cloudflare wraz ze znacznikiem czasu.
@@ -65,7 +67,7 @@ RSS TGG może zawierać wyłącznie 15 nowszych Shorts i transmisji — zaobserw
 
 Wyszukiwanie używa trafności; wyniki mogą podawać datę względną, np. „5 days ago”. Automat nie zamienia jej w datę publikacji ani wydarzenia. Dla maksymalnie dwóch pasujących filmów pobiera `/v1/metadata` i sprawdza ponownie kanał, identyfikator, tytuł oraz dokładne `createdAt`. Metadane są pamiętane przez 30 dni i kosztują 1 kredyt przy pobraniu, w tym samym limicie 95. Test obejmuje odrzucenie innego kanału i starego filmu mimo świeżej daty względnej w wynikach; kontrola lokalna 72/72. Dokumentacja: [metadane Supadata](https://docs.supadata.ai/get-metadata).
 
-Odbiór rzeczywistego pobrania: 15.09 o 18:31 UTC Worker `87485d2d` zapisał `transcriptCheck.status=downloaded` dla TGG `V08qE5jkLW4`: 128 fragmentów, 4843 znaki, znaczniki 240–279688 ms. Potwierdzenie: [przekaźnik 35008026695](https://github.com/gontii/gta-companion-content/actions/runs/35008026695). Analiza zatrzymała się na dziennym limicie AI i sama wznowi się 16.09 o 00:02 UTC (02:02 w Polsce); termin jest zapisany w obiekcie. Tryb pozostaje `observe` do porównania wyodrębnionych faktów. Konto i klucz są gotowe. CI [35008074284](https://github.com/gontii/gta-companion-content/actions/runs/35008074284) dla `47c7ba3`: 77/77 w bieżącym repozytorium, w tym pięć równoległych testów SEO; wydzielona paczka automatu 72/72.
+Odbiór rzeczywistego pobrania: 15.09 o 18:31 UTC Worker zapisał `transcriptCheck.status=downloaded` dla TGG `V08qE5jkLW4`: 128 fragmentów, 4843 znaki, znaczniki 240–279688 ms. Potwierdzenie: [przekaźnik 35008026695](https://github.com/gontii/gta-companion-content/actions/runs/35008026695). Analiza zatrzymała się na dziennym limicie AI i sama wznowi się 16.09 o 00:02 UTC (02:02 w Polsce); termin jest zapisany w obiekcie. Tryb pozostaje `observe` do porównania wyodrębnionych faktów. Konto i klucz są gotowe. CI [35008074284](https://github.com/gontii/gta-companion-content/actions/runs/35008074284) dla `47c7ba3`: 77/77 w bieżącym repozytorium, w tym pięć równoległych testów SEO; wydzielona paczka automatu 72/72.
 
 ### Kontrola limitów i transkrypcji 16.09.2026
 
@@ -78,7 +80,7 @@ Status `aiBudget` pokazuje składniki lokalnego budżetu. Opcja `inspect_candida
 ### Uruchomienie publikowania 16.09.2026
 
 - Kod licznika `e108d83`; walidacja zakresu GTA+ i dat `44aba0b`; własne terminy zweryfikowanych korzyści `cc26f0d`; konfiguracja publikacji `4ea9549`.
-- Worker `97ed2081-d190-4e0c-bb47-ed74a8ee950c`, `publish`. Przed przełączeniem ustawiono `CONTENT_WRITER=cloudflare` i potwierdzono brak trwającego starego publikowania. Zgodna aplikacja jest zachowana również w aktualnym Pages `c2f603e4`.
+- Worker, `publish`. Przed przełączeniem ustawiono `CONTENT_WRITER=cloudflare` i potwierdzono brak trwającego starego publikowania. Zgodna aplikacja jest zachowana również w aktualnym Pages.
 - Rewizja `69719fc91f3939cc5f8b709d16d3dc1977a6394d82c048731086fd2367b53961`: publikacja 08:58:49 UTC; pełna zgodność API i odmowa bez tokenu potwierdzone przez automat o 09:00:04 UTC. [Odbiór 35077052665](https://github.com/gontii/gta-companion-content/actions/runs/35077052665).
 - Historia `e8394a4` zapisana na `main`. Pierwsze potwierdzenie odbioru przerwało `ECONNRESET`; kolejny przebieg bezpiecznie odebrał oba wpisy kolejki, bez drugiej rewizji i bez kolejnej analizy źródeł.
 - Końcowy walidator odrzucił bonus miesięczny błędnie opisany przez model jako dostępny dla wszystkich. Źródło GTA+ narzuca zakres członkostwa; okres główny artykułu nie zastępuje dat w dowodzie. Znane wyzwanie sezonowe ma pierwszeństwo i zachowuje identyfikator postępu.
@@ -92,20 +94,20 @@ Odbiór kolejnego terminu: [35077525463](https://github.com/gontii/gta-companion
 
 ### Korekta resetu i harmonogramu 16.09.2026
 
-Reguła tygodniowa 11:00 jest szacunkiem przyjętym przez Przemka; godzina potwierdzona źródłem ma pierwszeństwo. `normalizeWeeklyTiming` naprawia stare dane schemaVersion 2 także w pamięci aplikacji, bez zmiany identyfikatorów postępu. Opcjonalne `windowPolicy=independent` chroni oddzielne okresy wydarzenia przed dziedziczeniem resetu tygodnia.
+Reguła tygodniowa 11:00 jest szacunkiem przyjętym przez właściciela; godzina potwierdzona źródłem ma pierwszeństwo. `normalizeWeeklyTiming` naprawia stare dane schemaVersion 2 także w pamięci aplikacji, bez zmiany identyfikatorów postępu. Opcjonalne `windowPolicy=independent` chroni oddzielne okresy wydarzenia przed dziedziczeniem resetu tygodnia.
 
 Worker zapisuje prywatne `archived-timing:1`, zastępuje nieaktualne alarmy północne, zachowuje pozostałe terminy i przelicza harmonogram. Nadzorca zauważa brak `timingPolicyVersion=1` i uruchamia migrację mimo zapisanego późniejszego alarmu. Fakty są zachowywane do `factWindow.expiresAt`, zamiast być usuwane po północy UTC. Migracja korzysta z istniejących danych i nie wymaga wywołania modelu ani Supadata. Historia poprzednich rewizji pozostaje bez zmian.
 
 Kontrola lokalna: 97/97 testów, w tym migracja zapisanych alarmów, naprawa pamięci aplikacji, 10:59/11:00, retencja faktów o 08:00, niezależne okresy, lato/zima i jednorazowe godziny 16.09. Odbiór produkcyjny poniżej.
 
 
-Odbiór końcowy 16.09: Worker `e614b3da-c847-484d-9312-44f3b0859ca0`, kod `9231971` + `962759b`; zgodna aplikacja Pages `fa5b43af-ac55-4493-9c53-0adff93b64e1`, kod `8fec99b`. Rewizja `502dba083cfab7d2affb58494dc7afe0676402d8fe24b638e31775cc5cd5bc48` opublikowana o 10:52:27 UTC, pełne API zgodne o 10:53:42 UTC; historia `4a3a484`. [Odczyt końcowy 35087784087](https://github.com/gontii/gta-companion-content/actions/runs/35087784087) potwierdza brak błędu i incydentów, pustą kolejkę, `timingPolicyVersion=1`, następny start 16.09 o 15:00 UTC (17:00 w Polsce), pierwszą granicę treści 17.09 o 09:00 UTC (11:00).
+Odbiór końcowy 16.09: Worker, kod `9231971` + `962759b`; zgodna aplikacja Pages, kod `8fec99b`. Rewizja `502dba083cfab7d2affb58494dc7afe0676402d8fe24b638e31775cc5cd5bc48` opublikowana o 10:52:27 UTC, pełne API zgodne o 10:53:42 UTC; historia `4a3a484`. [Odczyt końcowy 35087784087](https://github.com/gontii/gta-companion-content/actions/runs/35087784087) potwierdza brak błędu i incydentów, pustą kolejkę, `timingPolicyVersion=1`, następny start 16.09 o 15:00 UTC (17:00 w Polsce), pierwszą granicę treści 17.09 o 09:00 UTC (11:00).
 
 Odbiór wykrył osierocone alarmy ofert usuniętych we wcześniejszych rewizjach. Przebieg odtwarza teraz terminy należące do bieżącego tygodnia z aktualnej treści i zapisanych faktów; zachowuje inne przyszłe zdarzenia. Poprawka ma test regresji; 97/97 lokalnie i [CI 35087653017](https://github.com/gontii/gta-companion-content/actions/runs/35087653017). Po jej wdrożeniu rewizja pozostała ta sama i nie pojawiło się dodatkowe wywołanie AI (nadal 2 dzisiaj). Granice 00:00/10:59/11:00 sprawdzono także na rzeczywistym opublikowanym JSON: 57 ofert zachowanych do resetu, GTA+ zachowuje osobny okres. Rzeczywisty przyszły reset pozostaje do obserwacji przez harmonogram.
 
 ## Duplikaty zadań i etapy większych wyzwań — 15.10.2026
 
-Decyzja Przemka: to samo zadanie występuje raz, niezależnie od sekcji Main
+Decyzja właściciela: to samo zadanie występuje raz, niezależnie od sekcji Main
 lub Extra i nazwy nadanej przez źródło. Zweryfikowany tygodniowy etap
 większego wyzwania trafia do Main także z nagrodą poniżej GTA$250 000,
 szczególnie jeśli odblokowuje premię za kilka tygodni powyżej tego progu.

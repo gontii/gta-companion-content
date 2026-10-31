@@ -22,11 +22,27 @@ export async function hash(value) {
   const bytes = new TextEncoder().encode(typeof value === 'string' ? value : JSON.stringify(value));
   return [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(v => v.toString(16).padStart(2, '0')).join('');
 }
+// Single linear pass; a lazy open/close regex could rescan the suffix of a
+// hostile document quadratically when many opening tags have no closers.
+function stripSectionBlocks(html) {
+  const tag = /<\/?(script|style|nav|footer|header)\b[^>]*>/gi;
+  let out = '', cursor = 0, depth = 0, dropStart = 0, m;
+  while ((m = tag.exec(html))) {
+    if (m[0][1] !== '/') {
+      if (depth === 0) dropStart = m.index;
+      depth += 1;
+    } else if (depth > 0) {
+      depth -= 1;
+      if (depth === 0) { out += html.slice(cursor, dropStart); cursor = tag.lastIndex; }
+    }
+  }
+  return out + html.slice(cursor);
+}
 export function articleDocument(source, now = new Date()) {
   const html = source.html;
   const publishedOn = extractPublishedWeekId(html);
   const selected = html.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)?.[1] || html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || html;
-  const text = stripTags(selected.replace(/<(script|style|nav|footer|header)\b[^>]*>[\s\S]*?<\/\1>/gi, ' '));
+  const text = stripTags(stripSectionBlocks(selected));
   let period = extractDateRange(html, { publishedWeekId: publishedOn, now });
   let periodEvidence;
   // iGTA dates the named weekly edition, not its Wednesday publication. A

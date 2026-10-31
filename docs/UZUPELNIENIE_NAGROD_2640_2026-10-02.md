@@ -19,7 +19,7 @@ Wymagana osobna akceptacja tego gotowego uzupełnienia przed deployem. To dodatk
 ## Odbiór produkcyjny 06.10.2026
 
 Po akceptacji gotowego uzupełnienia wdrożono wyłącznie Worker
-`75ebeae0-ee17-412a-bd76-d5f561b63752`, bez zmiany Pages, stanu DO, migracji,
+bez zmiany Pages, stanu DO, migracji,
 KV, trybu publikacji lub harmonogramu. Ponowne 140/140 testów, dry-run i
 integralność przygotowanego artefaktu poprawne.
 

@@ -28,8 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
+      # Always run the protected default branch: workflow_dispatch must never
+      # execute a caller-selected ref with write permissions and secrets.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '22'
       - run: node scripts/github-relay.mjs

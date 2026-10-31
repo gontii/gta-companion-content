@@ -97,7 +97,7 @@ Primary source order:
 4. Validate before pushing: `npm run validate:weekly -- weekly/latest.json`
 5. Commit and push to `main`.
 6. Publish to KV:
-   `npx wrangler kv key put weekly:latest --path weekly/latest.json --namespace-id "$CLOUDFLARE_KV_NAMESPACE_ID"`
+   `npx --no-install wrangler kv key put weekly:latest --path weekly/latest.json --namespace-id "$CLOUDFLARE_KV_NAMESPACE_ID"`
 
 ## Rules
 
@@ -120,6 +120,6 @@ Weryfikacja przed publikacją: `npm test`, `npm run generate:weekly`, `npm run v
 
 ## Publikacja 10 września przed pełnym potwierdzeniem GTA+
 
-Przemek jawnie polecił opublikować nowy tydzień i dzisiaj sprawdzać źródła co godzinę. `events/gta-plus-pending.json` zawiera osobne doniesienia fanowskie z pochodzeniem i datą sprawdzenia, bez wymyślonego końca okresu. Jednorazowy wyjątek pozwala generować tylko 10 września, do 23:59:59 Europe/Warsaw; sekcja i każda niepotwierdzona pozycja wyraźnie informują o niepewności. Nie przedłuża to okresu z sierpnia. `events/weekly-editorial.json` zachowuje doprecyzowania platform, warunków, nagłówka i porad podczas kolejnych generowań.
+Właściciel jawnie polecił opublikować nowy tydzień i dzisiaj sprawdzać źródła co godzinę. `events/gta-plus-pending.json` zawiera osobne doniesienia fanowskie z pochodzeniem i datą sprawdzenia, bez wymyślonego końca okresu. Jednorazowy wyjątek pozwala generować tylko 10 września, do 23:59:59 Europe/Warsaw; sekcja i każda niepotwierdzona pozycja wyraźnie informują o niepewności. Nie przedłuża to okresu z sierpnia. `events/weekly-editorial.json` zachowuje doprecyzowania platform, warunków, nagłówka i porad podczas kolejnych generowań.
 
 Po znalezieniu pełnej oferty dodać rzeczywisty okres do `events/gta-plus.json`, zweryfikować rabaty (zwłaszcza Shotaro i Pipe Wrench), zaktualizować testy granic okresów na izolowanych danych i opublikować standardowym workflow. Zweryfikowany aktywny okres ma pierwszeństwo przed doniesieniami. Nie traktować terminu jednorazowej zgody publikacyjnej jako terminu korzyści GTA+.

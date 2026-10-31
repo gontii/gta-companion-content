@@ -6,7 +6,7 @@
 - Główna strona: `/gta-online/weekly-update`, z aktualnie wybranym wydaniem lub zapowiedzią.
 - Osobny artykuł: `/gta-online/weekly-update/YYWW`. Zachowuje własny canonical i daty; po zakończeniu okresu wyświetla komunikat o wygaśnięciu.
 - Indeks opublikowanych osobnych wydań: `weekly/public/index.json`. Wpis zawiera wyłącznie `issue`, `startsOn`, `endsOn`. Nie dodawaj nieopublikowanego wydania.
-- Publiczne archiwum zostało zaakceptowane przez Przemka 16.09.2026; zastępuje wcześniejszą zasadę braku archiwum. W pierwszej publikacji główna strona pokazuje zapowiedź 2638, a osobny artykuł 2637 opisuje 10–16.09.
+- Publiczne archiwum zostało zaakceptowane przez właściciela 16.09.2026; zastępuje wcześniejszą zasadę braku archiwum. W pierwszej publikacji główna strona pokazuje zapowiedź 2638, a osobny artykuł 2637 opisuje 10–16.09.
 
 Publicznie pokazujemy wszystkie potwierdzone fakty, warunki, daty i źródła. Rekomendacje, checklisty i postęp pozostają w aplikacji. Nie kopiuj aplikacyjnego `weekly/latest.json` do publicznego dokumentu.
 
@@ -47,8 +47,8 @@ Skrypt sprawdza dokument aplikacji, zgodność `weekId`, pełnego okresu i integ
 4. Sprawdź podgląd oraz aktualną produkcję i powiązanie `CONTENT_KV`. Po zatwierdzeniu publikacji zapisz przygotowane klucze przez Wrangler. KV nie zapewnia transakcji między nimi, dlatego najpierw publikuj artykuł, potem odsyłający do niego indeks.
 
 ```sh
-npx wrangler kv bulk put /tmp/2637-archive-kv.json --namespace-id <sprawdzone-ID-CONTENT_KV> --remote
-npx wrangler kv bulk put /tmp/2638-public-kv.json --namespace-id <sprawdzone-ID-CONTENT_KV> --remote
+npx --no-install wrangler kv bulk put /tmp/2637-archive-kv.json --namespace-id <sprawdzone-ID-CONTENT_KV> --remote
+npx --no-install wrangler kv bulk put /tmp/2638-public-kv.json --namespace-id <sprawdzone-ID-CONTENT_KV> --remote
 ```
 
 Zwykła zmiana treści i indeksu wymaga tylko KV. Sitemap jest generowana z indeksu, bez osobnego deployu dla każdego tygodnia. Zmiana układu, kontraktu lub routingu wymaga testów i deployu aplikacji.
@@ -63,7 +63,7 @@ Wyzwanie 2637 wymaga sprzedaży MC Business lub Acid Lab; GTA+ daje 2X GTA$ za p
 
 ## Wynik pierwszej publikacji — 16.09.2026
 
-**Wykonane i zweryfikowane:** główna zapowiedź 2638 oraz osobny artykuł 2637 działają na `gtacompanion.net`. Deploy Pages `c2f603e4-c5da-43f6-aefd-026f14ff31b3`, sukces 08:50:44 UTC, zakres aplikacji `733a5f9`. Publiczny schemat i indeks pochodzą z `ca17a2c`; treść 2637 z korekty `bee61d3`. Klucze `weekly:public` i `weekly:public:2637` odczytano po zapisie, zgodność dokumentów potwierdzona. Istniejący tydzień aplikacji 10–16.09 ma również odebrane korekty wspólnych faktów; 2638 pozostaje zapowiedzią.
+**Wykonane i zweryfikowane:** główna zapowiedź 2638 oraz osobny artykuł 2637 działają na `gtacompanion.net`. Deploy Pages, sukces 08:50:44 UTC, zakres aplikacji `733a5f9`. Publiczny schemat i indeks pochodzą z `ca17a2c`; treść 2637 z korekty `bee61d3`. Klucze `weekly:public` i `weekly:public:2637` odczytano po zapisie, zgodność dokumentów potwierdzona. Istniejący tydzień aplikacji 10–16.09 ma również odebrane korekty wspólnych faktów; 2638 pozostaje zapowiedzią.
 
 Odbiór: 80 testów treści, 120 testów paczki aplikacji, eksport 13/13 zasobów, lokalne i produkcyjne HTTP 54/54, Chrome komputer/390 px, linki oraz CTA bez wysyłki formularza. Nie jest to dowód indeksacji Google ani test fizycznego telefonu. Harmonogramów automatyzacji w tym zadaniu nie zmieniano. Kolejny krok: aktualizacja źródeł 16.09 wieczorem i ręczne potwierdzenie po aktualizacji 17.09.
 

@@ -8,6 +8,10 @@ const repo = process.env.GITHUB_REPOSITORY || 'gontii/gta-companion-content';
 const externalIncidents = process.env.CONTENT_INCIDENTS_MODE === 'external';
 if (!['github', 'external'].includes(process.env.CONTENT_INCIDENTS_MODE || 'github')) throw new Error('Niepoprawny tryb alarmów');
 if (!base || !secret || (!externalIncidents && !process.env.GH_TOKEN)) throw new Error('Brak konfiguracji przekaźnika');
+const baseUrl = new URL(base);
+const loopback = ['127.0.0.1', 'localhost', '[::1]'].includes(baseUrl.hostname);
+if (baseUrl.username || baseUrl.password || (baseUrl.protocol !== 'https:' && !loopback))
+  throw new Error('CONTENT_UPDATER_URL musi używać https, bez poświadczeń w adresie');
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 const gh = async (path, method = 'GET', body) => {
   const response = await fetch(`https://api.github.com/repos/${repo}/${path}`, {

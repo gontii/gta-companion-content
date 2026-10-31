@@ -34,11 +34,18 @@ jobs:
       SMOKE_TEST_EMAIL: ${{ secrets.SMOKE_TEST_EMAIL }}
 
     steps:
-      - uses: actions/checkout@v7
+      # Always run the protected default branch: workflow_dispatch must never
+      # execute a caller-selected ref with write permissions and secrets.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: "22"
+
+      - name: Install locked dependencies
+        run: npm ci
 
       - name: Run fixture tests
         run: npm test
@@ -68,7 +75,7 @@ jobs:
           git push
 
       - name: Publish latest.json to Cloudflare KV
-        run: npx wrangler kv key put weekly:latest --path weekly/latest.json --namespace-id "$CLOUDFLARE_KV_NAMESPACE_ID" --remote
+        run: npx --no-install wrangler kv key put weekly:latest --path weekly/latest.json --namespace-id "$CLOUDFLARE_KV_NAMESPACE_ID" --remote
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 

@@ -26,7 +26,7 @@ Sprawdzono indeks Rockstar Support GTA Online i informacje 1.73, w tym poprawki 
 
 Odczyt Newswire przez web nie zwrócił tekstu. Użyto istniejącego mechanizmu publicznego GraphQL i rockstarPostToHtml z scripts/generate-weekly.mjs wyłącznie do odczytu, bez uruchamiania generatora tygodnia. HTTP 200: indeks ostatnich 10 wpisów GTA Online oraz pełny tekst czterech artykułów: Kortz Center (14.07), Summer Heist Event (30.07), Business Rivalries (03.09), GTA+ Horus (10.09). Ostatni wpis indeksu na dzień 14.09 pochodzi z 10.09.
 
-[Business Rivalries](https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri) zawiera warunki całego września. [GTA+](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su) potwierdza czasowy mnożnik pierwszego tygodniowego finału Cluckin’ Bell wyłącznie dla członków. Po decyzji Przemka o wymaganiu GTA+ wybrane korzyści członkowskie opisano w osobnej sekcji z datami 10.09–07.10; podstawowe wypłaty pozostają oddzielone od mnożnika. Nie pomylono premii członkowskiej z bazą 600 tys. Pełne odpowiedzi źródłowe zachowano tymczasowo poza Git, do repo trafia ta synteza.
+[Business Rivalries](https://www.rockstargames.com/newswire/article/ak43aoa18a19o2/compete-across-entrepreneurial-endeavors-in-the-gta-online-business-ri) zawiera warunki całego września. [GTA+](https://www.rockstargames.com/newswire/article/75935kk3574223/gta-members-enjoy-one-week-of-early-access-to-the-new-pegassi-horus-su) potwierdza czasowy mnożnik pierwszego tygodniowego finału Cluckin’ Bell wyłącznie dla członków. Po decyzji właściciela o wymaganiu GTA+ wybrane korzyści członkowskie opisano w osobnej sekcji z datami 10.09–07.10; podstawowe wypłaty pozostają oddzielone od mnożnika. Nie pomylono premii członkowskiej z bazą 600 tys. Pełne odpowiedzi źródłowe zachowano tymczasowo poza Git, do repo trafia ta synteza.
 
 Nie przeniesiono starego 500 tys. za Cluckin' Bell z opracowań z niezmienionymi danymi. Nie podano stawek godzinowych. Ceny są kosztami zakupu w grze, nie rzeczywistymi wydatkami.
 
@@ -42,12 +42,12 @@ W każdej ścieżce: samouczek przed Freemode, odpowiednie konto/edycja, sesja n
 
 ## Odbiór i powrót
 
-Przed publikacją: odbiór tekstu przez Przemka; odświeżenie zmiennych mechanik, jeżeli publikacja nastąpi później. Akceptacja wskazuje konkretny commit treści. Kod importuje ten commit, nie ruchome main; HTML powstaje podczas eksportu. Wyniki testów strony i zakres wydania są w dokumentacji aplikacji oraz planie SEO w prywatnym vaultcie.
+Przed publikacją: odbiór tekstu przez właściciela; odświeżenie zmiennych mechanik, jeżeli publikacja nastąpi później. Akceptacja wskazuje konkretny commit treści. Kod importuje ten commit, nie ruchome main; HTML powstaje podczas eksportu. Wyniki testów strony i zakres wydania są w dokumentacji aplikacji oraz wewnętrznej dokumentacji SEO projektu.
 
 
 ## Korekta zakresu — GTA+ wymagane w ścieżce, 14.09.2026
 
-Decyzja Przemka: zakup GTA+ stanowi warunek opisywanej ścieżki początkującego. Nie jest to wymóg samego GTA Online ani blokada dostępu do artykułu. Pozostają dwa warianty Career Buildera, każdy z aktywnym GTA+. Nie wymagamy Shark Cards.
+Decyzja właściciela: zakup GTA+ stanowi warunek opisywanej ścieżki początkującego. Nie jest to wymóg samego GTA Online ani blokada dostępu do artykułu. Pozostają dwa warianty Career Buildera, każdy z aktywnym GTA+. Nie wymagamy Shark Cards.
 
 Zweryfikowano na żywo:
 
@@ -66,7 +66,7 @@ Przygotowane: wstęp, skrócona tabela kamieni postępu i śródtytuły przenies
 Odczyt na żywo [Rockstar Career Builder](https://support.rockstargames.com/articles/1UfYjMN0NnpJcoC5DLZkf4/gta-online-career-builder-overview) potwierdził PC Enhanced, PS5 oraz Xbox Series X|S, jednorazowość i przeniesienie maksymalnie 1 mln z przydziału 4 mln. Nie użyto błędnego „PS5 only”. Instalacja i ulepszenie pozostają oddzielnymi kosztami z wcześniejszego rejestru; brak obietnicy bezpłatnej instalacji na podstawie dawnej promocji GTA+. Tabela sterowania odtworzona z kanonicznego źródła, opis Interaction Menu poza tabelą. CTA generuje renderer, nie jest kopiowane ponownie do treści. Bez zmiany daty pełnej weryfikacji wszystkich faktów ani testu w grze.
 
 
-## Korekta zakresu po uwadze Przemka — 18.10.2026
+## Korekta zakresu po uwadze właściciela — 18.10.2026
 
 Poprzednia redakcja zbyt szeroko zastąpiła zoptymalizowaną wersję wcześniejszym tekstem, usuwając także poprawne fragmenty. Po uwadze Przemka przywrócono pełną strukturę i rozwinięcia z kopii 86/95. Korekty ograniczono do konkretnych błędów i powtórzeń; wszystkie tematy, w tym bronie, Akuma, Organization, Crews i krótkie aktywności, pozostają. Ograniczenia dawnych cen i zmiennych nagród opisano przy twierdzeniach zamiast usuwać tematy.
 

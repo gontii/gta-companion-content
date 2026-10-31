@@ -1,6 +1,6 @@
 # Dodatkowe stałe źródła tygodniowe — 02.10.2026
 
-Decyzja Przemka: dodatkowe źródła znalezione dla Prize Ride i Gun Van mają
+Decyzja właściciela: dodatkowe źródła znalezione dla Prize Ride i Gun Van mają
 być używane w każdym tygodniu, nie wyłącznie w korekcie wydania 2640.
 
 ## Pobieranie i uzgadnianie
@@ -64,13 +64,13 @@ Reddit RSS w lokalnym odczycie zwrócił HTTP 403. Odczyt Workera na produkcji
 powiódł się: post został pobrany z rzeczywistą datą publikacji, bez obchodzenia
 blokady. Jego zakres 01–08.10 pozostaje odmienny od 01–07.10 dwóch głównych
 serwisów, więc sam nie potwierdza ich dat.
-Fizyczny telefon nadal wymaga bieżącego wyniku Przemka; wcześniejszej sesji
+Fizyczny telefon nadal wymaga bieżącego wyniku właściciela; wcześniejszej sesji
 nie przenoszono na dzisiejszy odbiór.
 
 ## Wdrożenie i niezależny odczyt
 
 Commit kodu `dc852e9` wysłany na `main`. Worker
-`5d8e213c-ec6a-43fe-9f18-a666466ea7e8` wdrożony; 192.46 KiB, start 2 ms.
+wdrożenie potwierdzone; 192.46 KiB, start 2 ms.
 [Przebieg zlecenia kontroli](https://github.com/gontii/gta-companion-content/actions/runs/37015069120)
 oraz [odczyt diagnostyki](https://github.com/gontii/gta-companion-content/actions/runs/37015231177)
 ukończone poprawnie.
