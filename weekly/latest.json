@@ -12,7 +12,7 @@
     "Dispatch Work — 2X GTA$ & RP",
     "Standard and Most Wanted Bail Office Targets — 2X GTA$ & RP",
     "Halloween — Five Weekly Challenges — Week 5/5: Complete 10 waves in a Survival without dying to receive GTA$250,000 and the Slasher Clown Outfit. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
-    "Survival without dying — Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000."
+    "Brown Vintage Skull Mask and the Halloween Chute Bag — Reward for playing GTA Online"
   ],
   "quickTakeEntries": [
     {
@@ -96,9 +96,9 @@
       ]
     },
     {
-      "id": "auto-eebf5042becd9d9095",
-      "label": "Survival without dying — Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
-      "factKey": "challenge:survival without dying:all:all",
+      "id": "auto-44879e7b7e43af1faa",
+      "label": "Brown Vintage Skull Mask and the Halloween Chute Bag — Reward for playing GTA Online",
+      "factKey": "free-vehicles:brown vintage skull mask and the halloween chute bag:all:all",
       "startsAt": "2026-10-29T10:00:00.000Z",
       "expiresAt": "2026-11-05T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
@@ -113,13 +113,13 @@
           "publishedOn": "2026-10-01"
         }
       ],
-      "entity": "Survival without dying",
-      "offer": "Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
+      "entity": "Brown Vintage Skull Mask and the Halloween Chute Bag",
+      "offer": "Reward for playing GTA Online",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
       "itemIds": [
-        "auto-eebf5042becd9d9095"
+        "auto-44879e7b7e43af1faa"
       ]
     }
   ],
@@ -208,9 +208,9 @@
       "progressGroup": "primary"
     },
     {
-      "id": "bp-auto-eebf5042becd9d9095",
-      "label": "Survival without dying — Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
-      "factKey": "challenge:survival without dying:all:all",
+      "id": "bp-auto-44879e7b7e43af1faa",
+      "label": "Brown Vintage Skull Mask and the Halloween Chute Bag — Reward for playing GTA Online",
+      "factKey": "free-vehicles:brown vintage skull mask and the halloween chute bag:all:all",
       "startsAt": "2026-10-29T10:00:00.000Z",
       "expiresAt": "2026-11-05T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
@@ -225,15 +225,15 @@
           "publishedOn": "2026-10-01"
         }
       ],
-      "entity": "Survival without dying",
-      "offer": "Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
+      "entity": "Brown Vintage Skull Mask and the Halloween Chute Bag",
+      "offer": "Reward for playing GTA Online",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
       "itemIds": [
-        "auto-eebf5042becd9d9095"
+        "auto-44879e7b7e43af1faa"
       ],
-      "progressGroup": "primary"
+      "progressGroup": "none"
     }
   ],
   "locations": [
@@ -380,31 +380,6 @@
           "platform": "all",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
           "seasonalEventId": "halloween-challenges-2026-10",
-          "progressGroup": "primary"
-        },
-        {
-          "id": "auto-eebf5042becd9d9095",
-          "label": "Survival without dying — Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
-          "factKey": "challenge:survival without dying:all:all",
-          "startsAt": "2026-10-29T10:00:00.000Z",
-          "expiresAt": "2026-11-05T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-10-01"
-            }
-          ],
-          "entity": "Survival without dying",
-          "offer": "Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
           "progressGroup": "primary"
         }
       ]
@@ -1161,6 +1136,6 @@
   },
   "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
   "nextBoundaryAt": "2026-10-31T23:00:00.000Z",
-  "revision": "2aa2b8beb25feb561e619ca880606db5b3f8a4280b78ab1d4b39d54f1214f3c2",
-  "generatedAt": "2026-10-29T10:00:00.071Z"
+  "revision": "71a7546c2121162ff3c5316c340c4bc3c1771d70cbb5e4c2061a864eb8ce8f2a",
+  "generatedAt": "2026-10-31T09:31:23.919Z"
 }

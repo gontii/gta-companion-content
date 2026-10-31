@@ -5,11 +5,11 @@
   "startsOn": "2026-10-29",
   "endsOn": "2026-11-04",
   "status": "active",
-  "verifiedAt": "2026-10-29T10:00:00.071Z",
-  "confirmedAt": "2026-10-29T10:00:00.071Z",
+  "verifiedAt": "2026-10-31T09:31:23.919Z",
+  "confirmedAt": "2026-10-31T09:31:23.919Z",
   "startsAt": "2026-10-29T10:00:00.000Z",
   "expiresAt": "2026-11-05T10:00:00.000Z",
-  "revision": "2aa2b8beb25feb561e619ca880606db5b3f8a4280b78ab1d4b39d54f1214f3c2",
+  "revision": "71a7546c2121162ff3c5316c340c4bc3c1771d70cbb5e4c2061a864eb8ce8f2a",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -64,22 +64,6 @@
           "status": "confirmed",
           "offer": "Halloween — Five Weekly Challenges — Week 5/5: Complete 10 waves in a Survival without dying to receive GTA$250,000 and the Slasher Clown Outfit. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
           "requirements": "Week 5/5: Complete 10 waves in a Survival without dying to receive GTA$250,000 and the Slasher Clown Outfit. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
-          "startsOn": "2026-10-29",
-          "endsOn": "2026-11-04",
-          "startsAt": "2026-10-29T10:00:00.000Z",
-          "expiresAt": "2026-11-05T10:00:00.000Z",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "ref-1"
-          ]
-        },
-        {
-          "id": "auto-eebf5042becd9d9095",
-          "name": "Survival without dying",
-          "status": "confirmed",
-          "offer": "Survival without dying — Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
-          "requirements": "Complete 10 waves in a Survival without dying to receive the Slasher Clown Outfit and GTA$250,000.",
           "startsOn": "2026-10-29",
           "endsOn": "2026-11-04",
           "startsAt": "2026-10-29T10:00:00.000Z",
@@ -516,37 +500,37 @@
       "id": "ref-1",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-10-29T10:00:00.071Z"
+      "verifiedAt": "2026-10-31T09:31:23.919Z"
     },
     {
       "id": "ref-2",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/o3948k534952a8/protect-los-santos-and-acquire-new-law-enforcement-vehicles-during-the",
-      "verifiedAt": "2026-10-29T10:00:00.071Z"
+      "verifiedAt": "2026-10-31T09:31:23.919Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/51195a98k31273/gta-online-bottom-dollar-bounties-out-now",
-      "verifiedAt": "2026-10-29T10:00:00.071Z"
+      "verifiedAt": "2026-10-31T09:31:23.919Z"
     },
     {
       "id": "ref-4",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
-      "verifiedAt": "2026-10-29T10:00:00.071Z"
+      "verifiedAt": "2026-10-31T09:31:23.919Z"
     },
     {
       "id": "ref-5",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
-      "verifiedAt": "2026-10-29T10:00:00.071Z"
+      "verifiedAt": "2026-10-31T09:31:23.919Z"
     },
     {
       "id": "ref-6",
       "title": "Source",
       "url": "https://gta.guide/article/gta-plus-bonuses-october-2026",
-      "verifiedAt": "2026-10-29T10:00:00.071Z"
+      "verifiedAt": "2026-10-31T09:31:23.919Z"
     }
   ]
 }
