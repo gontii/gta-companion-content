@@ -12,6 +12,20 @@ Sekret `AUTOMATION_TOKEN` w Workerze odpowiada sekretowi `CONTENT_AUTOMATION_TOK
 
 Rollback i wstrzymanie publikacji wymagają osobnego sekretu Workera `OPERATOR_TOKEN`, przechowywanego wyłącznie lokalnie u właściciela. Token przekaźnika GitHub nie może wywołać `/rollback`; bez ustawionego `OPERATOR_TOKEN` trasa odpowiada 404.
 
+## Kanał główny i zapasowy — 01.11.2026
+
+Kanał główny publikuje sam. Worker `gta-companion-content-updater` ma cron `*/15 * * * *`, budzi Durable Object i zapisuje KV. Nie dostaje tokenu GitHub. Historię `weekly/` odbiera przekaźnik na VM GCP, co godzinę, tym samym `scripts/github-relay.mjs` z `CONTENT_INCIDENTS_MODE=external`. Alarmy idą wtedy do Cloud Monitoring, nie do Issues. Opóźnienie GitHub Actions nie zatrzymuje zapisu KV.
+
+Kanał zapasowy to workflow `.github/workflows/content-relay.yml`. Harmonogram w pliku to `7,22,37,52 * * * *`, dodatkowo jest `workflow_dispatch`. Uruchamia ten sam skrypt bez `CONTENT_INCIDENTS_MODE`, więc oprócz historii synchronizuje Issues. Nie publikuje KV. Od 31.10.2026 22:53 UTC workflow jest wyłączony ręcznie w ustawieniach repozytorium (`disabled_manually`); sam plik nadal zawiera harmonogram. Wejście `dry_run` wykonuje tylko `GET /status` i `GET /outbox`: bez commita, bez `POST /ack` i bez zgłoszeń. Lokalnie to samo daje `RELAY_DRY_RUN=true`.
+
+`update-weekly.yml` nie jest zapasem Workera. Job jest pomijany, gdy zmienna GitHub `CONTENT_WRITER` ma wartość `cloudflare`. Włączenie go przy `PUBLICATION_MODE=publish` utworzyłoby drugiego autora KV.
+
+Trasy przekaźnika to `GET /status`, `GET /outbox`, oraz przy zwykłym przebiegu `POST /check`, `POST /probe-tgg`, `POST /ack` i `POST /smoke-token`. `CONTENT_UPDATER_URL` może mieć prefiks ścieżki; skrypt dokleja nazwę trasy do tego prefiksu, a nie zastępuje go. Worker rozpoznaje ścieżkę równą trasie albo kończącą się na nią. Rozpoznanie prefiksu w już wdrożonym Workerze wymaga osobnego wdrożenia tego kodu.
+
+HTTP 404 z treścią `Not found` oznacza albo zły sekret `AUTOMATION_TOKEN` (musi być zgodny z sekretem GitHub `CONTENT_AUTOMATION_TOKEN`), albo nieznaną ścieżkę. Przekaźnik wypisuje metodę i trasę. Host bez tego Workera (Cloudflare `1042`) jest opisany osobno. Przebieg 41250039118 z 31.10.2026 dostał taki 404 na `GET /status` adresu `https://gta-companion-content-updater.gonti-stream.workers.dev`, podczas gdy przekaźnik GCP nadal zapisywał historię tym samym skryptem.
+
+Między 13 a 21.10.2026 zapasowy przebieg kończył się 54 razy przed odbiorem historii. `status.needsSmokeToken` było wtedy prawdziwe, a `POST https://gtacompanion.net/api/access/redeem` zwracał HTTP 401 `access_required`. Od zmiany odbioru na skrót renderowania (`render-digest-v1`) status ma `needsSmokeToken: false`. Nieudane odnowienie nie przerywa już kolejki: zostaje ostrzeżenie, a w trybie Issues także zgłoszenie `smoke-refresh-rejected`. Zgłoszenie „Cloudflare nie odpowiada” z 19.10 powstało przy jednorazowym `ETIMEDOUT` i zostało otwarte, bo kolejne przebiegi padały na odnowieniu zanim doszło do zamknięcia zgłoszeń.
+
 ## Daty i publikacja
 
 `temporal.mjs` jest kontraktem współdzielonym z aplikacją przez `node scripts/sync-temporal.mjs /katalog/aplikacji`. Wszystkie czasy wynikowe są UTC, reguły dnia używają `Europe/Warsaw`, z obsługą czasu letniego i zimowego. Przy dacie bez godziny start jest szacowany na 11:00. Zwykły okres tygodniowy czwartek–środa wygasa o 11:00 w następny czwartek, a nie o północy. GTA+, krótsze wydarzenia i oddzielne okresy kwalifikacji/odbioru zachowują własne daty; dotychczasowe szacunki ich godzin nie są potwierdzonym resetem. Oba szacunki są oznaczone; nie stanowią potwierdzonej godziny resetu. Dokładne godziny przyjmujemy wyłącznie z udokumentowaną strefą i dowodem w źródle.

@@ -18,6 +18,14 @@ or `PREMIUM_WEEKLY_JSON` secret rotation should be needed for normal updates.
 
 ## Automated daily update
 
+The live publisher is the Cloudflare Worker `gta-companion-content-updater`
+(cron every 15 minutes). It writes KV itself. A relay on the GCP VM pulls
+history into this repo hourly. GitHub Actions `content-relay.yml` is the
+fallback for that history sync and for issue alerts; it does not publish KV.
+`update-weekly.yml` stays skipped while the repository variable
+`CONTENT_WRITER` is `cloudflare` — turning it back on would add a second KV
+writer. See `docs/AUTOMATYCZNE_AKTUALIZACJE.md`.
+
 GitHub Actions workflow: `.github/workflows/update-weekly.yml`. Runs once daily
 (14:30 UTC) so mid-week event changes and hotfixes are caught, not just the
 Thursday reset. Runs with nothing new to publish exit green (the current content
