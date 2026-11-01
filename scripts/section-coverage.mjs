@@ -1,3 +1,5 @@
+import { atLocal } from './temporal.mjs';
+
 // Required areas are measured separately from freshness and total offer count.
 // One populated category cannot prove that its vehicle rotations are complete.
 export const REQUIRED_AREAS = [
@@ -23,6 +25,22 @@ const absenceNames = {
   'gun-van-discounts':'regular Gun Van discounts', 'gun-van-gta-plus':'GTA\\+ Gun Van discounts',
   other:'other weekly activities', 'gta-plus':'GTA\\+ benefits',
 };
+export const AREA_LABELS = {
+  bonuses:'bonusy', challenge:'wyzwanie tygodnia', rewards:'darmowe nagrody', podium:'pojazd na podium',
+  'prize-ride':'Prize Ride', discounts:'zniżki', 'gun-van-stock':'asortyment Gun Van',
+  'gun-van-discounts':'zniżki Gun Van', 'gun-van-gta-plus':'zniżki Gun Van dla GTA+',
+  other:'pozostałe aktywności', 'gta-plus':'korzyści GTA+',
+};
+// Thursday 13:00 Europe/Warsaw, two hours after the 11:00 reset. Sources and
+// subtitle retries need that window; an earlier alarm fired while the edition
+// was still arriving.
+export const COMPLETENESS_LOCAL_MINUTES = 13 * 60;
+export function completenessDeadline(weekId, expectedAt) {
+  if (typeof weekId === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(weekId)) {
+    try { return atLocal(weekId, COMPLETENESS_LOCAL_MINUTES); } catch { /* use the fallback below */ }
+  }
+  return expectedAt + 2 * 60 * 60 * 1000;
+}
 export function collectSectionEvidence(documents,weekId,day) {
   const candidates=Object.fromEntries(REQUIRED_AREAS.map(a=>[a.id,0]));
   const absences=[];
@@ -43,7 +61,7 @@ export function collectSectionEvidence(documents,weekId,day) {
 const trustedAbsence = declarations => declarations.some(d=>d.kind==='rockstar') ||
   declarations.some(d=>['intel','gtabase'].includes(d.kind) && declarations.some(other=>other.kind!==d.kind && ['intel','gtabase','igta','gtaboss','reddit'].includes(other.kind)));
 export function inspectSectionCoverage(snapshot,evidence,now,weekId,expectedAt) {
-  const deadlineAt=expectedAt+15*60000;
+  const deadlineAt=completenessDeadline(weekId, expectedAt);
   const current=snapshot?.weekId===weekId;
   const sections=current ? snapshot.sections || [] : [];
   const active=item=>Number.isFinite(Date.parse(item?.startsAt)) && Number.isFinite(Date.parse(item?.expiresAt)) && now>=Date.parse(item?.startsAt) && now<Date.parse(item?.expiresAt);
@@ -79,8 +97,27 @@ export function reportedSectionCoverage(app, receipt, now, weekId, expectedAt) {
   coverage.unresolved=coverage.areas.filter(r=>['missing','unconfirmed'].includes(r.state)).map(r=>r.id);
   coverage.resolvedAreas=REQUIRED_AREAS.length-coverage.unresolved.length;
   coverage.requiredAreas=REQUIRED_AREAS.length;
-  coverage.deadlineAt=new Date(expectedAt+15*60000).toISOString();
-  coverage.alarm=now>=expectedAt+15*60000 && coverage.unresolved.length>0;
+  const deadlineAt=completenessDeadline(weekId, expectedAt);
+  coverage.deadlineAt=new Date(deadlineAt).toISOString();
+  coverage.alarm=now>=deadlineAt && coverage.unresolved.length>0;
   coverage.receiptCurrent=!!valid;
   return coverage;
+}
+
+export function stampCompleteness(snapshot, coverage) {
+  const missing = coverage.unresolved.slice();
+  snapshot.completeness = missing.length ? 'partial' : 'complete';
+  snapshot.missingAreas = missing;
+  snapshot.resolvedAreas = coverage.resolvedAreas;
+  snapshot.requiredAreas = REQUIRED_AREAS.length;
+  snapshot.completenessNote = missing.length
+    ? `Partial weekly update ${snapshot.weekId}: ${coverage.resolvedAreas}/${REQUIRED_AREAS.length} areas. Missing: ${missing.join(', ')}.`
+    : `Weekly update ${snapshot.weekId}: ${REQUIRED_AREAS.length}/${REQUIRED_AREAS.length} required areas confirmed or explicitly absent.`;
+  for (const section of snapshot.sections || []) {
+    const areas = coverage.areas.filter(area => area.section === section.id);
+    if (!areas.length) continue;
+    const open = areas.filter(area => missing.includes(area.id));
+    section.completeness = open.length ? (section.items?.length ? 'partial' : 'pending') : 'complete';
+  }
+  return snapshot;
 }

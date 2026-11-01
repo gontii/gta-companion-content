@@ -1,6 +1,6 @@
 import { createBundle } from '../scripts/publication-bundle.mjs';
 import { rebuildWeeklyLocations } from '../scripts/weekly-locations.mjs';
-import { collectSectionEvidence, inspectSectionCoverage } from '../scripts/section-coverage.mjs';
+import { collectSectionEvidence, inspectSectionCoverage, stampCompleteness, AREA_LABELS } from '../scripts/section-coverage.mjs';
 import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
@@ -228,6 +228,23 @@ export class PublicationEngine {
           state.events = collectEvents({ weekId: f.startsOn, ...factWindow(f), label: f.entity, sourceUrl: f.sources[0].url }, state.events, now);
         }
         const projected = publicSnapshot(projectContent(master, now));
+        const currentWeekForStamp = thursdayWeekId(new Date(now));
+        if (projected.weekId === currentWeekForStamp) {
+          const stamped = stampCompleteness(projected, inspectSectionCoverage(projected, await this.store.get('section-evidence'), now, currentWeekForStamp, atLocal(currentWeekForStamp, 11 * 60)));
+          // Reappend so the key order does not depend on whether the previous
+          // master already carried the flag. The publication hash is the JSON.
+          const flag = {};
+          for (const key of ['completeness', 'missingAreas', 'resolvedAreas', 'requiredAreas', 'completenessNote']) {
+            flag[key] = stamped[key];
+            delete projected[key];
+            master[key] = stamped[key];
+          }
+          Object.assign(projected, flag);
+          for (const section of stamped.sections) {
+            const target = master.sections.find(item => item.id === section.id);
+            if (target) target.completeness = section.completeness;
+          }
+        }
         delete projected.generatedAt; delete projected.revision;
         const revision = await hash([projected, { publicProjection: 2 }]);
         const publication = await this.store.get('publication');
@@ -328,7 +345,10 @@ export class PublicationEngine {
       state.pending = missing || state.awaitingOfficial;
       state.expectedAt = new Date(expectedAt).toISOString();
       state.incidents = [];
-      if (state.sectionCoverage.alarm) state.incidents.push({ key:'section-completeness', reason:`Niepotwierdzone wymagane obszary wydania: ${state.sectionCoverage.unresolved.join(', ')}`, since:state.sectionCoverage.deadlineAt });
+      if (state.sectionCoverage.alarm) {
+        const missing = state.sectionCoverage.unresolved.map(id => `${id} (${AREA_LABELS[id] || id})`).join(', ');
+        state.incidents.push({ key:'section-completeness', reason:`Niekompletne wydanie ${currentWeek}: ${state.sectionCoverage.resolvedAreas}/${state.sectionCoverage.requiredAreas}. Brakuje: ${missing}`, since:state.sectionCoverage.deadlineAt });
+      }
       if (missing && now >= expectedAt + 15 * MINUTE) state.incidents.push({ key: `missing-${currentWeek}`, reason: 'Brak potwierdzonej aktualizacji po oczekiwanym terminie', since: state.expectedAt });
       for (const failure of state.sourceFailures || []) if (/budget_exhausted|local_budget_reserved|key_missing|binding_missing/.test(failure.reason)) {
         state.incidents.push({ key: failure.reason, reason: failure.reason, since: state.lastSourceCheckAt });

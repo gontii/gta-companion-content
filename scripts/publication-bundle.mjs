@@ -58,10 +58,13 @@ export function publicEdition(snapshot, now) {
       startsOn: null, endsOn: null, claim: null, gtaPlus: id === 'gta-plus', sourceIds: [] });
     // A populated category does not establish that unknown rotations or offers are absent.
     else if (id === 'rotations') {
-      items.push({ id: 'pending-gun-van-stock', name: 'Other Gun Van stock and discounts', status: 'pending', offer: null, requirements: null, startsOn: null, endsOn: null, claim: null, gtaPlus: false, sourceIds: [] });
+      const missing = Array.isArray(snapshot.missingAreas) ? snapshot.missingAreas : null;
+      const gunMissing = !missing || ['gun-van-stock', 'gun-van-discounts', 'gun-van-gta-plus'].some(area => missing.includes(area));
+      if (gunMissing) items.push({ id: 'pending-gun-van-stock', name: missing ? `Missing: ${['gun-van-stock', 'gun-van-discounts', 'gun-van-gta-plus'].filter(area => missing.includes(area)).join(', ')}` : 'Other Gun Van stock and discounts', status: 'pending', offer: null, requirements: null, startsOn: null, endsOn: null, claim: null, gtaPlus: false, sourceIds: [] });
       const rewards = snapshot.sections.find(s => s.id === 'free-vehicles')?.items || [];
-      if (!rewards.some(i => /podium|lucky wheel/i.test(i.label)) || !rewards.some(i => /prize ride|LS Car Meet/i.test(i.label))) {
-        items.push({ id: 'pending-prize-vehicles', name: 'Podium and Prize Ride requirements', status: 'pending', offer: null, requirements: null,
+      const vehicleMissing = !missing || ['podium', 'prize-ride'].some(area => missing.includes(area));
+      if (vehicleMissing && (!rewards.some(i => /podium|lucky wheel/i.test(i.label)) || !rewards.some(i => /prize ride|LS Car Meet/i.test(i.label)))) {
+        items.push({ id: 'pending-prize-vehicles', name: missing ? `Missing: ${['podium', 'prize-ride'].filter(area => missing.includes(area)).join(', ')}` : 'Podium and Prize Ride requirements', status: 'pending', offer: null, requirements: null,
         startsOn: null, endsOn: null, claim: null, gtaPlus: false, sourceIds: [] });
       }
     }
