@@ -270,6 +270,24 @@
     "confidence": "corroborated"
   },
   {
+    "section": "free-vehicles",
+    "entity": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops)",
+    "offer": "FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; claim in Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
+    "startsOn": "2026-10-30",
+    "endsOn": "2026-11-02",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
+        "kind": "intel",
+        "scope": "weekly",
+        "publishedOn": "2026-10-30"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
     "section": "discounts",
     "entity": "Agency Properties, Upgrades and Modifications",
     "offer": "40% off",
