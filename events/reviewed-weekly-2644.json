@@ -272,9 +272,13 @@
   {
     "section": "free-vehicles",
     "entity": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops)",
-    "offer": "FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; claim in Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
+    "offer": "FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; earn and claim in your Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
     "startsOn": "2026-10-30",
     "endsOn": "2026-11-02",
+    "timing": {
+      "startsAt": "2026-10-30T00:00:00.000Z",
+      "expiresAt": "2026-11-02T10:59:00.000Z"
+    },
     "eligibility": "all",
     "platform": "all",
     "sources": [
