@@ -1,0 +1,2626 @@
+{
+  "schemaVersion": 2,
+  "weekId": "2026-10-29",
+  "range": "2026-10-29 – 2026-11-04",
+  "headline": "This week in GTA Online",
+  "startsAt": "2026-10-29T10:00:00.000Z",
+  "expiresAt": "2026-11-05T10:00:00.000Z",
+  "originalZone": "Europe/Warsaw",
+  "precision": "date",
+  "timingConfidence": "estimated",
+  "quickTake": [
+    "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+    "Ghosts Exposed — 2X GTA$",
+    "San Andreas Super Sport Series — 3X GTA$ & RP; Hotring Races and Random Transform Races.",
+    "Jack O' Lanterns — 4X GTA$ & RP (GTA+ only)"
+  ],
+  "quickTakeEntries": [
+    {
+      "id": "auto-1237ea9f2ca2f2c197",
+      "label": "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "factKey": "bonuses:halloween survivals:all:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "Halloween Survivals",
+      "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-1237ea9f2ca2f2c197"
+      ]
+    },
+    {
+      "id": "auto-2a2409bee4380ccb13",
+      "label": "Ghosts Exposed — 2X GTA$",
+      "factKey": "bonuses:ghosts exposed:all:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "Ghosts Exposed",
+      "offer": "2X GTA$",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-2a2409bee4380ccb13"
+      ]
+    },
+    {
+      "id": "auto-3968c0f61679c237bd",
+      "label": "San Andreas Super Sport Series — 3X GTA$ & RP; Hotring Races and Random Transform Races.",
+      "factKey": "bonuses:san andreas super sport series:all:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "San Andreas Super Sport Series",
+      "offer": "3X GTA$ & RP; Hotring Races and Random Transform Races.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-3968c0f61679c237bd"
+      ]
+    },
+    {
+      "id": "auto-4489f98d822b54161b",
+      "label": "Jack O' Lanterns — 4X GTA$ & RP (GTA+ only)",
+      "factKey": "bonuses:jack o lanterns:gta-plus:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "Jack O' Lanterns",
+      "offer": "4X GTA$ & RP",
+      "eligibility": "gta-plus",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-4489f98d822b54161b"
+      ]
+    }
+  ],
+  "beginnerPath": [
+    {
+      "id": "bp-auto-1237ea9f2ca2f2c197",
+      "label": "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "factKey": "bonuses:halloween survivals:all:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "Halloween Survivals",
+      "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-1237ea9f2ca2f2c197"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-2a2409bee4380ccb13",
+      "label": "Ghosts Exposed — 2X GTA$",
+      "factKey": "bonuses:ghosts exposed:all:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "Ghosts Exposed",
+      "offer": "2X GTA$",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-2a2409bee4380ccb13"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-3968c0f61679c237bd",
+      "label": "San Andreas Super Sport Series — 3X GTA$ & RP; Hotring Races and Random Transform Races.",
+      "factKey": "bonuses:san andreas super sport series:all:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "San Andreas Super Sport Series",
+      "offer": "3X GTA$ & RP; Hotring Races and Random Transform Races.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-3968c0f61679c237bd"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-4489f98d822b54161b",
+      "label": "Jack O' Lanterns — 4X GTA$ & RP (GTA+ only)",
+      "factKey": "bonuses:jack o lanterns:gta-plus:all",
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-10-28"
+        }
+      ],
+      "entity": "Jack O' Lanterns",
+      "offer": "4X GTA$ & RP",
+      "eligibility": "gta-plus",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "itemIds": [
+        "auto-4489f98d822b54161b"
+      ],
+      "progressGroup": "none"
+    }
+  ],
+  "locations": [
+    {
+      "id": "auto-location-halloween-survivals",
+      "activity": "Halloween Survivals",
+      "name": "Survival job selection",
+      "area": "Pause Menu → Online → Jobs → Play Job → Rockstar Created → Survivals",
+      "note": "Select the Halloween Survival named in the current offer. Ludendorff Cemetery is entered through a job or its Survival map blip; do not try to drive to North Yankton in Freemode. Availability follows the current playlist.\n\nThis week: Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+      "itemIds": [
+        "auto-1237ea9f2ca2f2c197"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s"
+        }
+      ],
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-ghosts-exposed",
+      "activity": "Ghosts Exposed",
+      "name": "Freemode ghost photography",
+      "area": "Southern San Andreas → follow the Ghosts Exposed text and current event clues",
+      "note": "Use your phone’s Snapmatic camera to photograph the ghosts and check progress in the Interaction Menu. This is a Freemode search, not a mission started at a property. This guide has not verified this year’s individual ghost coordinates or spawn hours.\n\nThis week: Ghosts Exposed — 2X GTA$",
+      "itemIds": [
+        "auto-2a2409bee4380ccb13"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s"
+        }
+      ],
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-prize-ride",
+      "activity": "Prize Ride",
+      "name": "Los Santos Car Meet",
+      "area": "Cypress Flats → LS Car Meet map icon",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Karin Previon — Place top 5 in an LS Car Meet race for 2 days in a row to unlock the Karin Previon",
+      "itemIds": [
+        "auto-7d649c4054975bdd21"
+      ],
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-podium",
+      "activity": "Casino Podium",
+      "name": "The Diamond Casino & Resort",
+      "area": "East Vinewood → Casino map icon",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Progen GP1 — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+      "itemIds": [
+        "auto-32256eb6cdc185d116"
+      ],
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-gun-van",
+      "activity": "Gun Van",
+      "name": "Mobile weapons dealer",
+      "area": "Daily rotating stop in Southern San Andreas",
+      "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
+      "itemIds": [
+        "auto-1c13170003b27cbd4c"
+      ],
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-business-battles",
+      "activity": "Business Battle Rewards",
+      "name": "Freemode event cargo",
+      "area": "Session-dependent event marker",
+      "note": "Wait for a Business Battle in Freemode, then use the event’s cargo marker and delivery destination. Pick up and deliver the crates; the route is assigned by the event, not one permanent address. Check the current reward description below.\n\nThis week: UFO Business Battles — 2X GTA$ & RP",
+      "itemIds": [
+        "auto-8a5fe258a0c0c10610"
+      ],
+      "startsAt": "2026-10-29T10:00:00.000Z",
+      "expiresAt": "2026-11-05T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    }
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-1237ea9f2ca2f2c197",
+          "label": "Halloween Survivals — 3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+          "factKey": "bonuses:halloween survivals:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Halloween Survivals",
+          "offer": "3X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2a2409bee4380ccb13",
+          "label": "Ghosts Exposed — 2X GTA$",
+          "factKey": "bonuses:ghosts exposed:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Ghosts Exposed",
+          "offer": "2X GTA$",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-3968c0f61679c237bd",
+          "label": "San Andreas Super Sport Series — 3X GTA$ & RP; Hotring Races and Random Transform Races.",
+          "factKey": "bonuses:san andreas super sport series:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "San Andreas Super Sport Series",
+          "offer": "3X GTA$ & RP; Hotring Races and Random Transform Races.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4489f98d822b54161b",
+          "label": "Jack O' Lanterns — 4X GTA$ & RP (GTA+ only)",
+          "factKey": "bonuses:jack o lanterns:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Jack O' Lanterns",
+          "offer": "4X GTA$ & RP",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4b394bd024fcf5f15c",
+          "label": "Jack O' Lanterns — 2X GTA$ & RP",
+          "factKey": "bonuses:jack o lanterns:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Jack O' Lanterns",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4e97f745671be075e8",
+          "label": "FIB Priority File — 2X GTA$ & RP; The Project Breakaway File.",
+          "factKey": "bonuses:fib priority file:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "FIB Priority File",
+          "offer": "2X GTA$ & RP; The Project Breakaway File.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-715a776cbfd3e15c9b",
+          "label": "Community Mission Series — 3X GTA$ & RP (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "bonuses:community mission series:all:enhanced",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Community Mission Series",
+          "offer": "3X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "enhanced",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8a5fe258a0c0c10610",
+          "label": "UFO Business Battles — 2X GTA$ & RP",
+          "factKey": "bonuses:ufo business battles:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "UFO Business Battles",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a9ccb4a19c87a482f2",
+          "label": "Ghosts Exposed — 4X GTA$ (GTA+ only)",
+          "factKey": "bonuses:ghosts exposed:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Ghosts Exposed",
+          "offer": "4X GTA$",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-bbbcf38a2cec3fa1f0",
+          "label": "Halloween Survivals — 6X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals. (GTA+ only)",
+          "factKey": "bonuses:halloween survivals:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Halloween Survivals",
+          "offer": "6X GTA$ & RP; Ludendorff Cemetery Survival, Cayo Perico Survival and Alien Survivals.",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d8b235424d6e0a0578",
+          "label": "Halloween Featured Series — 3X GTA$ & RP; Slasher and Ramius – Slasher.",
+          "factKey": "bonuses:halloween featured series:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Halloween Featured Series",
+          "offer": "3X GTA$ & RP; Slasher and Ramius – Slasher.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-fd38c229ff873bbf2e",
+          "label": "Kortz Center Heist — Primary Targets: I, Fruit, Until Death and Gone to Seed; first-completion bonus available again; extra GTA$400,000 for completing without dying.",
+          "factKey": "bonuses:kortz center heist:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Kortz Center Heist",
+          "offer": "Primary Targets: I, Fruit, Until Death and Gone to Seed; first-completion bonus available again; extra GTA$400,000 for completing without dying.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-144dcc1046a3ee0e60",
+          "label": "Halloween — Five Weekly Challenges — Week 5/5: Complete 10 waves in a Survival without dying to receive GTA$250,000 and the Slasher Clown Outfit. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
+          "factKey": "challenge:halloween five weekly challenges:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online"
+            }
+          ],
+          "entity": "Halloween — Five Weekly Challenges",
+          "offer": "Week 5/5: Complete 10 waves in a Survival without dying to receive GTA$250,000 and the Slasher Clown Outfit. Counts towards the GTA$2,000,000 bonus for completing all five Halloween Weekly Challenges.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "seasonalEventId": "halloween-challenges-2026-10",
+          "progressGroup": "primary"
+        }
+      ]
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free rewards & prize vehicles",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-32256eb6cdc185d116",
+          "label": "Progen GP1 — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "factKey": "free-vehicles:progen gp1:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Progen GP1",
+          "offer": "Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-44879e7b7e43af1faa",
+          "label": "Brown Vintage Skull Mask and the Halloween Chute Bag — Reward for playing GTA Online",
+          "factKey": "free-vehicles:brown vintage skull mask and the halloween chute bag:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "Brown Vintage Skull Mask and the Halloween Chute Bag",
+          "offer": "Reward for playing GTA Online",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-48488eef776a078631",
+          "label": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops) — FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; earn and claim in your Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
+          "factKey": "free-vehicles:grotti turismo omaggio and rockstar motorsport livery twitch drops:all:all",
+          "startsAt": "2026-10-30T00:00:00.000Z",
+          "expiresAt": "2026-11-02T10:59:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-30"
+            }
+          ],
+          "entity": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops)",
+          "offer": "FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; earn and claim in your Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
+          "progressGroup": "primary"
+        },
+        {
+          "id": "auto-7d649c4054975bdd21",
+          "label": "Karin Previon — Place top 5 in an LS Car Meet race for 2 days in a row to unlock the Karin Previon",
+          "factKey": "free-vehicles:karin previon:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Karin Previon",
+          "offer": "place top 5 in a LS Car Meet Race for 2 days in a row to unlock the Karin Previon",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "extra"
+        },
+        {
+          "id": "auto-891f19a0bbfb2c0851",
+          "label": "Día de Muertos Tee, Maritime Calaca Mask and Royal Calaca Mask — Reward for playing GTA Online",
+          "factKey": "free-vehicles:d a de muertos tee maritime calaca mask and royal calaca mask:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Día de Muertos Tee, Maritime Calaca Mask and Royal Calaca Mask",
+          "offer": "Reward for playing GTA Online",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts & Offers",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-2dd8d25dac568111ec",
+          "label": "Vapid Firebolt ASP — 30% off",
+          "factKey": "discounts:vapid firebolt asp:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Vapid Firebolt ASP",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-39a2fdf1f3f0b797f7",
+          "label": "LCC Sanctus — 40% off",
+          "factKey": "discounts:lcc sanctus:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "LCC Sanctus",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-44e8d85814a4f7a384",
+          "label": "Bravado Gauntlet Classic — 30% off",
+          "factKey": "discounts:bravado gauntlet classic:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Bravado Gauntlet Classic",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-58aefc5899733983fd",
+          "label": "Albany Fränken Stange — 40% off",
+          "factKey": "discounts:albany fr nken stange:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Albany Fränken Stange",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-58d665b5ccaee67109",
+          "label": "Pegassi Infernus Classic — 30% off",
+          "factKey": "discounts:pegassi infernus classic:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Pegassi Infernus Classic",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-81f101ecf1d20b6ce5",
+          "label": "Albany Lurcher — 40% off",
+          "factKey": "discounts:albany lurcher:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Albany Lurcher",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-84c65a0fa090f5f35c",
+          "label": "Karin Futo GTX — 30% off",
+          "factKey": "discounts:karin futo gtx:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Karin Futo GTX",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-925cffc48063c321b7",
+          "label": "Declasse Tornado Rat Rod — 40% off",
+          "factKey": "discounts:declasse tornado rat rod:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Declasse Tornado Rat Rod",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a0466fff95e3dbdb62",
+          "label": "Agency Properties, Upgrades and Modifications — 40% off",
+          "factKey": "discounts:agency properties upgrades and modifications:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Agency Properties, Upgrades and Modifications",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-be43bc6ac4c4d8bb81",
+          "label": "Invetero Coquette D10 — 30% off",
+          "factKey": "discounts:invetero coquette d10:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Invetero Coquette D10",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-cc9c8f4377a2376509",
+          "label": "Übermacht Zion Classic — 30% off",
+          "factKey": "discounts:bermacht zion classic:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Übermacht Zion Classic",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d3231f4e55bd2e0f9a",
+          "label": "MTL Dune — 30% off",
+          "factKey": "discounts:mtl dune:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "MTL Dune",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-f55f22cb6510d0e311",
+          "label": "Albany Brigham — 40% off",
+          "factKey": "discounts:albany brigham:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Albany Brigham",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-f72c9f167772a1f97d",
+          "label": "Shitzu Keitora — 30% off",
+          "factKey": "discounts:shitzu keitora:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Shitzu Keitora",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-f77f58a57929ed93ca",
+          "label": "Vapid FMJ — 30% off",
+          "factKey": "discounts:vapid fmj:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Vapid FMJ",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-1c13170003b27cbd4c",
+          "label": "Pipe Bombs — 10% off at the Gun Van",
+          "factKey": "gun-van:pipe bombs:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Pipe Bombs",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2073cf3ffb853a056c",
+          "label": "Widowmaker — 50% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:widowmaker:gta-plus:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Widowmaker",
+          "offer": "50% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-33f2aa77eba82a13a5",
+          "label": "The Shocker — FREE at the Gun Van",
+          "factKey": "gun-van:the shocker:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "The Shocker",
+          "offer": "FREE at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "primary"
+        },
+        {
+          "id": "auto-386bad7ef963c9e154",
+          "label": "El Strickler — 10% off at the Gun Van",
+          "factKey": "gun-van:el strickler:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "El Strickler",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-3e46da396eaeeb91c7",
+          "label": "Up-n-Atomizer — 50% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:up n atomizer:gta-plus:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Up-n-Atomizer",
+          "offer": "50% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-51bb5e5fa249bb0dd7",
+          "label": "Pipe Bombs — 20% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:pipe bombs:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Pipe Bombs",
+          "offer": "20% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-57dab79ab490d6965d",
+          "label": "Service Carbine — 30% off at the Gun Van",
+          "factKey": "gun-van:service carbine:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Service Carbine",
+          "offer": "30% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-74835df5259269a994",
+          "label": "Unholy Hellbringer — 10% off at the Gun Van",
+          "factKey": "gun-van:unholy hellbringer:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Unholy Hellbringer",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-77f5274252da6ff0a9",
+          "label": "Knife — 20% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:knife:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Knife",
+          "offer": "20% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7b28067bf63aea87d8",
+          "label": "Widowmaker — 10% off at the Gun Van",
+          "factKey": "gun-van:widowmaker:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Widowmaker",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7c231a03cea565727b",
+          "label": "Armor — 20% off at the Gun Van; Super Light, Light, Standard, Heavy and Super Heavy armor. (GTA+ only)",
+          "factKey": "gun-van:armor:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Armor",
+          "offer": "20% off at the Gun Van; Super Light, Light, Standard, Heavy and Super Heavy armor.",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-86c99a7155c61154b5",
+          "label": "Combat Shotgun — 20% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:combat shotgun:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Combat Shotgun",
+          "offer": "20% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-886bd962ad25adba3f",
+          "label": "Combat Shotgun — 10% off at the Gun Van",
+          "factKey": "gun-van:combat shotgun:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Combat Shotgun",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8908cc998d9fdac440",
+          "label": "Baseball Bat — 20% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:baseball bat:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Baseball Bat",
+          "offer": "20% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8d16bfdbbf1fa79db4",
+          "label": "Armor — 10% off at the Gun Van; Super Light, Light, Standard, Heavy and Super Heavy armor.",
+          "factKey": "gun-van:armor:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Armor",
+          "offer": "10% off at the Gun Van; Super Light, Light, Standard, Heavy and Super Heavy armor.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "label": "Knife — 10% off at the Gun Van",
+          "factKey": "gun-van:knife:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Knife",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9f30eddedaa4c24e3d",
+          "label": "Up-n-Atomizer — 10% off at the Gun Van",
+          "factKey": "gun-van:up n atomizer:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Up-n-Atomizer",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-b64b3661f6d4a42f16",
+          "label": "Precision Rifle — 20% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:precision rifle:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Precision Rifle",
+          "offer": "20% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "label": "Baseball Bat — 10% off at the Gun Van",
+          "factKey": "gun-van:baseball bat:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Baseball Bat",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-da8606f1ff4a601bdc",
+          "label": "El Strickler — 20% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:el strickler:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "El Strickler",
+          "offer": "20% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-e48d50258c4f921f9e",
+          "label": "Precision Rifle — 10% off at the Gun Van",
+          "factKey": "gun-van:precision rifle:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Precision Rifle",
+          "offer": "10% off at the Gun Van",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-f218f93ba4e5bbeb34",
+          "label": "Unholy Hellbringer — 50% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:unholy hellbringer:gta-plus:all",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Unholy Hellbringer",
+          "offer": "50% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-0806f1d0dea30af444",
+          "label": "Salvage Yard Robberies — The Gangbanger Robbery: Lampadati Cinquemila; The Podium Robbery: Karin Boor; The Duggan Robbery: Albany Fränken Stange.",
+          "factKey": "other:salvage yard robberies:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Salvage Yard Robberies",
+          "offer": "The Gangbanger Robbery: Lampadati Cinquemila; The Podium Robbery: Karin Boor; The Duggan Robbery: Albany Fränken Stange.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-271e65423949200da2",
+          "label": "Test Track Vehicles — Test drive Declasse Vamos, Dewbauchee Seven-70 and Ocelot Locust.",
+          "factKey": "other:test track vehicles:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Test Track Vehicles",
+          "offer": "Test drive Declasse Vamos, Dewbauchee Seven-70 and Ocelot Locust.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-91a29621d957156f53",
+          "label": "HSW Time Trial — East Vinewood; PS5, Xbox Series X|S or PC Enhanced required. (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "other:hsw time trial:all:enhanced",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "HSW Time Trial",
+          "offer": "East Vinewood; PS5, Xbox Series X|S or PC Enhanced required.",
+          "eligibility": "all",
+          "platform": "enhanced",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-ac0e22955c9b7758c5",
+          "label": "Halloween Weekly Challenges Completion Bonus — Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "factKey": "other:halloween weekly challenges completion bonus:all:all",
+          "startsAt": "2026-10-01T09:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "windowPolicy": "independent",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-10-01"
+            }
+          ],
+          "entity": "Halloween Weekly Challenges Completion Bonus",
+          "offer": "Complete all five Weekly Challenges during October 1–November 4 to receive GTA$2,000,000 within 72 hours of completion.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-c6afb210df51601e81",
+          "label": "Time Trial — Route 68.",
+          "factKey": "other:time trial:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Time Trial",
+          "offer": "Route 68.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-c79321e4d78aa57785",
+          "label": "Premium Test Ride — Test drive the Maibatsu MonstroCiti; PS5, Xbox Series X|S or PC Enhanced required. (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "other:premium test ride:all:enhanced",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Premium Test Ride",
+          "offer": "Test drive the Maibatsu MonstroCiti; PS5, Xbox Series X|S or PC Enhanced required.",
+          "eligibility": "all",
+          "platform": "enhanced",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-c9700fb675a7d44289",
+          "label": "Luxury Autos — Available to purchase: Dewbauchee Rapid GT X and Übermacht Sentinel XS4.",
+          "factKey": "other:luxury autos:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Luxury Autos",
+          "offer": "Available to purchase: Dewbauchee Rapid GT X and Übermacht Sentinel XS4.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-ec8054ade3d8f76d4c",
+          "label": "Premium Race — Wiwang Park; race entry conditions apply.",
+          "factKey": "other:premium race:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Premium Race",
+          "offer": "Wiwang Park; race entry conditions apply.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-f4fedee87347f5308d",
+          "label": "Premium Deluxe Motorsport — Available to purchase and test: Albany Brigham, Albany Fränken Stange, Albany Lurcher, Declasse Tornado Rat Rod and LCC Sanctus.",
+          "factKey": "other:premium deluxe motorsport:all:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-05T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Premium Deluxe Motorsport",
+          "offer": "Available to purchase and test: Albany Brigham, Albany Fränken Stange, Albany Lurcher, Declasse Tornado Rat Rod and LCC Sanctus.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "title": "GTA+ benefits",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-22536be77717687c5f",
+          "label": "The Vinewood Club — Access to the Car Club, 100-car Garage, Workshop and in-game App; recurring membership amenities. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:the vinewood club:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "The Vinewood Club",
+          "offer": "Access to the Car Club, 100-car Garage, Workshop and in-game App; recurring membership amenities.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2ee5acf9b564ed5668",
+          "label": "Albany Brigham — Around 60% off by stacking discounts at The Vinewood Car Club; check the final in-game price. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:albany brigham:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Albany Brigham",
+          "offer": "Around 60% off by stacking discounts at The Vinewood Car Club; check the final in-game price.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2f61b30d5a541702e0",
+          "label": "Ride or Die Jeans — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:ride or die jeans:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Ride or Die Jeans",
+          "offer": "FREE; added to your wardrobe.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-3e76bf55a0df83c867",
+          "label": "Trippy weapon finishes — Available for the Baseball Bat and Knife at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:trippy weapon finishes:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Trippy weapon finishes",
+          "offer": "Available for the Baseball Bat and Knife at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-442978c9a8d2f44de1",
+          "label": "Skeleton Bodysuit — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:skeleton bodysuit:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Skeleton Bodysuit",
+          "offer": "FREE; added to your wardrobe.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-49aa0c521475aa7a14",
+          "label": "Pegassi Oppressor — FREE with the Skulls livery; claim at The Vinewood Car Club or Warstock Cache & Carry. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:pegassi oppressor:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Pegassi Oppressor",
+          "offer": "FREE with the Skulls livery; claim at The Vinewood Car Club or Warstock Cache & Carry.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-10-08"
+        },
+        {
+          "id": "auto-4d1cae5779366fd86f",
+          "label": "Mummy Costume — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:mummy costume:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Mummy Costume",
+          "offer": "FREE; added to your wardrobe.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4f35ed99b4d59aac0f",
+          "label": "Ride or Die Chore Jacket — FREE; added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:ride or die chore jacket:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Ride or Die Chore Jacket",
+          "offer": "FREE; added to your wardrobe.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-5cd14d38e0b9fdfa4c",
+          "label": "GTA$500,000 monthly deposit — Recurring GTA$500,000 on your membership billing date; not an extra one-time event reward. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:gta 500 000 monthly deposit:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "GTA$500,000 monthly deposit",
+          "offer": "Recurring GTA$500,000 on your membership billing date; not an extra one-time event reward.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7188858ef69ce91471",
+          "label": "MTL Brickade 6x6 — FREE with a complimentary Manchez Scout C; claim at The Freakshop in Mirror Park. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:mtl brickade 6x6:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "MTL Brickade 6x6",
+          "offer": "FREE with a complimentary Manchez Scout C; claim at The Freakshop in Mirror Park.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-10-08"
+        },
+        {
+          "id": "auto-813ebe7cf80656ddc9",
+          "label": "GTA+ Games Library — Access to the included Rockstar Games titles while your membership and their availability last; recurring benefit. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:gta games library:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "GTA+ Games Library",
+          "offer": "Access to the included Rockstar Games titles while your membership and their availability last; recurring benefit.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a896a350e1ac6853e9",
+          "label": "Lucky Wheel — Two spins per day instead of one. (GTA+ only)",
+          "factKey": "gta-plus:lucky wheel:gta-plus:all",
+          "startsAt": "2026-10-29T10:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-28"
+            }
+          ],
+          "entity": "Lucky Wheel",
+          "offer": "Two spins per day instead of one.",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-b2c3e8738749ab03c4",
+          "label": "LCC Sanctus — Around 60% off by stacking discounts at The Vinewood Car Club; check the final in-game price. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:lcc sanctus:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "LCC Sanctus",
+          "offer": "Around 60% off by stacking discounts at The Vinewood Car Club; check the final in-game price.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-cabd35fa2cebee9c79",
+          "label": "Red/Orange Flip Chameleon Paint — FREE at Auto Shops. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:red orange flip chameleon paint:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Red/Orange Flip Chameleon Paint",
+          "offer": "FREE at Auto Shops.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-10-08"
+        },
+        {
+          "id": "auto-d920306eb2d6931f33",
+          "label": "Acid Lab Supplies — FREE supplies for your Acid Lab. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:acid lab supplies:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Acid Lab Supplies",
+          "offer": "FREE supplies for your Acid Lab.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-e9acda331f20d2c086",
+          "label": "Red/Orange Flip Chameleon Wheel Paint — FREE at Auto Shops. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:red orange flip chameleon wheel paint:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Red/Orange Flip Chameleon Wheel Paint",
+          "offer": "FREE at Auto Shops.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-10-08"
+        },
+        {
+          "id": "auto-fbb344150302deb2f7",
+          "label": "Member-only Shark Cards — 15% bonus GTA$ on member-only Shark Cards; recurring membership benefit. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:member only shark cards:gta-plus:enhanced",
+          "startsAt": "2026-10-08T09:00:00.000Z",
+          "expiresAt": "2026-11-04T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+              "kind": "rockstar",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            },
+            {
+              "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+              "kind": "intel",
+              "scope": "membership",
+              "publishedOn": "2026-10-08"
+            }
+          ],
+          "entity": "Member-only Shark Cards",
+          "offer": "15% bonus GTA$ on member-only Shark Cards; recurring membership benefit.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+          "progressGroup": "none"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-10-28"
+    },
+    {
+      "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+      "kind": "rockstar",
+      "scope": "weekly",
+      "publishedOn": "2026-10-01"
+    },
+    {
+      "url": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-10-30"
+    },
+    {
+      "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+      "kind": "rockstar",
+      "scope": "membership",
+      "publishedOn": "2026-10-08"
+    },
+    {
+      "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+      "kind": "intel",
+      "scope": "membership",
+      "publishedOn": "2026-10-08"
+    }
+  ],
+  "completeness": "partial",
+  "seasonalCashEvent": {
+    "id": "halloween-challenges-2026-10",
+    "kind": "cash",
+    "title": "Halloween — Five Weekly Challenges",
+    "startsOn": "2026-10-01",
+    "endsOn": "2026-11-04",
+    "summary": "Complete all five weekly challenges to earn an extra GTA$2,000,000",
+    "description": "A different challenge each week. Complete every week during October 1–November 4. The extra GTA$2,000,000 is deposited within 72 hours of completing all five; Payphone Hits is a separate bonus and does not count towards this series.",
+    "sourceUrl": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
+    "weeks": [
+      {
+        "startsOn": "2026-10-01",
+        "endsOn": "2026-10-07",
+        "challenge": "Secure two Bail Office Bounties",
+        "reward": "GTA$100,000",
+        "outfit": "Green Vintage Skull Mask",
+        "targetCount": 2
+      },
+      {
+        "startsOn": "2026-10-08",
+        "endsOn": "2026-10-14",
+        "challenge": "Win two Adversary Modes",
+        "reward": "GTA$100,000",
+        "outfit": "Pink Skull Emissive Mask",
+        "targetCount": 2
+      },
+      {
+        "startsOn": "2026-10-15",
+        "endsOn": "2026-10-21",
+        "challenge": "Win three Races",
+        "reward": "GTA$100,000",
+        "outfit": "Orange Glow Skeleton Onesie",
+        "targetCount": 3
+      },
+      {
+        "startsOn": "2026-10-22",
+        "endsOn": "2026-10-28",
+        "challenge": "Complete all waves of a Survival",
+        "reward": "GTA$150,000",
+        "outfit": "Gray Space Interloper Outfit"
+      },
+      {
+        "startsOn": "2026-10-29",
+        "endsOn": "2026-11-04",
+        "challenge": "Complete 10 waves in a Survival without dying",
+        "reward": "GTA$250,000",
+        "outfit": "Slasher Clown Outfit"
+      }
+    ]
+  },
+  "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
+  "nextBoundaryAt": "2026-11-02T10:59:00.000Z",
+  "revision": "1b11ac203e705f7129e38e4e8b9058324d901c047f139c9b330b57a379b0c997",
+  "generatedAt": "2026-11-01T11:20:00.158Z"
+}

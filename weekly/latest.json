@@ -737,6 +737,31 @@
           "progressGroup": "none"
         },
         {
+          "id": "auto-48488eef776a078631",
+          "label": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops) — FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; earn and claim in your Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
+          "factKey": "free-vehicles:grotti turismo omaggio and rockstar motorsport livery twitch drops:all:all",
+          "startsAt": "2026-10-30T00:00:00.000Z",
+          "expiresAt": "2026-11-02T10:59:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-10-30"
+            }
+          ],
+          "entity": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops)",
+          "offer": "FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; earn and claim in your Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
+          "progressGroup": "primary"
+        },
+        {
           "id": "auto-7d649c4054975bdd21",
           "label": "Karin Previon — Place top 5 in an LS Car Meet race for 2 days in a row to unlock the Karin Previon",
           "factKey": "free-vehicles:karin previon:all:all",
@@ -2525,6 +2550,12 @@
       "publishedOn": "2026-10-01"
     },
     {
+      "url": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-10-30"
+    },
+    {
       "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
       "kind": "rockstar",
       "scope": "membership",
@@ -2589,7 +2620,7 @@
     ]
   },
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
-  "nextBoundaryAt": "2026-11-04T23:00:00.000Z",
-  "revision": "69d8c9532fc6da3618cbe45cac4771dad6613e4a2ea84fd3fc6c01e2f92cc4c7",
-  "generatedAt": "2026-10-31T23:00:00.104Z"
+  "nextBoundaryAt": "2026-11-02T10:59:00.000Z",
+  "revision": "1b11ac203e705f7129e38e4e8b9058324d901c047f139c9b330b57a379b0c997",
+  "generatedAt": "2026-11-01T11:20:00.158Z"
 }
