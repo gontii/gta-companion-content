@@ -22,7 +22,7 @@ Fakty przyszłe pozostają w prywatnej kolejce do swojego terminu. Koniec weeken
 
 Publikacja zachowuje `weekId` dla postępu oraz osobny skrót `revision`. Zapis przed wykonaniem operacji KV umożliwia ponowienie identycznej publikacji po awarii. Brak zmiany treści nie tworzy kolejnej rewizji. Poprzednia publikacja pozostaje w obiekcie; Git przechowuje niezmienne pliki `weekly/revisions/<revision>.json`. Kolejka historii jest potwierdzana dopiero po udanym pushu.
 
-Po zapisie KV automat czeka co najmniej 75 sekund na propagację i porównuje pełną odpowiedź chronionego `/api/weekly` z oczekiwanym widokiem czasowym. Oddzielnie sprawdza odmowę 401 bez tokenu. Nieznany wynik i awaria zapisu nie są sukcesem. Przekaźnik odnawia testową sesję przez istniejące sekrety GitHub `BETA_SMOKE_CODE` i `SMOKE_TEST_EMAIL`; nie wypisuje kodu ani tokenu.
+Po zapisie KV automat odpytuje publiczny `/api/content-status` co 15 sekund, maksymalnie 4 minuty, aż `app.weekId` i `app.revision` zgodzą się z opublikowanym artefaktem. Oddzielnie sprawdza odmowę 401 na `/api/weekly` bez tokenu. Nieznany wynik i awaria zapisu nie są sukcesem.
 
 ## Źródła i limity
 

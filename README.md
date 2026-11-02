@@ -32,11 +32,6 @@ Required repository secrets:
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
 - `CLOUDFLARE_KV_NAMESPACE_ID`
-- `BETA_SMOKE_CODE`
-
-Optional repository secret:
-
-- `SMOKE_TEST_EMAIL`
 
 The workflow:
 
@@ -45,7 +40,7 @@ The workflow:
 3. Fails closed if the source period does not overlap the current GTA week or validation fails.
 4. Commits changed weekly files.
 5. Publishes `weekly/latest.json` to Cloudflare KV key `weekly:latest`.
-6. Smoke-tests `https://companion-for-gta-online.pages.dev/api/weekly`.
+6. Smoke-tests the live API: `/api/weekly` must return 401 without a token, then polls `https://gtacompanion.net/api/content-status` until `app.weekId` and `app.revision` match the published artifact.
 
 ## DLC overlay (`dlc-overlay.json`)
 
@@ -113,7 +108,7 @@ Primary source order:
 - Zestaw jest dołączany jako opcjonalna ostatnia sekcja `gta-plus`; istniejąca aplikacja obsługuje ją bez nowego wydania. Każda pozycja ma etykietę `GTA+ only` i termin. Zwykłe oferty pozostają w swoich sekcjach.
 - Przy nowym okresie trzeba dodać zweryfikowany zestaw z Newswire do `events/gta-plus.json`. **Od 10 września 2026 publikacja zatrzyma się, dopóki nie zostanie dodany nowy okres.** Automat nie wymyśla ofert ani nie przedłuża wygasłych korzyści. Zachowuj poprzednie okresy jako historię.
 - `events/weekly-quality.json` zawiera warunki kompletności konkretnego tygodnia. Dla 3–9 września wymaga wszystkich 18 ofert oraz pominiętych nagród i nazw; dla kolejnego tygodnia aktualizuj warunki na podstawie źródeł. Podstawowa kontrola niepustych sześciu sekcji działa także bez takiego wpisu.
-- `validate:weekly` sprawdza semantykę `latest.json`, a pliki archiwalne według schematu. Smoke test porównuje **cały JSON zwrócony przez chronione API** z opublikowanym plikiem, obok dotychczasowych kontroli dostępu i wydarzenia sezonowego.
+- `validate:weekly` sprawdza semantykę `latest.json`, a pliki archiwalne według schematu. Smoke test sprawdza odmowę 401 na `/api/weekly` bez tokenu, a następnie odpytuje publiczny `/api/content-status`, aż `app.weekId` i `app.revision` zgodzą się z opublikowanym artefaktem.
 - Ochrona bogatszej zawartości nie może zatrzymać naprawy sekcji, która wcześniej była pusta. Powtórne generowanie zachowuje identyfikatory postępu oraz datę `generatedAt`, jeżeli treść się nie zmieniła.
 
 Weryfikacja przed publikacją: `npm test`, `npm run generate:weekly`, `npm run validate:weekly -- weekly/latest.json`. Publikacja: standardowy `Update weekly GTA Online content` w GitHub Actions; wynik musi zawierać poprawny smoke test.

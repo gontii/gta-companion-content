@@ -51,15 +51,6 @@ catch (error) {
   await syncIssues([{ key: 'cloudflare-unreachable', reason: 'Cloudflare nie odpowiada na niezależną kontrolę', since: null }]);
   throw error;
 }
-if (status.needsSmokeToken && process.env.BETA_SMOKE_CODE && process.env.SMOKE_TEST_EMAIL) {
-  const response = await fetch('https://gtacompanion.net/api/access/redeem', {
-    method: 'POST', headers: { 'content-type': 'application/json' }, signal: AbortSignal.timeout(25000),
-    body: JSON.stringify({ code: process.env.BETA_SMOKE_CODE, email: process.env.SMOKE_TEST_EMAIL }),
-  });
-  const result = await response.json();
-  if (!response.ok || !result.token) throw new Error(`Odnowienie odbioru: HTTP ${response.status}, ${/^[a-z_]+$/.test(result.error || '') ? result.error : 'nieznany_blad'}`);
-  await worker('/smoke-token', { token: result.token });
-}
 if (process.env.REQUEST_CONTENT_CHECK === 'true') await worker('/check', {});
 if (process.env.PROBE_TGG === 'true') await worker('/probe-tgg', {});
 const { entries } = await worker('/outbox');
