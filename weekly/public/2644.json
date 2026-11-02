@@ -5,11 +5,11 @@
   "startsOn": "2026-10-29",
   "endsOn": "2026-11-04",
   "status": "active",
-  "verifiedAt": "2026-11-01T11:20:00.158Z",
-  "confirmedAt": "2026-11-01T11:20:00.158Z",
+  "verifiedAt": "2026-11-02T10:59:00.083Z",
+  "confirmedAt": "2026-11-02T10:59:00.083Z",
   "startsAt": "2026-10-29T10:00:00.000Z",
   "expiresAt": "2026-11-05T10:00:00.000Z",
-  "revision": "1b11ac203e705f7129e38e4e8b9058324d901c047f139c9b330b57a379b0c997",
+  "revision": "1b96f0cd198b0aabb2474d5018464426b7a05f0baf973106b62d8ac808ea7401",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -216,22 +216,6 @@
           "gtaPlus": false,
           "sourceIds": [
             "ref-3"
-          ]
-        },
-        {
-          "id": "auto-48488eef776a078631",
-          "name": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops)",
-          "status": "confirmed",
-          "offer": "Grotti Turismo Omaggio and Rockstar Motorsport Livery (Twitch Drops) — FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; earn and claim in your Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
-          "requirements": "FREE; watch any nopixel V streamer with Drops Enabled for a total of 4 hours, after linking your Rockstar Games account to Twitch; earn and claim in your Twitch Drops inventory by November 2; rewards delivered in GTA Online on all platforms",
-          "startsOn": "2026-10-30",
-          "endsOn": "2026-11-01",
-          "startsAt": "2026-10-30T00:00:00.000Z",
-          "expiresAt": "2026-11-02T10:59:00.000Z",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "ref-4"
           ]
         },
         {
@@ -726,9 +710,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -744,9 +728,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -874,9 +858,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -892,9 +876,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -910,9 +894,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -928,9 +912,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -946,9 +930,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -964,9 +948,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -982,9 +966,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1000,9 +984,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1018,9 +1002,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1036,9 +1020,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1054,9 +1038,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1072,9 +1056,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1106,9 +1090,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1124,9 +1108,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1142,9 +1126,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1160,9 +1144,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         },
         {
@@ -1178,9 +1162,9 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
+            "ref-4",
             "ref-5",
-            "ref-6",
-            "ref-7"
+            "ref-6"
           ]
         }
       ]
@@ -1400,43 +1384,37 @@
       "id": "ref-1",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-halloween-event-ends-october-29th-november-4th/",
-      "verifiedAt": "2026-11-01T11:20:00.158Z"
+      "verifiedAt": "2026-11-02T10:59:00.083Z"
     },
     {
       "id": "ref-2",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/3999181oaa34ko/fight-off-the-north-yankton-nightmare-in-the-new-ludendorff-cemetery-s",
-      "verifiedAt": "2026-11-01T11:20:00.158Z"
+      "verifiedAt": "2026-11-02T10:59:00.083Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39a22k25434a53/experience-halloween-thrills-all-throughout-october-in-gta-online",
-      "verifiedAt": "2026-11-01T11:20:00.158Z"
+      "verifiedAt": "2026-11-02T10:59:00.083Z"
     },
     {
       "id": "ref-4",
-      "title": "RockstarINTEL",
-      "url": "https://rockstarintel.com/how-to-get-a-free-supercar-and-rare-livery-in-gta-online-this-weekend/",
-      "verifiedAt": "2026-11-01T11:20:00.158Z"
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
+      "verifiedAt": "2026-11-02T10:59:00.083Z"
     },
     {
       "id": "ref-5",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/newswire/article/1788115957a317/claim-a-free-pegassi-oppressor-with-gta",
-      "verifiedAt": "2026-11-01T11:20:00.158Z"
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
+      "verifiedAt": "2026-11-02T10:59:00.083Z"
     },
     {
       "id": "ref-6",
-      "title": "RockstarINTEL",
-      "url": "https://rockstarintel.com/gta-month-55-all-rewards-for-october/",
-      "verifiedAt": "2026-11-01T11:20:00.158Z"
-    },
-    {
-      "id": "ref-7",
       "title": "Source",
       "url": "https://gta.guide/article/gta-plus-bonuses-october-2026",
-      "verifiedAt": "2026-11-01T11:20:00.158Z"
+      "verifiedAt": "2026-11-02T10:59:00.083Z"
     }
   ]
 }
