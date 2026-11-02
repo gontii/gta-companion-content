@@ -1,17 +1,20 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { validateSnapshot } from './facts.mjs';
+import { UPDATER_PATHS, explainUpdaterHttpError, updaterUrl } from './updater-routes.mjs';
 
 const base = process.env.CONTENT_UPDATER_URL;
 const secret = process.env.CONTENT_AUTOMATION_TOKEN;
 const repo = process.env.GITHUB_REPOSITORY || 'gontii/gta-companion-content';
 const externalIncidents = process.env.CONTENT_INCIDENTS_MODE === 'external';
+const dryRun = process.env.RELAY_DRY_RUN === 'true';
 if (!['github', 'external'].includes(process.env.CONTENT_INCIDENTS_MODE || 'github')) throw new Error('Niepoprawny tryb alarmów');
-if (!base || !secret || (!externalIncidents && !process.env.GH_TOKEN)) throw new Error('Brak konfiguracji przekaźnika');
+if (!base || !secret || (!externalIncidents && !dryRun && !process.env.GH_TOKEN)) throw new Error('Brak konfiguracji przekaźnika');
 const baseUrl = new URL(base);
 const loopback = ['127.0.0.1', 'localhost', '[::1]'].includes(baseUrl.hostname);
 if (baseUrl.username || baseUrl.password || (baseUrl.protocol !== 'https:' && !loopback))
   throw new Error('CONTENT_UPDATER_URL musi używać https, bez poświadczeń w adresie');
+const calls = [];
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 const gh = async (path, method = 'GET', body) => {
   const response = await fetch(`https://api.github.com/repos/${repo}/${path}`, {
@@ -22,16 +25,29 @@ const gh = async (path, method = 'GET', body) => {
   return response.status === 204 ? null : response.json();
 };
 const worker = async (path, body) => {
-  const response = await fetch(new URL(path, base), {
-    method: body ? 'POST' : 'GET', headers: { authorization: `Bearer ${secret}`, 'content-type': 'application/json' },
+  const method = body ? 'POST' : 'GET';
+  calls.push(`${method} ${path}`);
+  const response = await fetch(updaterUrl(base, path), {
+    method, headers: { authorization: `Bearer ${secret}`, ...(body ? { 'content-type': 'application/json' } : {}) },
     ...(body ? { body: JSON.stringify(body) } : {}), signal: AbortSignal.timeout(30000),
   });
-  if (!response.ok) throw new Error(`Automat HTTP ${response.status}`);
-  return response.json();
+  const text = await response.text();
+  if (!response.ok) throw new Error(explainUpdaterHttpError(method, path, response.status, text));
+  try { return text ? JSON.parse(text) : {}; }
+  catch { throw new Error(`Automat zwrócił nie-JSON na ${method} ${path}`); }
 };
+function redeemEndpoint() {
+  const raw = process.env.SMOKE_REDEEM_URL || 'https://gtacompanion.net/api/access/redeem';
+  const url = new URL(raw);
+  const hostLoopback = ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname);
+  const production = url.protocol === 'https:' && url.hostname === 'gtacompanion.net' && url.pathname === '/api/access/redeem';
+  if (url.username || url.password || (!hostLoopback && !production) || (hostLoopback && url.protocol !== 'http:' && url.protocol !== 'https:'))
+    throw new Error('Niepoprawny adres odnowienia odbioru');
+  return url;
+}
 
 async function syncIssues(incidents) {
-  if (externalIncidents) return; // Alarmy przejął Cloud Monitoring; bez tokena Issues.
+  if (externalIncidents || dryRun) return; // Alarmy zewnętrzne albo suchy przebieg: bez zapisu Issues.
   const marker = '<!-- gta-content-automation:';
   const issues = await gh('issues?state=open&per_page=100');
   const ours = issues.filter(i => !i.pull_request && i.body?.startsWith(marker));
@@ -46,23 +62,41 @@ async function syncIssues(incidents) {
 }
 
 let status;
-try { status = await worker('/status'); }
+try { status = await worker(UPDATER_PATHS.status); }
 catch (error) {
-  await syncIssues([{ key: 'cloudflare-unreachable', reason: 'Cloudflare nie odpowiada na niezależną kontrolę', since: null }]);
+  const routeMiss = /Automat HTTP 404/.test(error.message);
+  await syncIssues([{
+    key: routeMiss ? 'updater-route' : 'cloudflare-unreachable',
+    reason: routeMiss ? error.message : 'Cloudflare nie odpowiada na niezależną kontrolę',
+    since: null,
+  }]);
   throw error;
 }
+let smokeRefresh = null;
 if (status.needsSmokeToken && process.env.BETA_SMOKE_CODE && process.env.SMOKE_TEST_EMAIL) {
-  const response = await fetch('https://gtacompanion.net/api/access/redeem', {
-    method: 'POST', headers: { 'content-type': 'application/json' }, signal: AbortSignal.timeout(25000),
-    body: JSON.stringify({ code: process.env.BETA_SMOKE_CODE, email: process.env.SMOKE_TEST_EMAIL }),
-  });
-  const result = await response.json();
-  if (!response.ok || !result.token) throw new Error(`Odnowienie odbioru: HTTP ${response.status}, ${/^[a-z_]+$/.test(result.error || '') ? result.error : 'nieznany_blad'}`);
-  await worker('/smoke-token', { token: result.token });
+  // Nieudane odnowienie nie może przerwać odbioru historii. Między 13 a 21.10.2026
+  // każda próba kończyła się tutaj (HTTP 401 access_required), zanim powstał commit.
+  try {
+    const response = await fetch(redeemEndpoint(), {
+      method: 'POST', headers: { 'content-type': 'application/json' }, signal: AbortSignal.timeout(25000),
+      body: JSON.stringify({ code: process.env.BETA_SMOKE_CODE, email: process.env.SMOKE_TEST_EMAIL }),
+    });
+    let result = {};
+    try { result = await response.json(); } catch { result = {}; }
+    const reason = /^[a-z0-9_]+$/.test(result.error || '') ? result.error : '';
+    if (!response.ok || typeof result.token !== 'string' || !result.token) {
+      smokeRefresh = { ok: false, error: `Odnowienie odbioru: HTTP ${response.status}${reason ? `, ${reason}` : ', nieznany_blad'}. Odbiór publikacji używa skrótu renderowania i nie wymaga tego tokenu.` };
+    } else if (!dryRun) {
+      await worker(UPDATER_PATHS.smokeToken, { token: result.token });
+      smokeRefresh = { ok: true, stored: true };
+    } else smokeRefresh = { ok: true, stored: false };
+  } catch (error) {
+    smokeRefresh = { ok: false, error: `Odnowienie odbioru: ${error.message}`.slice(0, 300) };
+  }
 }
-if (process.env.REQUEST_CONTENT_CHECK === 'true') await worker('/check', {});
-if (process.env.PROBE_TGG === 'true') await worker('/probe-tgg', {});
-const { entries } = await worker('/outbox');
+if (!dryRun && process.env.REQUEST_CONTENT_CHECK === 'true') await worker(UPDATER_PATHS.check, {});
+if (!dryRun && process.env.PROBE_TGG === 'true') await worker(UPDATER_PATHS.probeTgg, {});
+const { entries } = await worker(UPDATER_PATHS.outbox);
 const paths = new Set();
 let latest;
 try { latest = JSON.parse(await readFile('weekly/latest.json', 'utf8')); } catch { /* first publication */ }
@@ -70,6 +104,8 @@ for (const entry of entries.sort((a, b) => a.snapshot.generatedAt.localeCompare(
   const snapshot = entry.snapshot;
   validateSnapshot(snapshot, { published: true, archive: true });
   if (!/^[a-f0-9]{64}$/.test(snapshot.revision) || !/^\d{4}-\d{2}-\d{2}$/.test(snapshot.weekId)) throw new Error('Nieprawidłowy identyfikator publikacji');
+  // Suchy przebieg sprawdza treść kolejki, ale nie zapisuje plików ani nie potwierdza odbioru.
+  if (dryRun) continue;
   await mkdir('weekly/revisions', { recursive: true });
   if (entry.publicPage) {
     const { validatePublicPage } = await import('../schemas/public-weekly.mjs');
@@ -88,7 +124,7 @@ for (const entry of entries.sort((a, b) => a.snapshot.generatedAt.localeCompare(
   if (!week?.generatedAt || week.generatedAt <= snapshot.generatedAt) { await writeFile(weekFile, serialized); paths.add(weekFile); }
   if (!latest?.generatedAt || latest.generatedAt <= snapshot.generatedAt) { latest = snapshot; await writeFile('weekly/latest.json', serialized); paths.add('weekly/latest.json'); }
 }
-if (paths.size) {
+if (!dryRun && paths.size) {
   git('add', '--', ...paths);
   if (git('diff', '--cached', '--name-only')) {
     git('config', 'user.name', 'github-actions[bot]');
@@ -98,12 +134,13 @@ if (paths.size) {
     // Concurrent edits fail the push; no force/rebase of generated history. Next job retries from main.
     git('push', 'origin', 'HEAD:main');
   }
-  await worker('/ack', { ids: entries.map(e => e.id) });
+  await worker(UPDATER_PATHS.ack, { ids: entries.map(e => e.id) });
 }
 const incidents = (status.incidents || []).filter(i => !/^missing-|^publication-unverified$/.test(i.key));
+if (smokeRefresh && !smokeRefresh.ok) incidents.push({ key: 'smoke-refresh-rejected', reason: smokeRefresh.error, since: null });
 if (!status.heartbeatAt || Date.now() - Date.parse(status.heartbeatAt) > 45 * 60000) incidents.push({ key: 'cloudflare-silent', reason: 'Brak sygnału harmonogramu Cloudflare przez ponad 45 minut', since: status.heartbeatAt });
 if (status.mode === 'publish') await syncIssues(incidents);
-console.log(JSON.stringify({ mode: status.mode, verificationMode: status.verificationMode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
+console.log(JSON.stringify({ dryRun, routes: calls, smokeRefresh, mode: status.mode, verificationMode: status.verificationMode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
   lastAttemptAt: status.lastAttemptAt, lastCompletedAt: status.lastCompletedAt,
   lastPublishedAt: status.lastPublishedAt, lastVerifiedAt: status.lastVerifiedAt,
   timingPolicyVersion: status.timingPolicyVersion, nextBoundaryAt: status.candidate?.nextBoundaryAt,
@@ -118,7 +155,7 @@ console.log(JSON.stringify({ mode: status.mode, verificationMode: status.verific
   tggProbe: status.tggProbe ? { checkedAt: status.tggProbe.checkedAt, source: status.tggProbe.source, facts: status.tggProbe.facts?.length, factPreview: status.tggProbe.facts, rejected: status.tggProbe.rejected, error: status.tggProbe.error, retryAt: status.tggProbe.retryAt } : null,
   tggDiscovery: status.tggDiscovery,
   transcriptCheck: status.transcriptCheck ? Object.fromEntries(Object.entries(status.transcriptCheck).filter(([key]) => key !== 'sample')) : null,
-  copied: entries.length, incidents: incidents.length }));
+  copied: entries.length, written: paths.size, incidents: incidents.length }));
 // Keep every diagnostic record below GitHub's single-line log limit. A complete
 // candidate plus all retained facts can otherwise disappear from the run log.
 if (process.env.INSPECT_CANDIDATE === 'true') {
@@ -126,4 +163,9 @@ if (process.env.INSPECT_CANDIDATE === 'true') {
     console.log(JSON.stringify({ inspection: 'candidate-item', weekId: status.candidate.weekId, section: section.id, item }));
   }
   for (const fact of status.approvedFacts || []) console.log(JSON.stringify({ inspection: 'approved-fact', fact }));
+}
+if (smokeRefresh && !smokeRefresh.ok) {
+  const warning = `Ostrzeżenie: ${smokeRefresh.error} Historia została odebrana.`;
+  console.error(warning);
+  if (process.env.GITHUB_ACTIONS === 'true') console.log(`::warning::${warning}`);
 }
