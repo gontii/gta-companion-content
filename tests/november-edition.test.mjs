@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { articleDocument, mergeFacts, agreeSources } from '../scripts/facts.mjs';
+import { articleDocument, mergeFacts, agreeSources, factKey } from '../scripts/facts.mjs';
 import { extractWeeklyRotations } from '../scripts/weekly-rotations.mjs';
 import { supplementReviewedFacts } from '../scripts/reviewed-weekly.mjs';
 import { projectContent } from '../scripts/temporal.mjs';
@@ -49,4 +49,20 @@ test('Twitch in-game collection remains conditional after watching ends and expi
  const edition=bundle.values[0];
  assert.ok(edition.sources.some(s=>s.url.startsWith('https://support.rockstargames.com/')));
  assert.ok(bundle.values[3].sections.flatMap(s=>s.items).find(i=>i.id===claim.id).sources.some(s=>s.url==='https://www.rockstargames.com/gta-online/twitch-drops'));
+});
+
+test('HSW platform correction preserves existing progress and does not create two trials',async()=>{
+ const at=Date.parse('2026-11-05T20:00Z');
+ const reviewed=supplementReviewedFacts(null,[],at);
+ const f=reviewed.find(f=>f.entity==='HSW Time Trial');
+ const old=await mergeFacts(null,[f],at);
+ const item=old.sections.flatMap(s=>s.items).find(i=>i.entity===f.entity);
+ item.platform='all';item.factKey=factKey({...f,platform:'all'});
+ item.id='existing-hsw-progress';item.label=`${f.entity} — ${f.offer}`;
+ const fixed=await mergeFacts(old,[{...f,platform:'all'}],at+60000);
+ const trials=fixed.sections.flatMap(s=>s.items).filter(i=>i.entity===f.entity);
+ assert.equal(trials.length,1);
+ assert.equal(trials[0].id,'existing-hsw-progress');
+ assert.equal(trials[0].platform,'enhanced');
+ assert.match(trials[0].label,/PS5, Xbox Series X\|S, PC Enhanced/);
 });

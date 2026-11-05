@@ -480,7 +480,7 @@
     "startsOn": "2026-11-05",
     "endsOn": "2026-11-11",
     "eligibility": "all",
-    "platform": "all",
+    "platform": "enhanced",
     "sources": [
       {
         "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
@@ -613,6 +613,24 @@
         "url": "https://www.rockstargames.com/gta-online/twitch-drops",
         "kind": "rockstar",
         "scope": "event"
+      }
+    ],
+    "confidence": "official"
+  },
+  {
+    "section": "free-vehicles",
+    "entity": "The Great Circle Back",
+    "offer": "FREE Mansion Painting Decoration; play GTA Online by November 11.",
+    "startsOn": "2026-11-05",
+    "endsOn": "2026-11-11",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-11-05"
       }
     ],
     "confidence": "official"

@@ -256,6 +256,9 @@ export function seasonalFacts(event) {
 
 export async function mergeFacts(previous, facts, now = Date.now()) {
   const current = previous ? upgradeLegacy(previous) : null;
+  // HSW trials exist only on Enhanced. Correct the known platform restriction
+  // even when an extractor omits it, without resetting an existing objective.
+  facts = facts.map(f => normal(f.entity) === 'hsw time trial' ? { ...f, platform: 'enhanced' } : f);
   const today = localParts(now).date;
   const cashEvent = today >= halloweenEvent.startsOn && today <= halloweenEvent.endsOn ? halloweenEvent : null;
   const hasWeeklyEvidence = facts.some(f => f.section !== 'gta-plus' && f.windowPolicy !== 'independent' &&
@@ -290,8 +293,10 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     const section = c.sections.find(s => s.id === f.section);
     if (!section) continue;
     const key = factKey(f);
-    const existing = section.items.find(i => f.itemId && i.id === f.itemId) || section.items.find(i => i.factKey === key) || section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
     const timing = factWindow(f);
+    const existing = section.items.find(i => f.itemId && i.id === f.itemId) || section.items.find(i => i.factKey === key) ||
+      section.items.find(i => normal(f.entity) === 'hsw time trial' && normal(i.entity) === 'hsw time trial' && i.platform === 'all' && i.startsAt === timing.startsAt && i.expiresAt === timing.expiresAt) ||
+      section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
     // Availability is weaker than a known price/discount. Keep active terms until
     // their window ends; a bare stock list cannot revoke a confirmed free offer.
     if (f.offer === 'In stock' && existing && ['free', 'discount'].includes(offerTraits({ offer: existing.offer })?.type) &&
