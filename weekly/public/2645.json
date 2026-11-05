@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "issue": "2645",
+  "weekId": "2026-11-05",
+  "startsOn": "2026-11-05",
+  "endsOn": "2026-11-11",
+  "status": "active",
+  "verifiedAt": "2026-11-05T10:45:00.159Z",
+  "confirmedAt": "2026-11-05T10:45:00.159Z",
+  "startsAt": "2026-11-05T10:00:00.000Z",
+  "expiresAt": "2026-11-12T10:00:00.000Z",
+  "revision": "0a70d0ea5e45b29a749498783dcf8e3a571e0df78c35fd8025aee262a5782fcd",
+  "platforms": [
+    "PC Enhanced",
+    "PS5",
+    "Xbox Series X|S"
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "items": [
+        {
+          "id": "auto-bf3eb14765735ea342",
+          "name": "Mansion Raid",
+          "status": "confirmed",
+          "offer": "Mansion Raid — 3x GTA$ & RP",
+          "requirements": "3x GTA$ & RP",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "items": [
+        {
+          "id": "pending-rewards",
+          "name": "Rewards and requirements details",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "discounts",
+      "items": [
+        {
+          "id": "pending-discounts",
+          "name": "Discounts details",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "items": [
+        {
+          "id": "pending-events",
+          "name": "Ongoing events details",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "items": [
+        {
+          "id": "pending-gta-plus",
+          "name": "GTA+ member benefits details",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "rotations",
+      "items": [
+        {
+          "id": "auto-1c13170003b27cbd4c",
+          "name": "Pipe Bombs",
+          "status": "confirmed",
+          "offer": "Pipe Bombs — In stock",
+          "requirements": "Daily rotating stop in Southern San Andreas. The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership. See This Week → Gun Van for the current stock and discounts.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-2b1711070e480ff2a4",
+          "name": "Proximity Mines",
+          "status": "confirmed",
+          "offer": "Proximity Mines — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-7b28067bf63aea87d8",
+          "name": "Widowmaker",
+          "status": "confirmed",
+          "offer": "Widowmaker — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-8696d77619f969d318",
+          "name": "Molotovs",
+          "status": "confirmed",
+          "offer": "Molotovs — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "name": "Knife",
+          "status": "confirmed",
+          "offer": "Knife — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "name": "Baseball Bat",
+          "status": "confirmed",
+          "offer": "Baseball Bat — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "pending-gun-van-stock",
+          "name": "Other Gun Van stock and discounts",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        },
+        {
+          "id": "pending-prize-vehicles",
+          "name": "Podium and Prize Ride requirements",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ref-1",
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "verifiedAt": "2026-11-05T10:45:00.159Z"
+    },
+    {
+      "id": "ref-2",
+      "title": "IGrandTheftAuto",
+      "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026",
+      "verifiedAt": "2026-11-05T10:45:00.159Z"
+    }
+  ]
+}
