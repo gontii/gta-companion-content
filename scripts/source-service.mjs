@@ -137,6 +137,11 @@ export class SourceService {
         // Presence of a current article blocks TGG even if parsing/AI fails.
         const officialSufficient = documents.some(d => d.source.kind === 'rockstar' && d.source.scope === 'weekly' && new Set(d.facts.map(f => f.section)).size >= 4);
         const rotations = current ? extractWeeklyRotations(doc) : { facts: [], rejected: [] };
+        if (current && kind === 'rockstar') {
+          const official = extractRockstarFacts(doc);
+          rotations.facts.push(...official.facts);
+          rotations.rejected.push(...official.rejected);
+        }
         if (['igta', 'gtaboss', 'reddit'].includes(kind)) {
           // New sources do not add billable extraction calls. Their narrow parser
           // can confirm rotations; budget and transcript limits remain unchanged.

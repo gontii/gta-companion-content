@@ -412,7 +412,8 @@ test('migration replaces stored midnight alarms, keeps unrelated events, rearms 
   await engine.alarm();
   const state = await storage.get('state');
   assert.equal(state.lastError, null);
-  assert.equal(state.nextCheck.at, atLocal('2026-09-16', 1020));
+  assert.equal(state.pending, true); // Official presence does not resolve the remaining areas.
+  assert.equal(state.nextCheck.at, Date.now() + 15 * 60000);
   assert.ok(!state.events.some(e => e.at === Date.parse(old.expiresAt)));
   assert.ok(state.events.some(e => e.key === 'separate-event'));
   assert.equal(published.expiresAt, '2026-09-17T09:00:00.000Z');

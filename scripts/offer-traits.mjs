@@ -19,6 +19,14 @@ export function offerTraits(f) {
     const reward = match[3].replace(/ as the prize ride vehicle$/, '').trim();
     return { type: 'prize-ride', rank: Number(match[1]), count, consecutive: true, activity: 'LS Car Meet', reward };
   }
+  match = /^prize ride: win in the ls car meet series for (\d+|one|two|three|four|five|six|seven) days in a row to receive the (.+)$/.exec(text);
+  if (match) {
+    const count = Number(match[1]) || ({one:1,two:2,three:3,four:4,five:5,six:6,seven:7})[match[1]];
+    return { type: 'prize-ride', rank: null, count, consecutive: true, activity: 'LS Car Meet', reward: match[2].trim(), mechanism: 'win' };
+  }
+  match = /^win an adversary mode to receive gta\$(\d+)$/.exec(text);
+  if (match) return {type:'weekly-challenge', activity:'Adversary Mode', action:'win', reward:Number(match[1])};
+  if (text === 'priority file') return {type:'priority-file'};
   // Acquisition conditions, rank/count, consecutive days, claim windows, membership
   // and platform remain exact. No edit distance, substring or language-model voting.
   return null;

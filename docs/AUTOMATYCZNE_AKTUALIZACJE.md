@@ -137,3 +137,21 @@ pozycje; zostaje `auto-144dcc1046a3ee0e60`, Main, cel 3. Parser aplikacji
 i dokument publiczny przyjmują naprawiony dokument. Wdrożenie i odbiór
 produkcji wymagają osobnego potwierdzenia w zgłoszeniu
 https://github.com/gontii/gtacompanion/issues/10.
+
+## Zabezpieczenie kompletności — 05.11.2026
+
+Odbiór 11 obszarów jest niezależny od aktualności wydania. Braki utrzymują
+ponowne pobieranie źródeł co najwyżej co 15 minut także po pojawieniu się
+oficjalnego artykułu. Kontrole GCP nadal wymagają `completenessAlarm=false`
+w JSON, z alarmem po błędzie w co najmniej dwóch lokalizacjach; godzinny
+monitor awarii jest osobny. Nie przesuwamy granicy alarmu ani nie uznajemy
+niepotwierdzonych danych za brak oferty.
+
+Parsery rozpoznają zmiany kolejności procent/nazwa, dwukropki, nagłówki
+kasyna i Gun Van, znaki diakrytyczne oraz dokładne warunki Prize Ride.
+Najbliższy nagłówek zniżek nie nadaje rabatu pojazdom w kolejnej sekcji
+showroomu. Nazwa, kwota, wymogi, daty i członkostwo nadal muszą się zgadzać
+między niezależnymi źródłami; niezgodny rabat pozostaje niepotwierdzony.
+Oficjalne reguły odczytu nagród działają także przy błędzie lub limicie AI.
+Regresje obejmują formaty wrześniowe, październikowe i listopadowe, próg
+alarmu, nieaktualny odbiór, sprzeczne źródła i ponawianie po publikacji.

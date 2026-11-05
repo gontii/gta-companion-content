@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { REQUIRED_AREAS, collectSectionEvidence, inspectSectionCoverage, reportedSectionCoverage } from '../scripts/section-coverage.mjs';
 import { inspectContentStatus } from '../scripts/content-health.mjs';
 import { atLocal, projectContent } from '../scripts/temporal.mjs';
-import { hash, mergeFacts } from '../scripts/facts.mjs';
+import { hash, mergeFacts, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
 import { createBundle } from '../scripts/publication-bundle.mjs';
 import { PublicationEngine } from '../worker/coordinator.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
@@ -67,4 +67,25 @@ test('natural engine run stores coverage in receipt and creates a separate incid
  assert.ok(state.incidents.some(i=>i.key==='section-completeness'));
  assert.equal(kv.get('weekly:receipt').sectionCoverage.requiredAreas,REQUIRED_AREAS.length);
  assert.equal(data.get('alarm')>now,true);
+});
+
+test('incomplete edition keeps fifteen-minute source retries after official publication', async t=>{
+ const at=atLocal('2026-10-03',720);
+ t.mock.timers.enable({apis:['Date'],now:new Date(at)});
+ const fact={section:'bonuses',entity:'Contact Missions',offer:'2X GTA$ & RP',eligibility:'all',platform:'all',startsOn:week,endsOn:'2026-10-07',sources:[{kind:'rockstar',url:'https://www.rockstargames.com/newswire/article/test'}],confidence:'official'};
+ const master=await mergeFacts(null,[fact],at);
+ const data=new Map([['master',master],['facts',[fact]],['state',{validationVersion:FACT_VALIDATION_VERSION,events:[],sources:[{kind:'rockstar',scope:'weekly',current:true,facts:1}],nextCheck:{at:at+86400000}}]]);
+ const storage={get:async k=>structuredClone(data.get(k)),put:async(k,v)=>data.set(k,structuredClone(v)),delete:async k=>data.delete(k),list:async({prefix,limit})=>new Map([...data].filter(([k])=>k.startsWith(prefix)).slice(0,limit)),setAlarm:async value=>data.set('alarm',value)};
+ const kv=new Map();
+ const env={PUBLICATION_MODE:'observe',CONTENT_KV:{get:async k=>kv.get(k),put:async(k,v)=>kv.set(k,JSON.parse(v))}};
+ // Observe-mode migration is irrelevant to this published-state schedule test.
+ data.get('state').timingPolicyVersion=1;
+ data.set('publication',master);
+ await new PublicationEngine({storage},env).alarm();
+ const state=data.get('state');
+ assert.equal(state.lastError,null);
+ assert.equal(state.awaitingOfficial,false);
+ assert.equal(state.sectionCoverage.alarm,true);
+ assert.equal(state.pending,true);
+ assert.ok(state.nextCheck.at<=at+15*60000);
 });

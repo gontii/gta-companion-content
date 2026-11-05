@@ -50,8 +50,8 @@ export function articleDocument(source, now = new Date()) {
   // as evidence and never synthesize a quote claiming an explicit end date.
   if (!period && source.kind === 'igta') {
     const title = stripTags(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1] || '');
-    const match = /^This Week in GTA Online:\s*([A-Za-z]+ \d{1,2}, 20\d{2})$/.exec(title);
-    const start = match && Date.parse(match[1] + ' UTC');
+    const match = /^This Week in GTA Online\s*[:\-–—]\s*([A-Za-z]+ \d{1,2})(?:st|nd|rd|th)?,\s*(20\d{2})\b/.exec(title);
+    const start = match && Date.parse(`${match[1].replace(/(?:st|nd|rd|th)$/i, '')}, ${match[2]} UTC`);
     if (Number.isFinite(start) && new Date(start).getUTCDay() === 4 && new Date(start).getUTCDate() === Number(match[1].match(/\d+/)[0])) {
       const startId = new Date(start).toISOString().slice(0, 10);
       period = { startId, endId: addDays(startId, 6), rangeText: title };
