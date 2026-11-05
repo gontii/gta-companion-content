@@ -10,9 +10,9 @@
   "timingConfidence": "estimated",
   "quickTake": [
     "Mansion Raid — 3x GTA$ & RP",
-    "Pipe Bombs — In stock",
-    "Proximity Mines — In stock",
-    "Widowmaker — In stock"
+    "Adversary Mode — Win an Adversary Mode to receive GTA$100,000",
+    "The Great Circle Back — Reward for playing GTA Online",
+    "Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion"
   ],
   "quickTakeEntries": [
     {
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "id": "auto-1c13170003b27cbd4c",
-      "label": "Pipe Bombs — In stock",
-      "factKey": "gun-van:pipe bombs:all:all",
+      "id": "auto-0321fae242cfac267c",
+      "label": "Adversary Mode — Win an Adversary Mode to receive GTA$100,000",
+      "factKey": "challenge:adversary mode:all:all",
       "startsAt": "2026-11-05T10:00:00.000Z",
       "expiresAt": "2026-11-12T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
@@ -60,46 +60,46 @@
           "publishedOn": "2026-11-05"
         }
       ],
-      "entity": "Pipe Bombs",
-      "offer": "In stock",
+      "entity": "Adversary Mode",
+      "offer": "Win an Adversary Mode to receive GTA$100,000",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
       "itemIds": [
-        "auto-1c13170003b27cbd4c"
+        "auto-0321fae242cfac267c"
       ]
     },
     {
-      "id": "auto-2b1711070e480ff2a4",
-      "label": "Proximity Mines — In stock",
-      "factKey": "gun-van:proximity mines:all:all",
+      "id": "auto-1cf7230040ab1a16f2",
+      "label": "The Great Circle Back — Reward for playing GTA Online",
+      "factKey": "free-vehicles:the great circle back:all:all",
       "startsAt": "2026-11-05T10:00:00.000Z",
       "expiresAt": "2026-11-12T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated",
-      "confidence": "corroborated",
+      "confidence": "official",
       "sources": [
         {
-          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "kind": "intel",
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
           "scope": "weekly",
           "publishedOn": "2026-11-05"
         }
       ],
-      "entity": "Proximity Mines",
-      "offer": "In stock",
+      "entity": "The Great Circle Back",
+      "offer": "Reward for playing GTA Online",
       "eligibility": "all",
       "platform": "all",
-      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
       "itemIds": [
-        "auto-2b1711070e480ff2a4"
+        "auto-1cf7230040ab1a16f2"
       ]
     },
     {
-      "id": "auto-7b28067bf63aea87d8",
-      "label": "Widowmaker — In stock",
-      "factKey": "gun-van:widowmaker:all:all",
+      "id": "auto-6c0cf9815c7c946f5c",
+      "label": "Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
+      "factKey": "free-vehicles:annis hellion:all:all",
       "startsAt": "2026-11-05T10:00:00.000Z",
       "expiresAt": "2026-11-12T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
@@ -114,13 +114,13 @@
           "publishedOn": "2026-11-05"
         }
       ],
-      "entity": "Widowmaker",
-      "offer": "In stock",
+      "entity": "Annis Hellion",
+      "offer": "Place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Annis Hellion",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
       "itemIds": [
-        "auto-7b28067bf63aea87d8"
+        "auto-6c0cf9815c7c946f5c"
       ]
     }
   ],
@@ -152,9 +152,123 @@
         "auto-bf3eb14765735ea342"
       ],
       "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-0321fae242cfac267c",
+      "label": "Adversary Mode — Win an Adversary Mode to receive GTA$100,000",
+      "factKey": "challenge:adversary mode:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Adversary Mode",
+      "offer": "Win an Adversary Mode to receive GTA$100,000",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "itemIds": [
+        "auto-0321fae242cfac267c"
+      ],
+      "progressGroup": "extra"
+    },
+    {
+      "id": "bp-auto-1cf7230040ab1a16f2",
+      "label": "The Great Circle Back — Reward for playing GTA Online",
+      "factKey": "free-vehicles:the great circle back:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "The Great Circle Back",
+      "offer": "Reward for playing GTA Online",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-1cf7230040ab1a16f2"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-6c0cf9815c7c946f5c",
+      "label": "Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
+      "factKey": "free-vehicles:annis hellion:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Annis Hellion",
+      "offer": "Place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Annis Hellion",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "itemIds": [
+        "auto-6c0cf9815c7c946f5c"
+      ],
+      "progressGroup": "extra"
     }
   ],
   "locations": [
+    {
+      "id": "auto-location-prize-ride",
+      "activity": "Prize Ride",
+      "name": "Los Santos Car Meet",
+      "area": "Cypress Flats → LS Car Meet map icon",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
+      "itemIds": [
+        "auto-6c0cf9815c7c946f5c"
+      ],
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-podium",
+      "activity": "Casino Podium",
+      "name": "The Diamond Casino & Resort",
+      "area": "East Vinewood → Casino map icon",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Överflöd Entity XXR — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+      "itemIds": [
+        "auto-dd80b58f3b204a247a"
+      ],
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
     {
       "id": "auto-location-gun-van",
       "activity": "Gun Van",
@@ -207,20 +321,423 @@
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "pending",
-      "items": []
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-0321fae242cfac267c",
+          "label": "Adversary Mode — Win an Adversary Mode to receive GTA$100,000",
+          "factKey": "challenge:adversary mode:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Adversary Mode",
+          "offer": "Win an Adversary Mode to receive GTA$100,000",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "extra"
+        }
+      ]
     },
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "completeness": "pending",
-      "items": []
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-1cf7230040ab1a16f2",
+          "label": "The Great Circle Back — Reward for playing GTA Online",
+          "factKey": "free-vehicles:the great circle back:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "The Great Circle Back",
+          "offer": "Reward for playing GTA Online",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-6c0cf9815c7c946f5c",
+          "label": "Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
+          "factKey": "free-vehicles:annis hellion:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Annis Hellion",
+          "offer": "Place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Annis Hellion",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "extra"
+        },
+        {
+          "id": "auto-dd80b58f3b204a247a",
+          "label": "Överflöd Entity XXR — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "factKey": "free-vehicles:verfl d entity xxr:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Överflöd Entity XXR",
+          "offer": "Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "pending",
-      "items": []
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-4043a0c4ec01254b5a",
+          "label": "Invetero Coquette D5 — 30% off",
+          "factKey": "discounts:invetero coquette d5:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Invetero Coquette D5",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-418e7d861be5ff5d93",
+          "label": "Grotti Cheetah — 30% off",
+          "factKey": "discounts:grotti cheetah:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Grotti Cheetah",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-532e40fc94e4a3bae6",
+          "label": "Benefactor Vorschlaghammer — 30% off",
+          "factKey": "discounts:benefactor vorschlaghammer:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Benefactor Vorschlaghammer",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7c2a00ee6e69420cc8",
+          "label": "Dinka Blista Kanjo — 30% off",
+          "factKey": "discounts:dinka blista kanjo:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Dinka Blista Kanjo",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9a5510563175f2fb45",
+          "label": "HVY Insurgent — 30% off",
+          "factKey": "discounts:hvy insurgent:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "HVY Insurgent",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9bf9e1ff95be59fa23",
+          "label": "Pegassi Reaper — 30% off",
+          "factKey": "discounts:pegassi reaper:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Pegassi Reaper",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a2cfcacddca8bb5cc4",
+          "label": "Cheval Taipan — 30% off",
+          "factKey": "discounts:cheval taipan:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Cheval Taipan",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a5e257575d73cb85d4",
+          "label": "Facilities — 40% off",
+          "factKey": "discounts:facilities:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
+              "kind": "gtabase",
+              "scope": "weekly",
+              "publishedOn": "2026-11-04"
+            }
+          ],
+          "entity": "Facilities",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-ae53fc72a604978070",
+          "label": "High-End Apartments — 40% off",
+          "factKey": "discounts:high end apartments:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "High-End Apartments",
+          "offer": "40% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d44e93d2225755f01c",
+          "label": "Western Company Besra — 30% off",
+          "factKey": "discounts:western company besra:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Western Company Besra",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d8419e32d82bcbe630",
+          "label": "Maibatsu Penumbra FF — 30% off",
+          "factKey": "discounts:maibatsu penumbra ff:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Maibatsu Penumbra FF",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-e41e801d2a2c6d9108",
+          "label": "Western Rampant Rocket — 30% off",
+          "factKey": "discounts:western rampant rocket:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Western Rampant Rocket",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "gun-van",
@@ -271,6 +788,56 @@
             }
           ],
           "entity": "Proximity Mines",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-377466455771d30d6e",
+          "label": "Sweeper Shotgun — In stock",
+          "factKey": "gun-van:sweeper shotgun:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Sweeper Shotgun",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-76dedbafae52ebc662",
+          "label": "Knuckle Dusters — In stock",
+          "factKey": "gun-van:knuckle dusters:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Knuckle Dusters",
           "offer": "In stock",
           "eligibility": "all",
           "platform": "all",
@@ -329,7 +896,7 @@
         },
         {
           "id": "auto-9b1d541f06294fccd7",
-          "label": "Knife — In stock",
+          "label": "Knife — FREE",
           "factKey": "gun-van:knife:all:all",
           "startsAt": "2026-11-05T10:00:00.000Z",
           "expiresAt": "2026-11-12T10:00:00.000Z",
@@ -346,15 +913,15 @@
             }
           ],
           "entity": "Knife",
-          "offer": "In stock",
+          "offer": "FREE",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
+          "progressGroup": "primary"
         },
         {
           "id": "auto-cae4fa84f2ab2246b6",
-          "label": "Baseball Bat — In stock",
+          "label": "Baseball Bat — FREE",
           "factKey": "gun-van:baseball bat:all:all",
           "startsAt": "2026-11-05T10:00:00.000Z",
           "expiresAt": "2026-11-12T10:00:00.000Z",
@@ -371,19 +938,45 @@
             }
           ],
           "entity": "Baseball Bat",
-          "offer": "In stock",
+          "offer": "FREE",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
+          "progressGroup": "primary"
         }
       ]
     },
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "pending",
-      "items": []
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-95df89508ed8acb4ed",
+          "label": "The Black Box File — Priority File",
+          "factKey": "other:the black box file:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "The Black Box File",
+          "offer": "Priority File",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "gta-plus",
@@ -398,11 +991,23 @@
       "kind": "intel",
       "scope": "weekly",
       "publishedOn": "2026-11-05"
+    },
+    {
+      "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "kind": "rockstar",
+      "scope": "weekly",
+      "publishedOn": "2026-11-05"
+    },
+    {
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
+      "kind": "gtabase",
+      "scope": "weekly",
+      "publishedOn": "2026-11-04"
     }
   ],
   "completeness": "partial",
   "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
   "nextBoundaryAt": "2026-11-12T10:00:00.000Z",
-  "revision": "0a70d0ea5e45b29a749498783dcf8e3a571e0df78c35fd8025aee262a5782fcd",
-  "generatedAt": "2026-11-05T10:45:00.159Z"
+  "revision": "bd451048ecd15ccbd89d572a50961a276249d1d3bd93ac56a07a531e0358dfb7",
+  "generatedAt": "2026-11-05T15:05:00.112Z"
 }
