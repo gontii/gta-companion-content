@@ -592,5 +592,29 @@
       }
     ],
     "confidence": "corroborated"
+  },
+  {
+    "section": "free-vehicles",
+    "entity": "Grotti Turismo Omaggio + Rockstar Motorsport Livery — in-game Twitch reward claim",
+    "offer": "FREE only if this Drop was already earned and claimed on Twitch during the ended campaign. Collect the car at Legendary Motorsport and log in for the livery by November 11. Allow up to 72 hours after the Twitch claim; use the linked Rockstar account. Watching streams now does not earn this Drop.",
+    "startsOn": "2026-10-30",
+    "endsOn": "2026-11-11",
+    "windowPolicy": "independent",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://support.rockstargames.com/articles/2fa9lK5MnHwf6ZwXivF5CG/receiving-the-grotti-turismo-omaggio-and-rockstar-motorsport-livery-from-nopixel-v-twitch-drops-in-grand-theft-auto-online",
+        "kind": "rockstar",
+        "scope": "event",
+        "publishedOn": "2026-10-30"
+      },
+      {
+        "url": "https://www.rockstargames.com/gta-online/twitch-drops",
+        "kind": "rockstar",
+        "scope": "event"
+      }
+    ],
+    "confidence": "official"
   }
 ]
