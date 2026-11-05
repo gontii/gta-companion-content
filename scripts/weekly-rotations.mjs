@@ -9,7 +9,7 @@ const bareName = value => String(value || '').replace(/[.!]+$/, '').replace(CLAS
 // Narrow, cost-free extraction from explicit rotation sections. Unknown formats
 // supply no facts; headings, dates and acquisition conditions remain evidence.
 export function extractWeeklyRotations(doc) {
-  if (!['intel', 'igta', 'gtaboss', 'reddit'].includes(doc.source.kind) || !doc.period) return { facts: [], rejected: [] };
+  if (!['intel', 'gtabase', 'igta', 'gtaboss', 'reddit'].includes(doc.source.kind) || !doc.period) return { facts: [], rejected: [] };
   const text = stripTags(doc.html);
   const dates = doc.periodEvidence || doc.text.match(/(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:st|nd|rd|th)?\s*(?:[-–—]|to|through)\s*(?:(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+)?\d{1,2}(?:st|nd|rd|th)?(?:,?\s+20\d{2})?/i)?.[0];
   if (!dates) return { facts: [], rejected: [] };
@@ -65,7 +65,8 @@ export function extractWeeklyRotations(doc) {
     const entity = bareName(won[2]);
     make('free-vehicles', entity, `Prize Ride: win in the LS Car Meet Series for ${won[1]} days in a row to receive the ${entity}`, won[0]);
   }
-  const stockSection = doc.html.match(/<h[1-6][^>]*>\s*Gun Van(?: Contents| Inventory(?: and Discounts)?)?\s*<\/h[1-6]>([\s\S]*?)(?=<h[1-6]|$)/i)?.[1];
+  let stockSection = doc.html.match(/<h[1-6][^>]*>\s*Gun Van(?: Contents| Primary Discounts| Inventory(?: and Discounts)?)?\s*<\/h[1-6]>([\s\S]*?)(?=<h[1-6]|$)/i)?.[1];
+  if (doc.source.kind === 'gtabase' && stockSection) stockSection = stockSection.split(/<\/ul>/i)[0];
   const stock = (stockSection ? stripTags(stockSection) : null) || /Gun Van (?:Contents|Inventory)([\s\S]*?)(?=Premium Race|Rotating Content|Gun Van exclusive|$)/i.exec(text)?.[1];
   if (stock) for (const entity of ['Sweeper Shotgun', 'Knuckle Dusters', 'Knife', 'Combat Shotgun', 'Precision Rifle', 'Pipe Bombs', 'Railgun', 'Stun Gun', 'Heavy Rifle', 'Grenade Launcher', 'Vintage Pistol', 'Nightstick', 'Baseball Bat', 'The Shocker', 'Service Carbine', 'Widowmaker', 'Up-n-Atomizer', 'Unholy Hellbringer', 'Tactical SMG', 'Battle Rifle', 'Compact EMP Launcher', 'Heavy Sniper', 'Pump Shotgun', 'Pipe Wrench', 'Assault Shotgun', 'Combat MG', 'SMG', 'Micro SMG', 'Carbine Rifle', 'Sniper Rifle', 'Molotovs', 'Grenades', 'Sticky Bombs', 'Tear Gas', 'Proximity Mines', 'Super Light Armor', 'Light Armor', 'Standard Armor', 'Heavy Armor', 'Super Heavy Armor']) {
     const names = entity.replaceAll(' ', '\\s+');
@@ -76,7 +77,7 @@ export function extractWeeklyRotations(doc) {
   }
   const inStock = entity => raw.some(f => f.section === 'gun-van' && f.entity === entity && f.offer === 'In stock');
   const pushGunOffer = (entity, offer, evidence, eligibility) => {
-    if (!entity || entity === 'El Strickler' || !inStock(entity)) return;
+    if (!entity || entity === 'El Strickler' || !inStock(entity) && entity !== 'Armor') return;
     make('gun-van', entity, offer, evidence);
     raw.at(-1).eligibility = eligibility;
   };
@@ -108,6 +109,13 @@ export function extractWeeklyRotations(doc) {
     } else if (freeFirst || freeLast) {
       pushGunOffer(bareName(freeFirst ? freeFirst[1] : freeLast[1]), 'FREE', evidence, 'all');
     }
+  }
+  if (stockSection && doc.source.kind === 'gtabase') for (const [, row] of stockSection.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)) {
+    const evidence = stripTags(row);
+    const match = /^(Free|\d{1,2}% Off)( GTA\+)?\s*:\s*(.+)$/i.exec(evidence);
+    if (!match) continue;
+    const offer = /^free/i.test(match[1]) ? 'FREE' : `${parseInt(match[1])}% off at the Gun Van`;
+    for (const entity of match[3].split(/\s*&\s*/)) pushGunOffer(entity.trim(), offer, evidence, match[2] ? 'gta-plus' : 'all');
   }
   // Read dated percentage lists directly. Preserve the actual contiguous group
   // as evidence; never prepend a synthetic rate to a source quotation.

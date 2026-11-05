@@ -6,6 +6,8 @@ import { articleDocument, hash, validateFacts, FACT_VALIDATION_VERSION } from '.
 import { safeFetch, readBounded } from './http.mjs';
 import { AiBudget } from './ai-budget.mjs';
 import { DAY, localParts, windowFromDays } from './temporal.mjs';
+import { corroborateGunVanTranscript } from './transcript-corroboration.mjs';
+import { resolveRockstarBenefits } from './rockstar-benefits.mjs';
 
 export const WEBSITE_SOURCES = [
   ['rockstar', resolveRockstarNewswireSource, 'weekly'],
@@ -134,7 +136,7 @@ export class SourceService {
           Date.parse(doc.period.startId) <= this.now + 8 * DAY &&
           Number.isFinite(Date.parse(doc.publishedOn))) && this.now - Date.parse(doc.publishedOn) <= (scope === 'membership' ? 32 : 14) * DAY;
         doc.current = current;
-        // Presence of a current article blocks TGG even if parsing/AI fails.
+        // A current article alone does not establish a complete edition.
         const officialSufficient = documents.some(d => d.source.kind === 'rockstar' && d.source.scope === 'weekly' && new Set(d.facts.map(f => f.section)).size >= 4);
         const rotations = current ? extractWeeklyRotations(doc) : { facts: [], rejected: [] };
         if (current && kind === 'rockstar') {
@@ -152,6 +154,13 @@ export class SourceService {
           catch (error) { documents.push({ ...doc, ...rotations }); failures.push({ kind, reason: error.message }); }
         } else documents.push({ ...doc, ...rotations });
       } catch (error) { failures.push({ kind, reason: error.message.slice(0, 180) }); }
+    }
+    if (resolvers === WEBSITE_SOURCES) {
+      try {
+        const benefits=await resolveRockstarBenefits(this.storage,this.now);
+        documents.push(benefits);
+        await this.diagnostic(benefits,benefits);
+      } catch(error) {failures.push({kind:'rockstar-benefits',reason:error.message.slice(0,180)});}
     }
     return { documents, failures, hasCurrentArticle: documents.some(d => d.current && d.source.scope !== 'membership') };
   }
@@ -247,7 +256,7 @@ export class SourceService {
     if (!candidate) throw new Error('tgg_relevant_video_missing');
     return candidate;
   }
-  async tgg() {
+  async tgg(documents = []) {
     const video = await this.discoverTgg();
     let chunks;
     try { chunks = await this.transcript(video); }
@@ -262,7 +271,15 @@ export class SourceService {
       status: 'downloaded', chunks: chunks.length, characters: text.length, digest: await hash(chunks),
       firstOffsetMs: chunks[0].offset, lastOffsetMs: chunks.at(-1).offset,
       sample: chunks.slice(0, 3).map(c => ({ offset: c.offset, text: c.text.slice(0, 180) })) });
-    return this.extract({ text, chunks, publishedOn: video.publishedOn, period: null, source: video, current: true });
+    const doc = { text, chunks, publishedOn: video.publishedOn, period: null, source: video, current: true };
+    const corroborated = corroborateGunVanTranscript(video, chunks, documents);
+    try {
+      const extracted = await this.extract(doc);
+      return { ...extracted, facts: [...extracted.facts, ...corroborated] };
+    } catch (error) {
+      if (!corroborated.length) throw error;
+      return { ...doc, facts: corroborated, rejected: [{ entity: 'AI', reason: error.message }] };
+    }
   }
   async prune() {
     for (const prefix of ['transcript:', 'extracted:', 'video-metadata:', 'ai-result:', 'ai-attempt:']) {

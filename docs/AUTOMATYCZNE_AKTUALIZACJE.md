@@ -155,3 +155,36 @@ między niezależnymi źródłami; niezgodny rabat pozostaje niepotwierdzony.
 Oficjalne reguły odczytu nagród działają także przy błędzie lub limicie AI.
 Regresje obejmują formaty wrześniowe, październikowe i listopadowe, próg
 alarmu, nieaktualny odbiór, sprzeczne źródła i ponawianie po publikacji.
+
+## Odbiór braków 05.11.2026 — źródła tygodniowe i GTA+
+
+Bieżący artykuł nie oznacza pełnego odczytu. Nieuzgodnione, aktywne oferty
+uruchamiają również TGG, przy zachowaniu istniejącego limitu Supadata, pamięci
+transkrypcji i limitu AI. Transkrypcja może potwierdzić dokładny rabat Gun Van
+z datowanego artykułu; data publikacji filmu nie staje się terminem oferty.
+GTABase i iGTA mają bezpośredni odczyt rabatów Gun Van bez modelu.
+
+Miesięczne GTA+ jest odczytywane dodatkowo z publicznego GraphQL strony
+`rockstargames.com/gta-plus/benefits`: aktualne odnośniki modułów i kart,
+a nie utrwalone identyfikatory poprzedniego miesiąca. Korzyści, warunki i koniec
+pochodzą z Rockstar. Początek okresu pochodzi z jawnego kalendarza GTA Wiki;
+koniec musi być zgodny z Rockstar, a okres aktualny i nie dłuższy niż 62 dni.
+Brak zgodności zatrzymuje ten odczyt i pozostawia błąd diagnostyczny. Kalendarz
+nie dostarcza nazw ani wartości ofert. Nie wymaga to dodatkowego płatnego API.
+
+Nieznana karta bieżącego miesiąca ustawia brak w obszarze GTA+, nawet jeśli
+inne korzyści zostały odczytane. Premia z odrębnym zakresem dat tworzy osobne
+okna — np. Contact Missions 2X / 4X / 2X — i nie trafia wcześniej do aplikacji.
+Weryfikacja pierwszego ukończenia zachowuje ten warunek; nie wolno zamieniać
+premii za pierwsze ukończenie w mnożnik wszystkich wypłat napadu.
+
+Dodatkowy odbiór redakcyjny tygodnia jest w `events/reviewed-weekly-2645.json`.
+Zawiera fakty i źródła, bez całych artykułów lub transkrypcji. Identyfikatory
+postępu są zachowywane. Testy obejmują nowe formaty, odrębny okres GTA+,
+przyszłą zmianę mnożnika, niezgodne daty i niepełny odczyt kart.
+
+Niezależna kontrola kompletności pozostaje co 15 minut i wymaga alarmu
+przy brakach w co najmniej dwóch lokalizacjach. Dostępność/aktualność pozostaje
+w godzinnej kontroli VM zgodnie z decyzją 21.10. Żaden próg ani termin alarmu
+nie został przesunięty w celu uzyskania zielonego wyniku. Rejestr odbioru: #10
+w `gontii/gtacompanion`; sam commit, test lub deploy nie zamyka incydentu.

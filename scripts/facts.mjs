@@ -9,7 +9,7 @@ export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
-export const FACT_VALIDATION_VERSION = 16;
+export const FACT_VALIDATION_VERSION = 17;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
@@ -123,6 +123,7 @@ export function validateFacts(raw, doc) {
         [/\bwin\b|finish first/i, /\bwin\b|finish first/i],
         [/without dying/i, /without dying/i],
         [/first[\s\S]{0,90}(?:week|weekly)/i, /first[\s\S]{0,90}(?:week|weekly)/i],
+        [/first[- ]time completion/i, /first[- ]time completion/i],
         [/chance|lucky wheel|spin/i, /chance|lucky wheel|spin/i],
         [/\bown\b|requires? (?:an? |the )?(?:clubhouse|custom|property|business)/i, /own|require|clubhouse|custom|property|business/i],
       ];
@@ -190,7 +191,8 @@ export function agreeSources(documents, allowTgg) {
   // each other: copied community posts cannot form a self-confirming quorum.
   const extra = documents.filter(d => ['igta', 'gtaboss', 'reddit'].includes(d.source.kind) && d.current)
     .flatMap(d => d.facts);
-  const pairs = [[intel, base], [intel, extra], [base, extra]];
+  const transcripts = documents.filter(d => d.source.kind === 'tgg' && d.current).flatMap(d => d.facts);
+  const pairs = [[intel, base], [intel, extra], [base, extra], [intel, transcripts], [base, transcripts], [extra, transcripts]];
   for (const [anchors, corroborators] of pairs) for (const f of anchors) {
     const existing = approved.get(periodKey(f));
     if (existing && !(existing.confidence !== 'official' && offerTraits(existing)?.type === 'availability' &&
