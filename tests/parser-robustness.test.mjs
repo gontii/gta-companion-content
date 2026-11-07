@@ -4,11 +4,11 @@ import { readFile } from 'node:fs/promises';
 import { articleDocument, agreeSources, mergeFacts, validateFacts } from '../scripts/facts.mjs';
 import { extractWeeklyRotations } from '../scripts/weekly-rotations.mjs';
 import { findIgtaWeekly } from '../scripts/additional-sources.mjs';
-import { selectTggCandidate, SourceService, TGG_CHANNEL } from '../scripts/source-service.mjs';
+import { selectTggCandidate, SourceService, TGG_CHANNEL, publishedInCurrentWeek, currentWeeklyWindow } from '../scripts/source-service.mjs';
 import { fetchWithBackoff } from '../scripts/http.mjs';
 import { stampCompleteness, inspectSectionCoverage, inspectBonusPeriods, REQUIRED_AREAS } from '../scripts/section-coverage.mjs';
 import { parseWeeklyContent } from '../schemas/app-weekly-parser.mjs';
-import { atLocal } from '../scripts/temporal.mjs';
+import { atLocal, DAY } from '../scripts/temporal.mjs';
 import { createBundle } from '../scripts/publication-bundle.mjs';
 import { hash } from '../scripts/facts.mjs';
 
@@ -183,6 +183,111 @@ test('a rate-limited TGG feed reuses the cached weekly video and does not spend 
     const blocked = new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, Date.parse('2026-10-29T08:10:00Z'));
     assert.equal((await blocked.discoverTgg()).videoId, candidate.videoId);
     assert.equal(searches, 0);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+const memoryOf = () => {
+  const storage = new Map();
+  return { storage, memory: { get: async key => storage.get(key), put: async (key, value) => storage.set(key, value), delete: async key => storage.delete(key), list: async () => new Map() } };
+};
+
+test('the cached video stays eligible only until the Thursday 11:00 reset', () => {
+  const reset = Date.parse(currentWeeklyWindow(Date.parse('2026-11-12T12:00:00Z')).startsAt);
+  assert.equal(publishedInCurrentWeek('2026-11-05T18:00:00Z', reset - 1), true);
+  assert.equal(publishedInCurrentWeek('2026-11-05T18:00:00Z', reset), false);
+  assert.equal(publishedInCurrentWeek('2026-11-05T18:00:00Z', Date.parse('2026-11-12T10:30:00Z')), false);
+});
+
+test('RSS 429 after the weekly reset does not reuse the previous week video', async () => {
+  const now = Date.parse('2026-11-12T10:30:00Z');
+  const { storage, memory } = memoryOf();
+  const old = { videoId: 'oldweekvid1', title: 'GTA Online weekly update', publishedOn: '2026-11-05T18:00:00Z', url: 'https://www.youtube.com/watch?v=oldweekvid1', kind: 'tgg' };
+  await memory.put('tgg-discovery-v3', { candidate: old, checkedAt: Date.parse('2026-11-11T20:00:00Z'), expiresAt: Date.parse('2026-11-12T02:00:00Z') });
+  let searches = 0;
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('slow', { status: 429, headers: { 'retry-after': '60' } });
+    if (url.pathname === '/v1/youtube/search') {
+      searches++;
+      return Response.json({ results: [{ type: 'video', id: 'newweekvid1', title: 'GTA Online weekly update', uploadDate: '2026-11-12T10:10:00Z', channel: { id: TGG_CHANNEL } }] });
+    }
+    if (url.pathname === '/v1/metadata') return Response.json({ platform: 'youtube', type: 'video', id: 'newweekvid1', title: 'GTA Online weekly update', createdAt: '2026-11-12T10:10:00Z', additionalData: { channelId: TGG_CHANNEL } });
+    throw new Error(`unexpected ${url}`);
+  };
+  try {
+    const found = await new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg();
+    assert.equal(found.videoId, 'newweekvid1');
+    assert.equal(searches, 1);
+    assert.notEqual(storage.get('tgg-discovery-v3').candidate.videoId, old.videoId);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('a cached TGG video from the same weekly window is still reused when the feed is rate limited', async () => {
+  const now = Date.parse('2026-11-07T12:00:00Z');
+  const { memory } = memoryOf();
+  const current = { videoId: 'sameweekvi1', title: 'GTA Online weekly update', publishedOn: '2026-11-05T18:00:00Z', url: 'https://www.youtube.com/watch?v=sameweekvi1', kind: 'tgg' };
+  await memory.put('tgg-discovery-v3', { candidate: current, checkedAt: Date.parse('2026-11-06T12:00:00Z'), expiresAt: Date.parse('2026-11-06T18:00:00Z') });
+  let searches = 0;
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('slow', { status: 429, headers: { 'retry-after': '60' } });
+    searches++;
+    return Response.json({ results: [] });
+  };
+  try {
+    assert.equal((await new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg()).videoId, current.videoId);
+    assert.equal(searches, 0);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('an active feed cooldown after reset reports retryAt instead of the previous video', async () => {
+  const now = Date.parse('2026-11-12T10:30:00Z');
+  const { memory } = memoryOf();
+  const old = { videoId: 'oldweekvid1', title: 'GTA Online weekly update', publishedOn: '2026-11-05T18:00:00Z', url: 'https://www.youtube.com/watch?v=oldweekvid1', kind: 'tgg' };
+  await memory.put('tgg-discovery-v3', { candidate: old, checkedAt: now - 3600000, expiresAt: Date.parse('2026-11-12T02:00:00Z') });
+  const retryAt = now + 20 * 60_000;
+  await memory.put('subtitle-429:tgg-feed', { nextAt: retryAt, cachedAt: now - 1000, status: 429 });
+  let calls = 0;
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async () => { calls++; return new Response('no', { status: 500 }); };
+  try {
+    await assert.rejects(() => new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg(), error => error.retryAt === retryAt);
+    assert.equal(calls, 0);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('a 429 does not revive transcript chunks older than 30 days', async () => {
+  const now = Date.parse('2026-11-07T12:00:00Z');
+  const { storage, memory } = memoryOf();
+  await memory.put('transcript:abcdefghijk', { chunks: [{ text: 'very old week', offset: 0 }], cachedAt: Date.parse('2026-09-01T00:00:00Z') });
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response('slow', { status: 429, headers: { 'retry-after': '30' } });
+  try {
+    await assert.rejects(() => new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).transcript({ videoId: 'abcdefghijk', url: 'https://www.youtube.com/watch?v=abcdefghijk' }), error => {
+      assert.equal(typeof error.retryAt, 'number');
+      assert.ok(error.retryAt > now);
+      return true;
+    });
+    assert.notEqual(storage.get('transcript:abcdefghijk').chunks[0].text, undefined);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('Retry-After of many days is capped at the existing one-day source retry', async () => {
+  const now = Date.parse('2026-11-12T10:30:00Z');
+  const { storage, memory } = memoryOf();
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('slow', { status: 429, headers: { 'retry-after': '999999' } });
+    return new Response('slow', { status: 429, headers: { 'retry-after': '999999' } });
+  };
+  try {
+    await assert.rejects(() => new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg());
+    const block = storage.get('subtitle-429:tgg-feed');
+    assert.equal(block.nextAt - now, DAY);
+    assert.equal(block.status, 429);
   } finally { globalThis.fetch = globalFetch; }
 });
 

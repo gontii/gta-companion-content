@@ -1,11 +1,11 @@
 import { extractWeeklyRotations } from './weekly-rotations.mjs';
 import { resolveIgtaSource, resolveGtaBossSource, resolveRedditSource } from './additional-sources.mjs';
 import { extractRockstarFacts } from './rockstar-facts.mjs';
-import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText } from './weekly-core.mjs';
+import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText, thursdayWeekId } from './weekly-core.mjs';
 import { articleDocument, hash, validateFacts, FACT_VALIDATION_VERSION } from './facts.mjs';
 import { safeFetch, fetchWithBackoff, retryDelayMs, readBounded } from './http.mjs';
 import { AiBudget } from './ai-budget.mjs';
-import { DAY, localParts, windowFromDays } from './temporal.mjs';
+import { DAY, localParts, windowFromDays, atLocal, addDays } from './temporal.mjs';
 import { corroborateGunVanTranscript } from './transcript-corroboration.mjs';
 import { resolveRockstarBenefits } from './rockstar-benefits.mjs';
 
@@ -45,6 +45,25 @@ function isTggTopic(v) {
   const seasonal = /^GTA\s+(?!6\b|VI\b|Online\b)[A-Za-z]+\s+UPDATE\b/i.test(title);
   const weekly = /weekly|event week|this week|\bweek\s*\d+\b|bonuses|discounts|\btriple\b|\bdouble\b|\bmoney\b/i.test(title);
   return (online || seasonal) && weekly;
+}
+// Thursday 11:00 Europe/Warsaw through the next reset. Before that reset the
+// previous Thursday is still the current week; atLocal applies the offset.
+export function currentWeeklyWindow(now) {
+  const weekId = thursdayWeekId(new Date(now));
+  const reset = atLocal(weekId, 11 * 60);
+  const startId = now < reset ? addDays(weekId, -7) : weekId;
+  return windowFromDays(startId, addDays(startId, 6));
+}
+export function publishedInCurrentWeek(publishedOn, now) {
+  const published = Date.parse(publishedOn);
+  if (!Number.isFinite(published) || published > now) return false;
+  const window = currentWeeklyWindow(now);
+  return published >= Date.parse(window.startsAt) && published < Date.parse(window.expiresAt);
+}
+// Transcript attempts already wait at most one day. A Retry-After of many days
+// must not schedule the next source read past that ceiling.
+export function boundedSourceRetry(delayMs) {
+  return Math.min(Math.max(delayMs || 0, 15 * 60_000), DAY);
 }
 export function selectTggCandidate(videos, now) {
   const selected = videos.filter(v => isTggTopic(v) &&
@@ -174,12 +193,10 @@ export class SourceService {
     const cacheKey = `transcript:${video.videoId}`;
     const limitKey = `subtitle-429:${video.videoId}`;
     const cache = await this.storage.get(cacheKey);
-    if (cache && this.now - cache.cachedAt < 30 * DAY) return cache.chunks;
+    const freshTranscript = cache?.chunks && this.now - cache.cachedAt < 30 * DAY;
+    if (freshTranscript) return cache.chunks;
     const blocked = await this.storage.get(limitKey);
-    if (blocked?.nextAt > this.now) {
-      if (cache?.chunks) return cache.chunks;
-      throw Object.assign(new Error('transcript_retry_not_due'), { retryAt: blocked.nextAt });
-    }
+    if (blocked?.nextAt > this.now) throw Object.assign(new Error('transcript_retry_not_due'), { retryAt: blocked.nextAt });
     if (!this.env.SUPADATA_API_KEY) throw new Error('supadata_key_missing');
     const attemptKey = `transcript-attempt:${video.videoId}`;
     const attempt = (await this.storage.get(attemptKey)) || { firstAt: this.now, count: 0, nextAt: 0 };
@@ -200,12 +217,11 @@ export class SourceService {
     }
     if (response.status === 429 || response.status === 503) {
       const wait = retryDelayMs(response, 0, this.now);
-      const nextAt = this.now + Math.max(wait.delay, 15 * 60_000);
+      const nextAt = this.now + boundedSourceRetry(wait.delay);
       await this.storage.put(limitKey, { nextAt, cachedAt: this.now, status: response.status });
       attempt.nextAt = nextAt;
       await this.storage.put(attemptKey, attempt);
       await response.body?.cancel?.();
-      if (cache?.chunks) return cache.chunks;
       throw Object.assign(new Error(`supadata_http_${response.status}`), { retryAt: nextAt });
     }
     if (![200, 202].includes(response.status)) throw new Error(`supadata_http_${response.status}`);
@@ -234,16 +250,20 @@ export class SourceService {
         if (video) return video;
       } else if (response.status === 429 || response.status === 503) {
         const wait = retryDelayMs(response, 0, this.now);
-        await this.storage.put(feedKey, { nextAt: this.now + Math.max(wait.delay, 15 * 60_000), cachedAt: this.now, status: response.status });
+        await this.storage.put(feedKey, { nextAt: this.now + boundedSourceRetry(wait.delay), cachedAt: this.now, status: response.status });
         await response.body?.cancel();
       } else await response.body?.cancel();
     } catch { /* RSS can fail or contain only newer Shorts and streams. */ }
     if (!this.env.SUPADATA_API_KEY) throw new Error('supadata_key_missing');
     const cached = await this.storage.get('tgg-discovery-v3');
-    if ((feedStatus === 429 || feedStatus === 503) && cached?.candidate && this.now - Date.parse(cached.candidate.publishedOn) <= 8 * DAY) return cached.candidate;
+    const sameWeek = cached?.candidate && publishedInCurrentWeek(cached.candidate.publishedOn, this.now);
+    if ((feedStatus === 429 || feedStatus === 503) && sameWeek) return cached.candidate;
     if (cached && this.now < cached.expiresAt) {
-      if (cached.candidate && this.now - Date.parse(cached.candidate.publishedOn) <= 8 * DAY) return cached.candidate;
-      throw new Error('tgg_relevant_video_missing');
+      if (sameWeek) return cached.candidate;
+      if (!cached.candidate) throw new Error('tgg_relevant_video_missing');
+    }
+    if ((feedStatus === 429 || feedStatus === 503) && feedBlocked?.nextAt > this.now) {
+      throw Object.assign(new Error('tgg_feed_retry_not_due'), { retryAt: feedBlocked.nextAt });
     }
     await this.reserveSupadataCredit();
     const url = new URL('https://api.supadata.ai/v1/youtube/search');
