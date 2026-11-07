@@ -9,7 +9,7 @@ export const SECTION_TITLES = {
   bonuses: 'Best bonuses', challenge: 'Weekly challenge', 'free-vehicles': 'Free rewards & prize vehicles',
   discounts: 'Discounts & Offers', 'gun-van': 'Gun Van', other: 'Other weekly items', 'gta-plus': 'GTA+ benefits',
 };
-export const FACT_VALIDATION_VERSION = 15;
+export const FACT_VALIDATION_VERSION = 17;
 export const normal = s => String(s || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 export const numbers = s => (String(s).replace(/(?<=\d)[, ](?=\d{3}\b)/g, '').match(/\d+(?:\.\d+)?/g) || []).sort();
 export const factKey = f => [f.section, normal(f.entity), f.eligibility, f.platform].join(':');
@@ -123,6 +123,7 @@ export function validateFacts(raw, doc) {
         [/\bwin\b|finish first/i, /\bwin\b|finish first/i],
         [/without dying/i, /without dying/i],
         [/first[\s\S]{0,90}(?:week|weekly)/i, /first[\s\S]{0,90}(?:week|weekly)/i],
+        [/first[- ]time completion/i, /first[- ]time completion/i],
         [/chance|lucky wheel|spin/i, /chance|lucky wheel|spin/i],
         [/\bown\b|requires? (?:an? |the )?(?:clubhouse|custom|property|business)/i, /own|require|clubhouse|custom|property|business/i],
       ];
@@ -195,7 +196,8 @@ export function agreeSources(documents, allowTgg) {
   // each other: copied community posts cannot form a self-confirming quorum.
   const extra = documents.filter(d => ['igta', 'gtaboss', 'reddit'].includes(d.source.kind) && d.current)
     .flatMap(d => d.facts);
-  const pairs = [[intel, base], [intel, extra], [base, extra]];
+  const transcripts = documents.filter(d => d.source.kind === 'tgg' && d.current).flatMap(d => d.facts);
+  const pairs = [[intel, base], [intel, extra], [base, extra], [intel, transcripts], [base, transcripts], [extra, transcripts]];
   for (const [anchors, corroborators] of pairs) for (const f of anchors) {
     const existing = approved.get(periodKey(f));
     if (existing && !(existing.confidence !== 'official' && offerTraits(existing)?.type === 'availability' &&
@@ -259,6 +261,9 @@ export function seasonalFacts(event) {
 
 export async function mergeFacts(previous, facts, now = Date.now()) {
   const current = previous ? upgradeLegacy(previous) : null;
+  // HSW trials exist only on Enhanced. Correct the known platform restriction
+  // even when an extractor omits it, without resetting an existing objective.
+  facts = facts.map(f => normal(f.entity) === 'hsw time trial' ? { ...f, platform: 'enhanced' } : f);
   const today = localParts(now).date;
   const cashEvent = today >= halloweenEvent.startsOn && today <= halloweenEvent.endsOn ? halloweenEvent : null;
   const hasWeeklyEvidence = facts.some(f => f.section !== 'gta-plus' && f.windowPolicy !== 'independent' &&
@@ -299,8 +304,10 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     const section = c.sections.find(s => s.id === f.section);
     if (!section) continue;
     const key = factKey(f);
-    const existing = section.items.find(i => f.itemId && i.id === f.itemId) || section.items.find(i => i.factKey === key) || section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
     const timing = factWindow(f);
+    const existing = section.items.find(i => f.itemId && i.id === f.itemId) || section.items.find(i => i.factKey === key) ||
+      section.items.find(i => normal(f.entity) === 'hsw time trial' && normal(i.entity) === 'hsw time trial' && i.platform === 'all' && i.startsAt === timing.startsAt && i.expiresAt === timing.expiresAt) ||
+      section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
     // Availability is weaker than a known price/discount. Keep active terms until
     // their window ends; a bare stock list cannot revoke a confirmed free offer.
     if (f.offer === 'In stock' && existing && ['free', 'discount'].includes(offerTraits({ offer: existing.offer })?.type) &&

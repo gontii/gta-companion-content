@@ -1,5 +1,5 @@
 import { stripTags, extractDateRange } from './weekly-core.mjs';
-import { validateFacts } from './facts.mjs';
+import { validateFacts, periodIsSupported } from './facts.mjs';
 import { extractDatedBonuses } from './weekly-rotations.mjs';
 // Deterministic extraction for dated list rows. Separate lists never inherit the
 // first range in an article (weekly, month, member and claim windows differ).
@@ -13,6 +13,22 @@ export function extractRockstarFacts(doc) {
     const period = match && extractDateRange(match[1], { publishedWeekId: doc.publishedOn, now: new Date(doc.publishedOn) });
     if (period) facts.push({ section:'free-vehicles', entity:match[2], offer:'Reward for playing GTA Online',
       eligibility:'all', platform:'all', startsOn:period.startId, endsOn:period.endId, evidence, dateEvidence:match[1] });
+  }
+  // Weekly login rewards with an explicit end matching the article's dated
+  // week. Other dates (weekends/months) must not inherit this window.
+  if (doc.source.scope !== 'membership' && doc.period) {
+    const dates = [...doc.text.matchAll(/(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:st|nd|rd|th)?\s*(?:[-–—]|to|through)\s*(?:(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+)?\d{1,2}(?:st|nd|rd|th)?(?:,?\s+20\d{2})?/gi)].map(m=>m[0]);
+    const dateEvidence = dates.find(d=>periodIsSupported(doc.period.startId, doc.period.endId, d, doc));
+    for (const [, html] of doc.html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)) {
+      const evidence = stripTags(html);
+      const reward = /Play GTA Online anytime through ([A-Za-z]+ \d{1,2}) to get (.+?)\./i.exec(evidence);
+      const end = reward && Date.parse(`${reward[1]}, ${doc.period.endId.slice(0,4)} UTC`);
+      if (dateEvidence && reward && end === Date.parse(doc.period.endId)) facts.push({
+        section:'free-vehicles', entity:reward[2], offer:'Reward for playing GTA Online',
+        eligibility:'all', platform:'all', startsOn:doc.period.startId, endsOn:doc.period.endId,
+        evidence:reward[0], dateEvidence,
+      });
+    }
   }
   let discountPeriod = null, discountEvidence = '';
   for (const [block, tag, html] of doc.html.matchAll(/<(h[1-6]|p)\b[^>]*>([\s\S]*?)<\/\1>/gi)) {

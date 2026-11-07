@@ -107,7 +107,7 @@ test('22.10 and 29.10 name-first lists, ampersand podium headings and Place in t
     assert.ok(offer(doc, 'Agency Properties', '40% off'));
     assert.ok(offer(doc, 'Albany Brigham', '40% off'));
     assert.ok(offer(doc, 'Pfister Astron', '30% off'));
-    assert.ok(offer(doc, 'Dewbauchee Rapid GT X', '30% off'));
+    assert.ok(!offer(doc, 'Dewbauchee Rapid GT X', '30% off'));
     assert.ok(offer(doc, 'The Shocker', 'FREE'));
     assert.equal(offer(doc, 'Service Carbine', '30% off').eligibility, 'all');
     assert.equal(offer(doc, 'Widowmaker', '50% off').eligibility, 'gta-plus');
@@ -279,4 +279,39 @@ test('a partial edition still publishes with the missing areas named, and 11/11 
   assert.equal(done.resolvedAreas, REQUIRED_AREAS.length);
   assert.equal(full.completeness, 'complete');
   assert.deepEqual(full.missingAreas, []);
+});
+
+test('November wording and accented podium names agree without weakening rewards or membership', () => {
+  const date = '<p>November 5-11, 2026</p>';
+  const makeDoc = (kind, html) => {
+    const doc = articleDocument({kind, sourceUrl:kind==='intel'?'https://rockstarintel.com/current':'https://www.igrandtheftauto.com/current', html:date+html},new Date('2026-11-05T12:00:00Z'));
+    return {...doc,...extractWeeklyRotations(doc),current:true};
+  };
+  const intel=makeDoc('intel', `<h3>Podium Vehicle</h3><p>Spin the lucky wheel for your chance to win the Överflöd Entity XXR, which costs money.</p>
+    <h3>Prize Ride Challenge</h3><p>place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Annis Hellion as the Prize Ride vehicle.</p>
+    <h3>Weekly Challenge</h3><p>The GTA Online Weekly Challenge for this week is "Win an Adversary Mode". You'll earn GTA$100,000.</p>
+    <h3>Gun Van Contents</h3><ul><li>Knife (FREE)</li><li>Widowmaker (10%, GTA+ 20%)</li></ul>
+    <h3>Discounts:</h3><h5>30% off</h5><ul><li>Cheval Taipan</li></ul>`);
+  const igta=makeDoc('igta', `<h3>Diamond Casino Lucky Wheel</h3><p>This week's podium vehicle at The Diamond Casino &amp; Resort is the Överflöd Entity XXR (Super), which players have a chance to win by spinning the Lucky Wheel.</p>
+    <h2>Weekly Challenge and LS Car Meet Prize Ride</h2><ul><li>Weekly Challenge: Win any Adversary Mode to receive GTA$100,000.</li>
+    <li>LS Car Meet Prize Ride: Finish in the Top 5 of an LS Car Meet Series race for three consecutive days to win the Annis Hellion (Off-Road).</li></ul>
+    <h2>Gun Van Inventory and Discounts</h2><ul><li>Knife: Free.</li><li>Widowmaker: 30% off for GTA+ Members.</li></ul>
+    <h2>Vehicle Offers and Discounts</h2><p>Additional vehicles at 30% off:</p><ul><li>Cheval Taipan (Super)</li></ul>
+    <h3>Luxury Autos Showroom</h3><ul><li>Unconfirmed Car (Super)</li></ul>`);
+  const agreed=agreeSources([intel,igta],false);
+  for (const name of ['Överflöd Entity XXR','Annis Hellion','Adversary Mode','Knife','Cheval Taipan']) assert.ok(agreed.some(f=>f.entity===name),name);
+  assert.ok(!agreed.some(f=>f.entity==='Widowmaker' && f.eligibility==='gta-plus'));
+  assert.ok(!igta.facts.some(f=>f.entity==='Unconfirmed Car'));
+  assert.equal(agreeSources([intel,{...igta,facts:igta.facts.map(f=>f.entity==='Annis Hellion'?{...f,offer:f.offer.replace('top 5','top 4')}:f)}],false).some(f=>f.entity==='Annis Hellion'),false);
+});
+
+test('official deterministic facts survive unavailable AI and do not borrow unrelated dates', async () => {
+  const {SourceService}=await import('../scripts/source-service.mjs');
+  const data=new Map(),storage={get:async k=>data.get(k),put:async(k,v)=>data.set(k,v)};
+  const resolve=async()=>({sourceUrl:'https://www.rockstargames.com/newswire/article/test',html:'<meta property="article:published_time" content="2026-11-05"><h1>Weekly event</h1><p>November 5-11.</p><p>Play GTA Online anytime through November 11 to get The Great Circle Back.</p><p>Play GTA Online anytime through December 2 to get Future Gift.</p>'});
+  const result=await new SourceService(storage,{},Date.parse('2026-11-05T12:00:00Z')).websites([['rockstar',resolve,'weekly']]);
+  assert.equal(result.documents[0].facts.length,1);
+  assert.equal(result.documents[0].facts[0].entity,'The Great Circle Back');
+  assert.equal(result.documents[0].facts[0].endsOn,'2026-11-11');
+  assert.equal(result.failures[0].reason,'ai_binding_missing');
 });

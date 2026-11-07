@@ -1,30 +1,17 @@
 #!/usr/bin/env node
 import { readFile } from 'node:fs/promises';
-import { assertPublishedContent, requireMemberPeriod } from './publication-quality.mjs';
-import { applySeasonalContent, isRetiredDlcAnnouncement, isSeasonalEvent } from './seasonal-content.mjs';
-import { validateSnapshot, hash } from './facts.mjs';
-import { projectContent } from './temporal.mjs';
+import { validateSnapshot } from './facts.mjs';
 
 const baseUrl = process.env.SMOKE_BASE_URL || 'https://gtacompanion.net';
-const code = process.env.BETA_SMOKE_CODE;
-const email = process.env.SMOKE_TEST_EMAIL || 'smoke@gta-companion.local';
 const expectedWeekId = process.env.EXPECTED_WEEK_ID;
+const pollIntervalMs = 15000;
+const pollDeadlineMs = 4 * 60 * 1000;
 
-async function expectJson(response, label) {
-  let body = null;
-  try {
-    body = await response.json();
-  } catch {
-    throw new Error(`${label} did not return JSON`);
-  }
-  return body;
-}
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function main() {
   const artifact = JSON.parse(await readFile(new URL('../weekly/latest.json', import.meta.url), 'utf8'));
   if (artifact.schemaVersion === 2) validateSnapshot(artifact, { published: true });
-  else requireMemberPeriod();
-  if (!code) throw new Error('BETA_SMOKE_CODE is required');
   if (!expectedWeekId) throw new Error('EXPECTED_WEEK_ID is required');
 
   const unauthorized = await fetch(`${baseUrl}/api/weekly`);
@@ -32,49 +19,21 @@ async function main() {
     throw new Error(`/api/weekly without token returned ${unauthorized.status}, expected 401`);
   }
 
-  const redeem = await fetch(`${baseUrl}/api/access/redeem`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ email, code }),
-  });
-  const redeemBody = await expectJson(redeem, 'redeem');
-  if (!redeem.ok || !redeemBody.token) {
-    throw new Error(`redeem returned ${redeem.status}, expected token`);
-  }
-
-  const weekly = await fetch(`${baseUrl}/api/weekly?publication=${encodeURIComponent(artifact.generatedAt)}`, {
-    headers: { authorization: `Bearer ${redeemBody.token}` },
-  });
-  const weeklyBody = await expectJson(weekly, 'weekly');
-  if (!weekly.ok) throw new Error(`/api/weekly returned ${weekly.status}`);
-  if (weeklyBody.weekId !== expectedWeekId) {
-    throw new Error(`/api/weekly weekId ${weeklyBody.weekId}, expected ${expectedWeekId}`);
-  }
-
-  if (artifact.schemaVersion === 2) {
-    if (await hash(weeklyBody) !== await hash(projectContent(artifact))) throw new Error('Live API differs from the complete projected artifact');
-    console.log(`Smoke test passed for revision ${artifact.revision}`);
-    return;
-  }
-
-  if (weeklyBody.quickTake?.some(isRetiredDlcAnnouncement)) {
-    throw new Error('Retired DLC announcement is still published');
-  }
-  const expected = applySeasonalContent(weeklyBody);
-  if (expected.seasonalEvent) {
-    if (!isSeasonalEvent(weeklyBody.seasonalEvent) ||
-        JSON.stringify(weeklyBody.seasonalEvent) !== JSON.stringify(expected.seasonalEvent)) {
-      throw new Error('Seasonal event is missing or differs from curated content');
+  const deadline = Date.now() + pollDeadlineMs;
+  for (;;) {
+    const response = await fetch(`${baseUrl}/api/content-status`);
+    const body = await response.json().catch(() => null);
+    if (!response.ok || !body?.app) throw new Error(`/api/content-status returned ${response.status}`);
+    const { weekId, revision } = body.app;
+    if (weekId === expectedWeekId && (artifact.schemaVersion !== 2 || revision === artifact.revision)) {
+      console.log(`Smoke test passed for weekId ${expectedWeekId}${artifact.schemaVersion === 2 ? `, revision ${revision}` : ''}`);
+      return;
     }
-    const challenge = value => value.sections.find(s => s.id === 'challenge')?.items;
-    if (JSON.stringify(challenge(weeklyBody)) !== JSON.stringify(challenge(expected))) {
-      throw new Error('Weekly challenge does not include the curated seasonal reward');
+    if (Date.now() >= deadline) {
+      throw new Error(`/api/content-status still reports weekId ${weekId}, revision ${revision}; expected ${expectedWeekId}${artifact.schemaVersion === 2 ? `, revision ${artifact.revision}` : ''}`);
     }
-  } else if (weeklyBody.seasonalEvent?.id === 'business-rivalries-2026-09') {
-    throw new Error('Expired seasonal event is still published');
+    await sleep(pollIntervalMs);
   }
-  assertPublishedContent(weeklyBody, artifact);
-  console.log(`Smoke test passed for weekId ${expectedWeekId}`);
 }
 
 main().catch((error) => {

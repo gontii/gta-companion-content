@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 2,
+  "weekId": "2026-11-05",
+  "range": "2026-11-05 – 2026-11-11",
+  "headline": "This week in GTA Online",
+  "startsAt": "2026-11-05T10:00:00.000Z",
+  "expiresAt": "2026-11-12T10:00:00.000Z",
+  "originalZone": "Europe/Warsaw",
+  "precision": "date",
+  "timingConfidence": "estimated",
+  "quickTake": [
+    "Mansion Raid — 3x GTA$ & RP",
+    "Pipe Bombs — In stock",
+    "Proximity Mines — In stock",
+    "Widowmaker — In stock"
+  ],
+  "quickTakeEntries": [
+    {
+      "id": "auto-bf3eb14765735ea342",
+      "label": "Mansion Raid — 3x GTA$ & RP",
+      "factKey": "bonuses:mansion raid:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Mansion Raid",
+      "offer": "3x GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "itemIds": [
+        "auto-bf3eb14765735ea342"
+      ]
+    },
+    {
+      "id": "auto-1c13170003b27cbd4c",
+      "label": "Pipe Bombs — In stock",
+      "factKey": "gun-van:pipe bombs:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Pipe Bombs",
+      "offer": "In stock",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "itemIds": [
+        "auto-1c13170003b27cbd4c"
+      ]
+    },
+    {
+      "id": "auto-2b1711070e480ff2a4",
+      "label": "Proximity Mines — In stock",
+      "factKey": "gun-van:proximity mines:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Proximity Mines",
+      "offer": "In stock",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "itemIds": [
+        "auto-2b1711070e480ff2a4"
+      ]
+    },
+    {
+      "id": "auto-7b28067bf63aea87d8",
+      "label": "Widowmaker — In stock",
+      "factKey": "gun-van:widowmaker:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Widowmaker",
+      "offer": "In stock",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "itemIds": [
+        "auto-7b28067bf63aea87d8"
+      ]
+    }
+  ],
+  "beginnerPath": [
+    {
+      "id": "bp-auto-bf3eb14765735ea342",
+      "label": "Mansion Raid — 3x GTA$ & RP",
+      "factKey": "bonuses:mansion raid:all:all",
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Mansion Raid",
+      "offer": "3x GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "itemIds": [
+        "auto-bf3eb14765735ea342"
+      ],
+      "progressGroup": "none"
+    }
+  ],
+  "locations": [
+    {
+      "id": "auto-location-gun-van",
+      "activity": "Gun Van",
+      "name": "Mobile weapons dealer",
+      "area": "Daily rotating stop in Southern San Andreas",
+      "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
+      "itemIds": [
+        "auto-1c13170003b27cbd4c"
+      ],
+      "startsAt": "2026-11-05T10:00:00.000Z",
+      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    }
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-bf3eb14765735ea342",
+          "label": "Mansion Raid — 3x GTA$ & RP",
+          "factKey": "bonuses:mansion raid:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Mansion Raid",
+          "offer": "3x GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free rewards & prize vehicles",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts & Offers",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-1c13170003b27cbd4c",
+          "label": "Pipe Bombs — In stock",
+          "factKey": "gun-van:pipe bombs:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Pipe Bombs",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2b1711070e480ff2a4",
+          "label": "Proximity Mines — In stock",
+          "factKey": "gun-van:proximity mines:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Proximity Mines",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7b28067bf63aea87d8",
+          "label": "Widowmaker — In stock",
+          "factKey": "gun-van:widowmaker:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Widowmaker",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8696d77619f969d318",
+          "label": "Molotovs — In stock",
+          "factKey": "gun-van:molotovs:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Molotovs",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "label": "Knife — In stock",
+          "factKey": "gun-van:knife:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Knife",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "label": "Baseball Bat — In stock",
+          "factKey": "gun-van:baseball bat:all:all",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Baseball Bat",
+          "offer": "In stock",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "gta-plus",
+      "title": "GTA+ benefits",
+      "completeness": "pending",
+      "items": []
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-11-05"
+    }
+  ],
+  "completeness": "partial",
+  "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+  "nextBoundaryAt": "2026-11-12T10:00:00.000Z",
+  "revision": "0a70d0ea5e45b29a749498783dcf8e3a571e0df78c35fd8025aee262a5782fcd",
+  "generatedAt": "2026-11-05T10:45:00.159Z"
+}
