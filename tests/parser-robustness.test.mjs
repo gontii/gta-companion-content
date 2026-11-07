@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { articleDocument, agreeSources } from '../scripts/facts.mjs';
+import { articleDocument, agreeSources, mergeFacts, validateFacts } from '../scripts/facts.mjs';
 import { extractWeeklyRotations } from '../scripts/weekly-rotations.mjs';
 import { findIgtaWeekly } from '../scripts/additional-sources.mjs';
 import { selectTggCandidate, SourceService, TGG_CHANNEL } from '../scripts/source-service.mjs';
 import { fetchWithBackoff } from '../scripts/http.mjs';
-import { stampCompleteness, inspectSectionCoverage, REQUIRED_AREAS } from '../scripts/section-coverage.mjs';
+import { stampCompleteness, inspectSectionCoverage, inspectBonusPeriods, REQUIRED_AREAS } from '../scripts/section-coverage.mjs';
 import { parseWeeklyContent } from '../schemas/app-weekly-parser.mjs';
 import { atLocal } from '../scripts/temporal.mjs';
 import { createBundle } from '../scripts/publication-bundle.mjs';
@@ -184,6 +184,52 @@ test('a rate-limited TGG feed reuses the cached weekly video and does not spend 
     assert.equal((await blocked.discoverTgg()).videoId, candidate.videoId);
     assert.equal(searches, 0);
   } finally { globalThis.fetch = globalFetch; }
+});
+
+test('Contact Missions 2x for 5–11 Nov stays in that week and the 12 Nov 4x does not', async () => {
+  const html = `<meta property="article:published_time" content="2026-11-04"><article><h1>This Week in GTA Online: November 5, 2026</h1>
+    <p>November 5–11</p>
+    <h2>Bonuses</h2>
+    <ul>
+      <li>2X GTA$ and RP on Contact Missions (November 5–11)</li>
+      <li>4X GTA$ and RP on Contact Missions (November 12–December 2)</li>
+    </ul>
+    <h2>From November 12 through December 2</h2>
+    <ul><li>2X GTA$ and RP on Sumo Remix</li></ul>
+  </article>`;
+  const doc = articleDocument({ kind: 'igta', sourceUrl: 'https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026', html }, new Date('2026-11-07T12:00:00Z'));
+  const extracted = extractWeeklyRotations(doc);
+  const two = extracted.facts.find(f => f.entity === 'Contact Missions' && f.offer.startsWith('2X'));
+  const four = extracted.facts.find(f => f.entity === 'Contact Missions' && f.offer.startsWith('4X'));
+  const sumo = extracted.facts.find(f => f.entity === 'Sumo Remix');
+  assert.deepEqual([two.startsOn, two.endsOn], ['2026-11-05', '2026-11-11']);
+  assert.deepEqual([four.startsOn, four.endsOn], ['2026-11-12', '2026-12-02']);
+  assert.deepEqual([sumo.startsOn, sumo.endsOn], ['2026-11-12', '2026-12-02']);
+  const sourced = extracted.facts.filter(f => f.section === 'bonuses').map(f => ({ ...f, confidence: 'corroborated', sources: [{ kind: 'intel', url: 'https://rockstarintel.com/current' }] }));
+  const during = await mergeFacts(null, sourced, Date.parse('2026-11-07T12:00:00Z'));
+  const labels = during.sections.find(s => s.id === 'bonuses').items.map(i => i.label);
+  assert.deepEqual(labels.filter(label => /Contact Missions|Sumo/.test(label)), ['Contact Missions — 2X GTA$ & RP']);
+  assert.ok(during.withheldBonuses.some(bonus => bonus.entity === 'Contact Missions' && bonus.offer.startsWith('4X') && bonus.reason === 'future' && bonus.startsOn === '2026-11-12'));
+  assert.ok(!labels.some(label => /4X|Sumo/.test(label)));
+  const next = await mergeFacts(during, sourced, Date.parse('2026-11-12T12:00:00Z'));
+  const nextLabels = next.sections.find(s => s.id === 'bonuses').items.map(i => i.label);
+  assert.ok(nextLabels.some(label => label === 'Contact Missions — 4X GTA$ & RP'));
+  assert.ok(nextLabels.some(label => label === 'Sumo Remix — 2X GTA$ & RP'));
+  assert.ok(!nextLabels.some(label => /Contact Missions — 2X/.test(label)));
+  const mismatch = validateFacts({ facts: [{ ...four, startsOn: '2026-11-05', endsOn: '2026-11-11', dateEvidence: 'November 5-11' }] }, doc);
+  assert.equal(mismatch.facts.length, 0);
+  assert.equal(mismatch.rejected[0].reason, 'bonus_period_mismatch');
+  const illegal = structuredClone(during);
+  illegal.sections.find(s => s.id === 'bonuses').items.push({ id: 'future-4x', label: 'Contact Missions — 4X GTA$ & RP', startsAt: '2026-11-12T10:00:00.000Z', expiresAt: '2026-12-03T10:00:00.000Z' });
+  illegal.sections.find(s => s.id === 'bonuses').items.push({ id: 'undated', label: 'Contact Missions — 3X GTA$ & RP' });
+  const issues = inspectBonusPeriods(illegal);
+  assert.deepEqual(issues.map(issue => issue.reason).sort(), ['missing-dates', 'outside-week']);
+  const coverage = inspectSectionCoverage(illegal, null, Date.parse('2026-11-07T12:00:00Z'), illegal.weekId, atLocal(illegal.weekId, 11 * 60));
+  stampCompleteness(illegal, coverage);
+  assert.ok(illegal.bonusPeriodIssues.length >= 2);
+  assert.equal(illegal.completeness, 'partial');
+  assert.ok(!illegal.sections.find(s => s.id === 'bonuses').items.some(item => item.id === 'future-4x' || item.id === 'undated'));
+  assert.match(illegal.completenessNote, /Contact Missions — 4X/);
 });
 
 test('a partial edition still publishes with the missing areas named, and 11/11 clears the flag', async () => {
