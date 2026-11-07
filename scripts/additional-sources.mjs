@@ -7,13 +7,25 @@ async function read(url, fetchImpl = safeFetch) {
   if (!response.ok) throw new Error(`source_http_${response.status}`);
   return readBounded(response);
 }
+const IGTA_MONTHS = Object.fromEntries(['january','february','march','april','may','june','july','august','september','october','november','december'].map((name, index) => [name, index]));
+// The weekly path keeps the month and Thursday date. Ordinals and a trailing
+// slash have both shown up; a lookalike host or a query string has not.
+function igtaWeeklyPath(pathname) {
+  const match = pathname.match(/^\/gtaonline\/news\/this-week-in-gta-online-([a-z]+)-(\d{1,2})(?:st|nd|rd|th)?-(20\d{2})\/?$/);
+  if (!match || !Object.hasOwn(IGTA_MONTHS, match[1])) return null;
+  const day = Number(match[2]);
+  const stamp = Date.UTC(Number(match[3]), IGTA_MONTHS[match[1]], day);
+  const parsed = new Date(stamp);
+  if (parsed.getUTCFullYear() !== Number(match[3]) || parsed.getUTCMonth() !== IGTA_MONTHS[match[1]] || parsed.getUTCDate() !== day) return null;
+  return stamp;
+}
 export function findIgtaWeekly(html) {
-  // Fixed-origin, exact article path. Never follow links to another host.
+  // Fixed-origin article path. Never follow links to another host.
   const urls = [...String(html).matchAll(/href=["']([^"']+)["']/gi)].map(m => {
     try { return new URL(m[1], 'https://www.igrandtheftauto.com'); } catch { return null; }
-  }).filter(u => u?.origin === 'https://www.igrandtheftauto.com' &&
-    /^\/gtaonline\/news\/this-week-in-gta-online-[a-z]+-\d{1,2}-20\d{2}$/.test(u.pathname) && !u.search && !u.hash);
-  return urls[0]?.href || null;
+  }).filter(u => u?.origin === 'https://www.igrandtheftauto.com' && igtaWeeklyPath(u.pathname) !== null && !u.search && !u.hash);
+  urls.sort((a, b) => igtaWeeklyPath(b.pathname) - igtaWeeklyPath(a.pathname));
+  return urls[0] ? urls[0].href.replace(/\/$/, '') : null;
 }
 export async function resolveIgtaSource(fetchImpl = safeFetch) {
   const sourceUrl = findIgtaWeekly(await read('https://www.igrandtheftauto.com/news', fetchImpl));

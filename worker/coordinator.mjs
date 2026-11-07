@@ -4,6 +4,7 @@ import { collectSectionEvidence, inspectSectionCoverage } from '../scripts/secti
 import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
+import { needsTranscriptSupplement } from '../scripts/transcript-corroboration.mjs';
 import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
 import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, atLocal, MINUTE, DAY, TIMING_POLICY_VERSION } from '../scripts/temporal.mjs';
 import { thursdayWeekId } from '../scripts/weekly-core.mjs';
@@ -190,8 +191,9 @@ export class PublicationEngine {
       if (requested || state.validationVersion !== FACT_VALIDATION_VERSION || !state.nextCheck || state.nextCheck.at <= now) {
         const service = new SourceService(this.store, this.env, now);
         const result = await service.websites();
-        if (!result.hasCurrentArticle) {
-          try { result.documents.push(await service.tgg()); }
+        const websiteFacts = agreeSources(result.documents, false);
+        if (!result.hasCurrentArticle || this.env.SUPADATA_API_KEY && needsTranscriptSupplement(result.documents, websiteFacts, now)) {
+          try { result.documents.push(await service.tgg(result.documents)); }
           catch (error) { result.failures.push({ kind: 'tgg', reason: error.message.slice(0, 180) }); }
         }
         const approved = agreeSources(result.documents, !result.hasCurrentArticle);
@@ -325,7 +327,7 @@ export class PublicationEngine {
         verificationMode: state.verificationMode || null, verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString(), sectionCoverage: state.sectionCoverage }));
       const missing = !master || master.weekId < currentWeek || !projectContent(master, now).sections.filter(s => !['gta-plus', 'dlc'].includes(s.id)).flatMap(s => s.items).some(i => Date.parse(i.startsAt) >= expectedAt && Date.parse(i.expiresAt) <= atLocal(new Date(Date.parse(currentWeek) + 7 * DAY).toISOString().slice(0, 10), 660));
       state.awaitingOfficial = !state.sources?.some(s => s.kind === 'rockstar' && s.scope === 'weekly' && s.current && s.facts > 0);
-      state.pending = missing || state.awaitingOfficial;
+      state.pending = missing || state.awaitingOfficial || state.sectionCoverage.unresolved.length > 0;
       state.expectedAt = new Date(expectedAt).toISOString();
       state.incidents = [];
       if (state.sectionCoverage.alarm) state.incidents.push({ key:'section-completeness', reason:`Niepotwierdzone wymagane obszary wydania: ${state.sectionCoverage.unresolved.join(', ')}`, since:state.sectionCoverage.deadlineAt });

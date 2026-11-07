@@ -45,8 +45,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           CONTENT_UPDATER_URL: ${{ vars.CONTENT_UPDATER_URL }}
           CONTENT_AUTOMATION_TOKEN: ${{ secrets.CONTENT_AUTOMATION_TOKEN }}
-          BETA_SMOKE_CODE: ${{ secrets.BETA_SMOKE_CODE }}
-          SMOKE_TEST_EMAIL: ${{ secrets.SMOKE_TEST_EMAIL }}
+          # Przekaźnik GitHub jest wycofany i wyłączony, a jego sekret usunięty — aktywna ścieżka to przekaźnik GCP.
           REQUEST_CONTENT_CHECK: ${{ inputs.request_check && 'true' || 'false' }}
           PROBE_TGG: ${{ inputs.probe_tgg && 'true' || 'false' }}
           INSPECT_CANDIDATE: ${{ inputs.inspect_candidate && 'true' || 'false' }}

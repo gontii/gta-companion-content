@@ -1,0 +1,1424 @@
+{
+  "schemaVersion": 1,
+  "issue": "2645",
+  "weekId": "2026-11-05",
+  "startsOn": "2026-11-05",
+  "endsOn": "2026-11-11",
+  "status": "active",
+  "verifiedAt": "2026-11-05T20:36:29.278Z",
+  "confirmedAt": "2026-11-05T20:36:29.278Z",
+  "startsAt": "2026-11-05T10:00:00.000Z",
+  "expiresAt": "2026-11-12T10:00:00.000Z",
+  "revision": "aba7f0c11851be3840ce85aec637baaf8633c368c61f5f24d17c76b7b571e9bf",
+  "platforms": [
+    "PC Enhanced",
+    "PS5",
+    "Xbox Series X|S"
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "items": [
+        {
+          "id": "auto-2d6081813d30c5f7e2",
+          "name": "Community Race Series",
+          "status": "confirmed",
+          "offer": "Community Race Series — 2X GTA$ & RP",
+          "requirements": "Legion Square → series marker, or phone → Quick Join. Use the Community Series marker or your phone’s Quick Join selection. Select the current Community Race Series when the offer names races; other community-created jobs do not automatically qualify for that bonus.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-1",
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-6df88ee551b72b278e",
+          "name": "KnoWay Out",
+          "status": "confirmed",
+          "offer": "KnoWay Out — 2X GTA$ on first completion.",
+          "requirements": "2X GTA$ on first completion.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-7b3107000ee50f3e95",
+          "name": "The Diamond Casino Heist",
+          "status": "confirmed",
+          "offer": "The Diamond Casino Heist — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
+          "requirements": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-9beba50630f82efa44",
+          "name": "Original Heists",
+          "status": "confirmed",
+          "offer": "Original Heists — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
+          "requirements": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-9f483ca23478f4271e",
+          "name": "The Doomsday Heist",
+          "status": "confirmed",
+          "offer": "The Doomsday Heist — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
+          "requirements": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-bf3eb14765735ea342",
+          "name": "Mansion Raid",
+          "status": "confirmed",
+          "offer": "Mansion Raid — 3x GTA$ & RP",
+          "requirements": "3x GTA$ & RP",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "items": [
+        {
+          "id": "auto-0321fae242cfac267c",
+          "name": "Adversary Mode",
+          "status": "confirmed",
+          "offer": "Adversary Mode — Win an Adversary Mode to receive GTA$100,000",
+          "requirements": "Win an Adversary Mode to receive GTA$100,000",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-1cf7230040ab1a16f2",
+          "name": "The Great Circle Back",
+          "status": "confirmed",
+          "offer": "The Great Circle Back — FREE Mansion Painting Decoration; play GTA Online by November 11.",
+          "requirements": "FREE Mansion Painting Decoration; play GTA Online by November 11.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4"
+          ]
+        },
+        {
+          "id": "auto-34297872bc9918d8c9",
+          "name": "Grotti Turismo Omaggio + Rockstar Motorsport Livery",
+          "status": "confirmed",
+          "offer": "Grotti Turismo Omaggio + Rockstar Motorsport Livery — in-game Twitch reward claim — FREE only if this Drop was already earned and claimed on Twitch during the ended campaign. Collect the car at Legendary Motorsport and log in for the livery by November 11. Allow up to 72 hours after the Twitch claim; use the linked Rockstar account. Watching streams now does not earn this Drop.",
+          "requirements": "FREE only if this Drop was already earned and claimed on Twitch during the ended campaign. Collect the car at Legendary Motorsport and log in for the livery by November 11. Allow up to 72 hours after the Twitch claim; use the linked Rockstar account. Watching streams now does not earn this Drop.",
+          "startsOn": "2026-10-30",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-10-30T10:00:00.000Z",
+          "expiresAt": "2026-11-11T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-6c0cf9815c7c946f5c",
+          "name": "Annis Hellion",
+          "status": "confirmed",
+          "offer": "Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
+          "requirements": "Cypress Flats → LS Car Meet map icon. Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-dd80b58f3b204a247a",
+          "name": "Överflöd Entity XXR",
+          "status": "confirmed",
+          "offer": "Överflöd Entity XXR — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "requirements": "East Vinewood → Casino map icon. Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "discounts",
+      "items": [
+        {
+          "id": "auto-086585caf6bac5c37f",
+          "name": "Casino Master Penthouse Upgrades and Modifications",
+          "status": "confirmed",
+          "offer": "Casino Master Penthouse Upgrades and Modifications — 40% off",
+          "requirements": "40% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-2208d0eaa0e77f123e",
+          "name": "Casino Master Penthouse",
+          "status": "confirmed",
+          "offer": "Casino Master Penthouse — 40% off",
+          "requirements": "40% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-4043a0c4ec01254b5a",
+          "name": "Invetero Coquette D5",
+          "status": "confirmed",
+          "offer": "Invetero Coquette D5 — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-418e7d861be5ff5d93",
+          "name": "Grotti Cheetah",
+          "status": "confirmed",
+          "offer": "Grotti Cheetah — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-532e40fc94e4a3bae6",
+          "name": "Benefactor Vorschlaghammer",
+          "status": "confirmed",
+          "offer": "Benefactor Vorschlaghammer — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-7c2a00ee6e69420cc8",
+          "name": "Dinka Blista Kanjo",
+          "status": "confirmed",
+          "offer": "Dinka Blista Kanjo — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-8397d4178b898cfdd1",
+          "name": "Grotti Veleno GT",
+          "status": "confirmed",
+          "offer": "Grotti Veleno GT — 25% off",
+          "requirements": "25% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-976de97e8f088c544c",
+          "name": "Facility Upgrades and Modifications",
+          "status": "confirmed",
+          "offer": "Facility Upgrades and Modifications — 40% off",
+          "requirements": "40% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-9a5510563175f2fb45",
+          "name": "HVY Insurgent",
+          "status": "confirmed",
+          "offer": "HVY Insurgent — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-9bf9e1ff95be59fa23",
+          "name": "Pegassi Reaper",
+          "status": "confirmed",
+          "offer": "Pegassi Reaper — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-a2cfcacddca8bb5cc4",
+          "name": "Cheval Taipan",
+          "status": "confirmed",
+          "offer": "Cheval Taipan — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-a5e257575d73cb85d4",
+          "name": "Facilities",
+          "status": "confirmed",
+          "offer": "Facilities — 40% off",
+          "requirements": "40% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-ae53fc72a604978070",
+          "name": "High-End Apartments",
+          "status": "confirmed",
+          "offer": "High-End Apartments — 40% off",
+          "requirements": "40% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-d44e93d2225755f01c",
+          "name": "Western Company Besra",
+          "status": "confirmed",
+          "offer": "Western Company Besra — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-d8419e32d82bcbe630",
+          "name": "Maibatsu Penumbra FF",
+          "status": "confirmed",
+          "offer": "Maibatsu Penumbra FF — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-e41e801d2a2c6d9108",
+          "name": "Western Rampant Rocket",
+          "status": "confirmed",
+          "offer": "Western Rampant Rocket — 30% off",
+          "requirements": "30% off",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "items": [
+        {
+          "id": "auto-0806f1d0dea30af444",
+          "name": "Salvage Yard Robberies",
+          "status": "confirmed",
+          "offer": "Salvage Yard Robberies — The Podium Robbery: Annis Hellion; The Cargo Ship Robbery: Truffade Z-Type; The McTony Robbery: Lampadati Cinquemila. No claimable vehicle is confirmed.",
+          "requirements": "The Podium Robbery: Annis Hellion; The Cargo Ship Robbery: Truffade Z-Type; The McTony Robbery: Lampadati Cinquemila. No claimable vehicle is confirmed.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-4ae7270a51552bcfda",
+          "name": "The Cayo Perico Heist",
+          "status": "confirmed",
+          "offer": "The Cayo Perico Heist — Panther Statue guaranteed as the Primary Target on your first approach during this event.",
+          "requirements": "Panther Statue guaranteed as the Primary Target on your first approach during this event.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-5ad427f14cfd3ed424",
+          "name": "Kortz Center paintings",
+          "status": "confirmed",
+          "offer": "Kortz Center paintings — The Outcome of Endeavour; To Beat About the Bush; Hare Oneself Think; True Love.",
+          "requirements": "The Outcome of Endeavour; To Beat About the Bush; Hare Oneself Think; True Love.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-6cef9839ca982373cf",
+          "name": "HSW Time Trial",
+          "status": "confirmed",
+          "offer": "HSW Time Trial — Del Perro Beach to Murietta Heights (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Del Perro Beach to Murietta Heights",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-9104a925537a45f423",
+          "name": "LS Car Meet Test Rides",
+          "status": "confirmed",
+          "offer": "LS Car Meet Test Rides — Cheval Taipan; HVY Insurgent; Pegassi Reaper.",
+          "requirements": "Cheval Taipan; HVY Insurgent; Pegassi Reaper.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-95df89508ed8acb4ed",
+          "name": "The Black Box File",
+          "status": "confirmed",
+          "offer": "The Black Box File — Priority File",
+          "requirements": "Priority File",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-c6afb210df51601e81",
+          "name": "Time Trial",
+          "status": "confirmed",
+          "offer": "Time Trial — LSIA",
+          "requirements": "LSIA",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-c9700fb675a7d44289",
+          "name": "Luxury Autos",
+          "status": "confirmed",
+          "offer": "Luxury Autos — Grotti Veleno GT; Grotti GT750.",
+          "requirements": "Grotti Veleno GT; Grotti GT750.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-e288fd93d5ca6f5ad9",
+          "name": "The Kortz Center Heist",
+          "status": "confirmed",
+          "offer": "The Kortz Center Heist — The Outcome of Endeavour guaranteed as the Primary Target on your first run during this event.",
+          "requirements": "The Outcome of Endeavour guaranteed as the Primary Target on your first run during this event.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-4",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-e90c71a428729d081e",
+          "name": "Hao’s Premium Test Ride",
+          "status": "confirmed",
+          "offer": "Hao’s Premium Test Ride — Grotti Brioso R/A (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Grotti Brioso R/A",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-ec8054ade3d8f76d4c",
+          "name": "Premium Race",
+          "status": "confirmed",
+          "offer": "Premium Race — At the Races",
+          "requirements": "At the Races",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-f4fedee87347f5308d",
+          "name": "Premium Deluxe Motorsport",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Motorsport — Dinka Blista Kanjo; Grotti Cheetah; Invetero Coquette D5; Maibatsu Penumbra FF; Benefactor Vorschlaghammer.",
+          "requirements": "Dinka Blista Kanjo; Grotti Cheetah; Invetero Coquette D5; Maibatsu Penumbra FF; Benefactor Vorschlaghammer.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gta-plus",
+      "items": [
+        {
+          "id": "auto-5676d539cea8d31ba5",
+          "name": "Compact EMP Launcher",
+          "status": "confirmed",
+          "offer": "Compact EMP Launcher — 40% off at the Gun Van (GTA+ only)",
+          "requirements": "Active GTA+ membership required. 40% off at the Gun Van",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "auto-7c231a03cea565727b",
+          "name": "Armor",
+          "status": "confirmed",
+          "offer": "Armor — 80% off at the Gun Van (GTA+ only)",
+          "requirements": "Active GTA+ membership required. 80% off at the Gun Van",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-0356322179b0ef1744",
+          "name": "Pop Art Revere Collar",
+          "status": "confirmed",
+          "offer": "Pop Art Revere Collar — FREE; automatically added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. FREE; automatically added to your wardrobe.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-9",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-053a452d1209ae0fb6",
+          "name": "Staff Sourced Special Cargo",
+          "status": "confirmed",
+          "offer": "Staff Sourced Special Cargo — 2X sourcing speed for Warehouse staff. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 2X sourcing speed for Warehouse staff.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-11",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-35f3a1d7ced9023c5f",
+          "name": "Warehouses and Vehicle Warehouses",
+          "status": "confirmed",
+          "offer": "Warehouses and Vehicle Warehouses — 60% off; purchase via the SecuroServ computer in your Executive Office. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 60% off; purchase via the SecuroServ computer in your Executive Office.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-12",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-3e3b3c329c2b301719",
+          "name": "Obey 10F",
+          "status": "confirmed",
+          "offer": "Obey 10F — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-13",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-3edb208f57110fbe62",
+          "name": "Pegassi Ignus Pursuit",
+          "status": "confirmed",
+          "offer": "Pegassi Ignus Pursuit — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-14",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-508933ead5d2573fc8",
+          "name": "Pegassi Zentorno",
+          "status": "confirmed",
+          "offer": "Pegassi Zentorno — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-15",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-52db019793fb85a418",
+          "name": "Declasse Vigero ZX",
+          "status": "confirmed",
+          "offer": "Declasse Vigero ZX — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-16",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-660eba02f7638f61cf",
+          "name": "White Prismatic Pearl Chameleon Paint and Wheel Paint",
+          "status": "confirmed",
+          "offer": "White Prismatic Pearl Chameleon Paint and Wheel Paint — FREE; select the Chameleon paints at an Auto Shop or Vehicle Workshop with an eligible vehicle. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. FREE; select the Chameleon paints at an Auto Shop or Vehicle Workshop with an eligible vehicle.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-17",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-67497a7fae31e9891e",
+          "name": "Import/Export Sell Missions",
+          "status": "confirmed",
+          "offer": "Import/Export Sell Missions — 2X GTA$ & RP (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 2X GTA$ & RP",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-18",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-73bf7033d17f3d039f",
+          "name": "Pegassi Tezeract",
+          "status": "confirmed",
+          "offer": "Pegassi Tezeract — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-19",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-75edb967e96a9c4f61",
+          "name": "Blagueurs Baseball Bat and Snakeskin Knife Weapon Finishes",
+          "status": "confirmed",
+          "offer": "Blagueurs Baseball Bat and Snakeskin Knife Weapon Finishes — FREE weapon finishes; claim at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. FREE weapon finishes; claim at the Gun Van.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-20",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-89922f720d40b3a0cc",
+          "name": "Declasse Scramjet",
+          "status": "confirmed",
+          "offer": "Declasse Scramjet — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-21",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-958290d8458b8da532",
+          "name": "Sod Off Painting",
+          "status": "confirmed",
+          "offer": "Sod Off Painting — FREE; automatically added to Mansion Decorations. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. FREE; automatically added to Mansion Decorations.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-22",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-98448add22b9c2395f",
+          "name": "Grotti Stinger TT",
+          "status": "confirmed",
+          "offer": "Grotti Stinger TT — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-23",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-a0abd41614989d44f0",
+          "name": "Body Armor and Ammo",
+          "status": "confirmed",
+          "offer": "Body Armor and Ammo — 75% off, including Mk II Ammo; Ammu-Nation and Gun Van. Stacks with existing Gun Van markdowns. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 75% off, including Mk II Ammo; Ammu-Nation and Gun Van. Stacks with existing Gun Van markdowns.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-24",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-bd8ae065c217a92981",
+          "name": "Pegassi Weaponized Ignus",
+          "status": "confirmed",
+          "offer": "Pegassi Weaponized Ignus — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-25",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-e88883eefd453563b4",
+          "name": "Bravado Banshee GTS",
+          "status": "confirmed",
+          "offer": "Bravado Banshee GTS — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-26",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-eda3b9f1820b55e2d6",
+          "name": "Contact Missions",
+          "status": "confirmed",
+          "offer": "Contact Missions — 2X GTA$ & RP (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 2X GTA$ & RP",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-11T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-27",
+            "ref-10"
+          ]
+        },
+        {
+          "id": "auto-fc448f134f410290a2",
+          "name": "Grotti Itali RSX",
+          "status": "confirmed",
+          "offer": "Grotti Itali RSX — FREE; claim at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. FREE; claim at The Vinewood Car Club.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-12-09",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-28",
+            "ref-10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rotations",
+      "items": [
+        {
+          "id": "auto-1c13170003b27cbd4c",
+          "name": "Pipe Bombs",
+          "status": "confirmed",
+          "offer": "Pipe Bombs — In stock",
+          "requirements": "Daily rotating stop in Southern San Andreas. The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership. See This Week → Gun Van for the current stock and discounts.",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-2b1711070e480ff2a4",
+          "name": "Proximity Mines",
+          "status": "confirmed",
+          "offer": "Proximity Mines — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-377466455771d30d6e",
+          "name": "Sweeper Shotgun",
+          "status": "confirmed",
+          "offer": "Sweeper Shotgun — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-76dedbafae52ebc662",
+          "name": "Knuckle Dusters",
+          "status": "confirmed",
+          "offer": "Knuckle Dusters — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-7b28067bf63aea87d8",
+          "name": "Widowmaker",
+          "status": "confirmed",
+          "offer": "Widowmaker — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-8696d77619f969d318",
+          "name": "Molotovs",
+          "status": "confirmed",
+          "offer": "Molotovs — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-8b7a42c6fb65b1af8d",
+          "name": "Compact EMP Launcher",
+          "status": "confirmed",
+          "offer": "Compact EMP Launcher — In stock",
+          "requirements": "In stock",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-1"
+          ]
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "name": "Knife",
+          "status": "confirmed",
+          "offer": "Knife — FREE",
+          "requirements": "FREE",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "name": "Baseball Bat",
+          "status": "confirmed",
+          "offer": "Baseball Bat — FREE",
+          "requirements": "FREE",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-5",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-e48d50258c4f921f9e",
+          "name": "Precision Rifle",
+          "status": "confirmed",
+          "offer": "Precision Rifle — 50% off at the Gun Van",
+          "requirements": "50% off at the Gun Van",
+          "startsOn": "2026-11-05",
+          "endsOn": "2026-11-11",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-1",
+            "ref-2"
+          ]
+        },
+        {
+          "id": "pending-gun-van-stock",
+          "name": "Other Gun Van stock and discounts",
+          "status": "pending",
+          "offer": null,
+          "requirements": null,
+          "startsOn": null,
+          "endsOn": null,
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": []
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ref-1",
+      "title": "IGrandTheftAuto",
+      "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-2",
+      "title": "Source",
+      "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-3",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-4",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-5",
+      "title": "RockstarINTEL",
+      "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-6",
+      "title": "Rockstar Games Newswire",
+      "url": "https://support.rockstargames.com/articles/2fa9lK5MnHwf6ZwXivF5CG/receiving-the-grotti-turismo-omaggio-and-rockstar-motorsport-livery-from-nopixel-v-twitch-drops-in-grand-theft-auto-online",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-7",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-online/twitch-drops",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-8",
+      "title": "GTABase",
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-9",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-10",
+      "title": "Source",
+      "url": "https://gta.wiki/w/GTA%2B_November_2026",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-11",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-12",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-13",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-14",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-15",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-16",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-17",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-18",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-19",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-20",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-21",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-22",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-23",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-24",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-25",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-26",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-27",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    },
+    {
+      "id": "ref-28",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o",
+      "verifiedAt": "2026-11-05T20:36:29.278Z"
+    }
+  ]
+}

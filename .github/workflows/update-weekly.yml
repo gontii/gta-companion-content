@@ -30,8 +30,6 @@ jobs:
       GTA_WEEKLY_SOURCE_URL: ${{ inputs.source_url || vars.GTA_WEEKLY_SOURCE_URL }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_KV_NAMESPACE_ID: ${{ secrets.CLOUDFLARE_KV_NAMESPACE_ID }}
-      BETA_SMOKE_CODE: ${{ secrets.BETA_SMOKE_CODE }}
-      SMOKE_TEST_EMAIL: ${{ secrets.SMOKE_TEST_EMAIL }}
 
     steps:
       # Always run the protected default branch: workflow_dispatch must never

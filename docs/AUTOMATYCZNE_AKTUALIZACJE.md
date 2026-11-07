@@ -16,15 +16,15 @@ Rollback i wstrzymanie publikacji wymagają osobnego sekretu Workera `OPERATOR_T
 
 Kanał główny publikuje sam. Worker `gta-companion-content-updater` ma cron `*/15 * * * *`, budzi Durable Object i zapisuje KV. Nie dostaje tokenu GitHub. Historię `weekly/` odbiera przekaźnik na VM GCP, co godzinę, tym samym `scripts/github-relay.mjs` z `CONTENT_INCIDENTS_MODE=external`. Alarmy idą wtedy do Cloud Monitoring, nie do Issues. Opóźnienie GitHub Actions nie zatrzymuje zapisu KV.
 
-Kanał zapasowy to workflow `.github/workflows/content-relay.yml`. Harmonogram w pliku to `7,22,37,52 * * * *`, dodatkowo jest `workflow_dispatch`. Uruchamia ten sam skrypt bez `CONTENT_INCIDENTS_MODE`, więc oprócz historii synchronizuje Issues. Nie publikuje KV. Od 31.10.2026 22:53 UTC workflow jest wyłączony ręcznie w ustawieniach repozytorium (`disabled_manually`); sam plik nadal zawiera harmonogram. Wejście `dry_run` wykonuje tylko `GET /status` i `GET /outbox`: bez commita, bez `POST /ack` i bez zgłoszeń. Lokalnie to samo daje `RELAY_DRY_RUN=true`.
+Aktywny odbiór historii to przekaźnik GCP. Workflow `.github/workflows/content-relay.yml` ma w pliku cron `7,22,37,52 * * * *` i `workflow_dispatch`, ale od późniejszej zmiany na `main` jest wycofany i wyłączony, a jego sekret usunięty. Nie publikuje KV. Wejście `dry_run` (albo lokalnie `RELAY_DRY_RUN=true`) wykonuje tylko `GET /status` i `GET /outbox`: bez commita, bez `POST /ack` i bez zgłoszeń. Ten sam skrypt obsługuje GCP, więc czytelny błąd HTTP dotyczy obu.
 
 `update-weekly.yml` nie jest zapasem Workera. Job jest pomijany, gdy zmienna GitHub `CONTENT_WRITER` ma wartość `cloudflare`. Włączenie go przy `PUBLICATION_MODE=publish` utworzyłoby drugiego autora KV.
 
-Trasy przekaźnika to `GET /status`, `GET /outbox`, oraz przy zwykłym przebiegu `POST /check`, `POST /probe-tgg`, `POST /ack` i `POST /smoke-token`. `CONTENT_UPDATER_URL` może mieć prefiks ścieżki; skrypt dokleja nazwę trasy do tego prefiksu, a nie zastępuje go. Worker rozpoznaje ścieżkę równą trasie albo kończącą się na nią. Rozpoznanie prefiksu w już wdrożonym Workerze wymaga osobnego wdrożenia tego kodu.
+Trasy przekaźnika to `GET /status`, `GET /outbox`, oraz przy zwykłym przebiegu `POST /check`, `POST /probe-tgg` i `POST /ack`. Ścieżka redeem i `POST /smoke-token` zostały usunięte na `main`: redeem zwraca 410 po zakończeniu bety, a status ma `needsSmokeToken: false`. `CONTENT_UPDATER_URL` może mieć prefiks ścieżki; skrypt dokleja nazwę trasy do tego prefiksu, a nie zastępuje go. Worker rozpoznaje ścieżkę równą trasie albo kończącą się na nią. Rozpoznanie prefiksu w już wdrożonym Workerze wymaga osobnego wdrożenia tego kodu.
 
-HTTP 404 z treścią `Not found` oznacza albo zły sekret `AUTOMATION_TOKEN` (musi być zgodny z sekretem GitHub `CONTENT_AUTOMATION_TOKEN`), albo nieznaną ścieżkę. Przekaźnik wypisuje metodę i trasę. Host bez tego Workera (Cloudflare `1042`) jest opisany osobno. Przebieg 41250039118 z 31.10.2026 dostał taki 404 na `GET /status` adresu `https://gta-companion-content-updater.gonti-stream.workers.dev`, podczas gdy przekaźnik GCP nadal zapisywał historię tym samym skryptem.
+HTTP 404 z treścią `Not found` oznacza albo zły sekret `AUTOMATION_TOKEN` (musi być zgodny z sekretem `CONTENT_AUTOMATION_TOKEN` używanym przez przekaźnik), albo nieznaną ścieżkę. Przekaźnik wypisuje metodę i trasę. Host bez tego Workera (Cloudflare `1042`) jest opisany osobno. Przebieg 41250039118 z 31.10.2026 dostał taki 404 na `GET /status` adresu `https://gta-companion-content-updater.gonti-stream.workers.dev`, podczas gdy przekaźnik GCP nadal zapisywał historię tym samym skryptem. Sam kod `main` nadal zgłaszał tylko `Automat HTTP 404`, bez trasy i bez rozróżnienia tokenu od ścieżki.
 
-Między 13 a 21.10.2026 zapasowy przebieg kończył się 54 razy przed odbiorem historii. `status.needsSmokeToken` było wtedy prawdziwe, a `POST https://gtacompanion.net/api/access/redeem` zwracał HTTP 401 `access_required`. Od zmiany odbioru na skrót renderowania (`render-digest-v1`) status ma `needsSmokeToken: false`. Nieudane odnowienie nie przerywa już kolejki: zostaje ostrzeżenie, a w trybie Issues także zgłoszenie `smoke-refresh-rejected`. Zgłoszenie „Cloudflare nie odpowiada” z 19.10 powstało przy jednorazowym `ETIMEDOUT` i zostało otwarte, bo kolejne przebiegi padały na odnowieniu zanim doszło do zamknięcia zgłoszeń.
+Między 13 a 21.10.2026 przebieg GitHub kończył się 54 razy przed odbiorem historii, bo `needsSmokeToken` było prawdziwe, a redeem zwracał HTTP 401 `access_required`. To jest już usunięte na `main` razem z martwą sesją bety; tej ścieżki nie przywracamy.
 
 ## Daty i publikacja
 
@@ -36,7 +36,7 @@ Fakty przyszłe pozostają w prywatnej kolejce do swojego terminu. Koniec weeken
 
 Publikacja zachowuje `weekId` dla postępu oraz osobny skrót `revision`. Zapis przed wykonaniem operacji KV umożliwia ponowienie identycznej publikacji po awarii. Brak zmiany treści nie tworzy kolejnej rewizji. Poprzednia publikacja pozostaje w obiekcie; Git przechowuje niezmienne pliki `weekly/revisions/<revision>.json`. Kolejka historii jest potwierdzana dopiero po udanym pushu.
 
-Po zapisie KV automat czeka co najmniej 75 sekund na propagację i porównuje pełną odpowiedź chronionego `/api/weekly` z oczekiwanym widokiem czasowym. Oddzielnie sprawdza odmowę 401 bez tokenu. Nieznany wynik i awaria zapisu nie są sukcesem. Przekaźnik odnawia testową sesję przez istniejące sekrety GitHub `BETA_SMOKE_CODE` i `SMOKE_TEST_EMAIL`; nie wypisuje kodu ani tokenu.
+Po zapisie KV automat odpytuje publiczny `/api/content-status` co 15 sekund, maksymalnie 4 minuty, aż `app.weekId` i `app.revision` zgodzą się z opublikowanym artefaktem. Oddzielnie sprawdza odmowę 401 na `/api/weekly` bez tokenu. Nieznany wynik i awaria zapisu nie są sukcesem.
 
 ## Źródła i limity
 
@@ -151,3 +151,54 @@ pozycje; zostaje `auto-144dcc1046a3ee0e60`, Main, cel 3. Parser aplikacji
 i dokument publiczny przyjmują naprawiony dokument. Wdrożenie i odbiór
 produkcji wymagają osobnego potwierdzenia w zgłoszeniu
 https://github.com/gontii/gtacompanion/issues/10.
+
+## Zabezpieczenie kompletności — 05.11.2026
+
+Odbiór 11 obszarów jest niezależny od aktualności wydania. Braki utrzymują
+ponowne pobieranie źródeł co najwyżej co 15 minut także po pojawieniu się
+oficjalnego artykułu. Kontrole GCP nadal wymagają `completenessAlarm=false`
+w JSON, z alarmem po błędzie w co najmniej dwóch lokalizacjach; godzinny
+monitor awarii jest osobny. Nie przesuwamy granicy alarmu ani nie uznajemy
+niepotwierdzonych danych za brak oferty.
+
+Parsery rozpoznają zmiany kolejności procent/nazwa, dwukropki, nagłówki
+kasyna i Gun Van, znaki diakrytyczne oraz dokładne warunki Prize Ride.
+Najbliższy nagłówek zniżek nie nadaje rabatu pojazdom w kolejnej sekcji
+showroomu. Nazwa, kwota, wymogi, daty i członkostwo nadal muszą się zgadzać
+między niezależnymi źródłami; niezgodny rabat pozostaje niepotwierdzony.
+Oficjalne reguły odczytu nagród działają także przy błędzie lub limicie AI.
+Regresje obejmują formaty wrześniowe, październikowe i listopadowe, próg
+alarmu, nieaktualny odbiór, sprzeczne źródła i ponawianie po publikacji.
+
+## Odbiór braków 05.11.2026 — źródła tygodniowe i GTA+
+
+Bieżący artykuł nie oznacza pełnego odczytu. Nieuzgodnione, aktywne oferty
+uruchamiają również TGG, przy zachowaniu istniejącego limitu Supadata, pamięci
+transkrypcji i limitu AI. Transkrypcja może potwierdzić dokładny rabat Gun Van
+z datowanego artykułu; data publikacji filmu nie staje się terminem oferty.
+GTABase i iGTA mają bezpośredni odczyt rabatów Gun Van bez modelu.
+
+Miesięczne GTA+ jest odczytywane dodatkowo z publicznego GraphQL strony
+`rockstargames.com/gta-plus/benefits`: aktualne odnośniki modułów i kart,
+a nie utrwalone identyfikatory poprzedniego miesiąca. Korzyści, warunki i koniec
+pochodzą z Rockstar. Początek okresu pochodzi z jawnego kalendarza GTA Wiki;
+koniec musi być zgodny z Rockstar, a okres aktualny i nie dłuższy niż 62 dni.
+Brak zgodności zatrzymuje ten odczyt i pozostawia błąd diagnostyczny. Kalendarz
+nie dostarcza nazw ani wartości ofert. Nie wymaga to dodatkowego płatnego API.
+
+Nieznana karta bieżącego miesiąca ustawia brak w obszarze GTA+, nawet jeśli
+inne korzyści zostały odczytane. Premia z odrębnym zakresem dat tworzy osobne
+okna — np. Contact Missions 2X / 4X / 2X — i nie trafia wcześniej do aplikacji.
+Weryfikacja pierwszego ukończenia zachowuje ten warunek; nie wolno zamieniać
+premii za pierwsze ukończenie w mnożnik wszystkich wypłat napadu.
+
+Dodatkowy odbiór redakcyjny tygodnia jest w `events/reviewed-weekly-2645.json`.
+Zawiera fakty i źródła, bez całych artykułów lub transkrypcji. Identyfikatory
+postępu są zachowywane. Testy obejmują nowe formaty, odrębny okres GTA+,
+przyszłą zmianę mnożnika, niezgodne daty i niepełny odczyt kart.
+
+Niezależna kontrola kompletności pozostaje co 15 minut i wymaga alarmu
+przy brakach w co najmniej dwóch lokalizacjach. Dostępność/aktualność pozostaje
+w godzinnej kontroli VM zgodnie z decyzją 21.10. Żaden próg ani termin alarmu
+nie został przesunięty w celu uzyskania zielonego wyniku. Rejestr odbioru: #10
+w `gontii/gtacompanion`; sam commit, test lub deploy nie zamyka incydentu.

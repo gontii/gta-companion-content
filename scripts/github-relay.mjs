@@ -36,15 +36,6 @@ const worker = async (path, body) => {
   try { return text ? JSON.parse(text) : {}; }
   catch { throw new Error(`Automat zwrócił nie-JSON na ${method} ${path}`); }
 };
-function redeemEndpoint() {
-  const raw = process.env.SMOKE_REDEEM_URL || 'https://gtacompanion.net/api/access/redeem';
-  const url = new URL(raw);
-  const hostLoopback = ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname);
-  const production = url.protocol === 'https:' && url.hostname === 'gtacompanion.net' && url.pathname === '/api/access/redeem';
-  if (url.username || url.password || (!hostLoopback && !production) || (hostLoopback && url.protocol !== 'http:' && url.protocol !== 'https:'))
-    throw new Error('Niepoprawny adres odnowienia odbioru');
-  return url;
-}
 
 async function syncIssues(incidents) {
   if (externalIncidents || dryRun) return; // Alarmy zewnętrzne albo suchy przebieg: bez zapisu Issues.
@@ -71,28 +62,6 @@ catch (error) {
     since: null,
   }]);
   throw error;
-}
-let smokeRefresh = null;
-if (status.needsSmokeToken && process.env.BETA_SMOKE_CODE && process.env.SMOKE_TEST_EMAIL) {
-  // Nieudane odnowienie nie może przerwać odbioru historii. Między 13 a 21.10.2026
-  // każda próba kończyła się tutaj (HTTP 401 access_required), zanim powstał commit.
-  try {
-    const response = await fetch(redeemEndpoint(), {
-      method: 'POST', headers: { 'content-type': 'application/json' }, signal: AbortSignal.timeout(25000),
-      body: JSON.stringify({ code: process.env.BETA_SMOKE_CODE, email: process.env.SMOKE_TEST_EMAIL }),
-    });
-    let result = {};
-    try { result = await response.json(); } catch { result = {}; }
-    const reason = /^[a-z0-9_]+$/.test(result.error || '') ? result.error : '';
-    if (!response.ok || typeof result.token !== 'string' || !result.token) {
-      smokeRefresh = { ok: false, error: `Odnowienie odbioru: HTTP ${response.status}${reason ? `, ${reason}` : ', nieznany_blad'}. Odbiór publikacji używa skrótu renderowania i nie wymaga tego tokenu.` };
-    } else if (!dryRun) {
-      await worker(UPDATER_PATHS.smokeToken, { token: result.token });
-      smokeRefresh = { ok: true, stored: true };
-    } else smokeRefresh = { ok: true, stored: false };
-  } catch (error) {
-    smokeRefresh = { ok: false, error: `Odnowienie odbioru: ${error.message}`.slice(0, 300) };
-  }
 }
 if (!dryRun && process.env.REQUEST_CONTENT_CHECK === 'true') await worker(UPDATER_PATHS.check, {});
 if (!dryRun && process.env.PROBE_TGG === 'true') await worker(UPDATER_PATHS.probeTgg, {});
@@ -137,10 +106,9 @@ if (!dryRun && paths.size) {
   await worker(UPDATER_PATHS.ack, { ids: entries.map(e => e.id) });
 }
 const incidents = (status.incidents || []).filter(i => !/^missing-|^publication-unverified$/.test(i.key));
-if (smokeRefresh && !smokeRefresh.ok) incidents.push({ key: 'smoke-refresh-rejected', reason: smokeRefresh.error, since: null });
 if (!status.heartbeatAt || Date.now() - Date.parse(status.heartbeatAt) > 45 * 60000) incidents.push({ key: 'cloudflare-silent', reason: 'Brak sygnału harmonogramu Cloudflare przez ponad 45 minut', since: status.heartbeatAt });
 if (status.mode === 'publish') await syncIssues(incidents);
-console.log(JSON.stringify({ dryRun, routes: calls, smokeRefresh, mode: status.mode, verificationMode: status.verificationMode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
+console.log(JSON.stringify({ dryRun, routes: calls, mode: status.mode, verificationMode: status.verificationMode, revision: status.publishedRevision, verifiedRevision: status.verifiedRevision, nextRunAt: status.nextRunAt,
   lastAttemptAt: status.lastAttemptAt, lastCompletedAt: status.lastCompletedAt,
   lastPublishedAt: status.lastPublishedAt, lastVerifiedAt: status.lastVerifiedAt,
   timingPolicyVersion: status.timingPolicyVersion, nextBoundaryAt: status.candidate?.nextBoundaryAt,
@@ -163,9 +131,4 @@ if (process.env.INSPECT_CANDIDATE === 'true') {
     console.log(JSON.stringify({ inspection: 'candidate-item', weekId: status.candidate.weekId, section: section.id, item }));
   }
   for (const fact of status.approvedFacts || []) console.log(JSON.stringify({ inspection: 'approved-fact', fact }));
-}
-if (smokeRefresh && !smokeRefresh.ok) {
-  const warning = `Ostrzeżenie: ${smokeRefresh.error} Historia została odebrana.`;
-  console.error(warning);
-  if (process.env.GITHUB_ACTIONS === 'true') console.log(`::warning::${warning}`);
 }

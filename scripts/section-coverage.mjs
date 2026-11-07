@@ -26,7 +26,9 @@ const absenceNames = {
 export function collectSectionEvidence(documents,weekId,day) {
   const candidates=Object.fromEntries(REQUIRED_AREAS.map(a=>[a.id,0]));
   const absences=[];
+  const coverageGaps=new Set();
   for(const doc of documents.filter(d=>d.current)) {
+    for(const area of doc.coverageGaps || []) if(REQUIRED_AREAS.some(a=>a.id===area)) coverageGaps.add(area);
     for(const fact of doc.facts || []) {
       if(fact.startsOn>day || fact.endsOn<day) continue;
       for(const area of REQUIRED_AREAS) if(area.section===fact.section && matches(area,fact)) candidates[area.id]++;
@@ -38,7 +40,7 @@ export function collectSectionEvidence(documents,weekId,day) {
       if(sentence.test(doc.text || '')) absences.push({area:area.id,kind:doc.source.kind,url:doc.source.url});
     }
   }
-  return {weekId,candidates,absences};
+  return {weekId,candidates,absences,coverageGaps:[...coverageGaps]};
 }
 const trustedAbsence = declarations => declarations.some(d=>d.kind==='rockstar') ||
   declarations.some(d=>['intel','gtabase'].includes(d.kind) && declarations.some(other=>other.kind!==d.kind && ['intel','gtabase','igta','gtaboss','reddit'].includes(other.kind)));
@@ -52,7 +54,8 @@ export function inspectSectionCoverage(snapshot,evidence,now,weekId,expectedAt) 
     const declarations=evidence?.weekId===weekId ? (evidence.absences || []).filter(d=>d.area===area.id) : [];
     const candidates=evidence?.weekId===weekId ? evidence.candidates?.[area.id] || 0 : 0;
     const absent=trustedAbsence(declarations);
-    const state=absent && confirmed ? 'unconfirmed' : confirmed ? 'confirmed' : absent ? 'absent' : candidates || declarations.length ? 'unconfirmed' : 'missing';
+    const gap=evidence?.weekId===weekId && evidence.coverageGaps?.includes(area.id);
+    const state=gap || absent && confirmed ? 'unconfirmed' : confirmed ? 'confirmed' : absent ? 'absent' : candidates || declarations.length ? 'unconfirmed' : 'missing';
     return {id:area.id,section:area.section,state,confirmedItems:confirmed,candidateFacts:candidates};
   });
   const unresolved=rows.filter(r=>['missing','unconfirmed'].includes(r.state)).map(r=>r.id);

@@ -134,7 +134,7 @@ test('HTTP 404 z treścią Not found wskazuje token i trasę, bez wartości sekr
   }
 });
 
-test('odrzucenie kodu odbioru nie przerywa odczytu kolejki', async () => {
+test('martwa ścieżka redeem nie jest wołana nawet gdy status prosi o token', async () => {
   const { server, calls, port } = await listen();
   server.needsSmokeToken = true;
   try {
@@ -144,15 +144,13 @@ test('odrzucenie kodu odbioru nie przerywa odczytu kolejki', async () => {
       SMOKE_REDEEM_URL: `http://127.0.0.1:${port}/api/access/redeem`,
     });
     assert.equal(result.code, 0, result.error + result.output);
-    assert.deepEqual(calls, ['GET /status', 'POST /api/access/redeem', 'GET /outbox']);
-    assert.match(result.error, /Ostrzeżenie: Odnowienie odbioru: HTTP 401, access_required/);
-    assert.match(result.output, /access_required/);
+    assert.deepEqual(calls, ['GET /status', 'GET /outbox']);
     assert.equal(result.output.includes(smokeCode), false);
     assert.equal(result.error.includes(smokeCode), false);
     assert.equal(result.output.includes('person@example.com'), false);
     const report = JSON.parse(result.output);
-    assert.equal(report.smokeRefresh.ok, false);
     assert.equal(report.copied, 0);
+    assert.equal(report.written, 0);
   } finally {
     await new Promise(resolve => server.close(resolve));
   }
