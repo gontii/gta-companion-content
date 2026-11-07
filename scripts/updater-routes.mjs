@@ -24,9 +24,16 @@ export function updaterUrl(base, routePath) {
   return new URL(suffix, root);
 }
 
+function hideTokenAssignment(match, prefix, sep, quote) {
+  return `${prefix || ''}token${sep}${quote}[ukryte]`;
+}
+
 function safeDetail(text) {
   return String(text || '')
     .replace(/bearer\s+\S+/gi, 'bearer [ukryte]')
+    // token=, token:, "token":"…", access_token / refresh_token / id_token / api_token oraz token%3D.
+    .replace(/"?((?:access|refresh|id|api)[_-])?token"?(\s*[:=]\s*)("?)[^"&\s,}]*/gi, hideTokenAssignment)
+    .replace(/((?:access|refresh|id|api)[_-])?token%3[dD][^&\s]*/gi, '$1token%3D[ukryte]')
     .replace(/\s+/g, ' ')
     .trim()
     .slice(0, 160);

@@ -30,6 +30,11 @@ function listen() {
     }
     res.setHeader('content-type', 'application/json');
     if (req.method === 'GET' && matchesUpdaterRoute(url.pathname, '/status')) {
+      if (server.forcedError) {
+        res.writeHead(server.forcedError.status, { 'content-type': 'text/plain;charset=UTF-8' });
+        res.end(server.forcedError.body);
+        return;
+      }
       res.end(JSON.stringify({
         mode: 'publish', verificationMode: 'render-digest-v1', needsSmokeToken: Boolean(server.needsSmokeToken),
         heartbeatAt: new Date().toISOString(), incidents: [],
@@ -84,6 +89,36 @@ test('trasy automatu zachowują prefiks i odrzucają podobne końcówki', () => 
   assert.equal(explainUpdaterHttpError('GET', '/status', 500, 'Bearer sekret-ktorego-nie-wolno-powtorzyc').includes('sekret-ktorego-nie-wolno-powtorzyc'), false);
 });
 
+test('błąd HTTP 500 ukrywa token= i pokrewne formy, zostawia diagnozę', () => {
+  const secret = 'synthetic-value';
+  const samples = [
+    'body token=synthetic-value',
+    'token = synthetic-value',
+    'Token=synthetic-value',
+    '"token":"synthetic-value"',
+    'access_token=synthetic-value',
+    'refresh_token: synthetic-value',
+    'id_token="synthetic-value"',
+    'api-token=synthetic-value',
+    'https://example.test/status?token=synthetic-value&ok=1',
+    'token%3Dsynthetic-value',
+    'Bearer synthetic-value',
+  ];
+  for (const body of samples) {
+    const explained = explainUpdaterHttpError('POST', '/ack', 500, body);
+    assert.equal(explained.includes(secret), false, body);
+    assert.match(explained, /Automat HTTP 500 na POST \/ack/);
+    assert.match(explained, /\[ukryte\]/);
+  }
+  const query = explainUpdaterHttpError('GET', '/outbox', 500, 'https://example.test/status?token=synthetic-value&ok=1');
+  assert.match(query, /ok=1/);
+  const plain = explainUpdaterHttpError('GET', '/status', 500, 'upstream_unavailable');
+  assert.match(plain, /upstream_unavailable/);
+  assert.equal(plain.includes('[ukryte]'), false);
+  assert.match(explainUpdaterHttpError('GET', '/status', 404, 'Not found'), /CONTENT_AUTOMATION_TOKEN/);
+  assert.match(explainUpdaterHttpError('GET', '/status', 404, 'error code: 1042'), /1042/);
+});
+
 test('Worker i przekaźnik używają wspólnego dopasowania tras', async () => {
   const worker = await readFile(new URL('../worker/index.mjs', import.meta.url), 'utf8');
   const relay = await readFile(new URL('../scripts/github-relay.mjs', import.meta.url), 'utf8');
@@ -113,6 +148,23 @@ test('suchy przebieg odczytuje status i kolejkę pod prefiksem i niczego nie zap
     assert.deepEqual(report.routes, ['GET /status', 'GET /outbox']);
     assert.equal(result.output.includes(token), false);
     assert.deepEqual(await readdir(cwd), []);
+  } finally {
+    await new Promise(resolve => server.close(resolve));
+  }
+});
+
+test('odpowiedź 500 z token= nie wypisuje syntetycznego sekretu', async () => {
+  const secret = 'synthetic-value';
+  const { server, calls, port } = await listen();
+  server.forcedError = { status: 500, body: `body token=${secret}` };
+  try {
+    const result = await runRelay(port);
+    const combined = result.output + result.error;
+    assert.equal(result.code, 1);
+    assert.equal(combined.includes(secret), false);
+    assert.match(combined, /Automat HTTP 500 na GET \/status/);
+    assert.match(combined, /token=\[ukryte\]/);
+    assert.deepEqual(calls, ['GET /status']);
   } finally {
     await new Promise(resolve => server.close(resolve));
   }
