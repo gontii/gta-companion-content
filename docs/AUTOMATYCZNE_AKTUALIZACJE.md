@@ -203,3 +203,12 @@ tworzy incydent `offer-gap-<rodzaj>` widoczny w `/api/content-status` pod
 Sygnał nie publikuje i nie tworzy faktów — ręczna reguła z AGENTS.md
 (sprawdzenie ofert czasowych przy każdej kontroli tygodnia) pozostaje
 obowiązująca.
+
+### Widoczność sygnału — 10.11.2026
+
+`offerSignals` trafia też do dokumentu KV `weekly:receipt` (checkedAt, error,
+unreviewed ≤10). `/api/content-status` eksponuje `offerGaps` (tylko 4 pola,
+https) i `offerAlarm` — bez wpływu na `current`, `alarm` ani `reasons`.
+Godzinna kontrola `gta-availability` na VM przepisuje `offerGaps`; gdy lista
+niepusta, zapisuje wpis WARNING do logu `gta-offer-gaps`, na którym działa
+polityka alertowa `1966855256821974834` (e-mail, limit 24 h).
