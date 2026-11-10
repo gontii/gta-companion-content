@@ -66,6 +66,7 @@ test('natural engine run stores coverage in receipt and creates a separate incid
  const state=data.get('state');assert.equal(state.lastError,null);
  assert.ok(state.incidents.some(i=>i.key==='section-completeness'));
  assert.equal(kv.get('weekly:receipt').sectionCoverage.requiredAreas,REQUIRED_AREAS.length);
+ assert.ok(kv.get('weekly:receipt').offerSignals);assert.deepEqual(kv.get('weekly:receipt').offerSignals.unreviewed,[]);
  assert.equal(data.get('alarm')>now,true);
 });
 

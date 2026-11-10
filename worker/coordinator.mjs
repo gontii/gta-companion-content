@@ -328,7 +328,9 @@ export class PublicationEngine {
       state.sectionCoverage.revision = publication?.revision || null;
       await this.env.CONTENT_KV.put('weekly:receipt', JSON.stringify({ weekId: publication?.weekId || null,
         publishedRevision: state.publishedRevision || null, verifiedRevision: state.verifiedRevision || null,
-        verificationMode: state.verificationMode || null, verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString(), sectionCoverage: state.sectionCoverage }));
+        verificationMode: state.verificationMode || null, verifiedAt: state.lastVerifiedAt || null, lastRunAt: new Date(now).toISOString(), sectionCoverage: state.sectionCoverage,
+        offerSignals: { checkedAt: state.offerSignals?.checkedAt || null, error: state.offerSignals?.error || null,
+          unreviewed: (state.offerSignals?.unreviewed || []).slice(0, 10).map(p => ({ kind: p.kind, title: String(p.title || '').slice(0, 200), url: p.url, publishedAt: p.publishedAt })) } }));
       const missing = !master || master.weekId < currentWeek || !projectContent(master, now).sections.filter(s => !['gta-plus', 'dlc'].includes(s.id)).flatMap(s => s.items).some(i => Date.parse(i.startsAt) >= expectedAt && Date.parse(i.expiresAt) <= atLocal(new Date(Date.parse(currentWeek) + 7 * DAY).toISOString().slice(0, 10), 660));
       state.awaitingOfficial = !state.sources?.some(s => s.kind === 'rockstar' && s.scope === 'weekly' && s.current && s.facts > 0);
       state.pending = missing || state.awaitingOfficial || state.sectionCoverage.unresolved.length > 0;
