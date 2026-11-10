@@ -5,11 +5,11 @@
   "startsOn": "2026-11-05",
   "endsOn": "2026-11-11",
   "status": "active",
-  "verifiedAt": "2026-11-10T09:05:00.040Z",
-  "confirmedAt": "2026-11-10T09:05:00.040Z",
+  "verifiedAt": "2026-11-10T09:35:00.036Z",
+  "confirmedAt": "2026-11-10T09:35:00.036Z",
   "startsAt": "2026-11-05T10:00:00.000Z",
   "expiresAt": "2026-11-12T10:00:00.000Z",
-  "revision": "cc8ca6d913bb77e6699d272a1b162a4ac5c2d25a14b1ee1cad23f3f8d0d1f091",
+  "revision": "aba7f0c11851be3840ce85aec637baaf8633c368c61f5f24d17c76b7b571e9bf",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -1197,8 +1197,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-8",
-            "ref-1"
+            "ref-5",
+            "ref-8"
           ]
         },
         {
@@ -1214,8 +1214,8 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-8",
-            "ref-1"
+            "ref-5",
+            "ref-8"
           ]
         },
         {
@@ -1256,169 +1256,169 @@
       "id": "ref-1",
       "title": "IGrandTheftAuto",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-2",
       "title": "Source",
       "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-4",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-5",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-6",
       "title": "Rockstar Games Newswire",
       "url": "https://support.rockstargames.com/articles/2fa9lK5MnHwf6ZwXivF5CG/receiving-the-grotti-turismo-omaggio-and-rockstar-motorsport-livery-from-nopixel-v-twitch-drops-in-grand-theft-auto-online",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-7",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-online/twitch-drops",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-8",
       "title": "GTABase",
       "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-9",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-10",
       "title": "Source",
       "url": "https://gta.wiki/w/GTA%2B_November_2026",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-11",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-12",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-13",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-14",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-15",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-16",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-17",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-18",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-19",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-20",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-21",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-22",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-23",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-24",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-25",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-26",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-27",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     },
     {
       "id": "ref-28",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o",
-      "verifiedAt": "2026-11-10T09:05:00.040Z"
+      "verifiedAt": "2026-11-10T09:35:00.036Z"
     }
   ]
 }
