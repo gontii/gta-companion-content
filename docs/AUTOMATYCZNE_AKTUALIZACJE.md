@@ -188,3 +188,18 @@ przy brakach w co najmniej dwóch lokalizacjach. Dostępność/aktualność pozo
 w godzinnej kontroli VM zgodnie z decyzją 21.10. Żaden próg ani termin alarmu
 nie został przesunięty w celu uzyskania zielonego wyniku. Rejestr odbioru: #10
 w `gontii/gtacompanion`; sam commit, test lub deploy nie zamyka incydentu.
+
+## Sygnał ofert czasowych spoza wydania — 06.11.2026
+
+`scripts/time-limited-offers.mjs` czyta główny RSS RockstarINTEL podczas
+budżetowanej kontroli źródeł (nie przy każdym alarmie). Wpisy GTA Online
+z ostatnich 7 dni pasujące do rodzajów `twitch`, `prime`, `login`, `weekend`
+trafiają do `offer-signals` w stanie koordynatora. Wpis uznajemy za objęty,
+gdy rodzaj pojawia się w tekście pozycji bieżącej publikacji albo jego URL
+jest w `events/offer-acknowledgements.json` (redakcyjnie odrzucone adresy,
+bundlowane do Workera jak pozostałe events/*.json). Każdy nieobjęty wpis
+tworzy incydent `offer-gap-<rodzaj>` widoczny w `/api/content-status` pod
+`incidents`. Błąd feedu jest zapisywany w sygnale i nie przerywa cyklu.
+Sygnał nie publikuje i nie tworzy faktów — ręczna reguła z AGENTS.md
+(sprawdzenie ofert czasowych przy każdej kontroli tygodnia) pozostaje
+obowiązująca.

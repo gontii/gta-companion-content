@@ -10,6 +10,8 @@ import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, a
 import { thursdayWeekId } from '../scripts/weekly-core.mjs';
 import { safeFetch, readBounded } from '../scripts/http.mjs';
 import { verifyAppRender } from '../scripts/publication-verification.mjs';
+import { checkOfferSignals } from '../scripts/time-limited-offers.mjs';
+import offerAcknowledgements from '../events/offer-acknowledgements.json' with { type: 'json' };
 
 function publicSnapshot(c) {
   // Evidence stays in private object storage. Public history contains facts and citations,
@@ -215,6 +217,8 @@ export class PublicationEngine {
         state.sourceFailures = result.failures;
         await this.store.put('section-evidence', collectSectionEvidence(result.documents, thursdayWeekId(new Date(now)), localParts(now).date));
         await service.prune();
+        state.offerSignals = await checkOfferSignals({ publication: master, acknowledged: offerAcknowledgements.urls, now });
+        await this.store.put('offer-signals', state.offerSignals);
       }
       const rollbackMaster = master;
       const merged = await mergeFacts(master, supplementReviewedFacts(master, facts, now), now);
@@ -336,6 +340,7 @@ export class PublicationEngine {
         state.incidents.push({ key: failure.reason, reason: failure.reason, since: state.lastSourceCheckAt });
       }
       if (state.lastPublishedAt && state.verifiedRevision !== state.publishedRevision && now - Date.parse(state.lastPublishedAt) > 15 * MINUTE) state.incidents.push({ key: 'publication-unverified', reason: 'API nie potwierdziło pełnej publikacji', since: state.lastPublishedAt });
+      for (const post of state.offerSignals?.unreviewed || []) state.incidents.push({ key:'offer-gap-'+post.kind, reason:'Możliwa aktywna oferta czasowa poza wydaniem: '+post.title+' ('+post.url+')', since:post.publishedAt });
       state.lastCompletedAt = new Date().toISOString();
       state.lastError = null;
     } catch (error) {
