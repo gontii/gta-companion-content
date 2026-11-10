@@ -1266,12 +1266,6 @@
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            },
-            {
               "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
               "kind": "gtabase",
               "scope": "weekly",
@@ -1282,7 +1276,7 @@
           "offer": "FREE",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
           "progressGroup": "primary"
         },
         {
@@ -1297,12 +1291,6 @@
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            },
-            {
               "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
               "kind": "gtabase",
               "scope": "weekly",
@@ -1313,7 +1301,7 @@
           "offer": "FREE",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
           "progressGroup": "primary"
         },
         {
@@ -2255,6 +2243,6 @@
   "completeness": "partial",
   "sourceUrl": "https://www.youtube.com/watch?v=xaNctQGswYU",
   "nextBoundaryAt": "2026-11-11T23:00:00.000Z",
-  "revision": "aba7f0c11851be3840ce85aec637baaf8633c368c61f5f24d17c76b7b571e9bf",
-  "generatedAt": "2026-11-05T20:36:29.278Z"
+  "revision": "cc8ca6d913bb77e6699d272a1b162a4ac5c2d25a14b1ee1cad23f3f8d0d1f091",
+  "generatedAt": "2026-11-10T09:05:00.040Z"
 }
