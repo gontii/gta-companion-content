@@ -5,11 +5,11 @@
   "startsOn": "2026-11-05",
   "endsOn": "2026-11-11",
   "status": "active",
-  "verifiedAt": "2026-11-10T09:35:00.036Z",
-  "confirmedAt": "2026-11-10T09:35:00.036Z",
+  "verifiedAt": "2026-11-11T23:00:00.036Z",
+  "confirmedAt": "2026-11-11T23:00:00.036Z",
   "startsAt": "2026-11-05T10:00:00.000Z",
   "expiresAt": "2026-11-12T10:00:00.000Z",
-  "revision": "aba7f0c11851be3840ce85aec637baaf8633c368c61f5f24d17c76b7b571e9bf",
+  "revision": "ed80e5157fb51618b1fafced4e87abd05ed1d3b9d95e34f04cce66f4c9d8768b",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -158,23 +158,6 @@
           "gtaPlus": false,
           "sourceIds": [
             "ref-4"
-          ]
-        },
-        {
-          "id": "auto-34297872bc9918d8c9",
-          "name": "Grotti Turismo Omaggio + Rockstar Motorsport Livery",
-          "status": "confirmed",
-          "offer": "Grotti Turismo Omaggio + Rockstar Motorsport Livery — in-game Twitch reward claim — FREE only if this Drop was already earned and claimed on Twitch during the ended campaign. Collect the car at Legendary Motorsport and log in for the livery by November 11. Allow up to 72 hours after the Twitch claim; use the linked Rockstar account. Watching streams now does not earn this Drop.",
-          "requirements": "FREE only if this Drop was already earned and claimed on Twitch during the ended campaign. Collect the car at Legendary Motorsport and log in for the livery by November 11. Allow up to 72 hours after the Twitch claim; use the linked Rockstar account. Watching streams now does not earn this Drop.",
-          "startsOn": "2026-10-30",
-          "endsOn": "2026-11-11",
-          "startsAt": "2026-10-30T10:00:00.000Z",
-          "expiresAt": "2026-11-11T23:00:00.000Z",
-          "claim": null,
-          "gtaPlus": false,
-          "sourceIds": [
-            "ref-6",
-            "ref-7"
           ]
         },
         {
@@ -715,7 +698,7 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-8",
+            "ref-6",
             "ref-1",
             "ref-2"
           ]
@@ -733,7 +716,7 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-8",
+            "ref-6",
             "ref-1"
           ]
         },
@@ -750,8 +733,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-9",
-            "ref-10"
+            "ref-7",
+            "ref-8"
           ]
         },
         {
@@ -767,8 +750,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-11",
-            "ref-10"
+            "ref-9",
+            "ref-8"
           ]
         },
         {
@@ -784,8 +767,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-12",
-            "ref-10"
+            "ref-10",
+            "ref-8"
           ]
         },
         {
@@ -801,8 +784,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-13",
-            "ref-10"
+            "ref-11",
+            "ref-8"
           ]
         },
         {
@@ -818,8 +801,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-14",
-            "ref-10"
+            "ref-12",
+            "ref-8"
           ]
         },
         {
@@ -835,8 +818,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-15",
-            "ref-10"
+            "ref-13",
+            "ref-8"
           ]
         },
         {
@@ -852,8 +835,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-16",
-            "ref-10"
+            "ref-14",
+            "ref-8"
           ]
         },
         {
@@ -869,8 +852,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-17",
-            "ref-10"
+            "ref-15",
+            "ref-8"
           ]
         },
         {
@@ -886,8 +869,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-18",
-            "ref-10"
+            "ref-16",
+            "ref-8"
           ]
         },
         {
@@ -903,8 +886,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-19",
-            "ref-10"
+            "ref-17",
+            "ref-8"
           ]
         },
         {
@@ -920,8 +903,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-20",
-            "ref-10"
+            "ref-18",
+            "ref-8"
           ]
         },
         {
@@ -937,8 +920,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-21",
-            "ref-10"
+            "ref-19",
+            "ref-8"
           ]
         },
         {
@@ -954,8 +937,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-22",
-            "ref-10"
+            "ref-20",
+            "ref-8"
           ]
         },
         {
@@ -971,8 +954,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-23",
-            "ref-10"
+            "ref-21",
+            "ref-8"
           ]
         },
         {
@@ -988,8 +971,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-24",
-            "ref-10"
+            "ref-22",
+            "ref-8"
           ]
         },
         {
@@ -1005,8 +988,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-25",
-            "ref-10"
+            "ref-23",
+            "ref-8"
           ]
         },
         {
@@ -1022,25 +1005,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-26",
-            "ref-10"
-          ]
-        },
-        {
-          "id": "auto-eda3b9f1820b55e2d6",
-          "name": "Contact Missions",
-          "status": "confirmed",
-          "offer": "Contact Missions — 2X GTA$ & RP (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
-          "requirements": "Active GTA+ membership required. 2X GTA$ & RP",
-          "startsOn": "2026-11-05",
-          "endsOn": "2026-11-11",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-11T23:00:00.000Z",
-          "claim": null,
-          "gtaPlus": true,
-          "sourceIds": [
-            "ref-27",
-            "ref-10"
+            "ref-24",
+            "ref-8"
           ]
         },
         {
@@ -1056,8 +1022,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-28",
-            "ref-10"
+            "ref-25",
+            "ref-8"
           ]
         }
       ]
@@ -1180,7 +1146,7 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-8",
+            "ref-6",
             "ref-1"
           ]
         },
@@ -1198,7 +1164,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "ref-5",
-            "ref-8"
+            "ref-6"
           ]
         },
         {
@@ -1215,7 +1181,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "ref-5",
-            "ref-8"
+            "ref-6"
           ]
         },
         {
@@ -1231,7 +1197,7 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-8",
+            "ref-6",
             "ref-1",
             "ref-2"
           ]
@@ -1256,169 +1222,151 @@
       "id": "ref-1",
       "title": "IGrandTheftAuto",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-2",
       "title": "Source",
       "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-3",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-4",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-5",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-6",
-      "title": "Rockstar Games Newswire",
-      "url": "https://support.rockstargames.com/articles/2fa9lK5MnHwf6ZwXivF5CG/receiving-the-grotti-turismo-omaggio-and-rockstar-motorsport-livery-from-nopixel-v-twitch-drops-in-grand-theft-auto-online",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "title": "GTABase",
+      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-7",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-online/twitch-drops",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-8",
-      "title": "GTABase",
-      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "title": "Source",
+      "url": "https://gta.wiki/w/GTA%2B_November_2026",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-9",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-10",
-      "title": "Source",
-      "url": "https://gta.wiki/w/GTA%2B_November_2026",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-11",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-12",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-13",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-14",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-15",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-16",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-17",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-18",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-19",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-20",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-21",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-22",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-23",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-24",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     },
     {
       "id": "ref-25",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
-    },
-    {
-      "id": "ref-26",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
-    },
-    {
-      "id": "ref-27",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
-    },
-    {
-      "id": "ref-28",
-      "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o",
-      "verifiedAt": "2026-11-10T09:35:00.036Z"
+      "verifiedAt": "2026-11-11T23:00:00.036Z"
     }
   ]
 }

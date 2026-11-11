@@ -533,31 +533,6 @@
           "progressGroup": "primary"
         },
         {
-          "id": "auto-34297872bc9918d8c9",
-          "label": "Grotti Turismo Omaggio + Rockstar Motorsport Livery — in-game Twitch reward claim — FREE only if this Drop was already earned and claimed on Twitch during the ended campaign. Collect the car at Legendary Motorsport and log in for the livery by November 11. Allow up to 72 hours after the Twitch claim; use the linked Rockstar account. Watching streams now does not earn this Drop.",
-          "factKey": "free-vehicles:grotti turismo omaggio rockstar motorsport livery in game twitch reward claim:all:all",
-          "startsAt": "2026-10-30T10:00:00.000Z",
-          "expiresAt": "2026-11-11T23:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "windowPolicy": "independent",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/gta-online/twitch-drops",
-              "kind": "rockstar",
-              "scope": "event"
-            }
-          ],
-          "entity": "Grotti Turismo Omaggio + Rockstar Motorsport Livery — in-game Twitch reward claim",
-          "offer": "FREE only if this Drop was already earned and claimed on Twitch during the ended campaign. Collect the car at Legendary Motorsport and log in for the livery by November 11. Allow up to 72 hours after the Twitch claim; use the linked Rockstar account. Watching streams now does not earn this Drop.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/gta-online/twitch-drops",
-          "progressGroup": "primary"
-        },
-        {
           "id": "auto-6c0cf9815c7c946f5c",
           "label": "Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
           "factKey": "free-vehicles:annis hellion:all:all",
@@ -2073,30 +2048,6 @@
           "progressGroup": "none"
         },
         {
-          "id": "auto-eda3b9f1820b55e2d6",
-          "label": "Contact Missions — 2X GTA$ & RP (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
-          "factKey": "gta-plus:contact missions:gta-plus:enhanced",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-11T23:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "kind": "rockstar",
-              "scope": "membership",
-              "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229"
-            }
-          ],
-          "entity": "Contact Missions",
-          "offer": "2X GTA$ & RP",
-          "eligibility": "gta-plus",
-          "platform": "enhanced",
-          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
-          "progressGroup": "none"
-        },
-        {
           "id": "auto-fc448f134f410290a2",
           "label": "Grotti Itali RSX — FREE; claim at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
           "factKey": "gta-plus:grotti itali rsx:gta-plus:enhanced",
@@ -2254,7 +2205,7 @@
   ],
   "completeness": "partial",
   "sourceUrl": "https://www.youtube.com/watch?v=xaNctQGswYU",
-  "nextBoundaryAt": "2026-11-11T23:00:00.000Z",
-  "revision": "aba7f0c11851be3840ce85aec637baaf8633c368c61f5f24d17c76b7b571e9bf",
-  "generatedAt": "2026-11-10T09:35:00.036Z"
+  "nextBoundaryAt": "2026-11-12T10:00:00.000Z",
+  "revision": "ed80e5157fb51618b1fafced4e87abd05ed1d3b9d95e34f04cce66f4c9d8768b",
+  "generatedAt": "2026-11-11T23:00:00.036Z"
 }
