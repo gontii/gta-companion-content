@@ -5,11 +5,11 @@
   "startsOn": "2026-11-12",
   "endsOn": "2026-11-18",
   "status": "active",
-  "verifiedAt": "2026-11-12T10:00:00.039Z",
-  "confirmedAt": "2026-11-12T10:00:00.039Z",
+  "verifiedAt": "2026-11-12T12:35:00.119Z",
+  "confirmedAt": "2026-11-12T12:35:00.119Z",
   "startsAt": "2026-11-12T10:00:00.000Z",
   "expiresAt": "2026-11-19T10:00:00.000Z",
-  "revision": "7b034d6392d0e2bfb86d645dd6c9e7eb46be34299e0d9befea221751abae6ac0",
+  "revision": "b57fc671ce7006a0dfaa39720ddefbe90fbd020de9092911d74839f0dfc81db8",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -109,16 +109,56 @@
       "id": "rewards",
       "items": [
         {
-          "id": "pending-rewards",
-          "name": "Rewards and requirements details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "auto-5b4cd5eaeaa02c02e1",
+          "name": "Stunt Races",
+          "status": "confirmed",
+          "offer": "Stunt Races — Win two Stunt Races to receive GTA$100,000.",
+          "requirements": "Win two Stunt Races to receive GTA$100,000.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "targetCount": 2,
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-d8adb9b91daa423373",
+          "name": "Karin Everon",
+          "status": "confirmed",
+          "offer": "Karin Everon — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
+          "requirements": "East Vinewood → Casino map icon. Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-ed57e4f9d352116bba",
+          "name": "Western Powersurge",
+          "status": "confirmed",
+          "offer": "Western Powersurge — Prize Ride: place in the top four in an LS Car Meet Series race for two days in a row to unlock the Western Powersurge.",
+          "requirements": "Cypress Flats → LS Car Meet map icon. Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
         }
       ]
     },
@@ -301,16 +341,174 @@
       "id": "events",
       "items": [
         {
-          "id": "pending-events",
-          "name": "Ongoing events details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "auto-0806f1d0dea30af444",
+          "name": "Salvage Yard Robberies",
+          "status": "confirmed",
+          "offer": "Salvage Yard Robberies — The Gangbanger Robbery: Canis Seminole Frontier; The McTony Robbery: Karin Hotring Everon; The Cargo Ship Robbery: Grotti Stinger TT.",
+          "requirements": "The Gangbanger Robbery: Canis Seminole Frontier; The McTony Robbery: Karin Hotring Everon; The Cargo Ship Robbery: Grotti Stinger TT.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-676f317c4e06149558",
+          "name": "FIB Priority File",
+          "status": "confirmed",
+          "offer": "FIB Priority File — The Brute Force File",
+          "requirements": "The Brute Force File",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-9104a925537a45f423",
+          "name": "LS Car Meet Test Rides",
+          "status": "confirmed",
+          "offer": "LS Car Meet Test Rides — Übermacht Rebla GTS; Declasse Impaler LX; Obey I-Wagen.",
+          "requirements": "Übermacht Rebla GTS; Declasse Impaler LX; Obey I-Wagen.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-91a29621d957156f53",
+          "name": "HSW Time Trial",
+          "status": "confirmed",
+          "offer": "HSW Time Trial — Sandy Shores to La Puerta (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Sandy Shores to La Puerta",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-c6afb210df51601e81",
+          "name": "Time Trial",
+          "status": "confirmed",
+          "offer": "Time Trial — Calafia Way",
+          "requirements": "Calafia Way",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-c9700fb675a7d44289",
+          "name": "Luxury Autos",
+          "status": "confirmed",
+          "offer": "Luxury Autos — Declasse Tampa GT; Pfister Astrale.",
+          "requirements": "Declasse Tampa GT; Pfister Astrale.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-e288fd93d5ca6f5ad9",
+          "name": "The Kortz Center Heist",
+          "status": "confirmed",
+          "offer": "The Kortz Center Heist — New Primary Targets this week: In Excess of Success; What are Melons?; Breathless.",
+          "requirements": "New Primary Targets this week: In Excess of Success; What are Melons?; Breathless.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-e90c71a428729d081e",
+          "name": "Hao’s Premium Test Ride",
+          "status": "confirmed",
+          "offer": "Hao’s Premium Test Ride — Weeny Issi Rally (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Weeny Issi Rally",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-ec8054ade3d8f76d4c",
+          "name": "Premium Race",
+          "status": "confirmed",
+          "offer": "Premium Race — Down the Drain",
+          "requirements": "Down the Drain",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-f4fedee87347f5308d",
+          "name": "Premium Deluxe Motorsport",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Motorsport — Declasse Hotring Sabre; Karin Vivanite; Obey Tailgater S; Declasse Tahoma Coupe; Canis Castigator.",
+          "requirements": "Declasse Hotring Sabre; Karin Vivanite; Obey Tailgater S; Declasse Tahoma Coupe; Canis Castigator.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
         }
       ]
     },
@@ -335,11 +533,11 @@
           ]
         },
         {
-          "id": "auto-86c99a7155c61154b5",
-          "name": "Combat Shotgun",
+          "id": "auto-7c231a03cea565727b",
+          "name": "Armor",
           "status": "confirmed",
-          "offer": "Combat Shotgun — 40% off at the Gun Van (GTA+ only)",
-          "requirements": "Active GTA+ membership required. Daily rotating stop in Southern San Andreas. The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership. See This Week → Gun Van for the current stock and discounts.",
+          "offer": "Armor — 80% off at the Gun Van (GTA+ only)",
+          "requirements": "Active GTA+ membership required. 80% off at the Gun Van",
           "startsOn": "2026-11-12",
           "endsOn": "2026-11-18",
           "startsAt": "2026-11-12T10:00:00.000Z",
@@ -348,7 +546,24 @@
           "gtaPlus": true,
           "sourceIds": [
             "ref-2",
-            "ref-5"
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-86c99a7155c61154b5",
+          "name": "Combat Shotgun",
+          "status": "confirmed",
+          "offer": "Combat Shotgun — 40% off at the Gun Van (GTA+ only)",
+          "requirements": "Active GTA+ membership required. 40% off at the Gun Van",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
           ]
         },
         {
@@ -364,8 +579,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7"
+            "ref-5",
+            "ref-6"
           ]
         },
         {
@@ -381,8 +596,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-8",
-            "ref-7"
+            "ref-7",
+            "ref-6"
           ]
         },
         {
@@ -398,8 +613,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-9",
-            "ref-7"
+            "ref-8",
+            "ref-6"
           ]
         },
         {
@@ -415,8 +630,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-10",
-            "ref-7"
+            "ref-9",
+            "ref-6"
           ]
         },
         {
@@ -432,8 +647,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-11",
-            "ref-7"
+            "ref-10",
+            "ref-6"
           ]
         },
         {
@@ -449,8 +664,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-12",
-            "ref-7"
+            "ref-11",
+            "ref-6"
           ]
         },
         {
@@ -466,8 +681,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-13",
-            "ref-7"
+            "ref-12",
+            "ref-6"
           ]
         },
         {
@@ -483,8 +698,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-14",
-            "ref-7"
+            "ref-13",
+            "ref-6"
           ]
         },
         {
@@ -500,8 +715,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-15",
-            "ref-7"
+            "ref-14",
+            "ref-6"
           ]
         },
         {
@@ -517,8 +732,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-16",
-            "ref-7"
+            "ref-15",
+            "ref-6"
           ]
         },
         {
@@ -534,8 +749,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-17",
-            "ref-7"
+            "ref-16",
+            "ref-6"
           ]
         },
         {
@@ -551,8 +766,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-18",
-            "ref-7"
+            "ref-17",
+            "ref-6"
           ]
         },
         {
@@ -568,8 +783,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-19",
-            "ref-7"
+            "ref-18",
+            "ref-6"
           ]
         },
         {
@@ -585,8 +800,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-20",
-            "ref-7"
+            "ref-19",
+            "ref-6"
           ]
         },
         {
@@ -602,8 +817,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-21",
-            "ref-7"
+            "ref-20",
+            "ref-6"
           ]
         },
         {
@@ -619,8 +834,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-22",
-            "ref-7"
+            "ref-21",
+            "ref-6"
           ]
         },
         {
@@ -636,8 +851,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-23",
-            "ref-7"
+            "ref-22",
+            "ref-6"
           ]
         },
         {
@@ -653,8 +868,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-24",
-            "ref-7"
+            "ref-23",
+            "ref-6"
           ]
         },
         {
@@ -670,8 +885,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-25",
-            "ref-7"
+            "ref-24",
+            "ref-6"
           ]
         }
       ]
@@ -680,8 +895,59 @@
       "id": "rotations",
       "items": [
         {
-          "id": "pending-rotations",
-          "name": "Weekly rotations details",
+          "id": "auto-4f21e1197e5805f694",
+          "name": "Tactical SMG",
+          "status": "confirmed",
+          "offer": "Tactical SMG — 40% off at the Gun Van",
+          "requirements": "Daily rotating stop in Southern San Andreas. The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership. See This Week → Gun Van for the current stock and discounts.",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "name": "Knife",
+          "status": "confirmed",
+          "offer": "Knife — FREE at the Gun Van",
+          "requirements": "FREE at the Gun Van",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "name": "Baseball Bat",
+          "status": "confirmed",
+          "offer": "Baseball Bat — FREE at the Gun Van",
+          "requirements": "FREE at the Gun Van",
+          "startsOn": "2026-11-12",
+          "endsOn": "2026-11-18",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "pending-gun-van-stock",
+          "name": "Other Gun Van stock and discounts",
           "status": "pending",
           "offer": null,
           "requirements": null,
@@ -699,151 +965,145 @@
       "id": "ref-1",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-2",
       "title": "RockstarINTEL",
       "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-3",
       "title": "IGrandTheftAuto",
       "url": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-12-2026",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-4",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-5",
-      "title": "Source",
-      "url": "https://www.youtube.com/watch?v=4b2Bmhkl32M",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-6",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "title": "Source",
+      "url": "https://gta.wiki/w/GTA%2B_November_2026",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-7",
-      "title": "Source",
-      "url": "https://gta.wiki/w/GTA%2B_November_2026",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-8",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-9",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-10",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-11",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-12",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-13",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-14",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-15",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-16",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-17",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-18",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-19",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-20",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-21",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-22",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-23",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     },
     {
       "id": "ref-24",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
-    },
-    {
-      "id": "ref-25",
-      "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o",
-      "verifiedAt": "2026-11-12T10:00:00.039Z"
+      "verifiedAt": "2026-11-12T12:35:00.119Z"
     }
   ]
 }
