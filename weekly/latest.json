@@ -1,243 +1,239 @@
 {
   "schemaVersion": 2,
-  "weekId": "2026-11-05",
-  "range": "2026-11-05 – 2026-11-11",
+  "weekId": "2026-11-12",
+  "range": "2026-11-12 – 2026-11-18",
   "headline": "This week in GTA Online",
-  "startsAt": "2026-11-05T10:00:00.000Z",
-  "expiresAt": "2026-11-12T10:00:00.000Z",
+  "startsAt": "2026-11-12T10:00:00.000Z",
+  "expiresAt": "2026-11-19T10:00:00.000Z",
   "originalZone": "Europe/Warsaw",
   "precision": "date",
   "timingConfidence": "estimated",
   "quickTake": [
-    "Community Race Series — 2X GTA$ & RP",
-    "KnoWay Out — 2X GTA$ on first completion.",
-    "The Diamond Casino Heist — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-    "Original Heists — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled."
+    "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+    "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+    "Community Series — 3x GTA$ & RP",
+    "Sumo — 2X GTA$ & RP"
   ],
   "quickTakeEntries": [
     {
-      "id": "auto-2d6081813d30c5f7e2",
-      "label": "Community Race Series — 2X GTA$ & RP",
-      "factKey": "bonuses:community race series:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "id": "auto-04dc820fd80adf0816",
+      "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+      "factKey": "bonuses:stunt race series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Stunt Race Series",
+      "offer": "3X GTA$ and RP on Stunt Race Series",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-04dc820fd80adf0816"
+      ]
+    },
+    {
+      "id": "auto-2592275a3e223e7ffd",
+      "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+      "factKey": "bonuses:freemode challenges:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Freemode Challenges",
+      "offer": "4X GTA$ and RP on Freemode Challenges",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-2592275a3e223e7ffd"
+      ]
+    },
+    {
+      "id": "auto-43609dadb3636d4962",
+      "label": "Community Series — 3x GTA$ & RP",
+      "factKey": "bonuses:community series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated",
       "confidence": "corroborated",
       "sources": [
         {
-          "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
-          "kind": "tgg",
-          "publishedOn": "2026-11-04",
-          "videoId": "xaNctQGswYU",
-          "title": "HUGE WEEK! CAYO PANTHER STATUE, TRIPLE MONEY, 2X MONEY HEISTS & DISCOUNTS | GTA Online Weekly Update",
-          "offsetMs": 157000
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
         }
       ],
-      "entity": "Community Race Series",
+      "entity": "Community Series",
+      "offer": "3x GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+      "itemIds": [
+        "auto-43609dadb3636d4962"
+      ]
+    },
+    {
+      "id": "auto-4dba35ede65b89c07f",
+      "label": "Sumo — 2X GTA$ & RP",
+      "factKey": "bonuses:sumo:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
+        }
+      ],
+      "entity": "Sumo",
       "offer": "2X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
-      "sourceUrl": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
       "itemIds": [
-        "auto-2d6081813d30c5f7e2"
-      ]
-    },
-    {
-      "id": "auto-6df88ee551b72b278e",
-      "label": "KnoWay Out — 2X GTA$ on first completion.",
-      "factKey": "bonuses:knoway out:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "KnoWay Out",
-      "offer": "2X GTA$ on first completion.",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-6df88ee551b72b278e"
-      ]
-    },
-    {
-      "id": "auto-7b3107000ee50f3e95",
-      "label": "The Diamond Casino Heist — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "factKey": "bonuses:the diamond casino heist:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "The Diamond Casino Heist",
-      "offer": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-7b3107000ee50f3e95"
-      ]
-    },
-    {
-      "id": "auto-9beba50630f82efa44",
-      "label": "Original Heists — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "factKey": "bonuses:original heists:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "Original Heists",
-      "offer": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-9beba50630f82efa44"
+        "auto-4dba35ede65b89c07f"
       ]
     }
   ],
   "beginnerPath": [
     {
-      "id": "bp-auto-2d6081813d30c5f7e2",
-      "label": "Community Race Series — 2X GTA$ & RP",
-      "factKey": "bonuses:community race series:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "id": "bp-auto-04dc820fd80adf0816",
+      "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+      "factKey": "bonuses:stunt race series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Stunt Race Series",
+      "offer": "3X GTA$ and RP on Stunt Race Series",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-04dc820fd80adf0816"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-2592275a3e223e7ffd",
+      "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+      "factKey": "bonuses:freemode challenges:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Freemode Challenges",
+      "offer": "4X GTA$ and RP on Freemode Challenges",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-2592275a3e223e7ffd"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-43609dadb3636d4962",
+      "label": "Community Series — 3x GTA$ & RP",
+      "factKey": "bonuses:community series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated",
       "confidence": "corroborated",
       "sources": [
         {
-          "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
-          "kind": "tgg",
-          "publishedOn": "2026-11-04",
-          "videoId": "xaNctQGswYU",
-          "title": "HUGE WEEK! CAYO PANTHER STATUE, TRIPLE MONEY, 2X MONEY HEISTS & DISCOUNTS | GTA Online Weekly Update",
-          "offsetMs": 157000
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
         }
       ],
-      "entity": "Community Race Series",
+      "entity": "Community Series",
+      "offer": "3x GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+      "itemIds": [
+        "auto-43609dadb3636d4962"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-4dba35ede65b89c07f",
+      "label": "Sumo — 2X GTA$ & RP",
+      "factKey": "bonuses:sumo:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
+        }
+      ],
+      "entity": "Sumo",
       "offer": "2X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
-      "sourceUrl": "https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
       "itemIds": [
-        "auto-2d6081813d30c5f7e2"
-      ],
-      "progressGroup": "none"
-    },
-    {
-      "id": "bp-auto-6df88ee551b72b278e",
-      "label": "KnoWay Out — 2X GTA$ on first completion.",
-      "factKey": "bonuses:knoway out:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "KnoWay Out",
-      "offer": "2X GTA$ on first completion.",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-6df88ee551b72b278e"
-      ],
-      "progressGroup": "none"
-    },
-    {
-      "id": "bp-auto-7b3107000ee50f3e95",
-      "label": "The Diamond Casino Heist — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "factKey": "bonuses:the diamond casino heist:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "The Diamond Casino Heist",
-      "offer": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-7b3107000ee50f3e95"
-      ],
-      "progressGroup": "none"
-    },
-    {
-      "id": "bp-auto-9beba50630f82efa44",
-      "label": "Original Heists — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "factKey": "bonuses:original heists:all:all",
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "Original Heists",
-      "offer": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-9beba50630f82efa44"
+        "auto-4dba35ede65b89c07f"
       ],
       "progressGroup": "none"
     }
@@ -248,9 +244,9 @@
       "activity": "Community Series",
       "name": "Community Series matchmaking",
       "area": "Legion Square → series marker, or phone → Quick Join",
-      "note": "Use the Community Series marker or your phone’s Quick Join selection. Select the current Community Race Series when the offer names races; other community-created jobs do not automatically qualify for that bonus.\n\nThis week: Community Race Series — 2X GTA$ & RP",
+      "note": "Use the Community Series marker or your phone’s Quick Join selection. Select the current Community Race Series when the offer names races; other community-created jobs do not automatically qualify for that bonus.\n\nThis week: Community Series — 3x GTA$ & RP",
       "itemIds": [
-        "auto-2d6081813d30c5f7e2"
+        "auto-43609dadb3636d4962"
       ],
       "sources": [
         {
@@ -258,38 +254,8 @@
           "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta"
         }
       ],
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated"
-    },
-    {
-      "id": "auto-location-prize-ride",
-      "activity": "Prize Ride",
-      "name": "Los Santos Car Meet",
-      "area": "Cypress Flats → LS Car Meet map icon",
-      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
-      "itemIds": [
-        "auto-6c0cf9815c7c946f5c"
-      ],
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated"
-    },
-    {
-      "id": "auto-location-podium",
-      "activity": "Casino Podium",
-      "name": "The Diamond Casino & Resort",
-      "area": "East Vinewood → Casino map icon",
-      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Överflöd Entity XXR — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
-      "itemIds": [
-        "auto-dd80b58f3b204a247a"
-      ],
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated"
@@ -301,10 +267,10 @@
       "area": "Daily rotating stop in Southern San Andreas",
       "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
       "itemIds": [
-        "auto-1c13170003b27cbd4c"
+        "auto-86c99a7155c61154b5"
       ],
-      "startsAt": "2026-11-05T10:00:00.000Z",
-      "expiresAt": "2026-11-12T10:00:00.000Z",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated"
@@ -317,155 +283,153 @@
       "completeness": "partial",
       "items": [
         {
-          "id": "auto-2d6081813d30c5f7e2",
-          "label": "Community Race Series — 2X GTA$ & RP",
-          "factKey": "bonuses:community race series:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-04dc820fd80adf0816",
+          "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+          "factKey": "bonuses:stunt race series:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Stunt Race Series",
+          "offer": "3X GTA$ and RP on Stunt Race Series",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2592275a3e223e7ffd",
+          "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+          "factKey": "bonuses:freemode challenges:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Freemode Challenges",
+          "offer": "4X GTA$ and RP on Freemode Challenges",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-43609dadb3636d4962",
+          "label": "Community Series — 3x GTA$ & RP",
+          "factKey": "bonuses:community series:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
-              "kind": "tgg",
-              "publishedOn": "2026-11-04",
-              "videoId": "xaNctQGswYU",
-              "title": "HUGE WEEK! CAYO PANTHER STATUE, TRIPLE MONEY, 2X MONEY HEISTS & DISCOUNTS | GTA Online Weekly Update",
-              "offsetMs": 157000
-            }
-          ],
-          "entity": "Community Race Series",
-          "offer": "2X GTA$ & RP",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.youtube.com/watch?v=xaNctQGswYU",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-6df88ee551b72b278e",
-          "label": "KnoWay Out — 2X GTA$ on first completion.",
-          "factKey": "bonuses:knoway out:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "KnoWay Out",
-          "offer": "2X GTA$ on first completion.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-7b3107000ee50f3e95",
-          "label": "The Diamond Casino Heist — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-          "factKey": "bonuses:the diamond casino heist:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "The Diamond Casino Heist",
-          "offer": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-9beba50630f82efa44",
-          "label": "Original Heists — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-          "factKey": "bonuses:original heists:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Original Heists",
-          "offer": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-9f483ca23478f4271e",
-          "label": "The Doomsday Heist — 2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-          "factKey": "bonuses:the doomsday heist:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "The Doomsday Heist",
-          "offer": "2X GTA$ first-time completion bonus; standard finale payouts are not doubled.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-bf3eb14765735ea342",
-          "label": "Mansion Raid — 3x GTA$ & RP",
-          "factKey": "bonuses:mansion raid:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Mansion Raid",
+          "entity": "Community Series",
           "offer": "3x GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4dba35ede65b89c07f",
+          "label": "Sumo — 2X GTA$ & RP",
+          "factKey": "bonuses:sumo:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Sumo",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-512afaa2b9b0288cde",
+          "label": "All Contact Missions — 2x GTA$ & RP",
+          "factKey": "bonuses:all contact missions:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "All Contact Missions",
+          "offer": "2x GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8a2891a007e28b2f71",
+          "label": "All Contact Missions — 4X GTA$ & RP (GTA+ only)",
+          "factKey": "bonuses:all contact missions:gta-plus:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "All Contact Missions",
+          "offer": "4X GTA$ & RP",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         }
       ]
@@ -473,116 +437,14 @@
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "auto-0321fae242cfac267c",
-          "label": "Adversary Mode — Win an Adversary Mode to receive GTA$100,000",
-          "factKey": "challenge:adversary mode:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Adversary Mode",
-          "offer": "Win an Adversary Mode to receive GTA$100,000",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "extra"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "auto-1cf7230040ab1a16f2",
-          "label": "The Great Circle Back — FREE Mansion Painting Decoration; play GTA Online by November 11.",
-          "factKey": "free-vehicles:the great circle back:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "The Great Circle Back",
-          "offer": "FREE Mansion Painting Decoration; play GTA Online by November 11.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "primary"
-        },
-        {
-          "id": "auto-6c0cf9815c7c946f5c",
-          "label": "Annis Hellion — Place top 5 in an LS Car Meet race for 3 days in a row to unlock the Annis Hellion",
-          "factKey": "free-vehicles:annis hellion:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Annis Hellion",
-          "offer": "Place top 5 in a LS Car Meet Race for 3 days in a row to unlock the Annis Hellion",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "extra"
-        },
-        {
-          "id": "auto-dd80b58f3b204a247a",
-          "label": "Överflöd Entity XXR — Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
-          "factKey": "free-vehicles:verfl d entity xxr:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Överflöd Entity XXR",
-          "offer": "Podium vehicle: chance to win at the Lucky Wheel; winning is not guaranteed",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "discounts",
@@ -590,403 +452,253 @@
       "completeness": "partial",
       "items": [
         {
-          "id": "auto-086585caf6bac5c37f",
-          "label": "Casino Master Penthouse Upgrades and Modifications — 40% off",
-          "factKey": "discounts:casino master penthouse upgrades and modifications:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Casino Master Penthouse Upgrades and Modifications",
-          "offer": "40% off",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-2208d0eaa0e77f123e",
-          "label": "Casino Master Penthouse — 40% off",
-          "factKey": "discounts:casino master penthouse:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Casino Master Penthouse",
-          "offer": "40% off",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-4043a0c4ec01254b5a",
-          "label": "Invetero Coquette D5 — 30% off",
-          "factKey": "discounts:invetero coquette d5:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-101030b87bf09bf2b6",
+          "label": "Declasse Tahoma Coupe — 30% off",
+          "factKey": "discounts:declasse tahoma coupe:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Invetero Coquette D5",
+          "entity": "Declasse Tahoma Coupe",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-418e7d861be5ff5d93",
-          "label": "Grotti Cheetah — 30% off",
-          "factKey": "discounts:grotti cheetah:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-36b5632a83f4a155e3",
+          "label": "Canis Castigator — 30% off",
+          "factKey": "discounts:canis castigator:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Grotti Cheetah",
+          "entity": "Canis Castigator",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-532e40fc94e4a3bae6",
-          "label": "Benefactor Vorschlaghammer — 30% off",
-          "factKey": "discounts:benefactor vorschlaghammer:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-597bb50a298fca68f1",
+          "label": "Übermacht Rebla GTS — 30% off",
+          "factKey": "discounts:bermacht rebla gts:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Benefactor Vorschlaghammer",
+          "entity": "Übermacht Rebla GTS",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-7c2a00ee6e69420cc8",
-          "label": "Dinka Blista Kanjo — 30% off",
-          "factKey": "discounts:dinka blista kanjo:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-6917a7e0bf603710a4",
+          "label": "Declasse Impaler LX — 30% off",
+          "factKey": "discounts:declasse impaler lx:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Dinka Blista Kanjo",
+          "entity": "Declasse Impaler LX",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-8397d4178b898cfdd1",
-          "label": "Grotti Veleno GT — 25% off",
-          "factKey": "discounts:grotti veleno gt:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Grotti Veleno GT",
-          "offer": "25% off",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-976de97e8f088c544c",
-          "label": "Facility Upgrades and Modifications — 40% off",
-          "factKey": "discounts:facility upgrades and modifications:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Facility Upgrades and Modifications",
-          "offer": "40% off",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-9a5510563175f2fb45",
-          "label": "HVY Insurgent — 30% off",
-          "factKey": "discounts:hvy insurgent:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-9251c0f7e047c17a5e",
+          "label": "Dewbauchee Vagner — 30% off",
+          "factKey": "discounts:dewbauchee vagner:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "HVY Insurgent",
+          "entity": "Dewbauchee Vagner",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-9bf9e1ff95be59fa23",
-          "label": "Pegassi Reaper — 30% off",
-          "factKey": "discounts:pegassi reaper:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-a595a988322942d777",
+          "label": "Obey Tailgater S — 30% off",
+          "factKey": "discounts:obey tailgater s:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Pegassi Reaper",
+          "entity": "Obey Tailgater S",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-a2cfcacddca8bb5cc4",
-          "label": "Cheval Taipan — 30% off",
-          "factKey": "discounts:cheval taipan:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-a608fab9a0772339d4",
+          "label": "Obey I-Wagen — 30% off",
+          "factKey": "discounts:obey i wagen:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Cheval Taipan",
+          "entity": "Obey I-Wagen",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-a5e257575d73cb85d4",
-          "label": "Facilities — 40% off",
-          "factKey": "discounts:facilities:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Facilities",
-          "offer": "40% off",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-ae53fc72a604978070",
-          "label": "High-End Apartments — 40% off",
-          "factKey": "discounts:high end apartments:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-d7acabd8fad884fc91",
+          "label": "Karin Vivanite — 30% off",
+          "factKey": "discounts:karin vivanite:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "High-End Apartments",
-          "offer": "40% off",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-d44e93d2225755f01c",
-          "label": "Western Company Besra — 30% off",
-          "factKey": "discounts:western company besra:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Western Company Besra",
+          "entity": "Karin Vivanite",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-d8419e32d82bcbe630",
-          "label": "Maibatsu Penumbra FF — 30% off",
-          "factKey": "discounts:maibatsu penumbra ff:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-d8a1cbfb11b1154e59",
+          "label": "MTL Wastelander — 30% off",
+          "factKey": "discounts:mtl wastelander:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Maibatsu Penumbra FF",
+          "entity": "MTL Wastelander",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         },
         {
-          "id": "auto-e41e801d2a2c6d9108",
-          "label": "Western Rampant Rocket — 30% off",
-          "factKey": "discounts:western rampant rocket:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-f6a211b36e3e43d9ad",
+          "label": "Declasse Hotring Sabre — 30% off",
+          "factKey": "discounts:declasse hotring sabre:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
+              "publishedOn": "2026-11-11"
             }
           ],
-          "entity": "Western Rampant Rocket",
+          "entity": "Declasse Hotring Sabre",
           "offer": "30% off",
           "eligibility": "all",
           "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         }
       ]
@@ -997,331 +709,36 @@
       "completeness": "partial",
       "items": [
         {
-          "id": "auto-1c13170003b27cbd4c",
-          "label": "Pipe Bombs — In stock",
-          "factKey": "gun-van:pipe bombs:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
+          "id": "auto-86c99a7155c61154b5",
+          "label": "Combat Shotgun — 40% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:combat shotgun:gta-plus:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
           "originalZone": "Europe/Warsaw",
           "precision": "date",
           "timingConfidence": "estimated",
           "confidence": "corroborated",
           "sources": [
             {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
               "kind": "intel",
               "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Pipe Bombs",
-          "offer": "In stock",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-2b1711070e480ff2a4",
-          "label": "Proximity Mines — In stock",
-          "factKey": "gun-van:proximity mines:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Proximity Mines",
-          "offer": "In stock",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-377466455771d30d6e",
-          "label": "Sweeper Shotgun — In stock",
-          "factKey": "gun-van:sweeper shotgun:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Sweeper Shotgun",
-          "offer": "In stock",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-5676d539cea8d31ba5",
-          "label": "Compact EMP Launcher — 40% off at the Gun Van (GTA+ only)",
-          "factKey": "gun-van:compact emp launcher:gta-plus:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-11-04"
+              "publishedOn": "2026-11-11"
             },
             {
-              "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
+              "videoId": "4b2Bmhkl32M",
+              "title": "The Final GTA Online Weekly Update on TGG",
+              "publishedOn": "2026-11-11T21:46:52+00:00",
+              "url": "https://www.youtube.com/watch?v=4b2Bmhkl32M",
               "kind": "tgg",
-              "publishedOn": "2026-11-04",
-              "videoId": "xaNctQGswYU",
-              "title": "HUGE WEEK! CAYO PANTHER STATUE, TRIPLE MONEY, 2X MONEY HEISTS & DISCOUNTS | GTA Online Weekly Update",
-              "offsetMs": 122000
+              "offsetMs": 145120
             }
           ],
-          "entity": "Compact EMP Launcher",
+          "entity": "Combat Shotgun",
           "offer": "40% off at the Gun Van",
           "eligibility": "gta-plus",
           "platform": "all",
-          "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-76dedbafae52ebc662",
-          "label": "Knuckle Dusters — In stock",
-          "factKey": "gun-van:knuckle dusters:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Knuckle Dusters",
-          "offer": "In stock",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-7b28067bf63aea87d8",
-          "label": "Widowmaker — In stock",
-          "factKey": "gun-van:widowmaker:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Widowmaker",
-          "offer": "In stock",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-7c231a03cea565727b",
-          "label": "Armor — 80% off at the Gun Van (GTA+ only)",
-          "factKey": "gun-van:armor:gta-plus:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-11-04"
-            }
-          ],
-          "entity": "Armor",
-          "offer": "80% off at the Gun Van",
-          "eligibility": "gta-plus",
-          "platform": "all",
-          "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-8696d77619f969d318",
-          "label": "Molotovs — In stock",
-          "factKey": "gun-van:molotovs:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Molotovs",
-          "offer": "In stock",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-8b7a42c6fb65b1af8d",
-          "label": "Compact EMP Launcher — In stock",
-          "factKey": "gun-van:compact emp launcher:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-11-04"
-            }
-          ],
-          "entity": "Compact EMP Launcher",
-          "offer": "In stock",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-9b1d541f06294fccd7",
-          "label": "Knife — FREE",
-          "factKey": "gun-van:knife:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            },
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-11-04"
-            }
-          ],
-          "entity": "Knife",
-          "offer": "FREE",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "primary"
-        },
-        {
-          "id": "auto-cae4fa84f2ab2246b6",
-          "label": "Baseball Bat — FREE",
-          "factKey": "gun-van:baseball bat:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            },
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-11-04"
-            }
-          ],
-          "entity": "Baseball Bat",
-          "offer": "FREE",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "primary"
-        },
-        {
-          "id": "auto-e48d50258c4f921f9e",
-          "label": "Precision Rifle — 50% off at the Gun Van",
-          "factKey": "gun-van:precision rifle:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-              "kind": "gtabase",
-              "scope": "weekly",
-              "publishedOn": "2026-11-04"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
-              "kind": "tgg",
-              "publishedOn": "2026-11-04",
-              "videoId": "xaNctQGswYU",
-              "title": "HUGE WEEK! CAYO PANTHER STATUE, TRIPLE MONEY, 2X MONEY HEISTS & DISCOUNTS | GTA Online Weekly Update",
-              "offsetMs": 122000
-            }
-          ],
-          "entity": "Precision Rifle",
-          "offer": "50% off at the Gun Van",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
           "progressGroup": "none"
         }
       ]
@@ -1329,309 +746,8 @@
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "partial",
-      "items": [
-        {
-          "id": "auto-0806f1d0dea30af444",
-          "label": "Salvage Yard Robberies — The Podium Robbery: Annis Hellion; The Cargo Ship Robbery: Truffade Z-Type; The McTony Robbery: Lampadati Cinquemila. No claimable vehicle is confirmed.",
-          "factKey": "other:salvage yard robberies:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Salvage Yard Robberies",
-          "offer": "The Podium Robbery: Annis Hellion; The Cargo Ship Robbery: Truffade Z-Type; The McTony Robbery: Lampadati Cinquemila. No claimable vehicle is confirmed.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-4ae7270a51552bcfda",
-          "label": "The Cayo Perico Heist — Panther Statue guaranteed as the Primary Target on your first approach during this event.",
-          "factKey": "other:the cayo perico heist:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "The Cayo Perico Heist",
-          "offer": "Panther Statue guaranteed as the Primary Target on your first approach during this event.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-5ad427f14cfd3ed424",
-          "label": "Kortz Center paintings — The Outcome of Endeavour; To Beat About the Bush; Hare Oneself Think; True Love.",
-          "factKey": "other:kortz center paintings:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Kortz Center paintings",
-          "offer": "The Outcome of Endeavour; To Beat About the Bush; Hare Oneself Think; True Love.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-6cef9839ca982373cf",
-          "label": "HSW Time Trial — Del Perro Beach to Murietta Heights (PS5, Xbox Series X|S, PC Enhanced)",
-          "factKey": "other:hsw time trial:all:enhanced",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "HSW Time Trial",
-          "offer": "Del Perro Beach to Murietta Heights",
-          "eligibility": "all",
-          "platform": "enhanced",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-9104a925537a45f423",
-          "label": "LS Car Meet Test Rides — Cheval Taipan; HVY Insurgent; Pegassi Reaper.",
-          "factKey": "other:ls car meet test rides:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "LS Car Meet Test Rides",
-          "offer": "Cheval Taipan; HVY Insurgent; Pegassi Reaper.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-95df89508ed8acb4ed",
-          "label": "The Black Box File — Priority File",
-          "factKey": "other:the black box file:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "The Black Box File",
-          "offer": "Priority File",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-c6afb210df51601e81",
-          "label": "Time Trial — LSIA",
-          "factKey": "other:time trial:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Time Trial",
-          "offer": "LSIA",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-c9700fb675a7d44289",
-          "label": "Luxury Autos — Grotti Veleno GT; Grotti GT750.",
-          "factKey": "other:luxury autos:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Luxury Autos",
-          "offer": "Grotti Veleno GT; Grotti GT750.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-e288fd93d5ca6f5ad9",
-          "label": "The Kortz Center Heist — The Outcome of Endeavour guaranteed as the Primary Target on your first run during this event.",
-          "factKey": "other:the kortz center heist:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "official",
-          "sources": [
-            {
-              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-              "kind": "rockstar",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "The Kortz Center Heist",
-          "offer": "The Outcome of Endeavour guaranteed as the Primary Target on your first run during this event.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-e90c71a428729d081e",
-          "label": "Hao’s Premium Test Ride — Grotti Brioso R/A (PS5, Xbox Series X|S, PC Enhanced)",
-          "factKey": "other:hao s premium test ride:all:enhanced",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Hao’s Premium Test Ride",
-          "offer": "Grotti Brioso R/A",
-          "eligibility": "all",
-          "platform": "enhanced",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-ec8054ade3d8f76d4c",
-          "label": "Premium Race — At the Races",
-          "factKey": "other:premium race:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Premium Race",
-          "offer": "At the Races",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        },
-        {
-          "id": "auto-f4fedee87347f5308d",
-          "label": "Premium Deluxe Motorsport — Dinka Blista Kanjo; Grotti Cheetah; Invetero Coquette D5; Maibatsu Penumbra FF; Benefactor Vorschlaghammer.",
-          "factKey": "other:premium deluxe motorsport:all:all",
-          "startsAt": "2026-11-05T10:00:00.000Z",
-          "expiresAt": "2026-11-12T10:00:00.000Z",
-          "originalZone": "Europe/Warsaw",
-          "precision": "date",
-          "timingConfidence": "estimated",
-          "confidence": "corroborated",
-          "sources": [
-            {
-              "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-              "kind": "intel",
-              "scope": "weekly",
-              "publishedOn": "2026-11-05"
-            }
-          ],
-          "entity": "Premium Deluxe Motorsport",
-          "offer": "Dinka Blista Kanjo; Grotti Cheetah; Invetero Coquette D5; Maibatsu Penumbra FF; Benefactor Vorschlaghammer.",
-          "eligibility": "all",
-          "platform": "all",
-          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
-          "progressGroup": "none"
-        }
-      ]
+      "completeness": "pending",
+      "items": []
     },
     {
       "id": "gta-plus",
@@ -2048,6 +1164,30 @@
           "progressGroup": "none"
         },
         {
+          "id": "auto-eda3b9f1820b55e2d6",
+          "label": "Contact Missions — 4X GTA$ & RP (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:contact missions:gta-plus:enhanced",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229"
+            }
+          ],
+          "entity": "Contact Missions",
+          "offer": "4X GTA$ & RP",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
+          "progressGroup": "none"
+        },
+        {
           "id": "auto-fc448f134f410290a2",
           "label": "Grotti Itali RSX — FREE; claim at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
           "factKey": "gta-plus:grotti itali rsx:gta-plus:enhanced",
@@ -2077,35 +1217,24 @@
   ],
   "sources": [
     {
-      "url": "https://www.youtube.com/watch?v=xaNctQGswYU",
-      "kind": "tgg",
-      "publishedOn": "2026-11-04",
-      "videoId": "xaNctQGswYU",
-      "title": "HUGE WEEK! CAYO PANTHER STATUE, TRIPLE MONEY, 2X MONEY HEISTS & DISCOUNTS | GTA Online Weekly Update",
-      "offsetMs": 122000
-    },
-    {
       "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
       "kind": "rockstar",
       "scope": "weekly",
       "publishedOn": "2026-11-05"
     },
     {
-      "url": "https://rockstarintel.com/gta-online-event-week-panther-statue-november-5th-11th/",
+      "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
       "kind": "intel",
       "scope": "weekly",
-      "publishedOn": "2026-11-05"
+      "publishedOn": "2026-11-11"
     },
     {
-      "url": "https://www.rockstargames.com/gta-online/twitch-drops",
-      "kind": "rockstar",
-      "scope": "event"
-    },
-    {
-      "url": "https://www.gtabase.com/articles/grand-theft-auto-v/news/gta-online-weekly-update-november-5-4-heist-event-week-bonuses-discounts",
-      "kind": "gtabase",
-      "scope": "weekly",
-      "publishedOn": "2026-11-04"
+      "videoId": "4b2Bmhkl32M",
+      "title": "The Final GTA Online Weekly Update on TGG",
+      "publishedOn": "2026-11-11T21:46:52+00:00",
+      "url": "https://www.youtube.com/watch?v=4b2Bmhkl32M",
+      "kind": "tgg",
+      "offsetMs": 145120
     },
     {
       "kind": "rockstar",
@@ -2204,8 +1333,8 @@
     }
   ],
   "completeness": "partial",
-  "sourceUrl": "https://www.youtube.com/watch?v=xaNctQGswYU",
-  "nextBoundaryAt": "2026-11-12T10:00:00.000Z",
-  "revision": "ed80e5157fb51618b1fafced4e87abd05ed1d3b9d95e34f04cce66f4c9d8768b",
-  "generatedAt": "2026-11-11T23:00:00.036Z"
+  "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+  "nextBoundaryAt": "2026-11-19T10:00:00.000Z",
+  "revision": "7b034d6392d0e2bfb86d645dd6c9e7eb46be34299e0d9befea221751abae6ac0",
+  "generatedAt": "2026-11-12T10:00:00.039Z"
 }

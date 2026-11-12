@@ -1,0 +1,1340 @@
+{
+  "schemaVersion": 2,
+  "weekId": "2026-11-12",
+  "range": "2026-11-12 – 2026-11-18",
+  "headline": "This week in GTA Online",
+  "startsAt": "2026-11-12T10:00:00.000Z",
+  "expiresAt": "2026-11-19T10:00:00.000Z",
+  "originalZone": "Europe/Warsaw",
+  "precision": "date",
+  "timingConfidence": "estimated",
+  "quickTake": [
+    "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+    "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+    "Community Series — 3x GTA$ & RP",
+    "Sumo — 2X GTA$ & RP"
+  ],
+  "quickTakeEntries": [
+    {
+      "id": "auto-04dc820fd80adf0816",
+      "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+      "factKey": "bonuses:stunt race series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Stunt Race Series",
+      "offer": "3X GTA$ and RP on Stunt Race Series",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-04dc820fd80adf0816"
+      ]
+    },
+    {
+      "id": "auto-2592275a3e223e7ffd",
+      "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+      "factKey": "bonuses:freemode challenges:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Freemode Challenges",
+      "offer": "4X GTA$ and RP on Freemode Challenges",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-2592275a3e223e7ffd"
+      ]
+    },
+    {
+      "id": "auto-43609dadb3636d4962",
+      "label": "Community Series — 3x GTA$ & RP",
+      "factKey": "bonuses:community series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
+        }
+      ],
+      "entity": "Community Series",
+      "offer": "3x GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+      "itemIds": [
+        "auto-43609dadb3636d4962"
+      ]
+    },
+    {
+      "id": "auto-4dba35ede65b89c07f",
+      "label": "Sumo — 2X GTA$ & RP",
+      "factKey": "bonuses:sumo:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
+        }
+      ],
+      "entity": "Sumo",
+      "offer": "2X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+      "itemIds": [
+        "auto-4dba35ede65b89c07f"
+      ]
+    }
+  ],
+  "beginnerPath": [
+    {
+      "id": "bp-auto-04dc820fd80adf0816",
+      "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+      "factKey": "bonuses:stunt race series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Stunt Race Series",
+      "offer": "3X GTA$ and RP on Stunt Race Series",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-04dc820fd80adf0816"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-2592275a3e223e7ffd",
+      "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+      "factKey": "bonuses:freemode challenges:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Freemode Challenges",
+      "offer": "4X GTA$ and RP on Freemode Challenges",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-2592275a3e223e7ffd"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-43609dadb3636d4962",
+      "label": "Community Series — 3x GTA$ & RP",
+      "factKey": "bonuses:community series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
+        }
+      ],
+      "entity": "Community Series",
+      "offer": "3x GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+      "itemIds": [
+        "auto-43609dadb3636d4962"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-4dba35ede65b89c07f",
+      "label": "Sumo — 2X GTA$ & RP",
+      "factKey": "bonuses:sumo:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [
+        {
+          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "kind": "intel",
+          "scope": "weekly",
+          "publishedOn": "2026-11-11"
+        }
+      ],
+      "entity": "Sumo",
+      "offer": "2X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+      "itemIds": [
+        "auto-4dba35ede65b89c07f"
+      ],
+      "progressGroup": "none"
+    }
+  ],
+  "locations": [
+    {
+      "id": "auto-location-community-series",
+      "activity": "Community Series",
+      "name": "Community Series matchmaking",
+      "area": "Legion Square → series marker, or phone → Quick Join",
+      "note": "Use the Community Series marker or your phone’s Quick Join selection. Select the current Community Race Series when the offer names races; other community-created jobs do not automatically qualify for that bonus.\n\nThis week: Community Series — 3x GTA$ & RP",
+      "itemIds": [
+        "auto-43609dadb3636d4962"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta"
+        }
+      ],
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-gun-van",
+      "activity": "Gun Van",
+      "name": "Mobile weapons dealer",
+      "area": "Daily rotating stop in Southern San Andreas",
+      "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
+      "itemIds": [
+        "auto-86c99a7155c61154b5"
+      ],
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    }
+  ],
+  "sections": [
+    {
+      "id": "bonuses",
+      "title": "Best bonuses",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-04dc820fd80adf0816",
+          "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+          "factKey": "bonuses:stunt race series:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Stunt Race Series",
+          "offer": "3X GTA$ and RP on Stunt Race Series",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2592275a3e223e7ffd",
+          "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+          "factKey": "bonuses:freemode challenges:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Freemode Challenges",
+          "offer": "4X GTA$ and RP on Freemode Challenges",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-43609dadb3636d4962",
+          "label": "Community Series — 3x GTA$ & RP",
+          "factKey": "bonuses:community series:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Community Series",
+          "offer": "3x GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4dba35ede65b89c07f",
+          "label": "Sumo — 2X GTA$ & RP",
+          "factKey": "bonuses:sumo:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Sumo",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-512afaa2b9b0288cde",
+          "label": "All Contact Missions — 2x GTA$ & RP",
+          "factKey": "bonuses:all contact missions:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "All Contact Missions",
+          "offer": "2x GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8a2891a007e28b2f71",
+          "label": "All Contact Missions — 4X GTA$ & RP (GTA+ only)",
+          "factKey": "bonuses:all contact missions:gta-plus:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "All Contact Missions",
+          "offer": "4X GTA$ & RP",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "title": "Weekly challenge",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "free-vehicles",
+      "title": "Free rewards & prize vehicles",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "discounts",
+      "title": "Discounts & Offers",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-101030b87bf09bf2b6",
+          "label": "Declasse Tahoma Coupe — 30% off",
+          "factKey": "discounts:declasse tahoma coupe:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Declasse Tahoma Coupe",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-36b5632a83f4a155e3",
+          "label": "Canis Castigator — 30% off",
+          "factKey": "discounts:canis castigator:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Canis Castigator",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-597bb50a298fca68f1",
+          "label": "Übermacht Rebla GTS — 30% off",
+          "factKey": "discounts:bermacht rebla gts:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Übermacht Rebla GTS",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-6917a7e0bf603710a4",
+          "label": "Declasse Impaler LX — 30% off",
+          "factKey": "discounts:declasse impaler lx:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Declasse Impaler LX",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9251c0f7e047c17a5e",
+          "label": "Dewbauchee Vagner — 30% off",
+          "factKey": "discounts:dewbauchee vagner:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Dewbauchee Vagner",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a595a988322942d777",
+          "label": "Obey Tailgater S — 30% off",
+          "factKey": "discounts:obey tailgater s:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Obey Tailgater S",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a608fab9a0772339d4",
+          "label": "Obey I-Wagen — 30% off",
+          "factKey": "discounts:obey i wagen:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Obey I-Wagen",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d7acabd8fad884fc91",
+          "label": "Karin Vivanite — 30% off",
+          "factKey": "discounts:karin vivanite:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Karin Vivanite",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d8a1cbfb11b1154e59",
+          "label": "MTL Wastelander — 30% off",
+          "factKey": "discounts:mtl wastelander:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "MTL Wastelander",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-f6a211b36e3e43d9ad",
+          "label": "Declasse Hotring Sabre — 30% off",
+          "factKey": "discounts:declasse hotring sabre:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            }
+          ],
+          "entity": "Declasse Hotring Sabre",
+          "offer": "30% off",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "gun-van",
+      "title": "Gun Van",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-86c99a7155c61154b5",
+          "label": "Combat Shotgun — 40% off at the Gun Van (GTA+ only)",
+          "factKey": "gun-van:combat shotgun:gta-plus:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-11-19T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+              "kind": "intel",
+              "scope": "weekly",
+              "publishedOn": "2026-11-11"
+            },
+            {
+              "videoId": "4b2Bmhkl32M",
+              "title": "The Final GTA Online Weekly Update on TGG",
+              "publishedOn": "2026-11-11T21:46:52+00:00",
+              "url": "https://www.youtube.com/watch?v=4b2Bmhkl32M",
+              "kind": "tgg",
+              "offsetMs": 145120
+            }
+          ],
+          "entity": "Combat Shotgun",
+          "offer": "40% off at the Gun Van",
+          "eligibility": "gta-plus",
+          "platform": "all",
+          "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+          "progressGroup": "none"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other weekly items",
+      "completeness": "pending",
+      "items": []
+    },
+    {
+      "id": "gta-plus",
+      "title": "GTA+ benefits",
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-0356322179b0ef1744",
+          "label": "Pop Art Revere Collar — FREE; automatically added to your wardrobe. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:pop art revere collar:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447"
+            }
+          ],
+          "entity": "Pop Art Revere Collar",
+          "offer": "FREE; automatically added to your wardrobe.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-053a452d1209ae0fb6",
+          "label": "Staff Sourced Special Cargo — 2X sourcing speed for Warehouse staff. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:staff sourced special cargo:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8"
+            }
+          ],
+          "entity": "Staff Sourced Special Cargo",
+          "offer": "2X sourcing speed for Warehouse staff.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-35f3a1d7ced9023c5f",
+          "label": "Warehouses and Vehicle Warehouses — 60% off; purchase via the SecuroServ computer in your Executive Office. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:warehouses and vehicle warehouses:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a"
+            }
+          ],
+          "entity": "Warehouses and Vehicle Warehouses",
+          "offer": "60% off; purchase via the SecuroServ computer in your Executive Office.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-3e3b3c329c2b301719",
+          "label": "Obey 10F — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:obey 10f:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497"
+            }
+          ],
+          "entity": "Obey 10F",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-3edb208f57110fbe62",
+          "label": "Pegassi Ignus Pursuit — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:pegassi ignus pursuit:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598"
+            }
+          ],
+          "entity": "Pegassi Ignus Pursuit",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-508933ead5d2573fc8",
+          "label": "Pegassi Zentorno — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:pegassi zentorno:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7"
+            }
+          ],
+          "entity": "Pegassi Zentorno",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-52db019793fb85a418",
+          "label": "Declasse Vigero ZX — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:declasse vigero zx:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k"
+            }
+          ],
+          "entity": "Declasse Vigero ZX",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-660eba02f7638f61cf",
+          "label": "White Prismatic Pearl Chameleon Paint and Wheel Paint — FREE; select the Chameleon paints at an Auto Shop or Vehicle Workshop with an eligible vehicle. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:white prismatic pearl chameleon paint and wheel paint:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k"
+            }
+          ],
+          "entity": "White Prismatic Pearl Chameleon Paint and Wheel Paint",
+          "offer": "FREE; select the Chameleon paints at an Auto Shop or Vehicle Workshop with an eligible vehicle.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-67497a7fae31e9891e",
+          "label": "Import/Export Sell Missions — 2X GTA$ & RP (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:import export sell missions:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3"
+            }
+          ],
+          "entity": "Import/Export Sell Missions",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-73bf7033d17f3d039f",
+          "label": "Pegassi Tezeract — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:pegassi tezeract:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o"
+            }
+          ],
+          "entity": "Pegassi Tezeract",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-75edb967e96a9c4f61",
+          "label": "Blagueurs Baseball Bat and Snakeskin Knife Weapon Finishes — FREE weapon finishes; claim at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:blagueurs baseball bat and snakeskin knife weapon finishes:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445"
+            }
+          ],
+          "entity": "Blagueurs Baseball Bat and Snakeskin Knife Weapon Finishes",
+          "offer": "FREE weapon finishes; claim at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-11-05"
+        },
+        {
+          "id": "auto-89922f720d40b3a0cc",
+          "label": "Declasse Scramjet — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:declasse scramjet:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48"
+            }
+          ],
+          "entity": "Declasse Scramjet",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-958290d8458b8da532",
+          "label": "Sod Off Painting — FREE; automatically added to Mansion Decorations. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:sod off painting:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7"
+            }
+          ],
+          "entity": "Sod Off Painting",
+          "offer": "FREE; automatically added to Mansion Decorations.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-98448add22b9c2395f",
+          "label": "Grotti Stinger TT — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:grotti stinger tt:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5"
+            }
+          ],
+          "entity": "Grotti Stinger TT",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a0abd41614989d44f0",
+          "label": "Body Armor and Ammo — 75% off, including Mk II Ammo; Ammu-Nation and Gun Van. Stacks with existing Gun Van markdowns. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:body armor and ammo:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558"
+            }
+          ],
+          "entity": "Body Armor and Ammo",
+          "offer": "75% off, including Mk II Ammo; Ammu-Nation and Gun Van. Stacks with existing Gun Van markdowns.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-bd8ae065c217a92981",
+          "label": "Pegassi Weaponized Ignus — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:pegassi weaponized ignus:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249"
+            }
+          ],
+          "entity": "Pegassi Weaponized Ignus",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-e88883eefd453563b4",
+          "label": "Bravado Banshee GTS — 20% off at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:bravado banshee gts:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk"
+            }
+          ],
+          "entity": "Bravado Banshee GTS",
+          "offer": "20% off at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-eda3b9f1820b55e2d6",
+          "label": "Contact Missions — 4X GTA$ & RP (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:contact missions:gta-plus:enhanced",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229"
+            }
+          ],
+          "entity": "Contact Missions",
+          "offer": "4X GTA$ & RP",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-fc448f134f410290a2",
+          "label": "Grotti Itali RSX — FREE; claim at The Vinewood Car Club. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gta-plus:grotti itali rsx:gta-plus:enhanced",
+          "startsAt": "2026-11-05T10:00:00.000Z",
+          "expiresAt": "2026-12-09T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "kind": "rockstar",
+              "scope": "membership",
+              "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o"
+            }
+          ],
+          "entity": "Grotti Itali RSX",
+          "offer": "FREE; claim at The Vinewood Car Club.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.rockstargames.com/gta-plus/benefits?info=7544o",
+          "progressGroup": "gta-plus",
+          "progressPeriodId": "2026-11-05"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "kind": "rockstar",
+      "scope": "weekly",
+      "publishedOn": "2026-11-05"
+    },
+    {
+      "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
+      "kind": "intel",
+      "scope": "weekly",
+      "publishedOn": "2026-11-11"
+    },
+    {
+      "videoId": "4b2Bmhkl32M",
+      "title": "The Final GTA Online Weekly Update on TGG",
+      "publishedOn": "2026-11-11T21:46:52+00:00",
+      "url": "https://www.youtube.com/watch?v=4b2Bmhkl32M",
+      "kind": "tgg",
+      "offsetMs": 145120
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229"
+    },
+    {
+      "kind": "rockstar",
+      "scope": "membership",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o"
+    }
+  ],
+  "completeness": "partial",
+  "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+  "nextBoundaryAt": "2026-11-19T10:00:00.000Z",
+  "revision": "7b034d6392d0e2bfb86d645dd6c9e7eb46be34299e0d9befea221751abae6ac0",
+  "generatedAt": "2026-11-12T10:00:00.039Z"
+}
