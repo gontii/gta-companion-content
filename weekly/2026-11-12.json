@@ -310,7 +310,7 @@
     {
       "id": "bonuses",
       "title": "Best bonuses",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-04dc820fd80adf0816",
@@ -467,7 +467,7 @@
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-5b4cd5eaeaa02c02e1",
@@ -557,7 +557,7 @@
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-101030b87bf09bf2b6",
@@ -814,7 +814,7 @@
     {
       "id": "gun-van",
       "title": "Gun Van",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-4f21e1197e5805f694",
@@ -946,7 +946,7 @@
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-0806f1d0dea30af444",
@@ -1203,7 +1203,7 @@
     {
       "id": "gta-plus",
       "title": "GTA+ benefits",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-0356322179b0ef1744",
@@ -1775,9 +1775,15 @@
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o"
     }
   ],
-  "completeness": "partial",
   "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
   "nextBoundaryAt": "2026-11-19T10:00:00.000Z",
-  "revision": "b57fc671ce7006a0dfaa39720ddefbe90fbd020de9092911d74839f0dfc81db8",
-  "generatedAt": "2026-11-12T12:35:00.119Z"
+  "completeness": "partial",
+  "missingAreas": [
+    "rewards"
+  ],
+  "resolvedAreas": 10,
+  "requiredAreas": 11,
+  "completenessNote": "Partial weekly update 2026-11-12: 10/11 areas. Missing: rewards.",
+  "revision": "95e10ab64498f6a31b172c6869192a67f7f8b53da0a6b2856eb52bfcbe00b4fd",
+  "generatedAt": "2026-11-13T13:20:00.088Z"
 }
