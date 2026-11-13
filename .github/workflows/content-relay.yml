@@ -16,6 +16,10 @@ on:
         description: 'Pokaż kandydat do publikacji bez cytatów i prywatnych materiałów źródłowych'
         type: boolean
         default: false
+      dry_run:
+        description: 'Odczytaj /status i /outbox bez zapisu historii, potwierdzenia kolejki i zgłoszeń'
+        type: boolean
+        default: false
 permissions:
   contents: write
   issues: write
@@ -45,3 +49,4 @@ jobs:
           REQUEST_CONTENT_CHECK: ${{ inputs.request_check && 'true' || 'false' }}
           PROBE_TGG: ${{ inputs.probe_tgg && 'true' || 'false' }}
           INSPECT_CANDIDATE: ${{ inputs.inspect_candidate && 'true' || 'false' }}
+          RELAY_DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}

@@ -1,6 +1,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import { PublicationEngine } from './coordinator.mjs';
 import { readBounded } from '../scripts/http.mjs';
+import { matchesUpdaterRoute } from '../scripts/updater-routes.mjs';
 const coordinator = env => env.CONTENT_COORDINATOR.getByName('weekly-publication');
 const json = body => Response.json(body, { headers: { 'cache-control': 'no-store' } });
 async function authorized(request, secret) {
@@ -19,20 +20,21 @@ export default {
     const url = new URL(request.url);
     if (!await authorized(request, env.AUTOMATION_TOKEN)) return new Response('Not found', { status: 404 });
     const object = coordinator(env);
-    if (request.method === 'GET' && url.pathname === '/status') return json(await object.status());
-    if (request.method === 'GET' && url.pathname === '/outbox') return json(await object.outbox());
+    const route = path => matchesUpdaterRoute(url.pathname, path);
+    if (request.method === 'GET' && route('/status')) return json(await object.status());
+    if (request.method === 'GET' && route('/outbox')) return json(await object.outbox());
     if (request.method === 'POST') {
       const raw = await readBounded(request, 16000);
       const body = raw ? JSON.parse(raw) : {};
       // Operator-only: the routine relay token must not pause publication or restore older content.
-      if (url.pathname === '/rollback') {
+      if (route('/rollback')) {
         if (!await authorized(request, env.OPERATOR_TOKEN)) return new Response('Not found', { status: 404 });
         if (typeof body.revision === 'string') return json(await object.rollback(body.revision));
       }
-      if (url.pathname === '/check') { await object.requestCheck(); return json({ accepted: true }); }
-      if (url.pathname === '/probe-tgg' && env.PUBLICATION_MODE === 'observe') { await object.requestTggProbe(); return json({ accepted: true }); }
-      if (url.pathname === '/ack' && Array.isArray(body.ids)) { await object.ack(body.ids); return json({ accepted: true }); }
-      if (url.pathname === '/smoke-token' && typeof body.token === 'string') { await object.setSmokeToken(body.token); return json({ accepted: true }); }
+      if (route('/check')) { await object.requestCheck(); return json({ accepted: true }); }
+      if (route('/probe-tgg') && env.PUBLICATION_MODE === 'observe') { await object.requestTggProbe(); return json({ accepted: true }); }
+      if (route('/ack') && Array.isArray(body.ids)) { await object.ack(body.ids); return json({ accepted: true }); }
+      if (route('/smoke-token') && typeof body.token === 'string') { await object.setSmokeToken(body.token); return json({ accepted: true }); }
     }
     return new Response('Not found', { status: 404 });
   },
