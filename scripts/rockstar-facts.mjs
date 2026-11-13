@@ -1,5 +1,6 @@
 import { stripTags, extractDateRange } from './weekly-core.mjs';
 import { validateFacts, periodIsSupported } from './facts.mjs';
+import { extractDatedBonuses } from './weekly-rotations.mjs';
 // Deterministic extraction for dated list rows. Separate lists never inherit the
 // first range in an article (weekly, month, member and claim windows differ).
 export function extractRockstarFacts(doc) {
@@ -58,5 +59,6 @@ export function extractRockstarFacts(doc) {
       }
     }
   }
+  if (doc.period) facts.push(...extractDatedBonuses(doc));
   return validateFacts({ facts }, doc);
 }

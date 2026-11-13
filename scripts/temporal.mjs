@@ -93,7 +93,8 @@ export function projectContent(input, now = Date.now()) {
   if (c.quickTakeEntries) c.quickTake = c.quickTakeEntries.filter(dependent).map(e => e.label);
   else if (!periodActive || c.schemaVersion === 2) c.quickTake = [];
   if (!periodActive) c.headline = 'New event details are being checked';
-  c.completeness = c.sections.some(s => s.completeness === 'pending') ? 'partial' : (c.completeness || 'partial');
+  if (Array.isArray(c.missingAreas)) c.completeness = c.missingAreas.length ? 'partial' : 'complete';
+  else c.completeness = c.sections.some(s => s.completeness === 'pending') ? 'partial' : (c.completeness || 'partial');
   if (c.seasonalEvent) {
     const e = c.seasonalEvent;
     e.weeks = e.weeks.map(week => {

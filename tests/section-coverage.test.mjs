@@ -17,9 +17,9 @@ test('missing vehicle rotation and unknown discounts are independent of populate
  const state=id=>c.areas.find(a=>a.id===id).state;
  assert.equal(state('prize-ride'),'confirmed');assert.equal(state('podium'),'missing');
  assert.equal(state('gun-van-stock'),'confirmed');assert.equal(state('gun-van-gta-plus'),'unconfirmed');
- assert.equal(state('gun-van-discounts'),'missing');assert.equal(c.alarm,true);
- assert.equal(inspectSectionCoverage(app,evidence,expected+14*60000,week,expected).alarm,false);
- assert.equal(inspectSectionCoverage(app,evidence,expected+15*60000,week,expected).alarm,true);
+ assert.equal(state('gun-van-discounts'),'missing');assert.equal(c.alarm,false);
+ assert.equal(inspectSectionCoverage(app,evidence,atLocal(week,13*60)-60000,week,expected).alarm,false);
+ assert.equal(inspectSectionCoverage(app,evidence,atLocal(week,13*60),week,expected).alarm,true);
 });
 test('absence needs explicit current-period proof and official or anchor corroboration; omissions and extras never establish it',()=>{
  const inspect=docs=>inspectSectionCoverage(app,collectSectionEvidence(docs,week,week),now,week,expected).areas.find(a=>a.id==='podium').state;
@@ -54,10 +54,13 @@ test('current synchronized publication can separately alarm about incomplete sec
  const [article,,page]=(await createBundle(snapshot,null,now)).values;
  const receipt={weekId:week,verifiedRevision:snapshot.revision,verifiedAt:new Date(now).toISOString()};
  const status=inspectContentStatus({app:snapshot,page,article,receipt},now);
- assert.equal(status.current,true);assert.equal(status.alarm,false);assert.equal(status.completenessAlarm,true);assert.ok(status.sectionCoverage.unresolved.includes('podium'));
+ assert.equal(status.current,true);assert.equal(status.alarm,false);assert.equal(status.completenessAlarm,false);
+ const later=inspectContentStatus({app:snapshot,page,article,receipt},atLocal(week,13*60));
+ assert.equal(later.completenessAlarm,true);assert.ok(later.sectionCoverage.unresolved.includes('podium'));
+ assert.equal(later.sectionCoverage.deadlineAt,new Date(atLocal(week,13*60)).toISOString());
 });
 test('natural engine run stores coverage in receipt and creates a separate incident without migration or forced source request',async t=>{
- t.mock.timers.enable({apis:['Date'],now:new Date(now)});
+ t.mock.timers.enable({apis:['Date'],now:new Date(atLocal(week,13*60))});
  t.mock.method(SourceService.prototype,'websites',async()=>({documents:[],failures:[],hasCurrentArticle:true}));
  const data=new Map(),kv=new Map();
  const storage={get:async k=>structuredClone(data.get(k)),put:async(k,v)=>data.set(k,structuredClone(v)),delete:async k=>data.delete(k),list:async({prefix,limit})=>new Map([...data].filter(([k])=>k.startsWith(prefix)).slice(0,limit)),setAlarm:async at=>data.set('alarm',at)};

@@ -1,10 +1,50 @@
-import { stripTags } from './weekly-core.mjs';
+import { stripTags, extractDateRange } from './weekly-core.mjs';
 import { validateFacts } from './facts.mjs';
 
 const DAY_WORD = '(\\d+|one|two|three|four|five|six|seven)';
 const VEHICLE = "([A-ZÀ-ž][A-Za-zÀ-ž0-9’' -]+?)";
 const CLASS_SUFFIX = /\s*\((?:Sports Classic|Sports|Super|Muscle|Sedan|Coupe|SUV|Off-Road|Motorcycle|Industrial|Military|Plane|Compact|Utility|Van|Service|Emergency|Open Wheel|Commercial|Helicopter|Cycle)\)\s*$/i;
 const bareName = value => String(value || '').replace(/[.!]+$/, '').replace(CLASS_SUFFIX, '').replace(/\s+[-–—]\s*NEW\s*$/i, '').trim();
+const BONUS_SPAN_DAYS = 62;
+
+// Multiplier rows state their own window, or inherit one from the heading
+// above them. A later window must not be rewritten as the current GTA week.
+export function extractDatedBonuses(doc, fallbackEvidence = '') {
+  if (!doc?.period || !doc.html) return [];
+  const anchor = { publishedWeekId: doc.period.startId, now: new Date(`${doc.period.startId}T12:00:00Z`), maxSpanDays: BONUS_SPAN_DAYS };
+  const rows = [];
+  let heading = null;
+  for (const match of doc.html.matchAll(/<(h[1-6]|li|p)\b[^>]*>([\s\S]*?)<\/\1>/gi)) {
+    const tag = match[1].toLowerCase();
+    const evidence = stripTags(match[2].replace(/<(?:ul|ol)\b[\s\S]*$/i, ''));
+    if (tag.startsWith('h')) {
+      const parsed = extractDateRange(evidence, anchor);
+      heading = parsed ? { ...parsed, dateEvidence: parsed.quote || evidence } : null;
+      continue;
+    }
+    const bonus = /^(\d+)x\s+GTA\$(.*?)\s+(?:on|[-–—])\s+(.+)$/i.exec(evidence);
+    if (!bonus || evidence.length > 650) continue;
+    const hasRp = /\bRP\b/i.test(bonus[2]);
+    const tail = bonus[3];
+    const entity = bareName(tail.split(/\s*(?:\(|, increased| for GTA\+|\(\d+x)/i)[0]).replace(/:\s*$/, '');
+    if (!entity) continue;
+    const memberBoost = /(?:increased to |\()(\d+)x (?:for )?GTA\+ Members/i.exec(tail);
+    const memberOnly = !memberBoost && /for GTA\+ Members$/i.test(tail);
+    const allEvidence = /GTA\+/i.test(evidence) ? evidence.split(/, increased|\s*\((?=[^)]*GTA\+)/i)[0] : evidence;
+    const own = extractDateRange(evidence, anchor);
+    const period = own || heading;
+    const startsOn = period?.startId || doc.period.startId;
+    const endsOn = period?.endId || doc.period.endId;
+    const dateEvidence = own?.quote || heading?.dateEvidence || fallbackEvidence;
+    if (!dateEvidence) continue;
+    const offer = `${bonus[1]}X GTA$${hasRp ? ' & RP' : ''}`;
+    const push = (rowOffer, eligibility, rowEvidence) => rows.push({ section: 'bonuses', entity, offer: rowOffer, evidence: rowEvidence,
+      dateEvidence, eligibility, platform: 'all', startsOn, endsOn });
+    push(offer, memberOnly ? 'gta-plus' : 'all', memberOnly ? evidence : allEvidence);
+    if (memberBoost) push(`${memberBoost[1]}X GTA$${hasRp ? ' & RP' : ''}`, 'gta-plus', evidence);
+  }
+  return rows;
+}
 
 // Narrow, cost-free extraction from explicit rotation sections. Unknown formats
 // supply no facts; headings, dates and acquisition conditions remain evidence.
@@ -16,27 +56,9 @@ export function extractWeeklyRotations(doc) {
   const raw = [];
   const make = (section, entity, offer, evidence) => raw.push({ section, entity: bareName(entity), offer, evidence,
     dateEvidence: dates, eligibility: 'all', platform: 'all', startsOn: doc.period.startId, endsOn: doc.period.endId });
-  // Explicit dated bonus rows do not need an AI call or its cached guesses.
-  // A nested activity list belongs to the parent row, not to a second bonus.
-  for (const [, row] of doc.html.matchAll(/<(?:li|p)\b[^>]*>([\s\S]*?)<\/(?:li|p)>/gi)) {
-    const evidence = stripTags(row.replace(/<(?:ul|ol)\b[\s\S]*$/i, ''));
-    const bonus = /^(\d+)x\s+GTA\$(.*?)\s+(?:on|[-–—])\s+(.+)$/i.exec(evidence);
-    if (!bonus || evidence.length > 650) continue;
-    const hasRp = /\bRP\b/i.test(bonus[2]);
-    const tail = bonus[3];
-    const entity = bareName(tail.split(/\s*(?:\(|, increased| for GTA\+|\(\d+x)/i)[0]).replace(/:\s*$/, '');
-    if (!entity) continue;
-    const memberBoost = /(?:increased to |\()(\d+)x (?:for )?GTA\+ Members/i.exec(tail);
-    const memberOnly = !memberBoost && /for GTA\+ Members$/i.test(tail);
-    const allEvidence = evidence.split(/, increased|\s*\(/i)[0];
-    const offer = `${bonus[1]}X GTA$${hasRp ? ' & RP' : ''}`;
-    make('bonuses', entity, offer, memberOnly ? evidence : allEvidence);
-    if (memberOnly) raw.at(-1).eligibility = 'gta-plus';
-    if (memberBoost) {
-      make('bonuses', entity, `${memberBoost[1]}X GTA$${hasRp ? ' & RP' : ''}`, evidence);
-      raw.at(-1).eligibility = 'gta-plus';
-    }
-  }
+  // A row or the heading above it can name a shorter or later window.
+  // The article week is only the fallback for an undated weekly bonus.
+  raw.push(...extractDatedBonuses(doc, dates));
   // Both formats explicitly identify the Lucky Wheel prize. A podium vehicle is
   // a chance to win, never a guaranteed free vehicle or a Prize Ride challenge.
   // iGTA has used a colon, an ampersand, and a combined casino heading.

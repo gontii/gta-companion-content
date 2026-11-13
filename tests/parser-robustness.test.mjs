@@ -1,15 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { articleDocument, agreeSources } from '../scripts/facts.mjs';
+import { articleDocument, agreeSources, mergeFacts, validateFacts } from '../scripts/facts.mjs';
 import { extractWeeklyRotations } from '../scripts/weekly-rotations.mjs';
 import { findIgtaWeekly } from '../scripts/additional-sources.mjs';
+import { selectTggCandidate, SourceService, TGG_CHANNEL, publishedInCurrentWeek, currentWeeklyWindow } from '../scripts/source-service.mjs';
+import { fetchWithBackoff } from '../scripts/http.mjs';
+import { stampCompleteness, inspectSectionCoverage, inspectBonusPeriods, REQUIRED_AREAS } from '../scripts/section-coverage.mjs';
 import { parseWeeklyContent } from '../schemas/app-weekly-parser.mjs';
-import { atLocal } from '../scripts/temporal.mjs';
+import { atLocal, DAY } from '../scripts/temporal.mjs';
 import { createBundle } from '../scripts/publication-bundle.mjs';
 import { hash } from '../scripts/facts.mjs';
 
 const weeks = JSON.parse(await readFile(new URL('./fixtures/igta-week-structures.html.json', import.meta.url), 'utf8'));
+const titles = JSON.parse(await readFile(new URL('./fixtures/tgg-weekly-titles.json', import.meta.url), 'utf8'));
 
 const page = (weekId, body) => {
   const meta = weeks.weeks[weekId];
@@ -114,6 +118,273 @@ test('22.10 and 29.10 name-first lists, ampersand podium headings and Place in t
   }
 });
 
+test('recent TGG titles stay eligible and GTA 6, guides and unrelated videos do not', () => {
+  const now = Date.parse('2026-10-29T12:00:00Z');
+  for (const title of titles.accept) {
+    const video = { videoId: 'aaaaaaaaaaa', channelId: TGG_CHANNEL, publishedOn: '2026-10-28T22:06:20Z', title };
+    assert.equal(selectTggCandidate([video], now)?.videoId, video.videoId, title);
+  }
+  for (const title of titles.reject) {
+    const video = { videoId: 'aaaaaaaaaaa', channelId: TGG_CHANNEL, publishedOn: '2026-10-28T22:06:20Z', title };
+    assert.equal(selectTggCandidate([video], now), null, title);
+  }
+});
+
+test('subtitle 429s back off, then reuse the cached transcript instead of calling again', async () => {
+  const calls = [];
+  const fetchImpl = async () => {
+    calls.push('fetch');
+    return new Response('busy', { status: 429, headers: { 'retry-after': '30' } });
+  };
+  const first = await fetchWithBackoff('https://api.supadata.ai/v1/transcript', {}, fetchImpl, { retries: 0, sleepImpl: async () => {}, now: 0 });
+  assert.equal(first.status, 429);
+  assert.equal(calls.length, 1);
+  const storage = new Map();
+  const memory = { get: async key => storage.get(key), put: async (key, value) => storage.set(key, value), delete: async key => storage.delete(key), list: async () => new Map() };
+  let hits = 0;
+  const live = async () => {
+    hits++;
+    if (hits < 3) return new Response('rate', { status: 429, headers: { 'retry-after': '1' } });
+    return Response.json({ content: [{ text: 'Podium vehicle this week.', offset: 1000 }] });
+  };
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = live;
+  try {
+    const service = new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, Date.parse('2026-10-29T08:00:00Z'));
+    const chunks = await service.transcript({ videoId: 'abcdefghijk', url: 'https://www.youtube.com/watch?v=abcdefghijk' });
+    assert.equal(chunks[0].text, 'Podium vehicle this week.');
+    assert.equal(hits, 3);
+    hits = 0;
+    memory.set?.('subtitle-429:abcdefghijk', { nextAt: Date.parse('2026-10-29T09:00:00Z'), cachedAt: Date.parse('2026-10-29T08:00:00Z') });
+    await memory.put('subtitle-429:abcdefghijk', { nextAt: Date.parse('2026-10-29T09:00:00Z'), cachedAt: Date.parse('2026-10-29T08:00:00Z') });
+    const again = new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, Date.parse('2026-10-29T08:30:00Z'));
+    assert.equal((await again.transcript({ videoId: 'abcdefghijk', url: 'https://www.youtube.com/watch?v=abcdefghijk' }))[0].offset, 1000);
+    assert.equal(hits, 0);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('a rate-limited TGG feed reuses the cached weekly video and does not spend a search credit', async () => {
+  const storage = new Map();
+  const memory = { get: async key => storage.get(key), put: async (key, value) => storage.set(key, value), delete: async key => storage.delete(key), list: async () => new Map() };
+  const candidate = { videoId: '5xy1qyPrK28', title: 'TRIPLE MONEY, LIMITED TIME VEHICLES & DISCOUNTS | GTA Online Weekly Update - Halloween Event', publishedOn: '2026-10-28T22:06:20Z', url: 'https://www.youtube.com/watch?v=5xy1qyPrK28', kind: 'tgg' };
+  await memory.put('tgg-discovery-v3', { candidate, checkedAt: Date.parse('2026-10-29T01:00:00Z'), expiresAt: Date.parse('2026-10-29T02:00:00Z') });
+  let searches = 0;
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('slow', { status: 429, headers: { 'retry-after': '60' } });
+    searches++;
+    return Response.json({ results: [] });
+  };
+  try {
+    const service = new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, Date.parse('2026-10-29T08:00:00Z'));
+    assert.equal((await service.discoverTgg()).videoId, candidate.videoId);
+    assert.equal(searches, 0);
+    const blocked = new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, Date.parse('2026-10-29T08:10:00Z'));
+    assert.equal((await blocked.discoverTgg()).videoId, candidate.videoId);
+    assert.equal(searches, 0);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+const memoryOf = () => {
+  const storage = new Map();
+  return { storage, memory: { get: async key => storage.get(key), put: async (key, value) => storage.set(key, value), delete: async key => storage.delete(key), list: async () => new Map() } };
+};
+
+test('the cached video stays eligible only until the Thursday 11:00 reset', () => {
+  const reset = Date.parse(currentWeeklyWindow(Date.parse('2026-11-12T12:00:00Z')).startsAt);
+  assert.equal(publishedInCurrentWeek('2026-11-05T18:00:00Z', reset - 1), true);
+  assert.equal(publishedInCurrentWeek('2026-11-05T18:00:00Z', reset), false);
+  assert.equal(publishedInCurrentWeek('2026-11-05T18:00:00Z', Date.parse('2026-11-12T10:30:00Z')), false);
+});
+
+test('RSS 429 after the weekly reset does not reuse the previous week video', async () => {
+  const now = Date.parse('2026-11-12T10:30:00Z');
+  const { storage, memory } = memoryOf();
+  const old = { videoId: 'oldweekvid1', title: 'GTA Online weekly update', publishedOn: '2026-11-05T18:00:00Z', url: 'https://www.youtube.com/watch?v=oldweekvid1', kind: 'tgg' };
+  await memory.put('tgg-discovery-v3', { candidate: old, checkedAt: Date.parse('2026-11-11T20:00:00Z'), expiresAt: Date.parse('2026-11-12T02:00:00Z') });
+  let searches = 0;
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('slow', { status: 429, headers: { 'retry-after': '60' } });
+    if (url.pathname === '/v1/youtube/search') {
+      searches++;
+      return Response.json({ results: [{ type: 'video', id: 'newweekvid1', title: 'GTA Online weekly update', uploadDate: '2026-11-12T10:10:00Z', channel: { id: TGG_CHANNEL } }] });
+    }
+    if (url.pathname === '/v1/metadata') return Response.json({ platform: 'youtube', type: 'video', id: 'newweekvid1', title: 'GTA Online weekly update', createdAt: '2026-11-12T10:10:00Z', additionalData: { channelId: TGG_CHANNEL } });
+    throw new Error(`unexpected ${url}`);
+  };
+  try {
+    const found = await new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg();
+    assert.equal(found.videoId, 'newweekvid1');
+    assert.equal(searches, 1);
+    assert.notEqual(storage.get('tgg-discovery-v3').candidate.videoId, old.videoId);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('a cached TGG video from the same weekly window is still reused when the feed is rate limited', async () => {
+  const now = Date.parse('2026-11-07T12:00:00Z');
+  const { memory } = memoryOf();
+  const current = { videoId: 'sameweekvi1', title: 'GTA Online weekly update', publishedOn: '2026-11-05T18:00:00Z', url: 'https://www.youtube.com/watch?v=sameweekvi1', kind: 'tgg' };
+  await memory.put('tgg-discovery-v3', { candidate: current, checkedAt: Date.parse('2026-11-06T12:00:00Z'), expiresAt: Date.parse('2026-11-06T18:00:00Z') });
+  let searches = 0;
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('slow', { status: 429, headers: { 'retry-after': '60' } });
+    searches++;
+    return Response.json({ results: [] });
+  };
+  try {
+    assert.equal((await new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg()).videoId, current.videoId);
+    assert.equal(searches, 0);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('an active feed cooldown after reset reports retryAt instead of the previous video', async () => {
+  const now = Date.parse('2026-11-12T10:30:00Z');
+  const { memory } = memoryOf();
+  const old = { videoId: 'oldweekvid1', title: 'GTA Online weekly update', publishedOn: '2026-11-05T18:00:00Z', url: 'https://www.youtube.com/watch?v=oldweekvid1', kind: 'tgg' };
+  await memory.put('tgg-discovery-v3', { candidate: old, checkedAt: now - 3600000, expiresAt: Date.parse('2026-11-12T02:00:00Z') });
+  const retryAt = now + 20 * 60_000;
+  await memory.put('subtitle-429:tgg-feed', { nextAt: retryAt, cachedAt: now - 1000, status: 429 });
+  let calls = 0;
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async () => { calls++; return new Response('no', { status: 500 }); };
+  try {
+    await assert.rejects(() => new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg(), error => error.retryAt === retryAt);
+    assert.equal(calls, 0);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('a 429 does not revive transcript chunks older than 30 days', async () => {
+  const now = Date.parse('2026-11-07T12:00:00Z');
+  const { storage, memory } = memoryOf();
+  await memory.put('transcript:abcdefghijk', { chunks: [{ text: 'very old week', offset: 0 }], cachedAt: Date.parse('2026-09-01T00:00:00Z') });
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response('slow', { status: 429, headers: { 'retry-after': '30' } });
+  try {
+    await assert.rejects(() => new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).transcript({ videoId: 'abcdefghijk', url: 'https://www.youtube.com/watch?v=abcdefghijk' }), error => {
+      assert.equal(typeof error.retryAt, 'number');
+      assert.ok(error.retryAt > now);
+      return true;
+    });
+    assert.notEqual(storage.get('transcript:abcdefghijk').chunks[0].text, undefined);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('Retry-After of many days is capped at the existing one-day source retry', async () => {
+  const now = Date.parse('2026-11-12T10:30:00Z');
+  const { storage, memory } = memoryOf();
+  const globalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    const url = new URL(input);
+    if (url.hostname === 'www.youtube.com') return new Response('slow', { status: 429, headers: { 'retry-after': '999999' } });
+    return new Response('slow', { status: 429, headers: { 'retry-after': '999999' } });
+  };
+  try {
+    await assert.rejects(() => new SourceService(memory, { SUPADATA_API_KEY: 'test-only' }, now).discoverTgg());
+    const block = storage.get('subtitle-429:tgg-feed');
+    assert.equal(block.nextAt - now, DAY);
+    assert.equal(block.status, 429);
+  } finally { globalThis.fetch = globalFetch; }
+});
+
+test('Contact Missions 2x for 5–11 Nov stays in that week and the 12 Nov 4x does not', async () => {
+  const html = `<meta property="article:published_time" content="2026-11-04"><article><h1>This Week in GTA Online: November 5, 2026</h1>
+    <p>November 5–11</p>
+    <h2>Bonuses</h2>
+    <ul>
+      <li>2X GTA$ and RP on Contact Missions (November 5–11)</li>
+      <li>4X GTA$ and RP on Contact Missions (November 12–December 2)</li>
+    </ul>
+    <h2>From November 12 through December 2</h2>
+    <ul><li>2X GTA$ and RP on Sumo Remix</li></ul>
+  </article>`;
+  const doc = articleDocument({ kind: 'igta', sourceUrl: 'https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-november-5-2026', html }, new Date('2026-11-07T12:00:00Z'));
+  const extracted = extractWeeklyRotations(doc);
+  const two = extracted.facts.find(f => f.entity === 'Contact Missions' && f.offer.startsWith('2X'));
+  const four = extracted.facts.find(f => f.entity === 'Contact Missions' && f.offer.startsWith('4X'));
+  const sumo = extracted.facts.find(f => f.entity === 'Sumo Remix');
+  assert.deepEqual([two.startsOn, two.endsOn], ['2026-11-05', '2026-11-11']);
+  assert.deepEqual([four.startsOn, four.endsOn], ['2026-11-12', '2026-12-02']);
+  assert.deepEqual([sumo.startsOn, sumo.endsOn], ['2026-11-12', '2026-12-02']);
+  const sourced = extracted.facts.filter(f => f.section === 'bonuses').map(f => ({ ...f, confidence: 'corroborated', sources: [{ kind: 'intel', url: 'https://rockstarintel.com/current' }] }));
+  const during = await mergeFacts(null, sourced, Date.parse('2026-11-07T12:00:00Z'));
+  const labels = during.sections.find(s => s.id === 'bonuses').items.map(i => i.label);
+  assert.deepEqual(labels.filter(label => /Contact Missions|Sumo/.test(label)), ['Contact Missions — 2X GTA$ & RP']);
+  assert.ok(during.withheldBonuses.some(bonus => bonus.entity === 'Contact Missions' && bonus.offer.startsWith('4X') && bonus.reason === 'future' && bonus.startsOn === '2026-11-12'));
+  assert.ok(!labels.some(label => /4X|Sumo/.test(label)));
+  const next = await mergeFacts(during, sourced, Date.parse('2026-11-12T12:00:00Z'));
+  const nextLabels = next.sections.find(s => s.id === 'bonuses').items.map(i => i.label);
+  assert.ok(nextLabels.some(label => label === 'Contact Missions — 4X GTA$ & RP'));
+  assert.ok(nextLabels.some(label => label === 'Sumo Remix — 2X GTA$ & RP'));
+  assert.ok(!nextLabels.some(label => /Contact Missions — 2X/.test(label)));
+  const mismatch = validateFacts({ facts: [{ ...four, startsOn: '2026-11-05', endsOn: '2026-11-11', dateEvidence: 'November 5-11' }] }, doc);
+  assert.equal(mismatch.facts.length, 0);
+  assert.equal(mismatch.rejected[0].reason, 'bonus_period_mismatch');
+  const illegal = structuredClone(during);
+  illegal.sections.find(s => s.id === 'bonuses').items.push({ id: 'future-4x', label: 'Contact Missions — 4X GTA$ & RP', startsAt: '2026-11-12T10:00:00.000Z', expiresAt: '2026-12-03T10:00:00.000Z' });
+  illegal.sections.find(s => s.id === 'bonuses').items.push({ id: 'undated', label: 'Contact Missions — 3X GTA$ & RP' });
+  const issues = inspectBonusPeriods(illegal);
+  assert.deepEqual(issues.map(issue => issue.reason).sort(), ['missing-dates', 'outside-week']);
+  const coverage = inspectSectionCoverage(illegal, null, Date.parse('2026-11-07T12:00:00Z'), illegal.weekId, atLocal(illegal.weekId, 11 * 60));
+  stampCompleteness(illegal, coverage);
+  assert.ok(illegal.bonusPeriodIssues.length >= 2);
+  assert.equal(illegal.completeness, 'partial');
+  assert.ok(!illegal.sections.find(s => s.id === 'bonuses').items.some(item => item.id === 'future-4x' || item.id === 'undated'));
+  assert.match(illegal.completenessNote, /Contact Missions — 4X/);
+});
+
+test('a partial edition still publishes with the missing areas named, and 11/11 clears the flag', async () => {
+  const week = '2026-10-29';
+  const expected = atLocal(week, 11 * 60);
+  const item = (id, label) => ({ id, label, startsAt: new Date(expected).toISOString(), expiresAt: new Date(atLocal('2026-11-05', 11 * 60)).toISOString(), sourceUrl: 'https://rockstarintel.com/current', sources: [{ kind: 'intel', url: 'https://rockstarintel.com/current' }] });
+  const snapshot = {
+    schemaVersion: 2, weekId: week, range: '2026-10-29 – 2026-11-04', headline: 'This week in GTA Online',
+    startsAt: new Date(expected).toISOString(), expiresAt: new Date(atLocal('2026-11-05', 11 * 60)).toISOString(),
+    quickTake: ['Bonus'], quickTakeEntries: [], beginnerPath: [], locations: [], sources: [{ kind: 'intel', url: 'https://rockstarintel.com/current' }],
+    sections: [
+      { id: 'bonuses', title: 'Best bonuses', items: [item('b', 'Contact Missions — 2X GTA$ & RP')] },
+      { id: 'challenge', title: 'Weekly challenge', items: [item('c', 'Survival — Complete ten waves')] },
+      { id: 'free-vehicles', title: 'Free rewards & prize vehicles', items: [item('r', 'Skull Mask — FREE for logging in')] },
+      { id: 'discounts', title: 'Discounts & Offers', items: [] },
+      { id: 'gun-van', title: 'Gun Van', items: [item('g', 'Knife — In stock')] },
+      { id: 'other', title: 'Other weekly items', items: [item('o', 'Time Trial — East Vinewood')] },
+      { id: 'gta-plus', title: 'GTA+ benefits', items: [item('p', 'GTA+ — 500,000 GTA$')] },
+    ],
+  };
+  const viewed = atLocal(week, 13 * 60);
+  const coverage = inspectSectionCoverage(snapshot, null, viewed, week, expected);
+  stampCompleteness(snapshot, coverage);
+  assert.equal(snapshot.completeness, 'partial');
+  assert.ok(snapshot.missingAreas.includes('podium'));
+  assert.ok(snapshot.missingAreas.includes('prize-ride'));
+  assert.ok(snapshot.missingAreas.includes('discounts'));
+  assert.ok(snapshot.missingAreas.includes('gun-van-discounts'));
+  assert.match(snapshot.completenessNote, /Partial weekly update 2026-10-29: \d+\/11/);
+  snapshot.generatedAt = new Date(viewed).toISOString();
+  snapshot.revision = await hash(snapshot);
+  for (const section of snapshot.sections) for (const entry of section.items) Object.assign(entry, { confidence: 'corroborated', eligibility: 'all', platform: 'all', offer: entry.label.split(' — ')[1] || entry.label, entity: entry.label.split(' — ')[0] });
+  snapshot.quickTakeEntries = snapshot.sections.flatMap(s => s.items).slice(0, 1);
+  snapshot.beginnerPath = [{ ...snapshot.sections[1].items[0], id: 'bp-c', itemIds: ['c'] }];
+  const bundle = await createBundle(snapshot, null, viewed);
+  const article = bundle.values[0];
+  assert.ok(parseWeeklyContent(bundle.values[1]));
+  assert.equal(bundle.values[1].completeness, 'partial');
+  assert.ok(article.sections.find(s => s.id === 'discounts').items.some(i => i.status === 'pending'));
+  assert.ok(article.sections.find(s => s.id === 'rotations').items.some(i => i.status === 'pending' && /podium|prize-ride|gun-van/.test(i.name)));
+  const full = structuredClone(snapshot);
+  full.sections.find(s => s.id === 'free-vehicles').items.push(item('pod', 'Grotti Itali — Podium vehicle: chance to win at the Lucky Wheel'), item('ride', 'Karin Previon — Prize Ride: LS Car Meet'));
+  full.sections.find(s => s.id === 'discounts').items.push(item('d', 'Agency — 40% off'));
+  full.sections.find(s => s.id === 'gun-van').items.push(item('gd', 'Service Carbine — 30% off at the Gun Van'), item('gp', 'Widowmaker — 50% off at the Gun Van (GTA+ only)'));
+  const done = inspectSectionCoverage(full, null, viewed, week, expected);
+  stampCompleteness(full, done);
+  assert.equal(done.resolvedAreas, REQUIRED_AREAS.length);
+  assert.equal(full.completeness, 'complete');
+  assert.deepEqual(full.missingAreas, []);
+});
 
 test('November wording and accented podium names agree without weakening rewards or membership', () => {
   const date = '<p>November 5-11, 2026</p>';

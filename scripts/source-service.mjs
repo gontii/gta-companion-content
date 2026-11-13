@@ -1,11 +1,11 @@
 import { extractWeeklyRotations } from './weekly-rotations.mjs';
 import { resolveIgtaSource, resolveGtaBossSource, resolveRedditSource } from './additional-sources.mjs';
 import { extractRockstarFacts } from './rockstar-facts.mjs';
-import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText } from './weekly-core.mjs';
+import { resolveRockstarNewswireSource, resolveRockstarMonthlySource, resolveRockstarIntelSource, resolveGtabaseSource, cleanText, thursdayWeekId } from './weekly-core.mjs';
 import { articleDocument, hash, validateFacts, FACT_VALIDATION_VERSION } from './facts.mjs';
-import { safeFetch, readBounded } from './http.mjs';
+import { safeFetch, fetchWithBackoff, retryDelayMs, readBounded } from './http.mjs';
 import { AiBudget } from './ai-budget.mjs';
-import { DAY, localParts, windowFromDays } from './temporal.mjs';
+import { DAY, localParts, windowFromDays, atLocal, addDays } from './temporal.mjs';
 import { corroborateGunVanTranscript } from './transcript-corroboration.mjs';
 import { resolveRockstarBenefits } from './rockstar-benefits.mjs';
 
@@ -36,9 +36,34 @@ export function selectTggVideo(xml, now) {
 }
 
 function isTggTopic(v) {
-  return v.channelId === TGG_CHANNEL && /^[\w-]{11}$/.test(v.videoId) &&
-    (/gta online/i.test(v.title) || /^GTA HALLOWEEN UPDATE WEEK\s+\d+\b/i.test(v.title)) && /weekly|event week|update|bonuses|this week/i.test(v.title) &&
-    !/gta\s*(?:6|vi)\b|rumou?r|speculat|money guide|beginners? guide|livestream/i.test(v.title);
+  const title = cleanText(v.title);
+  if (v.channelId !== TGG_CHANNEL || !/^[\w-]{11}$/.test(v.videoId)) return false;
+  if (/gta\s*(?:6|vi)\b|rumou?r|speculat|money guide|beginners? guide|livestream/i.test(title)) return false;
+  // Seasonal titles drop "GTA Online" ("GTA HALLOWEEN UPDATE!") and the pipe
+  // form puts the show name after the rewards ("… | GTA Online Weekly Update").
+  const online = /gta\s*online|\bgtao\b/i.test(title);
+  const seasonal = /^GTA\s+(?!6\b|VI\b|Online\b)[A-Za-z]+\s+UPDATE\b/i.test(title);
+  const weekly = /weekly|event week|this week|\bweek\s*\d+\b|bonuses|discounts|\btriple\b|\bdouble\b|\bmoney\b/i.test(title);
+  return (online || seasonal) && weekly;
+}
+// Thursday 11:00 Europe/Warsaw through the next reset. Before that reset the
+// previous Thursday is still the current week; atLocal applies the offset.
+export function currentWeeklyWindow(now) {
+  const weekId = thursdayWeekId(new Date(now));
+  const reset = atLocal(weekId, 11 * 60);
+  const startId = now < reset ? addDays(weekId, -7) : weekId;
+  return windowFromDays(startId, addDays(startId, 6));
+}
+export function publishedInCurrentWeek(publishedOn, now) {
+  const published = Date.parse(publishedOn);
+  if (!Number.isFinite(published) || published > now) return false;
+  const window = currentWeeklyWindow(now);
+  return published >= Date.parse(window.startsAt) && published < Date.parse(window.expiresAt);
+}
+// Transcript attempts already wait at most one day. A Retry-After of many days
+// must not schedule the next source read past that ceiling.
+export function boundedSourceRetry(delayMs) {
+  return Math.min(Math.max(delayMs || 0, 15 * 60_000), DAY);
 }
 export function selectTggCandidate(videos, now) {
   const selected = videos.filter(v => isTggTopic(v) &&
@@ -166,8 +191,12 @@ export class SourceService {
   }
   async transcript(video) {
     const cacheKey = `transcript:${video.videoId}`;
+    const limitKey = `subtitle-429:${video.videoId}`;
     const cache = await this.storage.get(cacheKey);
-    if (cache && this.now - cache.cachedAt < 30 * DAY) return cache.chunks;
+    const freshTranscript = cache?.chunks && this.now - cache.cachedAt < 30 * DAY;
+    if (freshTranscript) return cache.chunks;
+    const blocked = await this.storage.get(limitKey);
+    if (blocked?.nextAt > this.now) throw Object.assign(new Error('transcript_retry_not_due'), { retryAt: blocked.nextAt });
     if (!this.env.SUPADATA_API_KEY) throw new Error('supadata_key_missing');
     const attemptKey = `transcript-attempt:${video.videoId}`;
     const attempt = (await this.storage.get(attemptKey)) || { firstAt: this.now, count: 0, nextAt: 0 };
@@ -175,7 +204,7 @@ export class SourceService {
     const headers = { 'x-api-key': this.env.SUPADATA_API_KEY };
     let response;
     if (attempt.jobId && this.now - attempt.jobStartedAt < DAY) {
-      response = await safeFetch(`https://api.supadata.ai/v1/transcript/${encodeURIComponent(attempt.jobId)}`, { headers });
+      response = await fetchWithBackoff(`https://api.supadata.ai/v1/transcript/${encodeURIComponent(attempt.jobId)}`, { headers }, fetch, { now: this.now });
     } else {
       await this.reserveSupadataCredit(); // five-credit margin; no recharge or generated audio mode
       attempt.count++;
@@ -184,7 +213,16 @@ export class SourceService {
       await this.storage.put(attemptKey, attempt);
       const url = new URL('https://api.supadata.ai/v1/transcript');
       url.search = new URLSearchParams({ url: video.url, lang: 'en', mode: 'native', text: 'false' }).toString();
-      response = await safeFetch(url, { headers });
+      response = await fetchWithBackoff(url, { headers }, fetch, { now: this.now });
+    }
+    if (response.status === 429 || response.status === 503) {
+      const wait = retryDelayMs(response, 0, this.now);
+      const nextAt = this.now + boundedSourceRetry(wait.delay);
+      await this.storage.put(limitKey, { nextAt, cachedAt: this.now, status: response.status });
+      attempt.nextAt = nextAt;
+      await this.storage.put(attemptKey, attempt);
+      await response.body?.cancel?.();
+      throw Object.assign(new Error(`supadata_http_${response.status}`), { retryAt: nextAt });
     }
     if (![200, 202].includes(response.status)) throw new Error(`supadata_http_${response.status}`);
     const data = JSON.parse(await readBounded(response, 120000));
@@ -201,24 +239,37 @@ export class SourceService {
     return chunks;
   }
   async discoverTgg() {
-    try {
-      const response = await safeFetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${TGG_CHANNEL}`);
+    const feedKey = 'subtitle-429:tgg-feed';
+    const feedBlocked = await this.storage.get(feedKey);
+    let feedStatus = feedBlocked?.nextAt > this.now ? 429 : null;
+    if (feedStatus !== 429) try {
+      const response = await fetchWithBackoff(`https://www.youtube.com/feeds/videos.xml?channel_id=${TGG_CHANNEL}`, {}, fetch, { now: this.now });
+      feedStatus = response.status;
       if (response.ok) {
         const video = selectTggVideo(await readBounded(response, 160000), this.now);
         if (video) return video;
+      } else if (response.status === 429 || response.status === 503) {
+        const wait = retryDelayMs(response, 0, this.now);
+        await this.storage.put(feedKey, { nextAt: this.now + boundedSourceRetry(wait.delay), cachedAt: this.now, status: response.status });
+        await response.body?.cancel();
       } else await response.body?.cancel();
     } catch { /* RSS can fail or contain only newer Shorts and streams. */ }
     if (!this.env.SUPADATA_API_KEY) throw new Error('supadata_key_missing');
     const cached = await this.storage.get('tgg-discovery-v3');
+    const sameWeek = cached?.candidate && publishedInCurrentWeek(cached.candidate.publishedOn, this.now);
+    if ((feedStatus === 429 || feedStatus === 503) && sameWeek) return cached.candidate;
     if (cached && this.now < cached.expiresAt) {
-      if (cached.candidate && this.now - Date.parse(cached.candidate.publishedOn) <= 8 * DAY) return cached.candidate;
-      throw new Error('tgg_relevant_video_missing');
+      if (sameWeek) return cached.candidate;
+      if (!cached.candidate) throw new Error('tgg_relevant_video_missing');
+    }
+    if ((feedStatus === 429 || feedStatus === 503) && feedBlocked?.nextAt > this.now) {
+      throw Object.assign(new Error('tgg_feed_retry_not_due'), { retryAt: feedBlocked.nextAt });
     }
     await this.reserveSupadataCredit();
     const url = new URL('https://api.supadata.ai/v1/youtube/search');
     // No limit or page token: exactly one page/credit, never automatic pagination.
     url.search = new URLSearchParams({ query: 'TGG GTA Online weekly update', type: 'video', sortBy: 'relevance', uploadDate: 'week' }).toString();
-    const response = await safeFetch(url, { headers: { 'x-api-key': this.env.SUPADATA_API_KEY } });
+    const response = await fetchWithBackoff(url, { headers: { 'x-api-key': this.env.SUPADATA_API_KEY } }, fetch, { now: this.now });
     if (!response.ok) throw new Error(`supadata_search_http_${response.status}`);
     const data = JSON.parse(await readBounded(response, 160000));
     if (!Array.isArray(data.results)) throw new Error('tgg_search_invalid');
@@ -235,7 +286,7 @@ export class SourceService {
         await this.reserveSupadataCredit();
         const endpoint = new URL('https://api.supadata.ai/v1/metadata');
         endpoint.search = new URLSearchParams({ url: `https://www.youtube.com/watch?v=${video.videoId}` }).toString();
-        const response = await safeFetch(endpoint, { headers: { 'x-api-key': this.env.SUPADATA_API_KEY } });
+        const response = await fetchWithBackoff(endpoint, { headers: { 'x-api-key': this.env.SUPADATA_API_KEY } }, fetch, { now: this.now });
         if (!response.ok) throw new Error(`supadata_metadata_http_${response.status}`);
         const value = JSON.parse(await readBounded(response, 100000));
         if (value.platform !== 'youtube' || value.type !== 'video' || value.id !== video.videoId) throw new Error('tgg_metadata_invalid');
@@ -282,7 +333,7 @@ export class SourceService {
     }
   }
   async prune() {
-    for (const prefix of ['transcript:', 'extracted:', 'video-metadata:', 'ai-result:', 'ai-attempt:']) {
+    for (const prefix of ['transcript:', 'extracted:', 'video-metadata:', 'ai-result:', 'ai-attempt:', 'subtitle-429:']) {
       const entries = await this.storage.list({ prefix, limit: 500 });
       for (const [key, value] of entries) if (this.now - value.cachedAt >= 30 * DAY) await this.storage.delete(key);
     }

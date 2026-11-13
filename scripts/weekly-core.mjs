@@ -122,7 +122,7 @@ function spanDays(startId, endId) {
 // Turns a single DATE_RANGE_REGEX match into { startId, endId, rangeText },
 // inferring a missing year (and Dec->Jan rollover) from the source publish date.
 // Returns null when the match is implausible as a GTA week.
-function rangeFromMatch(match, publishedWeekId) {
+function rangeFromMatch(match, publishedWeekId, maxSpanDays = MAX_WEEK_SPAN_DAYS) {
   const startMonth = MONTH_INDEX.get(String(match[1]).slice(0, 3).toLowerCase());
   const startDay = Number(match[2]);
   const endMonth = match[3] != null ? MONTH_INDEX.get(String(match[3]).slice(0, 3).toLowerCase()) : startMonth;
@@ -140,19 +140,19 @@ function rangeFromMatch(match, publishedWeekId) {
   const startId = dayId(startYear, startMonth, startDay);
   const endId = dayId(endYear, endMonth, endDay);
   const span = spanDays(startId, endId);
-  if (!(span >= 0 && span <= MAX_WEEK_SPAN_DAYS)) return null;
+  if (!(span >= 0 && span <= maxSpanDays)) return null;
 
   const rangeText = formatRangeFromDates(
     new Date(`${startId}T00:00:00Z`),
     new Date(`${endId}T00:00:00Z`),
   );
-  return { startId, endId, rangeText };
+  return { startId, endId, rangeText, quote: match[0] };
 }
 
 // Reads the real event period straight from the article text. Prefers the
 // headline, then scans the body; when several ranges appear it picks the one
 // whose start is closest to the current GTA week. Returns null if none found.
-export function extractDateRange(html, { publishedWeekId, now = new Date() } = {}) {
+export function extractDateRange(html, { publishedWeekId, now = new Date(), maxSpanDays = MAX_WEEK_SPAN_DAYS } = {}) {
   let headlineText = '';
   try {
     headlineText = extractHeadline(html);
@@ -165,7 +165,7 @@ export function extractDateRange(html, { publishedWeekId, now = new Date() } = {
   for (const text of [headlineText, bodyText]) {
     if (!text) continue;
     for (const match of text.matchAll(DATE_RANGE_REGEX)) {
-      const parsed = rangeFromMatch(match, publishedWeekId);
+      const parsed = rangeFromMatch(match, publishedWeekId, maxSpanDays);
       if (parsed) candidates.push(parsed);
     }
   }

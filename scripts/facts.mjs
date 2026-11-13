@@ -141,6 +141,11 @@ export function validateFacts(raw, doc) {
       if (Number.isFinite(Date.parse(doc.publishedOn)) && (Date.parse(f.startsOn) < Date.parse(doc.publishedOn) - 35 * 86_400_000 || Date.parse(f.startsOn) > Date.parse(doc.publishedOn) + 62 * 86_400_000)) throw new Error('date_outside_source_context');
       // A guessed current week cannot override a quote about a different event period.
       if (!periodIsSupported(f.startsOn, f.endsOn, f.dateEvidence, doc)) throw new Error('unsupported_dates');
+      if (f.section === 'bonuses') {
+        const anchor = { publishedWeekId: f.startsOn, now: new Date(`${f.startsOn}T12:00:00Z`), maxSpanDays: 62 };
+        const stated = extractDateRange(f.evidence, anchor) || extractDateRange(f.dateEvidence, anchor);
+        if (stated && (stated.startId !== f.startsOn || stated.endId !== f.endsOn)) throw new Error('bonus_period_mismatch');
+      }
       if (f.section === 'gta-plus' && f.eligibility !== 'gta-plus') throw new Error('member_scope');
       if (f.eligibility === 'gta-plus' && !/gta\+|gta plus|member/i.test(f.evidence)) throw new Error('member_evidence');
       if (f.platform === 'enhanced' && !/enhanced|ps5|series x|playstation 5/i.test(f.evidence)) throw new Error('platform_evidence');
@@ -273,7 +278,9 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
   const latestWeek = [current?.weekId, ...ready.map(f => thursdayWeekId(new Date(f.startsOn)))].filter(Boolean).sort().at(-1);
   if (!latestWeek) return null;
   const sameWeek = current?.weekId === latestWeek;
-  const period = windowFromDays(latestWeek, addDays(latestWeek, 6));
+  const weekEnd = addDays(latestWeek, 6);
+  const period = windowFromDays(latestWeek, weekEnd);
+  const bonusOutsideWeek = f => f.section === 'bonuses' && (!validDay(f.startsOn) || !validDay(f.endsOn) || f.startsOn > weekEnd || f.endsOn < latestWeek);
   const c = sameWeek ? current : {
     schemaVersion: 2, weekId: latestWeek, range: `${latestWeek} – ${addDays(latestWeek, 6)}`,
     headline: 'This week in GTA Online', ...period, quickTake: [], quickTakeEntries: [], beginnerPath: [], locations: [],
@@ -288,8 +295,12 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     if (target) target.items = s.items.filter(i => Date.parse(i.expiresAt) > now);
   }
   if (!sameWeek && current?.seasonalEvent && current.seasonalEvent.endsOn >= new Date(now).toISOString().slice(0, 10)) c.seasonalEvent = structuredClone(current.seasonalEvent);
+  const withheldBonuses = facts.filter(bonusOutsideWeek).map(f => ({ entity: f.entity, offer: f.offer, startsOn: f.startsOn || null, endsOn: f.endsOn || null,
+    reason: !validDay(f.startsOn) || !validDay(f.endsOn) ? 'missing-dates' : f.startsOn > weekEnd ? 'future' : 'outside-week' }));
+  if (withheldBonuses.length) c.withheldBonuses = withheldBonuses;
+  else delete c.withheldBonuses;
   for (const f of ready) {
-    if (thursdayWeekId(new Date(f.startsOn)) > latestWeek) continue;
+    if (thursdayWeekId(new Date(f.startsOn)) > latestWeek || bonusOutsideWeek(f)) continue;
     const section = c.sections.find(s => s.id === f.section);
     if (!section) continue;
     const key = factKey(f);
