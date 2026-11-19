@@ -1,0 +1,1006 @@
+[
+  {
+    "section": "bonuses",
+    "entity": "All Contact Missions",
+    "offer": "2X GTA$ & RP",
+    "startsOn": "2026-11-12",
+    "endsOn": "2026-12-02",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-11-05"
+      }
+    ],
+    "confidence": "official"
+  },
+  {
+    "section": "bonuses",
+    "entity": "Community Series",
+    "offer": "3X GTA$ & RP",
+    "startsOn": "2026-11-12",
+    "endsOn": "2026-12-02",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-11-05"
+      }
+    ],
+    "confidence": "official"
+  },
+  {
+    "section": "bonuses",
+    "entity": "Sumo (Remix)",
+    "offer": "2X GTA$ & RP",
+    "startsOn": "2026-11-12",
+    "endsOn": "2026-12-02",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-11-05"
+      }
+    ],
+    "confidence": "official"
+  },
+  {
+    "section": "bonuses",
+    "entity": "Stunt Race Series",
+    "offer": "3X GTA$ & RP",
+    "startsOn": "2026-11-12",
+    "endsOn": "2026-12-02",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-11-05"
+      }
+    ],
+    "confidence": "official"
+  },
+  {
+    "section": "bonuses",
+    "entity": "Freemode Challenges",
+    "offer": "4X GTA$ & RP",
+    "startsOn": "2026-11-12",
+    "endsOn": "2026-12-02",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+        "kind": "rockstar",
+        "scope": "weekly",
+        "publishedOn": "2026-11-05"
+      }
+    ],
+    "confidence": "official"
+  },
+  {
+    "section": "challenge",
+    "entity": "Gerald's Last Play Missions",
+    "offer": "Complete 3 Gerald's Last Play Missions.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated",
+    "targetCount": 3,
+    "itemId": "weekly-objective-64"
+  },
+  {
+    "section": "free-vehicles",
+    "entity": "Gallivanter Baller ST-D",
+    "offer": "Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://www.reddit.com/r/gtaonline/comments/1y05v1b/podium_vehicle_of_the_week_gallivanter_baller_std/",
+        "kind": "reddit",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "free-vehicles",
+    "entity": "Benefactor SM722",
+    "offer": "Prize Ride: win an LS Car Meet Series race on 3 consecutive days, then claim the Benefactor SM722 at the LS Car Meet.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://www.reddit.com/r/gtaonline/comments/1y05v1b/podium_vehicle_of_the_week_gallivanter_baller_std/",
+        "kind": "reddit",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "free-vehicles",
+    "entity": "Knife",
+    "offer": "Free at the Gun Van during this event week.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Vapid Dominator GTX",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "RC Bandito",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Cargobob",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Enus Windsor Drop",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Pfister 811",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Överflöd Autarch",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Lampadati Viseris",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Vapid Uranus LozSpeed",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Vapid Dominator ASP",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "discounts",
+    "entity": "Principe Lectro",
+    "offer": "30% off the regular purchase price.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Railgun",
+    "offer": "30% off at the Gun Van.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Tactical SMG",
+    "offer": "10% off at the Gun Van.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Tactical SMG",
+    "offer": "30% off at the Gun Van for GTA+ members.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "gta-plus",
+    "platform": "enhanced",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Double Barrel Shotgun",
+    "offer": "10% off at the Gun Van.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Double Barrel Shotgun",
+    "offer": "20% off at the Gun Van for GTA+ members.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "gta-plus",
+    "platform": "enhanced",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Flare Gun",
+    "offer": "10% off at the Gun Van.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Flare Gun",
+    "offer": "20% off at the Gun Van for GTA+ members.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "gta-plus",
+    "platform": "enhanced",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Pool Cue",
+    "offer": "10% off at the Gun Van.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Pool Cue",
+    "offer": "20% off at the Gun Van for GTA+ members.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "gta-plus",
+    "platform": "enhanced",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "gun-van",
+    "entity": "Baseball Bat",
+    "offer": "In stock at the Gun Van.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "other",
+    "entity": "LS Car Meet test rides",
+    "offer": "Test-drive Principe Lectro, Pfister 811, Vapid Dominator ASP.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "other",
+    "entity": "Luxury Autos showroom",
+    "offer": "On display: Declasse Walton L35, Übermacht Sentinel GTS.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "other",
+    "entity": "Premium Deluxe Motorsport showroom",
+    "offer": "On display: Enus Windsor Drop, Vapid Dominator GTX, Lampadati Viseris, Vapid Uranus LozSpeed, Överflöd Autarch.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "other",
+    "entity": "HSW Premium Test Ride",
+    "offer": "Bravado Buffalo EVX. Available to test at the LS Car Meet.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "enhanced",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "other",
+    "entity": "Time Trial",
+    "offer": "Vinewood Bowl.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "all",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  },
+  {
+    "section": "other",
+    "entity": "HSW Time Trial",
+    "offer": "Textile City.",
+    "startsOn": "2026-11-19",
+    "endsOn": "2026-11-25",
+    "eligibility": "all",
+    "platform": "enhanced",
+    "sources": [
+      {
+        "url": "https://api.rdo.gg/tunables/gta/ps5/DDA1742E923262CBA135F92B7532AB9DBB3437DB.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/xboxsx/957D2F4DB56095A1BDB1DCB7012F965487ED771A.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      },
+      {
+        "url": "https://api.rdo.gg/tunables/gta/pcrosalt/A0A1D258C927614A72B93D5BD0209F80E0990C18.json",
+        "kind": "game-settings",
+        "scope": "weekly",
+        "publishedOn": "2026-11-19"
+      }
+    ],
+    "confidence": "corroborated"
+  }
+]

@@ -232,3 +232,23 @@ https) i `offerAlarm` — bez wpływu na `current`, `alarm` ani `reasons`.
 Godzinna kontrola `gta-availability` na VM przepisuje `offerGaps`; gdy lista
 niepusta, zapisuje wpis WARNING do logu `gta-offer-gaps`, na którym działa
 polityka alertowa `1966855256821974834` (e-mail, limit 24 h).
+
+### Reset przy opóźnionych artykułach
+
+Od wydania 2647 aktywna oferta dla wszystkich graczy może przejść do następnego
+wydania o czwartkowym resecie. Zachowuje własny początek i koniec. Wygaśnięcie
+pojazdu lub zadania usuwa je z prezentacji. Niezależne kontrole aktualności
+i braków nadal sprawdzają oba kanały.
+
+Gdy artykuły nie potwierdzają wyzwania, podium lub Prize Ride, koordynator
+sprawdza parametry gry w RDO.GG. Wymaga zapisu po resecie, tego samego
+wydarzenia i zgodnych wartości dla wszystkich sześciu wersji gry. Warunek
+Prize Ride obejmuje rodzaj wyścigu, lokatę i kolejne dni. Wyzwanie obejmuje
+nazwę czynności i liczbę powtórzeń. Nierozpoznana wartość lub rozbieżność
+pozostawia daną ofertę do ponownego sprawdzenia. Artykuł wydania udostępnia
+niezmienne zapisy PS5, Xbox Series X|S i PC Enhanced.
+
+Podczas alarmu sprawdź w logu `content_update` pola `expectedWeek`,
+`publishedWeek`, `unresolved` i `sourceFailures`. Odbiór wymaga aktualnego
+tygodnia, zgodnej potwierdzonej rewizji, odczytu sekcji aplikacji oraz
+strony bieżącego wydania. Przekaźnik GCP zapisuje kopię historii po publikacji.

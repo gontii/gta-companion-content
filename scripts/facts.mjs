@@ -1,6 +1,7 @@
 import { deduplicateObjectives, duplicateObjectives } from './progress-objectives.mjs';
 import { classifyProgressContent, validateProgressContent } from './progress-classification.mjs';
-import { validDay, windowFromDays, addDays, localParts, normalizeWeeklyTiming, isWeeklyPeriod } from './temporal.mjs';
+import { rotationSlot } from './section-coverage.mjs';
+import { validDay, windowFromDays, addDays, atLocal, localParts, activeAt, normalizeWeeklyTiming, isWeeklyPeriod } from './temporal.mjs';
 import { thursdayWeekId, extractDateRange, extractPublishedWeekId, cleanText, stripTags, buildWeeklyContent } from './weekly-core.mjs';
 import editorialPeriods from '../events/editorial-periods.json' with { type: 'json' };
 import halloweenEvent from '../events/halloween-challenges-2026-10.json' with { type: 'json' };
@@ -275,7 +276,14 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     k.startsOn === f.startsOn && k.endsOn === f.endsOn && (!k.seasonalEventId || normal(k.entity) === normal(f.entity))))), ...known];
   const ready = facts.filter(f => Date.parse(factWindow(f).startsAt) <= now && Date.parse(factWindow(f).expiresAt) > now)
     .sort((a, b) => Date.parse(factWindow(a).startsAt) - Date.parse(factWindow(b).startsAt));
-  const latestWeek = [current?.weekId, ...ready.map(f => thursdayWeekId(new Date(f.startsOn)))].filter(Boolean).sort().at(-1);
+  // A dated, still-active public offer can span several editions. Its original
+  // start is evidence for the offer, not the identifier of every later edition.
+  const thursday = thursdayWeekId(new Date(now));
+  const editionWeek = now < atLocal(thursday, 660) ? addDays(thursday, -7) : thursday;
+  const publicOffer = (item, section) => item.eligibility === 'all' && !['gta-plus', 'dlc'].includes(section);
+  const continuing = ready.some(f => publicOffer(f, f.section)) || current?.sections.some(s =>
+    s.items.some(i => publicOffer(i, s.id) && activeAt(i, now) && ['official', 'corroborated', 'editorial'].includes(i.confidence)));
+  const latestWeek = [current?.weekId, ...ready.map(f => thursdayWeekId(new Date(f.startsOn))), continuing && editionWeek].filter(Boolean).sort().at(-1);
   if (!latestWeek) return null;
   const sameWeek = current?.weekId === latestWeek;
   const weekEnd = addDays(latestWeek, 6);
@@ -305,7 +313,13 @@ export async function mergeFacts(previous, facts, now = Date.now()) {
     if (!section) continue;
     const key = factKey(f);
     const timing = factWindow(f);
+    const slot = rotationSlot(f);
+    const fromGame = row => row.sources?.some(s => s.kind === 'game-settings');
+    const previousSlot = slot && section.items.find(i => i.startsAt === timing.startsAt && i.expiresAt === timing.expiresAt &&
+      rotationSlot(i, section.id) === slot && (fromGame(f) || fromGame(i)));
+    if (previousSlot && fromGame(f) && !fromGame(previousSlot)) continue;
     const existing = section.items.find(i => f.itemId && i.id === f.itemId) || section.items.find(i => i.factKey === key) ||
+      previousSlot ||
       section.items.find(i => normal(f.entity) === 'hsw time trial' && normal(i.entity) === 'hsw time trial' && i.platform === 'all' && i.startsAt === timing.startsAt && i.expiresAt === timing.expiresAt) ||
       section.items.find(i => i.editorial && normal(i.label).includes(normal(f.entity)));
     // Availability is weaker than a known price/discount. Keep active terms until

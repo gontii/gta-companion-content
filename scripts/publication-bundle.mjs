@@ -5,6 +5,15 @@ import { localParts, addDays } from './temporal.mjs';
 const sections = { bonuses: 'bonuses', challenge: 'rewards', 'free-vehicles': 'rewards', discounts: 'discounts', 'gun-van': 'rotations', other: 'events', 'gta-plus': 'gta-plus' };
 const period = item => ({ startsOn: localParts(Date.parse(item.startsAt)).date,
   endsOn: addDays(localParts(Date.parse(item.expiresAt)).date, item.timingConfidence === 'confirmed' && localParts(Date.parse(item.expiresAt)).minutes > 0 ? 0 : -1) });
+function hasPlatformEvidence(sources, weekId) {
+  const platforms = new Set();
+  for (const source of sources || []) {
+    if (source.kind !== 'game-settings' || source.publishedOn !== weekId) continue;
+    const match = /^https:\/\/api\.rdo\.gg\/tunables\/gta\/(ps5|xboxsx|pcrosalt)\/[A-F0-9]{40}\.json$/.exec(source.url);
+    if (match) platforms.add(match[1]);
+  }
+  return platforms.size === 3;
+}
 // Older installed clients have a fixed citation-host allowlist. Keep the
 // corroborating anchors in the app document and every source in the public one.
 export function compatibleAppSnapshot(snapshot) {
@@ -12,12 +21,18 @@ export function compatibleAppSnapshot(snapshot) {
   const allowed = source => { try { return hosts.has(new URL(source.url).hostname); } catch { return false; } };
   const result = JSON.parse(JSON.stringify(snapshot, (key, value) =>
     key === 'sources' && Array.isArray(value) ? value.filter(allowed) : value));
+  const editionSources = `https://gtacompanion.net/gta-online/weekly-update/${issueNumber(snapshot.weekId)}#sources`;
   for (const item of result.sections.flatMap(s => s.items)) {
     const original = snapshot.sections.flatMap(s => s.items).find(i => i.id === item.id);
-    if (original.sources?.length && !item.sources?.length) throw new Error('app_compatible_source_missing');
     if (item.sources?.length) item.sourceUrl = item.sources[0].url;
+    else if (original.sources?.length) {
+      if (!hasPlatformEvidence(original.sources, snapshot.weekId)) throw new Error('app_compatible_source_missing');
+      // Installed clients can open our edition, where all immutable records are cited.
+      item.sourceUrl = editionSources;
+    }
   }
   if (result.sources?.length) result.sourceUrl = result.sources[0].url;
+  else if (hasPlatformEvidence(snapshot.sources, snapshot.weekId)) result.sourceUrl = editionSources;
   return result;
 }
 export function publicEdition(snapshot, now) {
@@ -28,7 +43,10 @@ export function publicEdition(snapshot, now) {
   for (const section of snapshot.sections.filter(s => s.id !== 'dlc')) for (const item of section.items) {
     if (!sections[section.id]) throw new Error('public_section_unknown');
     const sourceIds = (item.sources || snapshot.sources || []).map(source => {
-      if (!sources.has(source.url)) sources.set(source.url, { id: `ref-${sources.size + 1}`, title: ({rockstar:'Rockstar Games Newswire',intel:'RockstarINTEL',gtabase:'GTABase',igta:'IGrandTheftAuto',gtaboss:'GTA Boss',reddit:'r/gtaonline'})[source.kind] || 'Source', url: source.url, verifiedAt: snapshot.generatedAt });
+      const platform = { ps5: 'PS5', xboxsx: 'Xbox Series X|S', pcrosalt: 'PC Enhanced', ps4: 'PS4', xboxone: 'Xbox One', pcros: 'PC Legacy' }[source.url.split('/')[5]];
+      const title = source.kind === 'game-settings' ? `GTA Online game settings (${platform}) via RDO.GG` :
+        ({rockstar:'Rockstar Games Newswire',intel:'RockstarINTEL',gtabase:'GTABase',igta:'IGrandTheftAuto',gtaboss:'GTA Boss',reddit:'r/gtaonline'})[source.kind] || 'Source';
+      if (!sources.has(source.url)) sources.set(source.url, { id: `ref-${sources.size + 1}`, title, url: source.url, verifiedAt: snapshot.generatedAt });
       return sources.get(source.url).id;
     });
     if (!sourceIds.length) throw new Error('public_item_source_missing');

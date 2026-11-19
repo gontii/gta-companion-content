@@ -1,5 +1,13 @@
 import { atLocal, addDays, localParts } from './temporal.mjs';
 
+export function rotationSlot(fact, section = fact.section) {
+  if (section === 'challenge') return 'challenge';
+  if (section !== 'free-vehicles') return null;
+  if (/podium|lucky wheel/i.test(fact.offer)) return 'podium';
+  if (/prize ride|LS Car Meet/i.test(fact.offer)) return 'prize-ride';
+  return null;
+}
+
 // Required areas are measured separately from freshness and total offer count.
 // One populated category cannot prove that its vehicle rotations are complete.
 export const REQUIRED_AREAS = [

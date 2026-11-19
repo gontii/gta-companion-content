@@ -4,6 +4,7 @@ import { collectSectionEvidence, inspectSectionCoverage, stampCompleteness, AREA
 import { supplementReviewedFacts, normalizeReviewedSources } from '../scripts/reviewed-weekly.mjs';
 import { AiBudget } from '../scripts/ai-budget.mjs';
 import { SourceService } from '../scripts/source-service.mjs';
+import { weeklyRotationFallback } from '../scripts/game-settings.mjs';
 import { needsTranscriptSupplement } from '../scripts/transcript-corroboration.mjs';
 import { agreeSources, factKey, factWindow, hash, mergeFacts, upgradeLegacy, validateSnapshot, FACT_VALIDATION_VERSION } from '../scripts/facts.mjs';
 import { collectEvents, nextCheck, projectContent, windowFromDays, localParts, atLocal, MINUTE, DAY, TIMING_POLICY_VERSION } from '../scripts/temporal.mjs';
@@ -199,6 +200,8 @@ export class PublicationEngine {
           catch (error) { result.failures.push({ kind: 'tgg', reason: error.message.slice(0, 180) }); }
         }
         const approved = agreeSources(result.documents, !result.hasCurrentArticle);
+        try { approved.push(...await weeklyRotationFallback(this.store, approved, now)); }
+        catch (error) { result.failures.push({ kind: 'game-settings', reason: error.message.slice(0, 180) }); }
         const all = new Map((state.validationVersion === FACT_VALIDATION_VERSION ? facts : []).filter(f => Date.parse(factWindow(f).expiresAt) > now).map(f => [factKey(f) + ':' + f.startsOn, f]));
         for (const f of approved) {
           const key = factKey(f) + ':' + f.startsOn;
@@ -388,6 +391,8 @@ export class PublicationEngine {
       await this.store.put('state', state);
       await this.store.setAlarm(nextAt);
       console.log(JSON.stringify({ event: 'content_update', mode: this.env.PUBLICATION_MODE, revision: state.publishedRevision,
+        expectedWeek: state.sectionCoverage?.weekId, publishedWeek: (await this.store.get('publication'))?.weekId,
+        unresolved: state.sectionCoverage?.unresolved, sourceFailures: state.sourceFailures?.map(f => f.kind),
         nextRunAt: state.nextRunAt, reason: state.nextReason, error: state.lastError || null }));
     }
   }

@@ -4,14 +4,15 @@ import latest from '../events/reviewed-weekly-2641.json' with { type: 'json' };
 import week2644 from '../events/reviewed-weekly-2644.json' with { type: 'json' };
 import week2645 from '../events/reviewed-weekly-2645.json' with { type: 'json' };
 import week2646 from '../events/reviewed-weekly-2646.json' with { type: 'json' };
-const reviewed = [...previous, ...current, ...latest, ...week2644, ...week2645, ...week2646];
+import week2647 from '../events/reviewed-weekly-2647.json' with { type: 'json' };
+const corrections = [...current, ...latest, ...week2644, ...week2645, ...week2646, ...week2647];
+const reviewed = [...previous, ...corrections];
 import { factKey, factWindow, normal } from './facts.mjs';
 
 // Zatwierdzone uzupełnienie wydania 2638. Wypełnia braki, nie nadpisuje
 // istniejących korekt ani świeższych faktów dostarczonych przez źródła.
 export function supplementReviewedFacts(master, facts, now) {
   // Potwierdzona korekta wygrywa z ponowną ekstrakcją tego samego okresu.
-  const corrections = [...current, ...latest, ...week2644, ...week2645, ...week2646];
   const active = corrections.filter(f => now >= Date.parse(factWindow(f).startsAt) && now < Date.parse(factWindow(f).expiresAt));
   const corrected = new Set(active.map(f => factKey(f) + ':' + f.startsOn));
   facts = facts.filter(f => !corrected.has(factKey(f) + ':' + f.startsOn));
