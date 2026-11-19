@@ -310,7 +310,7 @@
     {
       "id": "bonuses",
       "title": "Best bonuses",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-04dc820fd80adf0816",
@@ -467,7 +467,7 @@
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-5b4cd5eaeaa02c02e1",
@@ -557,7 +557,7 @@
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-101030b87bf09bf2b6",
@@ -814,7 +814,7 @@
     {
       "id": "gun-van",
       "title": "Gun Van",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-4f21e1197e5805f694",
@@ -946,7 +946,7 @@
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-0806f1d0dea30af444",
@@ -1203,7 +1203,7 @@
     {
       "id": "gta-plus",
       "title": "GTA+ benefits",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-0356322179b0ef1744",
@@ -1776,14 +1776,8 @@
     }
   ],
   "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-  "nextBoundaryAt": "2026-11-19T10:00:00.000Z",
   "completeness": "partial",
-  "missingAreas": [
-    "rewards"
-  ],
-  "resolvedAreas": 10,
-  "requiredAreas": 11,
-  "completenessNote": "Partial weekly update 2026-11-12: 10/11 areas. Missing: rewards.",
-  "revision": "95e10ab64498f6a31b172c6869192a67f7f8b53da0a6b2856eb52bfcbe00b4fd",
-  "generatedAt": "2026-11-13T13:20:00.088Z"
+  "nextBoundaryAt": "2026-11-19T10:00:00.000Z",
+  "revision": "3ec08227413f4c5eecddf19d31b10d6607586ceba0691e809863844cb4f2c1c7",
+  "generatedAt": "2026-11-19T00:05:00.503Z"
 }
