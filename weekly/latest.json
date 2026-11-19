@@ -1,21 +1,23 @@
 {
   "schemaVersion": 2,
-  "weekId": "2026-11-12",
-  "range": "2026-11-12 – 2026-11-18",
-  "headline": "New event details are being checked",
-  "startsAt": "2026-11-12T10:00:00.000Z",
-  "expiresAt": "2026-11-19T10:00:00.000Z",
+  "weekId": "2026-11-19",
+  "range": "2026-11-19 – 2026-11-25",
+  "headline": "This week in GTA Online",
+  "startsAt": "2026-11-19T10:00:00.000Z",
+  "expiresAt": "2026-11-26T10:00:00.000Z",
   "originalZone": "Europe/Warsaw",
   "precision": "date",
   "timingConfidence": "estimated",
   "quickTake": [
-    "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
-    "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges"
+    "Stunt Race Series — 3X GTA$ & RP",
+    "Freemode Challenges — 4X GTA$ & RP",
+    "Community Series — 3X GTA$ & RP",
+    "All Contact Missions — 2X GTA$ & RP"
   ],
   "quickTakeEntries": [
     {
       "id": "auto-04dc820fd80adf0816",
-      "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+      "label": "Stunt Race Series — 3X GTA$ & RP",
       "factKey": "bonuses:stunt race series:all:all",
       "startsAt": "2026-11-12T10:00:00.000Z",
       "expiresAt": "2026-12-02T23:00:00.000Z",
@@ -32,7 +34,7 @@
         }
       ],
       "entity": "Stunt Race Series",
-      "offer": "3X GTA$ and RP on Stunt Race Series",
+      "offer": "3X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
@@ -42,7 +44,7 @@
     },
     {
       "id": "auto-2592275a3e223e7ffd",
-      "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+      "label": "Freemode Challenges — 4X GTA$ & RP",
       "factKey": "bonuses:freemode challenges:all:all",
       "startsAt": "2026-11-12T10:00:00.000Z",
       "expiresAt": "2026-12-02T23:00:00.000Z",
@@ -59,7 +61,7 @@
         }
       ],
       "entity": "Freemode Challenges",
-      "offer": "4X GTA$ and RP on Freemode Challenges",
+      "offer": "4X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
@@ -69,65 +71,63 @@
     },
     {
       "id": "auto-43609dadb3636d4962",
-      "label": "Community Series — 3x GTA$ & RP",
+      "label": "Community Series — 3X GTA$ & RP",
       "factKey": "bonuses:community series:all:all",
       "startsAt": "2026-11-12T10:00:00.000Z",
-      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated",
-      "confidence": "corroborated",
+      "confidence": "official",
       "sources": [
         {
-          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
-          "kind": "intel",
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
           "scope": "weekly",
-          "publishedOn": "2026-11-11"
+          "publishedOn": "2026-11-05"
         }
       ],
       "entity": "Community Series",
-      "offer": "3x GTA$ & RP",
+      "offer": "3X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
-      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
-      "progressGroup": "none",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
       "itemIds": [
         "auto-43609dadb3636d4962"
       ]
     },
     {
-      "id": "auto-4dba35ede65b89c07f",
-      "label": "Sumo — 2X GTA$ & RP",
-      "factKey": "bonuses:sumo:all:all",
+      "id": "auto-512afaa2b9b0288cde",
+      "label": "All Contact Missions — 2X GTA$ & RP",
+      "factKey": "bonuses:all contact missions:all:all",
       "startsAt": "2026-11-12T10:00:00.000Z",
-      "expiresAt": "2026-11-19T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated",
-      "confidence": "corroborated",
+      "confidence": "official",
       "sources": [
         {
-          "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
-          "kind": "intel",
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
           "scope": "weekly",
-          "publishedOn": "2026-11-11"
+          "publishedOn": "2026-11-05"
         }
       ],
-      "entity": "Sumo",
+      "entity": "All Contact Missions",
       "offer": "2X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
-      "sourceUrl": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
-      "progressGroup": "none",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
       "itemIds": [
-        "auto-4dba35ede65b89c07f"
+        "auto-512afaa2b9b0288cde"
       ]
     }
   ],
   "beginnerPath": [
     {
       "id": "bp-auto-04dc820fd80adf0816",
-      "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+      "label": "Stunt Race Series — 3X GTA$ & RP",
       "factKey": "bonuses:stunt race series:all:all",
       "startsAt": "2026-11-12T10:00:00.000Z",
       "expiresAt": "2026-12-02T23:00:00.000Z",
@@ -144,7 +144,7 @@
         }
       ],
       "entity": "Stunt Race Series",
-      "offer": "3X GTA$ and RP on Stunt Race Series",
+      "offer": "3X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
@@ -155,7 +155,7 @@
     },
     {
       "id": "bp-auto-2592275a3e223e7ffd",
-      "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+      "label": "Freemode Challenges — 4X GTA$ & RP",
       "factKey": "bonuses:freemode challenges:all:all",
       "startsAt": "2026-11-12T10:00:00.000Z",
       "expiresAt": "2026-12-02T23:00:00.000Z",
@@ -172,7 +172,7 @@
         }
       ],
       "entity": "Freemode Challenges",
-      "offer": "4X GTA$ and RP on Freemode Challenges",
+      "offer": "4X GTA$ & RP",
       "eligibility": "all",
       "platform": "all",
       "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
@@ -180,18 +180,141 @@
         "auto-2592275a3e223e7ffd"
       ],
       "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-43609dadb3636d4962",
+      "label": "Community Series — 3X GTA$ & RP",
+      "factKey": "bonuses:community series:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "Community Series",
+      "offer": "3X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-43609dadb3636d4962"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-512afaa2b9b0288cde",
+      "label": "All Contact Missions — 2X GTA$ & RP",
+      "factKey": "bonuses:all contact missions:all:all",
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "official",
+      "sources": [
+        {
+          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "kind": "rockstar",
+          "scope": "weekly",
+          "publishedOn": "2026-11-05"
+        }
+      ],
+      "entity": "All Contact Missions",
+      "offer": "2X GTA$ & RP",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+      "itemIds": [
+        "auto-512afaa2b9b0288cde"
+      ],
+      "progressGroup": "none"
     }
   ],
-  "locations": [],
+  "locations": [
+    {
+      "id": "auto-location-community-series",
+      "activity": "Community Series",
+      "name": "Community Series matchmaking",
+      "area": "Legion Square → series marker, or phone → Quick Join",
+      "note": "Use the Community Series marker or your phone’s Quick Join selection. Select the current Community Race Series when the offer names races; other community-created jobs do not automatically qualify for that bonus.\n\nThis week: Community Series — 3X GTA$ & RP",
+      "itemIds": [
+        "auto-43609dadb3636d4962"
+      ],
+      "sources": [
+        {
+          "kind": "rockstar",
+          "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta"
+        }
+      ],
+      "startsAt": "2026-11-12T10:00:00.000Z",
+      "expiresAt": "2026-12-02T23:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-prize-ride",
+      "activity": "Prize Ride",
+      "name": "Los Santos Car Meet",
+      "area": "Cypress Flats → LS Car Meet map icon",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Benefactor SM722 — Prize Ride: win an LS Car Meet Series race on 3 consecutive days, then claim the Benefactor SM722 at the LS Car Meet.",
+      "itemIds": [
+        "auto-8c93090d592942d158"
+      ],
+      "startsAt": "2026-11-19T10:00:00.000Z",
+      "expiresAt": "2026-11-26T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-podium",
+      "activity": "Casino Podium",
+      "name": "The Diamond Casino & Resort",
+      "area": "East Vinewood → Casino map icon",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Gallivanter Baller ST-D — Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+      "itemIds": [
+        "auto-839f9a0f282323e791"
+      ],
+      "startsAt": "2026-11-19T10:00:00.000Z",
+      "expiresAt": "2026-11-26T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-gun-van",
+      "activity": "Gun Van",
+      "name": "Mobile weapons dealer",
+      "area": "Daily rotating stop in Southern San Andreas",
+      "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
+      "itemIds": [
+        "auto-076790a25d4102a751"
+      ],
+      "startsAt": "2026-11-19T10:00:00.000Z",
+      "expiresAt": "2026-11-26T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    }
+  ],
   "sections": [
     {
       "id": "bonuses",
       "title": "Best bonuses",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-04dc820fd80adf0816",
-          "label": "Stunt Race Series — 3X GTA$ and RP on Stunt Race Series",
+          "label": "Stunt Race Series — 3X GTA$ & RP",
           "factKey": "bonuses:stunt race series:all:all",
           "startsAt": "2026-11-12T10:00:00.000Z",
           "expiresAt": "2026-12-02T23:00:00.000Z",
@@ -208,7 +331,7 @@
             }
           ],
           "entity": "Stunt Race Series",
-          "offer": "3X GTA$ and RP on Stunt Race Series",
+          "offer": "3X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
@@ -216,7 +339,7 @@
         },
         {
           "id": "auto-2592275a3e223e7ffd",
-          "label": "Freemode Challenges — 4X GTA$ and RP on Freemode Challenges",
+          "label": "Freemode Challenges — 4X GTA$ & RP",
           "factKey": "bonuses:freemode challenges:all:all",
           "startsAt": "2026-11-12T10:00:00.000Z",
           "expiresAt": "2026-12-02T23:00:00.000Z",
@@ -233,7 +356,82 @@
             }
           ],
           "entity": "Freemode Challenges",
-          "offer": "4X GTA$ and RP on Freemode Challenges",
+          "offer": "4X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-43609dadb3636d4962",
+          "label": "Community Series — 3X GTA$ & RP",
+          "factKey": "bonuses:community series:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Community Series",
+          "offer": "3X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-512afaa2b9b0288cde",
+          "label": "All Contact Missions — 2X GTA$ & RP",
+          "factKey": "bonuses:all contact missions:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "All Contact Missions",
+          "offer": "2X GTA$ & RP",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-ee89b4c3491be55e0a",
+          "label": "Sumo (Remix) — 2X GTA$ & RP",
+          "factKey": "bonuses:sumo remix:all:all",
+          "startsAt": "2026-11-12T10:00:00.000Z",
+          "expiresAt": "2026-12-02T23:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "official",
+          "sources": [
+            {
+              "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+              "kind": "rockstar",
+              "scope": "weekly",
+              "publishedOn": "2026-11-05"
+            }
+          ],
+          "entity": "Sumo (Remix)",
+          "offer": "2X GTA$ & RP",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
@@ -244,37 +442,583 @@
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "weekly-objective-64",
+          "label": "Gerald's Last Play Missions — Complete 3 Gerald's Last Play Missions.",
+          "factKey": "challenge:gerald s last play missions:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Gerald's Last Play Missions",
+          "offer": "Complete 3 Gerald's Last Play Missions.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "targetCount": 3,
+          "progressGroup": "extra"
+        }
+      ]
     },
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "auto-3a47501ae8c6ffb5e5",
+          "label": "Knife — Free at the Gun Van during this event week.",
+          "factKey": "free-vehicles:knife:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Knife",
+          "offer": "Free at the Gun Van during this event week.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "primary"
+        },
+        {
+          "id": "auto-839f9a0f282323e791",
+          "label": "Gallivanter Baller ST-D — Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+          "factKey": "free-vehicles:gallivanter baller st d:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Gallivanter Baller ST-D",
+          "offer": "Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8c93090d592942d158",
+          "label": "Benefactor SM722 — Prize Ride: win an LS Car Meet Series race on 3 consecutive days, then claim the Benefactor SM722 at the LS Car Meet.",
+          "factKey": "free-vehicles:benefactor sm722:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Benefactor SM722",
+          "offer": "Prize Ride: win an LS Car Meet Series race on 3 consecutive days, then claim the Benefactor SM722 at the LS Car Meet.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "extra"
+        }
+      ]
     },
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "auto-1491e054641d7763be",
+          "label": "Lampadati Viseris — 30% off the regular purchase price.",
+          "factKey": "discounts:lampadati viseris:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Lampadati Viseris",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-199ead3fa9e13e385f",
+          "label": "Enus Windsor Drop — 30% off the regular purchase price.",
+          "factKey": "discounts:enus windsor drop:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Enus Windsor Drop",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2827a2e83c2de1c86a",
+          "label": "Cargobob — 30% off the regular purchase price.",
+          "factKey": "discounts:cargobob:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Cargobob",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-493d1d9c4b8e33d495",
+          "label": "Överflöd Autarch — 30% off the regular purchase price.",
+          "factKey": "discounts:verfl d autarch:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Överflöd Autarch",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-517b141e02f4b941af",
+          "label": "Pfister 811 — 30% off the regular purchase price.",
+          "factKey": "discounts:pfister 811:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Pfister 811",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8daf9ccfb94ed5cd22",
+          "label": "Vapid Dominator GTX — 30% off the regular purchase price.",
+          "factKey": "discounts:vapid dominator gtx:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Vapid Dominator GTX",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9e167061fde0473662",
+          "label": "Vapid Dominator ASP — 30% off the regular purchase price.",
+          "factKey": "discounts:vapid dominator asp:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Vapid Dominator ASP",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d66b31465b87d67b27",
+          "label": "Vapid Uranus LozSpeed — 30% off the regular purchase price.",
+          "factKey": "discounts:vapid uranus lozspeed:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Vapid Uranus LozSpeed",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d6ea698fefb6272dd4",
+          "label": "Principe Lectro — 30% off the regular purchase price.",
+          "factKey": "discounts:principe lectro:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Principe Lectro",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-ecdc86470019f138ef",
+          "label": "RC Bandito — 30% off the regular purchase price.",
+          "factKey": "discounts:rc bandito:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "RC Bandito",
+          "offer": "30% off the regular purchase price.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "gun-van",
       "title": "Gun Van",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "auto-076790a25d4102a751",
+          "label": "Pool Cue — 20% off at the Gun Van for GTA+ members. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:pool cue:gta-plus:enhanced",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Pool Cue",
+          "offer": "20% off at the Gun Van for GTA+ members.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4f21e1197e5805f694",
+          "label": "Tactical SMG — 10% off at the Gun Van.",
+          "factKey": "gun-van:tactical smg:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Tactical SMG",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4f3f7149a599430721",
+          "label": "Flare Gun — 10% off at the Gun Van.",
+          "factKey": "gun-van:flare gun:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Flare Gun",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-5eab6888aa2fb6395f",
+          "label": "Railgun — 30% off at the Gun Van.",
+          "factKey": "gun-van:railgun:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Railgun",
+          "offer": "30% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-66d3ac9858a8c84d34",
+          "label": "Tactical SMG — 30% off at the Gun Van for GTA+ members. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:tactical smg:gta-plus:enhanced",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Tactical SMG",
+          "offer": "30% off at the Gun Van for GTA+ members.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-8c045efb7508694c78",
+          "label": "Pool Cue — 10% off at the Gun Van.",
+          "factKey": "gun-van:pool cue:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Pool Cue",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9fbc35a875987d2276",
+          "label": "Flare Gun — 20% off at the Gun Van for GTA+ members. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:flare gun:gta-plus:enhanced",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Flare Gun",
+          "offer": "20% off at the Gun Van for GTA+ members.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-b373c862a3f2727e39",
+          "label": "Double Barrel Shotgun — 10% off at the Gun Van.",
+          "factKey": "gun-van:double barrel shotgun:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Double Barrel Shotgun",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "label": "Baseball Bat — In stock at the Gun Van.",
+          "factKey": "gun-van:baseball bat:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Baseball Bat",
+          "offer": "In stock at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-d53616f4688c5fabc8",
+          "label": "Double Barrel Shotgun — 20% off at the Gun Van for GTA+ members. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:double barrel shotgun:gta-plus:enhanced",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Double Barrel Shotgun",
+          "offer": "20% off at the Gun Van for GTA+ members.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "auto-7ac599ef31fc2cdaf7",
+          "label": "Premium Deluxe Motorsport showroom — On display: Enus Windsor Drop, Vapid Dominator GTX, Lampadati Viseris, Vapid Uranus LozSpeed, Överflöd Autarch.",
+          "factKey": "other:premium deluxe motorsport showroom:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Premium Deluxe Motorsport showroom",
+          "offer": "On display: Enus Windsor Drop, Vapid Dominator GTX, Lampadati Viseris, Vapid Uranus LozSpeed, Överflöd Autarch.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9104a925537a45f423",
+          "label": "LS Car Meet test rides — Test-drive Principe Lectro, Pfister 811, Vapid Dominator ASP.",
+          "factKey": "other:ls car meet test rides:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "LS Car Meet test rides",
+          "offer": "Test-drive Principe Lectro, Pfister 811, Vapid Dominator ASP.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-91a29621d957156f53",
+          "label": "HSW Time Trial — Textile City. (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "other:hsw time trial:all:enhanced",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "HSW Time Trial",
+          "offer": "Textile City.",
+          "eligibility": "all",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-ad054363648a55069b",
+          "label": "HSW Premium Test Ride — Bravado Buffalo EVX. Available to test at the LS Car Meet. (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "other:hsw premium test ride:all:enhanced",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "HSW Premium Test Ride",
+          "offer": "Bravado Buffalo EVX. Available to test at the LS Car Meet.",
+          "eligibility": "all",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-c5ef0b9a67ff6177d2",
+          "label": "Luxury Autos showroom — On display: Declasse Walton L35, Übermacht Sentinel GTS.",
+          "factKey": "other:luxury autos showroom:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Luxury Autos showroom",
+          "offer": "On display: Declasse Walton L35, Übermacht Sentinel GTS.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-c6afb210df51601e81",
+          "label": "Time Trial — Vinewood Bowl.",
+          "factKey": "other:time trial:all:all",
+          "startsAt": "2026-11-19T10:00:00.000Z",
+          "expiresAt": "2026-11-26T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Time Trial",
+          "offer": "Vinewood Bowl.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2647#sources",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "gta-plus",
       "title": "GTA+ benefits",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-0356322179b0ef1744",
@@ -745,12 +1489,6 @@
       "publishedOn": "2026-11-05"
     },
     {
-      "url": "https://rockstarintel.com/gta-online-event-week-the-heist-event-november-12th-18th/",
-      "kind": "intel",
-      "scope": "weekly",
-      "publishedOn": "2026-11-11"
-    },
-    {
       "kind": "rockstar",
       "scope": "membership",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447"
@@ -847,8 +1585,12 @@
     }
   ],
   "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-  "completeness": "partial",
-  "nextBoundaryAt": "2026-12-02T23:00:00.000Z",
-  "revision": "74d4a790e4c580715a4064aded760f24430da2c8935f6af80787b152e117b5cf",
-  "generatedAt": "2026-11-19T10:00:00.050Z"
+  "nextBoundaryAt": "2026-11-26T10:00:00.000Z",
+  "completeness": "complete",
+  "missingAreas": [],
+  "resolvedAreas": 11,
+  "requiredAreas": 11,
+  "completenessNote": "Weekly update 2026-11-19: 11/11 required areas confirmed or explicitly absent.",
+  "revision": "6f6798ab14023cecf8c2843d9b3183a7d1b9af3ed20f800e833a87454131f85b",
+  "generatedAt": "2026-11-19T11:30:00.136Z"
 }
