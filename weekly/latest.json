@@ -310,7 +310,7 @@
     {
       "id": "bonuses",
       "title": "Best bonuses",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-04dc820fd80adf0816",
@@ -442,7 +442,7 @@
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "weekly-objective-64",
@@ -468,7 +468,7 @@
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-3a47501ae8c6ffb5e5",
@@ -529,7 +529,7 @@
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-1491e054641d7763be",
@@ -716,7 +716,7 @@
     {
       "id": "gun-van",
       "title": "Gun Van",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-076790a25d4102a751",
@@ -903,7 +903,7 @@
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-7ac599ef31fc2cdaf7",
@@ -1018,7 +1018,7 @@
     {
       "id": "gta-plus",
       "title": "GTA+ benefits",
-      "completeness": "complete",
+      "completeness": "partial",
       "items": [
         {
           "id": "auto-0356322179b0ef1744",
@@ -1585,12 +1585,8 @@
     }
   ],
   "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+  "completeness": "partial",
   "nextBoundaryAt": "2026-11-26T10:00:00.000Z",
-  "completeness": "complete",
-  "missingAreas": [],
-  "resolvedAreas": 11,
-  "requiredAreas": 11,
-  "completenessNote": "Weekly update 2026-11-19: 11/11 required areas confirmed or explicitly absent.",
-  "revision": "6f6798ab14023cecf8c2843d9b3183a7d1b9af3ed20f800e833a87454131f85b",
-  "generatedAt": "2026-11-19T11:30:00.136Z"
+  "revision": "0b55e138ec2db5dee29366c63dc61e25845fff1d30fe1eb958086ebd066d5488",
+  "generatedAt": "2026-11-26T00:05:00.580Z"
 }
