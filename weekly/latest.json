@@ -259,6 +259,36 @@
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-prize-ride",
+      "activity": "Prize Ride",
+      "name": "Los Santos Car Meet",
+      "area": "Cypress Flats → LS Car Meet map icon",
+      "note": "Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.\n\nThis week: Pfister Comet S2 Cabrio — Prize Ride: Win a race in the LS Car Meet Series on 4 consecutive days to claim the Pfister Comet S2 Cabrio.",
+      "itemIds": [
+        "auto-4b17eb24a4cde32c63"
+      ],
+      "startsAt": "2026-11-26T10:00:00.000Z",
+      "expiresAt": "2026-12-03T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-podium",
+      "activity": "Casino Podium",
+      "name": "The Diamond Casino & Resort",
+      "area": "East Vinewood → Casino map icon",
+      "note": "Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.\n\nThis week: Vapid Caracara — Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+      "itemIds": [
+        "auto-0c6415a11601bad700"
+      ],
+      "startsAt": "2026-11-26T10:00:00.000Z",
+      "expiresAt": "2026-12-03T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
     }
   ],
   "sections": [
@@ -397,14 +427,71 @@
     {
       "id": "challenge",
       "title": "Weekly challenge",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "weekly-objective-65",
+          "label": "Premium Deluxe Repo Work Missions — Complete 3 Premium Deluxe Repo Work Missions.",
+          "factKey": "challenge:premium deluxe repo work missions:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Premium Deluxe Repo Work Missions",
+          "offer": "Complete 3 Premium Deluxe Repo Work Missions.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "targetCount": 3,
+          "progressGroup": "extra"
+        }
+      ]
     },
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "completeness": "pending",
-      "items": []
+      "completeness": "partial",
+      "items": [
+        {
+          "id": "auto-0c6415a11601bad700",
+          "label": "Vapid Caracara — Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+          "factKey": "free-vehicles:vapid caracara:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Vapid Caracara",
+          "offer": "Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-4b17eb24a4cde32c63",
+          "label": "Pfister Comet S2 Cabrio — Prize Ride: Win a race in the LS Car Meet Series on 4 consecutive days to claim the Pfister Comet S2 Cabrio.",
+          "factKey": "free-vehicles:pfister comet s2 cabrio:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Pfister Comet S2 Cabrio",
+          "offer": "Prize Ride: Win a race in the LS Car Meet Series on 4 consecutive days to claim the Pfister Comet S2 Cabrio.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "extra"
+        }
+      ]
     },
     {
       "id": "discounts",
@@ -997,19 +1084,16 @@
   "nextBoundaryAt": "2026-12-02T23:00:00.000Z",
   "completeness": "partial",
   "missingAreas": [
-    "challenge",
     "rewards",
-    "podium",
-    "prize-ride",
     "discounts",
     "gun-van-stock",
     "gun-van-discounts",
     "gun-van-gta-plus",
     "other"
   ],
-  "resolvedAreas": 2,
+  "resolvedAreas": 5,
   "requiredAreas": 11,
-  "completenessNote": "Partial weekly update 2026-11-26: 2/11 areas. Missing: challenge, rewards, podium, prize-ride, discounts, gun-van-stock, gun-van-discounts, gun-van-gta-plus, other.",
-  "revision": "b59375c867e1f1ba485a835e05c08ed6ff9bbb36678135cda74871262c1443bd",
-  "generatedAt": "2026-11-26T10:00:00.041Z"
+  "completenessNote": "Partial weekly update 2026-11-26: 5/11 areas. Missing: rewards, discounts, gun-van-stock, gun-van-discounts, gun-van-gta-plus, other.",
+  "revision": "b9abb344dd49ac2cec6aaea453bf86e2137f898729cbbbbab7209eec5891fdc0",
+  "generatedAt": "2026-11-26T10:16:15.043Z"
 }

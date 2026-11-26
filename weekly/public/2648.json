@@ -5,11 +5,11 @@
   "startsOn": "2026-11-26",
   "endsOn": "2026-12-02",
   "status": "active",
-  "verifiedAt": "2026-11-26T10:00:00.041Z",
-  "confirmedAt": "2026-11-26T10:00:00.041Z",
+  "verifiedAt": "2026-11-26T10:16:15.043Z",
+  "confirmedAt": "2026-11-26T10:16:15.043Z",
   "startsAt": "2026-11-26T10:00:00.000Z",
   "expiresAt": "2026-12-03T10:00:00.000Z",
-  "revision": "b59375c867e1f1ba485a835e05c08ed6ff9bbb36678135cda74871262c1443bd",
+  "revision": "b9abb344dd49ac2cec6aaea453bf86e2137f898729cbbbbab7209eec5891fdc0",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -106,16 +106,59 @@
       "id": "rewards",
       "items": [
         {
-          "id": "pending-rewards",
-          "name": "Rewards and requirements details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "weekly-objective-65",
+          "name": "Premium Deluxe Repo Work Missions",
+          "status": "confirmed",
+          "offer": "Premium Deluxe Repo Work Missions — Complete 3 Premium Deluxe Repo Work Missions.",
+          "requirements": "Complete 3 Premium Deluxe Repo Work Missions.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "targetCount": 3,
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-3",
+            "ref-4",
+            "ref-5"
+          ]
+        },
+        {
+          "id": "auto-0c6415a11601bad700",
+          "name": "Vapid Caracara",
+          "status": "confirmed",
+          "offer": "Vapid Caracara — Podium vehicle: spin the Lucky Wheel at the Diamond Casino & Resort for a chance to win.",
+          "requirements": "East Vinewood → Casino map icon. Enter the casino and use the Lucky Wheel in the main lobby. The podium car is a chance reward, not a guaranteed free claim. Check the wheel for your next available spin; availability can depend on your region.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-3",
+            "ref-4",
+            "ref-5"
+          ]
+        },
+        {
+          "id": "auto-4b17eb24a4cde32c63",
+          "name": "Pfister Comet S2 Cabrio",
+          "status": "confirmed",
+          "offer": "Pfister Comet S2 Cabrio — Prize Ride: Win a race in the LS Car Meet Series on 4 consecutive days to claim the Pfister Comet S2 Cabrio.",
+          "requirements": "Cypress Flats → LS Car Meet map icon. Enter the Car Meet and check Prize Ride Challenge in the Interaction Menu. Join the required LS Car Meet race series and check your progress after each result. Consecutive-day requirements need separate qualifying days; collect the reward from the Prize Ride menu after completion.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-3",
+            "ref-4",
+            "ref-5"
+          ]
         }
       ]
     },
@@ -169,8 +212,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-3",
-            "ref-4"
+            "ref-6",
+            "ref-7"
           ]
         },
         {
@@ -186,8 +229,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-5",
-            "ref-4"
+            "ref-8",
+            "ref-7"
           ]
         },
         {
@@ -203,8 +246,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-4"
+            "ref-9",
+            "ref-7"
           ]
         },
         {
@@ -220,8 +263,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-7",
-            "ref-4"
+            "ref-10",
+            "ref-7"
           ]
         },
         {
@@ -237,8 +280,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-8",
-            "ref-4"
+            "ref-11",
+            "ref-7"
           ]
         },
         {
@@ -254,8 +297,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-9",
-            "ref-4"
+            "ref-12",
+            "ref-7"
           ]
         },
         {
@@ -271,8 +314,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-10",
-            "ref-4"
+            "ref-13",
+            "ref-7"
           ]
         },
         {
@@ -288,8 +331,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-11",
-            "ref-4"
+            "ref-14",
+            "ref-7"
           ]
         },
         {
@@ -305,8 +348,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-12",
-            "ref-4"
+            "ref-15",
+            "ref-7"
           ]
         },
         {
@@ -322,8 +365,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-13",
-            "ref-4"
+            "ref-16",
+            "ref-7"
           ]
         },
         {
@@ -339,8 +382,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-14",
-            "ref-4"
+            "ref-17",
+            "ref-7"
           ]
         },
         {
@@ -356,8 +399,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-15",
-            "ref-4"
+            "ref-18",
+            "ref-7"
           ]
         },
         {
@@ -373,8 +416,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-16",
-            "ref-4"
+            "ref-19",
+            "ref-7"
           ]
         },
         {
@@ -390,8 +433,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-17",
-            "ref-4"
+            "ref-20",
+            "ref-7"
           ]
         },
         {
@@ -407,8 +450,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-18",
-            "ref-4"
+            "ref-21",
+            "ref-7"
           ]
         },
         {
@@ -424,8 +467,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-19",
-            "ref-4"
+            "ref-22",
+            "ref-7"
           ]
         },
         {
@@ -441,8 +484,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-20",
-            "ref-4"
+            "ref-23",
+            "ref-7"
           ]
         },
         {
@@ -458,8 +501,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-21",
-            "ref-4"
+            "ref-24",
+            "ref-7"
           ]
         },
         {
@@ -475,8 +518,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-22",
-            "ref-4"
+            "ref-25",
+            "ref-7"
           ]
         }
       ]
@@ -504,133 +547,151 @@
       "id": "ref-1",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-2",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-3",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "title": "GTA Online game settings (PS5) via RDO.GG",
+      "url": "https://api.rdo.gg/tunables/gta/ps5/73016D29FA4083C0A846A4DB084C5AF145C1E062.json",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-4",
-      "title": "Source",
-      "url": "https://gta.wiki/w/GTA%2B_November_2026",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "title": "GTA Online game settings (Xbox Series X|S) via RDO.GG",
+      "url": "https://api.rdo.gg/tunables/gta/xboxsx/4546F7E86A1E6D4BC8E9559E6AF65CF8140D7279.json",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-5",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "title": "GTA Online game settings (PC Enhanced) via RDO.GG",
+      "url": "https://api.rdo.gg/tunables/gta/pcrosalt/2629685E617D438DD9E2F521E961D9F5D4780BB8.json",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-6",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-7",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "title": "Source",
+      "url": "https://gta.wiki/w/GTA%2B_November_2026",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-8",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-9",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-10",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-11",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-12",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-13",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-14",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-15",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-16",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-17",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-18",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-19",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-20",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-21",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     },
     {
       "id": "ref-22",
       "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
+    },
+    {
+      "id": "ref-23",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
+    },
+    {
+      "id": "ref-24",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
+    },
+    {
+      "id": "ref-25",
+      "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o",
-      "verifiedAt": "2026-11-26T10:00:00.041Z"
+      "verifiedAt": "2026-11-26T10:16:15.043Z"
     }
   ]
 }
