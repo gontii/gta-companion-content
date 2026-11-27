@@ -5,7 +5,8 @@ import week2644 from '../events/reviewed-weekly-2644.json' with { type: 'json' }
 import week2645 from '../events/reviewed-weekly-2645.json' with { type: 'json' };
 import week2646 from '../events/reviewed-weekly-2646.json' with { type: 'json' };
 import week2647 from '../events/reviewed-weekly-2647.json' with { type: 'json' };
-const corrections = [...current, ...latest, ...week2644, ...week2645, ...week2646, ...week2647];
+import week2648 from '../events/reviewed-weekly-2648.json' with { type: 'json' };
+const corrections = [...current, ...latest, ...week2644, ...week2645, ...week2646, ...week2647, ...week2648];
 const reviewed = [...previous, ...corrections];
 import { factKey, factWindow, normal } from './facts.mjs';
 
@@ -38,4 +39,12 @@ export function normalizeReviewedSources(master) {
   const unsupported = 'https://www.igrandtheftauto.com/gtaonline/news/this-week-in-gta-online-september-17-2026';
   return JSON.parse(JSON.stringify(master, (key, value) =>
     key === 'sources' && Array.isArray(value) ? value.filter(s => s.url !== unsupported) : value));
+}
+
+// Older apps link to the edition for reviewed rows whose two citations
+// are only supported in the public article.
+export function hasReviewedEditionSources(item, weekId) {
+  return week2648.some(f => f.startsOn === weekId && factKey(f) === item.factKey &&
+    f.offer === item.offer && f.sources.length >= 2 &&
+    f.sources.every(source => item.sources?.some(s => s.url === source.url)));
 }

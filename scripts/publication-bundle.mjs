@@ -1,3 +1,4 @@
+import { hasReviewedEditionSources } from './reviewed-weekly.mjs';
 import { hash, validateSnapshot } from './facts.mjs';
 import { parseWeeklyContent } from '../schemas/app-weekly-parser.mjs';
 import { validatePublicWeekly, validatePublicPage, issueNumber, SECTIONS, PLATFORMS } from '../schemas/public-weekly.mjs';
@@ -26,7 +27,7 @@ export function compatibleAppSnapshot(snapshot) {
     const original = snapshot.sections.flatMap(s => s.items).find(i => i.id === item.id);
     if (item.sources?.length) item.sourceUrl = item.sources[0].url;
     else if (original.sources?.length) {
-      if (!hasPlatformEvidence(original.sources, snapshot.weekId)) throw new Error('app_compatible_source_missing');
+      if (!hasPlatformEvidence(original.sources, snapshot.weekId) && !hasReviewedEditionSources(original, snapshot.weekId)) throw new Error('app_compatible_source_missing');
       // Installed clients can open our edition, where all immutable records are cited.
       item.sourceUrl = editionSources;
     }
