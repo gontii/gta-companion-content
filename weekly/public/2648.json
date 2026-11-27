@@ -5,11 +5,11 @@
   "startsOn": "2026-11-26",
   "endsOn": "2026-12-02",
   "status": "active",
-  "verifiedAt": "2026-11-26T10:16:15.043Z",
-  "confirmedAt": "2026-11-26T10:16:15.043Z",
+  "verifiedAt": "2026-11-27T12:05:00.037Z",
+  "confirmedAt": "2026-11-27T12:05:00.037Z",
   "startsAt": "2026-11-26T10:00:00.000Z",
   "expiresAt": "2026-12-03T10:00:00.000Z",
-  "revision": "b9abb344dd49ac2cec6aaea453bf86e2137f898729cbbbbab7209eec5891fdc0",
+  "revision": "f6e7e3eef51bac9b989b538d8e1d4d4e1cca206d39044908b9cccb5971c4e666",
   "platforms": [
     "PC Enhanced",
     "PS5",
@@ -33,6 +33,23 @@
           "gtaPlus": false,
           "sourceIds": [
             "ref-1"
+          ]
+        },
+        {
+          "id": "auto-1b976e34342af0f6f9",
+          "name": "The Project Breakaway File",
+          "status": "confirmed",
+          "offer": "The Project Breakaway File — Earn 2X GTA$ on this week’s FIB Priority File.",
+          "requirements": "Earn 2X GTA$ on this week’s FIB Priority File.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
           ]
         },
         {
@@ -65,7 +82,7 @@
           "gtaPlus": false,
           "sourceIds": [
             "ref-1",
-            "ref-2"
+            "ref-4"
           ]
         },
         {
@@ -109,8 +126,8 @@
           "id": "weekly-objective-65",
           "name": "Premium Deluxe Repo Work Missions",
           "status": "confirmed",
-          "offer": "Premium Deluxe Repo Work Missions — Complete 3 Premium Deluxe Repo Work Missions.",
-          "requirements": "Complete 3 Premium Deluxe Repo Work Missions.",
+          "offer": "Premium Deluxe Repo Work Missions — Complete 3 Premium Deluxe Repo Work Missions to earn GTA$100,000.",
+          "requirements": "Complete 3 Premium Deluxe Repo Work Missions to earn GTA$100,000.",
           "startsOn": "2026-11-26",
           "endsOn": "2026-12-02",
           "targetCount": 3,
@@ -119,9 +136,11 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
+            "ref-2",
             "ref-3",
-            "ref-4",
-            "ref-5"
+            "ref-5",
+            "ref-6",
+            "ref-7"
           ]
         },
         {
@@ -137,9 +156,9 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-3",
-            "ref-4",
-            "ref-5"
+            "ref-5",
+            "ref-6",
+            "ref-7"
           ]
         },
         {
@@ -155,9 +174,26 @@
           "claim": null,
           "gtaPlus": false,
           "sourceIds": [
-            "ref-3",
-            "ref-4",
-            "ref-5"
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-7d0a314514c8f92188",
+          "name": "Kortz Center Heist no-death reward",
+          "status": "confirmed",
+          "offer": "Kortz Center Heist no-death reward — Earn an extra GTA$400,000 for completing the heist without anyone dying.",
+          "requirements": "Earn an extra GTA$400,000 for completing the heist without anyone dying.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
           ]
         }
       ]
@@ -166,16 +202,160 @@
       "id": "discounts",
       "items": [
         {
-          "id": "pending-discounts",
-          "name": "Discounts details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "auto-2d632cd942f180a3a2",
+          "name": "Vysser Neo",
+          "status": "confirmed",
+          "offer": "Vysser Neo — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-40740ff0695fe9c3f9",
+          "name": "Karin Sultan Classic",
+          "status": "confirmed",
+          "offer": "Karin Sultan Classic — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-45b0183bc76765eee2",
+          "name": "Grotti Cheetah Classic",
+          "status": "confirmed",
+          "offer": "Grotti Cheetah Classic — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-46b4eb8e4477b160b1",
+          "name": "Gallivanter Baller ST",
+          "status": "confirmed",
+          "offer": "Gallivanter Baller ST — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-89c289ce7f20ab46c1",
+          "name": "Mammoth Squaddie",
+          "status": "confirmed",
+          "offer": "Mammoth Squaddie — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-b0ebfcbc73b32b18f6",
+          "name": "Vapid Ratel",
+          "status": "confirmed",
+          "offer": "Vapid Ratel — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-bdc13d5b4628640092",
+          "name": "Dinka Chavos V6",
+          "status": "confirmed",
+          "offer": "Dinka Chavos V6 — 30% off: GTA$994,000 (normally GTA$1,420,000). (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "30% off: GTA$994,000 (normally GTA$1,420,000).",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-9",
+            "ref-3",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-e3420f6a05f2e61670",
+          "name": "Vapid Ellie",
+          "status": "confirmed",
+          "offer": "Vapid Ellie — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
+        },
+        {
+          "id": "auto-fd0a741debfe8ff315",
+          "name": "Police Prison Bus",
+          "status": "confirmed",
+          "offer": "Police Prison Bus — 30% off.",
+          "requirements": "30% off.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-8"
+          ]
         }
       ]
     },
@@ -183,22 +363,158 @@
       "id": "events",
       "items": [
         {
-          "id": "pending-events",
-          "name": "Ongoing events details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "auto-0806f1d0dea30af444",
+          "name": "Salvage Yard Robberies",
+          "status": "confirmed",
+          "offer": "Salvage Yard Robberies — The Duggan Robbery: Bravado Gauntlet Hellfire. The McTony Robbery: Dewbauchee Vagner. The Cargo Ship Robbery: Karin Previon.",
+          "requirements": "The Duggan Robbery: Bravado Gauntlet Hellfire. The McTony Robbery: Dewbauchee Vagner. The Cargo Ship Robbery: Karin Previon.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
+        },
+        {
+          "id": "auto-e288fd93d5ca6f5ad9",
+          "name": "The Kortz Center Heist",
+          "status": "confirmed",
+          "offer": "The Kortz Center Heist — Primary targets: A Winding Road Home, Winter, Nowhere in Particular, and I Hear Voices. The first-completion bonus has reset.",
+          "requirements": "Primary targets: A Winding Road Home, Winter, Nowhere in Particular, and I Hear Voices. The first-completion bonus has reset.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-2",
+            "ref-3"
+          ]
         }
       ]
     },
     {
       "id": "gta-plus",
       "items": [
+        {
+          "id": "auto-16eadb4dc232d6142f",
+          "name": "Sticky Bombs, Tear Gas and Molotovs",
+          "status": "confirmed",
+          "offer": "Sticky Bombs, Tear Gas and Molotovs — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-65a57ed2397339870c",
+          "name": "Nightstick",
+          "status": "confirmed",
+          "offer": "Nightstick — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-87490286d131828902",
+          "name": "Gusenberg Sweeper",
+          "status": "confirmed",
+          "offer": "Gusenberg Sweeper — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-96ac7ea38f4448aa3d",
+          "name": "Assault Shotgun",
+          "status": "confirmed",
+          "offer": "Assault Shotgun — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-9ce1ca597ab63a43be",
+          "name": "Battle Rifle",
+          "status": "confirmed",
+          "offer": "Battle Rifle — 40% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 40% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-a550b35e1122725472",
+          "name": "Military Rifle",
+          "status": "confirmed",
+          "offer": "Military Rifle — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "requirements": "Active GTA+ membership required. 20% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": true,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
         {
           "id": "auto-0356322179b0ef1744",
           "name": "Pop Art Revere Collar",
@@ -212,8 +528,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-6",
-            "ref-7"
+            "ref-10",
+            "ref-11"
           ]
         },
         {
@@ -229,8 +545,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-8",
-            "ref-7"
+            "ref-12",
+            "ref-11"
           ]
         },
         {
@@ -246,8 +562,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-9",
-            "ref-7"
+            "ref-13",
+            "ref-11"
           ]
         },
         {
@@ -263,8 +579,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-10",
-            "ref-7"
+            "ref-14",
+            "ref-11"
           ]
         },
         {
@@ -280,8 +596,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-11",
-            "ref-7"
+            "ref-15",
+            "ref-11"
           ]
         },
         {
@@ -297,8 +613,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-12",
-            "ref-7"
+            "ref-16",
+            "ref-11"
           ]
         },
         {
@@ -314,8 +630,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-13",
-            "ref-7"
+            "ref-17",
+            "ref-11"
           ]
         },
         {
@@ -331,8 +647,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-14",
-            "ref-7"
+            "ref-18",
+            "ref-11"
           ]
         },
         {
@@ -348,8 +664,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-15",
-            "ref-7"
+            "ref-19",
+            "ref-11"
           ]
         },
         {
@@ -365,8 +681,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-16",
-            "ref-7"
+            "ref-20",
+            "ref-11"
           ]
         },
         {
@@ -382,8 +698,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-17",
-            "ref-7"
+            "ref-21",
+            "ref-11"
           ]
         },
         {
@@ -399,8 +715,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-18",
-            "ref-7"
+            "ref-22",
+            "ref-11"
           ]
         },
         {
@@ -416,8 +732,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-19",
-            "ref-7"
+            "ref-23",
+            "ref-11"
           ]
         },
         {
@@ -433,8 +749,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-20",
-            "ref-7"
+            "ref-24",
+            "ref-11"
           ]
         },
         {
@@ -450,8 +766,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-21",
-            "ref-7"
+            "ref-25",
+            "ref-11"
           ]
         },
         {
@@ -467,8 +783,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-22",
-            "ref-7"
+            "ref-26",
+            "ref-11"
           ]
         },
         {
@@ -484,8 +800,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-23",
-            "ref-7"
+            "ref-27",
+            "ref-11"
           ]
         },
         {
@@ -501,8 +817,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-24",
-            "ref-7"
+            "ref-28",
+            "ref-11"
           ]
         },
         {
@@ -518,8 +834,8 @@
           "claim": null,
           "gtaPlus": true,
           "sourceIds": [
-            "ref-25",
-            "ref-7"
+            "ref-29",
+            "ref-11"
           ]
         }
       ]
@@ -528,16 +844,175 @@
       "id": "rotations",
       "items": [
         {
-          "id": "pending-rotations",
-          "name": "Weekly rotations details",
-          "status": "pending",
-          "offer": null,
-          "requirements": null,
-          "startsOn": null,
-          "endsOn": null,
+          "id": "auto-03bd3c46116069c214",
+          "name": "Military Rifle",
+          "status": "confirmed",
+          "offer": "Military Rifle — 10% off at the Gun Van.",
+          "requirements": "Daily rotating stop in Southern San Andreas. The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership. See This Week → Gun Van for the current stock and discounts.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
           "claim": null,
           "gtaPlus": false,
-          "sourceIds": []
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-2079ffbee56f8d3836",
+          "name": "Battle Rifle",
+          "status": "confirmed",
+          "offer": "Battle Rifle — 10% off at the Gun Van.",
+          "requirements": "10% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-3bd40c56d89c281e8d",
+          "name": "Nightstick",
+          "status": "confirmed",
+          "offer": "Nightstick — 10% off at the Gun Van.",
+          "requirements": "10% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-653a7ed73ee9b74f6d",
+          "name": "Sticky Bombs, Tear Gas and Molotovs",
+          "status": "confirmed",
+          "offer": "Sticky Bombs, Tear Gas and Molotovs — 10% off at the Gun Van.",
+          "requirements": "10% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-68077396993462b558",
+          "name": "Gusenberg Sweeper",
+          "status": "confirmed",
+          "offer": "Gusenberg Sweeper — 10% off at the Gun Van.",
+          "requirements": "10% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-7b560b042f42c1d5f9",
+          "name": "Stun Gun",
+          "status": "confirmed",
+          "offer": "Stun Gun — 50% off at the Gun Van.",
+          "requirements": "50% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-9a0b1fe3db20593611",
+          "name": "Assault Shotgun",
+          "status": "confirmed",
+          "offer": "Assault Shotgun — 10% off at the Gun Van.",
+          "requirements": "10% off at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "name": "Knife",
+          "status": "confirmed",
+          "offer": "Knife — Free at the Gun Van.",
+          "requirements": "Free at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "name": "Baseball Bat",
+          "status": "confirmed",
+          "offer": "Baseball Bat — In stock at the Gun Van.",
+          "requirements": "In stock at the Gun Van.",
+          "startsOn": "2026-11-26",
+          "endsOn": "2026-12-02",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "claim": null,
+          "gtaPlus": false,
+          "sourceIds": [
+            "ref-8",
+            "ref-5",
+            "ref-6",
+            "ref-7"
+          ]
         }
       ]
     }
@@ -547,151 +1022,175 @@
       "id": "ref-1",
       "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-2",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "Source",
+      "url": "https://rockstarreport.com/news/gta-online-november-26-weekly-update",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-3",
-      "title": "GTA Online game settings (PS5) via RDO.GG",
-      "url": "https://api.rdo.gg/tunables/gta/ps5/73016D29FA4083C0A846A4DB084C5AF145C1E062.json",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "Source",
+      "url": "https://gtaside.com/tips/gta5/weekly-update/",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-4",
-      "title": "GTA Online game settings (Xbox Series X|S) via RDO.GG",
-      "url": "https://api.rdo.gg/tunables/gta/xboxsx/4546F7E86A1E6D4BC8E9559E6AF65CF8140D7279.json",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/newswire/article/39985174okk573/bag-3x-gta-and-rp-on-drift-and-drag-races-ahead-of-next-week-s-big-gta",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-5",
-      "title": "GTA Online game settings (PC Enhanced) via RDO.GG",
-      "url": "https://api.rdo.gg/tunables/gta/pcrosalt/2629685E617D438DD9E2F521E961D9F5D4780BB8.json",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "GTA Online game settings (PS5) via RDO.GG",
+      "url": "https://api.rdo.gg/tunables/gta/ps5/73016D29FA4083C0A846A4DB084C5AF145C1E062.json",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-6",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "GTA Online game settings (Xbox Series X|S) via RDO.GG",
+      "url": "https://api.rdo.gg/tunables/gta/xboxsx/4546F7E86A1E6D4BC8E9559E6AF65CF8140D7279.json",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-7",
-      "title": "Source",
-      "url": "https://gta.wiki/w/GTA%2B_November_2026",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "GTA Online game settings (PC Enhanced) via RDO.GG",
+      "url": "https://api.rdo.gg/tunables/gta/pcrosalt/2629685E617D438DD9E2F521E961D9F5D4780BB8.json",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-8",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "r/gtaonline",
+      "url": "https://www.reddit.com/r/gtaonline/comments/1y66ftm/weekly_bonuses_and_discounts_november_26th_to/",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-9",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "GTABase",
+      "url": "https://www.gtabase.com/vehicles/grand-theft-auto-v/chavos-v6",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-10",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-11",
-      "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "title": "Source",
+      "url": "https://gta.wiki/w/GTA%2B_November_2026",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-12",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3kk8",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-13",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=3944a",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-14",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k497",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-15",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4598",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-16",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89ao7",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-17",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=17k2k",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-18",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=5144k",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-19",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=akoo3",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-20",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=7547o",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-21",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=25445",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-22",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=o3k48",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-23",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=89aa7",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-24",
       "title": "Rockstar Games Newswire",
-      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=254a5",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     },
     {
       "id": "ref-25",
       "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=k4558",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
+    },
+    {
+      "id": "ref-26",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k249",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
+    },
+    {
+      "id": "ref-27",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=514kk",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
+    },
+    {
+      "id": "ref-28",
+      "title": "Rockstar Games Newswire",
+      "url": "https://www.rockstargames.com/gta-plus/benefits?info=4k229",
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
+    },
+    {
+      "id": "ref-29",
+      "title": "Rockstar Games Newswire",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=7544o",
-      "verifiedAt": "2026-11-26T10:16:15.043Z"
+      "verifiedAt": "2026-11-27T12:05:00.037Z"
     }
   ]
 }

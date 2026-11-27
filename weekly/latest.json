@@ -10,9 +10,9 @@
   "timingConfidence": "estimated",
   "quickTake": [
     "Stunt Race Series — 3X GTA$ & RP",
+    "The Project Breakaway File — Earn 2X GTA$ on this week’s FIB Priority File.",
     "Freemode Challenges — 4X GTA$ & RP",
-    "Community Series — 3X GTA$ & RP",
-    "All Contact Missions — 2X GTA$ & RP"
+    "Community Series — 3X GTA$ & RP"
   ],
   "quickTakeEntries": [
     {
@@ -40,6 +40,26 @@
       "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
       "itemIds": [
         "auto-04dc820fd80adf0816"
+      ]
+    },
+    {
+      "id": "auto-1b976e34342af0f6f9",
+      "label": "The Project Breakaway File — Earn 2X GTA$ on this week’s FIB Priority File.",
+      "factKey": "bonuses:the project breakaway file:all:all",
+      "startsAt": "2026-11-26T10:00:00.000Z",
+      "expiresAt": "2026-12-03T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [],
+      "entity": "The Project Breakaway File",
+      "offer": "Earn 2X GTA$ on this week’s FIB Priority File.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarreport.com/news/gta-online-november-26-weekly-update",
+      "itemIds": [
+        "auto-1b976e34342af0f6f9"
       ]
     },
     {
@@ -95,33 +115,6 @@
       "itemIds": [
         "auto-43609dadb3636d4962"
       ]
-    },
-    {
-      "id": "auto-512afaa2b9b0288cde",
-      "label": "All Contact Missions — 2X GTA$ & RP",
-      "factKey": "bonuses:all contact missions:all:all",
-      "startsAt": "2026-11-12T10:00:00.000Z",
-      "expiresAt": "2026-12-02T23:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "All Contact Missions",
-      "offer": "2X GTA$ & RP",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-512afaa2b9b0288cde"
-      ]
     }
   ],
   "beginnerPath": [
@@ -150,6 +143,27 @@
       "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
       "itemIds": [
         "auto-04dc820fd80adf0816"
+      ],
+      "progressGroup": "none"
+    },
+    {
+      "id": "bp-auto-1b976e34342af0f6f9",
+      "label": "The Project Breakaway File — Earn 2X GTA$ on this week’s FIB Priority File.",
+      "factKey": "bonuses:the project breakaway file:all:all",
+      "startsAt": "2026-11-26T10:00:00.000Z",
+      "expiresAt": "2026-12-03T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated",
+      "confidence": "corroborated",
+      "sources": [],
+      "entity": "The Project Breakaway File",
+      "offer": "Earn 2X GTA$ on this week’s FIB Priority File.",
+      "eligibility": "all",
+      "platform": "all",
+      "sourceUrl": "https://rockstarreport.com/news/gta-online-november-26-weekly-update",
+      "itemIds": [
+        "auto-1b976e34342af0f6f9"
       ],
       "progressGroup": "none"
     },
@@ -208,34 +222,6 @@
         "auto-43609dadb3636d4962"
       ],
       "progressGroup": "none"
-    },
-    {
-      "id": "bp-auto-512afaa2b9b0288cde",
-      "label": "All Contact Missions — 2X GTA$ & RP",
-      "factKey": "bonuses:all contact missions:all:all",
-      "startsAt": "2026-11-12T10:00:00.000Z",
-      "expiresAt": "2026-12-02T23:00:00.000Z",
-      "originalZone": "Europe/Warsaw",
-      "precision": "date",
-      "timingConfidence": "estimated",
-      "confidence": "official",
-      "sources": [
-        {
-          "url": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-          "kind": "rockstar",
-          "scope": "weekly",
-          "publishedOn": "2026-11-05"
-        }
-      ],
-      "entity": "All Contact Missions",
-      "offer": "2X GTA$ & RP",
-      "eligibility": "all",
-      "platform": "all",
-      "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
-      "itemIds": [
-        "auto-512afaa2b9b0288cde"
-      ],
-      "progressGroup": "none"
     }
   ],
   "locations": [
@@ -289,6 +275,21 @@
       "originalZone": "Europe/Warsaw",
       "precision": "date",
       "timingConfidence": "estimated"
+    },
+    {
+      "id": "auto-location-gun-van",
+      "activity": "Gun Van",
+      "name": "Mobile weapons dealer",
+      "area": "Daily rotating stop in Southern San Andreas",
+      "note": "The stock below belongs to this week; the parking spot changes daily. Today’s exact stop is not verified in this guide. Without GTA+, the van icon appears when you are nearby; GTA+ members can locate it on the map. Approach the open rear doors to browse weapons and compare the price shown for your membership.\n\nSee This Week → Gun Van for the current stock and discounts.",
+      "itemIds": [
+        "auto-03bd3c46116069c214"
+      ],
+      "startsAt": "2026-11-26T10:00:00.000Z",
+      "expiresAt": "2026-12-03T10:00:00.000Z",
+      "originalZone": "Europe/Warsaw",
+      "precision": "date",
+      "timingConfidence": "estimated"
     }
   ],
   "sections": [
@@ -320,6 +321,24 @@
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-1b976e34342af0f6f9",
+          "label": "The Project Breakaway File — Earn 2X GTA$ on this week’s FIB Priority File.",
+          "factKey": "bonuses:the project breakaway file:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "The Project Breakaway File",
+          "offer": "Earn 2X GTA$ on this week’s FIB Priority File.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
           "progressGroup": "none"
         },
         {
@@ -431,7 +450,7 @@
       "items": [
         {
           "id": "weekly-objective-65",
-          "label": "Premium Deluxe Repo Work Missions — Complete 3 Premium Deluxe Repo Work Missions.",
+          "label": "Premium Deluxe Repo Work Missions — Complete 3 Premium Deluxe Repo Work Missions to earn GTA$100,000.",
           "factKey": "challenge:premium deluxe repo work missions:all:all",
           "startsAt": "2026-11-26T10:00:00.000Z",
           "expiresAt": "2026-12-03T10:00:00.000Z",
@@ -441,7 +460,7 @@
           "confidence": "corroborated",
           "sources": [],
           "entity": "Premium Deluxe Repo Work Missions",
-          "offer": "Complete 3 Premium Deluxe Repo Work Missions.",
+          "offer": "Complete 3 Premium Deluxe Repo Work Missions to earn GTA$100,000.",
           "eligibility": "all",
           "platform": "all",
           "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
@@ -453,7 +472,7 @@
     {
       "id": "free-vehicles",
       "title": "Free rewards & prize vehicles",
-      "completeness": "partial",
+      "completeness": "complete",
       "items": [
         {
           "id": "auto-0c6415a11601bad700",
@@ -490,26 +509,521 @@
           "platform": "all",
           "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
           "progressGroup": "extra"
+        },
+        {
+          "id": "auto-7d0a314514c8f92188",
+          "label": "Kortz Center Heist no-death reward — Earn an extra GTA$400,000 for completing the heist without anyone dying.",
+          "factKey": "free-vehicles:kortz center heist no death reward:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Kortz Center Heist no-death reward",
+          "offer": "Earn an extra GTA$400,000 for completing the heist without anyone dying.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
         }
       ]
     },
     {
       "id": "discounts",
       "title": "Discounts & Offers",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "auto-2d632cd942f180a3a2",
+          "label": "Vysser Neo — 30% off.",
+          "factKey": "discounts:vysser neo:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Vysser Neo",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-40740ff0695fe9c3f9",
+          "label": "Karin Sultan Classic — 30% off.",
+          "factKey": "discounts:karin sultan classic:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Karin Sultan Classic",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-45b0183bc76765eee2",
+          "label": "Grotti Cheetah Classic — 30% off.",
+          "factKey": "discounts:grotti cheetah classic:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Grotti Cheetah Classic",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-46b4eb8e4477b160b1",
+          "label": "Gallivanter Baller ST — 30% off.",
+          "factKey": "discounts:gallivanter baller st:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Gallivanter Baller ST",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-89c289ce7f20ab46c1",
+          "label": "Mammoth Squaddie — 30% off.",
+          "factKey": "discounts:mammoth squaddie:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Mammoth Squaddie",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-b0ebfcbc73b32b18f6",
+          "label": "Vapid Ratel — 30% off.",
+          "factKey": "discounts:vapid ratel:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Vapid Ratel",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-bdc13d5b4628640092",
+          "label": "Dinka Chavos V6 — 30% off: GTA$994,000 (normally GTA$1,420,000). (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "discounts:dinka chavos v6:all:enhanced",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [
+            {
+              "url": "https://www.gtabase.com/vehicles/grand-theft-auto-v/chavos-v6",
+              "kind": "gtabase",
+              "scope": "weekly"
+            }
+          ],
+          "entity": "Dinka Chavos V6",
+          "offer": "30% off: GTA$994,000 (normally GTA$1,420,000).",
+          "eligibility": "all",
+          "platform": "enhanced",
+          "sourceUrl": "https://www.gtabase.com/vehicles/grand-theft-auto-v/chavos-v6",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-e3420f6a05f2e61670",
+          "label": "Vapid Ellie — 30% off.",
+          "factKey": "discounts:vapid ellie:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Vapid Ellie",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-fd0a741debfe8ff315",
+          "label": "Police Prison Bus — 30% off.",
+          "factKey": "discounts:police prison bus:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Police Prison Bus",
+          "offer": "30% off.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "gun-van",
       "title": "Gun Van",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "auto-03bd3c46116069c214",
+          "label": "Military Rifle — 10% off at the Gun Van.",
+          "factKey": "gun-van:military rifle:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Military Rifle",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-16eadb4dc232d6142f",
+          "label": "Sticky Bombs, Tear Gas and Molotovs — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:sticky bombs tear gas and molotovs:gta-plus:enhanced",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Sticky Bombs, Tear Gas and Molotovs",
+          "offer": "20% off at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-2079ffbee56f8d3836",
+          "label": "Battle Rifle — 10% off at the Gun Van.",
+          "factKey": "gun-van:battle rifle:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Battle Rifle",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-3bd40c56d89c281e8d",
+          "label": "Nightstick — 10% off at the Gun Van.",
+          "factKey": "gun-van:nightstick:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Nightstick",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-653a7ed73ee9b74f6d",
+          "label": "Sticky Bombs, Tear Gas and Molotovs — 10% off at the Gun Van.",
+          "factKey": "gun-van:sticky bombs tear gas and molotovs:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Sticky Bombs, Tear Gas and Molotovs",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-65a57ed2397339870c",
+          "label": "Nightstick — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:nightstick:gta-plus:enhanced",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Nightstick",
+          "offer": "20% off at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-68077396993462b558",
+          "label": "Gusenberg Sweeper — 10% off at the Gun Van.",
+          "factKey": "gun-van:gusenberg sweeper:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Gusenberg Sweeper",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-7b560b042f42c1d5f9",
+          "label": "Stun Gun — 50% off at the Gun Van.",
+          "factKey": "gun-van:stun gun:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Stun Gun",
+          "offer": "50% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-87490286d131828902",
+          "label": "Gusenberg Sweeper — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:gusenberg sweeper:gta-plus:enhanced",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Gusenberg Sweeper",
+          "offer": "20% off at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-96ac7ea38f4448aa3d",
+          "label": "Assault Shotgun — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:assault shotgun:gta-plus:enhanced",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Assault Shotgun",
+          "offer": "20% off at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9a0b1fe3db20593611",
+          "label": "Assault Shotgun — 10% off at the Gun Van.",
+          "factKey": "gun-van:assault shotgun:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Assault Shotgun",
+          "offer": "10% off at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-9b1d541f06294fccd7",
+          "label": "Knife — Free at the Gun Van.",
+          "factKey": "gun-van:knife:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Knife",
+          "offer": "Free at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "primary"
+        },
+        {
+          "id": "auto-9ce1ca597ab63a43be",
+          "label": "Battle Rifle — 40% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:battle rifle:gta-plus:enhanced",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Battle Rifle",
+          "offer": "40% off at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-a550b35e1122725472",
+          "label": "Military Rifle — 20% off at the Gun Van. (GTA+ only) (PS5, Xbox Series X|S, PC Enhanced)",
+          "factKey": "gun-van:military rifle:gta-plus:enhanced",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Military Rifle",
+          "offer": "20% off at the Gun Van.",
+          "eligibility": "gta-plus",
+          "platform": "enhanced",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-cae4fa84f2ab2246b6",
+          "label": "Baseball Bat — In stock at the Gun Van.",
+          "factKey": "gun-van:baseball bat:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Baseball Bat",
+          "offer": "In stock at the Gun Van.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "other",
       "title": "Other weekly items",
-      "completeness": "pending",
-      "items": []
+      "completeness": "complete",
+      "items": [
+        {
+          "id": "auto-0806f1d0dea30af444",
+          "label": "Salvage Yard Robberies — The Duggan Robbery: Bravado Gauntlet Hellfire. The McTony Robbery: Dewbauchee Vagner. The Cargo Ship Robbery: Karin Previon.",
+          "factKey": "other:salvage yard robberies:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "Salvage Yard Robberies",
+          "offer": "The Duggan Robbery: Bravado Gauntlet Hellfire. The McTony Robbery: Dewbauchee Vagner. The Cargo Ship Robbery: Karin Previon.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        },
+        {
+          "id": "auto-e288fd93d5ca6f5ad9",
+          "label": "The Kortz Center Heist — Primary targets: A Winding Road Home, Winter, Nowhere in Particular, and I Hear Voices. The first-completion bonus has reset.",
+          "factKey": "other:the kortz center heist:all:all",
+          "startsAt": "2026-11-26T10:00:00.000Z",
+          "expiresAt": "2026-12-03T10:00:00.000Z",
+          "originalZone": "Europe/Warsaw",
+          "precision": "date",
+          "timingConfidence": "estimated",
+          "confidence": "corroborated",
+          "sources": [],
+          "entity": "The Kortz Center Heist",
+          "offer": "Primary targets: A Winding Road Home, Winter, Nowhere in Particular, and I Hear Voices. The first-completion bonus has reset.",
+          "eligibility": "all",
+          "platform": "all",
+          "sourceUrl": "https://gtacompanion.net/gta-online/weekly-update/2648#sources",
+          "progressGroup": "none"
+        }
+      ]
     },
     {
       "id": "gta-plus",
@@ -985,6 +1499,11 @@
       "publishedOn": "2026-11-05"
     },
     {
+      "url": "https://www.gtabase.com/vehicles/grand-theft-auto-v/chavos-v6",
+      "kind": "gtabase",
+      "scope": "weekly"
+    },
+    {
       "kind": "rockstar",
       "scope": "membership",
       "url": "https://www.rockstargames.com/gta-plus/benefits?info=9k447"
@@ -1082,18 +1601,11 @@
   ],
   "sourceUrl": "https://www.rockstargames.com/newswire/article/4k17a844oakk5o/take-down-the-kortz-center-and-more-high-value-targets-in-this-week-s",
   "nextBoundaryAt": "2026-12-02T23:00:00.000Z",
-  "completeness": "partial",
-  "missingAreas": [
-    "rewards",
-    "discounts",
-    "gun-van-stock",
-    "gun-van-discounts",
-    "gun-van-gta-plus",
-    "other"
-  ],
-  "resolvedAreas": 5,
+  "completeness": "complete",
+  "missingAreas": [],
+  "resolvedAreas": 11,
   "requiredAreas": 11,
-  "completenessNote": "Partial weekly update 2026-11-26: 5/11 areas. Missing: rewards, discounts, gun-van-stock, gun-van-discounts, gun-van-gta-plus, other.",
-  "revision": "b9abb344dd49ac2cec6aaea453bf86e2137f898729cbbbbab7209eec5891fdc0",
-  "generatedAt": "2026-11-26T10:16:15.043Z"
+  "completenessNote": "Weekly update 2026-11-26: 11/11 required areas confirmed or explicitly absent.",
+  "revision": "f6e7e3eef51bac9b989b538d8e1d4d4e1cca206d39044908b9cccb5971c4e666",
+  "generatedAt": "2026-11-27T12:05:00.037Z"
 }
